@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 不怕麻烦才能有良政</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  .article-body p.author {
+    text-indent: 0;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 4px;
+    margin-top: 2px;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>不怕麻烦才能有良政</h1>
+    <div class="meta">大家谈 | 认识基层 深入基层 服务基层② | 2026年8月12日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：基层治理 · 群众路线 · 担当作为 · 精细化治理 · 正确政绩观</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">群众路线</span>
+      <span class="tag-item">调查研究</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">精细化治理</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">矛盾化解</span>
+      <span class="tag-item">问计于民</span>
+      <span class="tag-item">实干担当</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">干部作风</span>
+      <span class="tag-item">基层治理现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"不怕麻烦才能有良政""把群众的麻烦事变成暖心事""基层干部要有担当"等主题；本文<b>"权威金句破题＋三维度分述（水磨功夫／干事有方／精细文章）"</b>结构，是写"干部作风／群众工作／基层治理"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何让基层工作既有力度又有温度"——可从来信的<b>耐心细心责任、问计于民因地制宜、精细方法＋精细导向</b>三层作答，这正是本文的天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括基层干部应有的工作方法"——可提炼为：<b>态度上不怕麻烦（耐心细心责任）、方法上立足自身又跳出自身、标准上精细见温度</b>三点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"基层干部座谈会发言""致一线干部的一封信""民情日记"等应用文素材；文中"水磨功夫""围着群众转"等群众语言，极适合写进讲话稿显接地气。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："权威金句破题—三维度分述—回扣升华"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以习近平总书记金句<b>"不怕麻烦才能有良政"</b>点题，编辑导语把"麻烦事"转化为"暖心事"立起命题，引出三篇来稿。技法：<b>权威金句破题＋设问引题</b>，开篇即定调、有高度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>水磨功夫（态度层）</b>——以"豆花用水磨磨出来"起兴，讲耐心（变被动为主动、自找麻烦）、细心（锱铢必较、反复丈量）、责任（把责任印在心间扛在肩上）。技法：<b>生活喻理＋小切口</b>，接地气、易共情。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>干事有方（方法层）</b>——"立足自身看自身"（摸清实情、问计于民）与"跳出自身看自身"（胸怀全局、因地制宜、错位发展）辩证二分。技法：<b>辩证二分＋俗语点睛</b>（"办法就在群众中"），显思辨。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>精细文章（标准层）</b>——把"精细"拆成"是方法"（逐户听意见、逐项列清单、逐件推动办结）与"是导向"（量体裁衣、多把尺子、围着群众转），并点出"精细不是繁琐哲学"。技法：<b>概念拆解＋案例印证</b>，论证厚实。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">三篇共同指向——把"麻烦事"变成"暖心事"，靠的是不怕麻烦的担当。从"水磨功夫"到"干事有方"再到"精细文章"，不变的<b>以人民为中心立场</b>，跃升的是治理能力与温度。技法：<b>回扣总论点＋立场升华</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"权威金句破题＋三维度分述（态度／方法／标准）"结构</b>，可整体套用于任何"干部作风／为民服务／基层治理"类议题（如"如何让政务服务更有温度""把矛盾化解在基层"）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>基层工作千头万绪，考验干部解决复杂问题的能力和水平。习近平总书记指出：<span class="highlight-gold">"不怕麻烦才能有良政。"</span>本期大家谈，我们选刊3篇来稿，与广大读者一起思考，如何更好将群众的<span class="highlight-gold">麻烦事变成暖心事</span>。</p>
+
+      <p class="thesis">【总论点】不怕麻烦才能有良政——把群众的"麻烦事"变成"暖心事"，既是基层治理的能力，更是干部担当的本色；怕麻烦干不成事，不怕麻烦方见为民初心。</p>
+
+      <p class="sub-thesis">【分论点一】善下"水磨功夫"——以耐心"自找麻烦"、以细心"锱铢必较"、以责任心"扛在肩上"，变被动应对为主动服务，方见为民公心。</p>
+
+      <p class="author">▍投稿人：四川成都市 施清波《善下"水磨功夫"》</p>
+
+      <p>豆花是四川地区许多家庭钟爱的一种食物。常去的几家小店里，有一家的豆花做得格外好吃，细腻滑嫩，豆香浓郁。细问才知，是<span class="highlight-green">用水磨磨出来的</span>。说起经验，店主表示，"磨得细，做出来的豆花就够滑"。细想开来，做好基层工作，又何尝不需要下一番"水磨功夫"。</p>
+
+      <p>下"水磨功夫"，讲究耐心。基层工作，点多面广。下水道堵了、楼道杂物需要清理、街坊之间出现矛盾等，这些麻烦事也是群众的关切事，藏着"大民生"。<span class="highlight-gold">怕麻烦，干不成事。</span>不怕麻烦，甚至"自找麻烦""爱揽麻烦"，<span class="highlight-purple">变被动应对为主动服务</span>，这才是对群众负责的态度。</p>
+
+      <p>"水磨功夫"，也体现在"锱铢必较"的细心。之前负责镇上<span class="highlight-green">农民集中居住区不动产登记工作，一块宅基地的边界常要反复丈量，一户群众的信息需要一遍遍比对核实</span>。有人感叹，这活儿太"磨人"。可我深知，对群众而言，图纸上的每一厘米，都关系着切身利益，也关系着他们对干部的信任。<span class="highlight-gold">于小事更见细谨，处微末愈见公心。</span>为民服务，就该不敷衍、不糊弄，细之又细。</p>
+
+      <p>耐心、细心，说到底，都是责任的体现。<span class="highlight-purple">把责任印在心间、扛在肩上，下好"水磨功夫"，工作必有所进。</span></p>
+
+      <p class="sub-thesis">【分论点二】力求干事有方——既"立足自身看自身"摸清实情、问计于民，又"跳出自身看自身"胸怀全局、因地制宜，避免拍脑袋决策。</p>
+
+      <p class="author">▍投稿人：广西贵港市 胡锦川《力求干事有方》</p>
+
+      <p>前段时间<span class="highlight-green">村里修排水渠，因为预算超了，方案报上去几次都没通过</span>。大家急得团团转，开了几次会也没有结果。后来有人说了句："光在屋里也琢磨不出来，出去看看大家咋弄的。"调研发现，<span class="highlight-green">有几户人家房前屋后的排水沟挖得很巧，顺着地势走，几户共用一个出口，省工省料</span>。后来新渠按照这个思路改，成本降了，工期短了。<span class="highlight-gold">可见，办法就在群众中。</span></p>
+
+      <p>找办法，首在<span class="highlight-blue">"立足自身看自身"</span>。拿排水渠来说，怎么建、建多少，既需要考虑资金量，也需要了解地势、水文等条件。不了解清楚情况，自然无法在约束条件下求得最优解。杜绝拍脑袋、凭感觉、凭经验，就必须在<span class="highlight-blue">"脚沾泥土"中摸清实情</span>，在<span class="highlight-blue">问计于民</span>中寻找解决问题的可行办法。</p>
+
+      <p><span class="highlight-blue">"跳出自身看自身"</span>，才能避免盲人摸象。以基层发展产业为例，产业规模往往不大，容错空间小。引进新产业、新项目，必须胸怀全局，同时结合自身实际，在杜绝同质化竞争、发挥比较优势的基础上，<span class="highlight-blue">错位发展</span>。这也是<span class="highlight-gold">因地制宜的题中应有之义</span>。</p>
+
+      <p>工作纷繁复杂，肩上千钧重担。<span class="highlight-purple">只有做到心中有数，才能实现胸中有策、干事有方。</span></p>
+
+      <p class="sub-thesis">【分论点三】做好精细文章——精细是方法（逐户听意见、逐项列清单、逐件推动办结），也是导向（量体裁衣、多把尺子），于差异中见温度，于细微处提质效。</p>
+
+      <p class="author">▍投稿人：湖南长沙市 侯 韬《做好精细文章》</p>
+
+      <p>走访时，听<span class="highlight-green">"种粮高手"谈心得："产量要想高，管理就得细。育秧、移栽、防病、调水、补肥，等等，每个环节都马虎不得。"</span>粗放换不来高产，精细管理才能有好收成。由此想到，做好基层工作，同样需要做好精细文章。</p>
+
+      <p>精细是一种方法。情况摸得细，症结找得准，解题思路才会清、对策才会实、成效才能显。<span class="highlight-green">某街道在推进一重点电力项目时遭遇"邻避"问题，有的群众要求调整线路</span>。街道没有简单处理，而是<span class="highlight-blue">逐户听取意见、逐项列出清单、逐件推动办结</span>。随着一个个问题得到解决，群众态度逐步转变，工程也按期投产。用好精细的工作方法，就能在一次次沟通、一件件办理中，<span class="highlight-purple">解决更多两难、多难问题</span>。</p>
+
+      <p>精细也是导向。我所在的街道地处城乡接合部，工业园区、居民小区、农村片区交错共存。过去，<span class="highlight-green">同一套考核指标一管到底，看似整齐划一，实际常常"尺不对物"</span>。后来，我们注重<span class="highlight-blue">"量体裁衣"</span>，将<span class="highlight-blue">"一张考卷"变成"多把尺子"</span>，村级迎检频次和台账资料也随之压减，基层干部从<span class="highlight-blue">"围着表格转"变成"围着群众转"</span>。考核更精细，职责更清楚，基层的劲儿才能真正使到点子上。</p>
+
+      <p><span class="highlight-purple">精细不是降低标准，也不是搞"繁琐哲学"，而是要在统一目标下看见差异、回应差异。</span><span class="highlight-gold">把情况摸得更准，把工作做得更细，才能让工作既有效率又有温度。</span></p>
+
+      <p style="text-indent:0; color:#8b0000; font-weight:700;">从"水磨功夫"到"干事有方"再到"精细文章"，把群众的"麻烦事"变成"暖心事"，靠的正是这番不怕麻烦的担当——不变的以人民为中心立场，跃升的是治理的能力与温度。</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">权威金句·良政</span>
+      <p>习近平总书记指出："不怕麻烦才能有良政。"（可作"干部作风／基层治理"类文章题眼，开篇立论即用）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">目标指向·暖心事</span>
+      <p>如何更好将群众的麻烦事变成暖心事。（"麻烦事→暖心事"的转化表述，是写群众工作最稳的落点句）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">态度金句·怕麻烦</span>
+      <p>怕麻烦，干不成事。不怕麻烦，甚至"自找麻烦""爱揽麻烦"，变被动应对为主动服务，这才是对群众负责的态度。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">细谨公心</span>
+      <p>于小事更见细谨，处微末愈见公心。（写"严谨细致作风"的绝佳对仗句，可直接背）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">群众智慧</span>
+      <p>办法就在群众中。（五字金句，适配"调查研究／问计于民"类段落收束）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·二分</span>
+      <p>立足自身看自身；跳出自身看自身。（写方法论时的辩证二分结构，显思辨厚度）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">因地制宜</span>
+      <p>在杜绝同质化竞争、发挥比较优势的基础上，错位发展。这也是因地制宜的题中应有之义。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">问计于民</span>
+      <p>在"脚沾泥土"中摸清实情，在问计于民中寻找解决问题的可行办法。（"脚沾泥土"画面感强，优于"深入调研"空话）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">精细方法</span>
+      <p>逐户听取意见、逐项列出清单、逐件推动办结。（基层精细化工作法，"三逐"排比，可迁移至矛盾化解、政务服务）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">量体裁衣</span>
+      <p>将"一张考卷"变成"多把尺子"；基层干部从"围着表格转"变成"围着群众转"。（考核精细化表述，对比鲜明、易记）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·精细</span>
+      <p>精细不是降低标准，也不是搞"繁琐哲学"，而是要在统一目标下看见差异、回应差异。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">温度落点</span>
+      <p>把情况摸得更准，把工作做得更细，才能让工作既有效率又有温度。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">责任升华</span>
+      <p>耐心、细心，说到底，都是责任的体现。把责任印在心间、扛在肩上，下好"水磨功夫"，工作必有所进。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·基层</span>
+      <p>不动产登记反复丈量；村里修排水渠因地制宜；街道化解电力"邻避"问题；城乡接合部考核"量体裁衣"。（四个可背的基层实例，论证不空泛）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 权威金句破题</span>
+      <p>用总书记金句"不怕麻烦才能有良政"开篇立论，再落到本地实践。迁移写法：<b>凡写干部作风／为民服务，先引一句权威论断，再引出"如何把____变成____"的命题</b>。模板："习近平总书记指出：'……'本期我们思考，如何更好将……"</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 生活喻理起兴</span>
+      <p>用"豆花用水磨磨出来"类比基层工作要下"水磨功夫"。迁移写法：<b>论证抽象道理，先找一个生活化比喻（水磨／绣花／种树），再过渡到主题</b>，文章立刻接地气。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 辩证二分结构</span>
+      <p>"立足自身看自身"与"跳出自身看自身"二分。迁移写法：<b>写方法论时，用"既要…又要…""从A看，从B看"二分结构</b>，避免单线平推、显思辨。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 群众语言点睛</span>
+      <p>"办法就在群众中""尺不对物""围着表格转"穿插在规范表述间。迁移写法：<b>在"问计于民""量体裁衣"等术语旁，配一句俗语／群众语言</b>，文章鲜活不呆板。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 概念拆解两层</span>
+      <p>把"精细"拆成"是方法（逐户听意见…）＋是导向（量体裁衣…）"。迁移写法：<b>遇到单一概念，拆成"是什么（方法）＋为什么（导向）"两层</b>，论证更厚实。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 排比递进收束</span>
+      <p>从"水磨功夫"到"干事有方"再到"精细文章"，回扣总论点。迁移写法：<b>结尾用"从…到…再到…"串起全文分论点，再回扣首句金句</b>，收束有力。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"把群众的'麻烦事'办成'暖心事'"为题，写一段150字左右的申论文章开头段，要求：<b>权威金句／俗语破题＋亮明一个分论点（如水磨功夫／精细文章）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">引"不怕麻烦才能有良政"金句 → 落到"基层治理要把麻烦事变暖心事" → 先亮"善下'水磨功夫'、以耐心细心换群众暖心"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"权威金句破题＋三维度分述（态度／方法／标准）"结构，为"如何提升基层干部的群众工作能力"列出写作提纲（3个分论点即可）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月12日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
