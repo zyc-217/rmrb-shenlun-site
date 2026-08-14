@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "融"出舞台，经济循环增质效</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .header .sub {
+    font-size: 15px;
+    opacity: 0.92;
+    margin-bottom: 6px;
+  }
+  .header .meta {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 8px;
+  }
+  .content {
+    padding: 28px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 24px 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* 考点标签 */
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag-item {
+    background: #f3f0eb;
+    color: #5a5247;
+    font-size: 13px;
+    padding: 5px 11px;
+    border-radius: 8px;
+  }
+
+  /* 结构拆解 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .analysis-item:last-child { margin-bottom: 0; }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* 原文精读 */
+  .article-body {
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 16px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 荧光笔高亮 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 12px 0 4px;
+    padding: 14px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .red-block { background: #ffcdd2; }
+  .blue-block { background: #1976d2; }
+
+  /* 金句素材 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .material-card p {
+    font-size: 15px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.8;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"融"出舞台，经济循环增质效</h1>
+    <div class="sub">（评论员观察）——二〇二六中国经济年中观察②</div>
+    <div class="meta">余 璇 | 2026年8月4日 | 第05版</div>
+  </div>
+
+  <div class="content">
+
+    <!-- 申论考点标签 -->
+    <div class="section-title">🎯 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">全面深化改革</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">全国统一大市场</span>
+      <span class="tag-item">实体经济与数字经济融合</span>
+      <span class="tag-item">城乡融合·区域协调</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">供需适配</span>
+    </div>
+
+    <!-- 文章结构拆解 -->
+    <div class="section-title">📐 文章结构拆解</div>
+    <div class="analysis-box">
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text">以上半年经济数据（服务业+10.7%、文体业+11.8%/11.9%、进出口25.5万亿元）引出"融"是关键词，开篇立论（数据论证）</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论1</span>
+        <span class="text"><b>规律论：</b>融合契合产业演进与市场经济内在规律——降低交易成本、提升全要素生产率、构建全国统一大市场（理论论证+区域案例：京津冀/长三角/大湾区）</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论2</span>
+        <span class="text"><b>方法论：</b>融合关键在于以包容性增活力、以问题导向破壁垒——从供需、投资、外贸三维度展开，辩证论述"融"的效能（辩证论证）</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论3</span>
+        <span class="text"><b>动力源：</b>"融"到深处靠思想转弯与体制改革、机制创新——重庆"产业大脑"、武汉"五链融合"案例（案例论证）</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text">以系统观念打破壁垒，"十五五"规划"融合"高频词，升华到塑强新质生产力、高质量发展一往无前（收束有力）</span>
+      </div>
+    </div>
+
+    <!-- 原文精读 -->
+    <div class="section-title">📖 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color red-block"></div>总论点</div>
+      <div class="legend-item"><div class="legend-color blue-block"></div>分论点</div>
+      <div class="legend-item"><div class="legend-color gold"></div>申论金句/名言</div>
+      <div class="legend-item"><div class="legend-color blue"></div>规范表述/政策术语</div>
+      <div class="legend-item"><div class="legend-color green"></div>数据/事实论据</div>
+      <div class="legend-item"><div class="legend-color purple"></div>辩证关系/哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p class="thesis">【总论点】坚定不移深化改革扩大开放，促进各类政策协同发力，拆掉要素、行业、区域、城乡之间的无形壁垒，融则通、通则活、活则进的正向循环将更加有力。</p>
+
+      <p>今年上半年，面对外部环境不确定性，中国经济依然保持平稳增长。"融"，无疑是一个关键词。</p>
+
+      <p>现代服务和先进制造深度融合，<span class="highlight-green">1—6月信息传输、软件和信息技术服务业同比增长10.7%</span>；各地不断丰富"文旅体商"等融合业态，推动线下演艺、赛事等密集落地，<span class="highlight-green">前5个月规模以上文化艺术业、体育业企业营业收入分别增长11.8%和11.9%</span>；进出口展现很强韧性，<span class="highlight-green">上半年货物进出口总额达到25.5万亿元</span>……</p>
+
+      <p><span class="highlight-gold">技术与产业融合催生新动能，需求与供给融合催生新业态，国内与国际融合催生新舞台</span>，"融"为中国经济向新向优提供强劲支撑。<span class="highlight-purple">融则壁垒消弭，通则循环顺畅，活则动能迸发，进则行稳致远。</span>从"融"字出发，我国经济稳中有进的逻辑更加彰显。</p>
+
+      <p class="sub-thesis">【分论点一】"融"契合产业演进与市场经济内在规律，本质是要素重组、链条延伸，是构建全国统一大市场的必然要求。</p>
+
+      <p><span class="highlight-blue">城乡、产城、数实、产服等融合，有利于降低交易成本，提升全要素生产率，是构建全国统一大市场的必然要求。</span></p>
+
+      <p><span class="highlight-green">京津冀"京津研发、河北转化"这条链路越走越顺</span>；<span class="highlight-green">长三角强化产业协同、创新联动</span>；<span class="highlight-green">粤港澳大湾区重点打造横琴、前海、南沙、河套四大合作平台，成为集聚人才、技术、资金的强大磁场</span>。<span class="highlight-purple">由分到合、彼此协作</span>，各类融合加速资源高效配置。</p>
+
+      <p class="sub-thesis">【分论点二】融合不等于简单叠加，"融"的关键在于以包容性增强活力和韧性，以问题导向打破梗阻壁垒，推动供需适配、动能迭代、质效升级。</p>
+
+      <p><span class="highlight-purple">融合不等于简单叠加。</span><span class="highlight-gold">"融"的关键在于以包容性增强活力和韧性，以问题导向打破梗阻壁垒。</span><span class="highlight-blue">推动供需适配、动能迭代、质效升级</span>，既牵引新供给、激活发展潜力，又提升群众获得感、稳定全球产业链供应链。</p>
+
+      <p>看供需，一批彰显产业升级和品质消费的新需求加快释放，牵引数实融合、文旅融合、虚实融合等新供给；看投资，<span class="highlight-blue">投资于物和投资于人紧密结合</span>，农业农村、公共设施、生态环保等方面投入持续增加，提升群众获得感；看外贸，<span class="highlight-blue">高水平对外开放联通国内国际两个市场、两种资源</span>，既为国内经济发展开辟国际空间，更为稳定全球产业链供应链注入坚实力量。<span class="highlight-blue">立足产业根基，发挥比较优势，坚持市场主导、政策顺势引导</span>，融合的效能将持续提升。</p>
+
+      <p class="sub-thesis">【分论点三】"融"到深处，靠的是思想转弯、观念转变，靠的是体制改革、机制创新。</p>
+
+      <p><span class="highlight-gold">"融"到深处，靠的是思想转弯、观念转变，靠的是体制改革、机制创新。</span><span class="highlight-blue">思想解放在先、改革破冰紧随</span>，助力的便是发展突围、经济跃升。</p>
+
+      <p><span class="highlight-green">重庆以"产业大脑"赋能摩托车产业内外贸一体化发展，擦亮"摩托之都"金字招牌</span>；<span class="highlight-green">湖北武汉深度融合创新链、产业链、资金链、人才链和服务链，将"世界光谷"蓝图变为现实</span>……重庆塑品牌、拓渠道、织网络与武汉"五链融合"的实践说明，融合的深层动力来自观念变革与制度供给。</p>
+
+      <p><span class="highlight-purple">摒弃画地为牢的本位思维、路径依赖的惯性思维</span>，<span class="highlight-blue">以系统观念、全局视野打破壁垒、消除隔阂、统筹资源</span>，才能集聚合力、抢占先机、赢得未来。坚定不移深化改革扩大开放，促进各类政策协同发力，拆掉要素、行业、区域、城乡之间的无形壁垒，<span class="highlight-gold">融则通、通则活、活则进</span>的正向循环将更加有力。</p>
+
+      <p><span class="highlight-blue">"促进创新链产业链资金链人才链深度融合""推动农村一二三产业深度融合""促进实体经济和数字经济深度融合"</span>……看"十五五"规划纲要，"融合"是高频词。<span class="highlight-gold">一个"融"字，既是改革创新的金钥匙，也是提质增效的先手棋，蕴藏着发展的无限可能。</span><span class="highlight-gold">持续用好"融"字诀，不断塑强新质生产力、拓宽发展空间，我国经济定能在高质量发展的道路上一往无前。</span></p>
+    </div>
+
+    <!-- 申论金句素材 -->
+    <div class="section-title">✨ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">改革发展</span>
+      <p>"坚定不移深化改革扩大开放，促进各类政策协同发力，拆掉要素、行业、区域、城乡之间的无形壁垒。"——适用于改革破障、破除体制机制障碍、优化营商环境话题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证思维</span>
+      <p>"融则通、通则活、活则进。"——四字递进句式，适用于任何"打通—激活—发展"的逻辑链，可作段首或分论点引语。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">系统观念</span>
+      <p>"以系统观念、全局视野打破壁垒、消除隔阂、统筹资源，才能集聚合力、抢占先机、赢得未来。"——适用于系统思维、统筹协调、全局谋划话题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">方法论</span>
+      <p>"融合不等于简单叠加，'融'的关键在于以包容性增强活力和韧性，以问题导向打破梗阻壁垒。"——适用于辩证看问题、防止形式主义与表面工程。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">创新驱动</span>
+      <p>"'融'到深处，靠的是思想转弯、观念转变，靠的是体制改革、机制创新。"——适用于解放思想、改革动力、制度型开放话题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">区域协调</span>
+      <p>"由分到合、彼此协作，各类融合加速资源高效配置。"——适用于区域协同发展、城乡融合、京津冀/长三角/大湾区案例引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">新质生产力</span>
+      <p>"一个'融'字，既是改革创新的金钥匙，也是提质增效的先手棋。"——适用于改革创新、提质增效、高质量发展话题，可作金句点题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾升华</span>
+      <p>"持续用好'融'字诀，不断塑强新质生产力、拓宽发展空间，我国经济定能在高质量发展的道路上一往无前。"——适用于经济类作文结尾升华、信心收束。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据</span>
+      <p>• 1—6月信息传输、软件和信息技术服务业同比增长10.7%<br>• 前5个月规模以上文化艺术业、体育业企业营业收入分别增长11.8%和11.9%<br>• 上半年货物进出口总额达到25.5万亿元<br>• 区域标杆：京津冀"京津研发、河北转化"、长三角协同、大湾区四大合作平台、重庆"产业大脑"、武汉"五链融合"</p>
+    </div>
+
+    <!-- 写作迁移应用 -->
+    <div class="section-title">💡 写作迁移应用</div>
+    <div class="analysis-box">
+      <div class="analysis-item">
+        <span class="label">迁移1</span>
+        <span class="text"><b>系统观念/改革：</b>用"拆掉要素、行业、区域、城乡之间的无形壁垒""融则通、通则活、活则进"分析改革破除体制机制障碍、畅通国民经济循环。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">迁移2</span>
+        <span class="text"><b>高质量发展：</b>用"构建全国统一大市场""提升全要素生产率"作答要素市场化配置、营商环境优化类试题。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">迁移3</span>
+        <span class="text"><b>区域协调：</b>用"京津研发、河北转化""长三角协同""大湾区四大平台"作区域协调发展论据，体现"由分到合"的协同逻辑。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">迁移4</span>
+        <span class="text"><b>高水平开放：</b>用"联通国内国际两个市场、两种资源""稳定全球产业链供应链"作答双循环、稳外贸话题。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">迁移5</span>
+        <span class="text"><b>结尾升华模板：</b>"一个'×'字是改革创新的金钥匙、提质增效的先手棋"——类比式升华句型，可套用到"改""合""通""智"等主题词作有力收尾。</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 | 2026年8月4日推送<br>
+    来源：人民网-人民日报 | 仅供申论学习交流使用
+  </div>
+</div>
+</body>
+</html>
