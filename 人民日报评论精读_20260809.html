@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 前7月进口增速高于出口8个百分点，意味着什么</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  .ask {
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 10px 0;
+    text-indent: 0 !important;
+    font-size: 14px;
+    color: #555;
+  }
+  .ask .who {
+    display: block;
+    text-align: right;
+    color: #888;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>前7月进口增速高于出口8个百分点，意味着什么</h1>
+    <div class="meta">读者点题·共同关注 | 2026年8月9日 | 第01版 要闻 | 罗珊珊</div>
+    <div class="meta" style="margin-top:4px;">主题：高水平对外开放 · 双循环 · 贸易平衡发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">制度型开放</span>
+      <span class="tag-item">双循环新发展格局</span>
+      <span class="tag-item">贸易平衡发展</span>
+      <span class="tag-item">扩大内需</span>
+      <span class="tag-item">全球产供链韧性</span>
+      <span class="tag-item">经济全球化</span>
+      <span class="tag-item">逆全球化应对</span>
+      <span class="tag-item">消费升级</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">和合共生</span>
+      <span class="tag-item">中非合作</span>
+      <span class="tag-item">大国担当</span>
+      <span class="tag-item">互利共赢</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">对策题</span>
+        <span class="text">"如何推动高水平对外开放"——可从<b>稳步扩大制度型开放（零关税、进博会平台）、贯通双循环（进口—生产—出口良性循环）、促进贸易平衡发展、深化南南合作</b>四个层面作答。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">议论文</span>
+        <span class="text">适配"开放与发展""进与出的辩证法""独行快与众行远""市场即资源"等主题；本文"世界工厂＋世界市场"双身份是极好的<b>并列式分论点</b>范本。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括中国扩大进口的原因/意义"——可提炼为：<b>赋能全球分工、彰显市场担当、丰富民生选择、激活产业动能、共享开放红利</b>五点。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："问—破—分（两重身份＋一层根源）—合"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（问）</span>
+        <span class="text">以人民网网友的真实提问开篇——"进口提速有什么原因？为什么我们要扩大进口？"<b>技法：设问式开篇、以问领篇</b>，让宏大议题瞬间落到读者关切上，比"某某指出"式起笔更有代入感。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">破题</span>
+        <span class="text">先立"靶子"——某些国家"中国输出产能、挤压他国空间"的不实论调；再用"进口增速高于出口8个百分点"这一硬数据<b>正面击穿偏见</b>。技法：驳论开路，以事实说话。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>"世界工厂"的赋能</b>——从"我们买了什么"切入，原材料、零部件、中间品进入中国车间实现增值。以"越进口、越生产、越出口"的递进链条，说明中国是全球分工的整合者而非单向输出者。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>"世界市场"的担当</b>——先讲体量（消费市场全球第一、相当于美国1.7倍），再讲增量（2035年中等收入群体显著扩大），最后讲态度（零关税全覆盖、8届进博会）。<b>体量＋潜力＋主动开放</b>三层递进。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>"图的是什么"的根源追问</b>——再设一问，用"往实了说／往深了说"两个层次作答：实处是民生与产业受益，深处是"和合共生"的文明观。中非合作数据作实证收尾。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">回到"中国从不刻意追求贸易顺差"，落到政治局会议"促进贸易平衡发展"的政策定调，以"做大全球共同发展的蛋糕"收束，首尾呼应、格局升华。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"设问—驳论—双身份并列—根源追问—政策落点"</b>这一框架，可整体套用于任何"外界误读＋我方澄清"类议题（如产能过剩论、就业替代论、环保双标论）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p class="ask">海关发布的数据显示，前7月，我国进口12.69万亿元，同比增长22%，增速高于出口8个百分点。我们总是关注到中国制造出口快速增长，较少关注到进口，进口提速有什么原因？为什么我们要扩大进口？
+        <span class="who">——人民网网友</span>
+      </p>
+
+      <p>长期以来，一些国家谈及中国外贸，总是习惯将目光聚焦于出口增长，甚至滋生了"中国输出产能、挤压他国空间"的片面、不实论调，忽略了<span class="highlight-blue">中国是全球产供链合作的中坚力量</span>，货物有进有出。<span class="highlight-green">前7月，中国进口增速高于出口8个百分点，对外贸增长的贡献大于出口</span>，有力打破了固有偏见。</p>
+
+      <p class="thesis">【总论点】中国进口增速高于出口，恰恰说明——中国不仅是深度嵌入全球分工、带动上下游共同获益的"世界工厂"，更是主动开放、共享红利的"世界市场"；中国以双向开放贯通国内国际双循环，促进贸易平衡发展，同各国一道做大全球共同发展的蛋糕。</p>
+
+      <p>中国进口为何大幅增长？先看看我们买了什么。</p>
+
+      <p class="sub-thesis">【分论点一】进口增长，首先展现的是"世界工厂"的赋能——中国不是封闭自足、单向输出产能的生产机器，而是深度嵌入全球分工、带动上下游伙伴共同获益的枢纽。</p>
+
+      <p>中国的购物车里，有大量来自世界各国的原材料、零部件、中间品，这些货物流向国内的工厂车间，经由中国制造<span class="highlight-gold">重组、创造、增值</span>，一部分供给国内市场，一部分再出口至全球各个市场。<span class="highlight-green">上半年，我国进口金属矿砂、电子元件分别增长22.6%和45.6%</span>。</p>
+
+      <p>显然，中国作为制造大国，<span class="highlight-purple">从来不是封闭自足、只向世界单方面输出产能的生产机器，而是深度嵌入全球分工、带动上下游伙伴共同获益的"世界工厂"</span>。中国制造走向世界的背后，是各国的优质生产要素在中国产供链的整合下实现价值最大化。<span class="highlight-gold">中国越进口、越生产、越出口，国际大循环运转就越高效，全球产供链的韧性和活力就越强。</span></p>
+
+      <p class="sub-thesis">【分论点二】进口增长，还彰显着"世界市场"的担当——中国既有全球第一的消费体量与增长潜力，更有主动开放、共享市场红利的鲜明态度。</p>
+
+      <p>进口增长除了展现"世界工厂"的赋能，还彰显了"世界市场"的担当。</p>
+
+      <p>中国不仅是制造大国，也是消费大国。<span class="highlight-green">按世界银行购买力平价折算，2025年中国社会消费品零售总额相当于美国的1.7倍，已是事实上的全球第一大商品消费市场</span>。当前，中国实物消费量全球第一，部分工业品人均年消费量已接近发达国家水平。<span class="highlight-green">上半年，食用油进口和食用水产品进口分别增长19.2%和24.1%</span>，消费品、农产品进口持续扩大。</p>
+
+      <p><span class="highlight-blue">到2035年，我国人均国内生产总值将达到中等发达国家水平，中等收入群体将显著扩大。</span>消费空间巨大、潜力活力足，将为世界经济增长持续注入强大动能。</p>
+
+      <p>更难能可贵的是，中国这个消费大国是主动开放的。<span class="highlight-green">中国已对63个国家实施零关税政策，是全球首个对所有非洲建交国和所有建交的最不发达国家实现全覆盖零关税待遇的主要经济体；是唯一一个举办国际进口博览会的国家，已成功举办8届，累计意向成交额超过5800亿美元。</span></p>
+
+      <p><span class="highlight-green">"十四五"时期，中国累计进口规模超过90万亿元，进口规模连续17年居全球第二，成为近80个国家的主要出口目的地</span>，充分说明<span class="highlight-gold">中国不仅是"世界工厂"，更是"世界市场"</span>。</p>
+
+      <p class="sub-thesis">【分论点三】中国坚持扩大进口"图的是什么"？往实了说是民生与产业双受益，往深了说，根源在于中国始终坚持和合共生、互惠互利的文明底色。</p>
+
+      <p>说到这，有网友不免有疑问，<span class="highlight-blue">在逆全球化思潮涌动，个别国家加征关税、设置贸易壁垒、争相抢占出口份额的当下</span>，中国坚持扩大进口、主动做大市场红利，究竟图的是什么？</p>
+
+      <p><span class="highlight-gold">往实了说，消费升级浪潮下，全球优质消费品、特色农产品进口丰富了百姓生活选择；产业升级需求下，全球高端生产要素进口激活了国内经济动能。</span></p>
+
+      <p><span class="highlight-gold">往深了说，根源在于中国始终坚持和合共生。</span><span class="highlight-purple">不同于一些国家将贸易视作零和博弈、追求单边获益，中国始终坚信，贸易的本质是双向赋能、互惠互利。</span></p>
+
+      <p>这在对非合作中体现得尤为鲜明。<span class="highlight-green">今年5月1日起，我国对53个非洲建交国全面实施零关税举措，仅5—6月，我国自非洲合计进口即达1938亿元，同比增长23.5%</span>，大量非洲特色产品借助中国市场<span class="highlight-blue">打开销路、盘活产业、带动就业</span>。<span class="highlight-purple">中国降关税、扩进口，不是被动的贸易行为，而是主动选择、共享红利的制度型开放。</span></p>
+
+      <p class="thesis">【回扣总论点】中国从不刻意追求贸易顺差，无论是出口，还是进口，本质都是中国贯通融入国内国际双循环、推动经济全球化的关键纽带。</p>
+
+      <p><span class="highlight-blue">7月30日召开的中共中央政治局会议强调，"促进贸易平衡发展"。</span>随着"世界工厂"迭代升级、"世界市场"持续扩容，<span class="highlight-gold">中国将继续以双向开放，和各国一道做大全球共同发展的蛋糕。</span></p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">开放格局</span>
+      <p>中国越进口、越生产、越出口，国际大循环运转就越高效，全球产供链的韧性和活力就越强。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">双重身份</span>
+      <p>中国不仅是"世界工厂"，更是"世界市场"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">全球分工</span>
+      <p>中国从来不是封闭自足、只向世界单方面输出产能的生产机器，而是深度嵌入全球分工、带动上下游伙伴共同获益的"世界工厂"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">要素整合</span>
+      <p>中国制造走向世界的背后，是各国的优质生产要素在中国产供链的整合下实现价值最大化。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">民生·产业</span>
+      <p>往实了说，消费升级浪潮下，全球优质消费品、特色农产品进口丰富了百姓生活选择；产业升级需求下，全球高端生产要素进口激活了国内经济动能。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">和合共生</span>
+      <p>往深了说，根源在于中国始终坚持和合共生。不同于一些国家将贸易视作零和博弈、追求单边获益，中国始终坚信，贸易的本质是双向赋能、互惠互利。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">制度型开放</span>
+      <p>中国降关税、扩进口，不是被动的贸易行为，而是主动选择、共享红利的制度型开放。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">大国担当</span>
+      <p>中国从不刻意追求贸易顺差，无论是出口，还是进口，本质都是中国贯通融入国内国际双循环、推动经济全球化的关键纽带。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">合作共赢</span>
+      <p>中国将继续以双向开放，和各国一道做大全球共同发展的蛋糕。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据速记·外贸</span>
+      <p>前7月我国进口12.69万亿元、同比增长22%，增速高于出口8个百分点；上半年金属矿砂、电子元件进口分别增长22.6%、45.6%；食用油、食用水产品进口分别增长19.2%、24.1%。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据速记·市场</span>
+      <p>2025年中国社会消费品零售总额按购买力平价折算相当于美国的1.7倍，为事实上的全球第一大商品消费市场；"十四五"累计进口超90万亿元，进口规模连续17年居全球第二，是近80个国家的主要出口目的地。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据速记·开放</span>
+      <p>中国已对63个国家实施零关税政策，是全球首个对所有非洲建交国和所有建交的最不发达国家实现零关税全覆盖的主要经济体；进博会已办8届，累计意向成交额超5800亿美元；5月1日起对53个非洲建交国全面零关税，5—6月自非洲进口1938亿元、增长23.5%。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 以问领篇</span>
+      <p>本文用网友一句真实提问开篇，把宏观经济话题瞬间"下沉"。迁移写法：申论大作文开头可写"很多人不禁要问：为什么……？"再自答破题，比堆砌背景更抓人。<b>模板："当……成为常态，人们不免疑惑：……？答案，藏在……之中。"</b></p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 先立靶再击穿</span>
+      <p>先摆出"中国输出产能"这一片面论调，再用硬数据正面回击。迁移写法：论证"为什么要做某事"时，可先呈现常见误解，再逐一破除，论证张力远强于平铺直叙。<b>模板："提起X，人们习惯认为……。事实果真如此吗？数据给出了另一种答案。"</b></p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 双身份并列式分论点</span>
+      <p>"世界工厂"＋"世界市场"两个身份构成天然并列分论点，且互为补充、层层加码。迁移写法：写乡村振兴可拆"产业沃土＋文化家园"，写教师可拆"经师＋人师"，写城市可拆"生产空间＋生活家园"。<b>要诀：找到对象的两重属性，比硬凑三段更自然。</b></p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · "往实了说／往深了说"</span>
+      <p>同一个问题分两层作答：实处讲利益，深处讲价值观。迁移写法：分析任何政策的意义，都可用"往近了看……往远了看……""于己而言……于人而言……"作双层递进，显思维深度。<b>这是把作答从"是什么"推向"为什么"的高性价比句式。</b></p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 数据梯队化使用</span>
+      <p>本文数据不是罗列，而是分组服务于不同分论点：进口结构数据证"世界工厂"，消费体量数据证"世界市场"，零关税与进博会数据证"主动开放"。迁移写法：<b>每个分论点配1—2组专属数据，切忌把数据全部堆在开头</b>。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 政策术语落点</span>
+      <p>结尾引政治局会议"促进贸易平衡发展"，让评论有了政策锚点。迁移写法：大作文结尾段引用最新中央会议表述或权威论述，既提升站位又体现时政敏感度。<b>建议每周固定摘录1—2条中央会议关键表述备用。</b></p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"开放的中国，机遇的中国"为题，写一段150字左右的申论文章开头段，要求：<b>用设问开篇＋先立误解＋数据破题</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">提出误解（"有人认为开放会冲击本土产业"）→ 设问（"开放，究竟是让渡还是共赢？"）→ 数据回应（进口增速、零关税国家数）→ 亮出观点（开放既是中国的选择，也是世界的机遇）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月9日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
