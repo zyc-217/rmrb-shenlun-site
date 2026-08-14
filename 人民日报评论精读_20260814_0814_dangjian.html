@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以党建之"钥"开治理之"锁"</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以党建之"钥"开治理之"锁"</h1>
+    <div class="meta">人民时评 | 2026年8月14日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：新兴领域党建 · 党建引领基层治理 · 新就业群体 · 共建共治共享</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新兴领域党建</span>
+      <span class="tag-item">党建引领基层治理</span>
+      <span class="tag-item">新就业群体</span>
+      <span class="tag-item">两新组织</span>
+      <span class="tag-item">社会组织</span>
+      <span class="tag-item">流动党员</span>
+      <span class="tag-item">组织覆盖</span>
+      <span class="tag-item">共建共治共享</span>
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">社会治理现代化</span>
+      <span class="tag-item">群众工作</span>
+      <span class="tag-item">权益保障</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">正能量</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"以党建引领基层治理""把党组织建在新业态""新就业群体也是治理力量"等主题；本文<b>"服务—参与—引擎—监督"四维递进</b>结构，是写"党建如何赋能治理"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何加强新兴领域党的建设"——可从<b>织密服务网络（先服务后党建）、激活参与意识（流动网格员）、点燃红色引擎（社会组织共治）、强化监督保障（全面从严治党同步）</b>四层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括新兴领域党建的做法"——可提炼为：<b>行业党组织覆盖、流动党员归队、服务驿站暖心、网格员参与治理、社会组织接单、巡察监督兜底</b>六点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"致新就业群体的一封信""新兴领域党建工作汇报""社区治理经验交流发言"素材；"暖新驿站""流动网格员""主心骨"等表述，极适合写进讲话稿显温度。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："紧迫任务—四维展开—系统提升"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以"新经济组织、新社会组织大量涌现，新业态蓬勃兴起"时代背景起笔，点明<b>"在新兴领域把党组织建起来、把党的工作做深入、把治理效能提上来，成为紧迫任务"</b>；再用<span class="highlight-blue">快递物流、网约车党建空白→行业党组织、流动党员归队、党建指导站</span>三例铺陈。技法：<b>时代背景立题＋排比案例铺陈</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>服务网络</b>——"让流动的人找到温暖的家"。以<span class="highlight-purple">"先把服务做到位，再把党建带起来"</span>破题，河南南阳暖"新"驿站＋三级党组织架构案例，新就业群体从"过客"变"自家亲人"。技法：<b>服务先行逻辑＋温情叙事</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>参与意识</b>——"让治理末梢变前哨力量"。把新就业群体定位为<span class="highlight-blue">"流动网格员"</span>，山西右玉"随手拍"上报＋职能部门快速响应闭环，从服务对象转为参与力量。技法：<b>身份重构＋闭环机制</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>红色引擎</b>——"让社会组织成为共治增量"。以党组织为纽带转化专业优势，安徽合肥<span class="highlight-blue">"网格员点单、孵化园派单、社会组织接单"</span>三单模式。技法：<b>机制命名＋平台思维</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论四</span>
+        <span class="text"><b>监督保障</b>——党建下沉须监督同步。山东滨州将新兴领域党建纳入<span class="highlight-blue">重点工作调度、巡察监督体系</span>，"制度刚性倒逼责任落实"。技法：<b>全面从严治党兜底＋制度刚性</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以"新兴领域党建是系统工程"收束，升华到<span class="highlight-gold">"以服务凝聚人心，以引导激发活力，为中国式现代化贡献更多正能量"</span>。技法：<b>系统工程定位＋双"以"对仗回扣"党建之钥开治理之锁"</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"服务—参与—引擎—监督"四维结构</b>，可整体套用于任何"党建赋能XX"类议题（如"以党建引领乡村振兴""把支部建在产业链上"）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>随着新经济组织、新社会组织大量涌现，以平台经济为代表的新业态蓬勃兴起，新就业形态劳动者规模持续扩大。<span class="highlight-purple">在新兴领域把党的组织建起来、把党的工作做深入、把治理效能提上来，成为紧迫任务。</span></p>
+
+      <p>比如，聚焦快递物流、网约车等细分领域，实现从"党建空白"到"行业党组织"的跨越；摸排、归队流动党员，组建流动党员党支部，实现<span class="highlight-green">"党员流动不流失、管理不断档"</span>；打造党建指导站、设立党建指导员，把关爱服务、权益保障等纳入社会工作内容……</p>
+
+      <p>增强党组织在新兴领域的号召力凝聚力影响力，不仅能引领带动新经济、新行业健康发展，更能为做好社会工作、强化社会治理提供<span class="highlight-gold">"定盘星"与"主动力"</span>。</p>
+
+      <p>《关于加强新时代社会工作的意见》提出：<span class="highlight-blue">"加强新兴领域党的建设。推动党的组织覆盖和工作覆盖有形有效。"</span><span class="highlight-gold">党建工作做实了就是战斗力，做细了就是凝聚力。</span></p>
+
+      <p class="thesis">【总论点】以党建之"钥"开治理之"锁"——在新兴领域把党的组织建起来、把党的工作做深入、把治理效能提上来；坚持党建引领社会工作，以服务凝聚人心、以引导激发活力，新兴领域将为中国式现代化贡献更多正能量。</p>
+
+      <p class="sub-thesis">【分论点一】织密服务网络，让"流动的人"找到"温暖的家"——新就业群体流动性强、节奏快，传统组织覆盖方式难以奏效，破题之道在于先把服务做到位，再把党建带起来。</p>
+
+      <p>新就业群体流动性强、工作节奏快，传统的组织覆盖方式难以奏效。<span class="highlight-purple">破题之道在于，先把服务做到位，再把党建带起来。</span></p>
+
+      <p>在河南南阳市，当地依托<span class="highlight-green">暖"新"驿站为快递员、网约车司机等提供各类服务，并构建三级党组织架构，让流动党员找到组织归属</span>。当党组织的关怀化作日常的温暖，新就业群体从"过客"变为"自家亲人"，<span class="highlight-blue">政治引领与为民服务就此实现深度融合</span>。</p>
+
+      <p class="sub-thesis">【分论点二】激活参与意识，让"治理末梢"变"前哨力量"——新就业群体熟悉社情，是社会治理天然的"流动网格员"，引导其有序参与治理，实现个体价值与社会价值统一。</p>
+
+      <p>新就业群体熟悉社情，是社会治理天然的<span class="highlight-blue">"流动网格员"</span>。将党组织的引领作用嵌入这一群体，不仅能让他们感受到"家"的温暖，更能引导他们有序参与治理，<span class="highlight-purple">实现个体价值与社会价值的统一</span>。</p>
+
+      <p>在山西右玉县，<span class="highlight-green">快递员、外卖骑手多了"流动网格员"的身份，通过"随手拍"上报路面破损、安全隐患等问题，与职能部门形成快速响应闭环</span>。当新就业群体从单纯的服务对象转变为治理的参与力量，<span class="highlight-purple">城市治理的感知触角便能更加灵敏</span>。</p>
+
+      <p class="sub-thesis">【分论点三】点燃红色引擎，让"社会组织"成为"共治增量"——以党组织为纽带，将新经济组织、新社会组织的专业优势转化为服务群众的实际效能。</p>
+
+      <p>加强新经济组织、新社会组织的党建工作，<span class="highlight-purple">核心在于以党组织为纽带，将各类组织的专业优势转化为服务群众的实际效能。</span></p>
+
+      <p>安徽合肥市社会组织综合党委从破解<span class="highlight-green">"规模小、党员少、流动性大"</span>等问题入手，在社区治理中搭建<span class="highlight-blue">"网格员点单、孵化园派单、社会组织接单"</span>的服务模式。<span class="highlight-gold">党建引领让社会组织有了"主心骨"</span>，有助于它们在<span class="highlight-blue">共建共治共享</span>中找准定位、彰显价值。</p>
+
+      <p class="sub-thesis">【分论点四】党建下沉须监督同步，以制度刚性让党的领导政治优势更好彰显——新兴领域党组织覆盖点多面广，全面从严治党、权力监督必须同步跟上。</p>
+
+      <p>党建下沉到社会组织，<span class="highlight-blue">全面从严治党</span>各项工作需同步强化。新兴领域党组织覆盖点多面广、工作对象复杂，<span class="highlight-purple">权力监督必须同步跟上</span>。</p>
+
+      <p>山东滨州市将新兴领域党建工作纳入<span class="highlight-green">市委重点工作调度、巡察监督体系</span>，推动责任层层传导。<span class="highlight-purple">以制度刚性倒逼责任落实</span>，让社会工作在阳光下运行，党的领导的政治优势在新兴领域得到更好彰显。</p>
+
+      <p><span class="highlight-purple">新兴领域党建是一项系统工程</span>，意味着必须提高在复杂社会环境下做群众工作的能力和水平。坚持党建引领社会工作，<span class="highlight-gold">以服务凝聚人心，以引导激发活力</span>，新兴领域将为中国式现代化贡献更多正能量。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民时评 ｜ 2026年8月14日 第05版）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·题眼</span>
+      <p>以党建之"钥"开治理之"锁"。在新兴领域把党的组织建起来、把党的工作做深入、把治理效能提上来，成为紧迫任务。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">党建定位·定盘星</span>
+      <p>增强党组织在新兴领域的号召力凝聚力影响力，不仅能引领带动新经济、新行业健康发展，更能为做好社会工作、强化社会治理提供"定盘星"与"主动力"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政策术语·覆盖</span>
+      <p>加强新兴领域党的建设。推动党的组织覆盖和工作覆盖有形有效。党建工作做实了就是战斗力，做细了就是凝聚力。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·服务先行</span>
+      <p>破题之道在于，先把服务做到位，再把党建带起来。让"流动的人"找到"温暖的家"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">身份重构·网格员</span>
+      <p>新就业群体熟悉社情，是社会治理天然的"流动网格员"。让"治理末梢"变"前哨力量"，实现个体价值与社会价值的统一。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">机制命名·三单</span>
+      <p>"网格员点单、孵化园派单、社会组织接单"——党建引领让社会组织有了"主心骨"，在共建共治共享中找准定位、彰显价值。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">监督保障·刚性</span>
+      <p>全面从严治党各项工作需同步强化。以制度刚性倒逼责任落实，让社会工作在阳光下运行，党的领导的政治优势在新兴领域得到更好彰显。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华·双以</span>
+      <p>坚持党建引领社会工作，以服务凝聚人心，以引导激发活力，新兴领域将为中国式现代化贡献更多正能量。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·服务网络</span>
+      <p>河南南阳依托暖"新"驿站为快递员、网约车司机提供服务，构建三级党组织架构，流动党员找到组织归属，从"过客"变"自家亲人"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·参与治理</span>
+      <p>山西右玉县快递员、外卖骑手兼任"流动网格员"，"随手拍"上报路面破损、安全隐患，与职能部门形成快速响应闭环。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·监督兜底</span>
+      <p>山东滨州将新兴领域党建工作纳入市委重点工作调度、巡察监督体系，推动责任层层传导，以制度刚性倒逼责任落实。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 时代背景立题</span>
+      <p>以"新经济组织、新社会组织大量涌现，新业态蓬勃兴起"时代背景起笔，自然带出紧迫性。迁移写法：<b>凡写新兴领域议题，先点清"背景变了、对象新了"</b>，再亮任务，立论有势。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 排比案例铺陈</span>
+      <p>用"党建空白→行业党组织、流动党员归队、党建指导站"三例排比铺陈。迁移写法：<b>引论段用一组"从…到…"排比</b>，比单例更有覆盖面，显调研扎实。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 服务先行逻辑</span>
+      <p>"先把服务做到位，再把党建带起来"破题。迁移写法：<b>写群众/新群体工作，先讲"服务"再讲"引领"</b>，避免生硬，显方法论温度。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 身份重构</span>
+      <p>把新就业群体从"服务对象"重构为"流动网格员""前哨力量"。迁移写法：<b>用一个新身份/新比喻重构论述对象</b>，文章立骨、易记易背。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 机制命名</span>
+      <p>"网格员点单、孵化园派单、社会组织接单"三单模式。迁移写法：<b>把做法凝成"X单/X链/X圈"短命名</b>，既概括又上口，最适合写进对策段。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 双以对仗收束</span>
+      <p>"以服务凝聚人心，以引导激发活力"双"以"对仗回扣题眼。迁移写法：<b>结尾用"以A…以B…"对仗</b>收束并拔高到"中国式现代化/正能量"，最稳妥升华法。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"把支部建在治理最前沿"为题，写一段150字左右的申论文章开头段，要求：<b>时代背景破题＋亮明一个分论点（如先服务后引领／流动网格员）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">由"新业态蓬勃兴起、新就业群体扩大"切入 → 点出"党建覆盖紧迫" → 亮"先把服务做到位，再把党建带起来"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"服务—参与—引擎—监督"四维结构，为"如何提升城市社区治理精细化水平"列出写作提纲（4个分论点即可）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月14日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
