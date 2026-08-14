@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从菲尔兹奖看中国创新积厚成势</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .header .meta {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 8px;
+  }
+  .content {
+    padding: 28px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 24px 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 16px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 引用 */
+  .quote-box {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border: 1px dashed #ccc;
+    font-style: italic;
+    color: #555;
+    text-indent: 0 !important;
+  }
+  .quote-box::before {
+    content: '"';
+    font-size: 32px;
+    color: #c41e3a;
+    line-height: 1;
+    display: block;
+    margin-bottom: -8px;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .analysis-box h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 14px;
+    color: #555;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 14px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .material-card p {
+    font-size: 15px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从菲尔兹奖看中国创新积厚成势</h1>
+    <div class="meta">人民时评 | 2026年7月30日 | 第05版</div>
+  </div>
+
+  <div class="content">
+    <!-- 图例说明 -->
+    <div class="section-title">标注说明</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color gold"></div>申论金句/名言</div>
+      <div class="legend-item"><div class="legend-color blue"></div>规范表述/政策术语</div>
+      <div class="legend-item"><div class="legend-color green"></div>数据/事实论据</div>
+      <div class="legend-item"><div class="legend-color purple"></div>辩证关系/哲理表述</div>
+    </div>
+
+    <!-- 文章主体 -->
+    <div class="section-title">原文精读</div>
+    <div class="article-body">
+      <p class="thesis">【总论点】中国正以海纳百川、开放包容的气度，聚天下英才而用之，建构优质创新生态，为人才提供更多用武之地。</p>
+
+      <p>历史性的突破！近日，第二十一届菲尔兹奖得主名单揭晓，北京大学2007级本科校友<span class="highlight-green">王虹、邓煜双双获奖</span>，令人振奋。</p>
+
+      <p>被誉为<span class="highlight-blue">"数学界的诺贝尔奖"</span>，菲尔兹奖每4年颁发一次，每次获奖者不超4名，以奖励当年未满40岁、在数学领域作出杰出贡献的学者，含金量自不待言。<span class="highlight-green">中国青年数学家首次在同一届菲尔兹奖中获得2枚奖章</span>，这是开创性的成就。</p>
+
+      <p class="sub-thesis">【分论点一】基础研究是科技创新的源头活水，关乎发展全局。</p>
+
+      <p><span class="highlight-gold">习近平总书记深刻指出："基础研究是整个科学体系的源头，是所有技术问题的总机关。"</span>作为一种底层能力，基础研究关乎发展全局。</p>
+
+      <p>科技创新离不开基础研究，而数学研究是基础中的基础。两名数学家问鼎菲尔兹奖，是中国一以贯之重视<span class="highlight-blue">基础教育、基础研究</span>结出的硕果，折射<span class="highlight-blue">科技强国建设</span>步履稳健。</p>
+
+      <p><span class="highlight-blue">"切实把基础研究工作摆上重要日程""统筹推进原始创新和关键核心技术攻关""推进基础教育扩优提质"</span>……今年以来，从加强基础研究座谈会，到<span class="highlight-blue">"科技三会"</span>，再到全国基础教育工作会议，统筹推进<span class="highlight-blue">教育科技人才一体化</span>，重视基础研究、加强源头创新的导向更加鲜明。思想引领，实践开路，中国创新的未来无比光明。</p>
+
+      <p class="sub-thesis">【分论点二】向着最高峰攀登，中国人志气、骨气、底气十足。</p>
+
+      <p>曾经，<span class="highlight-purple">"李约瑟之问"与"钱学森之问"</span>令人深思警醒。今天，中国科技人才不断站上国际领奖台，有力证明，我们搞基础研究、原创性颠覆性创新也一样行。</p>
+
+      <p>比如，在英国《自然》杂志评出的2025年度十大科学人物榜单中，<span class="highlight-green">DeepSeek（深度求索）创始人梁文锋、中国科学院深海科学与工程研究所研究员杜梦然</span>榜上有名。在科技创新疆场，中国人有非凡的才智，有<span class="highlight-gold">止于至善</span>的追求。</p>
+
+      <p class="sub-thesis">【分论点三】越向上生长越往深处扎根，中国基础教育积水成渊。</p>
+
+      <p><span class="highlight-blue">基础教育是建设教育强国的基点</span>。新时代以来，一所所学校条件好起来，办学治校更规范，<span class="highlight-blue">优质均衡</span>的底色更深厚。同时，更加优质的科学教育和科普服务，激发了更多青少年的<span class="highlight-purple">好奇心、想象力、探求欲</span>。一批批具备科学家潜质、愿意献身科学研究事业的青少年，进入各类高校深造。<span class="highlight-green">教育强国指数显示，2012年以来，中国从第四十九位跃升至第二十一位，是同期进步最快的国家。</span></p>
+
+      <p class="sub-thesis">【分论点四】推进中国式现代化的大舞台上，一切人才都有脱颖而出的机会。</p>
+
+      <p><span class="highlight-green">颜宁揭开"生命暗物质"神秘面纱，王兴兴带领团队频频推出爆款人形机器人，张雪让中国机车享誉国际赛事</span>……从科技创新到产业创新，处处有高台，一切皆有可能。</p>
+
+      <p>如今，各种资源正在向着有利于创新的方向进行配置，束缚创新的条条框框正在深化改革中被打破。</p>
+
+      <p><span class="highlight-green">我国基础研究经费占全社会研发经费比重超7%，研发人员全时当量连续13年稳居世界第一，全球创新指数跃升至第十名</span>……中国正以<span class="highlight-gold">海纳百川、开放包容</span>的气度，<span class="highlight-gold">聚天下英才而用之</span>，建构优质创新生态，为人才提供更多用武之地，最大限度激发创新创造潜能。</p>
+
+      <p><span class="highlight-purple">积蓄更多"从0到1"的力量</span>，打造强大的基础研究和原始创新能力，我国<span class="highlight-blue">高水平科技自立自强</span>的根基不断夯实，创新发展势不可挡。</p>
+    </div>
+
+    <!-- 申论考点解析 -->
+    <div class="analysis-box">
+      <h3>🎯 申论考点映射</h3>
+      <div class="analysis-item">
+        <span class="label">考点一</span>
+        <span class="text"><b>科技创新</b>：基础研究→源头创新→科技自立自强，完整逻辑链</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点二</span>
+        <span class="text"><b>人才强国</b>：聚天下英才→创新生态→人才脱颖而出</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点三</span>
+        <span class="text"><b>教育改革</b>：基础教育扩优提质→激发好奇心/想象力→科学家潜质</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点四</span>
+        <span class="text"><b>高质量发展</b>：教育科技人才一体化→资源配置优化→创新动能</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点五</span>
+        <span class="text"><b>中国式现代化</b>：破与立（破束缚、立生态）→制度优势</span>
+      </div>
+    </div>
+
+    <!-- 论证结构 -->
+    <div class="analysis-box">
+      <h3>📐 论证结构拆解</h3>
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text">以菲尔兹奖"双黄蛋"事件引入（事实论据，震撼开场）</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论1</span>
+        <span class="text">理论论证：引用习语+政策导向，说明基础研究的重要性</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论2</span>
+        <span class="text">对比论证：从"李约瑟之问"到今日成就，彰显志气骨气底气</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论3</span>
+        <span class="text">数据论证：教育强国指数跃升，基础教育厚积薄发</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论4</span>
+        <span class="text">案例论证：颜宁、王兴兴等典型人物，说明舞台广阔</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text">升华到"从0到1""高水平科技自立自强"，展望未来</span>
+      </div>
+    </div>
+
+    <!-- 可迁移素材 -->
+    <div class="section-title">可迁移申论素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">科技创新类</span>
+      <p>"基础研究是整个科学体系的源头，是所有技术问题的总机关。"——可用于任何涉及科技创新、产业升级、核心技术攻关的申论话题开头或论证。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">人才培养类</span>
+      <p>"以海纳百川、开放包容的气度，聚天下英才而用之，建构优质创新生态。"——适用于人才政策、引才育才、创新环境建设等话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">教育改革类</span>
+      <p>"激发青少年的好奇心、想象力、探求欲，培养具备科学家潜质、愿意献身科学研究事业的青少年。"——适用于素质教育、科学教育、双减政策等话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">奋斗精神类</span>
+      <p>"止于至善的追求""向着最高峰攀登，中国人志气、骨气、底气十足"——适用于青年担当、奋斗精神、工匠精神等话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">哲理思辨类</span>
+      <p>"越向上生长越往深处扎根""从0到1的力量"——适用于量变与质变、积累与突破、基础与高度的辩证关系论述。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据</span>
+      <p>• 基础研究经费占全社会研发经费比重超7%<br>• 研发人员全时当量连续13年稳居世界第一<br>• 全球创新指数跃升至第十名<br>• 教育强国指数从第49位跃升至第21位</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 | 2026年8月1日推送<br>
+    来源：人民网-人民日报 | 仅供申论学习交流使用
+  </div>
+</div>
+</body>
+</html>
