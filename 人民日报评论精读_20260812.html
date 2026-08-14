@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以科技向善促民生改善</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以科技向善促民生改善</h1>
+    <div class="meta">现场评论 | 开局起步看活力⑤ | 2026年8月12日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">作者：本报上海分社记者 ｜ 主题：科技向善 · 新质生产力 · 民生保障 · 以人民为中心 · 人的现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">科技创新</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">人工智能治理</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">人的现代化</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">城市更新</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">获得感幸福感安全感</span>
+      <span class="tag-item">科技向善</span>
+      <span class="tag-item">数字鸿沟</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">共建共治共享</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"科技向善""AI时代的民生温度""技术创新要以人为本"等主题；本文<b>"场景对照—历史纵深—现实铺陈—主体深化—系统升华"五步递进立意</b>，是写"科技/改革如何造福人民"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何让科技成果惠及更多群众"——可从<b>以人为本的价值导向、一户一策的精细服务、跨越数字鸿沟的普惠设计、群众参与的评价机制</b>四层作答，这正是本文的天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括'科技向善促民生改善'的内涵"——可提炼为：<b>价值上以人为本、路径上科技赋能、方法上一户一策、落点上民生"三感"、主体上人民共创</b>五点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">问题题</span>
+        <span class="text">本文直面"发展鸿沟"——科技成果若<b>不能跨越地域、群体和发展鸿沟</b>，便难以惠及所有人。该表述可直接背为"数字时代部分群体被落下"类问题的通用表述。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："场景对照入题—五步递进—金句收束"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以"采访中两个场景"对照切入——<b>上海旧改老楼焕新</b>的里弄烟火，与<b>世界人工智能大会习主席"以人为本、向上向善"讲话</b>的文明前沿，反差中引出核心命题"现代化的本质是人的现代化"。技法：<b>双场景对照法</b>，以小见大、举重若轻。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>历史纵深</b>——上海"始终站在技术变革与城市变迁的交汇处"，发展浪潮既推高城市高度、也抬升生活品质。技法：用时间线为"科技+民生"张本，避免就事论事。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>现实铺陈</b>——AI推开未来之门，以<b>智能体科研、机器人与工人协同、洋山港智能调度、社区语音助手</b>一组排比铺陈，落到金句"造福于民"。技法：<b>排比列场景＋四字金句点睛</b>，画面感强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>主体深化</b>——视角由"技术"转向"人民"，点明人民既是<b>受益者、参与者、创造者、评价者</b>，以人民为中心、技术向上向善才能跨越鸿沟。技法：<b>主体视角转换</b>，格局立刻打开。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论四</span>
+        <span class="text"><b>案例印证</b>——市民新村旧改"一户一策"，群众心愿进方案、成效交居民评判，装着"正确政绩观"，城市"兼具高度与温度"。技法：小切口印证大命题＋自然带出政绩观。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论五（升华）</span>
+        <span class="text"><b>系统升华</b>——农村光伏"瓦片"、古城健康传感器、"水电守护"无感监测，用"科技精度丈量民生刻度"重构"人—城—业"关系，把高质量发展转为"三感"红利。技法：从个案跃升到全域，哲理拔高。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以对仗金句<b>"科技向前，人民至上""中国式现代化，民生为大"</b>收束，回扣"以人为本"，落点于"持续书写好的民生答卷"。技法：<b>对仗金句＋首尾呼应"人"</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"场景对照—历史纵深—现实铺陈—主体深化—系统升华"五步结构</b>，可整体套用于任何"科技/改革/发展如何造福人民"类议题（如数字经济有温度、老旧小区改造、适老化服务）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>采访中的两个场景，令人难忘。</p>
+
+      <p>在上海黄浦区半淞园路街道市民新村居民区，<span class="highlight-green">4幢建于上世纪50年代的老楼已经焕新</span>。从几户人家合用厨卫，到加装电梯、改造厨卫，居民的日子越过越舒坦。</p>
+
+      <p>在<span class="highlight-green">2026世界人工智能大会暨人工智能全球治理高级别会议</span>上，面对人工智能发展的机遇和挑战，习近平主席提出<span class="highlight-gold">"秉持以人为本、向上向善理念"</span>的中国方案。</p>
+
+      <p class="thesis">【总论点】科技向前，人民至上。以人民为中心、坚持技术向上向善，才能让创新成果跨越地域、群体和发展鸿沟惠及更多人，在"现代化的本质是人的现代化"的深层逻辑中，持续书写好"民生为大"的时代答卷。</p>
+
+      <p class="sub-thesis">【分论点一】现代化的本质是人的现代化——从告别"拎马桶"到迎接智能时代，技术变革与城市变迁的深层逻辑，始终是让人民生活更美好。</p>
+
+      <p>两个现场，一头连着里弄深处的烟火，一头连着人类文明的前沿。从告别"拎马桶"到迎接智能时代，跨度虽大，内在逻辑却一致，那就是<span class="highlight-purple">"现代化的本质是人的现代化"</span>。</p>
+
+      <p>近代以来，上海始终站在<span class="highlight-blue">技术变革与城市变迁的交汇处</span>。一轮轮发展浪潮把城市建设推向新的高度，也把<span class="highlight-blue">生活品质</span>抬到新的水平。</p>
+
+      <p class="sub-thesis">【分论点二】技术创新的最大价值是"造福于民"——算力、算法、数据赋能千行百业、便利百姓生活，方显科技向善的本色与温度。</p>
+
+      <p>今天，人工智能又一次推开未来之门。实验室里，智能体参与科研；生产线上，机器人与工人协同作业；<span class="highlight-green">洋山港，智能系统调度万千集装箱</span>；社区里，<span class="highlight-green">语音助手为独居老人送上健康提醒，人工智能社工帮助基层工作者处理居民诉求</span>……算力、算法、数据，赋能千行百业，便利百姓生活，彰显技术创新的最大价值——<span class="highlight-gold">"造福于民"</span>。</p>
+
+      <p class="sub-thesis">【分论点三】人民既是受益者也是参与者、创造者、评价者——以人民为中心、坚持技术向上向善，才能跨越发展鸿沟，让科技成果真正惠及更多人。</p>
+
+      <p>人民既是城市建设的受益者，也是<span class="highlight-purple">参与者、创造者、评价者</span>。以人民为中心、坚持技术向上向善，才能确保创新成果<span class="highlight-purple">跨越地域、群体和发展鸿沟</span>，惠及更多人。</p>
+
+      <p class="sub-thesis">【分论点四】城市更新要"兼具高度与温度"——坚持一户一策、群众心愿进方案，以正确政绩观把这"一棒接着一棒"跑好，让发展成果可感可及。</p>
+
+      <p>不妨看看市民新村。旧房改造、老楼更新，空间逼仄、诉求多样，怎么办？上海坚持<span class="highlight-blue">一户一策</span>，做到一户一户协商、一栋一栋推进、一片一片更新。群众的心愿进入方案，邻里的智慧汇入治理，改造的成效交给居民评判。一间独立厨卫的面积有限，但分量很重，里面装着普通家庭对美好生活的期盼，装着赋能品质生活的技术支撑，也装着<span class="highlight-purple">一棒接着一棒跑的正确政绩观</span>。如今，老人上楼更轻松，孩子的活动空间更大，居民在家门口便能买菜、议事、休憩，<span class="highlight-purple">城市发展兼具高度与温度</span>。</p>
+
+      <p class="sub-thesis">【分论点五】用科技精度丈量民生刻度——以系统性创新重构"人—城—业"关系，把高质量发展成果转化为获得感、幸福感、安全感。</p>
+
+      <p>今天的中国，<span class="highlight-blue">社会发展与科技革命同步展开，民生改善与产业进步相互激荡</span>。<span class="highlight-green">农村的屋顶铺开光伏"瓦片"，古城的老砖墙上嵌入检测健康状况的传感器，通过"水电守护"对独居、孤寡老人居家生活数据进行无感监测和智能分析</span>……坚持<span class="highlight-purple">用科技精度丈量民生刻度</span>，以系统性创新重构<span class="highlight-blue">"人—城—业"的关系</span>，高质量发展成果日益转化为增强<span class="highlight-blue">获得感、幸福感、安全感</span>的红利。从这个意义上说，向新发展、向高攀登的活力，来自敢闯新赛道的锐气，来自攻克老难题的韧劲，但根本上来自<span class="highlight-gold">亿万人民创造美好生活的智慧与勇气</span>。</p>
+
+      <p><span class="highlight-gold">科技向前，人民至上。</span>前沿技术与朴素民生在一座城里相汇，人们更能读懂<span class="highlight-gold">"中国式现代化，民生为大"</span>。这正是需要我们持续书写好的民生答卷。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（作者：本报上海分社记者）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">核心金句·人的现代化</span>
+      <p>现代化的本质是人的现代化。（可直接用作"科技/发展如何惠民"类文章立论根基）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">权威金句·科技向善</span>
+      <p>秉持以人为本、向上向善理念。（习近平主席在2026世界人工智能大会提出，可作AI治理/科技伦理类文章题眼）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">价值指向·造福于民</span>
+      <p>技术创新的最大价值——"造福于民"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">人民主体·四元</span>
+      <p>人民既是城市建设的受益者，也是参与者、创造者、评价者。（写民生/治理类时，把"政府做什么"转为"群众参与什么"，格局立开）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">以人民为中心</span>
+      <p>以人民为中心、坚持技术向上向善，才能确保创新成果跨越地域、群体和发展鸿沟，惠及更多人。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·一户一策</span>
+      <p>一户一户协商、一栋一栋推进、一片一片更新。（旧改精细化工作法，可迁移至基层治理、矛盾化解、精准服务）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政绩观·高度与温度</span>
+      <p>装着一棒接着一棒跑的正确政绩观；城市发展兼具高度与温度。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·科技与民生</span>
+      <p>用科技精度丈量民生刻度，以系统性创新重构"人—城—业"的关系。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">目标落点·三感</span>
+      <p>高质量发展成果日益转化为增强获得感、幸福感、安全感的红利。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">动力源泉</span>
+      <p>向新发展、向高攀登的活力……根本上来自亿万人民创造美好生活的智慧与勇气。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华</span>
+      <p>科技向前，人民至上。中国式现代化，民生为大。这正是需要我们持续书写好的民生答卷。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·AI应用</span>
+      <p>智能体参与科研；机器人与工人协同作业；洋山港智能系统调度万千集装箱；社区语音助手为独居老人送健康提醒、人工智能社工协助处理居民诉求。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·数字民生</span>
+      <p>农村屋顶铺开光伏"瓦片"；古城老砖墙嵌入健康监测传感器；"水电守护"对独居、孤寡老人居家生活数据无感监测和智能分析。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·上海旧改</span>
+      <p>黄浦区半淞园路街道市民新村，4幢上世纪50年代老楼焕新，从几户合用厨卫到加装电梯、改造厨卫，居民日子越过低舒坦。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 双场景对照破题</span>
+      <p>里弄旧改的"烟火"与AI大会的"前沿"对照开篇，再提炼共性逻辑"人的现代化"。迁移写法：<b>凡写"科技/发展如何惠民"，先摆一组具象反差场景，再抽其共性内核亮观点</b>。模板："两个场景，令人难忘。一个是……一个是……内在逻辑却一致，那就是……"</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 以小见大＋历史纵深</span>
+      <p>从一栋老楼焕新写到上海"技术变革与城市变迁的交汇处"，小切口撑起大格局。迁移写法：<b>论证宏大命题时，先用个案落地，再用时间线/历史纵深拔高</b>，避免飘在空中。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 排比铺陈＋金句点睛</span>
+      <p>"智能体科研—机器人协同—洋山港调度—社区语音助手"一组排比，收以"造福于民"。迁移写法：<b>论证"科技赋能"时，用"分号＋排比"列多场景，末句以四字金句收束</b>，画面感与记忆点兼得。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 主体视角转换</span>
+      <p>本论三把镜头从"技术"转向"人民是参与者创造者评价者"，格局顿开。迁移写法：写民生/治理类，<b>主动把"政府/技术做什么"转为"群众参与什么、评价什么"</b>，立意立刻从"管理"升到"共治"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 一户一策显精细</span>
+      <p>"一户一户协商、一栋一栋推进、一片一片更新"是旧改方法论，亦可迁移至基层治理、矛盾化解、适老化服务。迁移写法：<b>对策段用"一户一策/一企一策/一题一策"替代"加强统筹"</b>，显精细化、可操作。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 对仗金句收尾</span>
+      <p>"科技向前，人民至上""中国式现代化，民生为大"对仗收束，首尾呼应"人"。迁移写法：<b>结尾用"X向前，Y至上"或"中国式现代化，___为大"句式</b>，既扣题又拔高，是最稳妥的升华法。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"让科技成果更好惠及老年人"为题，写一段150字左右的申论文章开头段，要求：<b>场景切入＋"科技向善/以人为本"核心命题＋一个分论点亮明</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">一组场景（老人面对智能设备的窘境 / 社区语音助手送健康提醒）→ 导出"科技向前，不能落下任何人，要让科技成果惠及老年群体"→ 先亮"科技向善，关键在以人为本"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"场景对照—历史纵深—排比铺陈—主体转换—哲理收束"五步结构，为"如何让数字经济发展更有温度"列出写作提纲（5步即可）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月12日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
