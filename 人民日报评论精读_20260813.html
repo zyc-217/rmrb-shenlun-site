@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从群众切身需要来考量</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从群众切身需要来考量</h1>
+    <div class="meta">评论员观察 | 推进基层工作方法谈③ | 2026年8月13日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：以人民为中心 · 群众路线 · 调查研究 · 正确政绩观 · 基层治理</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">群众路线</span>
+      <span class="tag-item">调查研究</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">矛盾化解</span>
+      <span class="tag-item">雪中送炭</span>
+      <span class="tag-item">实事求是</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">干部作风</span>
+      <span class="tag-item">大兴调查研究</span>
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"从群众切身需要来考量""为民造福是最大政绩""好事实事要从群众需要出发"等主题；本文<b>"立场—调研—担当—深远"四步递进</b>结构，是写"干部如何做好群众工作／基层治理"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何让民生实事办到群众心坎上"——可从<b>站稳人民立场、深入调查研究、敢于碰硬解难、计之深远求治本</b>四层作答，这正是本文的天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括基层干部应有的工作方法"——可提炼为：<b>跳出自我看群众、身入心入情入搞调研、敢往矛盾堆里扎、于枝叶中找治本之策</b>四点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"民情日记""基层工作座谈会发言""致一线干部的一封信"素材；文中"身入心入情入""雪中送炭"等表述，极适合写进讲话稿显接地气。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："反差破题—四步递进—对仗升华"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以<span class="highlight-purple">"乐于干"不等于"善于干"</span>反差切入，抛出"干劲如何使对地方"，再以两个"好心办尴尬事"反例（不锈钢盲道打滑、强清杂树种种蔷薇惹怨）设问"为啥出力不讨好"，引出总书记金句。技法：<b>反差破题＋设问引题</b>，开篇即戳中痛点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>立场层</b>——从"我"的视角跳出来，摆正群众主体地位、站稳人民立场。技法：<b>主体视角转换＋权威金句立骨</b>（"为民造福是最大政绩，人民说了才算"）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>调研层</b>——摸清需求无捷径，唯实事求是、身入心入情入。技法：<b>群众语言点睛</b>（"身入心入情入"）＋正反走访案例＋领袖调研事例（苍霞社区棚改），以小见大。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>担当层</b>——越是棘手越不撒手，敢往矛盾堆里扎、多做雪中送炭。技法：<b>金句定义好干部</b>＋历史遗留问题实例（608户产权证"翻旧账"），显硬核担当。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论四</span>
+        <span class="text"><b>深远层</b>——不只看眼前需求，要计之深远、于"一枝一叶"找治本之策。技法：<b>表象→深层根源剖析</b>（土地纠纷表象→缺产业根源）＋产业治本办法，拔高立意。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以对仗金句<span class="highlight-gold">"从群众需要出发，路越走越宽；从主观意志出发，路便越走越窄"</span>回扣，再以"善于在'一枝一叶'里找到'治本之策'"哲理升华。技法：<b>对仗收束＋首尾呼应"群众"</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"立场—调研—担当—深远"四步结构</b>，可整体套用于任何"群众工作／为民服务／基层治理"类议题（如"把矛盾化解在基层""让政务服务更有温度"）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>不少党员干部是怀揣一腔热情干事情的。不过，<span class="highlight-purple">"乐于干"不等于"善于干"</span>，干劲如何使对地方？务必谨记"从群众切身需要来考量"。</p>
+
+      <p>现实里，不乏好心办出了"尴尬事"。有的地方广泛铺设室外露天盲道，但材质选用了普通不锈钢，<span class="highlight-green">雨雪天走在上面极易打滑，反而存在安全隐患</span>。有的村美化街道，通知村民一律清除家门口"杂树"，统一栽种蔷薇、月季等，<span class="highlight-green">搞得群众有怨气</span>。这两件事，干部的出发点，都是为群众办点事、给地方多添彩。可为什么出力不讨好？"干部自己凭空想，看似在为群众考虑，如果不符合实际，结果根本不对路。"习近平总书记讲得透彻：<span class="highlight-gold">"什么是好事实事，要从群众切身需要来考量，不能主观臆断，不能简单化、片面化。"</span></p>
+
+      <p class="thesis">【总论点】从群众切身需要来考量——摆正群众主体地位、牢牢站稳人民立场，把事办到群众心坎上，才是基层工作方法的正道；从群众需要出发路越走越宽，从主观意志出发路越走越窄。</p>
+
+      <p class="sub-thesis">【分论点一】跳出"我"的视角、站稳人民立场——从"我"的感受中跳出来，摆正群众主体地位，才能把事情办到心坎上，不搞自说自话。</p>
+
+      <p>从"我"的视角、"我"的感受中跳出来，摆正群众主体地位，牢牢站稳人民立场，才能把事情办到心坎上。</p>
+
+      <p>为啥总有干部喜欢"拍脑袋"？上世纪90年代，习近平同志在《从政杂谈》一文中就指出，<span class="highlight-purple">"自以为是"是干部作风"四忌"之一</span>。工作中，有的干部习惯大包大揽，觉得"我是为你好"，实则刚愎自用，决策与群众意愿不相称、不合拍；有的干部怕征询意见"众口难调"，多一事不如少一事，干脆"拍脑袋"，致使政府买单、群众不买账。<span class="highlight-gold">"为民造福是最大政绩"</span>，政绩好不好，人民说了才算，切忌自说自话、自我陶醉。</p>
+
+      <p class="sub-thesis">【分论点二】摸清需求唯有调查研究——没有捷径，要实事求是、下一番苦功，身入更要心入、情入。</p>
+
+      <p>摸清群众需求，没有捷径，唯有实事求是，下一番调查研究的苦功。<span class="highlight-blue">身入，更要心入、情入。</span></p>
+
+      <p>有驻村干部分享，走访时常见两种情况：一种是<span class="highlight-green">上来就夸政策好，嘴里全是感谢、脸上堆着客气，却不愿反映问题</span>；一种是<span class="highlight-green">低头闷着、欲言又止，问一句答半句，仿佛有什么难言之隐</span>。为啥？步子走下去了，心却没贴在一起。</p>
+
+      <p>在福建工作时，习近平同志带着干部们在酷暑下来到<span class="highlight-green">福州市苍霞社区，走进蒸笼一样的木板房调研</span>。亲身体验百姓疾苦，让当地棚改加快了步伐。带着感情，能够共情，掌握实情，才能找准人民之需、谋好工作之要、干出惠民之绩。</p>
+
+      <p class="sub-thesis">【分论点三】越是棘手越不撒手——敢往矛盾堆里扎、多做雪中送炭事，做群众遇难题时第一个想到的人。</p>
+
+      <p>群众生产生活中最迫切的需求，往往指向难点问题。越是棘手，越不能撒手，<span class="highlight-purple">"不能避重就轻，扔了'西瓜'去拣'芝麻'"</span>。</p>
+
+      <p><span class="highlight-green">甘肃华亭市华庭明珠小区，608户居民因开发商税费拖欠、土地手续不全等历史遗留问题，拿不到产权证，心里压着大石头</span>。当地决心解开"死结"，主动"翻旧账"，成立专班一个难题一个难题攻克，证件陆续办下来，居民直呼"心里热乎"。</p>
+
+      <p>做好基层工作，就要<span class="highlight-blue">敢往矛盾堆里扎、多做雪中送炭事</span>。<span class="highlight-gold">什么是好干部？就是群众在遇到难题时能第一个想到的人。</span></p>
+
+      <p class="sub-thesis">【分论点四】计之深远方得治本——不只看眼前需求，要谋之久远，于"一枝一叶"里找到"治本之策"。</p>
+
+      <p>把工作往实里干，<span class="highlight-purple">"不能只看群众眼前的需求，还要看是否会有后遗症"</span>。计之深远、谋之久远，才能维护好群众根本利益。</p>
+
+      <p><span class="highlight-green">重庆奉节县燕子村，曾是信访重点村，土地纠纷频发</span>。县人大代表长期走访发现，争执是表象，根源是本地青壮年大量外出务工，村内缺少稳定增收产业。找准深层次需求、结合本地实际，党员干部带领群众<span class="highlight-blue">发展羊肚菌种植产业，吸纳200余名村民就近务工，年人均增收4000元以上，土地纠纷大幅减少</span>。</p>
+
+      <p><span class="highlight-gold">善于在"一枝一叶"里找到"治本之策"，于更长的时间段、更大的格局中为群众谋福祉，这是一种智慧，也是一种担当。</span></p>
+
+      <p><span class="highlight-gold">从群众需要出发，路就越走越宽；从主观意志出发，路便越走越窄。</span>这个理儿，朴素，却务实管用。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（作者：人民日报评论部 ｜ 推进基层工作方法谈③）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">权威金句·群众需要</span>
+      <p>什么是好事实事，要从群众切身需要来考量，不能主观臆断，不能简单化、片面化。（总书记金句，可作"群众工作"类文章题眼）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政绩观·人民评判</span>
+      <p>为民造福是最大政绩。政绩好不好，人民说了才算，切忌自说自话、自我陶醉。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·干与善</span>
+      <p>"乐于干"不等于"善于干"。干劲如何使对地方？务必谨记从群众切身需要来考量。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">作风警示</span>
+      <p>"自以为是"是干部作风"四忌"之一。有的干部觉得"我是为你好"，实则刚愎自用，决策与群众意愿不相称、不合拍。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·调研</span>
+      <p>摸清群众需求，没有捷径，唯有实事求是，下一番调查研究的苦功。身入，更要心入、情入。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">担当·雪中送炭</span>
+      <p>做好基层工作，就要敢往矛盾堆里扎、多做雪中送炭事。什么是好干部？就是群众在遇到难题时能第一个想到的人。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·避轻就重</span>
+      <p>不能避重就轻，扔了"西瓜"去拣"芝麻"。越是棘手，越不能撒手。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">深远·后遗症</span>
+      <p>不能只看群众眼前的需求，还要看是否会有后遗症。计之深远、谋之久远，才能维护好群众根本利益。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">治本之策</span>
+      <p>善于在"一枝一叶"里找到"治本之策"，于更长的时间段、更大的格局中为群众谋福祉，这是一种智慧，也是一种担当。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华</span>
+      <p>从群众需要出发，路就越走越宽；从主观意志出发，路便越走越窄。这个理儿，朴素，却务实管用。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·历史遗留</span>
+      <p>甘肃华亭市华庭明珠小区，608户居民因税费拖欠、手续不全拿不到产权证；当地"翻旧账"成立专班攻坚，证件陆续办下，居民直呼"心里热乎"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·产业治本</span>
+      <p>重庆奉节燕子村曾是信访重点村，根源在缺稳定增收产业；发展羊肚菌种植吸纳200余名村民就近务工、年人均增收4000元以上，土地纠纷大幅减少。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·领袖调研</span>
+      <p>在福建工作时，习近平同志酷暑中走进福州苍霞社区蒸笼般的木板房调研，亲身体验百姓疾苦，加快当地棚改步伐。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·反例警示</span>
+      <p>露天盲道用普通不锈钢、雨雪天打滑存隐患；村庄强清家门口杂树、统一种蔷薇月季惹群众怨气——"好心办尴尬事"的典型。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 反差破题</span>
+      <p>用"乐于干≠善于干"反差开篇，戳中"出力不讨好"痛点。迁移写法：<b>凡写干部作风／群众工作，先点出"有热情≠有方法"的落差</b>，再亮出核心命题，开篇即有张力。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 反例设问引题</span>
+      <p>摆两个"好心办尴尬事"反例后追问"为啥出力不讨好"，顺势引出金句。迁移写法：<b>用一组反例＋一个设问</b>，比平铺直叙更易勾连读者，也自然带出权威论断。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 群众语言点眼</span>
+      <p>"身入心入情入""翻旧账""雪中送炭"穿插在规范表述间。迁移写法：<b>在"调查研究""担当作为"等术语旁配一句群众语言／形象说法</b>，文章鲜活不呆板。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 表象→根源剖析</span>
+      <p>土地纠纷是表象，缺产业是根源；用"找准深层次需求"转进治本。迁移写法：<b>论证复杂问题先剖表象、再挖根源，对策才有"治本"力度</b>，避免就事论事。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 金句定义好干部</span>
+      <p>"什么是好干部？就是群众在遇到难题时能第一个想到的人。"迁移写法：<b>用"什么是好X？就是…"设问自答句式</b>下定义，干净利落、易记易背。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 对仗句收束</span>
+      <p>"从群众需要出发，路越走越宽；从主观意志出发，路越走越窄。"迁移写法：<b>结尾用"从A…从B…"对仗句式</b>回扣首句，既扣题又拔高，最稳妥的升华法。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"把民生实事办到群众心坎上"为题，写一段150字左右的申论文章开头段，要求：<b>反差／反例破题＋亮明一个分论点（如站稳人民立场／调查研究）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">由"有热情不等于有方法"切入 → 摆一个"好心办尴尬事"反例 → 亮"从群众切身需要来考量、站稳人民立场"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"立场—调研—担当—深远"四步结构，为"如何让政务服务更有温度"列出写作提纲（4个分论点即可）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月13日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
