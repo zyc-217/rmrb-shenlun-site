@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 聚"绿"成势，结构转型活力足</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .header .meta {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 8px;
+  }
+  .content {
+    padding: 28px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 24px 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 16px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 引用 */
+  .quote-box {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border: 1px dashed #ccc;
+    font-style: italic;
+    color: #555;
+    text-indent: 0 !important;
+  }
+  .quote-box::before {
+    content: '"';
+    font-size: 32px;
+    color: #c41e3a;
+    line-height: 1;
+    display: block;
+    margin-bottom: -8px;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .analysis-box h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 14px;
+    color: #555;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 14px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .material-card p {
+    font-size: 15px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .migration-card p {
+    font-size: 15px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>聚"绿"成势，结构转型活力足</h1>
+    <div class="meta">评论员观察 | 2026年8月6日 | 第05版 | 作者：尹双红</div>
+    <div class="meta" style="margin-top:4px;">二〇二六中国经济年中观察④</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">产业结构转型</span>
+      <span class="tag-item">碳达峰碳中和</span>
+      <span class="tag-item">能源安全</span>
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">消费升级</span>
+      <span class="tag-item">人与自然和谐共生</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构图</h3>
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text">以2026年经济"半年报"数据切入：供给端锂电池产量+39.3%、消费端新能源汽车渗透率超60%，用数据建立"绿色趋势"的直观印象</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">过渡</span>
+        <span class="text">提出核心判断：绿色低碳已成为高质量发展的鲜明底色，是"新质生产力本身就是绿色生产力"的有力写照</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论1</span>
+        <span class="text">观念论证：绿色转型"不是选答题而是必答题"——破除"花钱减排"误解，转变思想观念</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论2</span>
+        <span class="text">案例论证一：甘肃瓜州（绿电输送）、江西上饶（生态旅游）——证明"转型并非负担，反而是机遇"</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论3</span>
+        <span class="text">案例论证二：湖南祁阳纺织企业（无水印染）、河南平顶山化工企业（原煤深加工）——证明绿色转型是"系统性变革"</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论4</span>
+        <span class="text">数据论证：生物质燃料+33.0% vs 石油加工+1.9%、生物基材料+21.9% vs 化纤+3.4%——传统产业也能释放绿色新动能</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论5</span>
+        <span class="text">前瞻论证：消费端升级拉动供给革新，碳足迹标签、绿色金融制度完善，绿色消费从"潮流"变"常态"</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text">升华到《"十五五"碳达峰行动方案》，"理念之变"也是"产业之机"，收束到人与自然和谐共生的现代化</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+
+    <!-- 图例说明 -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color gold"></div>申论金句/名言</div>
+      <div class="legend-item"><div class="legend-color blue"></div>规范表述/政策术语</div>
+      <div class="legend-item"><div class="legend-color green"></div>数据/事实论据</div>
+      <div class="legend-item"><div class="legend-color purple"></div>辩证关系/哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p class="thesis">【总论点】产业结构的绿色转型，不是简单地给排放做减法，而是一场全方位、深层次的系统性变革。绿色低碳已经成为高质量发展的鲜明底色，展现出对经济向新向优向好的强大引领力。</p>
+
+      <p>细览2026年经济"半年报"，可以观察到两个明显趋势：供给端，一批契合绿色低碳趋势的新产品快速成长，比如<span class="highlight-green">锂离子电池产量增长39.3%、核发电机组产量增长92.0%</span>；消费端，智能绿色健康消费逐渐成为新的消费风尚，比如<span class="highlight-green">新能源汽车零售渗透率连续3个月超过60%、高能效等级家电零售额增长超过30%</span>。</p>
+
+      <p>发展理念是否对头，从根本上决定着发展成效乃至成败。近年来，我国绿色动能不断成长壮大。从供给端的产业革新，到消费端的需求升级，<span class="highlight-blue">绿色低碳已经成为高质量发展的鲜明底色</span>，展现出对经济向新向优向好的强大引领力，成为<span class="highlight-gold">"新质生产力本身就是绿色生产力"</span>的有力写照。</p>
+
+      <p class="sub-thesis">【分论点一】坚定不移推进产业结构绿色转型，不是选答题而是必答题。</p>
+
+      <p>过去，提及绿色转型，有人错误地将其与"花钱减排"画等号，片面认为转型会增加成本、拖累增长。如今，<span class="highlight-purple">转变思想观念、坚定发展方向</span>，我国产业结构不断向<span class="highlight-blue">高端化、智能化、绿色化</span>演进。</p>
+
+      <p>看甘肃瓜州，从前风沙毁田，如今绿电持续输送。<span class="highlight-green">3月份以来，地缘冲突冲击全球能源供应，而我国主要能源产品生产平稳，清洁能源功不可没。上半年，水电、核电、风电、太阳能发电等清洁能源发电量增长4.6%，占规模以上工业发电量的比重达36.2%。</span></p>
+
+      <p>看江西上饶，鄱阳湖畔的村民没想到，常见的候鸟竟能引来八方游客。田园风光、乡土文化、民俗风情、农家美食……在许多地方，<span class="highlight-blue">生态旅游带动乡村价值"重新被发现"</span>，乡村全面振兴之路更宽广。</p>
+
+      <p>由此而言，<span class="highlight-purple">转型并非负担，反而是机遇所在</span>。从风电、光伏、新能源汽车，到生态旅游、有机农业、林业碳汇，绿色产业发展壮大，带动上下游配套产业协同发展，形成一个个新增长点。</p>
+
+      <p class="sub-thesis">【分论点二】产业结构的绿色转型，不是简单地给排放做减法，而是一场全方位、深层次的系统性变革。</p>
+
+      <p>不妨看看两家企业的账本。湖南祁阳一家纺织企业，自主研发<span class="highlight-blue">无水印染技术</span>，改变传统印染高耗水、高污染、低效率的模式，<span class="highlight-green">一台机器每分钟可完成100米印色作业，同等条件下生产效率提高5倍，成本下降30%，实现废水零排放</span>。河南平顶山的一家化工企业，把原煤深加工成帘子布，<span class="highlight-green">附加值提升25至50倍，远销欧洲、南美、北美等地，国际市场份额超40%</span>。</p>
+
+      <p>以绿色转型为契机，撬动技术升级，带来的是全链条资源利用效率提升，打造出的是<span class="highlight-blue">高效生态绿色产业集群</span>，取得的是<span class="highlight-gold">"在绿色转型中推动发展实现质的有效提升和量的合理增长"</span>的喜人效果。</p>
+
+      <p class="sub-thesis">【分论点三】促进产业结构绿色转型，关键是加快绿色科技创新和先进绿色技术推广应用。</p>
+
+      <p>今年上半年，<span class="highlight-green">规模以上石油加工行业增加值增长1.9%，但是其中的生物质燃料加工行业增长33.0%</span>；<span class="highlight-green">传统的化纤行业增长3.4%，但是其中的生物基材料制造行业增长21.9%</span>。可见，绿色动能不仅存在于新兴产业和未来产业，<span class="highlight-purple">传统产业通过改造提升、数字化改造也能够释放新动能，焕发新的生机和活力</span>。</p>
+
+      <p>展望未来，从主动选择低碳出行，到优先选购节能环保产品，消费端持续升级还将拉动供给革新。随着<span class="highlight-blue">碳足迹标签、绿色金融</span>等制度日益完善，全社会对绿色健康生活方式会越来越认可，<span class="highlight-purple">绿色消费将从"潮流"沉淀为"常态"</span>，为经济高质量发展注入更充沛、更持久的绿色动能。</p>
+
+      <p>前不久，<span class="highlight-blue">《"十五五"碳达峰行动方案》</span>印发，擘画了未来五年的"施工图"。<span class="highlight-gold">绿色发展，是理念之变，也是产业之机</span>。坚定不移走<span class="highlight-blue">生态优先、绿色发展</span>之路，<span class="highlight-gold">人与自然和谐共生的现代化</span>将铺展更壮美的新篇章。</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">绿色发展·核心理念</span>
+      <p>"新质生产力本身就是绿色生产力。"——可直接用于申论中论述新质生产力、绿色发展、高质量发展的开头或论证段落，一语破题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证思维·转型认知</span>
+      <p>"产业结构的绿色转型，不是简单地给排放做减法，而是一场全方位、深层次的系统性变革。"——适用于"破与立""减法与加法"辩证论述，可用于环保与经济关系的申论话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">机遇观·破题金句</span>
+      <p>"转型并非负担，反而是机遇所在。"——适用于任何涉及"化危为机""挑战与机遇"辩证关系的申论话题，简洁有力。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">质量统一·经典表述</span>
+      <p>"在绿色转型中推动发展实现质的有效提升和量的合理增长。"——规范政策表述，适用于高质量发展、新发展理念等话题的论证收束。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">升华收尾·两用金句</span>
+      <p>"绿色发展，是理念之变，也是产业之机。""人与自然和谐共生的现代化将铺展更壮美的新篇章。"——适用于生态文明、绿色发展类文章的结尾升华，格局大、气势足。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">趋势判断·消费升级</span>
+      <p>"绿色消费将从'潮流'沉淀为'常态'。"——"潮流→常态"的表述极具张力，适用于消费升级、社会风尚转变、制度长效化等话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">传统产业·辩证论</span>
+      <p>"绿色动能不仅存在于新兴产业和未来产业，传统产业通过改造提升、数字化改造也能够释放新动能，焕发新的生机和活力。"——适用于"旧动能与新动能""传统与新兴"辩证关系的论述。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据·绿色发展</span>
+      <p>• 锂离子电池产量增长39.3%，核发电机组产量增长92.0%<br>• 新能源汽车零售渗透率连续3个月超60%<br>• 清洁能源发电量占规模以上工业发电量比重达36.2%<br>• 生物质燃料加工行业增长33.0%（vs 石油加工+1.9%）<br>• 生物基材料制造行业增长21.9%（vs 化纤+3.4%）<br>• 无水印染技术：效率提高5倍、成本下降30%、废水零排放<br>• 原煤深加工帘子布：附加值提升25至50倍</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">迁移一：数据开篇法</span>
+      <p>本文以"半年报"数据切入，供给端与消费端双线并进，一开头就建立"绿色趋势"的直观说服力。<b>迁移要点</b>：申论开头可用"一组对比数据"破题，如"看A端……看B端……"，形成双重视角，既全面又有冲击力。注意数据要新、要准、要形成对比张力。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">迁移二：破立结合法</span>
+      <p>本文用"不是选答题而是必答题""不是简单地给排放做减法，而是系统性变革"等句式，先破误解再立正确认知。<b>迁移要点</b>：遇到有争议的话题（如环保与经济、安全与发展），可用"不是……而是……"句式破旧立新，展现辩证思维深度。但注意每段只用一次，避免堆砌。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">迁移三：双案例对照法</span>
+      <p>甘肃瓜州（能源转型）+ 江西上饶（生态旅游），一工业一农业，一西北一中部，形成地域与产业的双维度对照。<b>迁移要点</b>：申论论证时选两个案例，尽量覆盖不同地区、不同领域，增强论证的普适性。案例要有"从前……如今……"的对比张力。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">迁移四：微观企业账本法</span>
+      <p>用两家企业的具体账本（无水印染5倍效率、原煤深加工25-50倍附加值），把宏观政策落到微观经营层面。<b>迁移要点</b>：申论中谈到政策成效时，可用"一家企业的账本"作为论证支撑，让抽象政策具象化。数据越具体（5倍、30%、40%），说服力越强。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">迁移五：潮流常态升华法</span>
+      <p>结尾用"从'潮流'沉淀为'常态'"收束，将阶段性现象升华为长效趋势，再以"理念之变，也是产业之机"双句式点题。<b>迁移要点</b>：申论结尾可用"从……到……"的动态表述，展现事物发展的历史纵深，最后用"是……也是……"双命题收束，兼顾理念和实践两个层面。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 | 2026年8月6日推送<br>
+    来源：人民网-人民日报 | 仅供申论学习交流使用
+  </div>
+</div>
+</body>
+</html>
