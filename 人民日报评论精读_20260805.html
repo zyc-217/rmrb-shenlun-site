@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 服务提质，内需扩容有保障</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .header .meta {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 8px;
+  }
+  .content {
+    padding: 28px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 24px 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 16px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 引用 */
+  .quote-box {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border: 1px dashed #ccc;
+    font-style: italic;
+    color: #555;
+    text-indent: 0 !important;
+  }
+  .quote-box::before {
+    content: '"';
+    font-size: 32px;
+    color: #c41e3a;
+    line-height: 1;
+    display: block;
+    margin-bottom: -8px;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .analysis-box h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 14px;
+    color: #555;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 14px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .material-card p {
+    font-size: 15px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>服务提质，内需扩容有保障</h1>
+    <div class="meta">评论员观察 · 2026中国经济年中观察③ | 2026年8月5日 | 第05版 | 作者：李铁林</div>
+  </div>
+
+  <div class="content">
+
+    <!-- 板块一：申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="analysis-box">
+      <div class="analysis-item">
+        <span class="label">考点一</span>
+        <span class="text"><b>扩大内需 / 消费升级</b>：服务业是扩大内需战略基点，生活性服务业从"卖实物"到"卖体验"，打开消费新空间。可直接用于"促消费、扩内需"类大作文。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点二</span>
+        <span class="text"><b>新质生产力 / 产业升级</b>：从"制造立身"到"服务强体"，生产性服务业赋能传统产业，催动产业起跳，擦亮"中国智造"名片。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点三</span>
+        <span class="text"><b>高质量充分就业</b>：服务业升级催生新赛道新职业（运动数据分析师、数字孪生工程师等），为普通人创造"新饭碗""好饭碗"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点四</span>
+        <span class="text"><b>高质量发展</b>：服务业质效提升→赋能实体经济+丰富民生供给→培育新质生产力+畅通经济循环，完整逻辑链。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点五</span>
+        <span class="text"><b>民生保障 / 美好生活</b>：文旅体商融合、研学游升温、"票根经济"串起吃住行游购娱，精准匹配高品质生活向往。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点六</span>
+        <span class="text"><b>供给侧结构性改革</b>：服务业扩能提质行动，"需求牵引、改革攻坚、科技赋能、开放合作"十六字方针。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点七</span>
+        <span class="text"><b>实体经济</b>：服务业"托举工业的有力羽翼"，生产性服务业让产业运转更顺、附加值更高。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">考点八</span>
+        <span class="text"><b>数字经济 / 科技赋能</b>：工业AI孪生技术、专属智能体等科技手段赋能传统产业降本增效。</span>
+      </div>
+    </div>
+
+    <!-- 板块二：文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构拆解</h3>
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text">以"朋友装修"的生活化场景切入，引出服务业迭代升级趋势；用上半年三组数据（规模41.4万亿、零售额+5.3%、形态多元）铺陈全景，提出总论点——服务业成为"托举工业的羽翼、润泽民生的活水、支撑增长的引擎"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论1</span>
+        <span class="text"><b>生活性服务业→扩大内需</b>：从"卖实物"到"卖体验"、从物质消费到情绪消费，以文旅领域数据（12.3%增长）+案例（足球联赛票根经济、研学游）论证消费新空间。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论2</span>
+        <span class="text"><b>生产性服务业→产业升级</b>：群核科技+杭叉集团、浪潮云洲+济南重工两个典型案例，论证AI孪生、智能体赋能传统制造降本增效。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论3</span>
+        <span class="text"><b>服务业→就业民生</b>：从"服务人"到"成就人"的升华，列举新职业（运动数据分析师等），论证服务业创造高质量就业。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text">引用习近平总书记重要指示+国务院文件目标（100万亿），落脚"服务风"势头正盛，升华到满足人民多样化多层次需求、支撑经济向新向优发展。</span>
+      </div>
+    </div>
+
+    <!-- 板块三：原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <!-- 图例说明 -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color gold"></div> 申论金句/名言</div>
+      <div class="legend-item"><div class="legend-color blue"></div> 规范表述/政策术语</div>
+      <div class="legend-item"><div class="legend-color green"></div> 数据/事实论据</div>
+      <div class="legend-item"><div class="legend-color purple"></div> 辩证关系/哲理表述</div>
+    </div>
+
+    <div class="article-body">
+
+      <p class="thesis">【总论点】<span class="highlight-gold">服务业质效持续提升，成为托举工业的有力羽翼、润泽民生的涓涓活水、支撑增长的主要引擎。</span>更好促进服务业优质高效发展，有助于赋能实体经济、丰富民生供给，为培育<span class="highlight-blue">新质生产力</span>、<span class="highlight-blue">畅通经济循环</span>提供不竭动能。</p>
+
+      <p>朋友装修新房，却不常去监工。一问才知，装修公司提供监控平台方便查看施工实况，第三方监理也及时跟进验收细节。家装服务迭代升级，消费者省心省力省时间。</p>
+
+      <p>身边故事折射发展趋势。今年上半年，服务业交出一份亮眼成绩单。看规模，<span class="highlight-green">服务业增加值41.4万亿元，快于经济增速0.5个百分点</span>。看带动，<span class="highlight-green">服务零售额同比增长5.3%</span>，领跑消费市场。看形态，<span class="highlight-blue">生产性服务业融合创新，生活性服务业扩围提质，新兴服务业培育壮大</span>，活力与动力皆强劲。</p>
+
+      <p>过去，劳动强度大，薪酬水平有限，技术含量不高，是传统服务业被贴上的标签。如今，<span class="highlight-gold">服务业质效持续提升，成为托举工业的有力羽翼、润泽民生的涓涓活水、支撑增长的主要引擎。</span>更好促进服务业优质高效发展，有助于赋能实体经济、丰富民生供给，为培育新质生产力、畅通经济循环提供不竭动能。</p>
+
+      <p class="sub-thesis">【分论点一】立足扩大内需这个战略基点，服务业是挖潜的重点。生活性服务业蓬勃向好，不断打开消费需求的新空间。</p>
+
+      <p>从卖实物扩展到卖体验，从物质消费延伸到情绪消费，<span class="highlight-blue">生活性服务业</span>蓬勃向好，既是百姓美好生活的直观写照，也不断打开消费需求的新空间。</p>
+
+      <p>以文旅休闲领域为例，上半年，<span class="highlight-green">旅游游览和娱乐服务销售收入同比增长12.3%</span>。多地城市足球联赛火爆，<span class="highlight-green">"票根经济"串起吃住行游购娱</span>，有效延长消费链条；<span class="highlight-green">"跟着课本去旅行"走红</span>，教育类旅游产品不断丰富，亲子游、研学游热度持续攀升……<span class="highlight-purple">在产品设计、体验升级上下足功夫，精准匹配人们对高品质生活的向往</span>，消费对经济发展的基础性作用有效发挥。</p>
+
+      <p class="sub-thesis">【分论点二】从"制造立身"到"服务强体"，服务业是催动产业起跳、促进新质生产力萌发的重要引擎。</p>
+
+      <p><span class="highlight-blue">生产性服务业</span>虽不直接对接个体消费者，却通过让产业运转得更顺、附加值更高，促进<span class="highlight-blue">内需扩容提质</span>。</p>
+
+      <p>在浙江，<span class="highlight-green">群核科技公司提供工业AI孪生技术，助力杭叉集团压缩物流仓库规划与3D可视化设计周期</span>；在山东，<span class="highlight-green">浪潮云洲公司打造专属智能体，帮助济南重工破解磨机运维难题</span>……生产性服务业帮助传统产业破解成本高、效率低、创新不足等痛点，擦亮的正是<span class="highlight-blue">"中国智造"</span>这张亮丽名片。</p>
+
+      <p class="sub-thesis">【分论点三】更深层次看，服务业不仅服务人，更成就人。服务业催生新职业，促进高质量充分就业。</p>
+
+      <p><span class="highlight-purple">更深层次看，服务业不仅服务人，更成就人。</span>服务业增长的底层逻辑，在于<span class="highlight-purple">经济活动向专业化协作持续演进</span>，有助于在全社会范围实现更高效的人力资源配置。</p>
+
+      <p>服务业的蝶变，最动人的不是数据，而在于给普通人创造了<span class="highlight-gold">"新饭碗""好饭碗"</span>。服务业升级过程中催生的新赛道、新职业，可以促进<span class="highlight-blue">高质量充分就业</span>、增强经济活力。<span class="highlight-green">运动数据分析师、数字孪生工程技术人员、健康照护师、研学旅行指导师……一大批新职业拔节生长</span>，让劳动者有了更多元的发展路径。</p>
+
+      <p>今年4月，习近平总书记就服务业发展作出重要指示，要求<span class="highlight-gold">"突出需求牵引、改革攻坚、科技赋能、开放合作，深入实施服务业扩能提质行动"</span>。不久前，国务院出台文件，提出<span class="highlight-green">到2030年，服务业总规模迈上100万亿元台阶</span>。<span class="highlight-gold">目标有了，政策给了，剩下的就是撸起袖子加油干，共同谱写服务业优质高效发展新篇章。</span></p>
+
+      <p>文博研学席位紧俏，夜市客流持续不断，入境游客领略东方神韵……眼下暑意正浓，<span class="highlight-blue">服务消费</span>同样蓬勃升温。文旅体验、休闲业态、跨境旅行多点发力，见证<span class="highlight-blue">服务消费</span>巨大潜力。<span class="highlight-purple">以更专业、更贴心、更优质的服务，不断满足经济社会转型升级和人民群众多样化多层次需求</span>，服务业就能为<span class="highlight-blue">经济向新向优发展</span>提供更有力支撑。<span class="highlight-gold">这股"服务风"，势头正盛，前途光明！</span></p>
+
+    </div>
+
+    <!-- 板块四：申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">高质量发展类</span>
+      <p>"服务业质效持续提升，成为托举工业的有力羽翼、润泽民生的涓涓活水、支撑增长的主要引擎。"——可用于论述服务业与高质量发展关系的申论大作文，作为分论点段首句或结尾升华句。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">扩大内需类</span>
+      <p>"立足扩大内需这个战略基点"——精炼概括内需战略定位。搭配："从卖实物扩展到卖体验，从物质消费延伸到情绪消费"，生动说明消费升级内涵。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">新质生产力类</span>
+      <p>"从'制造立身'到'服务强体'，服务业是催动产业起跳、促进新质生产力萌发的重要引擎。"——精准概括制造业与服务业融合的发展逻辑，适用于产业升级话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">就业/民生类</span>
+      <p>"服务业不仅服务人，更成就人。""给普通人创造了'新饭碗''好饭碗'。"——短句有力，可用于就业优先、民生保障、共同富裕等话题。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政策引用类</span>
+      <p>习近平总书记："突出需求牵引、改革攻坚、科技赋能、开放合作，深入实施服务业扩能提质行动。"——十六字方针，完整政策表述，可直接引用在大作文的策论部分。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">产业升级类</span>
+      <p>"生产性服务业虽不直接对接个体消费者，却通过让产业运转得更顺、附加值更高，促进内需扩容提质。"——解释生产性服务业价值的经典表述，"擦亮'中国智造'亮丽名片"可作为升华句。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">哲理思辨类</span>
+      <p>"经济活动向专业化协作持续演进"——解释服务业底层逻辑的学术化表述。"以更专业、更贴心、更优质的服务，不断满足……多样化多层次需求"——可用于供给侧改革话题的结论部分。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">时代气象类</span>
+      <p>"这股'服务风'，势头正盛，前途光明！"——富有感染力的结尾句，可用于大作文结尾升华。"目标有了，政策给了，剩下的就是撸起袖子加油干。"——接地气的号召句式。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据</span>
+      <p>• 服务业增加值41.4万亿元，快于经济增速0.5个百分点<br>• 服务零售额同比增长5.3%，领跑消费市场<br>• 旅游游览和娱乐服务销售收入同比增长12.3%<br>• 新职业：运动数据分析师、数字孪生工程技术人员、健康照护师、研学旅行指导师<br>• 国务院目标：到2030年，服务业总规模迈上100万亿元台阶</p>
+    </div>
+
+    <!-- 板块五：写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="analysis-box">
+      <h3>✍️ 写作迁移应用</h3>
+      <div class="analysis-item">
+        <span class="label">应用一</span>
+        <span class="text"><b>开头模板</b>：当申论材料涉及"服务业""消费""就业"话题时，可以这样开头——"从家装服务的智能监工，到'票根经济'串起吃住行游购娱，再到AI孪生技术赋能传统制造，服务业正从'幕后'走向'台前'，成为托举工业的羽翼、润泽民生的活水。如何让这股'服务风'势头更盛？关键在于……"，既引现象又抛问题，自然过渡到分析论证。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用二</span>
+        <span class="text"><b>分论点套路</b>：本文"生活性服务业→内需 / 生产性服务业→产业 / 服务业→就业"三分法，可迁移到任何产业类话题。套路是：①找需求侧（消费/民生）②找供给侧（产业/技术）③找社会侧（就业/公平），三线并进，覆盖面广。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用三</span>
+        <span class="text"><b>"小切口+大数据"论证法</b>：本文用"朋友装修"做开场小故事，立刻跟"服务业增加值41.4万亿"形成张力——微观感受与宏观数据呼应，增强说服力。写申论时也可以用"身边人/身边事→宏观数据→政策导向"的叙事链条。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用四</span>
+        <span class="text"><b>"策论"素材</b>：习近平总书记"需求牵引、改革攻坚、科技赋能、开放合作"十六字方针，本身就是一套策论框架。遇到"如何推动XX发展"类策论文题目，可直接套用：需求牵引（市场导向）→改革攻坚（制度保障）→科技赋能（创新驱动）→开放合作（内外联动），四大维度自洽完整。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用五</span>
+        <span class="text"><b>结尾升华</b>："目标有了，政策给了，剩下的就是撸起袖子加油干"——这种"接地气+有力道"的结尾很有感染力，比纯口号式更有温度。搭配"势头正盛，前途光明"做收束，既有信心又不过度煽情。</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 | 2026年8月5日推送<br>
+    来源：人民网-人民日报 | 仅供申论学习交流使用
+  </div>
+</div>
+</body>
+</html>
