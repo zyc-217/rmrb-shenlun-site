@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 党员干部要经得住"看"</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>党员干部要经得住"看"</h1>
+    <div class="meta">评论员观察 | 推进基层工作方法谈② | 2026年8月11日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">作者：李铁林 ｜ 主题：作风建设 · 基层治理 · 正确政绩观 · 群众路线</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">党的建设</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">群众路线</span>
+      <span class="tag-item">潜绩与显绩</span>
+      <span class="tag-item">当前与长远</span>
+      <span class="tag-item">接受监督</span>
+      <span class="tag-item">干部担当作为</span>
+      <span class="tag-item">政治生态</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">机制创新</span>
+      <span class="tag-item">为民造福</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">权力清单</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"经得住看""干部敢为带动群众敢首创""凝聚群众力量""把腰身弯下去、把本领亮出来"等主题；本文<b>"行动力—权责—政绩观—监督"的四维递进立意</b>，是写"干部作风建设"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何让基层干部赢得群众信任"——可从<b>带头干（身体力行）、扛责任（权责统一）、谋长远（潜绩显绩）、受监督（阳光运行）</b>四层作答，这正是本文的天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括党员干部'经得住看'的内涵"——可提炼为：<b>看得见的行动表率、扛得起的权责担当、经得远的正确政绩观、晒得清的阳光监督</b>四点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">问题题</span>
+        <span class="text">本文直面三种"怕"的心态——<b>怕同群众接触惹事上身、怕为群众办事麻烦缠身、怕被群众察觉谋取私利脱不开身</b>，可直接背为"部分干部作风不实、脱离群众"类材料的通用问题表述。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："由事及理—四维递进—群像收束"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">从"与几名奔赴基层的干部交流"切入，借"凝聚力"之问引出俗语<b>"村看村、户看户、群众看党员、党员看干部"</b>，自然导出核心命题——党员干部必须<b>经得住"看"</b>。技法：对话式开头，亲切又有代入感。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>看的是行动力</b>——先引习近平总书记"在上面要求人、在后面推动人，都不如在前面带动人管用"，再以<b>梁家河建沼气池（到15里外挖沙、背水泥、自办烧灰场）</b>的亲历细节作极致例证，落到"乡村干部率先流转土地、社区干部走家串户"的当下实践。技法：<b>权威论述＋典型故事＋现实映照</b>三层咬合。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>看行动力，也是看权责关系</b>——以"在其位谋其政，任其职尽其责"立论，提出<b>"下水蹚路子，而非岸上喊号子"</b>的辩证金句，把"带头干"上升到"敢担责"。技法：由行动层推进到责任层，维度不重叠。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>实干聚人心，考验的是政绩观</b>——以余村"关停水泥厂矿山、集体收入断崖式下滑"的转型阵痛切入，引出<b>"既要做看得见、得实惠的实事，也要做为后人打基础、利长远的好事"</b>，点明"当前与长远的辩证关系"。技法：用真实阵痛讲透"潜绩与显绩"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论四（递进）</span>
+        <span class="text"><b>进而言之，"看"也是监督</b>——先剖三种"怕"的私心心态，再引"把整治群众身边不正之风和腐败问题作为重要任务常态化地抓"，最后以<b>义乌"村级项目招标公信平台"、张掖"4类小微权力清单"</b>两个机制创新案例收束对策。技法：从作风自律滑向制度他律，逻辑闭环。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以<b>焦裕禄、谷文昌、杨善洲</b>模范群像收束，用"群众看的，是行动表率，是长远格局，也是品行作风"回扣标题，落点于<b>"以干部敢为带动群众敢首创"</b>。技法：<b>群像点题＋金句升华，首尾呼应"看"字</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"行动力—权责—政绩观—监督"四维递进</b>框架，可整体套用于任何"干部如何作为"类议题（如年轻干部下沉、优化营商环境、乡村振兴一线）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>和几名奔赴基层的干部交流，谈及开展工作的关键，好几个人不约而同地提到"凝聚力"——如何让群众的力量拧成一股绳。</p>
+
+      <p>的确，孤掌难鸣，倘若不能调动群众的积极性、主动性、创造性，再好的愿景也难以转化为现实。</p>
+
+      <p>怎样凝聚群众？俗话说得好：<span class="highlight-gold">"村看村、户看户、群众看党员、党员看干部。"</span>要想赢得信任，党员干部就必须经得住"看"。</p>
+
+      <p class="thesis">【总论点】党员干部要经得住"看"——以身体力行的行动力赢得信任，以勇于担责的权责观扛起使命，以功成不必在我的政绩观谋划长远，以坦荡无私的自律接受监督，方能在高质量发展的道路上凝聚群众、筑牢基层治理的坚强堡垒。</p>
+
+      <p class="sub-thesis">【分论点一】看的是行动力——身体力行、以身作则，才能充分调动各方面积极性。</p>
+
+      <p>看的是行动力。习近平总书记强调：<span class="highlight-gold">"在上面要求人、在后面推动人，都不如在前面带动人管用。"</span><span class="highlight-blue">身体力行、以身作则</span>，才能充分调动各方面积极性。</p>
+
+      <p>比如，基层工作中，难免遇到群众心怀疑虑、不愿配合的情况。担任梁家河大队党支部书记时，为缓解燃料短缺，习近平同志打算学习四川经验建沼气池。有人不信："四川暖，延川冷，沼气在咱这儿办不成！"如何破局？唯有带头实干。<span class="highlight-green">建池的沙子没有，就带大家到15里外的前马沟去挖；水泥运不进来，又带领村民从15里外的公社背回来；缺石灰，就自己办烧灰场</span>……陕北高原第一盏沼气灯点亮，群众深受鼓舞。</p>
+
+      <p>疑虑，往往源于看不清出路、摸不透收益。无论哪一种，只有<span class="highlight-purple">扑下身子带好头，拿出可行路径，带来发展红利</span>，才能点燃群众干事创业的热情。乡村发展，村干部率先流转自家土地；城市更新，社区干部走家串户协调方案……新时代以来一位位基层先进工作者无不是如此。</p>
+
+      <p class="sub-thesis">【分论点二】看行动力，也是看权责关系——"在其位谋其政，任其职尽其责"，把责任扛在肩上、下水蹚路子。</p>
+
+      <p>看行动力，也是看权责关系。<span class="highlight-gold">"在其位谋其政，任其职尽其责"</span>，这是对党员干部最基本的要求。不辜负党和人民赋予的权力，就要勇于把责任扛在肩上。<span class="highlight-purple">下水蹚路子，而非岸上喊号子</span>，自然能得到人民群众的拥护和支持。</p>
+
+      <p class="sub-thesis">【分论点三】实干聚人心，考验的是政绩观——统筹好潜绩与显绩，方能经得起长远看、反复看。</p>
+
+      <p>实干聚人心，如何干考验的则是政绩观。<span class="highlight-purple">统筹好潜绩与显绩，方能经得起长远看、反复看。</span></p>
+
+      <p>浙江安吉余村，粗放发展无以为继，村干部决定关停水泥厂和矿山。<span class="highlight-green">村集体收入断崖式下滑，有人拿着碗筷在村委会办公楼前敲得"咣当咣当"响</span>。转型阵痛来袭，怎么走下去？转变发展理念，摒弃虚功短视，才能绘就现代乡村新图景。修整坑洼村道，恢复山体生态，探索绿色产业……<span class="highlight-green">余村重现绿水青山，赢得金山银山</span>。回头看，来路艰难但正确。</p>
+
+      <p><span class="highlight-gold">"既要做让老百姓看得见、摸得着、得实惠的实事，也要做为后人作铺垫、打基础、利长远的好事"</span>。短视逐利、营造噱头或可刮起"一阵风"，声势也许不小，但终究不可持续。<span class="highlight-purple">正确处理当前与长远的辩证关系</span>，干事创业才更有方位感，才能创造经得起实践和历史检验、真正造福人民、得到群众公认的业绩。</p>
+
+      <p class="sub-thesis">【分论点四】进而言之，"看"也是监督——阳光是最好的防腐剂，以机制创新确保群众看得清楚。</p>
+
+      <p>进而言之，"看"也是监督。怕同群众接触惹事上身、怕为群众办事麻烦缠身、怕被群众察觉谋取私利脱不开身……种种怕，都是私心作祟。作风和纪律决定党员干部在群众中的形象，也影响基层党组织的政治生态。<span class="highlight-blue">作风好、形象佳，群众才会真心跟随；纪律严、政治生态好，战斗堡垒才会坚强牢固。</span></p>
+
+      <p>习近平总书记指出，<span class="highlight-blue">"把整治群众身边不正之风和腐败问题作为重要任务常态化地抓"</span>。</p>
+
+      <p><span class="highlight-gold">阳光是最好的防腐剂。</span>浙江义乌城西街道建立<span class="highlight-green">"村级项目招标公信平台"</span>，保证项目全程挂网、留痕可查；甘肃张掖建立<span class="highlight-green">4类小微权力清单</span>，将大伙的关切事"晒"得明明白白……以机制创新确保群众看得清楚，有助于让基层党员干部强作风，让群众在"一目了然"中增强信任感。</p>
+
+      <p>群众看的，是行动表率，是长远格局，也是品行作风。焦裕禄、谷文昌、杨善洲……对于模范干部，群众无不是看在眼里，感念在心中。<span class="highlight-gold">以干部敢为带动群众敢首创</span>，在高质量发展的道路上，基层这一力量之源定会迸发出澎湃活力，激荡起无限潜能。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（作者：李铁林）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">核心金句·群众观点</span>
+      <p>村看村、户看户、群众看党员、党员看干部。要想赢得信任，党员干部就必须经得住"看"。（可直接用作作风建设类文章开头）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">行动力·权威金句</span>
+      <p>在上面要求人、在后面推动人，都不如在前面带动人管用。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">权责观</span>
+      <p>在其位谋其政，任其职尽其责。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·担当</span>
+      <p>下水蹚路子，而非岸上喊号子。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政绩观·对仗金句</span>
+      <p>既要做让老百姓看得见、摸得着、得实惠的实事，也要做为后人作铺垫、打基础、利长远的好事。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·当前与长远</span>
+      <p>正确处理当前与长远的辩证关系，干事创业才更有方位感，才能创造经得起实践和历史检验、真正造福人民、得到群众公认的业绩。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">监督·比喻金句</span>
+      <p>阳光是最好的防腐剂。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">作风纪律</span>
+      <p>作风好、形象佳，群众才会真心跟随；纪律严、政治生态好，战斗堡垒才会坚强牢固。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政策术语·常态化整治</span>
+      <p>把整治群众身边不正之风和腐败问题作为重要任务常态化地抓。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华</span>
+      <p>以干部敢为带动群众敢首创，在高质量发展的道路上，基层这一力量之源定会迸发出澎湃活力，激荡起无限潜能。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">问题表述·三种"怕"</span>
+      <p>怕同群众接触惹事上身、怕为群众办事麻烦缠身、怕被群众察觉谋取私利脱不开身……种种怕，都是私心作祟。（可直接背为"干部脱离群众"类问题素材）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·余村转型</span>
+      <p>浙江安吉余村关停水泥厂和矿山，村集体收入断崖式下滑，有人拿碗筷在村委会前敲得"咣当咣当"响；转变理念后修路复绿、发展绿色产业，重现绿水青山、赢得金山银山。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例数据·机制创新</span>
+      <p>浙江义乌城西街道建"村级项目招标公信平台"，项目全程挂网、留痕可查；甘肃张掖建4类小微权力清单，把群众关切事"晒"得明明白白。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">细节论据·梁家河</span>
+      <p>为建沼气池，习近平同志带大家到15里外的前马沟挖沙、从15里外的公社背回水泥、自己办烧灰场，点亮陕北高原第一盏沼气灯。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">群像素材·模范干部</span>
+      <p>焦裕禄、谷文昌、杨善洲——群众看在眼里、感念在心中，是"经得住看"的标杆群像，可作结尾排比。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 俗语/民谚破题</span>
+      <p>"村看村、户看户、群众看党员、党员看干部"——用群众耳熟能详的俗语开篇，比抽象说理更接地气、更有记忆点。迁移写法：<b>凡写"干群关系/作风/榜样"类文章，先抛一句俗语或群众口头禅，再顺势亮出观点。</b>模板："俗话说得好：'……'要想……就必须……"</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 权威论述＋典型故事＋现实映照</span>
+      <p>本论一先用习近平总书记金句立高度，再用梁家河"15里外挖沙背水泥"的细节故事作温度，最后落到"村干部率先流转土地、社区干部走家串户"的现实映照。迁移写法：<b>每个论证段力求"金句—故事—当下"三层齐备</b>，议论才有血有肉。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · "阵痛—转变"讲透辩证</span>
+      <p>余村"集体收入断崖式下滑、群众敲碗抗议"的阵痛，反衬"重现绿水青山、赢得金山银山"的远见。迁移写法：论证"当前与长远/潜绩与显绩"时，<b>敢写困难、敢写反对声，再用转变结果反证正确</b>，比一味唱赞歌有说服力。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 四维递进不重叠</span>
+      <p>行动力（带头干）—权责关系（敢担责）—政绩观（谋长远）—监督（受约束），四个分论点<b>分属不同维度、互不重叠、层层递进</b>。迁移写法：写"干部如何作为"类文章，主动按"行动/责任/价值/约束"等维度拆分分论点，避免三段话其实都在讲"要务实"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 机制创新收对策</span>
+      <p>义乌"招标公信平台"、张掖"小微权力清单"——用<b>具体制度载体</b>落实"阳光监督"，比喊"要加强监督"实在十倍。迁移写法：对策段尽量落到<b>一个平台/一张清单/一项机制</b>上，让阅卷人看见"可操作"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 群像收束＋首尾呼应</span>
+      <p>结尾用焦裕禄、谷文昌、杨善洲群像点题，并以"以干部敢为带动群众敢首创"呼应开头"经得住看"。迁移写法：<b>结尾复现核心词并升华，用模范群像替代空洞口号</b>，是最稳妥也最显情怀的收法。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"让年轻干部在基层经得住'看'"为题，写一段150字左右的申论文章开头段，要求：<b>俗语/对话式破题＋"经得住看"核心命题＋四维递进之一亮明</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">一句俗语（如"是骡子是马拉出来遛遛"）→ 导出"年轻干部要在基层经得住看"→ 先亮"看的是行动力"分论点（下沉一线、带头干事）→ 略点后三重（权责、政绩观、监督）引而不发。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"四维递进"框架，为"如何让营商环境真正优起来"列出四个不同维度的分论点（提示：主动服务／权责清单／长远眼光／公开监督）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月11日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
