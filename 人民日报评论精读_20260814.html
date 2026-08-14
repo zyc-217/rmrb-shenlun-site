@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从思想指引到法治护航</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从思想指引到法治护航</h1>
+    <div class="meta">人民观点 | 中国绿色发展何以引领世界 | 2026年8月14日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：生态文明 · 绿色发展 · 新质生产力 · 制度法治 · 人类命运共同体</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">绿水青山就是金山银山</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">碳达峰碳中和</span>
+      <span class="tag-item">制度法治</span>
+      <span class="tag-item">全面依法治国</span>
+      <span class="tag-item">人与自然和谐共生</span>
+      <span class="tag-item">全球环境治理</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">南南合作</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">国际传播</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"中国绿色发展何以引领世界""以法治护航美丽中国""新质生产力本身就是绿色生产力"等主题；本文<b>"参与者—贡献者—引领者"三阶递进</b>结构，是写"中国为何能、中国怎么办"类宏大命题的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何推进美丽中国建设"——可从<b>思想引领（两山理念）、实践转化（绿色生产力）、制度护航（最严法治）、全球贡献（人类命运共同体）</b>四层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括中国引领全球绿色发展的经验"——可提炼为：<b>思想指引前瞻、实践力量创造性、中国方案普惠、法治系统保障</b>四点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"生态文明国际论坛致辞""绿色发展白皮书""全球气候治理中国主张"素材；文中"喇叭口"曲线、"握指成拳"等表述，极适合写进讲话稿显大手笔。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："三视角递进—点面结合—国际升华"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以"生态文明建设关系永续发展"立论，引总书记金句定调；再用<span class="highlight-green">"一则是车、一则是法"两则新闻</span>具象切入——"中国车"引领绿色出行、"生态环境法典"8月15日施行，引出<span class="highlight-purple">"从参与者、贡献者、引领者三个视角感悟"</span>的论证主线。技法：<b>权威金句定调＋双新闻破题＋三视角设纲</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>思想引领（参与者）</b>——以"人与自然如何相处是现代化必答题"起笔，用数据（<span class="highlight-green">55%生态脆弱区、17.6%人口占比</span>）与"走美欧老路走不通"金句，再以梁家河、余村、木里、长江四案例论证思想落地。技法：<b>数据+金句立骨＋典型案例由点及面</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>实践引领（贡献者）</b>——以"喇叭口"双曲线（<span class="highlight-green">经济54万亿→逾140万亿、PM2.5降59%</span>）证明高质量发展；提出<span class="highlight-gold">"新质生产力本身就是绿色生产力"</span>，再以绿色工厂8000家、新能源1600万辆、法典系统集成、全球1/4新增绿面积论证。技法：<b>图形化数据＋核心金句＋多维度事实</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>潮流引领（引领者）</b>——以"共建地球生命共同体"金句起，鄱阳湖（<span class="highlight-green">90%白鹤</span>）、斯里兰卡、非洲的"朋友圈"案例，落到风电光伏成本降60%/80%、南南合作；以"两山理念是中国的也是世界的"收。技法：<b>中国方案走出去＋可复制经验＋普惠叙事</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以"让子孙后代既能享有丰富的物质财富，又能遥望星空、看见青山、闻到花香"诗意收束，再以<span class="highlight-gold">"中国之力生生不息，中国之治兼济八方"</span>升华。技法：<b>诗意意象＋对仗金句回扣"引领"</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"参与者—贡献者—引领者"三阶递进</b>，可整体套用于任何"中国经验／中国方案／中国担当"类议题（如"中国式现代化对世界意味着什么""中国之治的世界意义"）。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>生态文明建设，关系中华民族永续发展，关乎人类文明未来走向。</p>
+
+      <p>习近平总书记深刻指出：<span class="highlight-gold">"中国秉持绿水青山就是金山银山理念，坚定不移走生态优先、绿色发展之路，是全球生态文明建设的参与者、贡献者、引领者。"</span></p>
+
+      <p>最近，两则与绿色发展有关的新闻，耐人寻味。一则是"车"——<span class="highlight-green">今年6月，中国车企占欧洲插电式混合动力汽车交付量的34%，创下历史新高；中国主要电动踏板车生产商的海外销售，今年预计增长约70%</span>，"中国车"正引领全球绿色出行新风尚。一则是"法"——8月15日，<span class="highlight-blue">生态环境法典将正式施行</span>，这部<span class="highlight-blue">习近平生态文明思想法治化、系统化、制度化的集大成之作</span>，也是新时代推进全面依法治国的标志性成果，将为全球环境治理送上"独特的中国礼物"。</p>
+
+      <p class="thesis">【总论点】从思想指引到法治护航，中国是全球生态文明建设的参与者、贡献者、引领者；从"参与者""贡献者""引领者"三个视角，更能感悟中国绿色发展何以造福世界。</p>
+
+      <p class="sub-thesis">【分论点一】从思想引领看中国智慧的前瞻性，中国是全球生态文明建设的积极参与者。</p>
+
+      <p>人与自然如何相处，是现代化进程中的必答题。我国<span class="highlight-green">中度以上生态脆弱区域占比高达55%，人口全球占比约17.6%</span>。</p>
+
+      <p><span class="highlight-purple">"我们建设现代化国家，走美欧老路是走不通的。"</span><span class="highlight-blue">"坚持走绿色、低碳、循环、可持续发展之路，共筑生态文明之基。"</span>摆脱理念束缚，突破传统模式，习近平生态文明思想指引中国式现代化走上<span class="highlight-gold">人与自然和谐共生</span>的新路径。</p>
+
+      <p>一池、一村、一矿、一湾，照见新思想锚定的发展新坐标：梁家河建成陕西第一口沼气池，习近平同志由此认识到<span class="highlight-purple">"人与自然是生命共同体"</span>；浙江余村跳出发展和保护二元对立的思维桎梏，<span class="highlight-gold">"绿水青山就是金山银山"</span>让生态旅游、竹林碳汇蓬勃发展；木里矿区在中央工作组整治下重焕新生、吃上"生态饭"；长江石首段以<span class="highlight-blue">"史上最大环保罚单"</span>倒逼企业转型，在法治护航下母亲河重焕生机。理念创新、全面从严治党、全面依法治国，智慧结晶凝成"金钥匙"，我国生态文明建设从理论到实践发生<span class="highlight-gold">历史性、转折性、全局性变化</span>。</p>
+
+      <p>联合国前副秘书长埃里克·索尔海姆直言：<span class="highlight-gold">"中国能够取得如此广泛的'绿色实践成就'，从根本上是源于习近平生态文明思想，特别是'绿水青山就是金山银山'理念的指引。"</span></p>
+
+      <p class="sub-thesis">【分论点二】从实践引领看中国力量的创造性，中国是全球生态文明建设的重要贡献者。</p>
+
+      <p>一对曲线，记录发展变迁。党的十八大以来，<span class="highlight-green">我国经济总量从54万亿元增长到逾140万亿元；PM2.5平均浓度下降了59%</span>。由这两条曲线构成的"喇叭口"，是国际上衡量高质量发展的重要图形，曾经我们拿不出这张图，如今成了"生态兴则文明兴"的生动缩影。</p>
+
+      <p><span class="highlight-gold">绿色转型不是包袱，新质生产力本身就是绿色生产力。</span>"十四五"时期，<span class="highlight-green">我们累计培育国家绿色工厂超8000家，新能源汽车年产销量均突破1600万辆</span>，绿电、绿算双向赋能，印证<span class="highlight-blue">"只有把绿色发展的底色铺好，才会有今后发展的高歌猛进"</span>。</p>
+
+      <p>一部法典，映照法治决心。<span class="highlight-blue">生态环境法典对现行生态环境法律制度规范进行系统整合、编订纂修、集成升华</span>，构建了一套涵盖污染防治、生态保护、绿色低碳发展的完整制度体系。从多部法律"单打独斗"到系统集成"握指成拳"，<span class="highlight-blue">只有实行最严格的制度、最严密的法治，才能为生态文明建设提供可靠保障。</span></p>
+
+      <p>自2020年习近平主席宣布碳达峰碳中和目标以来，<span class="highlight-green">中国构建了全球最大、发展最快的可再生能源体系，建成了全球最大、最完整的新能源产业链，贡献了全球1/4的新增绿色面积</span>。超越生产力发展服从于资本的逻辑，<span class="highlight-purple">中国式现代化是人与自然和谐共生的现代化，创造了人类文明新形态</span>，为全球低碳转型贡献了切实可行的实践方案。实践探索永无止境，绿色发展的中国道路，行得通，走得远。</p>
+
+      <p class="sub-thesis">【分论点三】从潮流引领看中国方案的普惠性，中国是全球生态文明建设的关键引领者。</p>
+
+      <p>习近平总书记指出：<span class="highlight-blue">"我们应该携手努力，共同推进人与自然和谐共生，共建地球生命共同体，共建清洁美丽世界。"</span>从美丽中国到美丽世界，绿色发展是郑重的中国承诺，也是行之有效的中国方案。</p>
+
+      <p>鄱阳湖，中国最大淡水湖，<span class="highlight-green">全世界90%左右的白鹤在这里越冬栖息</span>。看到光伏发电、稻虾共作、生态旅游等增收模式，联合国粮农组织官员表示让居民获得多元化收入"很有借鉴意义"。人、鸟、湖和谐共生，鄱阳湖生态治理的"朋友圈"跨越五洲四海：斯里兰卡博尔戈达湖区30多家旅馆学习"鄱阳湖经验"搭建人工湿地；非洲维多利亚湖霍马湾推广在鄱阳湖验证过的有机种植模式。无论国际形势如何变化，<span class="highlight-purple">中国绿色发展的行动不会放缓，促进国际合作的努力不会减弱，推动构建人类命运共同体的实践不会停歇。</span></p>
+
+      <p>助力全球风电和光伏发电项目平均度电成本在过去10年间分别下降<span class="highlight-green">超过60%和80%</span>；中国新能源车在海外刮起"绿色旋风"。老挝孟松风电项目点亮万千家庭，基里巴斯"光伏+直饮水"项目破解民生痛点，面向太平洋岛国开展"应对气候变化与绿色低碳发展"南南合作培训……<span class="highlight-gold">"只要是对全人类有益的事情，中国就应该义不容辞地做，并且做好"</span>，这是和合共生的文化传承，也是胸怀天下的大国胸襟。</p>
+
+      <p><span class="highlight-gold">"让子孙后代既能享有丰富的物质财富，又能遥望星空、看见青山、闻到花香。"</span>同球共济、和合共生，推动构建公平合理、合作共赢的全球生态环境治理体系，守护好全人类共同家园，<span class="highlight-gold">"中国之力"生生不息，"中国之治"兼济八方。</span></p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（执笔：邹翔、尹双红、崔妍、李铁林 ｜ 人民观点）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">生态文明·总纲</span>
+      <p>中国秉持绿水青山就是金山银山理念，坚定不移走生态优先、绿色发展之路，是全球生态文明建设的参与者、贡献者、引领者。（可作"绿色发展"类文章题眼与首尾呼应）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">两山理念·根本指引</span>
+      <p>绿水青山就是金山银山。中国能够取得如此广泛的"绿色实践成就"，从根本上是源于习近平生态文明思想，特别是"绿水青山就是金山银山"理念的指引。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">新质生产力·绿色</span>
+      <p>绿色转型不是包袱，新质生产力本身就是绿色生产力。只有把绿色发展的底色铺好，才会有今后发展的高歌猛进。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">制度法治·保障</span>
+      <p>只有实行最严格的制度、最严密的法治，才能为生态文明建设提供可靠保障。从多部法律"单打独斗"到系统集成"握指成拳"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·人与自然和谐</span>
+      <p>人与自然是生命共同体。中国式现代化是人与自然和谐共生的现代化，创造了人类文明新形态。我们建设现代化国家，走美欧老路是走不通的。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">全球治理·共同体</span>
+      <p>我们应该携手努力，共同推进人与自然和谐共生，共建地球生命共同体，共建清洁美丽世界。无论国际形势如何变化，推动构建人类命运共同体的实践不会停歇。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">大国胸襟·普惠</span>
+      <p>只要是对全人类有益的事情，中国就应该义不容辞地做，并且做好。这是和合共生的文化传承，也是胸怀天下的大国胸襟。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华·诗意</span>
+      <p>让子孙后代既能享有丰富的物质财富，又能遥望星空、看见青山、闻到花香。"中国之力"生生不息，"中国之治"兼济八方。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据·双曲线</span>
+      <p>• 经济总量从54万亿元增长到逾140万亿元；PM2.5平均浓度下降59%（"喇叭口"双曲线）<br>• 累计培育国家绿色工厂超8000家，新能源汽车年产销量均突破1600万辆<br>• 贡献了全球1/4的新增绿色面积；风电光伏度电成本10年降超60%/80%</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据·生态本底</span>
+      <p>• 中度以上生态脆弱区域占比高达55%，人口全球占比约17.6%<br>• 中国车企占欧洲插混交付量34%（历史新高）；鄱阳湖栖息全球约90%白鹤</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">案例·法治护航</span>
+      <p>8月15日生态环境法典正式施行，是习近平生态文明思想法治化、系统化、制度化的集大成之作，新时代全面依法治国的标志性成果。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 三视角设纲</span>
+      <p>用"参与者—贡献者—引领者"三阶递进搭建宏大命题骨架。迁移写法：<b>凡写"中国经验／中国方案／中国担当"，先立"为何能、怎么办、向世界贡献什么"三阶</b>，逻辑自洽、层次分明。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 双新闻破题</span>
+      <p>以"一则是车、一则是法"两则鲜活新闻具象化抽象主题。迁移写法：<b>用一组"一则是…一则是…"对仗事例</b>开篇，比空喊口号更抓人，迅速落地主题。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 金句立骨</span>
+      <p>"新质生产力本身就是绿色生产力""人与自然是生命共同体"穿插作分论点眼。迁移写法：<b>每节以一个权威金句／核心判断起笔</b>，段意清、站位高，最易显政治素养。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 图形化数据</span>
+      <p>用"喇叭口"双曲线（经济↑、PM2.5↓）把"高质量发展"讲成可视图形。迁移写法：<b>把关键数据凝成"一张图、一个对比"</b>，论证更直观、记忆点更强。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 由点及面</span>
+      <p>梁家河、余村、木里、长江四案例，由"一池一村一矿一湾"小坐标映照大思想。迁移写法：<b>用几个典型小案例串起大主题</b>，避免空论，显"脚下有泥"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 普惠叙事收束</span>
+      <p>以鄱阳湖"朋友圈"跨洲案例＋"对全人类有益的事义不容辞地做"升华。迁移写法：<b>结尾从国内经验转到"可复制、惠全球"</b>，站位从一域升到天下，最稳妥的大格局收法。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"以法治护航美丽中国"为题，写一段150字左右的申论文章开头段，要求：<b>双新闻／双事例破题＋亮明一个分论点（如"最严法治是最可靠保障"／"新质生产力本身就是绿色生产力"）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">由"生态环境法典施行"切入 → 摆一个绿色转型/污染治理事实 → 亮"只有最严制度最密法治，才能护航美丽中国"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"参与者—贡献者—引领者"三阶结构，为"中国式现代化对世界意味着什么"列出写作提纲（3个分论点即可）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月14日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
