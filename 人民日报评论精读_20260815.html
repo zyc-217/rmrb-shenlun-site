@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以高水平法治护航美丽中国建设</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以高水平法治护航美丽中国建设</h1>
+    <div class="meta">人民日报评论 | 全国生态日·生态环境法典施行 | 2026年8月15日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：生态文明 · 全面依法治国 · 生态环境法典 · 良法善治 · 制度优势转化为治理效能</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">美丽中国</span>
+      <span class="tag-item">全面依法治国</span>
+      <span class="tag-item">生态环境法典</span>
+      <span class="tag-item">习近平生态文明思想</span>
+      <span class="tag-item">习近平法治思想</span>
+      <span class="tag-item">人与自然和谐共生</span>
+      <span class="tag-item">良法善治</span>
+      <span class="tag-item">制度优势</span>
+      <span class="tag-item">严格执法</span>
+      <span class="tag-item">普法宣传</span>
+      <span class="tag-item">全球生态治理</span>
+      <span class="tag-item">大国担当</span>
+      <span class="tag-item">十五五开局</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"以法治护航美丽中国""良法善治""制度优势转化为治理效能"等主题；本文<b>"立法—实施—执法—普法—国际"五维递进</b>结构，是写"全面依法治国"类文章的标准框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何以高水平法治护航美丽中国建设"——可从<b>立法转化（理念转规范）、严格实施、依法行政、配套衔接、全民普法</b>五层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括生态环境法典施行的意义"——可提炼为：<b>理念上升为法律、体系升级换代、制度优势转治理效能、凝聚共治合力、彰显大国担当</b>五点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"全国生态日普法宣讲稿""生态环境法典学习宣传工作方案""法治护航绿色发展倡议书"素材；文中"监管与服务的平衡""保护者、建设者、受益者"等表述极适合写进讲话稿。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："节点破题—立良法—重实施—严执行—广普法—显担当"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（破题）</span>
+        <span class="text">以"<span class="highlight-gold">今年8月15日是第四个全国生态日，《中华人民共和国生态环境法典》正式施行</span>"这一重大节点切入，点明"美丽中国建设的法治基石进一步筑牢"，并立定<b>习近平生态文明思想与习近平法治思想</b>双指引。技法：<b>重大时政节点＋权威论断立题</b>，开头即自带时效性与高度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>立良法（立法转化）</b>——引<b>"法者，治之端也"</b>古训，说明法典将"绿水青山就是金山银山""最严制度最严密法治"等理念转化为法律规范，<b>改变单行法"各自为战"、构建"一盘棋"治理格局</b>。技法：<b>名言立骨＋理念—法律转化链条</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>重实施（效能转化）</b>——以<b>"法律的生命力在于实施"</b>起笔，落到"把制度优势转化为治理效能"，发挥<b>法治固根本、稳预期、利长远</b>的保障作用。技法：由"立"推进到"用"，逻辑不空转。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>严执行＋强衔接（落地）</b>——"坚持依法行政"要求贯穿全过程、把握<b>监管与服务的平衡</b>；"做好配套衔接"要求清理修订地方性法规、推动<b>山水林田湖草沙一体化保护和系统治理</b>。技法：<b>对策具体化、可操作</b>，避免喊口号。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论四</span>
+        <span class="text"><b>广普法（凝聚人心）</b>——借全国生态日讲清权利义务，让法典走进工厂社区，使人人成为生态环境的<b>保护者、建设者、受益者</b>。技法：从"制度"落到"人心"，闭环共治。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">本论五（递进）</span>
+        <span class="text"><b>显担当（国际视野）</b>——以中国编纂施行<b>世界上首部以"生态环境"命名的法典</b>，回应全球生态治理挑战、展现大国担当收束。技法：<b>国内—国际双视角</b>，站位由内而外升维。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以<b>"生态兴则文明兴"</b>收束，回到"十五五开局之年"新起点，用"厚植中国式现代化的绿色底色，铺展人与自然和谐共生的亮丽画卷"呼应标题"法治护航"。技法：<b>金句升华＋首尾呼应</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"立法—实施—执法—普法—国际"五维递进</b>，可整体套用于"全面依法治国""营商环境法治化""市域社会治理现代化""数字法治"等任一法治议题。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>今年8月15日是第四个全国生态日，《中华人民共和国生态环境法典》正式施行，美丽中国建设的法治基石进一步筑牢。生态环境法典是在<span class="highlight-blue">习近平生态文明思想和习近平法治思想</span>科学指引下取得的标志性成果，对推进生态文明建设、加快推进<span class="highlight-purple">人与自然和谐共生的现代化</span>具有重大而深远的意义。</p>
+
+      <p class="thesis">【总论点】以高水平法治护航美丽中国建设——借第四个全国生态日、生态环境法典正式施行之机，把党的生态文明主张转化为国家意志与人民意愿，把制度优势转化为治理效能，以良法促善治、以实施见效能，必将有力促进人与自然和谐共生的现代化。</p>
+
+      <p class="sub-thesis">【分论点一】良法是善治的前提——生态环境法典将科学理念转化为法律规范，推动生态法律体系"升级换代"。</p>
+
+      <p><span class="highlight-gold">"法者，治之端也。"</span>生态环境法典将<span class="highlight-blue">"绿水青山就是金山银山""用最严格制度最严密法治保护生态环境"</span>等科学理念转化为具有普遍约束力的法律规范，把新时代生态文明建设的重大原则、重大部署、重大要求以法典化的方式确认下来，实现了<span class="highlight-purple">党的生态文明主张与国家意志、人民意愿的高度统一</span>。</p>
+
+      <p><span class="highlight-gold">良法是善治的前提。</span>生态环境法典一方面用最严密法治守住生态安全底线，压实各类主体生态环保责任，着力解决实践中人民群众急难愁盼的突出生态环境问题；另一方面把<span class="highlight-blue">绿色低碳发展、生态补偿、生态产品价值实现</span>等实践成果上升为法律规范。</p>
+
+      <p class="sub-thesis">【分论点二】法律的生命力在于实施——把法典条文落实在绿水青山间，让制度优势转化为治理效能。</p>
+
+      <p><span class="highlight-gold">法律的生命力在于实施。</span>把生态环境法典的条文落实在绿水青山间，让制度优势转化为治理效能，更好发挥<span class="highlight-purple">法治固根本、稳预期、利长远</span>的保障作用，将有力促进我国生态文明建设，<span class="highlight-gold">"典"亮人与自然和谐共生的现代化</span>。</p>
+
+      <p class="sub-thesis">【分论点三】坚持依法行政、做好配套衔接——把法典精神贯穿治理全过程，让法典真正落地生根。</p>
+
+      <p>坚持依法行政，把法典精神、法典内容贯穿生态环境保护治理全过程。各级执法、司法部门要吃透法典制度要义，统一执法司法尺度，既依法严厉打击破坏生态环境的行为，也要把握好<span class="highlight-purple">监管与服务的平衡</span>，引导企业主动开展绿色转型，为绿色低碳发展营造公平、稳定、可预期的法治环境。</p>
+
+      <p>做好配套衔接，让法典真正落地生根、发挥实效。各地区各部门应对照法典要求，及时开展地方性法规及各类规范性文件的清理修订，破除区域、部门壁垒，把生态环境法典的条文转化为可操作、可落地的具体举措，因地制宜推动<span class="highlight-blue">山水林田湖草沙一体化保护和系统治理</span>，探索生态环境保护修复、生态产品价值实现等实践路径。</p>
+
+      <p class="sub-thesis">【分论点四】强化普法宣传——凝聚全社会共治合力，让每个人成为生态环境的保护者、建设者、受益者。</p>
+
+      <p>强化普法宣传，凝聚全社会共治合力。各地区各部门要借助<span class="highlight-blue">全国生态日</span>等重要时间节点，面向广大人民群众讲清法典规定的权利义务，让法典走进工厂企业、社区乡村，激发全社会共同呵护生态环境的内生动力，树立<span class="highlight-purple">尊重自然、顺应自然、保护自然</span>的理念，让每个人都成为生态环境的保护者、建设者、受益者。</p>
+
+      <p class="sub-thesis">【分论点五】彰显大国智慧——编纂施行世界首部"生态环境"命名法典，为全球生态治理注入新动能。</p>
+
+      <p>彰显大国智慧，为全球生态保护注入新动能。生态文明建设关乎人类未来，建设绿色家园是人类的共同梦想。中国作为全球生态文明建设的重要参与者、贡献者、引领者，编纂施行<span class="highlight-green">世界上首部以"生态环境"命名的法典</span>，积极回应环境污染、气候变化、生物多样性减少等全球生态治理挑战，充分承担大国责任、展现大国担当。</p>
+
+      <p><span class="highlight-gold">生态兴则文明兴。</span>今年是<span class="highlight-blue">"十五五"开局之年</span>，生态环境法典正式施行，是高水平法治护航美丽中国建设的新起点。坚持以习近平生态文明思想作为法典实施的根本遵循，坚持党的全面领导，保持加强生态文明建设的战略定力，依法治理，苦干实干，定能厚植中国式现代化的绿色底色，铺展人与自然和谐共生的亮丽画卷。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报评论 ｜ 2026年8月15日 第04版）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">核心事件·节点</span>
+      <p>今年8月15日是第四个全国生态日，《中华人民共和国生态环境法典》正式施行，美丽中国建设的法治基石进一步筑牢。（可作"法治护航生态"类文章开头时事引子）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">立法·古训金句</span>
+      <p>"法者，治之端也。"——出自《荀子》，可作"法治"类文章开篇引语，比空论更显底蕴。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">理念·根本遵循</span>
+      <p>"绿水青山就是金山银山""用最严格制度最严密法治保护生态环境"——科学理念转化为法律规范，是生态文明法治化的题眼。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">良法善治</span>
+      <p>良法是善治的前提。法律的生命力在于实施。（两句可作"全面依法治国"类文章的分论点眼）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">法治作用·对仗</span>
+      <p>更好发挥法治固根本、稳预期、利长远的保障作用。（常用于论证"为什么必须靠法治"的收束句）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·三者统一</span>
+      <p>实现了党的生态文明主张与国家意志、人民意愿的高度统一。（可用于"党的领导—依法治国—人民当家作主"三者统一类论述）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">执法·辩证温度</span>
+      <p>既依法严厉打击破坏生态环境的行为，也要把握好监管与服务的平衡，引导企业主动开展绿色转型。（写"执法"对策时补上"服务"，更显辩证与温度）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">系统治理·术语</span>
+      <p>因地制宜推动山水林田湖草沙一体化保护和系统治理。（生态治理类标准表述，可直接套用）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">全民共治</span>
+      <p>让每个人都成为生态环境的保护者、建设者、受益者。（可作"共建共治共享"类结尾排比）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">国际担当·事实</span>
+      <p>中国编纂施行世界上首部以"生态环境"命名的法典，积极回应全球生态治理挑战，充分展现大国担当。（可作"中国之治的世界意义"论据）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束升华</span>
+      <p>生态兴则文明兴。厚植中国式现代化的绿色底色，铺展人与自然和谐共生的亮丽画卷。（可作"生态文明"类文章结尾金句）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 节点破题</span>
+      <p>以"第四个全国生态日＋生态环境法典正式施行"这一重大节点开篇，立题自带权威感与时效性。迁移写法：<b>凡写"法治/生态/民生"类，先点明一个具体时间节点或重大事件</b>，迅速立住场，比抽象说理更抓人。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 立法—实施—执法—普法 链条</span>
+      <p>文章按"良法(立法)→实施→依法行政+衔接(执行)→普法→国际"层层递进，逻辑闭环。迁移写法：<b>写"全面依法治国"类文章，主动按"立—执—普—治"维度拆分分论点</b>，避免三段都在讲"要重视法治"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 名言/古训立骨</span>
+      <p>"法者，治之端也""良法是善治的前提""法律的生命力在于实施"三句递进，段段有眼。迁移写法：<b>每节以一句权威判断或古语起笔</b>，段意清、站位高，最易显政治素养。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 理念转规范链条</span>
+      <p>"把科学理念转化为具有普遍约束力的法律规范"。迁移写法：论证"制度优势"时，用<b>"理念→法律→治理效能"的转化链条</b>，比空喊"制度好"有深度十倍。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 监管与服务平衡</span>
+      <p>"既依法严厉打击……也要把握好监管与服务的平衡"。迁移写法：对策段写"执法/监管"时，<b>避免只喊严打，补上"引导服务"</b>，更显辩证、更显温度，是高分对策的标配。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 国内—国际双视角收束</span>
+      <p>从"落地生根"到"编纂世界首部生态环境法典、展现大国担当"，站位由内而外。迁移写法：<b>结尾从国内实践升到"中国方案/大国担当"</b>，大格局收法最稳妥。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"为美丽中国夯实法治基石"为题，写一段150字左右的申论文章开头段，要求：<b>节点/事件破题＋亮明一个分论点（如"良法是善治的前提"／"法律的生命力在于实施"）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">点明生态环境法典施行这一节点 → 摆"科学理念转化为法律规范"事实 → 亮"以良法促善治、以实施见效能"分论点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"立法—执法—普法"三维度，为"如何让法治成为营商环境最优底色"列出三个不同侧重点的分论点（提示：制度供给／规范执法／诚信守法）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月15日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
