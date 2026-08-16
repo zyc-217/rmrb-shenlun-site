@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 练好"钉钉子"的功夫</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>练好"钉钉子"的功夫（评论员观察）</h1>
+    <div class="meta">人民日报 | 基层治理·抓落实·钉钉子精神 | 2026年8月17日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：抓落实 / 钉钉子精神 / 精准思维 / 久久为功 / 正确政绩观 / 以人民为中心</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">抓落实·钉钉子精神</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">精准思维</span>
+      <span class="tag-item">久久为功（长期主义）</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">整治形式主义</span>
+      <span class="tag-item">科学决策</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">党员干部作风建设</span>
+      <span class="tag-item">群众工作方法</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"抓落实""久久为功""树立正确政绩观""以钉钉子精神干事业"等主题；本文<b>"全局找准落点—精准施策—久久为功—正确政绩观"四段递进</b>结构，是写"抓落实/作风建设"类文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何推动工作落实／基层干部怎样干成事"——可从<b>胸怀全局找准落点、精准施策靶向发力、一锤接着一锤久久为功、功成不必在我树牢政绩观</b>四层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括'钉钉子精神'的内涵"——可提炼为：<b>选准落点（全局观）、精准发力（精准思维）、持续用劲（持久恒心）、一张蓝图绘到底（正确政绩观）</b>四点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"推进重点工作落实实施方案""干部作风建设讲话稿""关于树立正确政绩观的倡议"素材；文中"发扬钉钉子精神""致广大而尽精微""功成不必在我、功成必定有我"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："场景引论—立总论点—全局落点—精准施策—久久为功—正确政绩观"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（场景）</span>
+        <span class="text">以社区干部"加装电梯"的真实故事开篇：居民意见不一、工程搁置，她走访最激烈反对户、改方案终装好，引出"得把功夫下在关键处，一锤一锤精准敲"。技法：<b>以微观案例替代抽象说理</b>，开头即有画面、有温度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">立论（引论断）</span>
+        <span class="text">引<b>习近平总书记"发扬钉钉子精神"</b>的反复强调，落到"基层工作千头万绪，钉好钉子，考验下锤功夫"的总论点。技法：<b>权威论断立骨＋比喻定调</b>，站位自然立高。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一</span>
+        <span class="text"><b>胸怀全局、找准落点</b>——"一个村守住耕地红线就是助力端牢14亿多人的饭碗"，从大处着眼才能抓住锚点。技法：<b>以"小切口连大局"的排比</b>论证基层琐碎与全局的辩证关系。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二</span>
+        <span class="text"><b>精准施策、靶向发力</b>——引"致广大而尽精微"，用宁德下党乡"好钢用在刀刃上"、老旧小区"菜单式"改造、乡村"因地制宜"等例，论证找准"牛鼻子"方能事半功倍。技法：<b>权威金句＋正反对比（精准vs平均用力）</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三</span>
+        <span class="text"><b>一锤接着一锤、久久为功</b>——"抓而不紧等于不抓，抓而不实等于白抓"，以山西右玉70年种树、黄大发36年凿渠为据，凸显长期主义最可贵。技法：<b>经典案例＋韧劲哲理收束</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论四</span>
+        <span class="text"><b>功成不必在我、一张蓝图绘到底</b>——批"政绩工程""兜底翻"是拔前任钉子重来，引《滴水穿石的启示》作结，落脚"胸中有大局、手上有准头、心里有定力"。技法：<b>先破后立、以正确政绩观收束全篇</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（合）</span>
+        <span class="text">以"练好'钉钉子'的功夫，基层广阔天地大有可为"呼应标题。技法：<b>首尾呼应＋总括升华</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"全局—精准—持久—政绩观"四段递进</b>，可整体套用于"推动政策落实""干部担当作为""高质量发展久久为功""树立正确政绩观"等任一落实类议题。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">看不到尽头时，每一锤才更需要信念来托底。不计较一时得失，甘于一点一滴的进取，这份韧劲正是基层干事创业不可或缺的宝贵品质。</span></p>
+
+      <p>去基层采访，一名社区干部讲起加装电梯的事。嫌挡光的、怕噪声的、担心施工影响房屋安全的……居民意见不统一，工程一度搁置。她走访反对最激烈的几户居民，问顾虑、做工作、解疑惑、改方案，最终电梯顺利装好。她说，为民办事不能硬来，"得把功夫下在关键处，<span class="highlight-gold">一锤一锤精准敲</span>"。</p>
+
+      <p class="thesis">【总论点】谈及抓落实，习近平总书记反复强调"发扬钉钉子精神"。基层工作千头万绪，钉好钉子，考验下锤功夫——既检验科学决策的水平，也检验久久为功的定力与"功成不必在我"的胸襟。</p>
+
+      <p class="sub-thesis">【分论点一】胸怀全局、找准落点——善于从大处着眼，才能选准锚点、敲到点上。</p>
+
+      <p>一个村守住耕地红线，就是在助力端牢<span class="highlight-green">14亿多人的饭碗</span>；一个社区把垃圾分类做细做实，就是在为美丽中国添砖加瓦；一个街道服务好科创企业，就是在为<span class="highlight-blue">新质生产力</span>培土蓄根……<span class="highlight-purple">基层的事看似琐碎，实则连着大局</span>。善于从大处着眼，就能抓住锚点。</p>
+
+      <p>道理不难懂，做起来却不易。或是客观上没条件，事赶事、人催人，疲于应对，视野渐渐窄到了只看手头事；或是主观上有懈怠，认为基层是"神经末梢"，大政方针事不关己。<span class="highlight-purple">东一榔头西一棒子，看着热火朝天，到头来往往一颗钉子都没敲牢</span>。</p>
+
+      <p>组织上优环境，<span class="highlight-blue">整治形式主义，让党员干部"轻装上阵"</span>；党员干部也要勤于学习对照，<span class="highlight-blue">全面、深刻、准确吃透中央精神</span>，如此才能<span class="highlight-blue">科学决策、正确施治、善作善成</span>。</p>
+
+      <p class="sub-thesis">【分论点二】精准施策、靶向发力——坚持"致广大而尽精微"，看准往哪敲、掂量怎么敲，一锤下去才有穿透力。</p>
+
+      <p>在福建宁德，为改变下党乡"<span class="highlight-green">样样都缺</span>"的落后面貌，习近平同志作出率先解决通乡公路、水电和办公场所<span class="highlight-green">三大问题</span>的决定。<span class="highlight-gold">好钢用在刀刃上，办一件成一件</span>，下党乡一步一步走出困境。把资源集中到最紧要的那个点上，钉子才钉得牢。</p>
+
+      <p>老旧小区改造推行"<span class="highlight-green">菜单式</span>"方案，群众最急什么就先改什么；农村人居环境整治，有的村重点治污水，有的村先抓改厕，<span class="highlight-blue">不搞"一刀切"</span>；乡村全面振兴，有的发展特色种植，有的主打乡村旅游，<span class="highlight-blue">因地制宜、各展所长</span>……<span class="highlight-purple">平均用力往往哪个都抓不住</span>，找准"牛鼻子"精准发力，方能事半功倍。</p>
+
+      <p>对党员干部来说，科学决策、精准施策，背后是一道取舍题。样样都重要、件件有人催，敢于下判断，把最紧迫的顶上去，考验的不只是眼力，更是担当。</p>
+
+      <p class="sub-thesis">【分论点三】一锤接着一锤、久久为功——抓而不紧等于不抓，抓而不实等于白抓，这样的长期主义最可贵。</p>
+
+      <p>山西右玉，<span class="highlight-green">70多年前黄沙漫天</span>，干部带头、群众跟上，一茬接着一茬种树，不毛之地变成塞上绿洲。贵州遵义，老支书黄大发立下"水过不去、拿命来铺"的誓言，带领村民在绝壁上凿渠，<span class="highlight-green">36年凿出一条"生命渠"</span>。</p>
+
+      <p><span class="highlight-purple">于绝境中闯新路，起步难，持续迈步更难。</span>看不到尽头时，每一锤才更需要信念来托底。不计较一时得失，甘于一点一滴的进取，这份韧劲正是基层干事创业不可或缺的宝贵品质。一件事一件事抓落实，一年一年抓成效，<span class="highlight-gold">"直到把钉子钉实钉牢"</span>，小胜方能积为大胜。</p>
+
+      <p class="sub-thesis">【分论点四】功成不必在我、一张蓝图绘到底——接着敲不等于蛮敲乱敲，这是树立和践行正确政绩观的必然要求。</p>
+
+      <p>不切实际搞"政绩工程"、换一任就"兜底翻"，看似在敲，<span class="highlight-purple">实则是把前任敲好的钉子拔了重来</span>。<span class="highlight-gold">"功成不必在我、功成必定有我"</span>，一张好的蓝图一茬一茬接着干，这是树立和践行<span class="highlight-blue">正确政绩观</span>的必然要求。</p>
+
+      <p>习近平同志在《滴水穿石的启示》中写道，我们需要的是<span class="highlight-gold">一步一个脚印的实干精神</span>，而不需要新官上任只烧三把火希图侥幸成功的投机心理。<span class="highlight-purple">胸中有大局、手上有准头、心里有定力</span>，练好"钉钉子"的功夫，基层广阔天地大有可为。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报 ｜ 2026年8月17日 第05版 · 推进基层工作方法谈⑤）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">总书记论述·钉钉子精神</span>
+      <p>谈及抓落实，习近平总书记反复强调"发扬钉钉子精神"。（写"抓落实/作风建设"类文章可直接引为权威立论，年年高频考点）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">精准思维·致广大而尽精微</span>
+      <p>"要强化精准思维，坚持'致广大而尽精微'。"（论证"精准施策、靶向发力"的万能引述句，适配对策段）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">抓落实·恒心金句</span>
+      <p>抓而不紧，等于不抓；抓而不实，等于白抓。（讲"落实要一抓到底"的经典对仗句，可作分论点眼或段首）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">正确政绩观·胸襟</span>
+      <p>功成不必在我、功成必定有我。（"树立正确政绩观"类题的必背金句，显格局、显担当）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">长期主义·积累</span>
+      <p>一件事一件事抓落实，一年一年抓成效，"直到把钉子钉实钉牢"，小胜方能积为大胜。（论证"久久为功/积小胜为大胜"的最佳收束）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">信念韧劲·题记</span>
+      <p>看不到尽头时，每一锤才更需要信念来托底。不计较一时得失，甘于一点一滴的进取，这份韧劲正是基层干事创业不可或缺的宝贵品质。（可作文章开头题记或结尾升华）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·集中用力</span>
+      <p>好钢用在刀刃上，办一件成一件。（讲"抓住主要矛盾/突出重点"的形象化表述，比"集中力量办大事"更灵动）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">术语·基层减负</span>
+      <p>整治形式主义，让党员干部"轻装上阵"；全面、深刻、准确吃透中央精神，如此才能科学决策、正确施治、善作善成。（基层减负+科学决策的标准对策表述）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">术语·因地制宜</span>
+      <p>不搞"一刀切"，因地制宜、各展所长；找准"牛鼻子"精准发力，方能事半功倍。（写"分类施策/精准治理"的万能术语组合）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·小与大</span>
+      <p>基层的事看似琐碎，实则连着大局。（处理"局部与全局""小事与大事"关系的金句，显辩证思维）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·政绩观</span>
+      <p>胸中有大局、手上有准头、心里有定力，练好"钉钉子"的功夫，基层广阔天地大有可为。（可作"抓落实/基层治理"类文章结尾，权威且收束有力）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 案例开篇</span>
+      <p>以"社区干部啃下加装电梯硬骨头"的具体故事破题。迁移写法：<b>写落实/民生类文章，先用一个基层真实案例或人物细节开篇</b>，比抽象说理更有画面感、更抓人。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 权威论断立骨</span>
+      <p>引总书记"发扬钉钉子精神"定调，落到"考验下锤功夫"总论点。迁移写法：<b>落实/作风类文章以总书记相关重要论述开篇立论</b>，站位高、方向稳，最显政治素养。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 全局—精准—持久—政绩观 四段递进</span>
+      <p>文章按"找准落点→精准发力→久久为功→正确政绩观"层层递进，逻辑闭环。迁移写法：<b>写"抓落实"类文章，主动按"观大势—抓要害—持以恒—正政绩"维度拆分分论点</b>，避免四段都在泛谈"要重视落实"。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 小切口连大局</span>
+      <p>"一个村守住耕地红线就是端牢14亿多人的饭碗……基层看似琐碎，实则连着大局"。迁移写法：<b>论证"局部与全局"时，用"小事例+大意义"的排比</b>，既具体又有高度。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 经典案例增信</span>
+      <p>用宁德下党乡、山西右玉70年种树、黄大发36年凿渠作论据。迁移写法：<b>分论点补上一组经典/长效案例</b>，比纯说理更能证明"久久为功"的可贵。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 先破后立显政绩观</span>
+      <p>先批"政绩工程""兜底翻"是拔前任钉子，再立"功成不必在我、一张蓝图绘到底"。迁移写法：<b>谈政绩观时用"先破后立"结构</b>，对比鲜明，落点稳。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"以钉钉子精神抓好落实"为题，写一段150字左右的申论文章论证段，要求：<b>先亮一个分论点（如"胸怀全局、找准落点"／"精准施策、靶向发力"／"一锤接着一锤、久久为功"），再用1个具体事例或数据支撑</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">亮"久久为功"分论点 → 引"抓而不紧等于不抓"金句 → 用"右玉70年种树/黄大发36年凿渠"案例 → 收"小胜积为大胜"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文四维度"全局—精准—持久—政绩观"，为"如何让本地营商环境持续优化"列出四个不同侧重点的分论点（提示：锚定大局选准落点／靶向发力解堵点／一任接着一任干／不贪一时之功）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月17日 · 申论素材积累
+  </div>
+</div>
+</body>
+</html>
