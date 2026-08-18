@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 心中有数、手中有策、行动有力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"心中有数、手中有策、行动有力"（评论员观察）</h1>
+    <div class="meta">人民日报评论部 | 基层工作方法·以人民为中心·精准施策 | 2026年8月19日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：基层工作方法 / 对上负责与对下负责 / 调查研究 / 久久为功 / 正确政绩观（推进基层工作方法谈⑥·收官篇）</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">基层工作方法</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">对上负责与对下负责</span>
+      <span class="tag-item">调查研究·问需于民</span>
+      <span class="tag-item">精准施策</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">久久为功·长期主义</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">学先进·开门纳策</span>
+      <span class="tag-item">乡村振兴·产业发展</span>
+      <span class="tag-item">守土有责·守土尽责</span>
+      <span class="tag-item">区域协调发展</span>
+      <span class="tag-item">真抓实干·一抓到底</span>
+      <span class="tag-item">大兴调查研究</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"基层工作方法""精准施策""以人民为中心""正确政绩观"等主题；本文<b>"故事引入—立总论点—三维度分论（心中有数/手中有策/行动有力）—辩证升华"</b>结构，是写"干部能力/抓落实"类文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何提升基层工作实效／怎样当好基层干部"——可从<b>摸清实情（心中有数）、开阔思路（手中有策）、一抓到底（行动有力）</b>三层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括基层干部应有的工作方法"——可提炼为：<b>心中有数（问需于民）、手中有策（学先进路子）、行动有力（久久为功）</b>三点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"关于提升基层工作能力的指导意见""给基层干部的一封信""大兴调查研究实施方案"素材；文中"对上负责与对下负责统一""守土有责、守土尽责"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："故事引入—立总论点—三维度分论—辩证升华"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（故事）</span>
+        <span class="text">以朋友基层挂职的人居环境整治故事开篇：垃圾投放点村民不配合，症结在"工作不尽责、只想着完成任务交差"。技法：<blue>以真实故事破题</blue>，借群众牢骚点出工作方法问题，亲切有代入感。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一（心中有数）</span>
+        <span class="text"><b>摸清实情</b>——向上看方针政策、向下看问需于民。例证：1982年正定"大包干"试点（省里没精神、地区没布置仍力主试点），里双店公社农业产值翻番。技法：<b>以"敢为人先"的历史事例立信</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二（手中有策）</span>
+        <span class="text"><b>事干到点子上</b>——闭门造车不如出门探路，借鉴先进解同类难题。例证：正定派干部赴小岗村取经、梁家河赴四川调研沼气；涿州对标北京招商（61个项目、98.2亿元）、安陆对接美高电器（3个月签约）。技法：<b>历史+当下、个人+地区多案例排比</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三（行动有力）</span>
+        <span class="text"><b>实事求是因地制宜＋竭尽全力持之以恒</b>。例证：谷城堰河村闵洪艳种茶30年，荒山变茶园、集体资产超2亿、人均年收入4万。技法：<b>长期主义叙事</b>，"小步快跑、坚持不懈"收束。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（升华）</span>
+        <span class="text">引2006年习近平"对党负责就是对人民负责"，三个"是不是"自问，首尾呼应"问题厘清，方向看清"。技法：<b>权威引述＋自省设问＋金句收束</b>，站位高、有温度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"心中有数—手中有策—行动有力"三维度</b>，可整体套用于"干部能力提升/基层工作/抓落实/精准施策"等任一治理类议题，是稳赢的论述骨架。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p>朋友结束基层挂职后，分享了一个故事。村里开展人居环境整治，设置了垃圾集中投放点，但总有村民偷偷将垃圾扔在路边。村民的牢骚里藏着症结所在："扔个垃圾走那么远，你们年轻走得起，上了年纪的老人走得起吗？"</p>
+
+      <p>后来，村里增加了垃圾桶点位，还每天定时上门收集垃圾，又给道路两旁做了绿化，村民饭后散步，溜达着就把垃圾扔到了指定地点。</p>
+
+      <p>朋友感慨，<span class="highlight-gold">"有时群众不配合，其实是工作不尽责，只想着赶紧'完成'任务交差"</span>。</p>
+
+      <p class="thesis">【总论点】基层是服务群众的最近一公里，也是政策落地的最后一公里。在这个位置上工作，既有组织的信任，也有人民的期待，必须把<span class="highlight-purple">对上负责与对下负责统一起来</span>，"<span class="highlight-gold">心中有数、手中有策、行动有力</span>"，才能真正干出经得起检验的实绩。</p>
+
+      <p class="sub-thesis">【分论点一】心中有数，就要摸清实情——既要善于向上看方针政策，也要勤于向下看问需于民。</p>
+
+      <p>心中有数，就要摸清实情。既要善于向上看看，对党的方针政策知其然又知其所以然；也要勤于向下看看，<span class="highlight-blue">问需于民、问计于民</span>，掌握群众所思所盼，摸清地区发展实际。</p>
+
+      <p>1982年，中央发布一号文件，提出包产到户、包干到户<span class="highlight-blue">"都是社会主义集体经济的生产责任制"</span>。虽然彼时河北"省里没精神、地区没布置"，但时任正定县委副书记的习近平同志力主试点"大包干"，当年<span class="highlight-green">里双店公社的农业产值就翻了一番</span>。</p>
+
+      <p>敢为人先的背后，是对党中央方针政策的深入理解，以及对本县农业实际、群众呼声意愿的充分掌握。如此，才能不折不扣地抓好工作落实，<span class="highlight-blue">守土有责，守土尽责</span>。</p>
+
+      <p class="sub-thesis">【分论点二】手中有策，事就能干到点子上——闭门造车不如出门探路，借鉴先进解同类难题。</p>
+
+      <p>手中有策，事就能干到点子上。有些时候，面对束手无策的难题，<span class="highlight-purple">闭门造车不如出门探路</span>，学学先进地区的路子，借鉴相似地区的解法。眼界打开了，思路就活泛了，对策也就有了。</p>
+
+      <p>习近平同志在正定推行"大包干"前，便专程写介绍信，选派干部到安徽凤阳小岗村，体会发展变化、学习相关经验，把好办法都带回来；在陕西梁家河建沼气池前，也实地前往四川调研"取经"，回来后成功点亮<span class="highlight-green">陕北高原第一盏沼气灯</span>……<span class="highlight-purple">目光四射，虚心求教，消化吸收再创新，往往能少走弯路、借力登高</span>。</p>
+
+      <p>找准发展的落子处，才能打开增量空间。<span class="highlight-blue">河北涿州对标北京城市规划</span>，编制产业招商图谱，按每周至少1次的频率进京访企，去年累计招引北京项目<span class="highlight-green">61个、计划投资额98.2亿元</span>。湖北安陆紧盯江浙沪项目动向，得知美高电器计划迁出浙江，快速组织专班对接，<span class="highlight-green">3个月不到便签约</span>。在<span class="highlight-blue">区域协调发展</span>中寻赛道、找机会，<span class="highlight-purple">"过路风"也能下起"落地雨"</span>。</p>
+
+      <p class="sub-thesis">【分论点三】胸有成竹，行动有力——既要实事求是、因地制宜，也要竭尽全力、持之以恒。</p>
+
+      <p>胸有成竹，行动有力。怎么算有力？既要<span class="highlight-blue">实事求是、因地制宜</span>，找到符合实际的发展之路，也要<span class="highlight-blue">竭尽全力、持之以恒</span>，看准了就坚持干下去。</p>
+
+      <p>有句话，湖北谷城县堰河村党委书记闵洪艳常常提起：<span class="highlight-gold">"不留一时的政绩，要搞长期的、可持续的！"</span><span class="highlight-green">30多年前，堰河村"山秃头、人犯愁"</span>，他提出种茶，有村民不理解。闵洪艳没争辩、带头干。<span class="highlight-green">30多年后，荒山变茶园，穷村变国家4A级旅游景区，村集体资产超2亿元，村民人均年收入4万元左右</span>。</p>
+
+      <p>认准了种茶这条路，这是<span class="highlight-purple">立足实际找出路</span>；知道穷山村一口吃不成胖子，因此接续用力，这是<span class="highlight-blue">久久为功</span>。不为一时风光，坚持<span class="highlight-gold">长期主义</span>，才有一世成果。<span class="highlight-gold">把推出的每件事都一抓到底，一件事情接着一件事情办，一年接着一年干</span>，小步快跑、坚持不懈，就没有什么目标不能实现。</p>
+
+      <p>2006年，时任浙江省委书记的习近平同志撰文指出，<span class="highlight-gold">"对党负责，就是对人民负责；对人民负责，就是对党负责。两者统一于对党和人民事业的高度负责之中"</span>。</p>
+
+      <p>我们不妨多问自己几个问题："是不是在忙着与党的根本宗旨毫不相关的事情？有没有一心一意在为老百姓做事情？是不是在围绕党和国家中心任务而工作？多想想我们干的事情是不是党和人民需要我们干的？"</p>
+
+      <p><span class="highlight-purple">问题厘清，方向看清。</span><span class="highlight-gold">开对方子、迈稳步子，定能干出好日子。</span></p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（本系列评论到此结束 ｜ 人民日报2026年8月19日 第05版 · "推进基层工作方法谈⑥"）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">反思·反形式主义</span>
+      <p>"有时群众不配合，其实是工作不尽责，只想着赶紧'完成'任务交差。"（讲"从群众牢骚找症结/反对形式主义走过场"的眼句，论证"群众不配合多在方法不对"显分寸）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·负责统一</span>
+      <p>把对上负责与对下负责统一起来。（论证"对上负责与对下负责相统一"的万能表述，处理"执行上级部署与回应群众诉求"关系时站位稳）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">基层定位·最后一公里</span>
+      <p>基层是服务群众的最近一公里，也是政策落地的最后一公里。（立论基层重要性的标准表述，适配"基层治理/政策落地"类开篇）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">调查研究·群众路线</span>
+      <p>问需于民、问计于民。（写"大兴调查研究/走好群众路线"的四字词，年年可用、权威接地气）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">干部责任·守土</span>
+      <p>守土有责，守土尽责。（讲"干部履职尽责"的四字词，适合论证"岗位担当/压实责任"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">学先进·开门纳策</span>
+      <p>闭门造车不如出门探路；目光四射，虚心求教，消化吸收再创新，往往能少走弯路、借力登高。（论证"学先进经验/调查研究取经"的金句，比空谈"加强学习"更生动）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">区域协调·借势</span>
+      <p>在区域协调发展中寻赛道、找机会，"过路风"也能下起"落地雨"。（讲"区域协调发展/借势发展"的形象比喻，论证"主动融入大局找增量"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">精准施策·因地制宜</span>
+      <p>实事求是、因地制宜；竭尽全力、持之以恒。（写"精准施策/久久为功"的对仗词组，可作对策段小标题或收束）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政绩观·长期主义</span>
+      <p>"不留一时的政绩，要搞长期的、可持续的！"（讲"正确政绩观/长期主义"的七字对仗，极适合论证"功成不必在我、功成必定有我"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">接续用力·钉钉子</span>
+      <p>把推出的每件事都一抓到底，一件事情接着一件事情办，一年接着一年干，小步快跑、坚持不懈。（讲"久久为功/钉钉子精神"的动词串，对策题直接套）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">党性·人民性统一</span>
+      <p>对党负责，就是对人民负责；对人民负责，就是对党负责。（讲"党性与人民性统一"的权威金句，站位高、可作升华段引述）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">收束·干出好日子</span>
+      <p>问题厘清，方向看清。开对方子、迈稳步子，定能干出好日子。（可作"基层工作/抓落实"类文章结尾，亲切有力、接地气）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 故事破题</span>
+      <p>以朋友挂职的真实故事（垃圾投放点村民不配合）开篇，借群众牢骚点出问题。迁移写法：<b>写"基层工作/群众工作"类文章，用一段身边的真实小故事破题</b>，比抽象说理更抓人、更有代入感。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 三维度分论（首先/其次/最后）</span>
+      <p>把"干出实绩"拆成"心中有数（摸清实情）—手中有策（开阔思路）—行动有力（久久为功）"三个递进维度。迁移写法：<b>写"如何提升基层工作实效/干部能力"类对策题，主动按此三维拆分分论点</b>，逻辑清晰不重样。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 历史今例并用</span>
+      <p>用习近平同志正定"大包干"、梁家河沼气池等历史事例，叠加涿州招商、安陆对接、堰河村种茶等当下案例。迁移写法：<b>论证"工作方法"时历史经验与当代实践并举</b>，既显厚度又接地气。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 辩证立论（统一）</span>
+      <p>以"把对上负责与对下负责统一起来"作总论点内核。迁移写法：<b>论证"执行上级部署与回应群众诉求"关系时，用"统一"替代"二选一"</b>，显辩证、不偏颇。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 比喻构句</span>
+      <p>"过路风"下起"落地雨"、"闭门造车不如出门探路"。迁移写法：<b>用生动比喻替代平铺直叙</b>，让治理类文章更有画面与记忆点。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 长期主义叙事</span>
+      <p>闵洪艳30年种茶，荒山变茶园、穷村变4A景区。迁移写法：<b>论证"久久为功/正确政绩观"时，用一个"三十年磨一剑"的具体人物长线故事</b>，比罗列口号更有说服力。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"把对上负责与对下负责统一起来"为题，写一段150字左右的申论论证段，要求：<b>先亮一个分论点（如"心中有数，就要摸清实情"／"手中有策，事就能干到点子上"／"行动有力，就要久久为功"），再用文中任一要素（正定大包干/小岗村取经/堰河村种茶等）支撑</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">亮"心中有数"分论点 → 引"问需于民、问计于民" → 用正定"大包干"试点实例 → 收"守土有责、守土尽责，干出经得起检验的实绩"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"心中有数—手中有策—行动有力"三维度，为"如何提升基层干部抓落实能力"列三个不同侧重点的对策分论点（提示：摸清实情防决策偏差／开阔思路防闭门造车／一抓到底防虎头蛇尾）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月19日 · 申论素材积累（推进基层工作方法谈⑥·收官篇）
+  </div>
+</div>
+</body>
+</html>
