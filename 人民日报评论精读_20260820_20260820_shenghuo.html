@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 生活服务要"讲究"不要"将就"</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读 · 人民时评</div>
+    <h1>生活服务要"讲究"不要"将就"（人民时评）</h1>
+    <div class="meta">人民日报评论 | 民生保障·生活性服务业 | 2026年8月20日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：生活性服务业 / 供给质量 / 消费升级 / 营商环境 / 社区治理 / 获得感</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">生活性服务业</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">供给质量</span>
+      <span class="tag-item">消费升级·扩大内需</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">普惠与特色</span>
+      <span class="tag-item">一老一小·养老托育</span>
+      <span class="tag-item">社区治理·助餐</span>
+      <span class="tag-item">信用体系·良币驱逐劣币</span>
+      <span class="tag-item">政府与市场</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">消费新场景</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">获得感</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"民生保障""消费升级""高质量发展""以人民为中心"等主题；本文<b>"数据引入—现象对比—政策靶向—立总论点—三维度分论（规模品质／普惠特色／放活管好）—升华治理能力"</b>结构，是写"服务业提质/民生改善"类文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何让群众生活更'讲究'（提升生活性服务业品质）"——可从<b>规模与品质统一（扩量提质）、普惠与特色并举（兜底线+顺升级）、放活与管好结合（优环境+强监管）</b>三层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括生活性服务业从'将就'到'讲究'的路径"——可提炼为：<b>扩量提质（供需精准匹配）、普惠特色（兜底线+顺升级）、放活管好（优环境+强监管）</b>三点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"关于促进生活性服务业高品质发展的实施意见""一刻钟便民生活圈建设方案"素材；文中"政策有温度、监管有厚度""良币驱逐劣币"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："数据引入—现象对比—立总论点—三维度分论—升华治理"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（数据）</span>
+        <span class="text">以"上半年生活性服务业扩围提质"的数据开篇（批零、住宿餐饮增加值扩大，文化企业营收增4.6%）。技法：<blue>用亮眼数据破题</blue>，点出"热气腾腾的小店"民生温度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">转合（问题）</span>
+        <span class="text">"有没有"基本解决后，"好不好"期盼紧迫；家政"好阿姨不好找"，优质供给不足只能被动"将就"。技法：<b>以"将就vs讲究"对比立靶</b>，引出核心矛盾。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">立论（总论点）</span>
+        <span class="text">引商务部等9部门家政新政（19条），点明<b>必经之路是促进生活性服务业高品质多样化便利化发展</b>。技法：<b>政策佐证＋亮明总论点</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一（规模品质）</span>
+        <span class="text"><b>规模是基础，品质是核心</b>——不打磨品质规模难持续；海南"椰嫂"带动近5万人就业证"扩量与提质同频共振"。技法：<b>对仗立论＋案例</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二（普惠特色）</span>
+        <span class="text"><b>普惠打底，特色增色</b>——兜牢底线+顺应升级；苏州宠物街区、贵州溶洞咖啡开蓝海。技法：<b>辩证并举＋新场景案例</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三（放活管好）</span>
+        <span class="text"><b>既需放活也需管好</b>——沈阳社区食堂助餐；政策有温度、监管有厚度，良币驱逐劣币。技法：<b>政府与市场关系辩证＋社区治理实例</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（升华）</span>
+        <span class="text">从"将就"到"讲究"是理念转变，更是对治理能力的全面考验。技法：<b>回扣标题＋拔高到治理能力</b>，站位稳。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"规模品质／普惠特色／放活管好"三维度</b>，可整体套用于"服务业提质/民生保障/营商环境/消费场景"等任一民生议题，是稳赢的论述骨架。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-blue">生活性服务业</span>，一头连着千家万户的柴米油盐，一头连着经济大盘的稳进提质。今年上半年，生活性服务业扩围提质是一个鲜明特征。</p>
+
+      <p>上半年<span class="highlight-green">批发和零售业、住宿和餐饮业的增加值规模都在扩大</span>，<span class="highlight-green">文化企业实现营业收入同比增长4.6%</span>。成绩单背后，是无数小店的热气腾腾，是养老托育服务的悉心发力，是文旅体商的好戏连台。</p>
+
+      <p>也要看到，当"<span class="highlight-gold">有没有</span>"的问题基本解决，"<span class="highlight-gold">好不好</span>"的期盼愈发紧迫。以家政服务业为例，尽管从业人员<span class="highlight-green">超过3000万</span>，但"<span class="highlight-purple">好阿姨不好找</span>"的问题仍困扰许多消费者。提及生活性服务业，大家受困扰的共同话题都是：<span class="highlight-purple">优质供给不足，只能退而求其次被动"将就"，难以实现有质感的"讲究"生活</span>。</p>
+
+      <p>前不久，<span class="highlight-blue">商务部等9部门印发《关于促进家政服务业高质量发展的若干政策措施》</span>，19条具体举措覆盖从业人员权益保障、服务价格规范监管、经营主体信用查询、服务质量综合评价等多个维度，靶向破解家政服务业发展面临的堵点难点。</p>
+
+      <p class="thesis">【总论点】打造供给充足、品质优良的"讲究"服务，让消费者不再"将就"，一条必经之路是促进<span class="highlight-blue">生活性服务业高品质多样化便利化发展</span>。</p>
+
+      <p class="sub-thesis">【分论点一】规模是基础，品质是核心——不打磨品质规模再大也无法持续，须推动供给结构与需求结构精准匹配。</p>
+
+      <p>规模是基础，品质是核心。<span class="highlight-purple">不打磨品质，规模再大也无法持续</span>。紧跟居民消费需求迭代趋势，推动供给结构与需求结构精准匹配，方能实现<span class="highlight-gold">总量扩张与品质跃升的同频共振</span>。</p>
+
+      <p><span class="highlight-blue">海南制定家政地方服务规范</span>，搭建家政信用信息平台，着力培育家政劳务品牌"<span class="highlight-gold">椰嫂</span>"，截至目前已带动<span class="highlight-green">近5万人就业</span>。实践表明，<span class="highlight-purple">扩量与提质如同车之两轮，只有协同转动</span>，才能让消费者既有更多选择，也有更好选择。</p>
+
+      <p class="sub-thesis">【分论点二】普惠打底，特色增色——"普惠"兜牢基本民生底线，"特色"顺应持续升级的消费浪潮。</p>
+
+      <p><span class="highlight-gold">普惠打底，特色增色</span>。"普惠"为的是<span class="highlight-blue">兜牢基本民生底线</span>，保障群众刚性基础需求；"特色"为的是顺应持续升级的消费浪潮，满足差异化、个性化诉求。</p>
+
+      <p><span class="highlight-blue">江苏苏州依托老旧街区改造打造宠物主题文旅消费街区</span>，满足青年群体新兴消费需求；<span class="highlight-blue">贵州多地把咖啡厅搬进溶洞、天坑</span>，培育壮大山地微度假新业态。特色化创新探索，不仅有效满足群众多元化消费需求，更为行业持续发展开辟出<span class="highlight-gold">全新蓝海</span>。</p>
+
+      <p class="sub-thesis">【分论点三】既需放活也需管好——生活性服务业点多面广，要激发活力更要守住底线。</p>
+
+      <p>生活性服务业<span class="highlight-purple">点多面广、经营主体分散</span>，既需要<span class="highlight-blue">放活</span>，激发活力；也需要<span class="highlight-blue">管好</span>，守住底线。</p>
+
+      <p>走进<span class="highlight-blue">辽宁沈阳和平区和平新村社区食堂</span>，刚出锅的三鲜馅包子香气四溢。社区通过盘活闲置空间自办食堂，招募居民志愿者参与，常态化为辖区老人提供助餐服务。现如今，<span class="highlight-green">沈阳全市共建成老年人助餐点200多个</span>，让老年群体在家门口就能收获暖胃又暖心的幸福味道。</p>
+
+      <p><span class="highlight-gold">政策有温度、监管有厚度</span>，行业发展才能更"讲究"。一方面，持续<span class="highlight-blue">优化营商环境</span>，吸引民营企业、社会组织、个体经营者参与进来，强化养老托育、家政便民、社区照料、文体休闲等领域供给。另一方面，<span class="highlight-blue">健全监管体系</span>，完善行业服务标准、信用评价、溯源管理和纠纷调解机制，加快形成<span class="highlight-gold">良币驱逐劣币</span>的良性循环。</p>
+
+      <p>从"<span class="highlight-gold">将就</span>"到"<span class="highlight-gold">讲究</span>"，是<span class="highlight-purple">服务标准和发展理念的深刻转变</span>，更是对<span class="highlight-purple">治理能力的全面考验</span>。把"将就"的短板补齐，把"讲究"的长板拉长，每一分对生活品质的追求，都将化作百姓心头的<span class="highlight-gold">获得感</span>。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年8月20日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·高品质发展</span>
+      <p>打造供给充足、品质优良的"讲究"服务，让消费者不再"将就"，一条必经之路是促进生活性服务业高品质多样化便利化发展。（立论"服务业提质"的标准表述，适配"民生保障/消费升级"类开篇）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">民生·一头连着</span>
+      <p>生活性服务业，一头连着千家万户的柴米油盐，一头连着经济大盘的稳进提质。（讲"民生与经济统一"的标准表述，论证"服务业/内需"站位稳）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">需求升级·将就讲究</span>
+      <p>当"有没有"的问题基本解决，"好不好"的期盼愈发紧迫。（讲"主要矛盾转化/需求升级"的辩证句，论证"供给侧提质"必引）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">规模品质·同频共振</span>
+      <p>规模是基础，品质是核心。不打磨品质，规模再大也无法持续。（讲"量与质关系"的万能表述，论证"高质量发展/扩量提质"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">扩量提质·车之两轮</span>
+      <p>扩量与提质如同车之两轮，只有协同转动，才能让消费者既有更多选择，也有更好选择。（讲"规模与品质统一"的形象比喻，比平铺直叙更出彩）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">普惠特色·并举</span>
+      <p>普惠打底，特色增色。"普惠"兜牢基本民生底线，"特色"顺应持续升级的消费浪潮。（讲"保基本与促升级并举"的对仗词组，对策段小标题可直接用）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">政府市场·放活管好</span>
+      <p>既需要放活，激发活力；也需要管好，守住底线。（讲"政府与市场关系/放管服"的万能表述，论证"营商环境"站位稳）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">营商·温度厚度</span>
+      <p>政策有温度、监管有厚度，行业发展才能更"讲究"。（讲"优化营商环境与强化监管统一"的金句，可作升华段）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">信用·良币驱逐劣币</span>
+      <p>完善行业服务标准、信用评价、溯源管理和纠纷调解机制，加快形成良币驱逐劣币的良性循环。（讲"信用体系/行业监管"的权威表述，论证"规范市场秩序"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">治理·将就讲究</span>
+      <p>从"将就"到"讲究"，是服务标准和发展理念的深刻转变，更是对治理能力的全面考验。（讲"民生改善对治理能力的考验"的升华句，站位高、可作结尾）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">获得感·落脚点</span>
+      <p>每一分对生活品质的追求，都将化作百姓心头的获得感。（写"民生工作落脚点/以人民为中心"的收束句，亲切有力、接地气）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 数据破题</span>
+      <p>以"上半年生活性服务业扩围提质"的数据（批零、住宿餐饮增加值扩大，文化企业营收增4.6%）开篇。迁移写法：<b>写"民生/服务业"类文章，用一组亮眼数据破题</b>，既显时效又点温度。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 对比立靶（将就vs讲究）</span>
+      <p>以"有没有→好不好""将就→讲究"的对比，立出核心矛盾。迁移写法：<b>论证"供给侧提质/需求升级"时主动设置对比</b>，让问题更尖锐、论点更聚焦。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 三维度分论（基础／打底／放管）</span>
+      <p>把"更讲究"拆成"规模品质（扩量提质）—普惠特色（兜底线+顺升级）—放活管好（优环境+强监管）"三个维度。迁移写法：<b>写"如何提升服务业品质/民生保障"类对策题，主动按此三维拆分分论点</b>。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 政策佐证立论</span>
+      <p>引商务部等9部门家政新政（19条）作论据，顺势亮明总论点。迁移写法：<b>论证"民生政策"时引用最新部委政策文件</b>，提升权威性与针对性。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 小切口案例（社区食堂）</span>
+      <p>用沈阳和平新村社区食堂（盘活闲置空间、志愿者助餐、200多个助餐点）作"放活管好"的具象案例。迁移写法：<b>论证"社区治理/一老一小"时用一个社区小故事落地</b>，比空谈更有温度。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 回扣标题升华</span>
+      <p>结尾回扣"将就→讲究"，拔高到"服务标准与发展理念转变＋治理能力考验"。迁移写法：<b>收束段回扣标题关键词并升一层</b>，让文章首尾呼应、立意拔高。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"让公共服务更'讲究'不要'将就'"为题，写一段150字左右的申论论证段，要求：<b>先亮一个分论点（如"规模是基础、品质是核心"／"普惠打底、特色增色"／"既需放活也需管好"），再用文中任一要素（椰嫂劳务品牌/苏州宠物街区/沈阳社区食堂等）支撑</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">亮"放活管好"分论点 → 引"政策有温度、监管有厚度" → 用沈阳社区食堂助餐（200多个助餐点）实例 → 收"化作百姓心头的获得感"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"规模品质／普惠特色／放活管好"三维度，为"如何促进生活性服务业高品质发展"列三个不同侧重点的对策分论点（提示：供需精准匹配防"大而不优"／特色场景防"千篇一律"／信用监管防"劣币驱逐良币"）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月20日 · 申论素材积累（人民时评）
+  </div>
+</div>
+</body>
+</html>
