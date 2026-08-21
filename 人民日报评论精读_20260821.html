@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 长出文化精品，需育产业森林</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>长出文化精品，需育产业森林（连线评论员）</h1>
+    <div class="meta">周珊珊（人民日报评论员）· 余姝满（四川日报评论员） | 文化强国·文化产业发展·文旅融合 | 2026年8月21日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：文化产业发展/文化强国/守正创新/文旅融合/文化自信</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">文化强国</span>
+      <span class="tag-item">文化产业发展</span>
+      <span class="tag-item">守正创新</span>
+      <span class="tag-item">文旅融合</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">文化产业生态·集群</span>
+      <span class="tag-item">全产业链布局</span>
+      <span class="tag-item">IP资源向文化资产转化</span>
+      <span class="tag-item">数字文创</span>
+      <span class="tag-item">供给侧结构性改革（文化）</span>
+      <span class="tag-item">区域特色文化</span>
+      <span class="tag-item">高质量发展（文化）</span>
+      <span class="tag-item">久久为功</span>
+      <span class="tag-item">讲好中国故事</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"文化强国""文化产业发展""守正创新""文旅融合""文化自信"等主题；本文<b>"现象切入—立总论点—三维度分论（产业生态／守正创新／文旅融合）—系统制胜升华"</b>结构，是写"文化如何出精品、壮产业"类文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">"如何推动文化产业高质量发展／怎样让文化资源变产业优势"——可从<b>植产业森林（全链条集群）、抓守正创新（内核＋表达）、促文旅融合（流量变资产）</b>三层作答，本文即天然答案框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">归纳题</span>
+        <span class="text">"概括四川影视产业崛起的经验"——可提炼为：<b>全产业链集群（育森林）、守正创新表达（破圈）、文旅融合转化（化学反应）</b>三点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">应用文</span>
+        <span class="text">可迁移为"关于推动文化产业高质量发展的意见""文化强省建设实施方案"素材；文中"育森林而非栽盆景""让流量沉淀为长期文化资产""出精品、育产业、带活一地"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："现象切入—立总论点—三维度分论—系统制胜升华"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（现象）</span>
+        <span class="text">以《哪吒》《八仙！》现象级动画切入，抛出"为何成都总能出爆款"。技法：<blue>用现象级文化产品破题</blue>，把抽象"文化产业"具象化，亲切有代入感。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">立论（总论点）</span>
+        <span class="text"><b>文化产业崛起靠系统制胜、久久为功</b>——沉下心育"产业森林"，让流量沉淀为长期文化资产。技法：<b>对话中自然析出核心论点</b>，站位高、落地实。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一（育森林）</span>
+        <span class="text"><b>育森林而非栽盆景</b>——全产业链布局与产业集群效应，告别"单部爆款靠运气"，形成常态化产出精品的稳定机制。技法：<b>比喻（森林vs盆景）＋数据</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二（守正创新）</span>
+        <span class="text"><b>守不变（精神内核）与求万变（现代表达）</b>——文化符号"无声被感知"而非"生硬被看见"。技法：<b>辩证二分＋底线思维</b>，论证有深度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三（文旅融合）</span>
+        <span class="text"><b>从"物理叠加"走向"化学反应"</b>——接得住热度、留得住游客，把一次性流量变为持续性消费。技法：<b>比喻（叠加入反应）＋痛点导向</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（升华）</span>
+        <span class="text">以"出精品、育产业、带活一地"正循环收束，落到"守正创新、久久为功，讲好中国故事、彰显文化自信"。技法：<b>排比升华＋价值拔高</b>，气势足。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"育生态—守正创新—促融合"三维度</b>，可整体套用于"文化产业发展/非遗活化/文旅融合/老字号焕新"等任一文化类议题，是稳赢的论述骨架。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="speaker">周珊珊：</span>继此前《哪吒之魔童闹海》登顶全球动画电影票房榜，动画电影《八仙！》又成了今年暑期档黑马。<span class="highlight-gold">为什么四川成都高新区总能创造出现象级作品？</span></p>
+
+      <p><span class="speaker">余姝满：</span>四川影视产业发展就像"<span class="highlight-gold">八仙过海</span>"，从单打独斗到集群协作。成都高新区天府长岛数字文创园集聚<span class="highlight-green">70余家企业</span>，百米之内覆盖上下游，从原创、制作到后期形成闭环，是极具效率的协作模式。目前，成都高新区已经集聚<span class="highlight-green">数字文创企业超6000家</span>，构建起<span class="highlight-blue">全产业链条</span>。</p>
+
+      <p>生态好了，本土人才自然成长起来，也会吸引更多人才涌来，人的创造性被充分激发。宽松友好的创作氛围、日趋完善的政策配套、充满活力的市场环境，正让四川成为影视产业的新热土。</p>
+
+      <p><span class="speaker">周珊珊：</span>"一杯咖啡的距离就能走完一部动画电影的全产业链"，正是<span class="highlight-blue">全产业链布局与产业集群效应</span>，让四川影视告别"单部爆款靠运气"，形成常态化产出精品、持续输出头部视听内容的稳定机制。</p>
+
+      <p class="thesis">【总论点】文化产业的崛起，从来不是<span class="highlight-purple">单点突破</span>，而是<span class="highlight-purple">系统制胜</span>。从来没有凭空掉落的现象级作品，都是长期深耕内容、耐心搭建体系、持续优化生态的必然结果。<span class="highlight-gold">沉下心培育能持续产出内容的产业森林</span>，把创作的根脉深深扎进文化的土壤里，才能让流量沉淀为长期的文化资产，最终实现"出精品、育产业、带活一地"的正循环。</p>
+
+      <p class="sub-thesis">【分论点一】育森林而非栽盆景——文化精品的常态化产出，靠的是全产业链布局与产业集群生态，而非单部爆款的偶然运气。</p>
+
+      <p><span class="speaker">余姝满：</span><span class="highlight-blue">全链条影视工业体系</span>从"建起来"走向"强起来"，实现各类要素一键到达、集成供应，跑出影视发展"加速度"。四川省"<span class="highlight-blue">十五五</span>"规划纲要中提出推进<span class="highlight-blue">文化和科技产业融合发展试验区</span>建设，将影视动漫列为大力培育的重点产业。<span class="highlight-gold">"育森林"而非"栽盆景"</span>，构建完整生态系统，才能持续释放创新活力。</p>
+
+      <p><span class="speaker">周珊珊：</span>熊猫、火锅、三星堆、"川普"方言……四川出品的影视作品中，常态化植入本地元素，传播效果也不错。地域文化如何真正做到打动人心，而非文化符号堆砌？</p>
+
+      <p class="sub-thesis">【分论点二】守正创新是破圈关键——提炼精神内核"守不变"，以现代表达"求万变"，让传统文化在大银幕上"活起来"。</p>
+
+      <p><span class="speaker">余姝满：</span>开发四川地域文化富矿，关键是做好<span class="highlight-gold">守正创新</span>这篇文章。</p>
+
+      <p>提炼精神内核是"<span class="highlight-purple">守不变</span>"，这是创作的起点。把地域文化里共通的情感和精神价值提取出来，才能拥有直抵人心的穿透力。方言、风物不只是符号，更是四川人达观气质的自然流露。</p>
+
+      <p>创新现代表达是"<span class="highlight-purple">求万变</span>"，这是破圈的关键。以<span class="highlight-blue">新技术赋能视觉呈现</span>，用<span class="highlight-blue">年轻化叙事转换视角</span>，让千年神话适配当代审美，让传统文化在大银幕上"<span class="highlight-gold">活起来</span>"。</p>
+
+      <p>所有文化元素最终都要服务于人物和主题，这是不能破的底线。<span class="highlight-purple">文化符号生硬"被看见"是干扰，无声"被感知"才是浸润</span>。元素服务故事、塑造人物，才能既有辨识度又无违和感。</p>
+
+      <p><span class="speaker">周珊珊：</span>从"跟着影视游四川"到"一部剧带火一座城，一座城反哺百部剧"，影视与旅游如何从"<span class="highlight-purple">物理叠加</span>"走向"<span class="highlight-purple">化学反应</span>"？面对影视热度带来的流量短期暴涨、客流留存不足等普遍痛点，四川有什么好方法？</p>
+
+      <p class="sub-thesis">【分论点三】文旅融合从"物理叠加"走向"化学反应"——接得住热度、留得住游客，把一次性流量变为持续性消费，推动IP资源向文化资产转化。</p>
+
+      <p><span class="speaker">余姝满：</span>让服务好起来，功夫在平时。影视爆火带来客流激增，日常完善配套、提升服务，才能<span class="highlight-blue">接得住热度、留得住游客</span>。让产品潮起来，增加持续互动。前瞻规划、精心策划，以非遗、潮玩等品类的文创链接情感、带动复购，更好把一次性流量变为持续性消费。让体验新起来，解锁新玩法。推出主题旅游线路、主题旅游廊道、沉浸式剧场等，用新场景拉长体验感、激活新消费。</p>
+
+      <p>影视与旅游从"物理叠加"走向"化学反应"，是难题，也是蓝海。四川正在不断探索中，我们相信，保持<span class="highlight-gold">文化自信</span>，持续在服务优化、技术创新、产业升级上发力，推动<span class="highlight-blue">IP（知识产权）资源向文化资产转化</span>，方能让流量沉淀滋养长久发展。</p>
+
+      <p><span class="speaker">周珊珊：</span>四川的实践表明，文化产业的崛起，从来不是单点突破，而是系统制胜。"慢"下来磨内容，才能不断出圈出精品。沉下心培育能持续产出内容的产业森林，把创作的根脉深深扎进文化的土壤里，才能让流量沉淀为长期的文化资产，最终实现"出精品、育产业、带活一地"的正循环。<span class="highlight-gold">唯有守正创新、久久为功</span>，才能让文化资源变为产业优势，让本土IP走向全国、享誉世界，以光影之力<span class="highlight-gold">讲好中国故事、彰显文化自信</span>。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年8月21日 第05版 · 连线评论员）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·系统制胜</span>
+      <p>文化产业的崛起，从来不是单点突破，而是系统制胜。（讲"文化产业/任何事业要靠体系与生态"的权威金句，可作文化类文章总论点）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">方法论·育森林</span>
+      <p>"育森林"而非"栽盆景"，构建完整生态系统，才能持续释放创新活力。（讲"产业生态/长效机制"的形象比喻，反对"一阵风、盆景式"，对策题直接套）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">规律·久久为功</span>
+      <p>从来没有凭空掉落的现象级作品，都是长期深耕内容、耐心搭建体系、持续优化生态的必然结果。（讲"久久为功/长期主义"的辩证句，论证"慢工出精品"显深度）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">守正创新</span>
+      <p>提炼精神内核是"守不变"，以现代表达"求万变"，让传统文化在大银幕上"活起来"。（讲"守正创新"的标准表述，论证"文化传承发展/非遗活化"必引）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·符号表达</span>
+      <p>文化符号生硬"被看见"是干扰，无声"被感知"才是浸润。（讲"文化表达要自然融入"的哲理句，论证"文化浸润/避免形式化"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">文旅融合</span>
+      <p>从"物理叠加"走向"化学反应"，把一次性流量变为持续性消费。（讲"文旅融合/流量转化"的形象对比，论证"文旅深度融合"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">资产转化</span>
+      <p>推动IP（知识产权）资源向文化资产转化，方能让流量沉淀滋养长久发展。（讲"文化资源变产业优势"的规范表述，论证"文化价值变现"）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">正循环</span>
+      <p>沉下心培育能持续产出内容的产业森林，让流量沉淀为长期的文化资产，最终实现"出精品、育产业、带活一地"的正循环。（讲"文化—产业—区域"联动发展的金句，可作升华段）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">文化自信·收束</span>
+      <p>唯有守正创新、久久为功，才能让文化资源变为产业优势，让本土IP走向全国、享誉世界，以光影之力讲好中国故事、彰显文化自信。（讲"文化自信/讲好中国故事"的升华句，可作结尾）</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">数据·产业生态</span>
+      <p>• 成都高新区集聚数字文创企业超6000家<br>• 天府长岛数字文创园集聚70余家企业，百米内覆盖上下游<br>• 从原创、制作到后期形成闭环，一杯咖啡距离走完全产业链</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 现象破题</span>
+      <p>以《哪吒》《八仙！》现象级动画切入，把抽象"文化产业"变成可感的爆款作品。迁移写法：<b>写"文化产业发展/非遗活化"类文章，用一个现象级文化产品破题</b>，比空喊概念更抓人。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 三维度分论（生态／守正创新／融合）</span>
+      <p>把"文化如何出精品壮产业"拆成"育森林（全链条）—守正创新（内核＋表达）—促融合（流量变资产）"三个递进维度。迁移写法：<b>写"文化强国/文化产业高质量发展"类对策题，主动按此三维拆分分论点</b>，逻辑清晰不重样。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 对话体析出论点</span>
+      <p>借两位评论员问答，在对话中自然析出"系统制胜""育森林而非栽盆景"等核心论点。迁移写法：<b>论证"地方实践/案例分析"时用"设问—对答"带出观点</b>，比平铺直叙更生动。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 比喻构句（森林vs盆景）</span>
+      <p>"育森林"而非"栽盆景"、"物理叠加"与"化学反应"、"被看见"与"被感知"。迁移写法：<b>用生动比喻替代平铺直叙</b>，让文化类文章更有画面与记忆点。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 辩证二分论证</span>
+      <p>守正创新拆成"守不变（精神内核）"与"求万变（现代表达）"两个侧面，再加"不能破的底线"。迁移写法：<b>论证"守正创新/传统与现代"时主动做辩证二分</b>，比一味唱赞歌更显思辨深度。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · 排比升华收束</span>
+      <p>用"出精品、育产业、带活一地"正循环，落到"守正创新、久久为功……讲好中国故事、彰显文化自信"。迁移写法：<b>文化类文章结尾用"排比＋价值拔高"收束</b>，气势足、站位稳。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"让传统文化活起来"为题，写一段150字左右的申论论证段，要求：<b>先亮一个分论点（如"守正创新是破圈关键"／"育森林而非栽盆景"／"从物理叠加走向化学反应"），再用文中任一要素（精神内核／年轻化叙事／IP资源向文化资产转化等）支撑</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">亮"守正创新"分论点 → 引"守不变（精神内核）求万变（现代表达）" → 用"千年神话适配当代审美、传统文化在大银幕上活起来"实例 → 收"讲好中国故事、彰显文化自信"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"育生态—守正创新—促融合"三维度，为"如何推动本地特色文化产业发展"列三个不同侧重点的对策分论点（提示：全产业链集群防单点突围／守正创新防符号堆砌／文旅融合防流量流失）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月21日 · 申论素材积累（连线评论员）
+  </div>
+</div>
+</body>
+</html>
