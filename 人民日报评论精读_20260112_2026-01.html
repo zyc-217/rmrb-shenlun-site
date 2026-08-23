@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 干在前与马上干（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>干在前与马上干（评论员观察）</h1>
+    <div class="meta">实干担当 · 抓落实 · 顶层设计 · 基层创新 · 因地制宜 · 高质量发展 · 新质生产力 · 区域协同 · 时不我待 · 久久为功 | 2026年1月12日 | 第08版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">实干担当</span><span class="tag-item">抓落实</span><span class="tag-item">顶层设计</span><span class="tag-item">基层创新</span><span class="tag-item">因地制宜</span><span class="tag-item">高质量发展</span><span class="tag-item">新质生产力</span><span class="tag-item">区域协同</span><span class="tag-item">时不我待</span><span class="tag-item">久久为功</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"想在前就要干在前、干在前最好马上干"作论点，是"实干/抓落实"主题最干净利落的立论范式。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何抓落实"——统筹方向感与紧迫感、顶层设计与基层创新双向奔赴，两条对策可直接用。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"中国发展即时感从哪来"——顶层战略与基层行动高度同频、政策确定后各地抢抓机遇。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"新年开局动员/工作部署"可用"开年就要开动、开局就要开跑"的号召式表达。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（立论—展开—收束）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">想在前就要干在前、干在前最好马上干，以时不我待的紧迫感和功成必定有我的进取心，即刻出发、驶向辽阔未来。<br><span style="color:#0d47a1;">▸ 写法：立论破题：用对仗短句直接亮明观点，干脆有力</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">想在前就要干在前、干在前最好马上干——立行立办的即时感，体现在"看准了就抓紧干"的决心里。<br><span style="color:#0d47a1;">▸ 写法：现象铺陈：以高铁、数据流动、实验室灯光等群像烘托"即时即干"</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">"定了就要落实"需要统筹方向感与紧迫感——真正的效率是在正确方向上全速前进。<br><span style="color:#0d47a1;">▸ 写法：辩证对比：准备充分则快、目光长远则稳，避免"低头抢跑"</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">顶层设计与基层创新双向奔赴，共同构成发展的独特优势。<br><span style="color:#0d47a1;">▸ 写法：上下同频：以双碳、东数西算说明政策确定后各地因地制宜落实</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】想在前，就要干在前；干在前，最好马上干——开年开跑、即刻出发，以时不我待的紧迫感和功成必定有我的进取心，在蓄力与发力、谋划与执行之间驶向辽阔未来。</p><p>每个平凡个体，都在用自己的方式融入时代大潮。发展不是抽象的概念，而是亿万次具体而微的行动叠加。</p>
+<p>开年就要开动，开局就要开跑。即刻出发、奋力赶路，是为了给明天一个交代。</p>
+<p>每到年初，很多人会给自己写一份新年寄语、列一张心愿清单。2026年来了，在"想要"与"得到"之间，如何"做到"？</p>
+<p class="sub-thesis">【分论点一】那就是：<span class="highlight-gold">想在前，就要干在前；干在前，最好马上干。</span>这恰是立行立办的即时感。</p>
+<p>今天的中国，给人很强的即时感。清晨，第一班高铁早早地发车鸣笛；日间，各类数据信息、人员物资在高效流动；深夜，高校院所的实验室里，闪烁着未熄的灯光。线下，企业费尽心思把新的科研成果转化应用；网上，直播间里回响着"农"字号产品热销的乡音。</p>
+<p><span class="highlight-gold">即时即干，就在眼前；实干奋斗，为了明天。</span>都说中国发展的速度快，这个速度不仅体现在日新月异的变化中，更在"看准了就抓紧干"的决心里。</p>
+<p>2025年中央经济工作会议上，习近平总书记强调："党中央关于明年经济工作的思路、任务、政策，是经过充分论证、反复研究提出的。定了就要落实。"</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">"定了就要落实"，需要更好统筹方向感与紧迫感。真正的效率，不是低头抢跑，而是在正确方向上全速前进。</span></p>
+<p>想抵达，关键要有行动。有了顶层战略与基层行动的高度同频，"抓紧干"就能见实效。<span class="highlight-blue">"双碳"目标确立，内蒙古的旷野上立起成片的风力发电机，青海的戈壁滩上铺开光伏矩阵；"东数西算"工程启动，贵州利用喀斯特地貌山体，建设洞库式数据中心</span>，为东部传输数据洪流，也为西部深挖增长潜能。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">新的增长点不是凭空来的，靠的是多年技术积累、资源优势转换、区域协同发展的良性互动。政策一旦确定，各地抢抓机遇、因地制宜，落实起来犹如按下快进键。在发展规划的引领下，顶层设计与基层创新的双向奔赴，共同构成了发展的独特优势。</span></p>
+<p>有目标，就不惧风雨。<span class="highlight-purple">在蓄力与发力、谋划与执行之间，快是因为准备充分，稳是因为目光长远。</span>人工智能高速发展，倘若陷入"唯技术论"的竞赛，忽视伦理与安全边界，不免会造成"自伤"。<span class="highlight-blue">中国快速推进人工智能创新与应用，也同步出台《生成式人工智能服务管理暂行办法》，成立人工智能标准化技术委员会</span>，确保技术创新在良性轨道上服务发展大局。</p>
+<p>"稳中有进"的智慧、当下改与长久立的统一，让"起跑者"更勇敢、让"领跑者"更从容。风物长宜放眼量，当前与将来的协同共振，造就发展高质量、可持续。</p>
+<p>中国的发展，充盈着时不我待的紧迫感，也饱含功成必定有我的进取心。人是发展的主体，是成绩的造就者，也是成果的共享者。时代的发展中，"每一个人都是主角"。</p>
+<p>不妨看看普通中国人的一天。菜农，种菜按照订单，大棚有了"云管家"，蔬菜品质与销路有保障；程序员，在全球开源的项目中，写下一行行代码，加速技术的传播与创新……每个平凡个体，都在用自己的方式融入时代大潮。发展不是抽象的概念，而是亿万次具体而微的行动叠加。</p>
+<p>开年就要开动，开局就要开跑。即刻出发、奋力赶路，是为了给明天一个交代。有踏实的耕耘、向前的拼劲，今天的全力以赴，将让我们驶向辽阔未来。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月12日 第08版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>想在前，就要干在前；干在前，最好马上干。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"实干/抓落实"的核心句，可直接作论点或标题</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>真正的效率，不是低头抢跑，而是在正确方向上全速前进。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"方向与效率"的辩证判断，适配改革攻坚、高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>在蓄力与发力、谋划与执行之间，快是因为准备充分，稳是因为目光长远。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"快与稳"关系的精炼句，可作过渡或分论点</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>"双碳"目标确立，内蒙古立起成片风机，青海铺开光伏矩阵；"东数西算"启动，贵州建设洞库式数据中心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"顶层基层同频"的实景案例，论证有画面感</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>每一个平凡个体，都在用自己的方式融入时代大潮。发展不是抽象的概念，而是亿万次具体而微的行动叠加。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人人都是主角/实干"的群像收束，适配民生、奋斗类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">立论破题</span><p>以"想在前就要干在前"对仗短句直接亮明观点，干脆利落。</p></div><div class="migration-card"><span class="tag-mig">群像烘托</span><p>高铁、数据流、实验室灯光等多画面铺陈"即时即干"氛围。</p></div><div class="migration-card"><span class="tag-mig">辩证对比</span><p>准备充分则快、目光长远则稳，避免"低头抢跑"的偏误。</p></div><div class="migration-card"><span class="tag-mig">上下同频</span><p>以双碳、东数西算说明顶层设计与基层创新双向奔赴。</p></div><div class="migration-card"><span class="tag-mig">群像收束</span><p>以普通人的一天收尾，落到"人人都是主角"，接地气。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"想在前干在前"为题，模仿本文立论方式，写一段 150 字左右的申论开头。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①对仗立论（想在前就要干在前）→②方向感与紧迫感统一→③顶层设计与基层创新同频→④人人都是主角。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"造句，表达你对"效率"的理解（如真正的效率不是X而是Y）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月12日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
