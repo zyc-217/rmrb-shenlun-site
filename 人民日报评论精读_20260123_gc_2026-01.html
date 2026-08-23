@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从各地“新年第一会”看高质量发展（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从各地“新年第一会”看高质量发展（评论员观察）</h1>
+    <div class="meta">高质量发展 · 区域协调 · 因地制宜 · 营商环境 · 实体经济 · 科技创新 · 现代化产业体系 · 系统观念 · 执行力 · 一盘棋 · 新质生产力 · 错位发展 · 久久为功 · 开好局起好步 | 2026年1月23日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">高质量发展</span><span class="tag-item">区域协调</span><span class="tag-item">因地制宜</span><span class="tag-item">营商环境</span><span class="tag-item">实体经济</span><span class="tag-item">科技创新</span><span class="tag-item">现代化产业体系</span><span class="tag-item">系统观念</span><span class="tag-item">执行力</span><span class="tag-item">一盘棋</span><span class="tag-item">新质生产力</span><span class="tag-item">错位发展</span><span class="tag-item">久久为功</span><span class="tag-item">开好局起好步</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"新年第一会"地方实践引出"高质量发展"路径，是"以小见大/区域发展战略"类文章典范，可迁移到"因地制宜发展新质生产力"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推动高质量发展"——找准定位融入大局、把握方向因地制宜、落实部署久久为功三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"新年第一会的启示"——大局观、方向感、执行力。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"高质量发展工作部署/情况报告"可借用"全国一盘棋""一把钥匙开一把锁""一张蓝图绘到底"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象—三关键词）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">从各地"新年第一会"看高质量发展，大局观、方向感、执行力是关键词——提前鸣枪彰显主动担当，因地制宜展现求实思路。<br><span style="color:#0d47a1;">▸ 写法：由现象引题：从"新年第一会"较"新春第一会"提前切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">找准定位，看到大局中"自己那一块"，在错位发展、协同发展中融入"全国一盘棋"。<br><span style="color:#0d47a1;">▸ 写法：大局观：以海南自贸港、成渝双城经济圈说明精准定位</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">把握方向，找准适合自己的赛道，结合实际创造性开展工作，解决真问题。<br><span style="color:#0d47a1;">▸ 写法：方向感：以上海"深化体系"、辽宁"提振信心"说明同题共答因情而异</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">落实部署，考验久久为功的战略定力和踏石留印的执行力，一张蓝图绘到底。<br><span style="color:#0d47a1;">▸ 写法：执行力：以河南"工业强省+农业稳省"、湖北科创聚焦说明接续奋进</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"十五五"开局之年，各地将"新春第一会"提前为"新年第一会"，传递出"时不我待、只争朝夕"的主动担当。从各地"新年第一会"看高质量发展，大局观、方向感、执行力是三个关键词——认准方向、步履铿锵，方能千帆竞发、万马奔腾。</p><p>“十五五”开局之年，不少地方打破惯例，将往年春节后的“新春第一会”，提前为元旦刚过的“新年第一会”。</p>
+<p>这不仅是工作日程的前移，更是工作节奏的主动提速，传递出<span class="highlight-blue">“时不我待、只争朝夕”的精神状态、“开好局、起好步”的坚强信心</span>。</p>
+<p>纵览各地“新年第一会”，高质量发展为主线，实体经济、民生福祉等被置于突出位置。同时，在议题设置和政策部署上，也根据本地特点谋划发展路径。从各地“新年第一会”看新一年的高质量发展，<span class="highlight-blue">大局观、方向感、执行力是关键词</span>。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">找准定位，看到大局中“自己那一块”，在错位发展、协同发展中共赢共进，才能更好融入“全国一盘棋”。</span></p>
+<p>海南，立足自贸港建设，深耕开放赋能，强调“从早期的政策试点向制度安排的全面转型”跃升，进一步发挥作为高水平对外开放试验田的通道作用、牵引作用。</p>
+<p>重庆，聚焦“成渝地区双城经济圈”，把目标从过去“推动建设”迭代为“提升能级”，<span class="highlight-purple">以更大推进力度增强其辐射带动和资源配置功能，更好支撑带动区域高质量发展</span>。</p>
+<p><span class="highlight-purple">在党中央统领的大局下，各地区精准定位，各展所长，才能既为一域增光，又为全局添彩。</span></p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">把握方向，找准适合自己的赛道，结合实际创造性开展工作，才能解决真问题。</span></p>
+<p>比如，“十五五”规划建议提出“打造市场化法治化国际化一流营商环境”，这成为多地工作的“重头戏”。虽是“同题共答”，却因情而异，各地给出了不同解法。</p>
+<p>上海致力“深化体系”：<span class="highlight-green">连续第九年出台优化营商环境行动方案</span>，对“内卷式”竞争、“职业闭店人”等新问题作出细化规定，着力打造更加稳定、透明、可预期的制度环境。辽宁侧重“提振信心”：相关会议提出打造“营商环境最佳口碑省”，以“不留余地”的决心倒逼改革落地；省委领导主动添加企业家微信，直言“有什么问题直接给我反映”，积极构建亲清统一的新型政商关系，展示优化营商环境的诚意。</p>
+<p>“十五五”蓝图擘画，明确了未来五年“任务书”，但具体落实的“路线图”需要各地从实际出发去探索，<span class="highlight-purple">决不能刻舟求剑、拿一个模子去套。有什么问题就解决什么问题，一把钥匙开一把锁</span>，才能取得实实在在的成绩，实现没有水分的发展。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">落实部署，考验久久为功的战略定力和踏石留印的执行力。推动高质量发展，是一场考验耐力和韧性的马拉松，最忌思路摇摆、朝令夕改。找到自身优势与发展大势的契合点，保持定力，一张蓝图绘到底，方能积小胜为大胜。</span></p>
+<p>河南作为拥有全部工业大类的省份，始终紧抓实体经济根基，今年提出要以项目建设为“牛鼻子”，带动装备制造、食品加工等产业高端化转型，同时坚决扛稳粮食安全重任，明确筑牢粮食生产核心区地位，实现“工业强省”与“农业稳省”双轮驱动。</p>
+<p>湖北区域创新能力指数中部第一，今年首议主题再次聚焦科技创新，强调“努力塑造更多依靠创新驱动、更多发挥先发优势的引领型发展”。会议前，连续第七年开展“科学家走红毯”活动，以礼遇人才彰显对创新的尊崇。<span class="highlight-gold">尊重发展规律，在认准的赛道上一棒接着一棒跑，才能在接续奋进中把本地优势最大程度汇聚起来、发挥出来，形成高质量发展的持久动能。</span></p>
+<p>提前鸣枪彰显“抓紧干”的主动担当，因地制宜展现“如何干”的求实思路。各地认准方向、步履铿锵，<span class="highlight-gold">一幅千帆竞发、万马奔腾的壮阔画卷正徐徐铺展</span>。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月23日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>"十五五"开局之年，不少地方打破惯例，将往年春节后的"新春第一会"，提前为元旦刚过的"新年第一会"，传递出"时不我待、只争朝夕"的主动担当。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"提前鸣枪"的开篇金句，适配开好局起好步、主动作为类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>在党中央统领的大局下，各地区精准定位，各展所长，才能既为一域增光，又为全局添彩。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"全国一盘棋"的标准表述，适配区域协调、系统观念类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>决不能刻舟求剑、拿一个模子去套。有什么问题就解决什么问题，一把钥匙开一把锁。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"因地制宜"的辩证句，适配改革创新、实事求是类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>"打造市场化法治化国际化一流营商环境"成为多地工作"重头戏"，虽是"同题共答"，却因情而异。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"营商环境"的通用表述，适配放管服改革类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>尊重发展规律，在认准的赛道上一棒接着一棒跑，才能在接续奋进中把本地优势最大程度汇聚起来、发挥出来，形成高质量发展的持久动能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"久久为功"的收束金句，适配执行力、接续奋斗类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象引题</span><p>从"新年第一会"较"新春第一会"提前，引出主动提速的精气神。</p></div><div class="migration-card"><span class="tag-mig">三关键词展开</span><p>大局观—方向感—执行力，三个关键词系统拆解高质量发展路径。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>海南自贸港、成渝双城、上海体系、辽宁口碑、河南双轮、湖北科创，多案例。</p></div><div class="migration-card"><span class="tag-mig">辩证升华</span><p>以"刻舟求剑/一把钥匙开一把锁"强调因地制宜、实事求是。</p></div><div class="migration-card"><span class="tag-mig">价值收束</span><p>以"千帆竞发、万马奔腾"落点于高质量发展壮阔画卷。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"因地制宜推动高质量发展"为题，模仿本文"现象—三关键词"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"新年第一会"提前引子→②大局观（融入一盘棋）→③方向感（因地制宜）→④执行力（一张蓝图绘到底）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"一把钥匙开一把锁"的比喻，表达你对"精准施策"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月23日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
