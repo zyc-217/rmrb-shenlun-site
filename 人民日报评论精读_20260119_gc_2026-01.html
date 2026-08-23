@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 感悟发展中的“无障碍”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>感悟发展中的“无障碍”（评论员观察）</h1>
+    <div class="meta">无障碍环境建设 · 民生保障 · 以人民为中心 · 普遍意义 · 城市精细化 · 高质量发展 · 共享发展 · 人文关怀 · 银发经济 · 全国统一大市场 · 社会包容 · 中国式现代化 | 2026年1月19日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">无障碍环境建设</span><span class="tag-item">民生保障</span><span class="tag-item">以人民为中心</span><span class="tag-item">普遍意义</span><span class="tag-item">城市精细化</span><span class="tag-item">高质量发展</span><span class="tag-item">共享发展</span><span class="tag-item">人文关怀</span><span class="tag-item">银发经济</span><span class="tag-item">全国统一大市场</span><span class="tag-item">社会包容</span><span class="tag-item">中国式现代化</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"无障碍"小切口引出"发展哲学"大命题，是"由具体到抽象/小切口大主题"类文章典范，可直接迁移到"民生温度""包容性发展"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推进无障碍环境建设"——设施适配与人文关怀并重、精准把握不同群体需求、从局部优化到系统重构三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"无障碍建设的多层意义"——关乎尊严创新、关乎每一个人、更是一种发展哲学。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"无障碍环境建设情况说明/倡议"可借用"一个都不能少""发展成果由人民共享"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（由事及理·三层递进）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"无障碍"不只是一种设施建设，更是一种发展哲学，让无障碍从"设施适配"走向"人文关怀"、从"局部优化"走向"系统重构"，书写高质量发展的文明新篇。<br><span style="color:#0d47a1;">▸ 写法：由具体引题：从文物触觉书、气味装置等暖心画面切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">无障碍环境建设不只是物理空间的"设施适配"，更是对人的尊严与创新的尊重。<br><span style="color:#0d47a1;">▸ 写法：尊严维度：以视障人士"看"文物案例说明文化共享</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">无障碍建设具有普遍意义，关乎每一个人——在衰老、疾病、意外面前，人人都可能是受益者。<br><span style="color:#0d47a1;">▸ 写法：普遍维度：以视障、老年、慢病数据说明全覆盖</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">"无障碍"更是一种发展哲学，以"破壁除障"理念贯通社会建设与经济发展，指向高质量发展。<br><span style="color:#0d47a1;">▸ 写法：哲学升华：类比全国统一大市场，落到"一个都不能少"</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"无障碍"不只是一种设施建设，更是一种发展哲学——它关乎尊严、也关乎创新，点亮生活、也激活经济。让无障碍环境从"设施适配"走向"人文关怀"、从"局部优化"走向"系统重构"，就能在高质量发展中书写"一个都不能少"的文明新篇。</p><p>"无障碍"也是一种发展哲学，它关乎尊严，也关乎创新；它点亮生活，也激活经济；它清除有形台阶，也拆除心灵围墙</p>
+<p>看到两张新闻图片，心头一暖：一张是视障人士摸读《清明上河图》文物触觉书，指尖抚过北宋汴河两岸的舟楫往来、市井烟火；一张是视障人士凑近气味装置，轻嗅故宫四季花开的芬芳，眉眼漾开笑意。</p>
+<p>故宫的红墙黄瓦，迎来送往多少参观者，但我国1732万视障人士，曾经只能凭借讲解想象其模样。如今，创新之举春风化雨，让历史文物从视觉独奏变为多感官交响，<span class="highlight-blue">这不仅是传播方式的变革，更是对特殊群体文化需求的尊重</span>。这些举措有效拓展了人们对无障碍建设的理解和认知。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">无障碍环境建设，不只是物理空间的"设施适配"，更是对人的尊严与创新的尊重——让特殊群体也能共享文化发展成果。</span></p>
+<p>无障碍环境，不只关乎残障人士权益。<span class="highlight-green">我国有3.1亿60岁及以上老年人、4亿多慢病患者，以及数量庞大的临时伤病群体</span>，他们同样需要无障碍支持。公交地铁的轮椅渡板、剧院的专属观演位、商场的无障碍卫生间，这些细节上的关怀，在特殊时刻都会成为温暖的支撑。<span class="highlight-purple">在衰老、疾病、意外面前，我们都需要社会的支持与包容。这深刻揭示了无障碍环境建设的普遍意义：每个人都会是这种改变的受益者。</span></p>
+<p>具体而微的实践，折射出城市建设的精细化进阶。湖北武汉东西湖区改建15座"适老适幼"公厕，邀请老年人与带娃家庭参与设计，还实现"一厕一码"动态管理。浙江杭州推进15分钟无障碍生活圈项目，还在加快构建覆盖全市域、服务全人群、保障全生命周期的无障碍服务体系。这些举措体现了对不同群体需求的精准把握和回应，也生动诠释了<span class="highlight-blue">发展成果由人民共享</span>的理念。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">无障碍建设具有普遍意义，它关乎每一个人——我国有1732万视障人士、3.1亿老年人、4亿多慢病患者，在衰老、疾病、意外面前，人人都可能是无障碍环境的受益者。</span></p>
+<p>视野拉高，"无障碍"也是一种发展哲学，它关乎尊严，也关乎创新；它点亮生活，也激活经济；它清除有形台阶，也拆除心灵围墙。比如，适老化改造不仅让老年人生活更便利，也释放了银发经济的潜力。实践证明，<span class="highlight-purple">无障碍建设既增进社会的福祉，也带来发展的机遇</span>。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">"无障碍"更是一种发展哲学，它以"破壁除障"的理念贯通社会建设与经济发展，从清除"隐性壁垒"到统一市场规则，共同指向高质量发展。</span></p>
+<p>如果说无障碍环境的建设，是清除社会成员参与社会生活的障碍，促进人的全面发展；那么全国统一大市场建设则旨在清除要素流通的障碍，促进资源的高效配置，两者都体现了"破壁除障"的理念。从清除"隐性壁垒"到统一市场规则，从打通"断头路"到构建"大循环"，<span class="highlight-purple">全国统一大市场建设本质上是在打造经济运行的"无障碍环境"，这也与社会领域的设施建设、心理关怀形成呼应，共同指向高质量发展</span>。</p>
+<p>从这个意义而言，中国社会的无障碍建设正经历从点到面、从表及里的深刻变革。无障碍建设永远在路上，这场变革具有长期性与复杂性，仍面临不少困难和挑战，但<span class="highlight-gold">对无障碍环境的每一次关注、每一次改善，本身就是社会进步的表现</span>。</p>
+<p>"凡是涉及人民群众切身利益的事，都要从最大努力彰显社会公平正义出发，在政策上系统设计，不能顾此失彼。"一个真正文明的社会，会用基本服务保障刚性需求，也会以人文关怀温暖人心。从"设施适配"到"人文关怀"，从"局部优化"到"系统重构"，每一步探索都在书写中国式现代化的文明新篇——<span class="highlight-gold">真正的发展，是高楼大厦与人文关怀并起，是经济发展与群众体验同频，是让科技进步的福祉洒向每一个角落，是确保在奔赴远方的路上"一个都不能少"</span>。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月19日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>"无障碍"也是一种发展哲学，它关乎尊严，也关乎创新；它点亮生活，也激活经济；它清除有形台阶，也拆除心灵围墙。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"无障碍即发展哲学"的题记金句，适配民生温度、包容性发展类开篇</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>从"设施适配"到"人文关怀"，从"局部优化"到"系统重构"，生动诠释了发展成果由人民共享的理念。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"无障碍建设路径"的标准表述，适配公共服务、城市更新类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>我国有1732万视障人士、3.1亿60岁及以上老年人、4亿多慢病患者，以及数量庞大的临时伤病群体。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"无障碍普遍需求"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>全国统一大市场建设本质上是在打造经济运行的"无障碍环境"，与社会领域的设施建设、心理关怀形成呼应，共同指向高质量发展。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"破壁除障"的辩证句，适配统一大市场、系统观念类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>真正的发展，是高楼大厦与人文关怀并起，是经济发展与群众体验同频，是让科技进步的福祉洒向每一个角落，是确保在奔赴远方的路上"一个都不能少"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"高楼与人文并起"的诗意收束，适配中国式现代化类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">由事及理</span><p>从文物触觉书、气味装置等暖心画面切入，步步上升到发展哲学。</p></div><div class="migration-card"><span class="tag-mig">普遍意义论证</span><p>以视障、老年、慢病等多群体数据，论证无障碍"关乎每一个人"。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>武汉"适老适幼"公厕、杭州15分钟无障碍生活圈，多案例分置。</p></div><div class="migration-card"><span class="tag-mig">类比升华</span><p>将无障碍建设类比全国统一大市场"破壁除障"，拓展论证纵深。</p></div><div class="migration-card"><span class="tag-mig">价值收束</span><p>以"一个都不能少"落点于中国式现代化的文明新篇。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让发展更有温度"为题，模仿本文"由事及理+三层递进"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①暖心画面引子（如文物触觉书）→②尊严维度（设施适配与尊重）→③普遍维度（关乎每一个人）→④哲学升华（破壁除障指向高质量发展）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不仅……也……"造句，表达你对"无障碍建设"的理解（如不仅是设施，也是对人的尊重）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月19日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
