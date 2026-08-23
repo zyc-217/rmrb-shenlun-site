@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 为子孙积累更多生态资产（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>为子孙积累更多生态资产（人民时评）</h1>
+    <div class="meta">乡村生态治理 · 生态资产 · 千万工程 · 绿色发展 · 乡村振兴 · 生态文明 · 因地制宜 · 系统治理 · 农民主体 · 美丽中国 | 2026年1月13日 | 第07版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">乡村生态治理</span><span class="tag-item">生态资产</span><span class="tag-item">千万工程</span><span class="tag-item">绿色发展</span><span class="tag-item">乡村振兴</span><span class="tag-item">生态文明</span><span class="tag-item">因地制宜</span><span class="tag-item">系统治理</span><span class="tag-item">农民主体</span><span class="tag-item">美丽中国</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"治污是负担还是资产"辩证破题，是"辩证看问题"类文章的典范开头，可直接迁移。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何治理农村生态"——转变观念、因地制宜、系统统筹、依靠人民四条对策清晰。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"农村生态治理的着力点"——观念、分类施策、绿色发展统筹、农民主体。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"美丽乡村建设情况说明/倡议"可借用"为子孙积累更多生态资产"的表达。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（辩证破题—分层论证）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产；把生态治理同绿色发展、乡村振兴结合，为子孙留住鸟语花香。<br><span style="color:#0d47a1;">▸ 写法：辩证破题：用"不是负担而是资产"设问，先立核心判断</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">辩证看，治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产。<br><span style="color:#0d47a1;">▸ 写法：观念 inversion：以雄安、新余案例说明"治理即增值"</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">因地制宜、分类施策——确保农村环保同乡村发展规律相协调、同发展水平相适应。<br><span style="color:#0d47a1;">▸ 写法：方法论：以"千万工程"说明分类确定建设模式</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">污染治理应与绿色发展有机结合，从生态系统整体性出发统筹推进。<br><span style="color:#0d47a1;">▸ 写法：系统思维：以临沂北黄家庄村说明村美村富兼得</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产——把生态治理同绿色发展、乡村振兴结合起来，打好为乡土中国"换装"的攻坚战，为子孙留住鸟语花香、田园风光。</p><p><span class="highlight-gold">治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产。</span></p>
+<p>不久前，第三轮第五批中央生态环境保护督察公开通报典型案例。污水收集治理推进缓慢，畜禽粪污乱堆乱排，垃圾违法倾倒……少数农村地区污染治理的欠账，折射美丽中国建设的短板。</p>
+<p>从通报的案例来看，无论是"半拉子工程"，还是敷衍应对，都暴露出思想认识不到位的问题。重硬件投入、轻长效管理，导致设施建成后闲置；急功近利的惯性思维，让环境保护未能得到应有重视；将生态治理等同于一次性的任务指标，只看眼前成效、不顾长期影响……这些错误认知，直接影响了农村环境治理的实绩。</p>
+<p>认识不到位，行动跟不上。只有从思想认识上牢固树立<span class="highlight-blue">"保护生态环境就是保护生产力、改善生态环境就是发展生产力"</span>的理念，才能真正让生态治理成为自觉。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">辩证看，治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产。</span></p>
+<p>从污染严重到鱼鸟重现，河北雄安新区对<span class="highlight-green">567个污染鱼塘</span>展开治理行动，擦亮淀泊之美，"淀上人"收起捕鱼网、吃上旅游饭。从臭气熏天到水清树美，江西新余渝水区将<span class="highlight-green">数十万头生猪的粪污集中处理，用于沼气发电、制造有机肥</span>，绿色循环产业链带动群众增收。农村的绿水青山、田园风光，都是宝贵的资源，治理污染、修复生态的过程就是生态资产保值增值的过程。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">我国各地自然禀赋差异大，居民生产生活习惯不尽相同，环保建设也要因地制宜、分类施策。</span></p>
+<p>比如浙江的"千万工程"，立足农村具体情况分类确定建设模式，打造出多姿多彩、各具特色的美丽乡村。区分发达地区和欠发达地区、城郊村庄和纯农业村庄，确保农村环境保护同乡村发展规律相协调、同发展水平相适应，方能更好满足人民群众对美好生活的期盼。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">污染治理应与绿色发展有机结合起来，不能"东一榔头西一棒槌"。</span></p>
+<p>比如山东临沂沂水县北黄家庄村，统筹修路、清污、引水，让臭水塘变"寻鱼潭"、空心院变农家乐，实现了村美、村富的兼得。既要增加收入、实现共富，也要治理污染、防范污染。<span class="highlight-blue">从生态系统整体性出发，将农村生活污水、黑臭水体、农业面源污染、土壤污染等统筹考虑，与农业现代化和农村建设协同推进</span>，汇聚起的必将是农村生态环境保护的强大动能。</p>
+<p>良好生态环境是农村最大优势和宝贵财富。农业农村污染治理为了人民，也要依靠人民。在安徽池州贵池区，美丽乡村建设始终由农民唱主角，规划层面献计献策，建设过程出人出力，家家户户满是参与感。农民是农村环境整治的参与者、建设者、受益者。充分激发农民群众的积极性、主动性，农村生态环境保护就能拥有最坚实的根基和最持久的力量。</p>
+<p>打好这场为乡土中国"换装"的攻坚战，为百姓留住鸟语花香、田园风光，为子孙积累更多生态资产，绿色发展这个中国式现代化的鲜明底色必将更加浓厚。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月13日 第07版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生态治理辩证看"的核心句，可作论点或标题</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>只有从思想认识上牢固树立"保护生态环境就是保护生产力、改善生态环境就是发展生产力"的理念，才能真正让生态治理成为自觉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生态与生产力关系"的标准表述，适配生态文明类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>河北雄安新区对567个污染鱼塘展开治理；江西新余将数十万头生猪粪污集中处理用于沼气发电、制造有机肥。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"治理即增值"的实景案例，论证有画面感</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>从污染严重到鱼鸟重现……治理污染、修复生态的过程就是生态资产保值增值的过程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"治污与资产转化"的辩证句，适配绿色发展类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>良好生态环境是农村最大优势和宝贵财富。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"乡村生态价值"的凝练句，适配乡村振兴、千万工程类收束</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">辩证破题</span><p>以"负担还是资产"设问，先立核心判断，抓人眼球。</p></div><div class="migration-card"><span class="tag-mig">观念剖析</span><p>指出思想认识不到位的三类问题，为后文对策铺垫。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>雄安、新余、临沂、池州多案例分置各分论点，说服力强。</p></div><div class="migration-card"><span class="tag-mig">因地制宜</span><p>以"千万工程"说明分类施策，同乡村发展规律协调。</p></div><div class="migration-card"><span class="tag-mig">人民主体</span><p>以农民唱主角收尾，落到"依靠人民"的工作方法。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"生态治理是为了谁"为题，模仿本文"辩证破题+分层论证"，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①辩证破题（不是负担而是资产）→②因地制宜分类施策→③系统统筹绿色发展→④依靠农民主体。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"造句，表达你对"乡村生态治理"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月13日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
