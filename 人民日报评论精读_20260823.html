@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 加快现代化产业体系建设</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>加快现代化产业体系建设</h1>
+    <div class="meta">人民日报 | 现代化产业体系·新质生产力·高质量发展 | 2026年8月23日 | 第01版</div>
+    <div class="meta" style="margin-top:4px;">主题：新质生产力/现代化产业体系/基础研究/人工智能+/智能经济/未来产业·新兴产业·传统产业</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">科技创新</span>
+      <span class="tag-item">基础研究</span>
+      <span class="tag-item">人工智能+</span>
+      <span class="tag-item">智能经济</span>
+      <span class="tag-item">未来产业</span>
+      <span class="tag-item">新兴产业</span>
+      <span class="tag-item">传统产业改造升级</span>
+      <span class="tag-item">实体经济</span>
+      <span class="tag-item">制造强国</span>
+      <span class="tag-item">供给侧结构性改革</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"高质量发展""新质生产力""创新驱动""现代化产业体系"等主题；本文<b>"数据引论—立总论点—三分论点（基础研究／智能经济／产业格局）—排比收束"</b>结构，是写"如何建设现代化产业体系／如何发展新质生产力"类文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">可直接提炼三条对策：<b>给基础研究长期稳定支持（把创新的根扎深）／让"人工智能+"走深走实（为智能经济拓空间）／分类施策推动未来、新兴、传统产业相得益彰（新苗成支柱、老树发新芽）</b>，逻辑递进、可迁移性极强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">哲理思辨</span>
+        <span class="text">"从0到1—从1到100""只争朝夕—久久为功""新苗—老树""短期稳经济—长期夯根基""向新处开拓—从存量挖掘"多组辩证关系，是写<b>辩证类作文</b>的现成素材。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">公文写作</span>
+        <span class="text">可迁移为"产业发展规划""新质生产力培育实施方案""现代化产业体系建设意见"素材；文中"未来引领、新兴支撑、传统托底""打基础、建平台、育生态"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>📐 论证结构："数据引论—立总论点—三分论点—排比收束"</h3>
+      <div class="analysis-item">
+        <span class="label">引论（数据+政策）</span>
+        <span class="text">以前7月工业增加值增5.3%、新动能贡献率50.9%两组数据切入，紧接着引出7月30日中央政治局会议对"加快现代化产业体系建设"的系统部署。技法：<b>"数据+最高层部署"双引论</b>，用实绩和权威论断同时站住脚。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">立论（总论点）</span>
+        <span class="text"><b>现代化产业体系是现代化国家的物质技术基础，也是中国经济应对风浪、赢得未来的底气所在。</b>技法：<b>"物质技术基础＋底气所在"双重定位</b>，把产业体系建设提到国家根基的高度。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论一（打基础）</span>
+        <span class="text"><b>把创新的根扎得更深</b>——以张涛团队"单原子催化"20年攻关为例，论证基础研究需"长期稳定"支持。技法：<b>"从0到1→从1到10→从10到100"链条式论证</b>，讲透源头创新的价值。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论二（拓空间）</span>
+        <span class="text"><b>为智能经济拓展产业新空间</b>——以山东海化盐化工智控大模型为例，论证"人工智能+"如何赋能千行百业。技法：<b>用"具体企业成效数据"支撑抽象论断</b>，虚实结合。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">本论三（育格局）</span>
+        <span class="text"><b>让新苗长成支柱，让老树再发新芽</b>——以绍兴芯联碳化硅芯片为例，论证未来产业、新兴产业、传统产业相得益彰。技法：<b>"未来引领、新兴支撑、传统托底"三分法</b>，把产业体系说成有机生态。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论（升华）</span>
+        <span class="text">用"三个让"（让基础研究得到长期稳定支持／让人工智能创造价值／让三类产业各展所长）排比收束，落到"中国经济向新向优向好发展的基础必将更加坚实"。技法：<b>排比回扣三个分论点</b>，首尾呼应、铿锵有力。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text"><b>"打基础—拓空间—育格局"三分法</b>，可整体套用于"科技创新／数字经济／制造业升级／县域经济"等任一"产业发展"类议题，是稳赢的论述骨架。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+    </div>
+
+    <div class="article-body">
+      <p class="thesis">【总论点】现代化产业体系是现代化国家的物质技术基础，也是中国经济应对风浪、赢得未来的底气所在。</p>
+
+      <p>今年前7月，<span class="highlight-green">全国规模以上工业增加值同比增长5.3%</span>。据国家统计局初步测算，前7月，<span class="highlight-green">新动能对规模以上工业增长的贡献率为50.9%</span>。</p>
+
+      <p>7月30日，习近平总书记主持中共中央政治局会议。会议强调：<span class="highlight-blue">"加快现代化产业体系建设，加强对基础研究的长期稳定支持，深入实施'人工智能+'行动，发展智能经济新形态，完善人工智能治理体系。积极推动前沿技术突破和未来产业发展，着力打造新兴支柱产业，持续推动传统产业改造升级。"</span></p>
+
+      <p><span class="highlight-blue">"十五五"规划纲要部署109项重大工程</span>，<span class="highlight-blue">"人工智能+制造"、行业高质量数据集建设等行动方案陆续出台</span>，产业向新向优的趋势更加鲜明。</p>
+
+      <p>中国人民大学财政金融学院教授陆利平表示，加快建设现代化产业体系<span class="highlight-purple">既是短期稳经济的务实举措，更是长期夯实中国式现代化根基的根本方略</span>，关系全年目标任务顺利完成，关系"十五五"开局成色。</p>
+
+      <p>以"新"致远，新技术走出实验室，新产品加快量产，传统工厂不断焕新。加快建设现代化产业体系，对稳增长、调结构、促转型的支撑作用正日益凸显，<span class="highlight-gold">推动创新势能持续转化为发展增量</span>。</p>
+
+      <p class="sub-thesis">【分论点一】把创新的根扎得更深，产业升级才能有取之不竭的源头活水。</p>
+
+      <p>把金属催化剂拆分到极限，让每一个原子都成为独立的"活性中心"，会发生什么？</p>
+
+      <p>近20年前，中国科学院大连化学物理研究所研究员张涛带领团队，向彼时少有人涉足的课题进发。<span class="highlight-green">2009年，团队制备出国际首例实用载体负载的单原子催化剂；2011年，在国际上首次提出"单原子催化"概念</span>。</p>
+
+      <p>如今，这一研究领域已吸引<span class="highlight-green">百余个国家的数千个科研团队</span>参与，相关成果在制药、精细化工、氯乙烯生产等领域实现工业应用，<span class="highlight-green">获得2025年度国家自然科学奖一等奖</span>。<span class="highlight-gold">"基础研究是科学技术发展的原创动力，有了'从0到1'，才能进一步推动'从1到10''从10到100'。"</span>张涛说。</p>
+
+      <p><span class="highlight-purple">基础研究看似离生产线很远，却可能决定产业未来的模样。</span>一项研究从最初的科学设想到形成新的研究范式，再到打开产业应用空间，往往需要很长时间。</p>
+
+      <p><span class="highlight-green">2025年，我国基础研究经费达到2778亿元，同比增长11.1%，占全社会研发经费比重首次突破7%</span>。投入不断增加，反映的是面向长远培育新动能的战略定力。</p>
+
+      <p>7月30日中共中央政治局会议强调的<span class="highlight-blue">"长期稳定"</span>四字，既讲支持力度，也讲创新规律。</p>
+
+      <p>"基础研究周期长、难度大、不确定性高，必须给予长期稳定的财政和政策支持，形成更加稳定的科研预期。"陆利平说，要<span class="highlight-blue">持续完善分类评价和长期资助机制，打通从基础研究到应用技术，再到产业转化的创新链条</span>。</p>
+
+      <p><span class="highlight-blue">加强基础研究战略性、前瞻性、体系化布局</span>，努力产出更多重大原创性成果。科技部着力推动完善基础研究激励机制，建立基础研究与成果转化互促机制，充分释放创新活力。</p>
+
+      <p><span class="highlight-purple">科技创新有自己的时间表，既要只争朝夕，也要久久为功。</span><span class="highlight-gold">把创新的根扎得更深，产业升级才能有取之不竭的源头活水。</span></p>
+
+      <p class="sub-thesis">【分论点二】为智能经济拓展产业新空间，让"人工智能+"行动走深走实。</p>
+
+      <p>山东海化集团，一套盐化工智控大模型正在学习"看设备、懂工艺、查隐患"。</p>
+
+      <p>过去，化工设备巡检主要依靠人工经验。如今，工艺优化、设备维护、智能巡检3个智能体，可以实时分析设备运行状态，提前发现异常。应用后，<span class="highlight-green">关键设备故障识别准确率超95%，巡检效率提高50%，风险分析和隐患排查完成率提高20%</span>。</p>
+
+      <p><span class="highlight-purple">人工智能技术加速迭代，不仅自身成为新的产业发展增量，更赋能千行百业</span>，为智能经济拓展产业新空间。有机构测算，<span class="highlight-green">2025年我国人工智能核心产业规模超1.2万亿元</span>，已形成覆盖基础底座、模型框架、行业应用的完整产业体系。工业和信息化部总工程师王卫明表示，<span class="highlight-green">今年上半年，规模以上制造业企业人工智能技术应用普及率超30%，人工智能开源大模型全球累计下载量突破100亿次</span>。</p>
+
+      <p><span class="highlight-gold">抢抓历史机遇，让"人工智能+"行动持续走深走实。</span><span class="highlight-blue">8部门印发《"人工智能+制造"专项行动实施意见》，提出到2027年推出1000个高水平工业智能体、打造100个工业领域高质量数据集、推广500个典型应用场景</span>。从政策部署看，人工智能发展的落脚点更加清晰——<span class="highlight-purple">不仅要把模型做得更强，更要推动技术走进真实场景</span>。</p>
+
+      <p>从"人工智能+"迈向智能经济，意味着人工智能不只是嵌入原有生产流程，还将催生智能终端、工业智能体等新产品、新业态。</p>
+
+      <p><span class="highlight-blue">"智能经济时代，算力、数据等将成为新的生产要素。</span>企业也要重新组织数据、流程和人员，让人工智能深度融入各环节，从而真正实现人机协同。"浪潮电子信息产业股份有限公司董事长彭震说。</p>
+
+      <p class="sub-thesis">【分论点三】让新苗长成支柱，让老树再发新芽，形成传统产业、新兴产业、未来产业相得益彰的格局。</p>
+
+      <p>浙江绍兴，芯联集成电路制造股份有限公司建设的8英寸碳化硅芯片生产线实现批量生产。与6英寸生产线相比，更大的晶圆可以切割出更多芯片，有助于降低规模化生产成本。目前，企业碳化硅功率器件<span class="highlight-green">已装车超过100万辆</span>，产品广泛进入新能源汽车、数据中心和具身智能等市场。</p>
+
+      <p>一家企业成长，背后是一条产业链的协同发力。</p>
+
+      <p>绍兴市越城区科技局党组成员、副局长李钢介绍，当地建设大型科研仪器共享平台，支持企业承担车规级功率半导体等重点研发项目，同时帮助企业对接高校和科研院所，一系列举措让集成电路产业发展壮大。</p>
+
+      <p><span class="highlight-green">2025年，我国重点打造的六大新兴支柱产业相关产值接近6万亿元，2030年有望达到10万亿元以上。据预测，2026年我国未来产业产值规模将达到15.5万亿元</span>，新质生产力动能澎湃。</p>
+
+      <p><span class="highlight-purple">产业发展既要向新处开拓，也要从已有基础中挖掘增量。</span><span class="highlight-green">2025年，服贸会以"一会一址"的形式"永久落户"首钢园，百年老钢厂转型蝶变、焕发新生；创建于1979年的大杨集团完成多座智能工厂改造升级，建成40条全智能化生产线</span>……用人工智能优化生产流程，用绿色技术降低能耗，用设备更新提高质量，新旧动能加快转换。</p>
+
+      <p><span class="highlight-gold">发展新质生产力是建设现代化产业体系的必然要求。</span>工业和信息化部表示，建设现代化产业体系，关键在于<span class="highlight-blue">形成传统产业、新兴产业、未来产业相得益彰的格局</span>。</p>
+
+      <p>推动新质生产力赋能现代化产业体系，要根据不同产业的成长规律用力。<span class="highlight-blue">未来产业重在打基础、建平台、育生态；新兴产业重在提升技术成熟度和产业配套能力；传统产业则要抓住数字化和绿色化改造机遇</span>，打开新的市场空间。陆利平认为，要形成<span class="highlight-blue">"未来引领、新兴支撑、传统托底"的完整体系</span>，以新质生产力把三者串联起来，形成前沿攻关、产业转化、规模应用相互衔接的产业发展格局。</p>
+
+      <p>开局之年，既要看蓝图绘得怎么样，更要看第一步走得实不实。</p>
+
+      <p><span class="highlight-gold">让基础研究得到长期稳定支持，让人工智能在更多真实场景创造价值，让未来产业、新兴产业和传统产业各展所长、相互赋能</span>，现代化产业体系就能不断积蓄新动能、塑造新优势，中国经济向新向优向好发展的基础必将更加坚实。</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">总论点 · 双重定位</span>
+      <p>现代化产业体系是现代化国家的物质技术基础，也是中国经济应对风浪、赢得未来的底气所在。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">基础研究 · 原创动力</span>
+      <p>基础研究是科学技术发展的原创动力，有了"从0到1"，才能进一步推动"从1到10""从10到100"。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证哲理 · 距离与未来</span>
+      <p>基础研究看似离生产线很远，却可能决定产业未来的模样。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">久久为功 · 时间表</span>
+      <p>科技创新有自己的时间表，既要只争朝夕，也要久久为功。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">源头活水 · 分论点句</span>
+      <p>把创新的根扎得更深，产业升级才能有取之不竭的源头活水。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">人工智能+ · 行动号召</span>
+      <p>抢抓历史机遇，让"人工智能+"行动持续走深走实。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证关系 · 模型与场景</span>
+      <p>不仅要把模型做得更强，更要推动技术走进真实场景。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">新生产要素 · 智能经济</span>
+      <p>智能经济时代，算力、数据等将成为新的生产要素。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">新质生产力 · 必然要求</span>
+      <p>发展新质生产力是建设现代化产业体系的必然要求。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">产业格局 · 三分法</span>
+      <p>未来产业重在打基础、建平台、育生态；新兴产业重在提升技术成熟度和产业配套能力；传统产业则要抓住数字化和绿色化改造机遇。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">体系建构 · 三词定位</span>
+      <p>形成"未来引领、新兴支撑、传统托底"的完整体系。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">辩证关系 · 新苗与老树</span>
+      <p>产业发展既要向新处开拓，也要从已有基础中挖掘增量。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">排比收束 · 三个"让"</span>
+      <p>让基础研究得到长期稳定支持，让人工智能在更多真实场景创造价值，让未来产业、新兴产业和传统产业各展所长、相互赋能。</p>
+    </div>
+
+    <div class="material-card">
+      <span class="tag-shenlun">权威部署 · 可写进公文</span>
+      <p>加强对基础研究的长期稳定支持，深入实施"人工智能+"行动，发展智能经济新形态，完善人工智能治理体系。（7月30日中共中央政治局会议）</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法一 · 数据+政策双引论</span>
+      <p>开头先用"工业增加值增5.3%、新动能贡献率50.9%"两组数据立住实绩，再引中央政治局会议部署立住权威。迁移写法：<b>写"产业发展／经济发展"类文章，用"最新数据+最高层部署"双料引论</b>，比空喊口号扎实得多。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法二 · 设问引入（拆到极限）</span>
+      <p>"把金属催化剂拆分到极限……会发生什么？"用一个具体到极致的技术设问引出案例。迁移写法：<b>分论点后用一句设问钩住读者，再展开案例</b>，比直接讲道理更有画面感。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法三 · 比喻式小标题当分论点</span>
+      <p>"把创新的根扎得更深""让新苗长成支柱，让老树再发新芽"——分论点全部比喻化。迁移写法：<b>分论点尽量用形象化的比喻句</b>（扎根／拓空间／发新芽），改卷老师一眼记住。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法四 · 分类施策排比</span>
+      <p>"未来产业重在……新兴产业重在……传统产业则要……"按类别给对策，不搞一刀切。迁移写法：<b>写对策时按对象分类、分别施策</b>，既显思考精细，又天然凑足篇幅。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法五 · 三个"让"排比收束</span>
+      <p>"让基础研究……让人工智能……让三类产业……"结尾用排比把三个分论点串起来回扣。迁移写法：<b>结尾用"让A……让B……让C……"的排比回扣分论点</b>，首尾呼应、气势收束。</p>
+    </div>
+
+    <div class="migration-card">
+      <span class="tag-mig">技法六 · "从0到1"链条论证</span>
+      <p>"从0到1""从1到10""从10到100"把创新链条具象成数字阶梯。迁移写法：<b>论证"量变到质变""积累到突破"时，用递进式数字链条</b>，直观又有力。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:14px;">
+      <h3>✍️ 仿写练习（建议今晚10分钟完成）</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以"让新质生产力落地生根"为题，写一段150字左右的申论论证段，要求：<b>先亮一个分论点（如"科技创新是源头活水"／"人工智能+是重要抓手"／"分类施策是根本方法"），再用文中任一要素（从0到1／智能体案例／未来新兴传统三分法）支撑</b>。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">亮"分类施策"分论点 → 引"未来产业打基础、新兴产业提配套、传统产业抓改造"三分法 → 用"未来引领、新兴支撑、传统托底"收住 → 落到"三类产业相得益彰、新质生产力动能澎湃"。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">用本文"打基础—拓空间—育格局"三分法，为"如何推动本地制造业高质量发展"列三个不同侧重的对策分论点（提示：基础研究长期支持／智能化数字化改造／产业链协同育生态）。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    人民日报评论精读 · 2026年8月23日 · 申论素材积累（现代化产业体系建设）
+  </div>
+</div>
+</body>
+</html>
