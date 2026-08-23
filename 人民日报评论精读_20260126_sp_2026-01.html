@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 让志愿服务在阳光下闪耀（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>让志愿服务在阳光下闪耀（人民时评）</h1>
+    <div class="meta">志愿服务 · 社会文明 · 基层治理 · 共建共治共享 · 制度建设 · 监督管理 · 公益精神 · 诚信体系 · 高质量发展 · 文明实践 | 2026年1月26日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">志愿服务</span><span class="tag-item">社会文明</span><span class="tag-item">基层治理</span><span class="tag-item">共建共治共享</span><span class="tag-item">制度建设</span><span class="tag-item">监督管理</span><span class="tag-item">公益精神</span><span class="tag-item">诚信体系</span><span class="tag-item">高质量发展</span><span class="tag-item">文明实践</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"公开曝光典型案例"切入，论证"让志愿服务在阳光下运行"的制度与监督路径，是"问题—对策"类评论典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何规范志愿服务发展"——健全制度、部门担当、畅通监督三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"志愿服务行稳致远的关键"——制度安全带、阳光运行、监督防腐。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"规范志愿服务/公益事业发展"可借用"阳光下运行""安全带"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（问题切入·三层对策）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">美好的事业，值得用心守护；让每一次善举都清澈透明，必能为社会文明添砖加瓦，让生活更有温度、更具希望。<br><span style="color:#0d47a1;">▸ 写法：由"公开曝光典型案例"引出守护志愿服务的主题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">健全的制度，是志愿服务行稳致远的"安全带"。<br><span style="color:#0d47a1;">▸ 写法：制度维度：以"十五五"建议与注册备案等制度设计实现长效治理</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">让志愿服务在阳光下运行，职能部门的担当必不可少。<br><span style="color:#0d47a1;">▸ 写法：执行维度：以河南"社工蓝+志愿红"、陕西"志愿三秦"说明属地担当</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">阳光是最好的防腐剂，畅通监督渠道，是志愿服务保持健康发展态势所必需。<br><span style="color:#0d47a1;">▸ 写法：监督维度：以技术赋能+社会监督织密监督网络</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】美好的事业，值得用心守护。让每一次善举都清澈透明，必能为社会文明添砖加瓦，让生活更有温度、更具希望。</p><p><span class="highlight-gold">志愿服务犹如一束温暖的光，照亮他人也温暖社会，用点滴善举传递真善美、汇聚正能量，是衡量社会文明程度的重要标尺</span>。</p>
+
+<p>近期，中央社会工作部公布了志愿服务领域7个突出问题典型案例，涉及售卖虚假志愿服务时长、以志愿服务名义为营利性活动引流等乱象。公开曝光，不只是对歪风邪气的当头棒喝，更彰显推动新时代志愿服务高质量发展的决心。</p>
+
+<p>志愿服务的本质是超越物质回报的利他行为，旨在促进公共福祉而非个人利益，传递奉献、互助的精神力量，塑造温暖向上的社会文化。虚假时长、逐利变现等问题，扭曲了志愿服务无偿、诚信等原则，让宝贵的志愿资源流入投机者手中。乱象若不遏制，必然导致参与者流失、全社会质疑，最终损害整个志愿服务生态。</p>
+
+<p>纠治志愿服务领域存在的突出问题，不光要纠偏乱象，更要抚平负面影响。用公开典型案例的方式加强警示教育，既能震慑那些动歪心思的人，更能增进公众的信任。通过主动曝光、强化整改，让全社会看见行动、看见实效，方能守住这份事业的美好底色。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">健全的制度，是志愿服务行稳致远的"安全带"。</span></p>
+
+<p>"十五五"规划建议提出："发展志愿服务，加强志愿服务组织管理。"志愿服务涉及多方主体、多个环节。建立健全志愿者注册、志愿服务队伍备案审核、活动发布及审核、投诉处理、志愿服务证明开具等制度，才能实现常态化监管、长效化治理，<span class="highlight-blue">让服务的每一步都公正规范</span>。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">让志愿服务在阳光下运行，职能部门的担当必不可少。</span></p>
+
+<p>河南以党建为引领，推动"社工蓝"与"志愿红"深度融合，走出了基层共建共治共享的新路子；陕西打造"志愿三秦"特色品牌，把志愿服务纳入政府购买服务指导性目录，让规范发展有了坚实支撑。从紧盯网络平台巡查、严查营利性引流，到严把组织登记、资金使用等关键关口，只要把监管责任落到实处，违法违规行为就没有可乘之机。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">阳光是最好的防腐剂，畅通监督渠道，是志愿服务保持健康发展态势所必需。</span></p>
+
+<p>志愿服务的乱象往往藏得深、跨平台扩散，单靠传统监管难以全覆盖。这就需要创新监督方式，借助技术赋能织密监督网络，打通线上线下、贯穿事前事中事后，把每一次服务都置于监督的目光之下。同时，也要激活社会监督和舆论监督的力量，鼓励人人当"监督员"，让歪风邪气无处藏身。</p>
+
+<p>美好的事业，值得用心守护。<span class="highlight-green">天津市志愿者栗岩奇坚持无偿献血300多次，用6万毫升热血筑起"生命长城"</span>。2025年西藏自治区定日县地震后，12名在定日的西部计划志愿者第一时间赶赴震中搜救群众、搬运物资，后续还加入当地团委创建的"青青儿童乐园"，帮助孩子们走出灾害阴霾。让每一次善举都清澈透明，必能为社会文明添砖加瓦，让生活更有温度、更具希望。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月26日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>志愿服务犹如一束温暖的光，照亮他人也温暖社会，用点滴善举传递真善美、汇聚正能量，是衡量社会文明程度的重要标尺。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"志愿服务"价值定位的金句，适配社会文明、公益类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>"十五五"规划建议提出："发展志愿服务，加强志愿服务组织管理。"</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲志愿服务制度建设的政策依据，适配公益治理类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>建立健全志愿者注册、志愿服务队伍备案审核、活动发布及审核、投诉处理、志愿服务证明开具等制度，才能实现常态化监管、长效化治理，让服务的每一步都公正规范。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"制度安全带"的规范表述，适配制度建设类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>阳光是最好的防腐剂，畅通监督渠道，是志愿服务保持健康发展态势所必需。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"监督防腐"的辩证金句，适配权力监督、公开透明类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>让每一次善举都清澈透明，必能为社会文明添砖加瓦，让生活更有温度、更具希望。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"守护志愿服务"的收束金句，适配公益文明类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">问题切入</span><p>以"公开曝光7个典型案例"点出志愿服务乱象，引出治理主题。</p></div><div class="migration-card"><span class="tag-mig">制度优先</span><p>首层强调健全制度这一"安全带"，奠定长效治理基础。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>河南"社工蓝+志愿红"、陕西"志愿三秦"说明属地担当。</p></div><div class="migration-card"><span class="tag-mig">监督闭环</span><p>以"阳光是最好的防腐剂"强调技术+社会监督织密网络。</p></div><div class="migration-card"><span class="tag-mig">价值收束</span><p>以栗岩奇献血、"青青儿童乐园"案例回扣"善举清澈透明"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让公益在阳光下运行"为题，模仿本文"问题切入+三层对策"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①曝光乱象引子→②健全制度（安全带）→③部门担当（阳光运行）→④畅通监督（防腐剂）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"阳光是最好的防腐剂"这一比喻，表达你对"公开透明"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月26日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
