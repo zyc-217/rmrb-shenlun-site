@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 守质量安全  护三餐四季（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>守质量安全  护三餐四季（人民时评）</h1>
+    <div class="meta">粮食安全 · 食品安全 · 源头治理 · 全链条监管 · 新质生产力 · 四个最严 · 法治保障 · 科技赋能 · 反食品浪费 · 国之大者 · 系统治理 · 民生保障 | 2026年1月15日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">粮食安全</span><span class="tag-item">食品安全</span><span class="tag-item">源头治理</span><span class="tag-item">全链条监管</span><span class="tag-item">新质生产力</span><span class="tag-item">四个最严</span><span class="tag-item">法治保障</span><span class="tag-item">科技赋能</span><span class="tag-item">反食品浪费</span><span class="tag-item">国之大者</span><span class="tag-item">系统治理</span><span class="tag-item">民生保障</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"粮食安全与食品安全深度耦合"立论，是"统筹发展与安全"类文章典范框架，可直接迁移到"守住安全底线"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何守护食品安全"——新质生产力保产、全链条追溯监管、法治科技双轮、全社会协同四条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"从田野到餐桌的安全防线"——生产端、监管端、治理端三个环节。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"食品安全工作情况说明/倡议"可借用"最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责"。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（总—分—总·系统治理）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">粮食安全与食品安全深度耦合，须深化源头治理、标本兼治，以法治与科技双轮驱动守护舌尖安全。<br><span style="color:#0d47a1;">▸ 写法：由数据引信：用粮食产量与抽检合格率两组数据立论</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">粮食丰产来之不易，依靠新质生产力硬核支撑，数量安全是质量安全的基础。<br><span style="color:#0d47a1;">▸ 写法：生产端：以山西"一喷三防"、河南履带收割机、北大荒高标准农田佐证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">食物极大丰富给监管带来挑战，治理思路从末端查处转向全链条追溯。<br><span style="color:#0d47a1;">▸ 写法：监管端：以"一品一码"+四个最严说明全链条追溯</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">守护舌尖安全是系统工程，数量质量统筹、科技法治双轮、全社会协同发力。<br><span style="color:#0d47a1;">▸ 写法：治理端：以每天70万吨粮数据、一滴香治理、食物驿站说明合力</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】民以食为天，食以安为先。粮食安全与食品安全深度耦合，确保从广袤田野到百姓餐桌全链条安全无虞，必须深化源头治理、标本兼治，以法治与科技双轮驱动、全社会协同发力，守护好千家万户的"三餐四季"。</p><p>让每个"小家"热气腾腾，必须增强时时放心不下的责任感，深化源头治理、标本兼治，不断提升治理能力、健全治理体系，有效防范化解各类风险。</p>
+<p>民以食为天，食以安为先。最近有两组数据，印证了中国在粮食安全、食品安全上取得的长足进步。</p>
+<p>2025年，<span class="highlight-green">全国粮食产量达到14298亿斤，不仅稳定在1.4万亿斤以上，更在自然灾害频发的不利条件下实现了逆势增产</span>。</p>
+<p>截至2025年11月底，<span class="highlight-green">全国市场监管系统完成监督抽检617.69万批次，39个大类抽检食品中有24个大类抽检不合格率低于1%</span>，消费量大的米、面、油、肉、奶不合格率连续5年处于低位。</p>
+<p>粮食生产再次取得丰收，食品安全状况总体平稳，粮食安全与食品安全深度耦合，确保从广袤田野到百姓餐桌全链条安全无虞，正是心怀"国之大者"的重要体现。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">粮食丰产来之不易，依靠的正是新质生产力的硬核支撑，增强了我们的战略定力。</span></p>
+<p>从山西农田里的"一喷三防"，到河南应对雨情紧急改装的履带式收割机，再到北大荒的高标准农田建设，<span class="highlight-purple">科技的推广应用与基础设施的韧性为粮食生产提供保障</span>。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">食物的极大丰富给安全监管带来前所未有的挑战，治理思路正从末端查处转向全链条追溯。</span></p>
+<p>面对复杂的食品供应链，"一品一码"的全过程追溯体系，配合国家层面<span class="highlight-blue">"最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责"</span>，增添了消费者对"舌尖安全"的信心。</p>
+<p>柴米油盐、三餐四季，涉及千家万户的"小账本"，也事关治国理政的"大账本"。展望"十五五"时期，让每个"小家"热气腾腾，必须增强时时放心不下的责任感，深化源头治理、标本兼治，不断提升治理能力、健全治理体系，有效防范化解各类风险。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">守护舌尖安全是一项系统工程，既要数量质量统筹，也要科技与法治双轮驱动，更要全社会协同发力。</span></p>
+<p>数量和质量要统筹起来。统计数据显示，<span class="highlight-green">全国每天有70万吨粮、9.8万吨油、192万吨菜和23万吨肉，通过复杂的供应链流向餐桌</span>。数量安全是基础，质量安全则是底线。没有安全，所有的"丰收"都将归零。既保供应、保多样，也抓监管、强质量，才能让中国人的饭碗端得更稳固、更从容。</p>
+<p>实践中，科技在提升质量安全与营养健康方面具有强大能力，但科技一旦被滥用，同样也会造成严重危害。经过严格依法监管，我国食用植物油中违法添加"一滴香"的问题有所好转，<span class="highlight-green">抽检不合格率从2020年的2.08%降至2025年的0.08%</span>。推动粮食和食品安全治理深刻变革，不仅要依靠科技保障增产，还要以法治夯实责任，让法治和科技双轮驱动、密切配合。</p>
+<p>全社会一起参与、协同发力，同样至关重要。反食品浪费成为保障粮食安全的新战场，从线下"食物驿站"到线上平台打折销售临期食品，看似微小的举措汇聚起来，相当于增加了可观的"无形良田"。携手行动，共同构筑从田间到餐桌的安全防线，每个人都将从中受益。</p>
+<p>筑牢大国粮仓，守护舌尖安全，是关系国计民生的系统工程。新的一年，让我们一起<span class="highlight-gold">擦亮勤劳的犁铧、筑牢责任的堤坝、激活科技的动能、持好法治的盾牌</span>，共同绘就大国粮安与百姓安康的新画卷。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月15日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>民以食为天，食以安为先。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"食品安全"的经典开篇，适配民生、安全类文章开头</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>配合国家层面"最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责"，增添了消费者对"舌尖安全"的信心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"食品安全四个最严"的标准表述，适配监管、法治类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>2025年全国粮食产量14298亿斤，稳定在1.4万亿斤以上；监督抽检617.69万批次，24个大类不合格率低于1%。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"粮食安全成效"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>数量安全是基础，质量安全则是底线。没有安全，所有的"丰收"都将归零。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"数量与质量"辩证关系，可作分论点或过渡</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>擦亮勤劳的犁铧、筑牢责任的堤坝、激活科技的动能、持好法治的盾牌，共同绘就大国粮安与百姓安康的新画卷。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"四维守护"的排比收束，适配国计民生类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">数据引信</span><p>以粮食产量、抽检合格率两组数据开篇，立论坚实。</p></div><div class="migration-card"><span class="tag-mig">生产端论证</span><p>以新质生产力（一喷三防、履带收割机、高标准农田）说明产量保障。</p></div><div class="migration-card"><span class="tag-mig">监管升级</span><p>从末端查处转向全链条追溯，以"一品一码"+"四个最严"体现治理现代化。</p></div><div class="migration-card"><span class="tag-mig">双轮驱动</span><p>科技赋能与法治夯实并重，以"一滴香"治理成效（2.08%→0.08%）佐证。</p></div><div class="migration-card"><span class="tag-mig">社会协同</span><p>以反食品浪费、食物驿站、临期食品说明全民参与，汇聚"无形良田"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"守护舌尖上的安全"为题，模仿本文"总—分—总+系统治理"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①两组数据引信→②生产端（新质生产力保产）→③监管端（全链条追溯）→④治理端（科技法治+社会协同）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"没有X，所有的Y都将归零"造句，表达你对某一安全底线的理解（如没有安全，所有的增长都将归零）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月15日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
