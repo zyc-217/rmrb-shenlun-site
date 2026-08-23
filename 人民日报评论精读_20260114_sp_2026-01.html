@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "颗粒度"更细，幸福度更高（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"颗粒度"更细，幸福度更高（人民时评）</h1>
+    <div class="meta">民生改善 · 以人民为中心 · 精细化治理 · 绣花功夫 · 新就业群体 · 适老化改造 · 养老服务 · 就近就业 · 共同富裕 · 基层治理 · 人民城市 · 高质量发展 | 2026年1月14日 | 第08版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">民生改善</span><span class="tag-item">以人民为中心</span><span class="tag-item">精细化治理</span><span class="tag-item">绣花功夫</span><span class="tag-item">新就业群体</span><span class="tag-item">适老化改造</span><span class="tag-item">养老服务</span><span class="tag-item">就近就业</span><span class="tag-item">共同富裕</span><span class="tag-item">基层治理</span><span class="tag-item">人民城市</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"颗粒度更细→幸福度更高"的精细化逻辑立论，是"以人民为中心/民生兜底"类文章典范，可直接用作"把小事办实"的论证框架。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何提升民生获得感"——于细节处用心用情、精准把握分众化诉求、把民生价值融入治理全过程，三条对策清晰。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"民生改善的新特点"——精细化、分众化、全程化。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"民生工作部署/情况说明"可借用"柴米油盐、三餐四季"的民生叙事与"为了人民、依靠人民"收束。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（由事及理·由细到宏）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">把民生价值融入经济社会发展全过程各环节，以精细化提升幸福度，让"小家"热气腾腾、"大家"蒸蒸日上。<br><span style="color:#0d47a1;">▸ 写法：由小见大：从柴米油盐、三餐四季切入，落到国家治理的民生关怀</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">民生"颗粒度"更细，首先要于细节处用心用情，把群众急难愁盼的"小事"办实办好。<br><span style="color:#0d47a1;">▸ 写法：以小见大：用快递计重"零头"案例说明"分厘必争"的民生诚意</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">民生"颗粒度"更细，意味着精准把握不同群体特点，更好满足分众化、差异化的民生诉求。<br><span style="color:#0d47a1;">▸ 写法：分众思维：以养老、就近就业、建设者之家等案例说明精准施策</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">民生"颗粒度"更细，蕴含着一种治理智慧——下足"绣花"功夫，把民生价值融入发展全过程各环节。<br><span style="color:#0d47a1;">▸ 写法：治理升华：从具体举措上升到"民生价值融入全过程"的价值追求</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】柴米油盐、三餐四季，民生无小事。把民生价值融入经济社会发展全过程、各环节，在基本保障基础上更加关注个性化、差异化诉求，让民生改善的"颗粒度"更细，不断以精细化提升幸福度，使每个"小家"热气腾腾、中国这个"大家"蒸蒸日上。</p><p>习近平主席在二〇二六年新年贺词中回顾2025年"我们共创共享美好生活"，并深情寄语："柴米油盐、三餐四季，每个'小家'热气腾腾，中国这个'大家'就蒸蒸日上。"即日起，本版推出系列评论，与广大读者一起总结这些年来民生改善的新成效、新特点、新趋势。</p>
+<p>——编  者</p>
+<p>"民生无小事，枝叶总关情。"改善民生必须办好一件件"小事"，那些细节处的用心用情，给人别样的温暖。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">民生"颗粒度"更细，首先要于细节处用心用情，把群众急难愁盼的"小事"办实办好。</span></p>
+<p>生活中，人们寄快递时常遇到这样的小烦恼：计费重量的"零头"应该怎么算？曾经，寄件"向上取整"成常态，比如将2.1千克"向上取整"为3千克，快递费也相应增加。"向上取整"让老百姓多掏快递费，应如何规范？</p>
+<p>针对这一情况，国家邮政局迅速开展核查，优化完善计重规则，计费重量以千克为单位，加上小数点后至少1位，"向上取整"的问题迎刃而解。为保护老百姓权益而<span class="highlight-gold">分厘必争、不厌其细</span>，正是"死磕"细节的努力，让老百姓真切感受到改善民生的诚意和暖意。</p>
+<p>在二〇二六年新年贺词中，习近平主席总结道："过去一年，新就业群体权益有了进一步保障，适老化改造给老年人带来方便，育儿家庭每月多了300元补贴。"<span class="highlight-green">每一个普通家庭的生活都与国家的发展息息相关</span>，人民领袖的人民情怀温润人心，世界规模最大执政党的价值理念璀璨生辉。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">民生"颗粒度"更细，意味着精准把握不同群体特点，更好满足分众化、差异化的民生诉求。</span></p>
+<p>柴米油盐、三餐四季，道尽了生活日常、岁月绵长。这些年来，我们矢志不渝保障和改善民生，不尚空谈、不务虚功，在基本保障基础上，更加关注个性化、差异化的民生诉求，让民生改善的"颗粒度"更细，不断以精细化提升幸福度。</p>
+<p>比如，在机构床位紧张的前提下，如何提升居家养老的品质？贵州贵阳观山湖区探索"机构+社区+居家"模式，就近就便提供长期照护、短期托养、日间照料等多种养老服务。</p>
+<p>比如，在外出务工和照顾家庭之间，如何解决农民工面临的两难？不少地方以多种形式推进就近就业。云南镇雄县通过"家门口的务工车间"建设，搭建"园区+车间+工坊"平台，多措并举促进群众在"家门口就业"。</p>
+<p>"颗粒度"更细，才能更好聚焦民生痛点难点，有针对性地解决问题，把民生工作做到老百姓的心坎上。同时，随着社会分工日益细化，"颗粒度"更细还意味着精准把握不同群体的不同特点，更好满足分众化诉求。</p>
+<p>在上海，"新时代城市建设者管理者之家"面向一线劳动者，价格亲民、设施齐全。"一张张温暖的床"，托举起"一个个安居的梦"。</p>
+<p>在杭州，青荷驿站为参加求职面试的青年群体，提供不超过7天（6晚）的免费住宿。这个"全域覆盖、多点分布、拎包入住"的房源服务网，实打实缓解着求职年轻人"落脚难"的焦虑。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">"颗粒度"更细，还蕴含着一种治理智慧，既体现为下足"绣花"功夫、治理更加精准有效，更意味着把民生价值融入经济社会发展全过程、各环节，在国家治理和发展的方方面面都彰显民生关怀。</span></p>
+<p>重庆轨道交通有一条特殊的"背篓专线"，每天早上把菜农从农村地区运到中心城区，满载瓜果飘香更满载民生希冀；广东率先推出"妈妈岗"就业模式，工作时间、管理模式相对灵活，帮助育儿妇女实现"带娃"、就业两不误；北京"挤"出数百个口袋公园，让市民可以推门见绿、转角遇美，为超大城市带来宝贵的方寸之美……</p>
+<p>不断细化"颗粒度"、增强针对性，就是让相关制度设计和实施更加贴合百姓需求，让政策的暖流润泽更多细分需求。在民生细微处加大力度，在日常生活中接续用力，不仅折射出我国民生改善的巨大成就，更彰显着大党大国的价值追求和力量之源。</p>
+<p>家事国事天下事，让人民过上幸福生活是头等大事。<span class="highlight-gold">无数个普通家庭的幸福灯火，共同点亮中国的灿烂星空。</span>一个"为了人民"的中国，将不断为14亿多人民带来更多福祉；一个"依靠人民"的中国，将激发万马奔腾的活力，获得源源不断的发展动力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月14日 第08版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>民生无小事，枝叶总关情。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生情怀"的经典引语，适配以人民为中心、民生兜底类开头或分论点</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>把民生价值融入经济社会发展全过程、各环节，在基本保障基础上更加关注个性化、差异化诉求，让民生改善的"颗粒度"更细。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"精细化民生"的标准表述，适配基层治理、公共服务类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>育儿家庭每月多了300元补贴；新就业群体权益有了进一步保障，适老化改造给老年人带来方便。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生改善实效"的具体佐证，论证有温度</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>无数个普通家庭的幸福灯火，共同点亮中国的灿烂星空。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"小家与大家"的诗意收束，适配民生、共同富裕类结尾</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>一个"为了人民"的中国，将不断带来更多福祉；一个"依靠人民"的中国，将激发万马奔腾的活力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"为了人民与依靠人民"的辩证句，可作升华段</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">由小见大</span><p>从快递计重"零头"等生活小事切入，自然引出"精细化民生"的大主题。</p></div><div class="migration-card"><span class="tag-mig">分众思维</span><p>以养老、就近就业、建设者之家等案例，说明精准把握不同群体特点。</p></div><div class="migration-card"><span class="tag-mig">案例集群</span><p>贵阳、镇雄、上海、杭州、重庆、广东、北京多案例分置，说服力足。</p></div><div class="migration-card"><span class="tag-mig">绣花功夫</span><p>以"背篓专线""妈妈岗""口袋公园"诠释精细化治理的具体形态。</p></div><div class="migration-card"><span class="tag-mig">价值升华</span><p>从具体举措上升到"民生价值融入全过程"的大党大国价值追求。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"把民生小事办实办好"为题，模仿本文"由小见大"写法，写一段 150 字左右的申论论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①生活小事引子（如快递/养老）→②细节处用心用情→③精准把握分众化诉求→④上升到"民生价值融入全过程"。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">仿写"一个'为了人民'的中国……一个'依靠人民'的中国……"句式，表达你对某一申论主题的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月14日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
