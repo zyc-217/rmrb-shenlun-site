@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从“最优路线”看预期管理（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从“最优路线”看预期管理（评论员观察）</h1>
+    <div class="meta">预期管理 · 稳预期 · 营商环境 · 法治 · 确定性 · 高质量发展 · 全国统一大市场 · 双碳 · 新质生产力 · 信心 | 2026年1月9日 | 第07版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">预期管理</span><span class="tag-item">稳预期</span><span class="tag-item">营商环境</span><span class="tag-item">法治</span><span class="tag-item">确定性</span><span class="tag-item">高质量发展</span><span class="tag-item">全国统一大市场</span><span class="tag-item">双碳</span><span class="tag-item">新质生产力</span><span class="tag-item">信心</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"导航最优路线"类比"稳预期"，可直接用作"把握确定性/增强信心"类文章的开篇引子与分论点展开范式。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何稳预期、优环境"——提炼"制度保障网+行动担当+政策前瞻"三条对策，层次清晰。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"中国确定性来自何处"——科学制定五年规划、平安社会环境、创新征程、开放足迹四要点。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"优化营商环境倡议书/公开信"可借用"给企业信心、让企业安心"的呼吁式收束。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（由事及理·层层递进）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以"导航最优路线"类比预期管理，指出稳定的预期是信心与行动的基石，把握确定性就是把握未来。<br><span style="color:#0d47a1;">▸ 写法：类比破题：用日常生活经验引出抽象经济概念，化虚为实</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">预期的关键是"确定性"，稳预期的本质是稳信心——法治是最好的营商环境。<br><span style="color:#0d47a1;">▸ 写法：定义展开：先点本质再释内涵，以"民营经济促进法首案"佐证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">政策预期稳，经济大盘才能稳——落实中央经济工作会议着力稳预期的要求。<br><span style="color:#0d47a1;">▸ 写法：政策对接：把论点落到中央决策部署，体现"上接天线"</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">确定性源自不断织密的制度保障网与一诺千钧的行动担当，中国是最大的确定性。<br><span style="color:#0d47a1;">▸ 写法：案例佐证+升华：用双碳数据印证，收束于"把握确定性就是把握未来"</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从"最优路线"看预期管理，本质是把握确定性——稳定的预期是人们下决心、作决策时的重要锚点，是信心与行动的基石；洞察大势、遵循规律，便不惧一时一地的波动、眼前暂时的风雨。</p><p>开车上班，导航软件总会提供多条备选路线。时间久了，便对其中两条尤为熟悉。一条红绿灯少，路况却难以预测，通畅时40分钟可达，一旦堵车，耗时可能翻倍。另一条红绿灯多，优点是通行时间稳定在1小时左右，波动范围小。多次尝试过后，笔者便有了心中的"最优路线"：除非特别赶时间，优选后者。</p>
+<p><span class="highlight-purple">影响选择的关键因素，在于"预期"。</span>日常生活中，人们往往会倾向于预期更稳定、意外更少的选项，因为越稳定的预期，意味着节奏愈可掌控、收益愈可预料。由日常生活到经济生活，同理。稳定的预期，是人们下决心、作决策时的重要锚点，是信心与行动的基石。由此，便不难理解为何许多地方优化营商环境、吸引人才扎根，都把提供稳定可靠的预期摆在突出位置。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">预期的关键是"确定性"，稳预期的本质是稳信心。</span>为什么说法治是最好的营商环境？因为制度管根本、管长远，<span class="highlight-blue">稳定、公平、透明的规则体系有助于经营主体基于合理的预期对各种市场关系和行为作出正确判断</span>，进而降低交易成本、激发市场活力、增强发展信心。民营经济促进法实施后不久，最高人民法院行政庭首次适用该法，在一起案件中判决政府部门向企业支付800余万元补偿。法治为合法经营"撑腰"，推动政府部门依法履职、守信践诺，给企业信心，让企业安心。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">政策预期稳，经济大盘才能稳。</span>落实好中央经济工作会议着力稳预期的要求，需纵深推进<span class="highlight-blue">全国统一大市场建设</span>，增强政策的前瞻性、针对性、有效性，下更大力气破解企业关心的融资难融资贵、账款拖欠、涉企乱收费等问题，让企业家安心经营、放心投资、专心创业，以预期之"稳"、环境之"优"促发展之"进"。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">确定性不会凭空产生，源自不断织密织牢的制度保障网，源自一诺千钧的行动担当。</span>就拿"双碳"转型来说，"十四五"时期我国建成全球最大的可再生能源体系，<span class="highlight-green">2024年新能源汽车产销量均超1200万辆，截至2025年9月底我国新型储能装机规模超1亿千瓦，与"十三五"末相比增长超30倍</span>。大量资金、企业选择"押注"绿色低碳产业，一个重要原因是中国在2020年提出了"双碳"目标，而且"中国说到的话、承诺的事，一定会做到、一定会兑现"。这样的稳定预期，能够孕育无限机遇和增长空间。</p>
+<p>在不确定的世界中，<span class="highlight-gold">中国是最大的确定性</span>。这种确定性彰显于"四大优势"，表现为科学制定和接续实施五年规划、一程接着一程干，蕴藏于平安稳定社会环境的方方面面，镌刻在勇攀高峰的创新征程上、坚定不移的开放足迹中。下一个"中国"还是中国，把握这种确定性，就是把握未来。</p>
+<p>新质生产力勃发奔涌，科技创新突飞猛进，城乡面貌日新月异，快速发展变化的中国为世界注入稳定性，正说明预期稳定不等于一成不变、停滞不前。洞察大势、遵循规律，在历史前进的逻辑中前进，在时代发展的潮流中发展，便不惧一时一地的波动、眼前暂时的风雨——这何尝不是一种更深层次的预期。</p>
+<p>历史有其规律和逻辑，文明有其方向和轨迹，和平、发展、合作、共赢的潮流不可阻挡。坚定站在历史正确一边、站在公平正义一边，以人民之心为心、以天下之利为利的中国，将以推动构建人类命运共同体的务实行动形塑世界关于自身的预期，也为世界大同、天下一家的愿景预期蓄势夯基。</p>
+<p>说回"路线"，小说《长安的荔枝》中，主人公李善德为了将鲜荔枝从岭南运到长安，耗费大量人力物力财力反复试验，才最终找到一条"最优路线"。如今指尖轻点，路径规划、预估时间一目了然，能轻松实现预期清晰、心中有数。</p>
+<p>科技拓展认知的边界，当下的行动决定关于未来的预期。关于预期管理的智慧，就藏在身边和历史的丰富实践里。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月9日 第07版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>在不确定的世界中，中国是最大的确定性。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"中国稳定性/确定性"的高度凝练句，适配高质量发展、开放自信类升华段</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>为什么说法治是最好的营商环境？因为制度管根本、管长远，稳定、公平、透明的规则体系有助于经营主体基于合理的预期作出正确判断。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治与营商环境"的标准表述，适配营商环境、民营经济类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>截至2025年9月底我国新型储能装机规模超1亿千瓦，与"十三五"末相比增长超30倍。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"双碳/绿色低碳确定性"的硬核数据，论证"制度兑现预期"极有说服力</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>预期的关键是"确定性"，稳预期的本质是稳信心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"预期与信心关系"的精炼判断，可作分论点或过渡句</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>洞察大势、遵循规律，在历史前进的逻辑中前进，在时代发展的潮流中发展，便不惧一时一地的波动、眼前暂时的风雨。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"遵循规律、保持定力"的收束金句，适配改革攻坚、长期主义类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">类比说理</span><p>以"导航最优路线"类比"预期管理"，把抽象经济概念化为日常经验，易于理解、便于引用。</p></div><div class="migration-card"><span class="tag-mig">定义展开</span><p>先点出"预期的关键在确定性"，再层层释内涵，逻辑紧凑不空泛。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>以民营经济促进法首案、双碳增长数据，印证"确定性来自制度与行动"。</p></div><div class="migration-card"><span class="tag-mig">政策对接</span><p>把论点落到中央经济工作会议"着力稳预期"要求，体现上接天线。</p></div><div class="migration-card"><span class="tag-mig">升华收尾</span><p>以"把握确定性就是把握未来"收束，把个人经验上升到国家叙事。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"稳预期"为话题，模仿本文"由事及理"的写法，写一个 150 字左右的申论开头段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①生活类比引子（如导航/出行）→②点出"确定性是信心基石"→③联系法治与营商环境→④收束"把握确定性就是把握未来"。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"在不确定的世界中，XX是最大的确定性"仿写一句，套用到你熟悉的申论主题（如创新、开放）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月9日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
