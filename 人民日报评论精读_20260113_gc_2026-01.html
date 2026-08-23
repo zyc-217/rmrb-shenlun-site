@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 信心的种子，不怕任何冬寒（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>信心的种子，不怕任何冬寒（评论员观察）</h1>
+    <div class="meta">发展信心 · 高质量发展 · 新质生产力 · 数字经济 · 银发经济 · 自立自强 · 动能重塑 · 超大规模市场 · 全面深化改革开放 · 苦干实干 | 2026年1月13日 | 第07版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">发展信心</span><span class="tag-item">高质量发展</span><span class="tag-item">新质生产力</span><span class="tag-item">数字经济</span><span class="tag-item">银发经济</span><span class="tag-item">自立自强</span><span class="tag-item">动能重塑</span><span class="tag-item">超大规模市场</span><span class="tag-item">全面深化改革开放</span><span class="tag-item">苦干实干</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"信心从哪来"设问，用"看动能/看潜能/看应用"三看结构作答，是"论证信心类"的标准范式。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何增信心"——埋头苦干、自立自强、履险如夷三条，可迁移到"应对挑战"类对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"中国经济信心来源"——实体经济脉动、动能重塑、潜能释放、超大规模市场应用。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"新年动员/经济形势宣讲"可借用"以闯的劲头、创的智慧、实的作风"排比。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（设问—数据引信—三看结构）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以"闯"的劲头、"创"的智慧、"实"的作风筑牢根基，中国经济的稳健与活力、韧性与创新正是发展信心最坚实的支撑。<br><span style="color:#0d47a1;">▸ 写法：排比立论：以"闯创实"三安奠定基调，气势足</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">信心绝非盲目乐观的口号，而是活跃于实体经济的脉动里——稳健与活力、韧性与创新是最坚实支撑。<br><span style="color:#0d47a1;">▸ 写法：本质界定：先破"盲目乐观"再立"源于实践"</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">看动能、看潜能、看应用——中国经济正经历深刻动能重塑、潜能释放、应用形成规模效应。<br><span style="color:#0d47a1;">▸ 写法：三看结构：用"看XX"排比展开，层次清爽</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">埋头苦干、自立自强、履险如夷增信心——以自身确定性应对世界不确定性。<br><span style="color:#0d47a1;">▸ 写法：路径递进：从苦干到自立到履险，由内而外</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以"闯"的劲头破解难题，用"创"的智慧开拓新局，凭"实"的作风筑牢根基，必能让信心的种苗更加茁壮；中国经济的稳健与活力、韧性与创新，正是发展信心最坚实的支撑。</p><p>哪有什么奇迹，从不被看好的地方干出佳绩，就是奇迹。哪有什么秘诀，把看似不可能的任务一点点完成好，就是秘诀。</p>
+<p>时间是奋斗的尺度，信心是奋斗的源泉。发展的信心从哪里来？不妨先看两组数据。</p>
+<p>一是，<span class="highlight-green">截至2025年6月，我国60岁及以上银发网民已有1.61亿人</span>。老年人跨越数字鸿沟、拥抱网络生活，让银发经济和数字经济有了更大发展空间。</p>
+<p>从应对人口老龄化到推动能源清洁化，从传统产业智能化升级到农业生产现代化转型，<span class="highlight-blue">中国这个"全球最具雄心的现代化实践场"，遍布结构性、趋势性的机遇</span>，为信心种子的生长提供了丰沃土壤。</p>
+<p>二是，<span class="highlight-green">截至2025年11月，累计有611款生成式人工智能服务完成备案、306款相关应用或功能完成登记</span>。国产人工智能大模型多点开花，在规模化应用中实现从跟跑到并跑乃至领跑的跨越。</p>
+<p>以大数据、云计算、人工智能、区块链、物联网等为代表的新一代数字科技，持续催生新产业、新模式、新动能，不断开拓着发展的信心源。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">信心绝非盲目乐观的口号，而是活跃于实体经济的脉动里，显现于企业报表上扬的曲线里，闪耀在从实验室到生产线的跃迁中，体现在发展数据的积极向好中……中国经济的稳健与活力、韧性与创新，正是发展信心最坚实的支撑。</span></p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">看动能，中国经济正在经历一场深刻的动能重塑。</span>过去的增长逻辑主要依托要素投入和规模扩张，而今<span class="highlight-blue">新质生产力引领发展质量变革、效率变革、动力变革</span>，成为促进经济提质增效的重要引擎。</p>
+<p><span class="highlight-blue">看潜能，从区域协调发展填补发展洼地，到乡村全面振兴让田野长出希望，从人力资本质量持续提升，到消费结构不断优化升级</span>，中国经济所蕴含的潜能，正源源不断释放出来。<span class="highlight-purple">小池塘可能干涸也可能被冲毁，但大海既不惧狂风骤雨也不会干涸。</span></p>
+<p><span class="highlight-blue">看应用，中国经济的无限可能，体现在超大规模市场所形成的独特生态上</span>——任何一项创新，一旦获得市场认可，就会迅速形成规模效应。新能源汽车换道"超车"、低空经济异军突起、直播带货开拓商机，都是有力证明。</p>
+<p>习近平主席发表二〇二六年新年贺词强调："我们要锚定目标任务，坚定信心、乘势而上，扎实推动高质量发展，进一步全面深化改革开放，推进全体人民共同富裕，续写中国奇迹新篇章。"新一年征途开启，信心必不可少。以"闯"的劲头破解难题，用"创"的智慧开拓新局，凭"实"的作风筑牢根基，必能让信心的种苗更加茁壮，发展的成果更加丰硕。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">埋头苦干增信心。</span>从一枚芯片、一个分子、一段代码入手，甘坐"冷板凳"、肯下"笨功夫"，垒起技术"护城河"，做强价值"增程器"，这是许许多多中国创业者的成功密码。哪有什么奇迹，从不被看好的地方干出佳绩，就是奇迹。哪有什么秘诀，把看似不可能的任务一点点完成好，就是秘诀。</p>
+<p><span class="highlight-gold">自立自强增信心。</span>面对中国航空发动机技术难以实现突破的质疑，国产大涵道比涡扇发动机成功装机试飞，打破了"卡脖子"困局。在技术封锁中逆势突围，在唱衰声中自立自强，正是信心的生动注脚。信心从不依附于外界的评价，而是源于对目标的坚持、对事业的执着。坚定不移做好自己的事，前行的道路才能越走越宽广。</p>
+<p><span class="highlight-gold">履险如夷增信心。</span>2025年中央经济工作会议将"必须以苦练内功来应对外部挑战"，作为做好经济工作的规律性认识之一。保持战略定力，完善产业体系，以自身的确定性、稳定性应对世界的不确定性，定可以在纷繁变局中育新机、开新局。</p>
+<p>大道如砥，鸿篇待续。"十五五"开局之年，唯只争朝夕方能掌握主动，唯笃志不移方能一往无前。信心的种子，不怕任何冬寒；奋进的民族，必将收获属于自己的荣光。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月13日 第07版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>以"闯"的劲头破解难题，用"创"的智慧开拓新局，凭"实"的作风筑牢根基。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"闯创实"的排比句，适配攻坚克难、改革发展类开头或分论点</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>新质生产力引领发展质量变革、效率变革、动力变革，成为促进经济提质增效的重要引擎。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"新质生产力作用"的标准表述，适配动能转换类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>截至2025年6月，我国60岁及以上银发网民已有1.61亿人；累计有611款生成式人工智能服务完成备案。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"信心源于数据"的硬核佐证，论证有说服力</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>小池塘可能干涸也可能被冲毁，但大海既不惧狂风骤雨也不会干涸。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"规模与韧性"的比喻句，适配超大规模市场、抗风险类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>信心的种子，不怕任何冬寒；奋进的民族，必将收获属于自己的荣光。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"信心与奋进"的收束金句，适配高质量发展类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">设问引信</span><p>以"信心从哪来"设问，再用两组数据作答，增强可信度。</p></div><div class="migration-card"><span class="tag-mig">三看结构</span><p>看动能、看潜能、看应用，排比展开，层次清爽易模仿。</p></div><div class="migration-card"><span class="tag-mig">比喻论证</span><p>"小池塘"与"大海"对比，形象说明规模市场抗风险能力。</p></div><div class="migration-card"><span class="tag-mig">排比递进</span><p>埋头苦干、自立自强、履险如夷，三条增信心路径由内而外。</p></div><div class="migration-card"><span class="tag-mig">号召收尾</span><p>以新年贺词号召锚定目标，落到"收获荣光"的昂扬收束。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"信心从哪里来"为题，模仿本文"数据引子+三看结构"，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①两组数据引子（如银发/AI）→②看动能（新质生产力）→③看潜能（区域/乡村/消费）→④看应用（超大规模市场）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">仿写"小池塘……大海……"的比喻，用"XX可能……但YY……"表达对某一申论主题的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月13日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
