@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 感悟发展的未来感（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>感悟发展的未来感（评论员观察）</h1>
+    <div class="meta">高质量发展 · 科技创新 · 规划执行力 · 中国式现代化 · 民生获得感 · 数字中国 · 文化自信 · 新质生产力 · 现代化图景 · 确定性正能量 | 2026年1月5日 | 第06版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">高质量发展</span><span class="tag-item">科技创新</span><span class="tag-item">规划执行力</span><span class="tag-item">中国式现代化</span><span class="tag-item">民生获得感</span><span class="tag-item">数字中国</span><span class="tag-item">文化自信</span><span class="tag-item">新质生产力</span><span class="tag-item">现代化图景</span><span class="tag-item">确定性正能量</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">适配"高质量发展/科技创新/中国式现代化"主题；本文"生活场景引入—立总论点（未来感源于坚定节奏）—三维度分论（科技托举/规划擘画/传统涵养）—升华"结构，是写"中国发展为什么行"的高分框架。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">"如何增强发展确定性/提升群众获得感"——可从科技赋能（数字红利）、规划引领（一张蓝图绘到底）、文化铸魂（传统与现代融合）三层作答。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">"概括中国发展充满未来感的原因"——可提炼为：科技之光赋能生活、规划力执行力、文化传承创新三点。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">可迁移为"关于高质量发展成效/十四五收官的工作总结"；文中"目标感十足的坚定与战略感十足的节奏"适合写进汇报开头。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>📐 论证结构："场景引入—立总论点—三维度分论（科技/规划/传统）—升华"</h3><div class="analysis-item"><span class="label">引论（场景）</span><span class="text">以老人异地就医"心忧变欣喜"的具体生活场景破题，引出发展获得感与未来感。<br><span style="color:#0d47a1;">▸ 写法：用身边可感场景破题，比空喊概念更抓人</span></span></div><div class="analysis-item"><span class="label blue">立论（总论点）</span><span class="text">中国发展充满未来感，源于目标感十足的坚定与战略感十足的节奏，为不确定世界注入确定性。<br><span style="color:#0d47a1;">▸ 写法：以"坚定+节奏"定性立论，站位国内国际双视角</span></span></div><div class="analysis-item"><span class="label blue">本论一（科技）</span><span class="text">分论点1：托举未来，科技之光是亮色——高铁、移动支付、无人机、5G、智慧城市形成高效协同生态。<br><span style="color:#0d47a1;">▸ 写法：用一连串科技意象铺陈"未来感"</span></span></div><div class="analysis-item"><span class="label blue">本论二（规划）</span><span class="text">分论点2：擘画未来，规划力与执行力超强——从"十五五"建议中企业家收获机遇、普通人看到福祉。<br><span style="color:#0d47a1;">▸ 写法：以"几十年坚持公布施政重点"显治理智慧</span></span></div><div class="analysis-item"><span class="label blue">本论三（传统）</span><span class="text">分论点3：赓续传统，文明自觉涵养未来——传统哲学观照下的创新实践，传统回响与时代脉动交织。<br><span style="color:#0d47a1;">▸ 写法：以"天人合一/经世致用"点明文化根基</span></span></div><div class="analysis-item"><span class="label">结论（升华）</span><span class="text">收束于"把远大目标和务实工作结合，既有老黄牛品格又有千里马气势，站在创造未来的源头"。<br><span style="color:#0d47a1;">▸ 写法：首尾呼应，气势与温度兼具</span></span></div><div class="analysis-item"><span class="label">可迁移</span><span class="text">"科技—规划—文化"三维度可套用于高质量发展/中国式现代化类申论，替换领域词即可。<br><span style="color:#0d47a1;">▸ 写法：骨架通用</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+
+<p class="thesis">【总论点】目标感十足的坚定与战略感十足的节奏，持续强化着人们锚定未来发展的信心，也为不确定的世界注入了<span class="highlight-gold">强大确定性和正能量</span>。</p>
+<p>把远大目标和务实工作结合起来，既有老黄牛的品格，又有千里马的气势，我们不仅能勇立时代潮头、更能站在创造未来的源头。</p>
+<p>生活的细节里，往往藏着发展的逻辑。</p>
+<p>陪家里老人看病。医生开出检查单，一项特殊检查的千余元费用，让她顿感一惊。缴费时，因之前做了<span class="highlight-blue">异地就医备案</span>，医保直接结算、个人账户支付后，自己需缴费用并不算多。看着账单的老人，心忧变欣喜。她连连感慨，<span class="highlight-gold">“没想到”“政策好”</span>。</p>
+<p>好政策带来获得感，这是实实在在的民生温度。惠民政策，之所以落地见效、利民有感，也得益于科技赋能。依托信息技术，医保、医疗、医药数据资源被有效整合，就医看病从“卡时代”迈向“码时代”。技术红利，让“想都不敢想的生活”变为“触手可及的日常”。<span class="highlight-purple">政策托举生活，科技改变生活，幸福感十足</span>。</p>
+<p>中国的发展，是值得“惊叹”的。不久前，一位美国记者在体验换电机器人、自动驾驶送货卡车、无人机送餐后，认为<span class="highlight-gold">“既充满未来感又有些不可思议”</span>。这种被称为“未来愿景下的生活”，为什么出现在中国？中国的发展，为什么充满了未来感？</p>
+<p class="sub-thesis">【分论点一】托举未来，才能看到未来。有人说，<span class="highlight-gold">预测未来的最好方式就是创造它</span>。中国用实际行动、务实作为、有效成果，生动诠释了这个道理。</p>
+<p>打开发展画卷，<span class="highlight-blue">科技之光</span>是亮色：城市之间，<span class="highlight-green">高铁时速达350公里</span>；移动支付遍及大江南北，扫码交易安全便捷；无人机配送、无人驾驶汽车、智慧城市建设，从概念变为现实；<span class="highlight-green">5G信号覆盖乡村</span>，数字快车“开”到田间，农副特产通过直播间行销全国。<span class="highlight-purple">技术不是孤立的存在，而是形成高效协同的生态系统</span>，编织出活力迸发的现代化图景。</p>
+<p class="sub-thesis">【分论点二】擘画未来，才能透视未来。<span class="highlight-blue">目光有多远，行动有多实，未来才会有多美</span>。不少人将中国视为规划力、执行力超强的国家，<span class="highlight-purple">前瞻中充满治理智慧，实干中积蓄前行力量</span>。</p>
+<p>国强民富，一直是发展规划的追求。智能制造、生物医药、节能环保、消费升级、电商经济……从<span class="highlight-blue">“十五五”规划建议</span>中，企业家收获机遇清单，普通人看到生活福祉。数十年来，每份规划都精准聚焦国家战略、企业机会与民生关切。正如树苗因园丁精心培育而茁壮成长，中国发展也在科学规划指引下稳步前行，无论投资决策还是个人成长，都能于蓝图中找到坐标。</p>
+<p>中国的发展日新月异，世界与之同频。有外国友人说，<span class="highlight-gold">提前至少5年将政府施政重点、目标任务和实现路径向全社会、全世界公布，几十年坚持这么做的国家，全世界只有中国</span>。读懂中国，就会看好中国。目标感十足的坚定与战略感十足的节奏，持续强化着人们锚定未来发展的信心，也为不确定的世界注入了强大确定性和正能量。</p>
+<p class="sub-thesis">【分论点三】赓续传统，才能涵养未来。<span class="highlight-blue">中国式现代化，是在五千多年文明的地基上建造摩天大楼</span>。没有断裂式的“推倒重来”，而是“温故而知新”的推陈出新，这让现代化之路更具文明质感。</p>
+<p>其实，我们不仅创造未来，更在定义什么样的未来值得追求。今天的美丽中国、数字中国建设，是在<span class="highlight-gold">“天人合一”“经世致用”</span>等传统哲学观照下的创新实践。汉服与赛博朋克元素融合引领风潮，以区块链技术保护非遗版权，用元宇宙复原“万园之园”圆明园……<span class="highlight-purple">把发展深植于中华文化之中，传统回响与时代脉动交织成的精神气象，是从历史深处走来、向光明未来奔去的文明自觉</span>。</p>
+<p>中国共产党人有这样一种风范，“过去、现在、未来全部规划好、思虑到。”未来的中国，不只是“中国的未来”，更是“中国给世界的未来”。新征程上，把远大目标和务实工作结合起来，既有老黄牛的品格，又有千里马的气势，我们不仅能勇立时代潮头、更能站在创造未来的源头。</p>
+
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月5日 第06版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">高质量发展</span><p>中国的发展，目标感十足的坚定与战略感十足的节奏，持续强化着人们锚定未来发展的信心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"发展信心源于坚定与节奏"的立论句，可作总论点或开头</p></div><div class="material-card"><span class="tag-shenlun">科技创新</span><p>技术不是孤立的存在，而是形成高效协同的生态系统。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"系统协同释放科技动能"的辩证句，论证"新质生产力/科技集成"</p></div><div class="material-card"><span class="tag-shenlun">规划</span><p>目光有多远，行动有多实，未来才会有多美。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"前瞻与实干统一"的哲理句，论证"规划引领/战略定力"</p></div><div class="material-card"><span class="tag-shenlun">文化自信</span><p>中国式现代化，是在五千多年文明的地基上建造摩天大楼。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"传统是现代化根基"的形象句，论证"第二个结合/文化自信"</p></div><div class="material-card"><span class="tag-shenlun">通用</span><p>把远大目标和务实工作结合起来，既有老黄牛的品格，又有千里马的气势。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"理想与实干统一"的收束句，可套各类奋斗主题</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">技法一 · 场景破题</span><p>以老人异地就医"心忧变欣喜"的具象场景开篇，把抽象"发展获得感"变成可感故事。迁移写法：<b>写"高质量发展/民生"类文章，用一个身边场景破题</b>，比空喊概念更抓人。</p></div><div class="migration-card"><span class="tag-mig">技法二 · 三维度分论（科技/规划/传统）</span><p>把"未来感"拆成"科技托举—规划擘画—传统涵养"三维度。迁移写法：<b>写"中国式现代化/高质量发展"类文章，主动按此三维拆分分论点</b>，逻辑清晰不重样。</p></div><div class="migration-card"><span class="tag-mig">技法三 · 词组构句（坚定/节奏/确定性）</span><p>以"目标感十足的坚定与战略感十足的节奏""为不确定世界注入确定性"定性。迁移写法：<b>用"确定性/节奏感/定力"等词组替代平铺直叙</b>，让发展类文章更有记忆点。</p></div><div class="migration-card"><span class="tag-mig">技法四 · 外部视角佐证</span><p>引外国友人"几十年坚持公布施政重点，全世界只有中国"佐证规划力。迁移写法：<b>论证"规划引领/战略定力"时引外部视角</b>，增说服力与张力。</p></div><div class="migration-card"><span class="tag-mig">技法五 · 文化今用立根基</span><p>以"天人合一/经世致用"点明现代化文化根基。迁移写法：<b>论证"第二个结合/文化自信"时引传统哲学</b>，显文明纵深。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"感悟发展的未来感"为题，写一段150字左右的申论论证段，要求：<b>先亮一个分论点（如"未来感源于科技托举／源于规划定力／源于文化涵养"），再用文中任一要素（高铁350公里／十五五蓝图／汉服赛博融合）支撑</b>。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">亮"科技托举"分论点 → 引"技术形成高效协同生态系统" → 用5G覆盖乡村＋无人机配送实例 → 收"活力迸发的现代化图景"。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用本文"科技—规划—传统"三维度，为"如何增强人民群众的发展信心与获得感"列三个不同侧重点的对策分论点（提示：数字红利防感知落差／一张蓝图防朝令夕改／文化铸魂防无根发展）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月5日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
