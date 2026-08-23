@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 治理更高效  福祉有保障（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>治理更高效  福祉有保障（人民时评）</h1>
+    <div class="meta">基层治理 · 民生保障 · 科技赋能 · 协同治理 · 新就业群体 · 营商环境 · 共建共治共享 · 问计于民 · 治理现代化 · 以人民为中心 · 数字治理 · 制度创新 · 美好生活 | 2026年1月23日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层治理</span><span class="tag-item">民生保障</span><span class="tag-item">科技赋能</span><span class="tag-item">协同治理</span><span class="tag-item">新就业群体</span><span class="tag-item">营商环境</span><span class="tag-item">共建共治共享</span><span class="tag-item">问计于民</span><span class="tag-item">治理现代化</span><span class="tag-item">以人民为中心</span><span class="tag-item">数字治理</span><span class="tag-item">制度创新</span><span class="tag-item">美好生活</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"优治理"保障"民生福祉"立论，是"治理现代化/共建共治"类文章典范，可迁移到"以治理优化提升民生"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何优治理保民生"——科技赋能、问题导向、协同聚力、问计于民四条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"治理优化的密码"——守正与创新、问计于民、协同共治。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"民生治理工作情况报告"可借用"老百姓盼的，就是我们要干的""政策找人"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（小切口·三维度）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">找准"小切口"、推动"大治理"，以科技赋能、问题导向、协同聚力，更精准高效温暖地保障和改善民生。<br><span style="color:#0d47a1;">▸ 写法：由乱象整治引题：从中央网信办整治团播乱象切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">找准"小切口"，推动"大治理"——治理的温度精度效度藏在"看得清"的大字版说明书等细节中。<br><span style="color:#0d47a1;">▸ 写法：小切口维度：以团播乱象整治、适老化无障碍设施说明</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">紧扣群众关切、民生期盼，治理创新便有了突破口，新业态延伸到哪里优治理便延伸到哪里。<br><span style="color:#0d47a1;">▸ 写法：新业态维度：以美团骑手社保补贴、"安全奖"正向激励说明</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">锚定惠民目标，用好科技赋能、坚持问题导向、善聚协同之力，问计于民让源头活水不竭。<br><span style="color:#0d47a1;">▸ 写法：方法论维度：以西宁摸排、北京"京策"、成都坝坝会说明</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】一个个具体可感的治理优化、细节改进，叠加为治理能力与水平的整体提升。锚定惠民目标，用好科技赋能、坚持问题导向、善聚协同之力，更精准、更高效、更温暖的民生保障，就蕴藏在处理好守正与创新关系的智慧之中。</p><p>一个个具体可感的治理优化、细节改进，叠加为治理能力与水平的整体提升，转化为群众有感的民生保障和社会进步</p>
+<p>用好科技赋能，坚持问题导向，善聚协同之力，更精准、更高效、更温暖的民生保障与改善，就蕴藏在处理好守正与创新关系的智慧之中</p>
+<p>如今，实现网络空间天朗气清、生态良好，成为提升民生福祉的重要内容。</p>
+<p>前不久，针对团播行业乱象，中央网信办紧盯低俗团播引诱打赏、虚假人设诱骗打赏等突出问题，持续加大清理处置力度，<span class="highlight-green">累计处置违规直播间7.3万余个、账号2.4万余个</span>。经过大力整治，直播间的优质内容获得更大空间，团播的内容形式更加多元化。这不仅为直播业态注入新鲜活力，而且提升了网民的获得感。</p>
+<p>从线上与线下的互动中，不难发现“老百姓盼的，就是我们要干的”共通逻辑，不难看出“抓改革、促发展，归根到底就是为了让人民过上更好的日子”价值旨归。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">找准“小切口”，推动“大治理”。</span></p>
+<p>民生改善不是空话，治理的温度、精度和效度，就藏在“看得清”的大字版药品说明书里，藏在“摸得着”的适老化、无障碍设施中。一个个具体可感的治理优化、细节改进，叠加为治理能力与水平的整体提升，转化为群众有感的民生保障和社会进步。</p>
+<p>今年经济工作八项重点任务，“坚持民生为大，努力为人民群众多办实事”是其中之一。“优治理”是重要基础，要以治理能力优化确保民生福祉提升。</p>
+<p>在政府、企业等多方大力推动下，劳动者权益保障网越织越密。入行7年的美团骑手孙东，现在每月能获得430元左右的社保补贴，这份保障让他新的一年干劲更足。从全职妈妈转型为骑手的李建萍感慨，有了社保补贴，每月可以多存几百元，心里更加踏实。</p>
+<p>怎样减少配送员因抢时间而产生的逆行、抢道、闯红灯现象？一些外卖平台探索设立“安全奖”“不闯红灯奖”，<span class="highlight-purple">以正向激励代替负向惩罚，引导配送员自觉遵守交通规则</span>。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">从为全职骑手缴社保的突破，到破解外卖员工伤赔付难题，新业态、新模式拓展到哪里，新机制、优治理便延伸到哪里。紧扣群众关切、民生期盼，治理创新、提质增效就有了突破口，推进治理现代化就有了着力点。</span></p>
+<p>从“有没有”到“好不好”，从“广覆盖”到“高质量”，变的是需求，不变的是创新的勇气和为民的初心。</p>
+<p>在青海西宁，社区工作人员通过主动摸排和数据分析，了解到独居的张生魁因罹患疾病丧失劳动能力、生活陷入困境，便帮他申请低保和公租房。这是技术赋能激发的治理效能。</p>
+<p>在北京，政策服务平台“京策”使惠企资金兑现流程标准化、节点时间透明化、资金规模显性化，<span class="highlight-green">变“人找政策”为“政策找人”</span>，带来了服务提升、营商环境优化。</p>
+<p>锚定惠民目标，用好科技赋能，坚持问题导向，善聚协同之力，更精准、更高效、更温暖的民生保障与改善，就蕴藏在处理好守正与创新关系的智慧之中。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">“大家”托举“小家”、“小家”成就“大家”，这是我们向前发展的信心所在、底气所在，也揭示了治理再升级的一个重要密码：群众是社会治理的最大受益者，也是最广泛参与者。</span></p>
+<p>四川成都，一个闲置地块改造前开了几十场坝坝会，最终“改”到居民心坎上；甘肃永登，龙泉村村民关于建长者食堂等“金点子”化作治理“好方子”……<span class="highlight-gold">问计于民、问需于民，共商共建共治共享，优治理、解难题、促发展的源头活水便不会枯竭</span>。</p>
+<p>民生如镜，照出万家灯火、百姓笑颜，映射理念升级、不变初心。开新局、启新程，持续聚焦群众急难愁盼问题，推进治理体系和治理能力现代化，必能让民生福祉的成色更足，为强国建设、民族复兴注入磅礴之力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月23日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>一个个具体可感的治理优化、细节改进，叠加为治理能力与水平的整体提升，转化为群众有感的民生保障和社会进步。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"小切口大治理"的核心句，适配基层治理、民生改善类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>治理的温度、精度和效度，就藏在"看得清"的大字版药品说明书里，藏在"摸得着"的适老化、无障碍设施中。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"治理细节"的标准表述，适配公共服务、精细治理类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>中央网信办累计处置违规直播间7.3万余个、账号2.4万余个；美团骑手每月获430元左右社保补贴。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"治理实效"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>群众是社会治理的最大受益者，也是最广泛参与者。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"治理与群众"的辩证句，适配共建共治共享类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>问计于民、问需于民，共商共建共治共享，优治理、解难题、促发展的源头活水便不会枯竭。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"问计于民"的收束金句，适配群众路线、治理现代化类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">小切口立论</span><p>从团播乱象整治切入，说明"小切口推动大治理"。</p></div><div class="migration-card"><span class="tag-mig">双案例对照</span><p>团播整治与适老化设施，说明治理的温度精度在细节。</p></div><div class="migration-card"><span class="tag-mig">新业态延伸</span><p>以骑手社保、"安全奖"说明优治理随新业态延伸。</p></div><div class="migration-card"><span class="tag-mig">科技赋能</span><p>以西宁主动摸排、北京"京策"政策找人，说明技术提效。</p></div><div class="migration-card"><span class="tag-mig">问计于民</span><p>以成都坝坝会、永登金点子收束于共建共治源头活水。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以小切口推动大治理"为题，模仿本文"小切口+三维度"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①团播整治引出"小切口大治理"→②治理细节在说明书/适老化→③优治理随新业态延伸→④科技赋能+问计于民。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"变XX为XX"造句，表达你对"服务优化"的理解（如变人找政策为政策找人）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月23日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
