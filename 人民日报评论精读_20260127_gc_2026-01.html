@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 相互补台，才能好戏连台（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>相互补台，才能好戏连台（评论员观察）</h1>
+    <div class="meta">协同发展 · 互补共赢 · 区域协调 · 统一大市场 · 机制创新 · 技术赋能 · 破壁融合 · 高质量发展 · 补位发展 · 开放合作 | 2026年1月27日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">协同发展</span><span class="tag-item">互补共赢</span><span class="tag-item">区域协调</span><span class="tag-item">统一大市场</span><span class="tag-item">机制创新</span><span class="tag-item">技术赋能</span><span class="tag-item">破壁融合</span><span class="tag-item">高质量发展</span><span class="tag-item">补位发展</span><span class="tag-item">开放合作</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"小朋友篮球救场"小故事破题，论证"相互补台、好戏连台"的发展哲理，是"故事引题+多维论证"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推动区域协同发展"——链上合作、机制破壁、技术赋能三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"补位发展的形态"——链上补位、机制补位、技术补位。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"区域协同/产业链合作"可借用"相互补台、好戏连台""精密焊接"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（故事破题·三形态论证）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">当发展所需、技术所长不断突破边界、跨界融合，看似补位的发展，实则会孕育更多新增长点、激发更多市场机会。<br><span style="color:#0d47a1;">▸ 写法：由"篮球救场"故事引出"补位发展"的乘数效应</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">链上的补位是合作，发展在合奏中激越妙音，进步在互补中完成跃升。<br><span style="color:#0d47a1;">▸ 写法：合作维度：以贵州绿色算力入湾、成渝智能网联汽车产业链咬合为例</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">机制上的补位需破壁，规则破壁带动人才破圈，制度补位催生动能集聚。<br><span style="color:#0d47a1;">▸ 写法：机制维度：以深圳境外职业资格"4.0版"、港澳医师多点执业为例</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">补位发展的高阶形态是技术赋能、边界消融，互为成就的新范式。<br><span style="color:#0d47a1;">▸ 写法：技术维度：以智慧农业、数字教育、工业互联网为例</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】当发展所需、技术所长，不断突破各自边界、不断跨界融入更多领域，看似补位的发展，实则会孕育出更多新的增长点、激发出更多市场机会。</p><p>令人热血沸腾的，不一定是大场面，或许是小瞬间。</p>
+
+<p>前不久，一段小朋友篮球表演的视频刷屏。一个小朋友的篮球意外滚落，为不影响队形，他没有跑去捡球，而是继续"无实物表演"，其间，队友默契配合。此后，前排小朋友找准时机，将球踢回。临场应变、完美救场，大家顺利完成表演，赢得热烈掌声。</p>
+
+<p>有人评价，<span class="highlight-gold">失误是临场的考验，默契是同心的答案</span>。小朋友们以团队协作的精神，诠释出"不完美的完美"，引发场内场外、线上线下的共鸣。</p>
+
+<p>从中，人们能看到，集体项目需要激发团结的力量、坚持的信心、互助的精神。由此进一步感悟，只有增强补位意识，强化协同担当，才能更好化危为机，推动高质量发展。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">实践反复证明一个道理：发展在合奏中激越妙音，进步在互补中完成跃升。</span></p>
+
+<p>贵州安顺的绿色算力，通过直连网络链路畅达粤港澳大湾区，支撑广州企业的三维动画渲染服务，处理时间从数天缩短至喝杯咖啡的工夫；成渝地区双城经济圈，智能网联汽车实现重庆研发、成都测试、宜宾提供电池动力……跨越空间上分隔，实现产业链上咬合，放大协同发展的乘数效应。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">链上的补位是合作，机制上的补位需破壁。</span></p>
+
+<p>这是一种治理能力，也折射创新意识。广东深圳，境外职业资格便利执业认可清单已更新至"4.0版"。港澳医师可在深圳"多点执业"，香港籍船员换证后可入职深圳籍船舶，澳门建筑设计师可通过备案认可机制直接在横琴执业……<span class="highlight-green">机制焕新、管理放活，越便利、越开放，越能有效吸引境外优质专业人才，越有利于为区域创新发展注入活力</span>。规则破壁带动人才破圈，制度补位催生动能集聚，这何尝不是一种带有开放色彩的补位发展。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">补位发展还有一种高阶形态，那就是技术赋能、边界消融。</span></p>
+
+<p>看实践，智慧农业加快发展，依托网络、传感器等，工作人员远程管控，实现"坐在办公室里种田"；数字教育正在普及，甘肃乡村的学生，围坐在多媒体教学一体机前，跟着屏幕远端的老师学英语，"远程家教"有效弥补教学短板；工业互联网助企升级，实现个性定制、远程抽检、动态管控，既提升质量又降低成本……</p>
+
+<p>技术应用、平台合作，不再是"谁依附谁"的旧叙事，而是互相成就的新范式。<span class="highlight-purple">"你的需求"，恰是"我的课题"</span>。</p>
+
+<p>进一步看，无论如何补位、如何协作，背后都有一个关键词——发展共同体。互相成就的背后，也都有一个强大依托——全国统一大市场。</p>
+
+<p>其实，补位发展不是拼图式的补空缺，而是规则、要素、监管、信用等的"精密焊接"。比如，《市场准入负面清单（2025年版）》强化"全国一张清单"的权威性，做到"一单尽列，单外无单"；又如，依托全国中小微企业资金流信用信息共享平台，企业有了"信用画像"，融资提质又增效。以全国统一大市场的视角观之，<span class="highlight-purple">补位发展是共同体意识催生的共同选择、集体行动，也需要各类主体以补位自觉破"各扫门前雪"的思维局限、以补位智慧织好"山河同脉"的发展经纬</span>。</p>
+
+<p><span class="highlight-gold">推动发展，"不能这边搭台、那边拆台，而应该相互补台、好戏连台"</span>。向前发展如大江奔流，左岸蓄势，右岸托举，中流激荡，缺一不可。精准定位、实干到位、精巧补位，"十五五"时期的高质量发展也一定会再立高位。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月27日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>失误是临场的考验，默契是同心的答案。小朋友们以团队协作的精神，诠释出"不完美的完美"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"团队协作"的生动金句，适配团结、协作类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>"不能这边搭台、那边拆台，而应该相互补台、好戏连台"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"互补共赢"的标题金句，适配区域协同、团队合作类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>《市场准入负面清单（2025年版）》强化"全国一张清单"的权威性，做到"一单尽列，单外无单"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"统一大市场"的制度表述，适配放管服、市场统一类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>"你的需求"，恰是"我的课题"；不再是"谁依附谁"的旧叙事，而是互相成就的新范式。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"互为成就"的辩证句，适配合作共赢类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>补位发展不是拼图式的补空缺，而是规则、要素、监管、信用等的"精密焊接"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"精密焊接"的规范表述，适配系统协同、制度衔接类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">故事破题</span><p>以"小朋友篮球意外救场"小瞬间引出补位发展大主题。</p></div><div class="migration-card"><span class="tag-mig">三形态展开</span><p>链上合作—机制破壁—技术赋能，三种补位形态层层递进。</p></div><div class="migration-card"><span class="tag-mig">案例密集</span><p>贵州算力、成渝汽车、深圳清单、智慧农业等多案例佐证。</p></div><div class="migration-card"><span class="tag-mig">辩证升华</span><p>以"你的需求恰是我的课题"强调互为成就的新范式。</p></div><div class="migration-card"><span class="tag-mig">格局收束</span><p>以"统一大市场/山河同脉"落点于高质量发展再立高位。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"相互补台，才能好戏连台"为题，模仿本文"故事破题+三形态论证"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①篮球救场小故事→②链上合作（成渝）→③机制破壁（深圳清单）→④技术赋能（智慧农业）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"补位发展"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月27日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
