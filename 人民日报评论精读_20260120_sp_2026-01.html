@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 优质资源“沉下去”，美好生活“托起来”（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>优质资源“沉下去”，美好生活“托起来”（人民时评）</h1>
+    <div class="meta">民生保障 · 以人民为中心 · 普惠政策 · 育儿补贴 · 资源下沉 · 新就业群体 · 灾后重建 · 制度温度 · 高质量发展 · 共同富裕 · 投资于人 · 民生为大 | 2026年1月20日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">民生保障</span><span class="tag-item">以人民为中心</span><span class="tag-item">普惠政策</span><span class="tag-item">育儿补贴</span><span class="tag-item">资源下沉</span><span class="tag-item">新就业群体</span><span class="tag-item">灾后重建</span><span class="tag-item">制度温度</span><span class="tag-item">高质量发展</span><span class="tag-item">共同富裕</span><span class="tag-item">投资于人</span><span class="tag-item">民生为大</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"托举力"核心概念立论，是"民生保障/投资于人"类文章典范，可直接迁移到"如何让群众有获得感"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何增强民生托举力"——真金白银直达群众、优质资源下沉、制度设计有温度三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"民生改善的新特点"——从"减负"走向更强的"托举力"。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"民生工作情况说明"可借用"将国家发展的宏大叙事转化为每个人触手可及的幸福实景"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（概念立论·三维度）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">民生保障的"托举力"体现着为百姓解忧、为未来投资的力度与决心，将国家发展宏大叙事转化为每个人触手可及的幸福实景。<br><span style="color:#0d47a1;">▸ 写法：由贺词引题：从新年贺词"育儿家庭每月多300元补贴"切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">"托举力"更强，首先是打破常规，拿出"真金白银"直达群众。<br><span style="color:#0d47a1;">▸ 写法：直达维度：以2025年育儿补贴制度（首次普惠现金补贴）佐证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">"托举力"更强，体现在优质资源"沉下去"，把希望"托起来"。<br><span style="color:#0d47a1;">▸ 写法：下沉维度：以华山医院巡回医疗队、西藏定日灾后重建说明</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">"托举力"更强，还体现在制度设计的温度，为奋斗者提供"避风港""加油站"。<br><span style="color:#0d47a1;">▸ 写法：温度维度：以新就业群体驿站、职业伤害保障试点扩围说明</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】民生改善的显著特点，是各项政策不再止步于"减负"，而是释放出更强的"托举力"——它体现着为百姓解忧、为未来投资的力度与决心，正将国家发展的宏大叙事，转化为每个人触手可及的幸福实景。</p><p>民生保障的"托举力"，体现着为百姓解忧、为未来投资的力度与决心</p>
+<p>将国家发展的宏大叙事，转化为每个人触手可及的幸福实景，让每一个在奋斗路上的中国人，步履更加从容、目光更加坚定</p>
+<p>"育儿家庭每月多了300元补贴"，在二〇二六年新年贺词中，习近平主席真挚平实的话语，触动了无数父母的心。这种托举，以国家账本的巨额投入，为一个个普通家庭提供暖心支持。</p>
+<p>近年来，民生改善的一个显著特点，就是各项政策不再止步于"减负"，而是释放出更强的"托举力"。<span class="highlight-blue">民生保障的"托举力"，体现着为百姓解忧、为未来投资的力度与决心</span>。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">"托举力"更强，首先是打破常规，拿出"真金白银"直达群众，给予获得感更强的实惠。</span></p>
+<p>过去，我们在生育支持上更多采取延长假期等方式，而2025年启动的育儿补贴制度，是我国首次对居民发放普惠式现金补贴。这不仅是政策工具箱的丰富，更是发展理念的升级——<span class="highlight-purple">坚持投资于物和投资于人紧密结合</span>。</p>
+<p>对于广西贵港市太同村的农民廖立战来说，这种托举的分量是可以计量的。他家有3个孩子，去年领到了1.08万元补贴。这笔钱相当于他两个多月的工资。作为一个长期在外务工、背负养家重担的父亲，这不仅带来了经济上的获得感，还有一份安全感。</p>
+<p>截至2025年底，<span class="highlight-green">全国育儿补贴发放率达80%左右，已有超过2400万人像廖立战一样，享受到这份国家红利</span>。国家财政直接为家庭育儿分担压力，这种"直给"，让更多年轻父母感受到生育支持政策的温度。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">"托举力"更强，体现在当群众面临急难愁盼时，优质资源能够"沉下去"，把希望"托起来"。</span></p>
+<p>民生之重，在医疗、住房等领域与灾后重建等场景中，往往显得格外突出。改善的挑战在于，光有资金投入还不够，更需要强大的资源调配能力。</p>
+<p>云南南涧彝族自治县的聂衡，左脚患有马蹄内翻足，行走困难。2025年，复旦大学附属华山医院的国家巡回医疗队来到他的家门口。专家操刀为他成功实施截骨和肌力平衡矫形术。6周后，聂衡的足部形态恢复正常。<span class="highlight-green">从"走出去找医生"到"专家来送健康"</span>，这种新的资源配置方式，正是民生政策"托举力"不断增强的生动体现。</p>
+<p>在西藏定日县，2025年初的那场6.8级地震，让群众房屋严重损毁。灾后重建紧锣密鼓。当年8月，森嘎村村民扎西罗布就搬进了宽敞明亮、热水24小时供应的新房。从寒冬震后的无助，到短期内便入住新居的喜悦，<span class="highlight-gold">高效重建的"中国速度"背后，是国家为受灾群众兜底的强大力量</span>。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">"托举力"更强，还体现在制度设计的温度中，为每一个奋斗者提供"避风港"和"加油站"。</span></p>
+<p>城市发展中的新就业群体，谁来保障他们的权益？在河南郑州二七区，外卖员王光辉在寒风中跑单累了，可以在专门的驿站"喘喘气、歇歇脚"。那里有微波炉能热饭，有医药箱备用。街头巷尾的这些公共设施，更好满足了不同人群的细分需求，让更多人感受到被接纳、被尊重、被关心。</p>
+<p>创新形式为新就业群体提供方便，正是民生保障网不断织密织牢的缩影。2025年，<span class="highlight-green">新就业形态人员职业伤害保障试点范围扩大到17个省份，覆盖出行、即时配送、同城货运3个行业的11家平台企业。2026年，这一试点将扩大到31个省份和新疆生产建设兵团</span>。"每单必保、每人必保"，制度的托举，护佑奋斗者心无旁骛、尽情逐梦。</p>
+<p>中国式现代化，民生为大。民生改善没有终点，只有连续不断的新起点。日益增强的"托举力"，正在<span class="highlight-gold">将国家发展的宏大叙事，转化为每个人触手可及的幸福实景</span>，让每一个在奋斗路上的中国人，步履更加从容、目光更加坚定。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月20日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>民生保障的"托举力"，体现着为百姓解忧、为未来投资的力度与决心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生托举力"的核心句，适配民生保障、投资于人类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>坚持投资于物和投资于人紧密结合，各项政策不再止步于"减负"，而是释放出更强的"托举力"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"投资于人"的标准表述，适配人口发展、民生政策类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>截至2025年底，全国育儿补贴发放率达80%左右，超2400万人享受到国家红利；职业伤害保障试点2025年扩至17省份，2026年将扩至31省份和新疆兵团。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"托举力实效"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>高效重建的"中国速度"背后，是国家为受灾群众兜底的强大力量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"国家兜底"的凝练句，适配应急救灾、民生保障类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>日益增强的"托举力"，正在将国家发展的宏大叙事，转化为每个人触手可及的幸福实景。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"宏大叙事落地"的收束金句，适配民生为大类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">概念立论</span><p>以"托举力"为核心概念统摄全篇，立意鲜明。</p></div><div class="migration-card"><span class="tag-mig">三维度展开</span><p>真金白银直达—优质资源下沉—制度设计有温度，三个"更强"逐层递进。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>廖立战育儿补贴、华山医院巡回医疗、定日灾后重建、郑州外卖驿站，多案例分置。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>2400万人、17→31省份，用数据印证托举力之实。</p></div><div class="migration-card"><span class="tag-mig">价值收束</span><p>以"宏大叙事转化为幸福实景"落点于民生为大。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让民生保障更有力度"为题，模仿本文"概念立论+三维度"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"托举力"概念引子→②真金白银直达群众→③优质资源下沉→④制度温度护佑奋斗者。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"将XX转化为XX"造句，表达你对"政策落地"的理解（如将宏大叙事转化为幸福实景）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月20日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
