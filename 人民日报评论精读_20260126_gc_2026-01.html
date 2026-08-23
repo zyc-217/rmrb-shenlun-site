@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 立足生活激发文化之力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>立足生活激发文化之力（评论员观察）</h1>
+    <div class="meta">文化赋能 · 文化自信 · 文化+ · 文创产业 · 乡风文明 · 创造性转化 · 以文化人 · 高质量发展 · 城乡融合 · 精神文明建设 | 2026年1月26日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">文化赋能</span><span class="tag-item">文化自信</span><span class="tag-item">文化+</span><span class="tag-item">文创产业</span><span class="tag-item">乡风文明</span><span class="tag-item">创造性转化</span><span class="tag-item">以文化人</span><span class="tag-item">高质量发展</span><span class="tag-item">城乡融合</span><span class="tag-item">精神文明建设</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"冰箱贴/文创"生活现象破题，论证"文化赋能"的方法论与价值旨归，是"现象引题+分层论证"类文章典范，可迁移到"文化赋能产业/乡村振兴"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何让文化赋能经济社会发展"——契合需求、抓住内核、着眼于人三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"文化赋能的关键"——浸润日常实践、契合真实需求、价值旨归在人。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"文化赋能产业发展/乡村振兴"可借用"文化+旅游/创意""创造性转译"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·三层论证）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">文化赋能，让产品更有辨识度、让产业更有竞争力，缔造凝聚人心的精神纽带，孕育源源不竭的发展动力。<br><span style="color:#0d47a1;">▸ 写法：由"搬家保留文创"生活现象破题，点明文化赋能的价值</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">赋能不是抽象的概念，而是浸润于日常的生动实践，在融合中释放乘数效应。<br><span style="color:#0d47a1;">▸ 写法：实践维度：以咖啡联名培养习惯、贾家古村"谦让墙"滋养乡风</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">赋能的前提是契合需求，须抓住内核、结合实际、读懂人心，进行创造性"转译"。<br><span style="color:#0d47a1;">▸ 写法：方法维度：以苏州平江路"形魂兼具"对比仿古街镇千篇一律</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">文化赋能，价值旨归在于人，坚持文化建设着眼于人、落脚于人。<br><span style="color:#0d47a1;">▸ 写法：价值维度：以脱贫攻坚"我要脱贫"、嫦娥奔月梦想说明以文化人</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】文化赋能，让产品更有辨识度、让产业更有竞争力，缔造凝聚人心的精神纽带，孕育源源不竭的发展动力。</p><p><span class="highlight-gold">以文化人、以文育人，涵养昂扬奋发的精神气质，没有什么难关不能攻克，没有什么梦想不能实现</span>。</p>
+
+<p>前阵子搬家，"断舍离"了许多物品，但到各地旅游时买的冰箱贴、纪念品得到"豁免"，在新家找到了自己的位置。为何文创产品会在"价值排序"中占优呢？</p>
+
+<p>仔细想来，不仅是因为文创产品具有精美造型、深厚内涵，更因为它们背后都有一段与之紧密绑定的回忆、一段不会被轻易割舍的时光。</p>
+
+<p>个体的感受、身边的视角，折射潮流的方向。从冰箱贴成为年轻群体的社交货币到"谷子经济"、潮玩盲盒走红，从"票根经济"撬动文商旅体融合到新中式建筑、穿搭引领潮流，文化元素在经济社会发展中的"能见度"越来越高。寻常物件因为文化获得独特意义、承载厚重情感，生动说明文化赋能的作用和魅力。</p>
+
+<p>习近平主席在二〇二六年新年贺词中指出："文博热、非遗热不断升温，世界遗产再添新员，悟空和哪吒风靡全球，古韵国风成为年轻人眼中的'顶流审美'。"当下，文化为经济发展增效益、为旅游休闲增魅力、为城乡融合增活力的作用愈发彰显。<span class="highlight-blue">"文化+旅游"拓展新空间、"文化+创意"激活新动能，宏观视角与微观感受相互印证，展现出"文化+"赋能效应的广度、深度与效度</span>。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">赋能不是抽象的概念，而是浸润于日常的生动实践；不是简单相加，而是在融合中释放乘数效应。</span></p>
+
+<p>从来不喝咖啡的人，因为特别喜欢的文化创意和咖啡品牌联名，尝试之后发现"未尝不可"，逐渐形成每天一杯咖啡的习惯——<span class="highlight-green">这是文化对消费习惯的培养</span>。行走在江西高安贾家古村，"谦让墙"让人印象深刻：很多老宅的墙角或做成弧形，或削除棱角退缩一步，以避免尖锐的墙角伤及行人。<span class="highlight-green">和睦礼让、推己及人的文化代代相传，促进了乡村和谐——这是文化对乡风文明的滋养</span>。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">赋能的前提是契合需求。</span></p>
+
+<p>江苏苏州平江路，这条古城保存最完整的沿河老街，何以"形魂兼具"？原因就在于，既保护了有形的建筑形态、街巷规制，也留住了无形的历史文脉、"苏式风情"。而一些仿古街镇之所以陷入千篇一律的窠臼、为人诟病，一个重要原因是只模仿古街镇之"形"，却未得文化意蕴。<span class="highlight-blue">这就说明，文化赋能，机械的生搬硬套行不通，必须抓住内核、结合实际、读懂人心，进行创造性"转译"</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">文化赋能，价值旨归在于人。</span></p>
+
+<p>坚持文化建设着眼于人、落脚于人，提升文化服务和文化产品供给能力，才能不断增强人民群众文化获得感、幸福感。</p>
+
+<p>打赢脱贫攻坚战过程中，很多地方通过挖掘运用乡村文化资源，引导不少群众树立主体意识，变"要我脱贫"为"我要脱贫"，凝聚奋进力量。"嫦娥奔月"的古老传说，催生国人想办法到月亮上去看看的梦想，助力缔造新时代登月传奇。以文化人、以文育人，涵养昂扬奋发的精神气质，没有什么难关不能攻克，没有什么梦想不能实现。</p>
+
+<p>农历马年春节临近，造型不同、形态各异的马元素文创产品走俏市场。文化赋能的过程，亦是赋能文化的过程。<span class="highlight-purple">在彼此契合、有机融合前提下进行的创新创造，既能让赋能对象焕发新生，也将助推文化繁荣发展</span>。这股融入血脉、刻入基因的文化之力，必能引领一个古老民族穿越历史的烟云、通向光明的彼岸，赋能每个人在奋进的脚步中成就更好的自己。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月26日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>以文化人、以文育人，涵养昂扬奋发的精神气质，没有什么难关不能攻克，没有什么梦想不能实现。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"文化育人"的士气金句，适配精神文明、凝聚力类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>"文化+旅游"拓展新空间、"文化+创意"激活新动能，展现出"文化+"赋能效应的广度、深度与效度。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"文化+"融合效应的标准表述，适配文旅融合、创意产业类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>文化赋能，机械的生搬硬套行不通，必须抓住内核、结合实际、读懂人心，进行创造性"转译"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创造性转化"的规范表述，适配传统文化创新类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>文化赋能的过程，亦是赋能文化的过程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"双向赋能"的辩证句，适配文化与产业互促类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>这股融入血脉、刻入基因的文化之力，必能引领一个古老民族穿越历史的烟云、通向光明的彼岸。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"文化之力"的收束金句，适配文化自信类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象破题</span><p>以"搬家保留冰箱贴/文创"的生活切口引出文化赋能大主题。</p></div><div class="migration-card"><span class="tag-mig">分层论证</span><p>实践—方法—价值三层，系统拆解文化赋能的路径。</p></div><div class="migration-card"><span class="tag-mig">正反案例</span><p>苏州平江路"形魂兼具"对比仿古街镇千篇一律，说明抓内核。</p></div><div class="migration-card"><span class="tag-mig">以小见大</span><p>从咖啡习惯、谦让墙等小事，折射文化对消费与乡风的滋养。</p></div><div class="migration-card"><span class="tag-mig">价值升华</span><p>落脚"以文化人、价值旨归在人"，收束于文化自信。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让传统文化在烟火气中焕新"为题，模仿本文"生活现象破题+三层论证"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"冰箱贴/文创"生活切口→②浸润日常实践（咖啡/谦让墙）→③契合需求抓内核（平江路）→④价值旨归在人。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"文化赋能"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月26日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
