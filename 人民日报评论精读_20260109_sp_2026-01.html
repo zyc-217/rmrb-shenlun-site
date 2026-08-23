@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 法治展长卷 碧水入画来（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>法治展长卷 碧水入画来（人民时评）</h1>
+    <div class="meta">生态文明 · 法治建设 · 国家公园法 · 协同治理 · 美丽中国 · 制度供给 · 源头预防 · 绿色转型 · 跨区域治理 · 法治保障 | 2026年1月9日 | 第07版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">生态文明</span><span class="tag-item">法治建设</span><span class="tag-item">国家公园法</span><span class="tag-item">协同治理</span><span class="tag-item">美丽中国</span><span class="tag-item">制度供给</span><span class="tag-item">源头预防</span><span class="tag-item">绿色转型</span><span class="tag-item">跨区域治理</span><span class="tag-item">法治保障</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"法律制度的三重作用（规范—引导—震慑）"作分论点框架，可直接迁移到"用制度保障XX"类文章。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何用法治护航生态文明"——明确边界、引导绿色、事前预防三条对策清晰可用。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"法律制度的作用"，从规范、引导、震慑三个维度作答，不遗漏。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"生态环境治理倡议/情况说明"可借用"变各管一摊为一摊共管"的协同表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（分维度论证）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">法律制度不断完善让生态文明建设有了更多"硬支撑"，以法治理念、法治方式推动生态文明建设是铺展美丽中国画卷的必然要求。<br><span style="color:#0d47a1;">▸ 写法：由事及理：从两部法规施行引出中心论点</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">法律制度的作用在于规范——明确"可为"与"不可为"的边界，让生态文明建设有章可循。<br><span style="color:#0d47a1;">▸ 写法：分维度论证①：以宁波噪声"小快灵"立法佐证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">法律制度的作用在于引导——以绿色为引领，实现更高层次的发展。<br><span style="color:#0d47a1;">▸ 写法：分维度论证②：以长江临湘段退岸入园佐证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">循法而行、依法而治还能形成震慑，推动生态治理从事后处罚向事前预防转变。<br><span style="color:#0d47a1;">▸ 写法：分维度论证③：呼应"源头预防远胜事后治理"</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】法治展长卷，碧水入画来——从"首个条例"到首部"专门立法"，法律制度不断完善让生态文明建设有了更多"硬支撑"；以法治理念、法治方式推动生态文明建设，是铺展美丽中国画卷的必然要求。</p><p>近段时间，两部关于生态文明建设的法律法规正式施行。</p>
+<p>一部是《密云水库水源保护条例》。作为国家针对水库水源地颁布实施的首个条例，其施行将极大助力护航首都"大水缸"。</p>
+<p>一部是国家公园法。这是我国首部关于国家公园的专门立法，其施行标志着我国国家公园建设迈入法治化、规范化新阶段。</p>
+<p><span class="highlight-gold">法治展长卷，碧水入画来。</span>从"首个条例"，到首部"专门立法"，法律制度不断完善，让生态文明建设有了更多"硬支撑"，也给各地守护绿水青山带来启示。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">法律制度能为生态文明建设护航，一个方面就在于，明确了"可为"与"不可为"的边界，让生态文明建设有章可循、有法可依。</span></p>
+<p>以施工噪声污染为例。近年来，随着城市建设的加速，施工噪声污染成为影响市民生活质量的突出问题。在浙江宁波，关于噪声污染的投诉量呈逐年上升趋势，其中建筑施工及室内装修噪声投诉增长尤为明显。2025年8月，宁波市人大常委会通过施工噪声污染防治规定，对上位法规定较为笼统的内容作了细化，对施工单位职责、高考中考期间施工限制、室内装修的限定时间等作了具体规定。"小快灵"立法，厘清了各方责任，治理噪声扰民有了更有力的法律武器。</p>
+<p>习近平总书记指出："<span class="highlight-purple">我国生态环境保护中存在的突出问题大多同体制不健全、制度不严格、法治不严密、执行不到位、惩处不得力有关。</span>"加强制度和法律供给，才能避免陷入"治理—反弹—再治理—再反弹"的怪圈，实现"长治"。</p>
+<p>生态环境问题往往具有跨区域、迁移性等特点，影响范围可能跨越行政边界。以法律制度的形式，明确各方职责，推动生态治理区域一体化，才能形成治理合力。</p>
+<p>就拿密云水库来说，其控制流域跨京冀"三区五县"。京冀两地经济发展水平、产业结构、生态环境保护力度等诸多方面存在差异。一度，保护措施多表现为上下游之间政策的简单叠加，不同地区管控政策差异也较大。条例明确京冀两地政府的协同责任，赋予跨省协作法律强制力，有助于减少因标准差异导致的监管漏洞，共护密云水库这一"无价之宝"。</p>
+<p>江西、湖南两省人大常委会分别表决通过萍乡市、株洲市大气污染协同防治条例，广东中山市与珠海市协同开展前山河流域保护立法，黑龙江鹤岗市、佳木斯市协同制定嘟噜河湿地保护条例……从实践来看，用好协同立法这个手段，能有效破解"上游保护下游污染""九龙治水"等问题，变"各管一摊"为"一摊共管"。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">法律制度的作用还在于引导。生态优先，不是不要发展，而是要以绿色为引领，实现更高层次的发展。</span></p>
+<p>长江湖南临湘段，岸线草木葱茏。曾经，这片土地被化工企业包围。长江保护法明确，"调整产业结构，优化产业布局，推进长江流域绿色发展"。<span class="highlight-green">22家化工企业退出沿江1公里，当地还新建绿色化工产业园，转移承接沿江退出的高新技术企业</span>。可见，发挥法治引导作用，可从源头解决污染问题，促进经济向新向绿而行。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">生态环境具有脆弱性，源头预防远胜事后治理。循法而行、依法而治，还能形成震慑作用，推动生态治理从事后处罚向事前预防转变。</span></p>
+<p>建设生态文明，重在建章立制。"以法治理念、法治方式推动生态文明建设"，这是实践带来的深刻启示，也是铺展美丽中国画卷的必然要求。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月9日 第07版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>法治展长卷，碧水入画来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治与生态"的诗意开篇句，可作生态文明类文章标题或开头</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>法律制度能为生态文明建设护航，一个方面就在于，明确了"可为"与"不可为"的边界，让生态文明建设有章可循、有法可依。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治规范作用"的标准表述，适配制度保障类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>加强制度和法律供给，才能避免陷入"治理—反弹—再治理—再反弹"的怪圈，实现"长治"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"制度供给防反弹"的深刻判断，适配长效治理类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>22家化工企业退出沿江1公里，当地还新建绿色化工产业园，转移承接沿江退出的高新技术企业。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治引导绿色转型"的具体案例，论证有画面感</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>建设生态文明，重在建章立制。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生态文明靠制度"的凝练收束，适配美丽中国类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">由事及理</span><p>从两部法规施行落笔，自然引出"法治护航生态"的中心论点。</p></div><div class="migration-card"><span class="tag-mig">分维度论证</span><p>规范—引导—震慑三作用逐层展开，结构清爽、便于模仿。</p></div><div class="migration-card"><span class="tag-mig">案例支撑</span><p>宁波噪声立法、密云协同、长江临湘段退岸，多案例分置各维度。</p></div><div class="migration-card"><span class="tag-mig">引证增强</span><p>引用习近平总书记论述，点明制度不严密之害，权威有力。</p></div><div class="migration-card"><span class="tag-mig">升华收尾</span><p>以"重在建章立制"点题，呼应开头"法治展长卷"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"用法治守护绿水青山"为题，模仿本文"规范—引导—震慑"三分法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①法律制度的作用在于规范（明确边界）→②在于引导（绿色引领发展）→③在于震慑（事前预防）三句递进。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">仿写"法律制度的作用在于XX"句式，套用到你熟悉的领域（如食品安全、安全生产）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月9日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
