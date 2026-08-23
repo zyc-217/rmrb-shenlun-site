@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 盘活存量，关键在巧拨“炭火”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>盘活存量，关键在巧拨“炭火”（评论员观察）</h1>
+    <div class="meta">存量发展 · 内涵式发展 · 资源优化 · 基层治理 · 城市更新 · 时间银行 · 食物银行 · 互利共赢 · 系统观念 · 高质量发展 · 循环经济 · 供给侧改革 · 民生服务 | 2026年1月21日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">存量发展</span><span class="tag-item">内涵式发展</span><span class="tag-item">资源优化</span><span class="tag-item">基层治理</span><span class="tag-item">城市更新</span><span class="tag-item">时间银行</span><span class="tag-item">食物银行</span><span class="tag-item">互利共赢</span><span class="tag-item">系统观念</span><span class="tag-item">高质量发展</span><span class="tag-item">循环经济</span><span class="tag-item">供给侧改革</span><span class="tag-item">民生服务</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"炭火"比喻引出"盘活存量"方法论，是"比喻立论+路径论证"类文章典范，可迁移到"资源集约利用""内涵式发展"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何盘活存量资产"——为存量找新归宿、赋新意涵、形成互利参与机制三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"盘活存量的关键"——唤醒"余热"、双向奔赴、良性循环。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"资源集约利用/城市更新经验"可借用"做优增量、盘活存量""巧拨炭火"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（比喻立论·三路径）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">转变"重建设轻管理"思路，善于发现、唤醒"余热"，巧拨存量"炭火"，激发存量资产价值，依托内涵式发展获得持续生长力量。<br><span style="color:#0d47a1;">▸ 写法：由比喻破题：从冬日暖炉"拨炭火"类比存量资源激活</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">为存量资源找到新归宿，可以发挥大用处——以深圳"食物银行"减损惠民。<br><span style="color:#0d47a1;">▸ 写法：归宿维度：以深圳24小时"食物银行"说明资源再利用</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">为存量资源赋予新意涵，可以激发新价值——以重庆"时间银行"实现利他利己统一。<br><span style="color:#0d47a1;">▸ 写法：意涵维度：以重庆迎龙镇"时间银行"说明志愿服务量化</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">让存量资源持续健康流动，重点在形成互利的参与机制，实现良性循环。<br><span style="color:#0d47a1;">▸ 写法：机制维度：以政府搭平台、利益统筹说明互惠模式</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】转变"重建设轻管理"的思路，善于发现、唤醒那些未被充分利用的"余热"，像巧拨炉膛里的炭火一样盘活存量资源，就能更好激发存量资产价值，让广袤城乡依托内涵式发展获得持续生长的内在力量。</p><p>转变“重建设轻管理”的思路，善于发现、唤醒那些未被充分利用的“余热”，就能更好激发存量资产价值</p>
+<p>当每一处更新都呼应人的需求，每一寸土地都焕发新的价值，广袤城乡便能依托内涵式发展获得持续生长的内在力量</p>
+<p>每到冬日，总忆起儿时的暖炉。暗红的炭火卧在炉膛，看似不旺，但只要用火箸轻轻拨动，内里蕴藏的光和热便会充分释放出来，让整个屋子都暖意融融。</p>
+<p>这为基层治理带来启示。那些“沉睡”的存量资源，就像炉中的炭块，只需找到合适的时机与力道“拨动”一下，便能释放意想不到的能量。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">为存量资源找到新归宿，可以发挥大用处。</span></p>
+<p>广东深圳福田区与多家商超合作，推出<span class="highlight-green">24小时“食物银行”</span>。志愿者收集、分拣当日卖不完的果蔬面包，存入街头冷柜，按“先特惠后普惠”原则，供市民尤其是困难群体领取。企业也不吃亏，不仅减少了销毁成本，还能在柜体展露广告，享受捐赠抵税政策。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">为存量资源赋予新意涵，可以激发新价值。</span></p>
+<p>重庆南岸区迎龙镇61岁的王孃孃，过去不太爱出门，现在每天准时为独居邻居李婆婆送餐。原来，当地推行“时间银行”，鼓励身体健康的低龄老人为高龄老人提供志愿服务，付出的时间被记录为“积分”，既可兑换生活用品，也可储存起来，在未来需要时“变现”为服务。<span class="highlight-blue">“十五五”规划建议提出，“做优增量、盘活存量”。这是推动经济社会发展的方法论。</span>转变“重建设轻管理”的思路，善于发现、唤醒那些未被充分利用的“余热”，就能更好激发存量资产价值。</p>
+<p>很多时候，资源与需求间缺的不是对接意愿，而是规范、互信的平台。“食物银行”之所以能成功，并非因为“免费派发”，而是得益于由政府搭建的标准化公益平台。质量有保证，柜机配备冷藏与消杀功能，食物可溯源、有检测；分发有秩序，低收入、残障人士等优先预约、扫码领取。<span class="highlight-blue">就像找到了合适的火箸后，巧拨炭火，暖意自然向周围扩散。努力实现存量资源与多元需求的“双向奔赴”，便能激活潜在要素，催生新的发展动能。</span></p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">如何让存量资源持续、健康地流动起来？重点在形成互利的参与机制，让各方有当下的甜头，更有未来的盼头。</span></p>
+<p>“时间银行”的精妙之处，就在于实现了利他与利己的统一，既为志愿服务赋予“交换价值”，能兑换米面粮油；也创造“预期价值”，有利于个人日后的生活保障。以精巧的利益统筹和制度设计，为资源标定量化价值、搭建流通平台、形成稳固互惠模式，才能实现良性循环。</p>
+<p>盘活存量，还必须以观念革新、方法更新、技术创新为抓手，善于挖掘存量资源的价值。<span class="highlight-purple">存量资源不只是闲置的空间、落灰的设施，也包括那些隐性的技能、行为的选择等。比如，外出通勤选择乘公交、骑单车，就能实现“绿色增量”。存量资源多种多样，但需要突破固有思维，用新的尺子去丈量寻常事物，用创新机制去兑现其潜在价值。</span></p>
+<p>实现存量发展，考验的不仅是价值重塑的智慧，更是对社会活力的重新激活。当每一处更新都呼应人的需求，每一寸土地都焕发新的价值，广袤城乡便能依托内涵式发展获得持续生长的内在力量。<span class="highlight-gold">让存量的“炭火”烧得更旺、更热，照亮的必是更加美好的生活图景</span>。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月21日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>转变"重建设轻管理"的思路，善于发现、唤醒那些未被充分利用的"余热"，就能更好激发存量资产价值。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"盘活存量"的方法论金句，适配城市更新、资源集约类论证</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>"十五五"规划建议提出"做优增量、盘活存量"，这是推动经济社会发展的方法论。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"做优增量、盘活存量"的标准表述，适配高质量发展、供给侧类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>努力实现存量资源与多元需求的"双向奔赴"，便能激活潜在要素，催生新的发展动能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"供需对接"的辩证句，适配资源配置、循环经济类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>存量资源不只是闲置的空间、落灰的设施，也包括那些隐性的技能、行为的选择等，需要突破固有思维，用新的尺子去丈量寻常事物。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"存量内涵"的拓展表述，适配创新思维类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>让存量的"炭火"烧得更旺、更热，照亮的必是更加美好的生活图景。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"存量激活"的收束金句，适配内涵式发展类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">比喻破题</span><p>以冬日"拨炭火"类比沉睡存量资源，化抽象为生动。</p></div><div class="migration-card"><span class="tag-mig">双案例对照</span><p>"食物银行"与"时间银行"分别说明找新归宿、赋新意涵。</p></div><div class="migration-card"><span class="tag-mig">平台思维</span><p>强调政府搭建标准化公益平台，破解供需对接难题。</p></div><div class="migration-card"><span class="tag-mig">机制设计</span><p>以"时间银行"利益统筹说明互利参与机制与良性循环。</p></div><div class="migration-card"><span class="tag-mig">观念升华</span><p>落脚"突破固有思维、用新尺子丈量"，收束于内涵式发展。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"盘活闲置资源要巧拨炭火"为题，模仿本文"比喻立论+三路径"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"拨炭火"比喻引子→②找新归宿（食物银行）→③赋新意涵（时间银行）→④形成互利机制。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不只是……也包括……"造句，表达你对"存量资源"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月21日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
