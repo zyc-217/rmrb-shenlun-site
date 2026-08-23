@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “响应度”更高，解民忧更及时（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“响应度”更高，解民忧更及时（人民时评）</h1>
+    <div class="meta">基层治理 · 民生保障 · 响应度 · 主动作为 · 数字赋能 · 马上就办 · 作风建设 · 预见性治理 · 闭环管理 · 群众路线 · 有为政府 · 高效服务 · 以人民为中心 | 2026年1月22日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层治理</span><span class="tag-item">民生保障</span><span class="tag-item">响应度</span><span class="tag-item">主动作为</span><span class="tag-item">数字赋能</span><span class="tag-item">马上就办</span><span class="tag-item">作风建设</span><span class="tag-item">预见性治理</span><span class="tag-item">闭环管理</span><span class="tag-item">群众路线</span><span class="tag-item">有为政府</span><span class="tag-item">高效服务</span><span class="tag-item">以人民为中心</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"响应度"为核心概念立论，是"主动作为/高效治理"类文章典范，可迁移到"提升治理效能""走好群众路线"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何提高民生响应度"——抓早抓小化解矛盾、践行正确政绩观、技术赋能机制改革三条对策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"提升响应度的路径"——速度温度兼具、作风建设、技术赋能。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"民生诉求办理情况报告"可借用"上紧发条、靠前服务、快速响应""从诉求响应到问题预判"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（概念立论·三维度）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"响应度"是观察民生改善和社会治理的重要维度，快速响应诉求、高效解决问题，是更好保障民生、提升治理能力的题中应有之义。<br><span style="color:#0d47a1;">▸ 写法：由现象引题：从"蜗牛奖"问责、溶洞污染整改等案例切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">"响应度"更高，能抓早抓小、提高满意度，从源头化解矛盾、提升基层治理效能。<br><span style="color:#0d47a1;">▸ 写法：效能维度：以北京"小伤快赔"、赣州停车费专班说明</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">"响应度"更高，背后是践行正确政绩观，坚持改进作风、走好群众路线。<br><span style="color:#0d47a1;">▸ 写法：作风维度：以"马上就办"、重庆"一表通"减负说明</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">"响应度"更高，还体现解决问题的方法论，善于技术赋能、机制改革提高治理效能。<br><span style="color:#0d47a1;">▸ 写法：方法维度：以石家庄12345平台、泉州"民意速办"说明从被动到主动</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】数字时代保障和改善民生必须兼具速度与温度。"响应度"是一个重要维度——政府部门回应诉求速度更快、处理周期更短、形成闭环更高效，正是更好保障民生、提升治理能力的题中应有之义。</p><p>实现从“诉求响应”到“问题预判”的跃升，提升做好民生工作的预见性、前瞻性</p>
+<p>考核评价干部时，一些地方设置了“蜗牛奖”。办事拖沓、敷衍塞责的部门和干部获颁此“奖”，不仅会“脸红出汗”，还可能被严肃问责。</p>
+<p>快速响应诉求、高效解决问题，是更好保障民生、提升治理能力的题中应有之义。此前，有媒体曝光某地天然溶洞因垃圾堆积而遭到污染破坏。当地迅速响应，组织开展清理修复工作并摸排隐患、建立常态化防护机制。前不久，媒体回访发现，问题基本得到解决。</p>
+<p>数字时代，信息流转加快，保障和改善民生必须兼具速度与温度。观察近年来的民生改善和社会治理，<span class="highlight-blue">“响应度”是一个重要维度</span>。政府部门回应诉求速度更快，处理事情周期更短，形成闭环，更加高效，是许多人的共同感受。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">“响应度”更高，不仅能抓早抓小，提高群众的满意度，更能从源头化解矛盾，提升基层治理效能。</span></p>
+<p>北京面向新就业形态劳动者群体，全面推行职业伤害“小伤快赔”，从压缩材料到提高医疗待遇发放频次，“小伤快赔”省时又方便，权益关怀更暖心；江西赣州章贡区，一职业院校推行差异化停车费引发住户不满，当地当日组建专班，解疑释惑、协调方案，赢得住户的理解与支持。</p>
+<p>上紧发条、靠前服务、快速响应，恰如一场场“及时雨”，<span class="highlight-purple">在第一落点回应群众诉求，又避免小事积大、大事激化</span>。</p>
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">“响应度”更高，背后是践行正确的政绩观，坚持改进工作作风、走好群众路线，时刻保有行动的魄力和激情。</span></p>
+<p>习近平同志在福建福州工作时，大力倡导“马上就办，真抓实干”的工作作风。面对群众关切，必须摒弃形式主义、官僚主义作风，以时不我待的紧迫感解民生难题。</p>
+<p>重庆永川区，“一表通”智能报表改革给基层干部减负，乡镇街道处理1张报表时间由平均2小时减至10分钟，群众投诉办理效率显著提升。<span class="highlight-gold">“今天再晚也是早，明天再早也是晚”</span>。各方面共同努力，干好有用的事，少做无用功，最大程度减少“内耗”“空转”，才能形成良好干事环境，高效服务群众。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">“响应度”更高，还体现着解决问题的方法论，善于利用技术赋能、机制改革等，不断提高治理效能。</span></p>
+<p>河北石家庄建成“行政执法监督与12345热线数据分析平台”，通过大数据分析，及时发现执法堵点，<span class="highlight-purple">实现从“被动处理”到“主动发现”转变</span>。运用大数据和人工智能分析民生诉求，不仅能让民生改善更加精准高效，而且能够实现从“诉求响应”到“问题预判”的跃升，提升做好民生工作的预见性、前瞻性。</p>
+<p>福建泉州，自主研发的基层治理智慧管理信息平台设置“民意速办”模块，建立诉求报送、逐级分拨、限时办理、评价反馈的闭环流程，群众诉求一键直达；山东滕州，民生诉求镇街直办和经营主体“2110”快速响应机制，打破了层级壁垒，压缩了办理时限，<span class="highlight-green">助力整体办理时长压缩20%以上</span>……既有认识论上的清醒，又有方法论上的清晰，治理机制更加灵活有序，民生保障就更加有力。</p>
+<p>民生不是抽象的概念，而是人们身边的一个个急难愁盼。怀揣着为民排忧解难的“秒表”，跑好服务民生接力赛，<span class="highlight-gold">热气腾腾的“小家”与蒸蒸日上的“大家”一定会携手共赴美好明天</span>。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月22日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>数字时代保障和改善民生必须兼具速度与温度，"响应度"是一个重要维度。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"响应度"概念的核心句，适配高效治理、民生服务类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>上紧发条、靠前服务、快速响应，在第一落点回应群众诉求，又避免小事积大、大事激化。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"快速响应"的标准表述，适配基层治理、作风建设类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>重庆永川"一表通"改革使报表处理时间由平均2小时减至10分钟；山东滕州"2110"机制助力整体办理时长压缩20%以上。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"响应实效"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>"今天再晚也是早，明天再早也是晚"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"时不我待"的作风金句，适配担当作为、抓落实类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>实现从"诉求响应"到"问题预判"的跃升，提升做好民生工作的预见性、前瞻性。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"主动治理"的收束金句，适配数字赋能、预见性治理类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">概念立论</span><p>以"响应度"统摄全篇，从"蜗牛奖"问责正反切入。</p></div><div class="migration-card"><span class="tag-mig">三维度展开</span><p>抓早抓小—政绩观作风—技术赋能，三个"更高"逐层递进。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>北京小伤快赔、赣州专班、永川一表通、石家庄12345、泉州民意速办，多案例。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>2小时→10分钟、压缩20%以上，用数据印证响应提效。</p></div><div class="migration-card"><span class="tag-mig">价值收束</span><p>以"小家与大家携手共赴美好明天"落点于民生接力。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"提升民生响应度"为题，模仿本文"概念立论+三维度"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"响应度"概念引子→②抓早抓小化解矛盾→③践行正确政绩观/作风→④技术赋能机制改革。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"今天再晚也是早，明天再早也是晚"的句式，表达你对"抓落实"的态度。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月22日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
