@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从"房屋体检"看存量发展智慧（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从"房屋体检"看存量发展智慧（评论员观察）</h1>
+    <div class="meta">城市更新 · 存量发展 · 高质量发展 · 人民城市 · 老旧小区改造 · 绣花功夫 · 系统观念 · 渐进式更新 · 宜居安居 · 以人为本 · 空间资源优化 · 中国式现代化 | 2026年1月15日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">城市更新</span><span class="tag-item">存量发展</span><span class="tag-item">高质量发展</span><span class="tag-item">人民城市</span><span class="tag-item">老旧小区改造</span><span class="tag-item">绣花功夫</span><span class="tag-item">系统观念</span><span class="tag-item">渐进式更新</span><span class="tag-item">宜居安居</span><span class="tag-item">以人为本</span><span class="tag-item">空间资源优化</span><span class="tag-item">中国式现代化</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"房屋体检"小切口引出"存量发展"大主题，是"由小见大/小切口大主题"类文章典范，可直接迁移到"城市更新""高质量发展"论证。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推进城市更新"——提质增效、下好绣花功夫、动能系于为民三条对策清晰。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"存量发展的智慧"——系统化思维、绣花功夫、人民城市理念。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"城市更新工作情况说明/实施方案"可借用"微改造、精提升""从能住转向好住"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（小切口·三维度递进）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以系统化思维审视建筑生命周期，通过"微改造""精提升"实现渐进式有机更新，存量发展、造福于民。<br><span style="color:#0d47a1;">▸ 写法：类比破题：用"定期体检"类比"房屋体检"，化专业为通俗</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">从存量中谋发展，关键在提质增效——系统化思维避免大拆大建，以微改造实现有机更新。<br><span style="color:#0d47a1;">▸ 写法：提质增效：以加装电梯、管线改造说明"找到关键处、四两拨千斤"</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">从存量中谋发展，下好绣花功夫至关重要——存量发展考验细处着笔。<br><span style="color:#0d47a1;">▸ 写法：绣花功夫：以北京中轴线屋顶露台、广州高架桥下公园佐证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">从存量中谋发展，动能系于为民——践行人民城市理念，推动"能住"转向"好住"。<br><span style="color:#0d47a1;">▸ 写法：人民城市：以24万小区、1.1亿人数据收束于"安居梦"</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以系统化思维审视每一栋建筑的生命周期，既避免大拆大建带来的资源浪费和社会矛盾，又能通过持续的"微改造""精提升"让城市在渐进式发展中实现有机更新——这正是对存量发展、造福于民智慧的生动诠释。</p><p>定期体检，实现疾病的早发现、早诊断、早治疗，能为健康管理提供指引。最近，全国许多地方开始试水"房屋体检"，为优化居住环境、开展城市更新提供更加科学的依据。</p>
+<p>河南郑州宣布对房龄30年及以上的城镇住宅实施首次"体检"，建立"房屋体检、安全管理资金和房屋保险"三项制度。湖南长沙明确对房龄超过25年未达到设计使用年限的公共建筑每5年至少"体检"1次，经营性自建房经营前必须"体检"。天津、江苏南通等多个城市也陆续出台了"房屋体检"相关政策。</p>
+<p>数据显示，<span class="highlight-green">全国已有超过2.1亿套房龄在25年以上的住宅，约占城镇住宅总量的38.7%</span>。随着老房子数量逐年增加，以"房屋体检"为前置举措，分类实施城市更新，提升房屋舒适度和安全性，才能更好满足群众住上"好房子"的期待。由此而言，"房屋体检"作用不容小觑，它关乎城市更新的品质，蕴含着存量发展、造福于民的智慧。</p>
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">从存量中谋发展，关键在提质增效。为老房子"把脉问诊"，不仅是对建筑本身的保护，更是对居民生活质量的关切，体现了城市发展从追求速度向注重质量的转变。</span></p>
+<p>加装电梯、管线改造、破解停车难题、丰富生活配套……城市更新改造提升千头万绪，不是头痛医头、脚痛医脚式的修修补补，而要找到关键处，四两拨千斤。<span class="highlight-purple">以系统化思维审视每一栋建筑的生命周期，既避免了大拆大建带来的资源浪费和社会矛盾，又能通过持续的"微改造""精提升"，让城市在渐进式发展中实现有机更新。</span></p>
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">从存量中谋发展，下好绣花功夫至关重要。如果说增量扩张是白纸作画，存量发展则考验细处着笔的绣花功夫。</span></p>
+<p>比如，北京中轴线沿线开放30余处屋顶露台，既是观景台，也装点了"第五立面"风景线；在广东广州，高架桥下建公园、建球场，市民休闲娱乐有了更多去处。通过"房屋体检"找准问题所在、锚定群众所需，以"微创手术"消除风险隐患，进而实现居住功能再造、房屋价值再生，城市发展就获得了新动能。</p>
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">从存量中谋发展，动能系于为民。</span></p>
+<p>"十四五"时期，<span class="highlight-green">全国累计改造城镇老旧小区24万多个，惠及4000多万户家庭、1.1亿人</span>。中央经济工作会议强调："高质量推进城市更新。"让城市更新朝高质量方向推进，关键就在于践行<span class="highlight-blue">"人民城市人民建，人民城市为人民"</span>的理念。"房屋体检"是一个有效抓手，从结构安全到功能适配，从居住体验到环境协调，以"体检"促精准施策，推动更多老房子从"能住"转向"好住"，就能为"安居梦"筑牢地基，推动城建领域"健康再出发"。</p>
+<p>今天的增量会成为明天的存量，今天的存量也可以焕新为明天的增量。当前，我国城市发展正从大规模增量扩张阶段转向存量提质增效为主的阶段。除了老旧小区机能衰退，许多城市还面临着土地资源约束、历史风貌保护等多重挑战。以"房屋体检"为切入口推动城市更新，不仅是对存量建筑的守护，更是对城市空间资源的深度挖潜与优化重塑。继续拓宽存量发展的思路、丰富举措，城市建设发展将拥有更大空间、更强动能。</p>
+<p>更新并不意味着旧事物的简单"退场"，而是孕育着转化、沉淀与再生。<span class="highlight-gold">探索一条融合预防思维、系统观念、渐进路径、技术赋能和人文关怀的城市发展之路，实现人居环境改善与城市可持续发展的良性互动</span>，书写的必将是中国式现代化的灿烂篇章。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月15日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>以系统化思维审视每一栋建筑的生命周期，既避免了大拆大建带来的资源浪费和社会矛盾，又能通过持续的"微改造""精提升"，让城市在渐进式发展中实现有机更新。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"存量有机更新"的核心句，适配城市更新、高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>城市更新改造提升千头万绪，不是头痛医头、脚痛医脚式的修修补补，而要找到关键处，四两拨千斤。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"系统施策"的标准表述，适配基层治理、精细治理类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>全国已有超过2.1亿套房龄在25年以上的住宅，约占城镇住宅总量的38.7%；"十四五"累计改造城镇老旧小区24万多个，惠及4000多万户家庭、1.1亿人。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"存量更新规模"的硬核数据，论证有分量</p></div><div class="material-card"><span class="tag-shenlun">政策术语</span><p>让城市更新朝高质量方向推进，关键就在于践行"人民城市人民建，人民城市为人民"的理念。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人民城市"的标准表述，适配以人民为中心、城市建设类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>探索一条融合预防思维、系统观念、渐进路径、技术赋能和人文关怀的城市发展之路，实现人居环境改善与城市可持续发展的良性互动。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"城市更新路径"的收束金句，适配中国式现代化类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">类比破题</span><p>用"定期体检"类比"房屋体检"，把专业城市更新话题讲得通俗易引。</p></div><div class="migration-card"><span class="tag-mig">三维度递进</span><p>提质增效—绣花功夫—动能系于为民，三个"从存量中谋发展"逐层展开。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>郑州/长沙制度、北京中轴线、广州高架桥下，多案例分置各维度。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>2.1亿套、24万小区、1.1亿人，用数据印证存量更新之迫切与成效。</p></div><div class="migration-card"><span class="tag-mig">价值升华</span><p>以"增量成存量、存量焕增量"收束，落到中国式现代化灿烂篇章。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"推进城市更新要下绣花功夫"为题，模仿本文"小切口+三维度"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①"房屋体检"类比引子→②提质增效（系统思维避免大拆大建）→③绣花功夫（细处着笔）→④动能系于为民（人民城市）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"造句，表达你对"存量发展"的理解（如不是大拆大建，而是有机更新）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月15日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
