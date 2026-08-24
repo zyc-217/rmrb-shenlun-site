@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 数字时代见证群众力量（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>数字时代见证群众力量（评论员观察）</h1>
+    <div class="meta">群众力量 · 以人民为中心 · 高质量发展 · 全国统一大市场 · 网上群众路线 · 文艺繁荣 · 人的现代化 · 首创精神 · 内需动力 · 共建共治 | 2026年2月6日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">群众力量</span><span class="tag-item">以人民为中心</span><span class="tag-item">高质量发展</span><span class="tag-item">全国统一大市场</span><span class="tag-item">网上群众路线</span><span class="tag-item">文艺繁荣</span><span class="tag-item">人的现代化</span><span class="tag-item">首创精神</span><span class="tag-item">内需动力</span><span class="tag-item">共建共治</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"九三阅兵/苏超/公园演唱会"精彩瞬间破题，论证"激发群众力量"的三重路径，是"场景引题+三层视角"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何激发群众力量"——分享红利、技术赋能、群众创作三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"群众力量的激发路径"——发展阶段、技术赋能、创作主体。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"以人民为中心/基层治理"可借用"从被叙述到我书写"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（场景引题·三层视角）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">人既是生产力中最活跃的要素，也是最终的消费主体，激发群众力量实际上可以在供需两侧同时发力，形成推动高质量发展的内生动力。<br><span style="color:#0d47a1;">▸ 写法：由年度精彩瞬间破题，点明群众力量总纲</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">从发展阶段看，随着全国统一大市场加快建设，普通人能够更好分享发展红利，并参与开拓中国未来发展的增量空间。<br><span style="color:#0d47a1;">▸ 写法：阶段维度：以体育场地数据、群众赛事说明分享红利</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">从技术赋能来看，随着数字技术日益普及、社交媒体广泛覆盖，普通人日益成为网络"主角"，走好"网上群众路线"成为必答题。<br><span style="color:#0d47a1;">▸ 写法：技术维度：以公园演奏出圈、文艺下沉说明网络主角</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">更为深刻的转变在于，群众日益成为创作主体——从"被叙述"到"我书写"，群众的参与让文艺百花园生机勃发。<br><span style="color:#0d47a1;">▸ 写法：主体维度：以祝薪雁、王计兵、李维佳说明群众创作</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】人既是生产力中最活跃的要素，也是最终的消费主体，激发群众力量实际上可以在供需两侧同时发力，形成推动高质量发展的内生动力。</p><p>“十四五”胜利收官，“十五五”征途开启，岁序更替之时，更需总结过去、把握未来，为更上层楼找到新的力量源泉。</p>
+
+<p>回望过去一年，有哪些难以忘怀的精彩瞬间？</p>
+
+<p>九三阅兵，铁流滚滚，红旗猎猎。观礼台形似三个巨大“人”字，组成“众”字造型，亿万人民组成的铜墙铁壁曾经御敌制胜，今天人民的伟力仍然气势如虹。</p>
+
+<p>“苏超”“村排”“楼BA”等群众赛事风起云涌，场上场下同参与、线上线下齐欢乐。<span class="highlight-gold">无明星、非专业、咱做主</span>，群众赛事主打一个我参与、我快乐，成为无数网友眼中的“顶流”。</p>
+
+<p>公园一角成了热闹舞台。北京莲花池公园，歌唱家魏广德4个月开了82场“公园演唱会”；紫竹院公园，青年歌手胡启越唱起一首首红歌，收获市民和游客好评。</p>
+
+<p>透过这些精彩瞬间就会发现，群众力量是这些事件共同的底色：无论时代条件如何变化，群众始终是最大力量源泉；顺应时代条件新的变化，则需要以新的方式激发群众力量、汇聚群众智慧。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">从发展阶段看，随着全国统一大市场加快建设，基础设施与公共服务更加完善，普通人能够更好分享发展红利，并参与开拓中国未来发展的增量空间。</span></p>
+
+<p>体育健身，抬脚就能触达，背后是运动场地的普及、生活品位的提升。<span class="highlight-green">截至2024年底，全国共有体育场地484.17万个，人均体育场地面积3.0平方米</span>。硬件设施延伸到偏远山乡，让家门口的群众赛事成为可能。</p>
+
+<p>球场上是前锋、后卫、教练，球场外是小店主、外卖员、挖掘机手，普通人成为舞台的主角，<span class="highlight-gold">这是群众赛事刷屏网络的真正密码</span>。当蕴藏于亿万群众中的热情被点燃，线上流量转化为线下文旅红利、激活票根经济，拉动消费、推动发展就有了深厚动力。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">从技术赋能来看，随着数字技术日益普及、社交媒体广泛覆盖，“平行互动”的网络化传播更加普遍，普通人日益成为网络“主角”，走好“网上群众路线”成为众多行业的必答题。</span></p>
+
+<p>中国歌剧舞剧院青年演奏员孙楚泊把舞台放在了公园，笛子演奏现场，里三层外三层，群众簇拥着艺术，艺术也温暖着人心。线上直播、短视频持续出圈，在社交媒体上收获粉丝无数。<span class="highlight-gold">架起殿堂艺术与市井生活的桥梁</span>，再通过社交媒体形成公共话题，正是新时代文艺繁荣发展的重要途径。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">更为深刻的转变在于，群众日益成为创作主体——从“被叙述”到“我书写”，群众的参与让文艺百花园如同春风拂过的原野，万物生长、生机勃发。</span></p>
+
+<p>56岁阿姨祝薪雁，用灶台窗边、街头巷尾的温情记录抚慰凡人心；“外卖诗人”王计兵，在穿梭大街小巷的间隙写下6000多首诗；“煎饼歌手”李维佳，让歌声和煎饼的香气一起飘散。<span class="highlight-purple">从“被叙述”到“我书写”</span>，群众的参与让文艺百花园如同春风拂过的原野，万物生长、生机勃发。</p>
+
+<p>其实，奥秘早已藏在党的路线方针政策里。习近平总书记强调，<span class="highlight-blue">“尊重人民群众主体地位和首创精神，把人民群众中蕴藏着的智慧和力量充分激发出来”</span>。改革激活力、制度聚合力，创新可以发挥重要作用。数字技术的渗透、数字经济的发展，不断拓展下沉市场的广度深度，为群众发挥首创精神赋能，以全新的方式激活群众力量。</p>
+
+<p>现代化的本质是人的现代化。在基本实现社会主义现代化的历史进程中，人的主体地位得到充分彰显。实现科技自立自强，教育科技人才一体推进；实现高质量发展，把“投资于物”同“投资于人”紧密结合起来；塑造国际竞争新优势，既重视“中国经济”也重视“中国人经济”……</p>
+
+<p>人既是生产力中最活跃的要素，也是最终的消费主体，<span class="highlight-gold">激发群众力量实际上可以在供需两侧同时发力，形成推动高质量发展的内生动力</span>。就拿人工智能技术来说，中国既有世界领先的人工智能人才队伍，又有超过6亿的生成式人工智能用户，为人工智能技术落地为产品和服务奠定了市场基础。</p>
+
+<p>“任天下之智力，以道御之，无所不可”。数字时代，为我们走好群众路线、激发群众力量提供了更多途径和可能。当14亿多中国人的力量更大限度释放出来，将推动中国在百年变局中勇立潮头，赢得优势、赢得未来。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月6日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>无明星、非专业、咱做主，群众赛事主打一个我参与、我快乐。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"群众主体"的生动金句，适配群众体育类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>从"被叙述"到"我书写"，群众的参与让文艺百花园如同春风拂过的原野。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"群众创作"的辩证金句，适配文艺繁荣类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>截至2024年底，全国共有体育场地484.17万个，人均体育场地面积3.0平方米。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"公共服务"的硬数据，适配民生保障类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>尊重人民群众主体地位和首创精神，把人民群众中蕴藏着的智慧和力量充分激发出来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"群众观点"的总书记规范表述，适配以人民为中心类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>"任天下之智力，以道御之，无所不可"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"汇聚民力"的收束金句，适配群众路线类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">场景破题</span><p>以"阅兵/苏超/公园演唱会"年度瞬间引出群众力量。</p></div><div class="migration-card"><span class="tag-mig">三层视角</span><p>发展阶段—技术赋能—创作主体，系统拆解激发路径。</p></div><div class="migration-card"><span class="tag-mig">数据佐证</span><p>体育场地484.17万个、人均3.0平方米硬数据。</p></div><div class="migration-card"><span class="tag-mig">由事及理</span><p>从精彩瞬间升华至总书记群众观点与人的现代化。</p></div><div class="migration-card"><span class="tag-mig">金句收束</span><p>以"任天下之智力，以道御之"落点于释放民力。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"激发群众力量 汇聚发展动能"为题，模仿本文"场景引题+三层视角"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①年度精彩瞬间→②分享发展红利→③技术赋能网络主角→④群众成为创作主体。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既是……也是……"的句式，表达你对"群众力量"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月6日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
