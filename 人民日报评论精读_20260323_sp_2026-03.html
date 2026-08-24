@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以“共赢思维”服务好新就业群体（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以“共赢思维”服务好新就业群体（人民时评）</h1>
+    <div class="meta">新就业群体 · 稳就业 · 共同富裕 · 城市发展 · 人与城共赢 · 中等收入群体 · 基层治理 · 劳动关系 · 民生温度 · 高质量发展 | 2026年3月23日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">新就业群体</span><span class="tag-item">稳就业</span><span class="tag-item">共同富裕</span><span class="tag-item">城市发展</span><span class="tag-item">人与城共赢</span><span class="tag-item">中等收入群体</span><span class="tag-item">基层治理</span><span class="tag-item">劳动关系</span><span class="tag-item">民生温度</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以北京骑手工会驿站、上海骑手"梦中情屋"故事破题，从"稳就业添底气、经济强动力、城市赋能"三层，论证服务新就业群体的共赢逻辑，是"小故事+三惠民维度"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何服务新就业群体"——稳就业、促消费、优治理。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"服务新就业群体的意义"——稳就业、强经济、赋能城市。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"新就业/民生温度"可借用"勤劳的小蜜蜂""人与城的共赢"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（故事引题·三层惠民）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">服务好新就业群体，是在为稳就业添底气，也是在为经济增强内生动力，还是在为城市发展赋能。<br><span style="color:#0d47a1;">▸ 写法：由骑手故事破题，点明人与城共赢</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">服务好新就业群体，是在为稳就业添底气。<br><span style="color:#0d47a1;">▸ 写法：就业维度：蓄水池与高质量充分就业</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">服务好新就业群体，也是在为经济增强内生动力。<br><span style="color:#0d47a1;">▸ 写法：经济维度：城镇化与扩大内需</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">服务好新就业群体，还是在为城市发展赋能。<br><span style="color:#0d47a1;">▸ 写法：城市维度：温度与治理参与</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】服务好新就业群体，是在为稳就业添底气，也是在为经济增强内生动力，还是在为城市发展赋能。</p><p>前段时间，一北一南，两名骑手的讲述引来不少网友点赞。</p>
+
+<p>北京市西城区新街口街道父母食堂，也是工会驿站的站点，骑手张瑞强在这找到了“被接纳”的感觉：“经常会来工会驿站充充电、喝点水、歇歇脚，感觉很便利。在父母食堂的就餐区，我们来这里吃饭还有优惠，饭菜也很合胃口。”</p>
+
+<p>上海市静安区“新时代城市建设者管理者之家”，骑手沈壮奇住进了“新家”，月租只需900元，设施齐全、环境舒适，他感慨，这是“梦中情屋”。</p>
+
+<p>对于一座城市而言，服务好新就业群体，并非选择题，而是一道必答题。春节前夕，习近平总书记在北京市西城区新街口街道父母食堂考察时，为快递员付出的辛劳和作出的贡献点赞：<span class="highlight-blue">“快递现在成为城市的流动血液，你们很辛苦，城市运转离不开你们，很不容易。我也很关注你们。希望你们生活得好、工作得好。”</span></p>
+
+<p>如今，新就业形态劳动者规模持续壮大，他们是勤劳的小蜜蜂，为城市生活带来便利，是美好生活的创造者、守护者，理应得到城市的回馈。更重要的是，服务跟上，归属感提升，最终实现的是人与城的共赢。为什么这么说？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">服务好新就业群体，是在为稳就业添底气。</span></p>
+
+<p>从就业数量看，目前，<span class="highlight-green">全国新就业群体总量达8400万人，占职工总数的21%</span>，已成为我国就业基本盘中不可忽视的重要组成部分。现阶段，我国就业总量压力不减。发挥好新就业形态“蓄水池”作用，将为减轻困难群体就业压力、防范规模性失业风险提供有力支撑。</p>
+
+<p>从就业质量看，新就业形态并非只有低技能、重复性劳动岗位，基于网络平台的视频创作、医疗咨询、电商营销等技术技能型岗位日益丰富，保障好这些劳动者创新创业的需求，有利于化解就业结构性矛盾、促进高质量充分就业。<span class="highlight-purple">可以说，服务好新就业群体，是构建就业友好型发展方式的应有之义。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">服务好新就业群体，也是在为经济增强内生动力。</span></p>
+
+<p>一方面，新就业群体主要是青壮年，主要在城镇地区，主要从事服务业。让他们在城里收入稳、干劲足、留得下，有利于提升我国常住人口城镇化率、培育壮大中等收入群体。另一方面，新就业形态集中在餐饮、家政、出行、购物等服务行业，这些行业具有消费频次高、乘数效应强、增长可持续的特点。<span class="highlight-purple">因此，促进新就业形态高质量、多样化发展，有利于促进消费、扩大内需。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">服务好新就业群体，还是在为城市发展赋能。</span></p>
+
+<p>培育良好就业生态，既彰显城市温度，也能倒逼城市优化营商环境。<span class="highlight-gold">湖南全面推进新就业群体友好场景建设，解决“进门难”“找路难”“停车难”；广东深圳推进新就业群体友好园区、友好商圈、友好楼宇、友好社区建设</span>，让园区、商圈等秩序更优、环境更美、服务更好……一个个举措，提升的是城市治理水平，促进的是营商环境的焕新。</p>
+
+<p>不仅如此，新就业群体也是城市治理的重要参与力量。整治“幽灵外卖”，治理小区墙皮脱落、下水道井盖损坏等小毛病，为独居、孤寡老人提供精准帮扶……外卖骑手、快递员、网约车司机等，奔波在城市一线，往往能发现城市治理的短板和弱项。<span class="highlight-gold">引导他们融入基层治理格局，共建共治共享的理念将更好照进现实。</span></p>
+
+<p>放眼全世界，服务好新就业群体都是全新课题，没有现成经验可循。<span class="highlight-gold">坚持“共赢思维”，让这些城市运转离不开的劳动者生活得好、工作得好，共享发展成果</span>，他们的未来生活将更有奔头，城市也将更美好。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月23日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>快递现在成为城市的流动血液，你们很辛苦，城市运转离不开你们，很不容易。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"新就业群体价值"的讲话金句，适配城市治理类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>他们是勤劳的小蜜蜂，为城市生活带来便利，是美好生活的创造者、守护者。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"劳动者礼赞"的意象金句，适配民生温度类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>服务跟上，归属感提升，最终实现的是人与城的共赢。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人与城共赢"的收束金句，适配城市发展类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>全国新就业群体总量达8400万人、占职工总数21%；月租900元入住"梦中情屋"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"新就业规模"的硬数据，适配稳就业类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>服务好新就业群体，是构建就业友好型发展方式的应有之义。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"服务与发展"的辩证句，适配高质量就业类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">故事引题</span><p>北京骑手工会驿站、上海骑手"梦中情屋"。</p></div><div class="migration-card"><span class="tag-mig">三层惠民</span><p>稳就业—强经济—赋能城市。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>8400万人、占职工21%。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>湖南友好场景、深圳友好园区商圈。</p></div><div class="migration-card"><span class="tag-mig">共赢落点</span><p>以"共赢思维、人与城共赢"收束于共享发展成果。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让城市更有温度"为题，模仿本文"故事引题+稳就业/强经济/赋能城市三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①骑手故事→②稳就业添底气→③强经济动力→④赋能城市。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不仅是……更是……"的句式，表达你对"新就业群体价值"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月23日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
