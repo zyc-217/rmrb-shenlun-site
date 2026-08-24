@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以思维升级做好“农业+”（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以思维升级做好“农业+”（人民时评）</h1>
+    <div class="meta">乡村振兴 · 农业现代化 · 大农业观 · 新质生产力 · 科技赋能 · 产业链 · 因地制宜 · 特色产业 · 融合发展 · 中央一号文件 | 2026年3月3日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">乡村振兴</span><span class="tag-item">农业现代化</span><span class="tag-item">大农业观</span><span class="tag-item">新质生产力</span><span class="tag-item">科技赋能</span><span class="tag-item">产业链</span><span class="tag-item">因地制宜</span><span class="tag-item">特色产业</span><span class="tag-item">融合发展</span><span class="tag-item">中央一号文件</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以春节"隐藏款"特产走俏现象破题，从"练好内功（科技产业链）、农业+打开天地（融合）、因地制宜（思维升级本质）"三层论证做好"农业+"大文章，是"现象+三层对策"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何把农业建成现代化大产业"——强科技链、做融合、因地制宜。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"农业+的路径"——科技赋能、精深加工、跨界融合。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"乡村振兴/农业现代化"可借用"跳出农业看农业"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·三层对策）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">把眼界放宽、把思路打开，既立足农业发展农业，也跳出农业看农业，做好“农业+”的大文章，才能以大视野成就大产业。<br><span style="color:#0d47a1;">▸ 写法：由特产走俏破题，点明思维升级成就大产业</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">发展农业大产业，必须练好内功，向科技链和产业链要质效。<br><span style="color:#0d47a1;">▸ 写法：内功维度：科技赋能、全链条提质</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">练好内功是基石，做好“农业+”则是打开广阔天地的钥匙。<br><span style="color:#0d47a1;">▸ 写法：融合维度：精深加工、跨界增值</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">思维升级，并非胡思乱想，而是建立在因地制宜基础上的创造性构想。<br><span style="color:#0d47a1;">▸ 写法：方法维度：依托禀赋、选准特色</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】今年中央一号文件明确提出，“努力把农业建成现代化大产业”。大产业，既意味着规模大，也意味着农业内涵更丰富、产业体系更完整、产品附加值更高。把眼界放宽、把思路打开，既立足农业发展农业，也跳出农业看农业，做好“农业+”的大文章，才能以大视野成就大产业。</p><p>带有玫瑰青提香气的瑞雪苹果，鸡蛋般大小的广西融安脆蜜金柑，富含花青素的云南花香蓝莓……春节假期，一些“隐藏款”特产走俏市场，成为许多家庭的消费“新宠”。</p>
+
+<p>特产无中生有、有中出新，背后是思路的拓宽，是思维的升级。特产上新，既丰富消费市场，也为我们推动农业发展提供启示。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">发展农业大产业，必须练好内功，向科技链和产业链要质效。</span></p>
+
+<p>如今，现代农业拼的已不只是单一的规模，还包括全链条的质量和效益。<span class="highlight-blue">发展农业大产业，必须练好内功，向科技链和产业链要质效。</span></p>
+
+<p>走进山东潍坊寿光崔岭西村“7代智能大棚”，在各种黑科技保障下，即便寒潮来袭，棚内温度依然能连续3天保持在<span class="highlight-green">13摄氏度以上</span>，稳稳守护西红柿的质量和产量。这些带着田间余温的西红柿被送入智能云仓，分拣后，一路向北，<span class="highlight-green">12小时内就能直达北京新发地及各大商超</span>。</p>
+
+<p>正是科技和产业链两方面共同发力，让小小的西红柿长成了致富产业。今年中央一号文件提出“促进‘菜篮子’产业提质增效”。从过去的“菜篮子”产品，升级为“菜篮子”产业，一字之差，意蕴深远。<span class="highlight-purple">科技赋能，促进全链条提质增速，把大棚里的“热度”转化为供给的“韧性”，我们才能筑牢稳产保供、发展农业大产业的底气。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">练好内功是基石，做好“农业+”则是打开广阔天地的钥匙。</span></p>
+
+<p>在广东梅州雁洋镇南福村的金柚园里，柚子不再仅仅是论斤两卖的水果，还是被深度挖掘的“宝藏”。在加工厂里，被同行称为“分子精算师”的技术人员，能从疏果期原本要丢弃的小柚果中提取出柚苷，这种保健品和化妆品原料市场价高达<span class="highlight-green">每吨30万元</span>。在实验室里，专家演示了一场“庖丁解柚”：表皮、海绵层、果肉被分离，分别对应精油、膳食纤维和果酱饮料等高附加值去向。不仅如此，村里正加快建设“金柚公园”，计划推出柚子咖啡、柚子宴，将连片的果园升级为集生产、研学、体验于一体的复合空间。</p>
+
+<p>把农业建成现代化大产业，不仅要立足农业本身，更要跳出农业看农业。<span class="highlight-purple">树立大农业观，向后延伸做足精深加工的“农头工尾”文章，向外拓展发展乡村旅游等“小而美”的文旅业态，农业的边界才能向山水间无限延伸。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">思维升级，并非胡思乱想，而是建立在因地制宜基础上的创造性构想。</span></p>
+
+<p>就拿特产来说，放眼全国，一个个新特产纷纷涌现，让人耳目一新。新疆塔克拉玛干沙漠西南边缘的麦盖提县养出澳洲淡水龙虾，内蒙古鄂尔多斯实现南美白对虾量产，贵州铜仁抹茶产销量居全国第一……<span class="highlight-green">依托资源禀赋，选准特色产业，这才有了新特产的不断涌现。</span>以思维升级促农业发展升级，同样需要坚持因地制宜。</p>
+
+<p>建设农业强国，天地无比广阔。立足乡土资源，练好稳产保供内功，同时践行大农业观，做好融合增值的“农业+”文章，<span class="highlight-gold">我们一定能把农业真正建成现代化大产业，让乡亲们的日子过得像金柚一样又甜又美。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月3日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>把眼界放宽、把思路打开，既立足农业发展农业，也跳出农业看农业，做好“农业+”的大文章。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"大农业观"的核心金句，适配乡村振兴类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>我们一定能把农业真正建成现代化大产业，让乡亲们的日子过得像金柚一样又甜又美。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"农业强国愿景"的收束金句，适配农民增收类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>棚内温度连续3天保持13摄氏度以上；12小时内直达北京新发地；柚苷原料市场价高达每吨30万元。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"科技赋能成效"的硬数据，适配农业现代化类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>树立大农业观，向后延伸做足精深加工的“农头工尾”文章，向外拓展发展乡村旅游等“小而美”的文旅业态。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"农业+融合"的规范表述，适配产业融合类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>思维升级，并非胡思乱想，而是建立在因地制宜基础上的创造性构想。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"思维与禀赋"的辩证句，适配特色产业类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象引题</span><p>春节"隐藏款"特产走俏。</p></div><div class="migration-card"><span class="tag-mig">三层对策</span><p>练好内功—农业+钥匙—因地制宜。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>寿光智能大棚、梅州金柚、麦盖提龙虾。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>13℃、12小时、每吨30万元。</p></div><div class="migration-card"><span class="tag-mig">政策落点</span><p>以中央一号文件"现代化大产业"收束。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"做好农业+大文章"为题，模仿本文"现象引题+练好内功/农业+钥匙/因地制宜三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①特产走俏→②练好内功科技产业链→③农业+融合→④因地制宜。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既……也……"的句式，表达你对"立足农业与跳出农业"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月3日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
