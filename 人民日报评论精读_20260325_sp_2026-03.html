@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 把昨天的温暖带给明天（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>把昨天的温暖带给明天（人民时评）</h1>
+    <div class="meta">情感连接 · 代际关系 · 集体记忆 · 精神原乡 · 数字时代 · 真实联结 · 共同体意识 · 民生温度 · 文化传承 · 社会信任 | 2026年3月25日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">情感连接</span><span class="tag-item">代际关系</span><span class="tag-item">集体记忆</span><span class="tag-item">精神原乡</span><span class="tag-item">数字时代</span><span class="tag-item">真实联结</span><span class="tag-item">共同体意识</span><span class="tag-item">民生温度</span><span class="tag-item">文化传承</span><span class="tag-item">社会信任</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以合肥青年"压锅石"故事破题，从"记忆物件锚定精神原乡、双向守护深化代际关系、平台空间提升社会温度"三层，论证把昨天温暖带给明天的情感逻辑，是"叙事+三层情感"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何传承温暖情感"——守护真实联结、建设记忆平台。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"情感连接的价值"——锚定自我、双向守护、提升温度。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"情感/共同体"可借用"小家热气腾腾、大家蒸蒸日上"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（叙事引题·三层情感）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">人与自然、人与人、人与社会的连接，起点都是情感驱动的信任与共情；把昨天的温暖带给明天，每个平凡日子都有灯火可亲、远方可赴。<br><span style="color:#0d47a1;">▸ 写法：由压锅石故事破题，点明情感连接的根本</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">真实的情感连接尤为珍贵，是我们在纷繁世界中确认自我、汲取力量的精神原乡。<br><span style="color:#0d47a1;">▸ 写法：自我维度：记忆物件锚定精神锚点</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">守护真挚情感联系，让代际关系从单向供给转变为双向守护。<br><span style="color:#0d47a1;">▸ 写法：代际维度：重新养育父母的双向守护</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">建设承载集体记忆的平台空间，能拓展精神宽度、提升社会温度。<br><span style="color:#0d47a1;">▸ 写法：社会维度：数字平台重热邻里关系</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】人与自然、人与人、人与社会的连接，起点都是情感驱动的信任与共情；把昨天的温暖带给明天，每个平凡日子都有灯火可亲、远方可赴。</p><p>记忆，是昨天留下的余温。有时，它就藏在某处，等待一个被触碰的瞬间。</p>
+
+<p>回安徽合肥老家打扫旧厨房时，25岁的解皓明看到一块有年头的石头，一眼就认出来，那就是奶奶生前用来压锅盖的石头。捡起石头那一瞬，他脑海中浮现出奶奶围着灶台做饭的样子，“有点像隔着时间又见了一面”。这段视频发到网上后，引来万千网友共情。</p>
+
+<p>一个平平无奇的物件，如此令人动容，是因为它凝固了一起走过的日子，承载着难以割舍的亲情。<span class="highlight-gold">这样的“压锅石”，或许每个人心中都有一块。</span>爷爷用过的老花镜，姥姥留下的针线包……想起来就心头一热、充满暖意。</p>
+
+<p>这些无声的物件、难忘的场景，是时间的容器，将亲人的气息、家庭的温暖、过往的岁月都紧紧包裹在一起，让人迅速找到精神的锚点，意识到自己的来处。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">在快速变迁的现代社会，这种真实的情感连接尤为珍贵，它是我们在纷繁世界中确认自我、汲取力量的精神原乡。</span></p>
+
+<p>2025年，“活人感”一词走红互联网，彰显了时下对真实、鲜活的生活状态与人际互动的渴望。卸下各种包装，分享真实的自我；超越“点赞之交”，建立真诚的联结。在数字时代的洪流中，越来越多人期待穿透屏幕，感受彼此真实的呼吸与温度。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">回望来处、守护真挚情感联系，让代际关系从传统的单向供给，转变为充满理解与关怀的双向守护。</span></p>
+
+<p>回望来处，环顾四周，投射真实的情感，并非只是为了在岁月流转中寻找温暖的港湾，保持内心的安宁。更重要的是，随着时代变迁，用心去感受、去塑造、去守护那些人与人之间最真挚的情感联系。</p>
+
+<p>近段时间，“长大后我把爸妈重新养了一遍”话题登上热搜，“重新养育父母”的理念在一些年轻人中悄然兴起。有人陪母亲运动、教她护肤化妆；有人给父亲抢演唱会门票；有人时刻提醒父母添衣保暖；有人回家带新奇零食，就像小时候父母出差带回糖果那样制造惊喜。<span class="highlight-purple">在代际共同生活减少的当下，年轻人以新的姿态和父母沟通，不仅仅是一种弥补缺失的代偿，更是情感连接的深化。</span></p>
+
+<p>它让代际关系从传统的单向供给，转变为充满理解与关怀的双向守护。</p>
+
+<p>当前，我们身处一个连接空前便捷的时代，指尖轻触就能跨越山海，但也常常陷入一种悖论：随时可以联系，但实际联系变少了，过多追逐远方的精彩，却忽略了周边的风景。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">在人们身边，建设更多能够承载集体记忆、守望共同情感的平台和空间，不仅能拓展个体精神世界的宽度，也能提升社会发展的温度。</span></p>
+
+<p>上海市浦东新区东明路街道，利用数字孪生等技术还原街区地图，为居民及商户打造一个集学习、交流、工作于一体的数字平台。除了提供消费优惠、社群活动等各种服务信息，平台还创新性地推出AR（增强现实）口述史系统，让一砖一瓦背后的故事走出墙面，让居民在日常行走中便能聆听光阴的故事。<span class="highlight-blue">比如，居民只需用手机扫描一家老字号餐馆的二维码，即可观看店主讲述的三代人传承故事。</span>身边的人和事，可亲可感，让邻里关系重新热络起来，认同感和共同体意识油然而生。</p>
+
+<p><span class="highlight-gold">“小家”热气腾腾，“大家”蒸蒸日上。</span>人与自然、人与人、人与社会的连接，起点都是情感驱动的信任与共情。正是这种温暖，支撑着我们在风雨中前行。感受今天的脉动，把昨天的温暖带给明天，每个平凡的日子都有灯火可亲、有远方可赴。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月25日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>记忆，是昨天留下的余温。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"记忆温度"的起兴金句，适配情感类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>这样的“压锅石”，或许每个人心中都有一块。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"亲情锚点"的意象金句，适配代际关系类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>“小家”热气腾腾，“大家”蒸蒸日上。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"家国同构"的收束金句，适配共同体类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>卸下各种包装，分享真实的自我；超越“点赞之交”，建立真诚的联结。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"真实联结"的规范表述，适配数字时代类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>随时可以联系，但实际联系变少了，过多追逐远方的精彩，却忽略了周边的风景。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"连接悖论"的辩证句，适配现代生活类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">叙事引题</span><p>合肥青年压锅石、奶奶灶台记忆。</p></div><div class="migration-card"><span class="tag-mig">三层情感</span><p>精神原乡—双向守护—平台温度。</p></div><div class="migration-card"><span class="tag-mig">数据/热词</span><p>"活人感"走红、"重新养育父母"热搜。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>上海东明路数字孪生、AR口述史。</p></div><div class="migration-card"><span class="tag-mig">共情落点</span><p>以"小家大家、情感信任共情"收束。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"把温暖传递下去"为题，模仿本文"叙事引题+精神原乡/双向守护/平台温度三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①亲情物件→②精神原乡→③双向守护→④平台温度。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不再是……更是……"的句式，表达你对"代际关系"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月25日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
