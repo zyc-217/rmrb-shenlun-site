@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以“有解思维”激发创新活力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以“有解思维”激发创新活力（评论员观察）</h1>
+    <div class="meta">营商环境 · 有解思维 · 包容审慎 · 主动服务 · 放管服 · 有为政府 · 有效市场 · 新业态 · 热带雨林生态 · 高质量发展 | 2026年2月27日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">营商环境</span><span class="tag-item">有解思维</span><span class="tag-item">包容审慎</span><span class="tag-item">主动服务</span><span class="tag-item">放管服</span><span class="tag-item">有为政府</span><span class="tag-item">有效市场</span><span class="tag-item">新业态</span><span class="tag-item">热带雨林生态</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以上海冷鲜肉店"跨界"卖包子案例破题，从包容审慎态度、主动作为姿态、提升服务逻辑三层解读"有解思维"，是"案例+三层思维"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何建设一流营商环境"——包容审慎、靠前服务、管得好。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"有解思维的内涵"——研究怎样能行、而非简单说不行。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"营商环境/政府服务"可借用"无事不扰、有求必应""管得好"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（案例引题·三层思维）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">面对新业态新诉求，以“有解思维”替代简单说“不行”——包容审慎、主动作为、靠前服务，方能激发创新活力、建设高效有为的服务型政府。<br><span style="color:#0d47a1;">▸ 写法：由上海冷鲜肉店案例破题，点明有解思维内核</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">“有解思维”体现为一种包容审慎的态度，给创新留足试错空间。<br><span style="color:#0d47a1;">▸ 写法：态度维度：包容审慎、不一味否定</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">“有解思维”也体现为一种主动作为、靠前服务的姿态。<br><span style="color:#0d47a1;">▸ 写法：姿态维度：靠前服务、串珠成链</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">“有解思维”背后的逻辑，是提升政府服务水平，以“管得好”为经营主体搭建各展其能的广阔舞台。<br><span style="color:#0d47a1;">▸ 写法：逻辑维度：放管结合、管得好</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】面对新业态新诉求，以“有解思维”替代简单说“不行”——包容审慎、主动作为、靠前服务，方能激发创新活力、建设高效有为的服务型政府。</p><p>和企业经营者交流，许多人常把“脑子要活”挂在嘴边。的确，<span class="highlight-gold">企业发展不可能永远固守“舒适圈”</span>，经营者能否凭灵活头脑适时开辟新赛道，一定程度上决定着企业能否长久保持生机活力。</p>
+
+<p>上海建国东路一家冷鲜肉店铺一度动起了“跨界”的主意。为拓展消费群体，吸引来去匆匆的上班族，店里想尝试卖蒸包子。</p>
+
+<p>然而，按以往相关要求，包子铺的现制现售区域和生鲜肉销售场所要隔10米以上，或有可密闭遮盖的防护罩等防护措施。但这家冷鲜肉店面积有限，“螺蛳壳”里难“做道场”。</p>
+
+<p>怎样走出死胡同？针对“落伍”条款，上海审批部门在走访调研基础上，发布新版食品经营许可审查细则。根据新规，门店可以在两个区域间竖起玻璃门作为防护隔断，问题迎刃而解。</p>
+
+<p>如今，门店已进行试运营，同样的门店面积，<span class="highlight-green">销售额达到了过去只做生鲜肉、预包装食品的10倍以上</span>。</p>
+
+<p>开辟新赛道，主体是企业，却不只是企业自己的事，营商环境同样至关重要。“便利店摊蛋饼打盒饭”“网订柜取早餐”“预包装零食店制售咖啡面包”……类似的案例中，面对棘手诉求，监管部门没有简单地说“不行”，而是<span class="highlight-gold">一起研究“怎样能行”</span>，帮助新业态健康规范发展。这样一种“有解思维”，<span class="highlight-blue">呵护的是创新创造活力，激发的是企业发展潜力</span>，也带来不少启示。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">“有解思维”体现为一种包容审慎的态度。</span></p>
+
+<p>有经济学者认为，企业的发展，实质上就是不断发挥想象力，利用未被充分利用的资源，从而开辟出新的“生产性机会”。</p>
+
+<p>今天，经营主体的想象力比过去任何时候都更加重要。就像此前惊艳世界的人工智能大模型DeepSeek（深度求索），最初脱胎于量化投资企业的算力资源，“主干”萌生的“旁枝”最后绽放出别样的花朵。</p>
+
+<p>不过，有些时候，适度超前的想象力，会与既有法律法规、监管制度等产生冲突。如何处理好这类复杂的情况？<span class="highlight-purple">不是一味否定，而是以包容审慎的态度看待新事物、新业态</span>，如此，创新才有试错空间。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">“有解思维”也体现为一种主动作为、靠前服务的姿态。</span></p>
+
+<p>2025年，广东深圳南山区成功迈入“万亿城区”。南山区为什么能？<span class="highlight-green">营商环境的持续优化完善，正是发展密码之一</span>。</p>
+
+<p>正如当地一名干部所言，就像珍珠项链，“珠”是经营主体，颗粒饱满、绽放光彩，看不见的“线”则是营商环境，串珠成链、形成合力。对企业<span class="highlight-gold">“无事不扰、有求必应”</span>，为企业发展壮大减轻负担、持续赋能，有助于催生大企业顶天立地、中小企业铺天盖地、创新企业竞相生长的“热带雨林”生态。</p>
+
+<p>主动作为、靠前服务，以开放胸怀回应合理诉求，共同寻找“最优解”，才能更好激发经营主体活力。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">“有解思维”背后的逻辑，是提升政府服务水平，以“管得好”为经营主体搭建各展其能的广阔舞台。</span></p>
+
+<p>“十五五”规划建议提出：<span class="highlight-purple">“形成既‘放得活’又‘管得好’的经济秩序。”</span>从以前的“管得住”到现在的“管得好”，一字之差，标准更高、意蕴深远。“管得好”，不是“管得多”，也不是“简单管”，而是要在市场发挥决定性作用的前提下，管好那些市场管不了或管不好的事情。</p>
+
+<p>从有效市场和有为政府的视角看，<span class="highlight-purple">“有解思维”背后的逻辑就在于，提升政府服务水平，以“管得好”为经营主体搭建各展其能的广阔舞台</span>。</p>
+
+<p>中国经济，大在体量，也大在潜能。<span class="highlight-gold">以“有解思维”建设高效有为的服务型政府，营造一流营商环境，让经济浪潮中每一个迸发的灵感都有机会开花结果</span>，中国经济的未来不可估量。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月27日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>企业发展不可能永远固守“舒适圈”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新突破"的金句，适配改革发展类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>面对棘手诉求，监管部门没有简单地说“不行”，而是一起研究“怎样能行”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"有解思维"的核心金句，适配营商环境类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>对企业“无事不扰、有求必应”，为企业发展壮大减轻负担、持续赋能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"服务型政府"的规范表述，适配放管服类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>“形成既‘放得活’又‘管得好’的经济秩序。”从“管得住”到“管得好”，一字之差，标准更高、意蕴深远。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"放管结合"的辩证句，适配有效市场有为政府类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>让经济浪潮中每一个迸发的灵感都有机会开花结果。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新生态"的收束金句，适配高质量发展类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">案例引题</span><p>上海冷鲜肉店"跨界"卖包子。</p></div><div class="migration-card"><span class="tag-mig">三层思维</span><p>包容审慎—主动作为—提升服务。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>DeepSeek、深圳南山区万亿城区。</p></div><div class="migration-card"><span class="tag-mig">比喻论证</span><p>"珍珠项链"喻营商环境串珠成链。</p></div><div class="migration-card"><span class="tag-mig">政策落点</span><p>以"十五五"管得好收束于服务型政府。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"有解思维促发展"为题，模仿本文"案例引题+包容审慎/主动作为/提升服务三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①冷鲜肉店案例→②包容审慎态度→③主动作为姿态→④提升服务逻辑。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"有解思维"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月27日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
