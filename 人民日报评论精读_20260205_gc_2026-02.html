@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 这生生不息的可塑之力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>这生生不息的可塑之力（评论员观察）</h1>
+    <div class="meta">可塑之力 · 高质量发展 · 新质生产力 · 区域协调 · 人才红利 · 创新驱动 · 结构优化 · 高水平开放 · 制度优势 · 守正创新 | 2026年2月5日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">可塑之力</span><span class="tag-item">高质量发展</span><span class="tag-item">新质生产力</span><span class="tag-item">区域协调</span><span class="tag-item">人才红利</span><span class="tag-item">创新驱动</span><span class="tag-item">结构优化</span><span class="tag-item">高水平开放</span><span class="tag-item">制度优势</span><span class="tag-item">守正创新</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"磁力片"比喻破题，论证中国发展"可塑性"的三重维度，是"比喻引题+三层维度"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何增强发展可塑性"——拓展空间、优化结构、激活群体三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"可塑之力的维度"——空间、结构、群体。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"高质量发展/新质生产力"可借用"从老树发新枝到独木成森林"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（比喻引题·三重维度）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以制度优势为筋骨，以市场活力为血脉，以群众创造为驱动，以胸怀天下为格局，在守正与创新的辩证中，我们正持续创造未来、书写传奇。<br><span style="color:#0d47a1;">▸ 写法：由磁力片比喻破题，点明可塑之力的总纲</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">可塑在空间，这是从"地理疆域"到"战略版图"的纵深谋划。<br><span style="color:#0d47a1;">▸ 写法：空间维度：以雄安疏解、长三角示范区说明打破行政区隔</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">可塑在结构，这是从"要素驱动"到"创新驱动"的优化升级过程。<br><span style="color:#0d47a1;">▸ 写法：结构维度：以工业机器人、数字经济说明范式跃迁</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">可塑在群体，这是从人口红利到人才红利的持续进阶。<br><span style="color:#0d47a1;">▸ 写法：群体维度：以榕江乡村电商、宜君AI训练师说明人的焕新</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以制度优势为筋骨，以市场活力为血脉，以群众创造为驱动，以胸怀天下为格局，在守正与创新的辩证中，我们正持续创造未来、书写传奇。</p><p>益智玩具中，有一种磁力片，通过自由拼接、立体搭建，可拼出各种造型。与传统积木、拼插组件相比，磁力片更有可塑性，更具吸引力。</p>
+
+<p>观察现实，机遇不是一成不变的，而是像磁力片组合一样千变万化。在推动转型升级、促进区域联动、激发市场活力、挖掘人才红利中把握机遇，可以增强中国发展的可塑性。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">可塑在空间，这是从“地理疆域”到“战略版图”的纵深谋划。</span></p>
+
+<p>雄安新区，首批4家疏解央企总部项目已全面落地，在打造北京非首都功能疏解集中承载地的同时，“撬动”京津冀协同发展新格局。长三角生态绿色一体化发展示范区，以不破行政隶属、打破行政边界的创新实践，绘就跨省域一张蓝图管全域、一套标准管品质、一体化制度管治理的新图景。</p>
+
+<p>空间的可塑性，体现在战略规划打破原有的行政区隔，让联动发展获得有力支撑。有人说，这是“地理折叠术”。山河虽广、地域各异，在共绘一体化宏图中，消融了空间边界、延伸了发展半径。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">可塑在结构，这是从“要素驱动”到“创新驱动”的优化升级过程。</span></p>
+
+<p>当传统增长模式难以为继，须以新质生产力破题。<span class="highlight-green">工业机器人出口超过进口，国产芯片自给率持续提升，数字经济核心产业增加值占GDP比重超10%</span>……高附加值产业比重提升，使中国经济更具韧性。</p>
+
+<p>结构的可塑性，体现为发展范式的跃迁。<span class="highlight-gold">从传统产业“老树发新枝”，到新兴产业“独木成森林”</span>，创新发展推动经济结构持续优化，使高质量发展不断获得新的支点和势能。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">可塑在群体，这是从人口红利到人才红利的持续进阶。</span></p>
+
+<p>发展的主体是人，发展的可塑性，鲜活地体现在人的面貌焕新。借势“村超”，贵州榕江本地青年投身乡村电商，既推销脐橙、百香果等农产品，又推广蜡染、刺绣等手工艺品；顺应人工智能发展潮流，陕西宜君引入人工智能数据标注公司，农村妇女通过培训，成为持证上岗的人工智能训练师，<span class="highlight-gold">“我给人工智能‘喂知识’，它们越聪明，我的生活就越有奔头”</span>。无数具体的人、能动的人，正在深度学习中成长着、创造着。</p>
+
+<p>群体的可塑性，正在将“人口规模巨大”的体量潜力，转化为“人才各展其长”的澎湃动力。人人皆可成才、处处尽显其能，每个人都将成为创新变革的“动力源”。</p>
+
+<p>拓宽视野再观察。2025年，中国牵头制定了275项ISO、IEC国际标准，新提国际标准提案459项。在全球产业链、价值链、创新链中，我们不再满足于“跟跑补链”，而是奋力迈向“并跑强链”“领跑塑链”。<span class="highlight-blue">从“接轨国际”到“定义规则”</span>，深度融入全球发展格局的中国，持续强化、优化自身发展的可塑性，不仅擦亮“世界工厂”的老标签，而且淬炼出“全球创新策源地”的新标识。外媒感慨，<span class="highlight-gold">“永远不要低估中国”</span>。</p>
+
+<p>历史不眷顾因循守旧者，时代垂青勇于创新者。这生生不息的可塑之力，是一个正在迈向现代化的国家在面对不确定性时，展现出的韧性与活力。<span class="highlight-gold">以制度优势为筋骨，以市场活力为血脉，以群众创造为驱动，以胸怀天下为格局，在守正与创新的辩证中，我们正持续创造未来、书写传奇</span>。</p>
+
+<p>形可塑，志更坚；势可蓄，道愈明。要看到，我们始终“一步一个脚印沿着正确的道路往前走”。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月5日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>"我给人工智能‘喂知识’，它们越聪明，我的生活就越有奔头"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人才成长"的接地气金句，适配技能培训类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>从传统产业"老树发新枝"，到新兴产业"独木成森林"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"结构优化"的生动金句，适配产业升级类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>工业机器人出口超过进口，国产芯片自给率持续提升，数字经济核心产业增加值占GDP比重超10%。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新驱动"的硬数据，适配新质生产力类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>从"接轨国际"到"定义规则"，深度融入全球发展格局的中国，持续强化、优化自身发展的可塑性。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"高水平开放"的规范表述，适配全球治理类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>以制度优势为筋骨，以市场活力为血脉，以群众创造为驱动，以胸怀天下为格局。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"发展密码"的总括金句，适配中国式现代化类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">比喻引题</span><p>以"磁力片可塑"比喻破题，引出发展可塑性。</p></div><div class="migration-card"><span class="tag-mig">三重维度</span><p>空间—结构—群体，系统拆解可塑之力。</p></div><div class="migration-card"><span class="tag-mig">数据佐证</span><p>工业机器人、芯片自给率、数字经济占比硬数据。</p></div><div class="migration-card"><span class="tag-mig">由内到外</span><p>从区域协同升华至"定义规则"的全球格局。</p></div><div class="migration-card"><span class="tag-mig">呼应总纲</span><p>以"制度优势为筋骨…"回扣总论点收束。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"增强发展的可塑之力"为题，模仿本文"比喻引题+三重维度"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①磁力片比喻→②空间纵深谋划→③结构优化升级→④群体人才进阶。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"从……到……"的句式，表达你对"某领域跃迁"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月5日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
