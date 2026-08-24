@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以法治之力让彩礼归“礼”（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以法治之力让彩礼归“礼”（人民时评）</h1>
+    <div class="meta">高价彩礼 · 法治治理 · 移风易俗 · 基层治理 · 婚姻家庭 · 公序良俗 · 司法裁判 · 乡风文明 · 法治思维 · 文明新风 | 2026年2月2日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">高价彩礼</span><span class="tag-item">法治治理</span><span class="tag-item">移风易俗</span><span class="tag-item">基层治理</span><span class="tag-item">婚姻家庭</span><span class="tag-item">公序良俗</span><span class="tag-item">司法裁判</span><span class="tag-item">乡风文明</span><span class="tag-item">法治思维</span><span class="tag-item">文明新风</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"网友感慨高额彩礼"生活留言破题，论证"以法治之力治理彩礼"的三条路径，是"现象引题+三层对策"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何治理高额彩礼"——划清边界、彰显导向、扎根生活三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"法治治理彩礼的路径"——司法裁判、价值引领、实践创新。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"移风易俗/基层治理"可借用"让婚姻始于爱，让彩礼归于礼"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·三层对策）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">治理高额彩礼，既要以法治划清合法与非法的界限，也要以实践涵养婚嫁新风尚，守护千家万户的幸福生活。<br><span style="color:#0d47a1;">▸ 写法：由网友"倒在高额彩礼前"留言破题，点明法治治理主题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">如何更好发挥法治在治理高额彩礼中的作用？需要让司法走入具体的生活场景，划清合法与非法的界限，明确不同情形的不同裁判规则。<br><span style="color:#0d47a1;">▸ 写法：裁判维度：以最高法典型案例、诈骗亮剑说明划清边界</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">法治的引领不仅体现在具体个案的裁判，也在于彰显鲜明的价值导向，维护公序良俗、守护幸福生活。<br><span style="color:#0d47a1;">▸ 写法：导向维度：以共同生活考量因素说明公序良俗守护</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">法治不是抽象的原则、机械的条文，应该扎根热气腾腾的生活，探索丰富多样的实践形式。<br><span style="color:#0d47a1;">▸ 写法：实践维度：以湖南直播执行、安徽村规民约说明新风尚</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】治理高额彩礼，既要以法治划清合法与非法的界限，也要以实践涵养婚嫁新风尚，守护千家万户的幸福生活。</p><p>岁末年初，正是喜结良缘的高峰时段，彩礼话题也受到关注。说到高额彩礼及其衍生出的社会问题，一名网友的留言令人感慨：<span class="highlight-gold">多少刻骨铭心的爱情，跨越了山海相隔，挺过了雨雪风霜，最终却倒在了高额彩礼前</span>。如何治理高额彩礼，是关乎群众幸福生活的民生大事，也是一个重要的治理命题。</p>
+
+<p>高额彩礼如何界定？婚约解除后，彩礼应当如何处理？彩礼是否必须和嫁妆价值对等？这些曾困扰不少家庭的问题，如今有了更为清晰的法治解答。近年来，<span class="highlight-blue">最高人民法院接连发布三批涉彩礼纠纷典型案例</span>，通过具体生动的司法裁判，展现彩礼中蕴含的事理法理情理。</p>
+
+<p>习近平总书记强调，<span class="highlight-gold">“善于运用法治思维和法治方式解决涉及群众切身利益的矛盾和问题”</span>。高额彩礼问题成因复杂，交织着传统习俗、地域差别等现实因素，一刀切或硬碰硬难奏效。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">如何更好发挥法治在治理高额彩礼中的作用？这需要让司法走入具体的生活场景，针对彩礼问题的复杂成因，划清合法与非法的界限，明确不同情形的不同裁判规则。</span></p>
+
+<p>在最高法公布的典型案例中，对于借婚姻索取财物构成诈骗罪的，人民法院依法判令被告人承担刑事责任并退赔被害人损失，这是向骗取彩礼犯罪行为的鲜明“亮剑”。再比如，对于“闪婚”后，彩礼接收方拒绝共同生活，另一方请求离婚并返还彩礼的，人民法院应予支持。这些判决不仅区分了合法与非法、婚姻彩礼和日常赠与，更以精细化、人性化的司法裁判<span class="highlight-blue">划清彩礼的边界</span>。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">法治的引领不仅体现在具体个案的裁判，也在于彰显鲜明的价值导向，维护公序良俗、守护幸福生活。</span></p>
+
+<p>比如，对于未办理结婚登记但共同生活时间较长且已孕育子女，一方请求返还彩礼的，人民法院不予支持。将共同生活时间的长短、是否生育子女、彩礼的用途作为核心考量因素，表明<span class="highlight-purple">法律不鼓励以婚姻为名索取高额财物，也不支持将彩礼视为一种可以随意撤销的“投资”</span>，体现了对妇女在婚姻家庭中特殊付出的认可和保护。在司法判决中彰显诚信、友善、家庭和睦等价值导向，有助于淳风美俗，筑牢家庭幸福根基。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">法治不是抽象的原则、机械的条文，应该扎根热气腾腾的生活，探索丰富多样的实践形式。</span></p>
+
+<p>湖南高院通过抖音账号直播彩礼返还案件执行全过程，将司法课堂搬到了群众的指尖上。<span class="highlight-green">安徽以四级联动机制推动彩礼治理，有乡镇推出“彩礼不超五万八，政府礼包送到家”活动，全省90％的行政村修订村规民约，明确抵制高额彩礼内容</span>。善于运用法治思维和法治方式，就要把原则的稳定性和方式的灵活性更好结合起来，统筹刚性和柔性、规范和引领、规则和人情等各方面，助力形成婚嫁新风尚。</p>
+
+<p>彩礼来源于我国古代婚姻风俗中的“六礼”，是男女双方缔结婚姻的重要象征，蕴含着双方及其家庭对婚姻的美好期盼。<span class="highlight-gold">让婚姻始于爱，让彩礼归于“礼”</span>，当人们带着信任组建家庭，就能为幸福生活筑牢美好的起点。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月2日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>让婚姻始于爱，让彩礼归于"礼"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"彩礼归礼"的点睛金句，适配移风易俗类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>最高人民法院接连发布三批涉彩礼纠纷典型案例，通过具体生动的司法裁判，展现彩礼中蕴含的事理法理情理。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治解答"的规范表述，适配司法治理类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>法律不鼓励以婚姻为名索取高额财物，也不支持将彩礼视为一种可以随意撤销的"投资"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治与公序良俗"的辩证句，适配权益保护类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>安徽全省90％的行政村修订村规民约，明确抵制高额彩礼内容。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"基层实践"的硬数据，适配乡风文明类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>"善于运用法治思维和法治方式解决涉及群众切身利益的矛盾和问题"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法治思维"的总书记金句，适配基层治理类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象破题</span><p>以"网友倒在高额彩礼前"留言引出治理命题。</p></div><div class="migration-card"><span class="tag-mig">法治解答</span><p>以最高法三批典型案例说明司法划清边界。</p></div><div class="migration-card"><span class="tag-mig">价值引领</span><p>以共同生活考量因素彰显公序良俗导向。</p></div><div class="migration-card"><span class="tag-mig">实践创新</span><p>湖南直播执行、安徽村规民约探索多样形式。</p></div><div class="migration-card"><span class="tag-mig">文化收束</span><p>以"婚姻始于爱、彩礼归于礼"落点于幸福起点。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让彩礼归于礼"为题，模仿本文"现象引题+三层对策"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①网友留言引子→②司法划清边界（典型案例）→③彰显价值导向→④扎根生活实践。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"法治实践"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
