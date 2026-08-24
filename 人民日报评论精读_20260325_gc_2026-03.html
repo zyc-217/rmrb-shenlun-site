@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 城市画布与画笔（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>城市画布与画笔（评论员观察）</h1>
+    <div class="meta">人民城市 · 城市更新 · 微更新 · 群众创意 · 共建共治共享 · 城市文明 · 基层治理 · 文化赋能 · 空间与人 · 民生温度 | 2026年3月25日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">人民城市</span><span class="tag-item">城市更新</span><span class="tag-item">微更新</span><span class="tag-item">群众创意</span><span class="tag-item">共建共治共享</span><span class="tag-item">城市文明</span><span class="tag-item">基层治理</span><span class="tag-item">文化赋能</span><span class="tag-item">空间与人</span><span class="tag-item">民生温度</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"跑友画马"、长沙3D大屏、上海百公里大马、成都五里墩微更新等案例破题，从"传统与现代交响、个体与群体共情、空间与人心的对话"三层，论证人民城市理念的创新表达，是"案例群+三层意蕴"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何建设人民城市"——尊重创意、共建共治、制度善意。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"城市画布的意蕴"——传统现代、个体群体、空间人心。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"城市更新/人民城市"可借用"城市的画布从不拒绝画笔"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（案例群·三层意蕴）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">或自发生长、或有序参与、或持续养成的“城市笔触”，正在以行得通、很管用的创新方式，诠释着人民城市理念。<br><span style="color:#0d47a1;">▸ 写法：由跑友画马破题，点明城市笔触诠释人民城市</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">城市画布上，有传统与现代的交响。<br><span style="color:#0d47a1;">▸ 写法：文化维度：传统意蕴新潮表达</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">城市画布上，有个体与群体的共情。<br><span style="color:#0d47a1;">▸ 写法：共情维度：各美其美美美与共</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">城市画布上，有空间与人心的对话。<br><span style="color:#0d47a1;">▸ 写法：情感维度：改的是环境暖的是人心</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】或自发生长、或有序参与、或持续养成的“城市笔触”，正在以行得通、很管用的创新方式，诠释着人民城市理念。</p><p>一名“跑友”分享自己的杰作：脚步勾勒出奔腾的“骏马”轨迹。这样的“晒图”不在少数，也引起很多人的兴趣与共鸣。</p>
+
+<p>当步伐化作画笔，当城市成为画布，以热爱为主题的运动创作，不仅是春天的应景之作，更折射城市空间与市民创意碰撞的无限可能。正如上海的一名“跑友”，研究苏州河两岸地图，用笔勾画、实地验证，设计出“小篆马字”线路，令人眼前一亮。</p>
+
+<p>着墨城市的创作，不止于此。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">城市画布上，有传统与现代的交响。</span></p>
+
+<p>湖南长沙，马栏山视频文创园的裸眼3D大屏上，“江天暮雪”等潇湘八景，不再是传统水墨画，而是化作灵动喜庆的剪纸风格。<span class="highlight-blue">传统意蕴被赋予新潮表达，在城市空间中焕发新生</span>，让文化传承有了看得见、摸得着的载体。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">城市画布上，有个体与群体的共情。</span></p>
+
+<p>上海10名素不相识的“跑友”，同时出发，各跑一段，实时联动，协作绘出“百公里的大马”。有人说，为同一个目标在努力，很迷人。<span class="highlight-purple">只因热爱与真诚，各自努力、携手而行，融入“各美其美，美美与共”的城市文明图景。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">城市画布上，有空间与人心的对话。</span></p>
+
+<p>四川成都的五里墩街区，通过微更新，将茶马古道的底蕴、街巷里的美食与艺术创意巧妙融合。看着“市井趣意”，群众直言<span class="highlight-gold">“改的是环境，暖的是人心”</span>。艺术点亮城市空间，人们对家园的认同更深、人与城的情感纽带更牢。</p>
+
+<p>城市何以能成画布？因它本就是宏阔、鲜活、颇具呼吸感的“生活原稿”。可以说，人是城市的作者。规划图纸上的“转角”、人来人往的“街心”，无不是人们可赋予创意的页面，前提是尊重公序良俗。艺术作品不会永久留存，曾存在过、展示过这件事本身，就有力表明城市运行效率之外有韵律韵味、服务功能之外有温情活力。</p>
+
+<p>或许有人疑虑：墙体涂绘是否破坏整洁？临时装置是否干扰秩序？这当然需要全面且辩证地看待。若只是把城市当作“待管理的客体”，看到的往往是治理难度与监管成本；而把其视为“可联动的主体”，则能读懂每笔涂抹、每次设计背后的热望。<span class="highlight-purple">在遵守规则的前提下，这是对归属感的确认，是参与能力、共建意识、共生逻辑的重写，是行动上的自主与能动。</span></p>
+
+<p>延展观之，北京胡同里的“小院议事厅”，陕西西安城门洞下的演唱会，不少城市里的骑手成为实时发现社区隐患的“移动前哨”……<span class="highlight-gold">这些或自发生长、或有序参与、或持续养成的“城市笔触”，正在以行得通、很管用的创新方式，诠释着人民城市理念。</span></p>
+
+<p>再深看一层，“城市画布”现象，也是时代精神的具象显影。马年画马，表面是节令应景，参与者的内心实则涌动着一种蓬勃的主体自觉。个体不仅仅是城市图景中的“像素点”，更渴望成为调色盘上的“主色块”，为城市增彩、为发展增辉。<span class="highlight-purple">正像有人说的，城市是一本打开的书，从中可以看到它的抱负，触摸到它的温度，预见到它的未来。</span>越是包容创新创造，越是在制度善意与群众创意之间找准“对焦点”，越能共创美好的未来。</p>
+
+<p>当艺术融入街巷、创意照亮生活，相信会有更多精彩作品在城市肌理中生长。<span class="highlight-gold">毕竟，城市的画布从不拒绝画笔，更会等待一双双敢于落笔的手，渴望一颗颗热辣滚烫的心。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月25日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>传统意蕴被赋予新潮表达，在城市空间中焕发新生。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"传统与现代"的意象金句，适配文化传承类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>改的是环境，暖的是人心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"微更新温度"的金句，适配城市更新类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>城市的画布从不拒绝画笔，更会等待一双双敢于落笔的手，渴望一颗颗热辣滚烫的心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"群众创意"的收束金句，适配人民城市类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>各美其美，美美与共。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"多元共融"的规范表述，适配城市文明类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>在制度善意与群众创意之间找准“对焦点”，越能共创美好的未来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"制度与创意"的辩证句，适配共建共治类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">案例引题</span><p>跑友画马、长沙3D、上海百公里大马、成都五里墩。</p></div><div class="migration-card"><span class="tag-mig">三层意蕴</span><p>传统现代—个体群体—空间人心。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>北京小院议事厅、西安城门洞演唱会、骑手移动前哨。</p></div><div class="migration-card"><span class="tag-mig">辩证落点</span><p>以"客体管理vs主体联动"重写共建逻辑。</p></div><div class="migration-card"><span class="tag-mig">温度落点</span><p>以"城市画布等待落笔的手"收束于群众创意。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"城市是一本打开的书"为题，模仿本文"案例群+传统现代/个体群体/空间人心三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①微更新案例→②传统现代交响→③个体群体共情→④空间人心对话。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不止于……更……"的句式，表达你对"城市创意价值"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月25日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
