@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 精准聚力托举失能照护（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>精准聚力托举失能照护（人民时评）</h1>
+    <div class="meta">民生保障 · 长期护理保险 · 养老服务 · 老龄化 · 银发经济 · 政策协同 · 因地制宜 · 兜底保障 · 十五五 · 基层治理 | 2026年2月11日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">民生保障</span><span class="tag-item">长期护理保险</span><span class="tag-item">养老服务</span><span class="tag-item">老龄化</span><span class="tag-item">银发经济</span><span class="tag-item">政策协同</span><span class="tag-item">因地制宜</span><span class="tag-item">兜底保障</span><span class="tag-item">十五五</span><span class="tag-item">基层治理</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以山东毕大妈家人感慨破题，论证失能照护政策的协同、落实与长远三层逻辑，是"群众视角+三层结构"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何完善失能照护"——制度建制、因地制宜、激活产业三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"民生保障颗粒度细化"——兜底、精准、多样。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"养老服务/银发经济"可借用"兜住民生底线、满足多样需求"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（群众视角·三层逻辑）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">长护险与养老服务消费补贴两相结合，完善失能老年人照护服务支持体系，既兜住民生底线，也满足多样化照护需求，成为我国民生保障颗粒度更加细化的缩影。<br><span style="color:#0d47a1;">▸ 写法：由毕大妈案例破题，点明政策协同完善照护体系</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">从成效看，政策协同发力，释放叠加效应，为失能照护提供有力托举。<br><span style="color:#0d47a1;">▸ 写法：成效维度：政策协同释放叠加效应</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">从落实看，无论哪种政策，都需要因地制宜、精细施策，打通“最后一公里”。<br><span style="color:#0d47a1;">▸ 写法：落实维度：因地制宜精细施策打通最后一公里</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">从长远看，优化服务供给的过程，也是激活经济动能的过程。<br><span style="color:#0d47a1;">▸ 写法：长远维度：优化供给激活银发经济动能</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】长护险与养老服务消费补贴两相结合，完善失能老年人照护服务支持体系，既兜住民生底线，也满足多样化照护需求，成为我国民生保障颗粒度更加细化的缩影。</p><p>“以前每月带老人跑医院，现在护理员上门服务，长护险还能报销大半费用。”山东毕大妈家人的感慨，让笔者感受到失能老年人家庭的获得感。如今，长护险团队每周上门为瘫痪在床的毕大妈护理、采血，大大减轻了家庭照护负担。</p>
+
+<p>好消息是，“十五五”时期，长期护理保险制度将从试点转向全面建制。不久前，还有一份<span class="highlight-gold">真金白银的民生“礼包”</span>精准送达：<span class="highlight-blue">面向中度以上失能老年人发放养老服务消费补贴</span>的政策在全国正式实施。</p>
+
+<p>作为<span class="highlight-gold">“社保第六险”</span>，长护险具有普惠兜底的特点，为失能群体提供基础性保障。作为专项补贴，养老服务消费补贴具有精准性，能进一步提升服务供给质量。两相结合，完善失能老年人照护服务支持体系，既兜住民生底线，也有利于满足多样化照护需求，这成为我国<span class="highlight-blue">民生保障颗粒度更加细化</span>的缩影。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">从成效看，政策协同发力，释放叠加效应，为失能照护提供有力托举。</span></p>
+
+<p>随着我国人口老龄化加速，失能照护需求日益增长。民政部相关数据显示，<span class="highlight-green">2024年底我国失能老年人约3500万人，预计到2035年将增至4600万人</span>。自2016年启动试点以来，长护险制度不断完善，截至去年底<span class="highlight-green">已覆盖近3亿人，累计惠及超330万失能群众</span>，越来越多失能老年人可享受上门护理服务。全国性养老服务补贴政策的落地，将通过差异化抵扣精准适配居家、社区与机构养老多元需求。两项政策配合，形成<span class="highlight-purple">“1+1＞2”</span>的效果。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">从落实看，无论哪种政策，都需要因地制宜、精细施策，打通“最后一公里”。</span></p>
+
+<p>我国幅员辽阔，不同地域间差异较大，必须精准对接地方实际。海南立足自贸港“候鸟人群”集聚的特点，积极推进省级统筹全覆盖，未来将鼓励省外符合条件的候鸟旅居人群在海南参加长护险。浙江金华构建村（社区）代办员、养老机构护理员协同服务体系，助力养老服务消费补贴申领从“能办”走向“好办”。找准工作着眼点、政策发力点，结合老龄化程度、经济社会发展水平和文化传统，<span class="highlight-blue">下足绣花功夫</span>，方能<span class="highlight-purple">将保障落到细处</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">从长远看，优化服务供给的过程，也是激活经济动能的过程。</span></p>
+
+<p>失能照护不仅是民生工程，也将打开养老服务产业新空间。山东青岛以“定点机构管理+职业培训”双轮驱动，壮大专业化人才队伍，<span class="highlight-green">1.53万名备案服务人员</span>为照护质量“托底”。浙江湖州建设长护产业园，推动护理服务专业化、规模化发展。据不完全统计，“十四五”时期，49个试点城市长护险拉动社会资本投入相关产业<span class="highlight-green">超500亿元</span>，定点服务机构和护理服务人员数量均较“十四五”初期增长超50%，长护险已成为<span class="highlight-gold">银发经济新的增长点</span>。培育更多专业化、连锁化、品牌化养老机构，鼓励服务向农村延伸，产业潜力将不断转化为增长活力。</p>
+
+<p>“十五五”规划建议提出，<span class="highlight-blue">“健全失能失智老年人照护体系”</span>。既做好顶层设计，又因地制宜抓落实，不断完善服务体系，就能为更多失能老年人带来温暖和希望。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月11日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>“以前每月带老人跑医院，现在护理员上门服务，长护险还能报销大半费用。”</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生温度"的群众感慨，适配民生保障类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>2024年底我国失能老年人约3500万人，预计到2035年将增至4600万人；长护险已覆盖近3亿人，累计惠及超330万失能群众。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"失能照护需求"的硬数据，适配老龄化类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>长护险与养老服务消费补贴两相结合，完善失能老年人照护服务支持体系，既兜住民生底线，也满足多样化照护需求。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"政策协同"的规范表述，适配民生政策类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>“十四五”时期，49个试点城市长护险拉动社会资本投入相关产业超500亿元，定点服务机构和护理服务人员数量均较“十四五”初期增长超50%。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"银发经济"的数据，适配养老产业类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>这成为我国民生保障颗粒度更加细化的缩影。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生精细化"的辩证表述，适配治理精度类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">群众视角引题</span><p>以山东毕大妈家人感慨切入失能照护。</p></div><div class="migration-card"><span class="tag-mig">成效—落实—长远</span><p>三层结构拆解政策协同逻辑。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>3500万/4600万、近3亿人、超500亿元等硬数据。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>海南候鸟、浙江金华、青岛、湖州多地实践。</p></div><div class="migration-card"><span class="tag-mig">政策落点</span><p>以"十五五"规划建议收束于体系健全。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"民生保障的颗粒度"为题，模仿本文"群众感慨引题+成效落实长远三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①毕大妈感慨→②政策协同成效→③因地制宜落实→④长远激活动能。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既……也……"的句式，表达你对"民生兜底与多样需求"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月11日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
