@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “小材”何以“大用”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“小材”何以“大用”（评论员观察）</h1>
+    <div class="meta">跨界发展 · 新质生产力 · 因地制宜 · 产业升级 · 传统产业改造 · 比较优势 · 融合化 · 智能化转型 · 创新驱动 · 县域经济 | 2026年2月4日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">跨界发展</span><span class="tag-item">新质生产力</span><span class="tag-item">因地制宜</span><span class="tag-item">产业升级</span><span class="tag-item">传统产业改造</span><span class="tag-item">比较优势</span><span class="tag-item">融合化</span><span class="tag-item">智能化转型</span><span class="tag-item">创新驱动</span><span class="tag-item">县域经济</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"车企造船/调味品企业/动画公司"三则新闻破题，论证跨界"大用"的三重密码，是"案例引题+三层密码"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推动产业跨界升级"——立足家底、找准契合点、以融促通三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"小材大用的密码"——家底、契合点、跨界融合。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"新质生产力/产业升级"可借用"以老育新""融则通通则达"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（案例引题·三重密码）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">小车到大船、小料到"大餐"、小动画到大健康，智能化转型浪潮中，跨界发展蕴含将"小材"委以"大用"的密码。<br><span style="color:#0d47a1;">▸ 写法：由三则跨界新闻破题，点明跨界发展的核心密码</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">跨界的基点是"家底"——立足自身优势，转型升级不一定要从头再来。<br><span style="color:#0d47a1;">▸ 写法：根基维度：以电池心脏、动画孪生技术说明立足老本行</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">跨界成功的关键在于找到"契合点"——自身所长与行业所需"一拍即合"，以他山之石攻玉。<br><span style="color:#0d47a1;">▸ 写法：方法维度：以水运缺口、人体透视说明精准对接</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">要"跨"更要"融"——以老育新、因地制宜，融化边界、融合分野，融出活力奔涌的更广疆域。<br><span style="color:#0d47a1;">▸ 写法：格局维度：以煤炭新生、三链融合说明融则通通则达</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】小车到大船、小料到“大餐”、小动画到大健康，智能化转型浪潮中，跨界发展蕴含将“小材”委以“大用”的密码。</p><p>“跨”意味着视角、思路、脚步要超脱“一亩三分地”，“融”出活力奔涌的更广疆域。</p>
+
+<p>几则新闻，读起来颇有意趣。</p>
+
+<p>知名车企跨界造船，不仅把成本打了下来，还造出国内首个获中国船级社权威认证的内河电动船。</p>
+
+<p>以调味品为主业的企业，凭借对家庭饮食场景的深刻理解，成功进入智能终端领域，为智慧生活献上健康“大餐”。</p>
+
+<p>动画公司能做动画，也能“做”手术，以动作捕捉技术为“桥”，成为跨越娱乐与医疗两个领域的“通才”。</p>
+
+<p>小车到大船、小料到“大餐”、小动画到大健康，智能化转型浪潮中，跨界发展蕴含将“小材”委以“大用”的密码。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">跨界的基点是“家底”——立足自身优势，转型升级不一定要从头再来，“家底”本身就是解锁新发展的钥匙。</span></p>
+
+<p>车在路上跑，船在水上游，看似“各行其道”，但发展根基“殊途同归”——<span class="highlight-blue">都以电池为心脏</span>。电动船的电池组容易热失控，安全性成为薄弱环节。而新能源汽车的电池技术更完备、路线更成熟，扎实“家底”让企业得以跨界适应“两栖”、拓宽道路。</p>
+
+<p>同理，动画企业“走近”手术台，也是立足老本行开拓新场景，形成比较优势、解锁新赛道。转型升级不一定要从头再来，“家底”本身就是解锁新发展的钥匙。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">跨界成功的关键在于找到“契合点”——自身所长与行业所需“一拍即合”，以他山之石攻玉，释放“1+1&gt;2”的效能。</span></p>
+
+<p>“小材大用”行得通，就是因为自身所长与行业所需“一拍即合”。水运能力不足，车企积极行动填补市场缺口。人体难透视，动画孪生技术可提升诊治“眼力”。</p>
+
+<p>跨界的本质在于跳出问题寻解法，<span class="highlight-purple">以他山之石攻玉</span>。释放“1+1&gt;2”的效能，就不能够满足于简单叠加，而应推动优势与现实深度嵌合、融合。善用联系的眼光进行分析，既知己，又知彼，还识势，才能在不同领域间创造“链接”，解锁发展新路。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">要“跨”更要“融”——以老育新、因地制宜，融化边界、融合分野，融出活力奔涌的更广疆域。</span></p>
+
+<p>除了企业转型，跨界也带来产业升级的启示。“十五五”开局之年，重在承前启后，夯实基础、拓展优势、破除瓶颈。跨界思维对此有何借鉴？</p>
+
+<p>以老育新，老牌产业也能跨界新兴领域。煤炭制成油，破解航天燃料稀缺之困，以绿色清洁之力助力火箭上天；炼成丝，解锁更高性能，以“千钧一发”牵引巨轮；还能化为餐盒、变为玩具。<span class="highlight-blue">煤炭在千行百业新生，是对“传统产业改造升级，也能发展新质生产力”的生动诠释</span>。</p>
+
+<p>发展新质生产力，重在因地制宜。“因地”就是深扎根系，“制宜”就是伸展新芽。殷实“老家底”，适配“新赛道”，不同产业顺畅衔接、协调发展，才能在智能化、绿色化、融合化的方向上稳步前行。</p>
+
+<p>要“跨”，更要“融”，“融化”边界、“融合”分野。“增强宏观政策取向一致性和有效性”，打通全局视野与区域视角；“发展各具特色的县域经济”，推动城乡融合，让生产生活要素顺畅流动；上海张江、安徽合肥“两心同创”，大飞机产业集群跨区“起飞”，长三角跨区域协作推动三链融合……<span class="highlight-gold">融则通，通则达</span>。从5万公里高铁网弥合“发展时差”，到“钢铁驼队”引导腹地变前沿，打通地理阻隔、条块分割，才能爆发出跃升的凌空之力。由此而言，“跨”意味着视角、思路、脚步要超脱“一亩三分地”，“融”出活力奔涌的更广疆域。</p>
+
+<p>平台企业进军制造业，从智造到智驾的全链路深度融合，让新能源汽车不断驶入新境界；政协委员献智“第二界别”，着眼全局、思路更广，“跨界引智”提升建言质量；小红书变身“对账簿”，跨国界交流深度开展，可亲可敬可爱的中国形象更加深入人心……<span class="highlight-gold">跨界，跨出各领域的新前景、新气象</span>。</p>
+
+<p>让“小材”成“大用”的背后，是敢于斗争的战略清醒、勇于创新的战术运筹。从舒适区挺身而出，在陌生地带迎难而上，一定能以万马奔腾的创造氛围，开创马到成功的活跃局面。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月4日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>"跨"意味着视角、思路、脚步要超脱"一亩三分地"，"融"出活力奔涌的更广疆域。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"跨界融合"的点睛金句，适配区域协调类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>煤炭在千行百业新生，是对"传统产业改造升级，也能发展新质生产力"的生动诠释。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"以老育新"的规范表述，适配传统产业改造类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>以他山之石攻玉。释放"1+1>2"的效能，推动优势与现实深度嵌合、融合。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"协同融合"的辩证句，适配优势互补类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>融则通，通则达。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"打破壁垒"的凝练金句，适配城乡融合类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>跨界，跨出各领域的新前景、新气象。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"跨界价值"的收束金句，适配创新驱动类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">案例引题</span><p>以"车企造船/调味品企业/动画公司"三则跨界新闻引出主题。</p></div><div class="migration-card"><span class="tag-mig">三重密码</span><p>家底—契合点—跨界融合，系统拆解小材大用。</p></div><div class="migration-card"><span class="tag-mig">正反展开</span><p>由电池心脏到煤炭新生，由企业到产业层层递进。</p></div><div class="migration-card"><span class="tag-mig">由点到面</span><p>从企业跨界升华至区域协同、三链融合的格局。</p></div><div class="migration-card"><span class="tag-mig">金句收束</span><p>以"跨界跨出新前景新气象"落点于创新氛围。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"传统产业如何跨界新生"为题，模仿本文"案例引题+三重密码"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①跨界新闻引子→②立足家底→③找准契合点→④以融促通。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"跨界本质"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月4日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
