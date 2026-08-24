@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “祝薪雁们”为啥动人（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“祝薪雁们”为啥动人（人民时评）</h1>
+    <div class="meta">文化自信 · 扎根生活 · 人民性 · 素人创作 · 烟火气 · 向上力量 · 文艺为民 · 基层叙事 · 情感共鸣 · 社会治理 | 2026年2月24日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">文化自信</span><span class="tag-item">扎根生活</span><span class="tag-item">人民性</span><span class="tag-item">素人创作</span><span class="tag-item">烟火气</span><span class="tag-item">向上力量</span><span class="tag-item">文艺为民</span><span class="tag-item">基层叙事</span><span class="tag-item">情感共鸣</span><span class="tag-item">社会治理</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以贵州护发店店主"祝薪雁"走红破题，从"重新发现生活、人生智慧、向上力量"三层论证作品动人原因，是"人物故事+三层解读"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何让文艺扎根人民"——扎根生活、自然流露、直抵人心。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"素人作品动人的原因"——本真质朴、生活纹路、情感共鸣。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"文化自信/文艺为民"可借用"生长在土地上的文学"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（人物故事·三层解读）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">“祝薪雁们”打动人心，深层原因在于他们的作品扎根生活、充满感情——让人重新发现生活、给人以人生智慧、给人以向上力量。<br><span style="color:#0d47a1;">▸ 写法：由祝薪雁走红破题，点明作品动人的三层内核</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">他们的作品，让人重新发现生活。<br><span style="color:#0d47a1;">▸ 写法：生活维度：扎根生活、引人共鸣</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">他们的作品，给人以人生的智慧。<br><span style="color:#0d47a1;">▸ 写法：智慧维度：体悟哲思、自然流露</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">他们的作品，给人以向上的力量。<br><span style="color:#0d47a1;">▸ 写法：力量维度：坚韧信念、对抗困境</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】“祝薪雁们”打动人心，深层原因在于他们的作品扎根生活、充满感情——让人重新发现生活、给人以人生智慧、给人以向上力量。</p><p>他们的文字本真、质朴，<span class="highlight-gold">其中有生活的美好、有人生的智慧、有向上的力量</span>。</p>
+
+<p>这段时间，56岁的贵州护发店店主“祝薪雁”，在短视频平台上因为文案走红。</p>
+
+<p>写团圆，“饺子齐齐的，思念长长的，妈妈叨叨的”；写搓“白粑粑”，“人生大抵也是这般，熬着熬着就有了颜色”；写一天工作结束，“忙着成长，忙着创造，未来自有更甜的收获”……</p>
+
+<p>年轻人一边积极点赞，称她为“诗意孃孃”，一边温柔调侃“老一辈写文案没轻没重”——因为字字都浸润着生活的烟火气和时光，让人不知不觉就红了眼眶。</p>
+
+<p>不只是“祝薪雁”。这些年，从“外卖诗人”王计兵，到因手写作文《我的母亲》而在网络上广为人知的农民工大爷安三山，再到“沂蒙二姐”吕玉霞，他们以“素人”的身份吟咏生活，记录自己的人生轨迹与内心感悟，作品也屡屡在年轻群体中引发共鸣。</p>
+
+<p>“祝薪雁们”为何能打动人心？</p>
+
+<p>有人将这些素人创作者的走红，归因为草根身份与文学创作之间的反差。不可否认，护发店店主的文学表达、烧烤摊摊主的诗意吟唱、外卖骑手的哲思感悟，粗粝日常与诗意文字的反差感，确实具有传播力。但这恐怕只是表层原因，<span class="highlight-blue">更深层来看，打动年轻人的，还是他们的作品</span>。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">他们的作品，让人重新发现生活。</span></p>
+
+<p>前几天刷到一条“年度视频日记”短视频，<span class="highlight-green">浏览量过亿、点赞超1300万</span>，拍摄主体是四川成都的一名90后外卖小哥。他没有刻意煽情，只是以头盔视角进行拍摄，把一年里在送餐路上的点点滴滴剪辑成合集。让人动容的，不仅是外卖小哥总是“电量”满满、乐观逗趣，更是镜头里的日常生活、温暖瞬间。柴米油盐、四季更迭里，有升腾的烟火气、有普通人家的温情、有邻里互助的暖意。而这，恰恰是生活本来的纹路。</p>
+
+<p>“祝薪雁们”在讲述自己的故事，又何尝不是在描述“我们”的生活？<span class="highlight-purple">因为扎根生活，所以引人共鸣；因为充满感情，所以直抵人心。</span>我们在看他们的作品，也在重新发现生活中的美好。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">他们的作品，给人以人生的智慧。</span></p>
+
+<p>“祝薪雁们”不仅是在叙述生活，也是在分享人生感悟。生活是什么？在“祝薪雁”眼里，是“一块磨石”。在体验过其沉甸甸的重量后，她告诉年轻人：<span class="highlight-gold">“三餐暖，四季安，怀里揣着热望，脚下踩着从容，慢慢走，好好活。”</span></p>
+
+<p>我们该过怎么样的人生？这个问题或许没有标准答案。有着几十年走南闯北经历的“矿工作家”陈年喜认为，<span class="highlight-gold">“不管怎样的人生，高光也好，苦难也罢，骨子里都奔腾着一条河流”</span>。</p>
+
+<p><span class="highlight-purple">来源于生活，但又不被生活所累</span>，他们的作品里有体悟、有哲思、有智慧。这些来自人生的真实感悟，没有说教，只有自然流露，给人以思考和启迪。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">他们的作品，给人以向上的力量。</span></p>
+
+<p>“祝薪雁们”大多没有经过专业的训练，却总能以独特的笔触，描绘生命的韧性、不屈的信念、顽强的意志。</p>
+
+<p>清洁女工王瑛写保洁员的艰辛和劳苦，更写她们的坚韧与刚毅，“她们会把这项技能带到以后的生活中，把自己的人生擦亮”；面对寒冷，白天经营小店、夜晚在烧烤店兼职的温雄珍写道，“你若给她微笑，她会张开手掌，看，春天翻了个身”。</p>
+
+<p>生活总是有顺有逆，他们选择以积极乐观的心态接纳生活的不完美，以坚定执着的努力对抗人生的困境。<span class="highlight-purple">从他们的故事和作品中，更多人懂得，生活的样子如何，从来不只在于外部环境，更在于自己能否坚守善良的本心</span>，保持对生活的热爱、对未来的希望。</p>
+
+<p>一名网友说得好：<span class="highlight-gold">“中国的文学生长在土地上，字里行间质朴得像地里的麦子。麦子不问喧嚣，只管日升日落按时生长。”</span>他们的文字本真、质朴，其中有生活的美好、有人生的智慧、有向上的力量。而这，正是“祝薪雁们”动人的原因。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月24日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>“三餐暖，四季安，怀里揣着热望，脚下踩着从容，慢慢走，好好活。”</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人生态度"的质朴金句，适配生活感悟类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>“不管怎样的人生，高光也好，苦难也罢，骨子里都奔腾着一条河流”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生命韧性"的辩证金句，适配成长类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>“中国的文学生长在土地上，字里行间质朴得像地里的麦子。”</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"文艺扎根人民"的意象金句，适配文化自信类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>因为扎根生活，所以引人共鸣；因为充满感情，所以直抵人心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生活与共鸣"的辩证句，适配文艺为民类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>来源于生活，但又不被生活所累，他们的作品里有体悟、有哲思、有智慧。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生活与超脱"的辩证句，适配人生境界类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">人物故事引题</span><p>以"祝薪雁"文案走红切入。</p></div><div class="migration-card"><span class="tag-mig">三层解读</span><p>重新发现生活—人生智慧—向上力量。</p></div><div class="migration-card"><span class="tag-mig">群像扩展</span><p>王计兵、安三山、吕玉霞等多人例证。</p></div><div class="migration-card"><span class="tag-mig">数据点缀</span><p>年度视频日记浏览量过亿、点赞超1300万。</p></div><div class="migration-card"><span class="tag-mig">意象收束</span><p>以"土地上的麦子"升华文艺人民性。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"扎根生活的力量"为题，模仿本文"人物故事引题+重新发现生活/人生智慧/向上力量三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①祝薪雁故事→②重新发现生活→③人生智慧→④向上力量。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"因为……所以……"的句式，表达你对"扎根生活与引发共鸣"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月24日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
