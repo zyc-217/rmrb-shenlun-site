@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 消费缘何“新新”向荣（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>消费缘何“新新”向荣（评论员观察）</h1>
+    <div class="meta">消费提质 · 供给适配 · 双循环 · 全国统一大市场 · 内需 · 数字经济 · 因地制宜 · 民生改善 · 高质量发展 · 开放发展 | 2026年2月26日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">消费提质</span><span class="tag-item">供给适配</span><span class="tag-item">双循环</span><span class="tag-item">全国统一大市场</span><span class="tag-item">内需</span><span class="tag-item">数字经济</span><span class="tag-item">因地制宜</span><span class="tag-item">民生改善</span><span class="tag-item">高质量发展</span><span class="tag-item">开放发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以春节年货出新现象破题，从"新源何处、新何以成、新向何方"三问层层递进，论证供给响应驱动消费繁荣，是"生活现象+三问结构"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何促进消费提质"——增收入强意愿、供给快响应、双循环畅流通。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"消费新新向荣的成因"——意愿强、供给灵、循环通。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"扩大内需/消费提振"可借用"在变中求进、进中求新"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（生活现象·三问递进）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">在变中求进、进中求新，推动供给及时响应、精准适配、持续升级，才能形成民生改善与经济发展互促共进的良性循环。<br><span style="color:#0d47a1;">▸ 写法：由年货出新现象破题，点明供给响应驱动消费繁荣</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">“新”源何处？源于持续增强的消费意愿与个性化的消费需求。<br><span style="color:#0d47a1;">▸ 写法：需求维度：收入支撑意愿、个性催生升级</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">“新”何以成？供给及时响应、精准适配，才能接住层出不穷的新需求。<br><span style="color:#0d47a1;">▸ 写法：供给维度：灵敏捕捉、快速迭代</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">“新”向何方？坚持做强国内大循环、畅通国内国际双循环，消费才能持续出新。<br><span style="color:#0d47a1;">▸ 写法：方向维度：国内破梗阻、国际促共赢</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】在变中求进、进中求新，推动供给及时响应、精准适配、持续升级，才能形成民生改善与经济发展互促共进的良性循环。</p><p>小变化里往往藏着发展的大逻辑。</p>
+
+<p>春节走亲访友，发现茶几上有了不一样的年货：除了常见的干果炒货，还摆上了进口水果、果汁、巧克力等。</p>
+
+<p>不仅如此。宠物不方便跟着坐飞机，宠物生活馆提供寄养服务；即时配送平台不打烊，人们可以“随时买年货、品年味”。</p>
+
+<p>有形的年货、无形的服务，消费花样出新里，<span class="highlight-gold">浓缩着“小家”的热气腾腾，更折射“大家”的蒸蒸日上</span>。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">“新”源何处？源于持续增强的消费意愿与个性化的消费需求。</span></p>
+
+<p>源于持续增强的消费意愿。消费是收入的函数。<span class="highlight-blue">“十四五”时期，我国居民人均可支配收入年均实际增长5.4%，与经济增长基本同步。</span>持续提高居民收入水平和消费能力，更多新需求将破土而出。</p>
+
+<p>源于个性化的消费需求。老人盼健康，成人重实用，小孩爱新奇，一个个真切而具体的期盼，是获得感日益增强的注脚，也照见消费理念的升级。当前，品质化、个性化、体验感等成为更多消费者的追求。持续完善促消费政策举措，人们对高品质生活的需求逐步释放，将为市场打开更广阔的增长空间。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">“新”何以成？供给及时响应、精准适配，才能接住层出不穷的新需求。</span></p>
+
+<p>当新需求层出不穷，<span class="highlight-blue">供给能否跟上，就成为消费能否“新新”向荣的关键因素</span>。</p>
+
+<p>浙江义乌，当地工厂生产的“哭哭马”，从瑕疵品成为畅销品，折射生产端对需求的敏锐捕捉与灵活调整。以数字技术赋能，线上平台的每一条评价、分享，都能成为调整生产计划的数据支撑。</p>
+
+<p>深圳华强北，以完备的产业链、供应链为支撑，产品得以实现<span class="highlight-green">“上午设计、下午打样、次日量产”</span>。无人机、智能穿戴设备……正是在与市场的密切互动中，产品快速迭代，向着更高技术、更优性能攀登，也更好满足消费需求。</p>
+
+<p><span class="highlight-purple">促进消费既是满足需求的过程，也是创造需求的过程。</span>消费“新新”向荣启示我们，<span class="highlight-blue">紧盯变化，在变中求进、进中求新</span>，推动供给及时响应、精准适配、持续升级，才能形成民生改善与经济发展互促共进的良性循环。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">“新”向何方？坚持做强国内大循环、畅通国内国际双循环，消费才能持续出新。</span></p>
+
+<p>看国内。快递进村成日常，新潮衣物、特色文创、科技产品丰富乡村家庭年货清单；依托直播间，各地特色农产品行销全国……消费“新新”向荣，离不开全国统一大市场建设的纵深推进。持续破梗阻、畅流通、促公平，<span class="highlight-purple">市场之“通”就能更好促进消费之“新”</span>。</p>
+
+<p>看国际。马年春节，不仅有进口年货“走进来”，国潮年货“走出去”亦是新亮点。江苏扬州的包子、山东曹县的汉服……一批批承载着传统文化的国潮年货，不仅成为海外华人寄托乡愁的载体，更成为全球消费者了解中国的窗口。一进一出，释放的是消费潜力，增强的是消费新动能。“坚持在开放发展中分享机遇、实现共赢”，消费才能持续出新。</p>
+
+<p><span class="highlight-purple">越开放，消费就越“新新”向荣，发展道路就越宽广。</span>坚持做强国内大循环、畅通国内国际双循环，这是促进消费、扩大内需的未来所在、方向所在。</p>
+
+<p><span class="highlight-gold">苟日新，日日新，又日新。</span>岁序更替的仪式感，是对一年所获的总结，更是为新的出发蓄力。始终瞄准人民群众对高品质生活的向往，在高质量发展的道路上一步一个脚印、一年接着一年奋进，前行的力量就能永远蓬勃、生生不息。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月26日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>苟日新，日日新，又日新。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"求新"的典籍金句，适配改革创新类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>促进消费既是满足需求的过程，也是创造需求的过程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"消费二重性"的辩证句，适配内需类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>在变中求进、进中求新，推动供给及时响应、精准适配、持续升级。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"供给升级"的规范表述，适配高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>“十四五”时期，我国居民人均可支配收入年均实际增长5.4%，与经济增长基本同步。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"消费意愿支撑"的硬数据，适配民生改善类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>坚持做强国内大循环、畅通国内国际双循环，这是促进消费、扩大内需的未来所在、方向所在。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"双循环"的辩证句，适配开放发展类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">生活现象引题</span><p>以春节年货、宠物寄养、即时配送破题。</p></div><div class="migration-card"><span class="tag-mig">三问递进</span><p>新源何处—新何以成—新向何方。</p></div><div class="migration-card"><span class="tag-mig">供需呼应</span><p>需求升级牵引供给迭代（义乌、华强北）。</p></div><div class="migration-card"><span class="tag-mig">双循环落点</span><p>国内破梗阻 + 国际促共赢。</p></div><div class="migration-card"><span class="tag-mig">典籍升华</span><p>以"苟日新"收束于高品质生活向往。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在变中求进"为题，模仿本文"生活现象引题+新源何处/新何以成/新向何方三问"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①年货出新→②新源何处(意愿需求)→③新何以成(供给响应)→④新向何方(双循环)。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既是……也是……"的句式，表达你对"促进消费"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月26日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
