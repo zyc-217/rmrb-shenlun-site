@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从“完整社区”建设看长远眼光（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从“完整社区”建设看长远眼光（评论员观察）</h1>
+    <div class="meta">完整社区 · 城市更新 · 基层治理 · 长远眼光 · 历史耐心 · 因地制宜 · 民生实事 · 长效机制 · 共建共治 · 以人民为中心 | 2026年2月2日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">完整社区</span><span class="tag-item">城市更新</span><span class="tag-item">基层治理</span><span class="tag-item">长远眼光</span><span class="tag-item">历史耐心</span><span class="tag-item">因地制宜</span><span class="tag-item">民生实事</span><span class="tag-item">长效机制</span><span class="tag-item">共建共治</span><span class="tag-item">以人民为中心</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"什么是完整社区"设问破题，论证"长远眼光"的三重内涵，是"概念引题+三层内涵"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何推进完整社区建设"——实事求是、历史耐心、发展视角三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"长远眼光的内涵"——因地制宜、稳扎稳打、发展视角。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"基层治理/城市更新"可借用"缺什么补什么""螺蛳壳里做道场"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（概念引题·三层内涵）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">长远眼光，意味着实事求是、因地制宜，避免齐步走、一刀切；也意味着保持历史耐心，脚踏实地、稳扎稳打，杜绝只要面子、不顾里子；还意味着要善于用发展视角来思考问题、解决问题。<br><span style="color:#0d47a1;">▸ 写法：由"什么是完整社区"设问，点明长远眼光的三重内涵</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">长远眼光，意味着实事求是、因地制宜，避免齐步走、一刀切。<br><span style="color:#0d47a1;">▸ 写法：方法维度：以南通南川园"居民议事堂"说明问需于民</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">长远眼光，也意味着保持历史耐心，脚踏实地、稳扎稳打，杜绝只要面子、不顾里子。<br><span style="color:#0d47a1;">▸ 写法：耐心维度：以上海旧改笔记、建德"民情日记"说明绵绵用力</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">长远眼光，还意味着要善于用发展视角来思考问题、解决问题。<br><span style="color:#0d47a1;">▸ 写法：发展维度：以海淀"投建运"、江西市场化运作说明长效机制</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】长远眼光，意味着实事求是、因地制宜，避免齐步走、一刀切；也意味着保持历史耐心，脚踏实地、稳扎稳打，杜绝只要面子、不顾里子；还意味着要善于用发展视角来思考问题、解决问题。</p><p>什么是完整社区？“能遛娃健身，也能看书购物”“公园、超市、医院等一应俱全”“步行15分钟就能解决大部分日常所需”……不同的人，或许会给出不同的答案，但社区服务设施的便利度、生活环境的舒适度不断提升，是共同的评判标准。</p>
+
+<p>便利度、舒适度因何而提升？买菜不方便，就统筹增设便捷菜店；没地方充电，就协调新建汽车充电设施；公共活动空间匮乏，就盘活存量、改造闲置场地。不少地方既坚持“缺什么补什么”，也放眼长远、注重可持续，让服务和资源延伸到居民家门口，推动更多单一社区向完整社区转变。从中，能感悟何为“长远眼光”。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">长远眼光，意味着实事求是、因地制宜，避免齐步走、一刀切。</span></p>
+
+<p>江苏南通南川园社区，近七成居民楼为2000年之前建成，设施配套不足、公共活动空间匮乏，怎么办？当地没有照搬照抄别地现成经验，而是通过“设计师进社区”“居民议事堂”“板凳会议”等形式，让居民参与社区建设策划，从痛点中找解题思路，补齐社区建设短板。<span class="highlight-blue">正是因为尊重实际、问需于民，改造既解决了老问题，又没有造成新负担</span>。</p>
+
+<p>城市更新建设中，每个社区都不是“标准件”，不能用一个模子去套。不同片区不同情况，历史街区有历史街区的肌理，新建社区有新建社区的条件。摸清家底、找准问题、开对方子，才能把好钢用在刀刃上，把有限资源用到群众最需要的地方。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">长远眼光，也意味着保持历史耐心，脚踏实地、稳扎稳打，杜绝只要面子、不顾里子。</span></p>
+
+<p>两摞笔记本，照见一茬接着一茬干的定力。一摞是旧区改造笔记本。上海静安彭浦新村街道的干部须炳荣，2005年就投身旧区改造工作，项目改造的难点痛点、居民反映的问题诉求，记满了10余本笔记。30余年接力攻坚，上海下足<span class="highlight-gold">“螺蛳壳里做道场”</span>的绣花功夫，让市民彻底告别“拎马桶”。</p>
+
+<p>一摞是“民情日记”。浙江建德寿昌镇望江社区，社区干部走街串户时，总会带上一个笔记本，记录社区里的大事小情。10多年来，社区干部记了近30本厚厚的“民情日记”，帮群众解决了一件又一件难事、急事、烦心事。</p>
+
+<p>群众的获得感，是在一点一滴的变化中累积起来的。民生实事，件件都要真抓实干，项项都要绵绵用力。<span class="highlight-purple">一张蓝图绘到底、一锤接着一锤敲，才能让发展成果经得起时间的检验、群众的检验</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">长远眼光，还意味着要善于用发展视角来思考问题、解决问题。</span></p>
+
+<p>完整社区建设中，设施建起来只是第一步，让设施用得好、可持续是必须重视起来的“下半篇文章”。北京海淀采用“投建运”一体化改造模式，引导企业提供长期的运营服务；江西推进市场化运作，引导经营主体通过“产权与使用权分离”“低偿+公益+市场”等模式参与建设。既立足当下，解决群众最急迫、最需要解决的实际问题，也着眼未来，构建多元参与的长效机制，工作才能立得住、站得稳、可持续。</p>
+
+<p>有什么样的眼光，就会有什么样的行动。<span class="highlight-gold">因地制宜谋发展、久久为功补短板、建好机制促长效</span>，建设完整社区需要这样做，干好其他工作，亦当如此。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月2日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>一张蓝图绘到底、一锤接着一锤敲，才能让发展成果经得起时间的检验、群众的检验。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"久久为功"的实干金句，适配基层治理类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>坚持"缺什么补什么"，也放眼长远、注重可持续，让服务和资源延伸到居民家门口。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"补短板"的规范表述，适配民生实事类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>上海下足"螺蛳壳里做道场"的绣花功夫，让市民彻底告别"拎马桶"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"精细治理"的生动金句，适配城市更新类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>因地制宜谋发展、久久为功补短板、建好机制促长效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"方法与耐心"的辩证句，适配长效机制类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>群众的获得感，是在一点一滴的变化中累积起来的。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生实效"的收束金句，适配以人民为中心类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">概念引题</span><p>以"什么是完整社区"设问，引出长远眼光主题。</p></div><div class="migration-card"><span class="tag-mig">三层内涵</span><p>实事求是—历史耐心—发展视角，系统拆解长远眼光。</p></div><div class="migration-card"><span class="tag-mig">案例具象</span><p>南通议事堂、上海旧改笔记、建德民情日记、海淀投建运。</p></div><div class="migration-card"><span class="tag-mig">由点到面</span><p>从完整社区引申至"干好其他工作亦当如此"。</p></div><div class="migration-card"><span class="tag-mig">绣花隐喻</span><p>以"螺蛳壳里做道场"收束于精细与长效。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"基层治理需要长远眼光"为题，模仿本文"概念引题+三层内涵"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①什么是完整社区设问→②实事求是因地制宜→③历史耐心稳扎稳打→④发展视角长效机制。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既……也……"的句式，表达你对"立足当下与着眼未来"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
