@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 向新而行，以远见超越未见（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>向新而行，以远见超越未见（评论员观察）</h1>
+    <div class="meta">战略思维 · 未来产业 · 新质生产力 · 科技创新 · 高水平科技自立自强 · 实体经济 · 流量与质量 · 冗余布局 · 高质量发展 · 中国式现代化 | 2026年3月19日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">战略思维</span><span class="tag-item">未来产业</span><span class="tag-item">新质生产力</span><span class="tag-item">科技创新</span><span class="tag-item">高水平科技自立自强</span><span class="tag-item">实体经济</span><span class="tag-item">流量与质量</span><span class="tag-item">冗余布局</span><span class="tag-item">高质量发展</span><span class="tag-item">中国式现代化</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以比亚迪刀片电池、人形机器人现象破题，从"把握好虚与实、统筹好流量与质量、平衡好稀缺与冗余"三对关系，论证以战略思维布局未来产业，是"现象+三对关系"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何增强战略思维布局未来产业"——虚实结合、流量化质、适度超前。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"增强战略思维的方法"——虚与实、流量与质量、稀缺与冗余。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"科技创新/未来产业"可借用"以远见超越未见"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·三对关系）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">大党、大国，要善于运用战略思维。“要胸怀全局、登高望远，在战略上保持定力，在战术上精心运筹，不断增强我国发展的确定性和可持续性。”习近平总书记在“开年第一课”上的重要讲话，为我们提供了重要启示。<br><span style="color:#0d47a1;">▸ 写法：由创新现象破题，点明战略思维的重要性</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">把握好虚与实，才能锁定“潜力股”。<br><span style="color:#0d47a1;">▸ 写法：虚实维度：实体经济为根基、实打实积累</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">统筹好流量与质量，才能提升竞争力。<br><span style="color:#0d47a1;">▸ 写法：流量维度：流量转化为增量</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">平衡好稀缺与冗余，才能打开想象力。<br><span style="color:#0d47a1;">▸ 写法：冗余维度：适度超前、留足空间</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】大党、大国，要善于运用战略思维。“要胸怀全局、登高望远，在战略上保持定力，在战术上精心运筹，不断增强我国发展的确定性和可持续性。”习近平总书记在“开年第一课”上的重要讲话，为我们提供了重要启示。</p><p>能把握多么厚重的历史，就能看到多么久远的未来；有丰富与曲折的经历，便更知向新、革新、创新的意义。</p>
+
+<p>不久前，比亚迪发布第二代刀片电池和兆瓦闪充技术，以<span class="highlight-green">“常温充电：5分钟充好、9分钟充饱”</span>的充电效率震撼业界。中国电池技术的快速迭代与跃升令人鼓舞，也引人深思。</p>
+
+<p>由此联想到此前德国总理默茨率团访华，中国机器人企业是参观的重要一站。人形机器人，如今已成为科技创新和国际合作的前沿领域。</p>
+
+<p>两个现象指向同一个值得思考的问题：如何超越视野的局限性，布局未来产业，把握发展主动权？</p>
+
+<p>从三对关系里，能更好领会如何增强战略思维、下好“先手棋”。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">把握好虚与实，才能锁定“潜力股”。</span></p>
+
+<p>回想中国高铁建设高峰期，也有声音质疑“高铁泡沫”“债务危机”。然而，“十四五”时期，国铁集团资产总额<span class="highlight-green">由8.7万亿元增加到10.2万亿元，运输收入增长56.8%，资产负债率降低3.1个百分点</span>。高铁网带来的便利性，中外旅客有口皆碑。<span class="highlight-purple">实打实的技术创新、物质积累、人才沉淀，终会“百炼成钢”。</span></p>
+
+<p>从强调“实体经济是国民经济的根基所在”，到要求金融“必须守好服务实体经济本分”，一个“实”字，道出高质量发展的内核。中国式现代化，民生为大。所有规划都以“实”为基，以人民为中心，“追求实实在在、没有水分的增长”。<span class="highlight-blue">坚持投资于物与投资于人紧密结合，中国创新就掺不进水分、烧不起虚火，定能一步一个脚印扎实往前走。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">统筹好流量与质量，才能提升竞争力。</span></p>
+
+<p>如今舆论场也有一种倾向，容易把网络流量和创新质量对立起来，仿佛曝光度高的创新就一定是搞噱头。实际上，与市场紧密联系的科技创新，初期往往需要通过提升关注度来获取资源。国产新能源汽车发展之初，也曾被嘲讽为“PPT造车”“只会讲故事”。如今看，恰是“好故事”带来的大流量，引来资金、人才等重要资源。<span class="highlight-purple">可见，不能把获取流量与过度营销、炒作圈钱简单画等号。只要踏踏实实做事，流量也能转化为增量。</span></p>
+
+<p>市场经济是信心经济。新兴产业、未来产业，某种程度上也是信心产业。大家理性讨论、共同支持，“一步一步坚定走，一个阶段一个阶段向前推进”，再困难的事情也能做成。<span class="highlight-purple">以流量聚能量，以能量促质量，以质量引流量，这样的闭环实现的又怎么不是供需互促的高水平动态平衡？</span>始终葆有信心、保持乐观，务实解决问题，发展的空间不可限量。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">平衡好稀缺与冗余，才能打开想象力。</span></p>
+
+<p>普通创新是为了缓解当下供给短缺，而勇闯“无人区”，往往还看不到需求，是要通过新供给刺激新需求，因此有赖于今天的适度超前，为明天留出冗余。<span class="highlight-green">2025年，我国全社会用电量突破10万亿千瓦时，在全球单一国家中尚属首次</span>。当人工智能时代来临，算力成为新底座，决定算力的电力成为“硬通货”。<span class="highlight-purple">谁能想到，中国一直以来适度超前建设的强大电力供应体系，竟成为发展人工智能、数字经济的巨大优势和坚实依托。</span></p>
+
+<p>从开局之年中央政治局首次集体学习聚焦未来产业发展，到“十五五”规划纲要对加快高水平科技自立自强作出系统布局，很少有哪个国家像中国这样，始终以眺望的姿态面向未来，为创新发展留出如此广阔的空间、如此充分的冗余。</p>
+
+<p>有海外网友发问，中国何以散发出既古老又年轻的气质与魅力？原因无他，能把握多么厚重的历史，就能看到多么久远的未来；有丰富与曲折的经历，便更知向新、革新、创新的意义。中国共产党团结带领亿万人民，善于把时间作为发展的空间，以远见超越未见，在浩瀚的“时间历史”中创造壮丽的“历史时间”。</p>
+
+<p><span class="highlight-gold">向新而行、一往无前，新时代中国还将涌现更多创新成果。这不是偶然，而是必然。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月19日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>能把握多么厚重的历史，就能看到多么久远的未来；有丰富与曲折的经历，便更知向新、革新、创新的意义。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"历史与未来"的升华金句，适配战略远见类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>向新而行、一往无前，新时代中国还将涌现更多创新成果。这不是偶然，而是必然。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新必然"的收束金句，适配科技自立类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>常温充电5分钟充好、9分钟充饱；国铁资产8.7万亿增至10.2万亿、收入+56.8%、负债率-3.1个百分点；2025全社会用电量破10万亿千瓦时。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新跃升"的硬数据，适配新质生产力类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>实体经济是国民经济的根基所在；坚持投资于物与投资于人紧密结合。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"实体经济根基"的规范表述，适配高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>不能把获取流量与过度营销、炒作圈钱简单画等号。只要踏踏实实做事，流量也能转化为增量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"流量与质量"的辩证句，适配创新舆论类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象引题</span><p>比亚迪刀片电池、默茨访华看机器人。</p></div><div class="migration-card"><span class="tag-mig">三对关系</span><p>虚与实—流量与质量—稀缺与冗余。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>5分钟充电、10.2万亿资产、10万亿千瓦时用电。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>中国高铁、国产新能源汽车、电力体系。</p></div><div class="migration-card"><span class="tag-mig">远见落点</span><p>以"以远见超越未见"收束于战略思维。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以远见超越未见"为题，模仿本文"现象引题+虚与实/流量与质量/稀缺与冗余三对关系"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①创新现象→②虚与实→③流量与质量→④稀缺与冗余。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不能……只要……"的句式，表达你对"流量与质量"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月19日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
