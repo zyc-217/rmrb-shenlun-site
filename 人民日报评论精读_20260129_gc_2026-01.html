@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 今天读的每一页，都在投资未来（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>今天读的每一页，都在投资未来（评论员观察）</h1>
+    <div class="meta">全民阅读 · 文化自信 · 学习型社会 · 知识赋能 · 精神文明建设 · 教育公平 · 认知突围 · 书香中国 · 终身学习 · 文化强国 | 2026年1月29日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">全民阅读</span><span class="tag-item">文化自信</span><span class="tag-item">学习型社会</span><span class="tag-item">知识赋能</span><span class="tag-item">精神文明建设</span><span class="tag-item">教育公平</span><span class="tag-item">认知突围</span><span class="tag-item">书香中国</span><span class="tag-item">终身学习</span><span class="tag-item">文化强国</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"图书馆/图书大厦"两个生活场景破题，论证"阅读投资未来"的多重价值，是"场景引题+分层递进"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何建设书香社会"——载体可变、信念不变、形式不拘三条。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"阅读学习的价值"——挣脱茧房、思想破壁、投资未来。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"全民阅读/学习型社会"可借用"开卷有益""投资未来"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（场景引题·三层递进）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">阅读、知识、信息与技能，在以前所未有的速度普及、扩散、重组，获取知识的门槛更低了，受益人群也更广了。<br><span style="color:#0d47a1;">▸ 写法：由两个生活场景破题，点明阅读普及的时代特征</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">学习知识，在不同年代有不同方式，但变的只是载体，不变的是开卷有益的信念。<br><span style="color:#0d47a1;">▸ 写法：信念维度：以《新青年》、扫盲、在线教育说明载体变信念不变</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">阅读学习带来的不仅是心情的愉悦、精神的放松，更有思想的破壁、认知的突围。<br><span style="color:#0d47a1;">▸ 写法：认知维度：以苏轼"得吾心"、夜校宝妈、骑手小哥说明蜕变</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">真正的阅读与学习，不在于形式，而在于内心的触动、恒久的坚持。<br><span style="color:#0d47a1;">▸ 写法：本质维度：以辩证看待碎片化阅读，落脚"投资未来"</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】阅读、知识、信息与技能，在以前所未有的速度普及、扩散、重组，获取知识的门槛更低了，受益人群也更广了。</p><p>关于学习，近来的两个场景让人难忘。</p>
+
+<p>一次与朋友同去国家图书馆。正逢周末，馆内座无虚席。看着沉浸于阅读的人们，转了几圈没找到座位的朋友，羡慕且感慨。</p>
+
+<p>开车到北京西单，小朋友提议去北京图书大厦看书。原来，家人买书时曾领她在里面看过绘本。海量阅读、亲子陪读，就这样成了图书大厦的代名词。</p>
+
+<p>今天，全民阅读已蔚然成风。数据显示：2024年，全国公共图书馆到馆人次比5年前增加4.4亿，增长49%。泡图书馆、逛书店成为时尚，好学乐学之风氤氲开来，文化建设加速提质。阅读学习在灵魂深处点燃思想的火花，助力个体奋发向上，也助力国家和社会欣欣向荣。</p>
+
+<p>《新青年》激励一代青年，扫盲运动让无数人学会写字算账，在线教育让偏远山区孩子共享优质课程，“读书博主”用视频分享阅读心得……</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">学习知识，在不同年代有不同方式，但变的只是载体，不变的是开卷有益的信念。</span></p>
+
+<p>这种信念，让个体勇于挣脱命运的茧房。2025年，平凡日子中的一些书香场景，击中人心：“沂蒙二姐”吕玉霞，把农人的勤奋融入创作、把生活的美意写成诗篇，揉进文字里的希望在发芽生长；“工地大叔”刘诗利，身沾尘土也不忘闲时读书，就是为了“把自己弄得好一点”。阅读学习，或许不会立刻改变处境，却能悄然改变眼界。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">进一步看，阅读学习带来的不仅是心情的愉悦、精神的放松，更有思想的破壁、认知的突围。</span></p>
+
+<p>苏轼读《庄子》后说，“吾昔有见，口未能言，今见是书，得吾心矣。”那一刻的“得吾心”，让他豁然开朗。如今，下班后的“夜校充电”、彼此间的“技能互换”，丰富了读的形式、拓宽了学的边界。上夜校的“宝妈”高生红感叹，学习是“找回自己”的过程；骑手小哥段志军学习无人机操作后，发现无人机配送操作职业的潜力空间很大，打算考取专业资质。蜕变，往往就始于踏入课堂、展卷于手的瞬间。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">真正的阅读与学习，不在于形式，而在于内心的触动、恒久的坚持。</span></p>
+
+<p>智慧时代，不缺信息，缺的是将信息和知识融会贯通的能力。电子书、短视频、播客、线上共读会……阅读学习形态不断更新，有人担忧碎片化阅读、速成式培训会削弱深度思考。但辩证地看，阅读、知识、信息与技能，在以前所未有的速度普及、扩散、重组，获取知识的门槛更低了，受益人群也更广了。当人们放下书本、关上网页时，如果感觉自己的内在丰富了、外部的世界多彩了，恰恰说明读进去了。承载知识与技能的介质无论如何变化，<span class="highlight-gold">今天读过的每一页，其实都是在投资未来</span>。</p>
+
+<p>甘肃敦煌莫高窟有一个现象，不同历史时期的艺术家，往往会在前人创作壁画基础上，用自己的笔触再绘新作。彩绘的涂层，犹如历史的层叠，让壁画成为一本厚重的书，无形中串联并延展着文明长卷。如今，研究人员用数智化手段保护、解读、呈现壁画时，仿佛还能听见千余年前洞窟里的凿石声、书卷里的诵读声。<span class="highlight-purple">跨越时空的对话，正是文明绵延的密码</span>。我们之所以能不断前行，正是因为始终有人愿意沉下来，接过前人担子，创造再创造、奋斗再奋斗。</p>
+
+<p>诗书飘香，繁花芬芳。不妨在阅读中激荡思想活力、生活智慧，毕竟，<span class="highlight-gold">学习的动力来自相信更好的答案藏在下一页</span>。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月29日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>今天读过的每一页，其实都是在投资未来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"阅读价值"的点睛金句，适配终身学习、知识赋能类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>阅读、知识、信息与技能，在以前所未有的速度普及、扩散、重组，获取知识的门槛更低了，受益人群也更广了。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"知识普及"的时代判断，适配学习型社会类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>这种信念，让个体勇于挣脱命运的茧房。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"阅读改变命运"的生动金句，适配教育公平类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>跨越时空的对话，正是文明绵延的密码。我们之所以能不断前行，正是因为始终有人愿意沉下来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"文明传承"的辩证句，适配文化自信类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>学习的动力来自相信更好的答案藏在下一页。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"学习动力"的收束金句，适配读书励志类结尾</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">场景破题</span><p>以"图书馆满座/图书大厦亲子"两个生活场景引出阅读主题。</p></div><div class="migration-card"><span class="tag-mig">历史纵深</span><p>从《新青年》、扫盲到在线教育，说明载体变信念不变。</p></div><div class="migration-card"><span class="tag-mig">由个体到文明</span><p>从挣脱茧房、思想破壁，升华至文明绵延的密码。</p></div><div class="migration-card"><span class="tag-mig">辩证收束</span><p>辩证看待碎片化阅读，落脚"不在形式在内心触动"。</p></div><div class="migration-card"><span class="tag-mig">价值升华</span><p>以"投资未来""答案在下一页"收束于终身学习。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"今天读的每一页，都在投资未来"为题，模仿本文"场景引题+三层递进"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①图书馆/图书大厦场景→②载体变信念不变→③思想破壁认知突围→④不在形式在内心触动。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不在于……而在于……"的句式，表达你对"阅读本质"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月29日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
