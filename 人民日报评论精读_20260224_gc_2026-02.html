@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “向上攀高”的潜力从何而来（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“向上攀高”的潜力从何而来（评论员观察）</h1>
+    <div class="meta">区域发展 · 因地制宜 · 优势互补 · 补短板 · 锻长板 · 育新板 · 协同效应 · 县域经济 · 新兴产业 · 高质量发展 | 2026年2月24日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">区域发展</span><span class="tag-item">因地制宜</span><span class="tag-item">优势互补</span><span class="tag-item">补短板</span><span class="tag-item">锻长板</span><span class="tag-item">育新板</span><span class="tag-item">协同效应</span><span class="tag-item">县域经济</span><span class="tag-item">新兴产业</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以首都都市圈规划与博罗"千亿县"两则新闻破题，从补短板、锻长板、育新板三维度论证区域潜力，是"双案例引题+三层递进"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何挖掘区域发展新潜力"——补短板、锻长板、育新板三策并举。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"区域发展潜力的来源"——薄弱处、比较优势、新赛道。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"区域协调发展/高质量发展"可借用"洼地变高地""1+1>2协同效应"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（双案例引题·三层潜力）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">挖掘区域发展潜力、实现"向上攀高"，要在补短板、锻长板、育新板上下功夫，说到底要坚持因地制宜，让各区域各展其长、优势互补、协同共进。<br><span style="color:#0d47a1;">▸ 写法：由南北两则区域新闻破题，点明潜力三大来源</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">潜力，来自补短板。越是发展的薄弱处，越蕴藏着增长的潜力。<br><span style="color:#0d47a1;">▸ 写法：补短板维度：瞄准最短板、集中力量突破</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">潜力，来自锻长板。将比较优势转化为竞争优势，才能占据有利地位。<br><span style="color:#0d47a1;">▸ 写法：锻长板维度：打破壁垒、畅通循环放大优势</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">潜力，来自育新板。新技术新业态新模式，是区域发展的增量空间。<br><span style="color:#0d47a1;">▸ 写法：育新板维度：找准赛道、久久为功开辟蓝海</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】挖掘区域发展潜力、实现“向上攀高”，要在补短板、锻长板、育新板上下功夫，说到底要坚持因地制宜，让各区域各展其长、优势互补、协同共进。</p><p>越是发展的薄弱处，越蕴藏着增长的潜力。<span class="highlight-gold">找准“最短板”、集中力量突破，“洼地”也能变成“高地”</span>。</p>
+
+<p>立足家底、放大优势，破除要素流动的堵点，<span class="highlight-purple">“1+1&gt;2”的协同效应就会越来越强</span>。</p>
+
+<p>观察中国区域发展，近期的两则新闻耐人寻味。</p>
+
+<p>《现代化首都都市圈空间协同规划（2023—2035年）》提出构建“一核两翼、双城多点、双廊多圈”的空间格局，将北京的核心功能优势转化为对周边地区的辐射带动能力。</p>
+
+<p>广东博罗县成为省内首个“千亿县”，广东“百县千镇万村高质量发展工程”结出硕果。</p>
+
+<p>一北一南，一个着眼于“大”，以跨省域协同打造区域高质量发展增长极；一个聚焦于“小”，以县域经济为抓手，促进区域协调发展。<span class="highlight-blue">看似维度不同，实则指向一个共同命题：如何挖掘区域发展潜力，实现“向上攀高”？</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">潜力，来自补短板。</span></p>
+
+<p>广东有强市、强区、强镇，却长期缺少强县。对博罗县而言，曾经不强的一个原因在于粗放发展。早年通过引进“三来一补”，确实吃到了不少红利，但粗放发展也导致产业“小散弱”，缺乏后劲。博罗县正是瞄准这块短板找到了突破口：前瞻性布局电子信息、新能源等产业，建设千亿级智能装备产业园。如今，当地8个百亿级产业集群拔地而起。从“撒胡椒面”式的零散招商，升级为“聚链成群”的系统布局，思想转弯促发展转型。</p>
+
+<p>博罗县的蜕变并非孤例。“百县千镇万村高质量发展工程”启动以来，<span class="highlight-green">57个县（市）生产总值近3年年均增速快于全省</span>。<span class="highlight-gold">实践证明，越是发展的薄弱处，越蕴藏着增长的潜力。</span>找准“最短板”、集中力量突破，“洼地”也能变成“高地”。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">潜力，来自锻长板。</span></p>
+
+<p><span class="highlight-blue">优势是发展的“本钱”，将比较优势转化为竞争优势</span>，才能在产业分工中持续占据有利地位。在长三角，4小时车程内就能解决新能源汽车全部配套零部件供应。正是这条跨越4省市的产业链深度咬合，让长三角新能源汽车产业的整体优势不断放大，在全球竞争中抢占先机。</p>
+
+<p>锻长板的关键，在于打破壁垒、畅通循环。川渝高竹新区统一79项税费政策，省际交界从“边缘地带”变为“合作前沿”；京津冀联合发布产业协同发展倡议，共育世界级产业大集群。<span class="highlight-purple">立足家底、放大优势，破除要素流动的堵点</span>，“1+1&gt;2”的协同效应就会越来越强。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">潜力，来自育新板。</span></p>
+
+<p>新技术、新产业、新业态、新模式，是区域发展的增量空间所在。山东曹县，曾是依赖劳务输出的传统农业县。谁能想到，一件汉服竟改写了它的命运。瞄准这条细分赛道，当地构建起从设计、生产到电商销售的完整产业链，在乡间田野上“长”出中国最大的原创汉服产业集群，<span class="highlight-green">2025年汉服销售额突破130亿元</span>。一件汉服，让一个农业县蝶变为产业新城。</p>
+
+<p>安徽芜湖10余年深耕通用航空，从一片荒芜丘岗起步，<span class="highlight-green">集聚200余家上下游企业</span>；粤港澳大湾区人工智能、生物医药等新兴产业一个又一个登上全国高地，形成“超级集群”……育新板，关键在于找准赛道、久久为功，让新产业成为驱动区域发展的新增量。</p>
+
+<p>无论是补短、锻长，还是育新，说到底都要坚持因地制宜。<span class="highlight-blue">各区域不能一味跟风、简单模仿，要看清楚自己的优势在哪里，怎么取长补短、怎么扬长避短。</span><span class="highlight-purple">宜工则工、宜农则农、宜商则商、宜游则游，找准自身定位</span>，才能把潜力真正转化为实力。</p>
+
+<p><span class="highlight-purple">以补短夯实底盘、以锻长放大优势、以育新开辟蓝海</span>，当各个区域各展其长、优势互补，高质量发展的区域经济布局将更加协调、更富活力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月24日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>越是发展的薄弱处，越蕴藏着增长的潜力。找准“最短板”、集中力量突破，“洼地”也能变成“高地”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"短板即潜力"的辩证金句，适配区域发展类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>立足家底、放大优势，破除要素流动的堵点，“1+1&gt;2”的协同效应就会越来越强。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"区域协同"的规范表述，适配协调发展类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>57个县（市）生产总值近3年年均增速快于全省；山东曹县2025年汉服销售额突破130亿元。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"补短板育新板成效"的硬数据，适配县域经济类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>宜工则工、宜农则农、宜商则商、宜游则游，找准自身定位，才能把潜力真正转化为实力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"因地制宜"的辩证句，适配差异化发展类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>以补短夯实底盘、以锻长放大优势、以育新开辟蓝海，当各个区域各展其长、优势互补。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"区域潜力转化"的收束金句，适配高质量发展类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">双案例引题</span><p>首都都市圈规划 + 博罗千亿县，一北一南破题。</p></div><div class="migration-card"><span class="tag-mig">三层展开</span><p>补短板—锻长板—育新板，三维度递进。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>长三角产业链、川渝高竹新区、曹县汉服、芜湖通航多层例证。</p></div><div class="migration-card"><span class="tag-mig">数据支撑</span><p>57县增速、130亿汉服销售额等硬数据。</p></div><div class="migration-card"><span class="tag-mig">因地制宜落点</span><p>以"宜工则工、宜农则农"收束于优势互补。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"把潜力转化为实力"为题，模仿本文"双案例引题+补短板锻长板育新板三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①南北两案例→②补短板洼地变高地→③锻长板协同放大优势→④育新板开辟蓝海。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"越是……越……"的句式，表达你对"薄弱环节蕴藏潜力"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月24日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
