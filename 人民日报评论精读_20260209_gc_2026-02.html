@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “柔”的智慧与“韧”的力量（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“柔”的智慧与“韧”的力量（评论员观察）</h1>
+    <div class="meta">柔性生产 · 新质生产力 · 高质量发展 · 产业链韧性 · 因地制宜 · 区域经济 · 社会治理 · 传统文化创造性转化 · 中国式现代化 · 涉企服务 | 2026年2月9日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">柔性生产</span><span class="tag-item">新质生产力</span><span class="tag-item">高质量发展</span><span class="tag-item">产业链韧性</span><span class="tag-item">因地制宜</span><span class="tag-item">区域经济</span><span class="tag-item">社会治理</span><span class="tag-item">传统文化创造性转化</span><span class="tag-item">中国式现代化</span><span class="tag-item">涉企服务</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以义乌"哭哭马"新闻破题，论证"柔性"在产业、区域、治理三层的能力，是"新闻故事+三层递进"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何提升经济韧性"——柔性生产、精准赋能、柔性治理三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"柔性能力的表现"——产业适配、区域灵活、治理包容。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"高质量发展/产业链韧性"可借用"因势而变、柔韧合一"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（新闻故事·三层柔性）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">小小"哭哭马"折射供给端对需求端的快速响应，映照成熟的产业链生态。这种因势而变、柔韧合一的"柔性"能力，正是中国经济竞争力的基底，也给推动高质量发展带来启示。<br><span style="color:#0d47a1;">▸ 写法：由义乌哭哭马新闻破题，点明柔性能力的时代价值</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">“柔性”的关键是以变应变，用弹性供给对接多元需求，提升产业韧性。<br><span style="color:#0d47a1;">▸ 写法：产业维度：以柔性生产对接多元需求、提升产业韧性</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">“柔性”的特点是精准赋能、灵活适配。<br><span style="color:#0d47a1;">▸ 写法：区域维度：以因地制宜、因势利导提升区域经济韧性</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">“柔性”不仅适用于企业管理、产业发展，也有益于社会治理。<br><span style="color:#0d47a1;">▸ 写法：治理维度：以柔性执法、柔性引才平衡法治与灵活</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】小小“哭哭马”折射供给端对需求端的快速响应，映照成熟的产业链生态。这种因势而变、柔韧合一的“柔性”能力，正是中国经济竞争力的基底，也给推动高质量发展带来启示。</p><p>春节临近，因工人误把毛绒玩偶嘴角缝反，浙江义乌制造的“笑脸小马”变成委屈巴巴的“哭哭马”，却在网上意外走红。敏锐捕捉到网友的反馈，当地厂商迅速调整策略，将“错版马”转化为热销品，还申请了外观专利。</p>
+
+<p>故事还没结束。厂商短时间内调整生产线，从2条扩至10多条，满负荷运转仍供不应求；老板一句“弄错的工人还没找到，先给所有员工发奖金”，既化解了失误的尴尬，更展现出对市场信号的精准把握。</p>
+
+<p>小小“哭哭马”，折射供给端对需求端的快速响应，映照义乌成熟的产业链生态。这种因势而变、柔韧合一的能力，正是中国经济竞争力的基底，也给推动高质量发展带来启示。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">“柔性”的关键是以变应变，用弹性供给对接多元需求，提升产业韧性。</span></p>
+
+<p>柔性生产，打通消费端与生产端，兼顾规模制造的高效率与个性定制的精准性，<span class="highlight-gold">“微创新、小批量、快迭代”成为亮点</span>。AI眼镜、太阳能风扇帽、喷水雾防晒伞等快速出圈，正是柔性生产重构产业逻辑的生动体现。<span class="highlight-blue">建立“用户需求—智能设计—柔性生产”全链条数字化体系</span>，将助力中国制造既保有规模优势，更具备品质长板。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">“柔性”的特点是精准赋能、灵活适配。</span></p>
+
+<p>不搞“一刀切”，而是因地制宜、因势利导，有利于提升区域经济韧性。针对小型外贸企业小批量、多批次、多品种的海关报关需求，为义乌量身定制市场采购贸易方式。企业报关商品品类超过5种，即可选择简化申报，成就了<span class="highlight-green">“单个集装箱能集拼多样商品”的便利</span>。上海推动“信用+风险”分级分类监管，对信用好的企业、风险低的事项最大限度减少现场检查频次，让经营主体不再为“多头检查、重复检查”烦恼。在守住底线前提下为经营主体松绑赋能，有效提升了经济韧性和发展效能。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">“柔性”不仅适用于企业管理、产业发展，也有益于社会治理。</span></p>
+
+<p>吉林辽源市，一边新改造停车场，一边以教育劝导为主进行柔性执法，破解大货车停车难题，实现秩序与效率双赢；宁夏，不追求人才隶属关系，而是聚焦于智力服务本身，依托技术指导、学术交流、项目合作等形式开展柔性引才，推动<span class="highlight-green">819名特聘专家成果加速转化</span>，并吸引更多本地发展急需的智力资源。<span class="highlight-purple">平衡好法治的稳定性与政策的灵活性</span>，才能更好实现治理的现代化。</p>
+
+<p>《道德经》有言“天下莫柔弱于水，而攻坚强者莫之能胜”，揭示“柔”中蕴含的持久力量；《周易》贵“变”，强调“穷则变，变则通，通则久”……今日中国经济社会治理中呈现的柔性，体现着中华优秀传统文化在当代的<span class="highlight-blue">创造性转化与创新性发展</span>。运用这种东方智慧，从车间里的柔性生产，到制度上的精准赋能，再到区域协调发展的协同联动，我们不断增强产业体系的<span class="highlight-purple">适应性、包容性、抗压性</span>，进而不断增强发展的韧性和适应性。</p>
+
+<p>中国人爱竹，钟爱这份<span class="highlight-gold">“千磨万击还坚劲，任尔东西南北风”</span>的柔韧。真正的强大，不是固步自封，而是因时而变的从容适配。<span class="highlight-purple">以柔性拥抱多元、以开放成就共赢</span>，中国经济将穿越周期，始终充满活力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月9日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>“千磨万击还坚劲，任尔东西南北风”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"柔韧品格"的诗句金句，适配韧性成长类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>真正的强大，不是固步自封，而是因时而变的从容适配。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"强大本质"的辩证句，适配改革发展类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>建立“用户需求—智能设计—柔性生产”全链条数字化体系，将助力中国制造既保有规模优势，更具备品质长板。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"柔性生产"的规范表述，适配产业升级类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>AI眼镜、太阳能风扇帽、喷水雾防晒伞等快速出圈，正是柔性生产重构产业逻辑的生动体现。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"柔性生产案例"的具象素材，适配新质生产力类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>《道德经》有言“天下莫柔弱于水，而攻坚强者莫之能胜”，揭示“柔”中蕴含的持久力量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"柔中带刚"的辩证金句，适配传统文化现代化类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">案例引题</span><p>以义乌"哭哭马"意外走红的新闻破题，引出柔性能力。</p></div><div class="migration-card"><span class="tag-mig">三层展开</span><p>产业柔性—区域柔性—治理柔性，三层递进。</p></div><div class="migration-card"><span class="tag-mig">古今贯通</span><p>以《道德经》《周易》升华东方柔性智慧。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>AI眼镜、义乌海关、辽源停车、宁夏引才多层例证。</p></div><div class="migration-card"><span class="tag-mig">价值升华</span><p>以"以柔性拥抱多元、以开放成就共赢"收束于中国经济韧性。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以柔克刚的治理智慧"为题，模仿本文"新闻故事引题+三层递进"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①义乌哭哭马故事→②产业柔性对接多元需求→③区域柔性因地制宜→④治理柔性平衡法治与灵活。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"真正强大"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月9日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
