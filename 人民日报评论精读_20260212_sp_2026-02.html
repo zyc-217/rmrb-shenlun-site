@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 破立并举抓减负（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>破立并举抓减负（人民时评）</h1>
+    <div class="meta">基层减负 · 形式主义 · 破立辩证 · 系统思维 · 精准思维 · 数字政府 · 作风建设 · 基层治理 · 放管服 · 效果导向 | 2026年2月12日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层减负</span><span class="tag-item">形式主义</span><span class="tag-item">破立辩证</span><span class="tag-item">系统思维</span><span class="tag-item">精准思维</span><span class="tag-item">数字政府</span><span class="tag-item">作风建设</span><span class="tag-item">基层治理</span><span class="tag-item">放管服</span><span class="tag-item">效果导向</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"该立的立起来、该破的及时破"金句破题，论证减负中精准、系统、效果三重思维，是"金句引题+三层启示"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何为基层减负"——精准破立、系统施治、效果导向三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"破立并举的方法"——分清破立、系统思维、真减负。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"作风建设/基层治理"可借用"按下葫芦起了瓢""打地鼠式减负"等形象表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（金句引题·三重思维）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">“该立的积极主动立起来，该破的在立的基础上及时破”，坚持破和立的辩证统一，也是整治形式主义为基层减负的重要方法。<br><span style="color:#0d47a1;">▸ 写法：由破立辩证金句破题，点明减负的方法论</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">什么要坚决地破，什么该大胆地立，考验精准思维。<br><span style="color:#0d47a1;">▸ 写法：精准思维：分清楚该破与该立</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">减负是个系统工程，不能只顾一点不及其余，要有系统思维。<br><span style="color:#0d47a1;">▸ 写法：系统思维：系统施治防止按下葫芦起了瓢</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">破与立都是手段，目的是真减负、减真负，切切实实把“应减之负”减下去，把“应尽之责”担起来。这就要求坚持效果导向。<br><span style="color:#0d47a1;">▸ 写法：效果导向：真减负减真负减到心坎上</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】“该立的积极主动立起来，该破的在立的基础上及时破”，坚持破和立的辩证统一，也是整治形式主义为基层减负的重要方法。</p><p>不妨以近期的案例观之。</p>
+
+<p>随着“锡山教育缴费”APP下架关停，江苏全省县级及以下政务服务APP全部取消。不止江苏，四川累计关停、整合政务移动互联网应用上万个，广东也有类似举措。开展政务应用程序“大扫除”，<span class="highlight-blue">“破”的是重复建设、无效建设</span>，<span class="highlight-green">提升的是群众和企业办事效率</span>。</p>
+
+<p>对使用频率低、实用性不强的政务应用程序限期关停注销，不得强制推广下载使用政务应用程序……国务院办公厅不久前印发《政务移动互联网应用程序规范化管理办法》（以下简称《办法》），剑指政务服务中的“面子工程”。建章立制，<span class="highlight-blue">织密防治“指尖上的形式主义”的制度之网</span>，有助于为基层减负赋能。</p>
+
+<p>习近平总书记强调：“持续深化拓展整治形式主义为基层减负工作，让广大基层干部有更多精力抓落实。”破立并举抓减负，<span class="highlight-blue">减的是“文山会海”“指尖负担”等无用之功</span>，<span class="highlight-green">增的是办实事、抓落实的时间空间</span>，还有解难题、促发展、保稳定的干劲精力。</p>
+
+<p>坚持破和立的辩证统一，既有助于推动减负工作提质增效，也为我们做好其他工作带来多重启示。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-purple">什么要坚决地破，什么该大胆地立，考验精准思维。</span></p>
+
+<p>比如，江苏在推进政务服务APP清理规范中没有“一刀切”，而是分门别类：对实用功能不大、用户数量少的，直接关停；对仍具备一定实用功能、用户确需使用的，将相应服务功能统一迁移至“苏服办”后，再关停原APP。</p>
+
+<p>又如，一些地方简单用学习时长进行考评，导致一些干部为完成学习，只能采取“手机挂机”“后台刷时长”等形式主义做法。针对这一问题，《办法》明确规定，<span class="highlight-blue">不得“将点赞量、网络投票数、转发量、学习时长等作为考评依据”</span>。</p>
+
+<p>减负之难，难在形式主义有顽固性、复杂性。整治形式主义为基层减负，关键在于<span class="highlight-purple">找准问题的“七寸”</span>，把基层的痛点作为整治的靶点，紧盯突出问题一抓到底，抓常抓长、抓出变化。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-purple">减负是个系统工程，不能只顾一点不及其余，要有系统思维。</span></p>
+
+<p>有基层干部说起自身经历：为落实减负要求，某地某部门下发的通知不断“瘦身”，文件越来越短，但要求一点不少，而且没有附件供参考，于是他们只得反复给上级打电话询问各种报送要求。还有的地方，因为缺乏通盘考虑、追求短时“减负成效”，一些部门减去的“负”又成为其他部门的额外负担。</p>
+
+<p>用好系统观念，加强系统施治、综合治理，才能防止减负<span class="highlight-purple">“按下葫芦起了瓢”</span>，杜绝<span class="highlight-purple">“打地鼠式”减负</span>。构建<span class="highlight-blue">边界清晰、分工合理、权责一致、运行高效的管理体制</span>，厘清各级各部门该干什么活、能办什么事、应担什么责，才能在为基层减负的同时实现提质增效。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">破与立都是手段，目的是真减负、减真负，切切实实把“应减之负”减下去，把“应尽之责”担起来。这就要求坚持效果导向。</span></p>
+
+<p>减负不是说少发几个文件、少打几次卡就算完成任务，而是要多问问基层干部群众有没有切身感受、是否看得见实绩实效。树立和践行正确政绩观，坚持为人民出政绩、以实干出政绩，方向对了，减负才能<span class="highlight-purple">减到干部群众心坎上</span>。</p>
+
+<p>整治形式主义为基层减负，既要打攻坚战，也要打持久战。在攻克一个个堡垒的过程中，我们的“体魄”愈发强健、步履愈发坚实，定能一步一个脚印实现预期目标。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年2月12日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>“该立的积极主动立起来，该破的在立的基础上及时破”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"破立辩证"的核心金句，适配改革方法论类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>持续深化拓展整治形式主义为基层减负工作，让广大基层干部有更多精力抓落实。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"基层减负"的规范表述（总书记要求），适配作风建设类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>破与立都是手段，目的是真减负、减真负，切切实实把“应减之负”减下去，把“应尽之责”担起来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"破立目的"的辩证句，适配改革方向类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>四川累计关停、整合政务移动互联网应用上万个，广东也有类似举措。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"指尖形式主义整治"的实例，适配数字政府类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>用好系统观念，加强系统施治、综合治理，才能防止减负“按下葫芦起了瓢”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"系统思维"的辩证句，适配系统治理类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">金句引题</span><p>以"该立的立起来、该破的及时破"破题。</p></div><div class="migration-card"><span class="tag-mig">精准—系统—效果</span><p>精准思维、系统思维、效果导向三重启示。</p></div><div class="migration-card"><span class="tag-mig">正反案例</span><p>江苏APP清理、学习时长刷分等正反例证。</p></div><div class="migration-card"><span class="tag-mig">总书记引述</span><p>引用总书记关于基层减负的重要论述。</p></div><div class="migration-card"><span class="tag-mig">比喻收束</span><p>以"攻坚战+持久战"收束于步履坚实。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"破立并举的方法论"为题，模仿本文"金句引题+精准系统效果三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①该立立该破破→②精准思维分清破立→③系统思维综合施治→④效果导向真减负。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既要……也要……"的句式，表达你对"改革方法论"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年2月12日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
