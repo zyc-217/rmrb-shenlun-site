@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 乡村“网红书记”为啥红（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>乡村“网红书记”为啥红（评论员观察）</h1>
+    <div class="meta">基层治理 · 乡村振兴 · 正确政绩观 · 互联网思维 · 年轻态 · 致广大而尽精微 · 为民底色 · 实干本色 · 新质生产力 · 年轻干部 | 2026年3月2日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层治理</span><span class="tag-item">乡村振兴</span><span class="tag-item">正确政绩观</span><span class="tag-item">互联网思维</span><span class="tag-item">年轻态</span><span class="tag-item">致广大而尽精微</span><span class="tag-item">为民底色</span><span class="tag-item">实干本色</span><span class="tag-item">新质生产力</span><span class="tag-item">年轻干部</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以老朱、小张两名基层干部与"网红书记"群像破题，从"互联网思维、年轻态、致广大而尽精微"三层特质论证乡村干部何以动人，是"群像引题+三层特质"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"基层干部如何展现新担当"——深谙困难、跳出一域、与时俱进。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"网红书记走红的特质"——互联网思维、年轻态、致广大尽精微。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"乡村振兴/基层干部"可借用"让一隅被更多人看见"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（群像引题·三层特质）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">树立和践行正确政绩观，让一隅被更多人“看见”，也让一隅“看见”更辽远的天地，这是努力的方向，也是实干的硕果。<br><span style="color:#0d47a1;">▸ 写法：由基层干部群像破题，点明网红书记动人的内核</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">深谙基层的实际困难，也能跳出一域解难题，他们都有“互联网思维”。<br><span style="color:#0d47a1;">▸ 写法：思维维度：用网络、融大局</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">从踏实肯干的状态，到知责图进的心态，他们呈现“年轻态”。<br><span style="color:#0d47a1;">▸ 写法：状态维度：沉稳与青春交汇</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">无论是乡土情怀，还是现代化建设，他们始终“致广大而尽精微”。<br><span style="color:#0d47a1;">▸ 写法：方法维度：积微成著、办实小事</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】树立和践行正确政绩观，让一隅被更多人“看见”，也让一隅“看见”更辽远的天地，这是努力的方向，也是实干的硕果。</p><p>基层工作点多、线长、面广。现实中，一些基层干部在“网红”赛道上独辟蹊径。从端着碗筷串门子的村党支部书记，到为村里留守老人送饭、2元管饱的“送饭书记”，再到因年度总结报告在短视频平台火了的“小王书记”……点赞不少，讨论也随之而来：流量进了村，干部当“网红”，怎么看？</p>
+
+<p>不由想起，在一次蹲点调研中跟笔者打交道的两名基层干部。村支书老朱，嗓门大、脾气倔，建孝善食堂、架村口路灯、搞土地流转，说干就干，干得有模有样，大家伙儿都服气。包村干部小张，思路新、办法活，引资源、找项目，把村里人心气带得足足的。老朱、小张并非“网红”，但他们跟“网红书记”一样，身上有着共同的特质。<span class="highlight-gold">从这些特质中，我们更能明白乡村“网红书记”为啥红，更能懂得基层需要怎样的干部。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">深谙基层的实际困难，也能跳出一域解难题，他们都有“互联网思维”。</span></p>
+
+<p>今天，一些基层干部面向网络、开启直播，手机当农具、镜头为桥梁，既是破冰之策，也是务实之举。湖北宣恩县万寨乡向家村，“酒窝书记”帮助村民向全国各地销售农产品<span class="highlight-green">超3000万元</span>；河南新密市曲梁镇周庄村，“辣条书记”一则视频<span class="highlight-green">吸引上万游客走进这个豫中小村</span>。</p>
+
+<p>把握时与势，也是基层干部的基本功。许多地方不是缺乏资源，愁的是找不到市场。找销路、谋出路，基层干部就得有互联网意识。更富“网感”，不仅要懂网络、用网络，还要求锤炼与时俱进的开放心态、创新思维。<span class="highlight-purple">当孤立的“一点”主动融入发展的大局，机会便会喷薄而出，空间也会彻底打开。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">从踏实肯干的状态，到知责图进的心态，他们呈现“年轻态”。</span></p>
+
+<p>老朱和小张时不时要“碰一碰”，聊聊近期新精神、新潮流、新发现，琢磨怎么能把村子发展得更好。<span class="highlight-gold">沉稳的气质和青春的风采，在乡村全面振兴一线交汇相融。</span></p>
+
+<p>“网红书记”里，有年纪轻轻的“生力军”，也不乏经验丰富的“老面孔”。事实上，与网络接轨、和流量共舞，不是因为基层干部们年轻，而是在于他们身上保持着一种“年轻态”，愿意接触新事物、学习新知识，坚持用党的创新理论武装头脑，在发展新质生产力上下功夫、挑担子、冲在前。<span class="highlight-gold">从这样的状态和心态中，我们更能直观感受共产党人永远是年轻，更加笃定在新征程上展现新担当新作为。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">无论是乡土情怀，还是现代化建设，他们始终“致广大而尽精微”。</span></p>
+
+<p>客观来说，“网红书记”所呈现的镜头算不得“惊天动地”，却在走心与暖心中积微成著。“送饭书记”送的是饭，问的是家长里短，破解的是农村留守老人的现实难题。“小王书记”年终总结视频浏览量破亿，<span class="highlight-green">安装路灯86盏、修路1300米、垒砌4座拦河坝</span>。<span class="highlight-purple">一件件小事“装订”起来，分明就是生活一天更比一天好的日记。</span></p>
+
+<p>大与小、重与轻，是生活的分量，照见发展智慧、民生旨归。全面建设社会主义现代化国家，最艰巨最繁重的任务仍然在农村。发展之需、治理之道、民生之愿，哪头都不能落下。<span class="highlight-blue">对广大基层干部而言，和乡亲们拉呱谈心，就更容易找到乡村治理之道；帮农民多种粮、种好粮，就是在助力农业现代化。</span><span class="highlight-purple">把小事办好、办在实处、办到心坎上，就是在推进历史伟业、成就宏伟目标。</span></p>
+
+<p>为民的底色、实干的本色，是他们身上的共同品质。“为民办事、为民造福”，这是最重要的政绩；“真抓实干、埋头苦干”，这是最朴素的方法。<span class="highlight-gold">树立和践行正确政绩观，让一隅被更多人“看见”，也让一隅“看见”更辽远的天地，这是努力的方向，也是实干的硕果。</span></p>
+
+<p><span class="highlight-purple">大道至简，人民至上，实干为要。基层干部当如是。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月2日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>从这些特质中，我们更能明白乡村“网红书记”为啥红，更能懂得基层需要怎样的干部。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"基层干部特质"的收束金句，适配乡村振兴类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>沉稳的气质和青春的风采，在乡村全面振兴一线交汇相融。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"干部年轻态"的意象金句，适配基层治理类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>“酒窝书记”帮村民销售农产品超3000万元；“小王书记”安装路灯86盏、修路1300米、垒砌4座拦河坝。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"网红书记实绩"的硬数据，适配基层善治类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>把小事办好、办在实处、办到心坎上，就是在推进历史伟业、成就宏伟目标。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"小与大"的辩证句，适配民生治理类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>大道至简，人民至上，实干为要。基层干部当如是。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"干部本色"的收束金句，适配正确政绩观类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">群像引题</span><p>老朱、小张与网红书记群像对照。</p></div><div class="migration-card"><span class="tag-mig">三层特质</span><p>互联网思维—年轻态—致广大尽精微。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>湖北宣恩酒窝书记、河南辣条书记。</p></div><div class="migration-card"><span class="tag-mig">数据点缀</span><p>超3000万元、86盏路灯等实绩。</p></div><div class="migration-card"><span class="tag-mig">政绩观落点</span><p>以"让一隅被更多人看见"收束。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让一隅被更多人看见"为题，模仿本文"群像引题+互联网思维/年轻态/致广大尽精微三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①基层干部群像→②互联网思维→③年轻态→④致广大尽精微。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"无论是……还是……"的句式，表达你对"致广大而尽精微"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
