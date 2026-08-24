@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 一平方米里的“增值发展”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>一平方米里的“增值发展”（评论员观察）</h1>
+    <div class="meta">人民城市 · 以人民为中心 · 规划先行 · 正确政绩观 · 投资于人 · 民生痛点 · 老旧小区改造 · 好房子 · 人的现代化 · 高质量发展 | 2026年3月13日 | 第08版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">人民城市</span><span class="tag-item">以人民为中心</span><span class="tag-item">规划先行</span><span class="tag-item">正确政绩观</span><span class="tag-item">投资于人</span><span class="tag-item">民生痛点</span><span class="tag-item">老旧小区改造</span><span class="tag-item">好房子</span><span class="tag-item">人的现代化</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"两个一平方米"的微观故事破题，从"人民城市刻度、正确政绩观护航、人的现代化升华"三层，论证方寸规划里的民生温度与发展纵深，是"小切口叙事+三层升华"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何提升城市规划建设水平"——精治细管、正确政绩观、以人为本。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"一平方米里的治理启示"——人民城市、政绩观、人的现代化。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"人民城市/规划治理"可借用"把蓝图的写意化作实干的工笔画"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（小切口·三层升华）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">一平方米，是物理空间，也是价值坐标。一平方米之外，恰是千万种值得被认真对待的生活，以及由美好生活托举起的“增值发展”。<br><span style="color:#0d47a1;">▸ 写法：由"两个一平方米"故事破题，点明规划里的民生价值</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">旧房改造的“一平方米尊严”，是民生痛点的精准破解，也是人民城市的刻度标尺。<br><span style="color:#0d47a1;">▸ 写法：民生维度：方寸之地见人民城市</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">“十五五”开局之年，无论是制定规划还是部署实施，都需要有正确的政绩观。<br><span style="color:#0d47a1;">▸ 写法：方法维度：规划先行靠正确政绩观</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">从一平方米说开去，规划生活空间，拓展治理空间，营建发展空间，都要把蓝图的“大写意”化作实干的“工笔画”，<br><span style="color:#0d47a1;">▸ 写法：升华维度：致广大尽精微、人的现代化</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】一平方米，是物理空间，也是价值坐标。一平方米之外，恰是千万种值得被认真对待的生活，以及由美好生活托举起的“增值发展”。</p><p>当热乎的建议、发展的期盼，摆在规划决策的案头，化作掷地有声的行动，那一刻，中国式现代化有更温暖的质地，中国式民主更具坚实的根基。</p>
+
+<p>一平方米，有多大？可以平铺16张A4纸，略大于1台55英寸电视机的屏幕，大约能摆下3张中学生标准课桌……</p>
+
+<p>这方寸之地，犹如观察发展的“显微镜”。不妨看“两个一平方米”的故事。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">旧房改造的“一平方米尊严”，是民生痛点的精准破解，也是人民城市的刻度标尺。</span></p>
+
+<p>上海，部分老旧里弄，“拎马桶”曾是几代人的生活记忆。狭小空间，如厕难、环境差，成为生活“心头刺”。以“绣花功夫”装马桶、优布局、加配套，<span class="highlight-blue">一平方米里做出大文章</span>。</p>
+
+<p>北京，全国“好房子”设计大赛成果展出。有方案聚焦70平方米住宅，设计出4个开间，可根据需求改造为工作室、休闲区。讲究精细化，兼顾集成性，注重适配度，<span class="highlight-blue">“让每一平方米都物有所值”</span>。</p>
+
+<p>改的是生活设施，暖的是百姓心田，<span class="highlight-blue">彰显了以人民为中心的发展思想</span>。</p>
+
+<p>好房子的“一平方米价值”，是生活品质的迭代升级，也是美好生活的计量单位。促的是环境友好，增的是生活格调，<span class="highlight-blue">展现了投资于人的理念</span>。</p>
+
+<p>一个解决“有没有”，一个跃向“好不好”，共同指向以人为本。坚持人民至上，设计理念、规划方向也在“转身”——既划用地红线又划生活半径，既算容积率又测步行舒适度，既重建设效率又重使用品质。</p>
+
+<p><span class="highlight-gold">面积虽小，能容民生大计；规划精细，可筑发展宏图。</span>从一平方米出发，可以探寻未来5年的发展纵深。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">“十五五”开局之年，无论是制定规划还是部署实施，都需要有正确的政绩观。</span></p>
+
+<p>小空间连着大战略。从“有房住”到“住好房”，从“做优增量”到“盘活存量”，规划与行动中蕴含着鲜明的实践逻辑。比如，老旧小区改造如何与适老化结合？好房子设计怎样预留成长弹性？近年来，浙江推动创建未来社区，构建邻里、教育、健康、服务等场景，探索建设能够创造归属感、舒适感和未来感的新型城市功能单元。</p>
+
+<p>规划先行，空间再造，从来不只是宏大叙事，更是在方寸之间的体贴；也不只是图纸上的线条，更是对未来的许诺。</p>
+
+<p>如何让许诺真正落地？如何让规划切实付诸实践？这，是方向性指引，也是方法论启示。</p>
+
+<p>当一平方米成为决策起点，发展就自然规避了“拍脑袋”；当“物有所值”成为验收标尺，投资就规避了“形象工程”；当“幸福刻度”成为考核维度，政绩就告别了“纸面化”……<span class="highlight-purple">坚持从实际出发、按规律办事，避免急功近利、盲目蛮干，无论大工程还是小项目，就能真正造福于民、赢得认可。</span></p>
+
+<p>越是向新向优，越要呵护人间美好的温度。<span class="highlight-purple">现代化不只是钢铁森林的高度，更是推窗见绿的呼吸感；高质量发展既有经济曲线的攀升，更有无障碍坡道的延伸。</span>新一年，启新程，前方有科技高峰，也有民生期盼；有持续壮大的产业集群，也有等待更新的老旧小区；有现代都市的潮流风采，也有城乡交融的古朴风韵……“发展的人”一直向前，只要围绕“人”展开、由“人”驱动、为“人”服务，机遇就在，潜能就在。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">从一平方米说开去，规划生活空间，拓展治理空间，营建发展空间，都要把蓝图的“大写意”化作实干的“工笔画”，</span></p>
+
+<p>进而赋能、托举，成就一个个“大写的人”。这是致广大与尽精微的融合，也是投资于物与投资于人的结合，<span class="highlight-gold">更诠释了“现代化的本质是人的现代化”</span>。</p>
+
+<p>务实，是把蓝图落在一平方米上；担当，是让蓝图经得起一平方米的检验。<span class="highlight-gold">当热乎的建议、发展的期盼，摆在规划决策的案头，化作掷地有声的行动，那一刻，中国式现代化有更温暖的质地，中国式民主更具坚实的根基。</span></p>
+
+<p>一平方米的叙事，不宏大，却很中国。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年3月13日 第08版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>面积虽小，能容民生大计；规划精细，可筑发展宏图。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"小空间大战略"的意象金句，适配城市规划类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>更诠释了“现代化的本质是人的现代化”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"人的现代化"的升华金句，适配高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>一个解决“有没有”，一个跃向“好不好”，共同指向以人为本。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"量与质"的辩证句，适配民生升级类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>现代化不只是钢铁森林的高度，更是推窗见绿的呼吸感；高质量发展既有经济曲线的攀升，更有无障碍坡道的延伸。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"硬发展与软温度"的辩证句，适配以人为本类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>当热乎的建议、发展的期盼，摆在规划决策的案头，化作掷地有声的行动，那一刻，中国式现代化有更温暖的质地，中国式民主更具坚实的根基。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民主落地"的收束金句，适配全过程人民民主类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">小切口叙事</span><p>以"两个一平方米"（上海拎马桶、北京好房子）破题。</p></div><div class="migration-card"><span class="tag-mig">三层升华</span><p>人民城市刻度—正确政绩观—人的现代化。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>浙江未来社区、老旧小区适老化。</p></div><div class="migration-card"><span class="tag-mig">辩证落点</span><p>以"致广大尽精微""投资于物与投资于人"收束。</p></div><div class="migration-card"><span class="tag-mig">金句储备</span><p>面积虽小能容民生大计、现代化本质是人的现代化。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"方寸之间见民生温度"为题，模仿本文"小切口叙事+人民城市/正确政绩观/人的现代化三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①一平方米故事→②人民城市刻度→③正确政绩观→④人的现代化。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既……又……"的句式，表达你对"规划里民生温度"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年3月13日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
