@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 中国经济何以向新而行（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>中国经济何以向新而行（人民时评）</h1>
+    <div class="meta">中国经济 · 新质生产力 · 科技创新 · 改革开放 · 高质量发展 · 高水平开放 · 双循环 · 制度优势 · 自主创新 · 营商环境 | 2026年1月29日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">中国经济</span><span class="tag-item">新质生产力</span><span class="tag-item">科技创新</span><span class="tag-item">改革开放</span><span class="tag-item">高质量发展</span><span class="tag-item">高水平开放</span><span class="tag-item">双循环</span><span class="tag-item">制度优势</span><span class="tag-item">自主创新</span><span class="tag-item">营商环境</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"中国经济年报"两个亮眼数据破题，论证"向新而行"的三重动力，是"数据引题+三层归因"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何增强经济发展新动能"——抓创新蓄能量、拓空间辟天地、依靠人民三策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"中国经济向新而行的动力源"——创新蓄能、空间拓展、人民实干。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"经济高质量发展/新质生产力"可借用"越压越韧、越闯越新""跑马拉松"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（数据引题·三重动力）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">发展如同跑马拉松，谁看得远、耐得住、干得实，谁就拥有持续向前的澎湃动能。<br><span style="color:#0d47a1;">▸ 写法：由经济年报亮点破题，以马拉松隐喻点明向新而行的定力</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">中国经济之所以能向新而行，在于锚定目标抓创新、蓄能量，注重打基础、增后劲。<br><span style="color:#0d47a1;">▸ 写法：蓄能维度：以重研发重教育、五年规划、制度优势说明战略定力</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">中国经济之所以能向新而行，在于不断为发展拓空间、辟天地。<br><span style="color:#0d47a1;">▸ 写法：空间维度：以海南自贸港、双循环、高水平开放说明潜能释放</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">中国经济之所以能向新而行，在于亿万劳动者敢闯敢干。<br><span style="color:#0d47a1;">▸ 写法：人民维度：以废旧衣物分拣机企业、兰小欢"相信中国会更好"说明民力</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】发展如同跑马拉松，谁看得远、耐得住、干得实，谁就拥有持续向前的澎湃动能。</p><p>前不久发布的中国经济年报中，有两个数据非常亮眼。</p>
+
+<p>一是2025年我国研发经费投入强度达2.8%，比上年提高0.11个百分点，首次超过经济合作与发展组织（OECD）国家平均水平；二是我国创新指数排名首次进入全球前十。</p>
+
+<p>从中，能够感受到深厚的创新活力与潜能，读出为何外媒感慨中国<span class="highlight-gold">“生活在明天”“经济活力势不可当”</span>。</p>
+
+<p>2025年谈何容易，我国自身发展的老问题、新挑战不断出现，叠加外部环境不确定性，压力不小。然而中国经济不仅<span class="highlight-gold">越压越韧，而且越闯越新</span>。这股子劲儿从何来？</p>
+
+<p><span class="highlight-blue">“浇花浇根”，经济发展亦如此</span>。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">中国经济之所以能向新而行，在于锚定目标抓创新、蓄能量，注重打基础、增后劲。</span></p>
+
+<p>有历史耐心，就有战略定力。重研发、重教育、重环境……这些都不是能立刻产生效益的工作，但我们不仅做而且坚持不懈去做，为未来计、为长远谋。</p>
+
+<p>这份耐心与定力，源于党的领导，源于制度优势。<span class="highlight-blue">制定和实施五年规划，确定方向路径；进一步全面深化改革，破梗阻、筑基石；超前布局未来产业，坚定不移投入</span>……<span class="highlight-gold">发展如同跑马拉松，谁看得远、耐得住、干得实，谁就拥有持续向前的澎湃动能</span>。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">创新要素如水，有足够空间，能自由流动，才能充分释放活力。中国经济之所以能向新而行，在于不断为发展拓空间、辟天地。</span></p>
+
+<p>新增各类经营主体2.68万户，其中新增企业2.1万户，同比增长16.42%；“零关税”政策开展业务53票，减免税款1.09亿元、增长194.6%……不久前，海南自贸港亮出封关满月成绩单，活力初现、未来可期。今日中国，<span class="highlight-blue">扩大高水平开放、建设全国统一大市场，在双循环构建的广阔空间里，创新活力奔涌，发展机遇无限</span>。</p>
+
+<p>拓展潜能，就要坚定不移深化改革开放。回望2025年，免签政策助力“中国游”风靡，进博会参展企业数量、成交额等再创新高，大科学装置向全球科研人员开放……在逆全球化加剧的背景下，这样的包容气度尤显珍贵。中国用实践印证，<span class="highlight-purple">画地为牢没有出路，创新发展必须置身全球广阔空间，遵循互利共赢原则</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">新创造、新动能、新发展，归根到底要靠人。中国经济之所以能向新而行，在于亿万劳动者敢闯敢干。</span></p>
+
+<p>美国《时代》周刊发布的2025年度最佳发明榜单上，一家中国企业凭借混纺人工智能高光谱光选机获得“特别提名”。听上去高大上，用咱普通人的话说，就是台废旧衣物分拣机。这家企业一直深耕垃圾回收行业。为了搭建固废大数据库、打造垃圾分拣机器人，企业团队深入各类固废处理工厂，白天和工人一起分拣垃圾，晚上回宿舍标注数据。<span class="highlight-green">“不是天才型，也不是才华型，我们是用功型”</span>，创始人的坦率话语，道出中国创新者的务实、中国劳动者的勤勉，从一个侧面揭示了中国发展的潜能所在。</p>
+
+<p>经济学者兰小欢在其书中表达了一种<span class="highlight-gold">“相信中国会更好”</span>的朴素信念：“这种信念不是源于学术训练，而是源于司马迁、杜甫、苏轼，源于‘一条大河波浪宽’，源于对中国人勤奋实干的钦佩。”为经济数据中的向新向好欢欣鼓舞，更在内心深处泛起厚实的底气、深沉的自信，对未来保持乐观主义——这一切，来源于从历史深处走来的巍巍中国，来源于我们每天在这片伟大土地上的创新创造。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月29日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>发展如同跑马拉松，谁看得远、耐得住、干得实，谁就拥有持续向前的澎湃动能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"战略定力"的隐喻金句，适配高质量发展、长期主义类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>2025年我国研发经费投入强度达2.8%，首次超过OECD国家平均水平；创新指数排名首次进入全球前十。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"创新投入"的硬数据，适配科技创新类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>制定和实施五年规划，确定方向路径；进一步全面深化改革，破梗阻、筑基石；超前布局未来产业。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"制度优势"的规范表述，适配新型举国体制类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>画地为牢没有出路，创新发展必须置身全球广阔空间，遵循互利共赢原则。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"开放共赢"的辩证句，适配高水平开放类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>“不是天才型，也不是才华型，我们是用功型”道出中国创新者的务实、中国劳动者的勤勉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"务实勤勉"的接地气金句，适配劳动者、工匠精神类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">数据破题</span><p>以"研发强度2.8%/创新指数前十"双数据引出向新而行主题。</p></div><div class="migration-card"><span class="tag-mig">隐喻立论</span><p>以"跑马拉松"隐喻贯穿，点明看得远、耐得住、干得实的定力。</p></div><div class="migration-card"><span class="tag-mig">三层归因</span><p>创新蓄能—空间拓展—人民实干，三重动力系统拆解。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>海南自贸港封关、废旧衣物分拣机企业、兰小欢信念等多层例证。</p></div><div class="migration-card"><span class="tag-mig">国际视野</span><p>以"外媒感慨""互利共赢"收束于全球空间中的中国创新。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"中国经济何以韧性生长"为题，模仿本文"数据引题+三层归因"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①年报双数据→②创新蓄能（五年规划）→③拓空间辟天地（双循环）→④依靠人民（劳动者）。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"越……越……"的句式，表达你对"压力下成长"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月29日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
