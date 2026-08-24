@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 见证统一大市场的成长性（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>见证统一大市场的成长性（人民时评）</h1>
+    <div class="meta">统一大市场 · 高水平开放 · 扩大内需 · 消费升级 · 产业结构优化 · 民营经济 · 营商环境 · 双循环 · 高质量发展 · 外资引力 | 2026年1月30日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">统一大市场</span><span class="tag-item">高水平开放</span><span class="tag-item">扩大内需</span><span class="tag-item">消费升级</span><span class="tag-item">产业结构优化</span><span class="tag-item">民营经济</span><span class="tag-item">营商环境</span><span class="tag-item">双循环</span><span class="tag-item">高质量发展</span><span class="tag-item">外资引力</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"进口新高+美企信心"两则新闻破题，论证统一大市场"成长性"的四大来源，是"现象引题+四维展开"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何做强国内大市场"——消费升级、产业升级、经营主体、开放扩容四策。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"中国市场成长性的来源"——需求、产业、主体、朋友圈。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"统一大市场/扩大内需"可借用"海纳百川""朋友圈扩容"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·四维归因）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">市场成长性越强，对全球资源越具有吸引力。中国市场正是凭借极强的成长性，吸引外资布局中国。<br><span style="color:#0d47a1;">▸ 写法：由进口新高与美企信心两则新闻破题，点明成长性主题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">成长性，得益于消费升级新需求。<br><span style="color:#0d47a1;">▸ 写法：需求维度：以进口水果亲民、以旧换新政策说明需求释放</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">成长性，得益于产业结构持续优化。<br><span style="color:#0d47a1;">▸ 写法：产业维度：以装备/高技术制造业占比、无人机产量说明动能转换</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">成长性，得益于经营主体敢拼敢闯。<br><span style="color:#0d47a1;">▸ 写法：主体维度：以民企进出口数据、民营经济促进法说明活力源泉</span></span></div><div class="analysis-item"><span class="label">分论点四</span><span class="text">成长性，得益于朋友圈不断扩容。<br><span style="color:#0d47a1;">▸ 写法：开放维度：以249个贸易伙伴、"下一个中国还是中国"说明磁力提升</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】市场成长性越强，对全球资源越具有吸引力。中国市场正是凭借极强的成长性，吸引外资布局中国。</p><p>近期发布的两则新闻，很值得关注。</p>
+
+<p>一则是，2025年，中国货物进口规模再创新高，达18.5万亿元。另一则是中国美国商会发布的调查报告显示，对中国市场增长持乐观态度的受访在华美企比例显著上升，七成以上企业不考虑转移在华业务，近六成企业计划加大在华投资。在世界开放指数下滑、部分大宗商品国际市场价格下行的大背景下，<span class="highlight-gold">中国大市场的魅力凸显</span>。</p>
+
+<p>市场是当今世界最稀缺的资源。市场成长性越强，对全球资源越具有吸引力。中国市场正是凭借极强的成长性，吸引外资布局中国。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">成长性，得益于消费升级新需求。</span></p>
+
+<p>时下，车厘子大量上市。不少消费者有这种感受：进口水果的价格更亲民了，实现“水果自由”的内涵更丰富了。从欧洲的红酒、巧克力，到南美洲的肉类、鱼虾，再到大洋洲的乳品，全球好物纷至沓来，不断满足人民美好生活需要。</p>
+
+<p>政策引领，促需求释放。去年，<span class="highlight-green">消费品以旧换新政策惠及超3.6亿人次，带动相关商品销售额超2.6万亿元</span>。2025年，内需对经济增长的贡献率超67%，其中消费贡献率达52%，比上年提高5个百分点。英国《金融时报》刊文：<span class="highlight-gold">“不要低估中国消费者。”</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">成长性，得益于产业结构持续优化。</span></p>
+
+<p>庞大需求激发创新创造。人工智能大模型加速奔跑，脑机接口迈向产业化，低空经济振翅高飞，回望2025年，产业向新动能强。数据为证：<span class="highlight-green">规模以上装备制造业、高技术制造业增加值占规模以上工业增加值的比重分别达到36.8%和17.1%，民用无人机、工业机器人产量分别比上年增长37.3%和28%</span>。</p>
+
+<p>经济体量大，向前发展需更强推动力。平均每天几千个发明专利诞生、4.5万辆新能源汽车下线、逾5亿件快递包裹寄送……科技与产业深度融合，新旧动能有序转换，现代化产业体系向阳生长。<span class="highlight-blue">因地制宜发展新质生产力，持续为中国经济培育新优势</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">成长性，得益于经营主体敢拼敢闯。</span></p>
+
+<p>经营主体是推动经济高质量发展的活力源泉。外贸数据中，民营企业表现可圈可点：<span class="highlight-green">进出口26.04万亿元，增长7.1%，占进出口总值的比重提升至57.3%</span>。</p>
+
+<p><span class="highlight-blue">民营经济促进法出台施行，让民营企业吃下“定心丸”</span>；全国统一大市场建设向纵深推进，破梗阻、畅流通、促公平；政府性融资担保扩围加力，降低创业群体综合融资成本……中国营商环境持续优化，为经营主体提供稳定预期。加大政策力度，按照“十五五”规划建议要求“充分激发各类经营主体活力”，中国经济必将百舸争流、千帆竞发。</p>
+
+<p class="sub-thesis">【分论点四】<span class="highlight-purple">成长性，得益于朋友圈不断扩容。</span></p>
+
+<p><span class="highlight-gold">“与中国同行就是与机遇同行”</span>，2025年我国与全球249个国家和地区有贸易往来，成为160多个国家和地区的主要贸易伙伴。<span class="highlight-gold">“下一个中国还是中国”</span>，有关机构近期对跨国企业的调查显示，超九成的受访企业将继续在华投资，以实际行动为中国经济投下信任票。</p>
+
+<p>主动对接国际高标准经贸规则；接连举办广交会、服贸会、进博会；<span class="highlight-blue">全面取消制造业领域外资准入限制措施</span>；健全外商投资服务保障体系……开放的大门越开越大，在内与外双向互动中，全国统一大市场的容量、磁力进一步提升。</p>
+
+<p>壮阔深邃，海纳百川，<span class="highlight-purple">中国市场是个海洋</span>。畅通大循环，强健大市场，用好发展机遇、潜力和优势，中国经济定能穿越周期、稳健前行，赢得国际竞争的主动。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年1月30日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>市场是当今世界最稀缺的资源。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"市场资源"的论断金句，适配统一大市场类论证</p></div><div class="material-card"><span class="tag-shenlun">数据事实</span><p>2025年中国货物进口规模再创新高，达18.5万亿元；消费品以旧换新惠及超3.6亿人次、带动销售额超2.6万亿元。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"内需活力"的硬数据，适配扩大内需类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>民营经济促进法出台施行，让民营企业吃下"定心丸"；全国统一大市场建设向纵深推进，破梗阻、畅流通、促公平。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"营商环境"的规范表述，适配民营经济类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>壮阔深邃，海纳百川，中国市场是个海洋。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"开放包容"的辩证金句，适配双循环类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>"与中国同行就是与机遇同行""下一个中国还是中国"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"外资信心"的国际评价金句，适配高水平开放类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">双新闻破题</span><p>以"进口新高+美企信心"两则新闻点出大市场魅力。</p></div><div class="migration-card"><span class="tag-mig">四维归因</span><p>消费升级—产业结构—经营主体—朋友圈，系统拆解成长性。</p></div><div class="migration-card"><span class="tag-mig">数据密集</span><p>18.5万亿、3.6亿人次、36.8%、57.3%等硬数据增强说服力。</p></div><div class="migration-card"><span class="tag-mig">案例佐证</span><p>车厘子自由、海南式开放、民企表现等多角度印证。</p></div><div class="migration-card"><span class="tag-mig">海洋隐喻</span><p>以"海纳百川的海洋"收束于畅通大循环、赢得主动。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"做强国内大市场的底气从何而来"为题，模仿本文"现象引题+四维归因"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①进口新高/外资信心→②消费升级→③产业结构→④经营主体→⑤朋友圈扩容。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"得益于……"的句式，仿写你对"某领域成长性"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年1月30日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
