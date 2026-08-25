@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 锚定“十五五”，勇登“好汉坡”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>锚定“十五五”，勇登“好汉坡”（评论员观察）</h1>
+    <div class="meta">十五五 · 战略定力 · 担当作为 · 攻坚克难 · 高质量发展 · 历史主动 · 党员干部 · 实干 · 改革 · 政绩观 | 2026年4月1日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">十五五</span><span class="tag-item">战略定力</span><span class="tag-item">担当作为</span><span class="tag-item">攻坚克难</span><span class="tag-item">高质量发展</span><span class="tag-item">历史主动</span><span class="tag-item">党员干部</span><span class="tag-item">实干</span><span class="tag-item">改革</span><span class="tag-item">政绩观</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以香山"好汉坡"登山意象破题，从"心志坚韧、心念正、本领强"三层，论证以积极心态与战略定力勇登"好汉坡"，是"意象类比+三层精神"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"干部如何担当作为"——正心念、强本领、抓落实。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"勇登好汉坡的支撑"——心志、认知、能力。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"十五五/担当"可借用"乱石是试金石、山势是必经路"等意象。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（意象类比·三层精神）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">抓改革、谋创新、促发展亦如登山，只要正视困难、迎难而上，保持战略定力、坚定必胜信心，以高质量发展的确定性应对各种不确定性，就能勇登“好汉坡”。<br><span style="color:#0d47a1;">▸ 写法：由登山意象破题，点明十五五开局心态</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">登山的底气在心志坚韧，实干的动力在思想坚定。<br><span style="color:#0d47a1;">▸ 写法：心志维度：迎难而上保持战略主动</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">登高须破“心障”、行远先正“心念”，建立在洞察实情、把握规律基础上。<br><span style="color:#0d47a1;">▸ 写法：认知维度：按规律办事不落空</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">能力决定心态，水平关乎状态，需过硬本领善作善成。<br><span style="color:#0d47a1;">▸ 写法：能力维度：成为行家里手</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】抓改革、谋创新、促发展亦如登山，只要正视困难、迎难而上，保持战略定力、坚定必胜信心，以高质量发展的确定性应对各种不确定性，就能勇登“好汉坡”。</p><p><span class="highlight-gold">以积极心态面对困难，以清醒认知化解挑战，以主动担重、担难的实际行动激发干事创业的精气神。</span></p>
+
+<p>北京香山主峰香炉峰，因为地势陡峭被民间称作“鬼见愁”。在北面不远处，一个布满乱石、攀登难度更高的山坡，则被众多户外爱好者称为“好汉坡”。<span class="highlight-purple">翻山越岭总有难度和风险，但心态不同、理解不同，就会形成不同的观感和结果。</span></p>
+
+<p>登山的底气，从来不在山路平缓，而在心志坚韧；实干的动力，从来不源自有利形势，而在于思想的坚定与成熟。抓改革、谋创新、促发展，亦如登山：<span class="highlight-blue">前进的道路上总会面对各种艰难险阻，但只要“正视困难矛盾、风险隐患，迎难而上、攻坚克难”，就能始终保持战略主动。</span></p>
+
+<p>“十五五”开局起步，改革发展的航船云帆高张，同时也需要应对更加复杂的环境、解决更多深层次矛盾。变局蕴含机遇，挑战激发斗志。“十五五”规划纲要提出，<span class="highlight-blue">“敢于斗争、善于斗争，勇于面对风高浪急甚至惊涛骇浪的重大考验，以历史主动精神克难关、战风险、迎挑战，集中力量办好自己的事”。</span><span class="highlight-gold">没有坐等而来的成功，只有实干赢取的精彩。</span>保持战略定力、坚定必胜信心，解决好认识和行动上的偏差，方能为以高质量发展的确定性应对各种不确定性打下坚实基础。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">登山的底气，从来不在山路平缓，而在心志坚韧；实干的动力，从来不源自有利形势，而在于思想的坚定与成熟。</span></p>
+
+<p>乱石虽多，却是磨砺意志的试金石；山势虽陡，却是登顶望远的必经路。守成者、畏缩者之所以容易被淘汰，原因就在于他们畏惧变革与创新，把些小困难当作不可逾越的“天堑”，容易在消沉懈怠中错失机遇。反观那些履险如夷、攀高若常的登山者，他们并非无视攀登的难度，而是以积极心态面对困难，以清醒认知化解挑战，以主动担重、担难的实际行动激发干事创业的精气神。</p>
+
+<p>实践中已有明证。当<span class="highlight-blue">“绿水青山就是金山银山”</span>的远见，取代“先污染后治理”的短视，绿色发展绘出人与自然和谐共生的美丽画卷；当自贸试验区大胆探索制度型开放新路径，高水平对外开放开创合作共赢新局面……<span class="highlight-purple">发展的每一步跨越，往往都内含对固有认知边界的大胆突破、对改革智慧的巧妙运用。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">登高须破“心障”、行远先正“心念”，心态的扭转建立在洞察实情、把握规律、学深悟透的基础上。</span></p>
+
+<p>登高须破“心障”，行远先正“心念”。但心态的扭转、视野的开拓，并不是凭空发生的，而是建立在对实情心中有数、对规律了如指掌、对理论学深悟透的基础上。对党员干部而言，要练就担当作为的硬脊梁、铁肩膀、真本事，就必须加强对客观实际的深刻洞察、对发展规律的准确把握，以及对初心使命的自觉坚守。“坚持从实际出发、按规律办事”不是一句空话，以此为遵循，“会当凌绝顶”的远大志向才不会落空，“为人民出政绩、以实干出政绩”的期许才能落到实处。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">能力决定心态，水平关乎状态，唯本领高强，面对“鬼见愁”般的困难才不会怯懦。</span></p>
+
+<p>能力决定心态，水平关乎状态。勇攀峻峰的攀登者，潮头挺立的弄潮儿，共同之处在于具备过硬专业素养和解决复杂问题的能力。唯其能力强大、本领高强，在面对“鬼见愁”般的困难时方不会心生怯懦、腿脚发软。从<span class="highlight-blue">“顺利完成‘十五五’时期目标任务，必须着力提高党领导经济社会发展能力和水平”</span>，到“各级领导干部要加强科技前沿知识学习，努力做到知科技、懂产业、善决策”，<span class="highlight-gold">更多党员干部成为善作善成的岗位能手、行家里手</span>，经济航船行稳致远就能获得更有力支撑。</p>
+
+<p>机遇挑战面前，呼唤不向愁低头、不为难所困、不被惧所扰的行动派、实干者。<span class="highlight-gold">让愿担当、敢担当、善担当蔚然成风</span>，确保“正确的事”被正确执行，确保“娄山关”“腊子口”被破解攻克，我们必将在“十五五”新征途上书写更灿烂的篇章。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月1日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>登山的底气，从来不在山路平缓，而在心志坚韧；实干的动力，从来不源自有利形势，而在于思想的坚定与成熟。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"心志与实干"的意象金句，适配担当作为类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>没有坐等而来的成功，只有实干赢取的精彩。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"实干笃行"的励志金句，适配奋斗类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>乱石虽多，却是磨砺意志的试金石；山势虽陡，却是登顶望远的必经路。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"困难即历练"的辩证金句，适配改革攻坚类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>以历史主动精神克难关、战风险、迎挑战，集中力量办好自己的事。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"历史主动"的规范表述，适配十五五类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>守成者、畏缩者之所以容易被淘汰，在于畏惧变革；履险如夷者以积极心态面对困难、以主动担重担难激发精气神。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"守成与进取"的辩证句，适配干部作风类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">意象引题</span><p>香山"好汉坡"登山类比改革发展。</p></div><div class="migration-card"><span class="tag-mig">三层精神</span><p>心志坚韧—心念正—本领强。</p></div><div class="migration-card"><span class="tag-mig">辩证落点</span><p>乱石是试金石、山势是必经路。</p></div><div class="migration-card"><span class="tag-mig">政策落点</span><p>引"十五五"纲要敢于斗争、历史主动。</p></div><div class="migration-card"><span class="tag-mig">收束落点</span><p>以"愿担当敢担当善担当蔚然成风"收束于新征途。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在挑战中锤炼本领"为题，模仿本文"登山意象+心志/心念/能力三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①登山意象→②心志坚韧→③按规律办事→④本领高强。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"从来不在……而在于……"的句式，表达你对"底气来源"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月1日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
