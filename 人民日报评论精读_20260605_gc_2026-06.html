@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 好创意从“地气”里来（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>好创意从“地气”里来（评论员观察）</h1>
+    <div class="meta">文旅融合 · 城市形象 · 文化自信 · 群众主体 | 2026年6月5日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">文旅融合</span><span class="tag-item">城市形象</span><span class="tag-item">文化自信</span><span class="tag-item">群众主体</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以"苏超""赣超"赛场文化亮相、河北文旅口号破圈等切入，论证好文旅创意的"地气"是地方实际、文化底蕴、扎根人民三者统一，适合"文旅融合""城市品牌"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"辛弃疾画布""文天祥实景"等赛场文化破题，点出转译城市文化。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">好创意从地气里来：地方实际+文化底蕴+扎根人民三者统一<br><span style="color:#0d47a1;">▸ 写法：由赛场文化破题，点明地气三重</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">地气是地方实际：精准定位受众、紧贴现实<br><span style="color:#0d47a1;">▸ 写法：以河北文旅口号论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">地气是文化底蕴：植根文脉创新表达<br><span style="color:#0d47a1;">▸ 写法：以闽超郑成功论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">地气是扎根人民：群众共创共享更能共情<br><span style="color:#0d47a1;">▸ 写法：以苏超接梗听劝论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"实际/底蕴/人民"三层地气框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】好的文旅推广，应做城市文化的"转译者"，把深埋在历史里的故事、流淌在血脉中的精神、内蕴于城市肌体的文化基因，"转译"为当代人能够理解和共情的语言。好创意从"地气"里来，这个"地气"是地方实际、文化底蕴、扎根人民三者的统一。</p><p>如今，百花齐放的省级城市足球联赛，已成为展现<span class="highlight-blue">城市形象</span>、开展<span class="highlight-blue">文旅宣传</span>的绝佳窗口和契机。能否用好这流量和人气却因地而异。</p>
+
+<p>"苏超"镇江队主场，看台升起一幅"辛弃疾"的巨型画布，配以<span class="highlight-gold">"何处望神州"</span>的苍劲大字，收获大量关注。"赣超"赣州队主场，开赛前由演员扮演的"文天祥"亮相大型宋韵实景演绎节目，被称为体育赛事与<span class="highlight-blue">传统文化相结合</span>的鲜活样本。</p>
+
+<p>不过，也有城市想打情怀牌，选用的人物形象却引来不少争议。比如，一些小说和影视剧中的虚构人物，有话题性但难以代表一座城市。<span class="highlight-purple">这不禁引人思考：城市文旅宣传如何叫好又叫座？</span></p>
+
+<p>"脚要踩在大地上。我们干任何事情都有内在规律。"文旅宣传也不例外。好创意、好办法，往往都是从"地气"里生发出来的。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">这个"地气"，是地方实际。好的文旅创意，从来不是凭空造梗的哗众取宠，而是受众需求、现实情境与情绪消费的同频共振。</span></p>
+
+<p>以河北文旅宣传语<span class="highlight-blue">"这么近，那么美，周末到河北"</span>为例，短短11个字，看着平平无奇，为啥能产生强大的破圈效应和市场号召力？</p>
+
+<p>根本在于对游客群的精准定位，契合了周边地区游客"微度假""轻旅游"的需求。不搞华而不实的花架子，紧贴现实、简单直白、朗朗上口，就容易形成记忆点，<span class="highlight-purple">并在社交平台上持续传播。</span></p>
+
+<p>不论是打造城市形象，还是创新文旅口号，都要考虑与场景的适配度、与现实的贴合度。<span class="highlight-gold">好的文旅创意，从来不是凭空造梗的哗众取宠、千篇一律的模仿重复，而是受众需求、现实情境与情绪消费的同频共振。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">这个"地气"，是文化底蕴。植根城市文脉，创新表达方式，用真诚和创意讲好在地文化的故事，才能避免"千城一面"。</span></p>
+
+<p>"闽超"泉州队对阵福州队的赛前开幕式上，德化三通鼓、永春白鹤拳等非遗代表性项目精彩上演，<span class="highlight-blue">"郑成功"</span>带领全场高呼<span class="highlight-blue">"振兴中华"</span>，万人齐唱闽南语金曲《爱拼才会赢》，激昂闽南儿女<span class="highlight-gold">敢闯敢拼的精神</span>；"苏超"宿迁队对阵南京队前，"项羽"乘战车绕场巡游，一句"宿迁子弟何在"，唤醒的是观众对历史的记忆，也是一座城市的集体自豪感。</p>
+
+<p>城市的魅力，源自独一无二的文化气质。好的文旅推广，应做城市文化的"转译者"，把深埋在历史里的故事、流淌在血脉中的精神、内蕴于城市肌体的文化基因，"转译"为当代人能够理解和共情的语言。<span class="highlight-purple">这个过程最忌急功近利。植根城市文脉，创新表达方式，用真诚和创意讲好在地文化的故事，才能避免"千城一面"的同质化现象，打造具有更高辨识度、更大影响力的城市品牌。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">这个"地气"，还指深深扎根于人民。来自群众、群众自然更有感触；共创共享，故而群众更能共情。</span></p>
+
+<p>来自群众，群众自然更有感触；共创共享，故而群众更能共情。网友点赞路边小店登上绿茵场广告牌，就把小微企业共享赛事赞助红利固定为机制；有人"吐槽"体育场指引牌上的字晚上看不清，不到两小时就收到"明天加装发光指示牌"的官方回复……<span class="highlight-blue">"苏超"</span>的风靡，不只因为赛事精彩，更离不开善于<span class="highlight-blue">"接梗"</span>汇聚民声、乐于<span class="highlight-blue">"听劝"</span>倾听民意。<span class="highlight-gold">人民群众的生动实践是创意、创作、创造的源头活水，多听听群众怎么说、多请教群众怎么办、多邀请群众一起干，就能豁然开朗、找到答案。</span></p>
+
+<p>群众性文体活动的火爆，是人民主体性在中国式现代化征程中的有力彰显。<span class="highlight-purple">这深刻启示我们：人民群众的生动实践是创意、创作、创造的源头活水，多听听群众怎么说、多请教群众怎么办、多邀请群众一起干，就能豁然开朗、找到答案。</span></p>
+
+<p>进而言之，打造文旅热点，本质上是基于文化自信的创新创造。<span class="highlight-gold">不为流量所役，开放包容而不亦步亦趋，博采众长而不随波逐流——这何尝不是我们不断打开改革发展新天地的内在逻辑？</span></p>
+
+<p>土生土长的故事，往往拥有跨越地域的力量。<span class="highlight-gold">近些年，一些小成本国产电影凭着好口碑一路逆袭，再次印证：最好的故事和创意，不在别处，就在脚下这片炙热的土地。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月5日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·转译者</span><p>好的文旅推广，应做城市文化的"转译者"，把深埋在历史里的故事"转译"为当代人能够理解和共情的语言。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"文旅融合"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·同频共振</span><p>好的文旅创意，是受众需求、现实情境与情绪消费的同频共振。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"用户思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·千城一面</span><p>植根城市文脉，创新表达方式，才能避免"千城一面"的同质化现象。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"文化辨识度"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·源头活水</span><p>人民群众的生动实践是创意、创作、创造的源头活水，多听听群众怎么说、多请教群众怎么办，就能豁然开朗。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"群众主体"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·炙热土地</span><p>最好的故事和创意，不在别处，就在脚下这片炙热的土地。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"扎根大地"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·赛场破题</span><p>用"辛弃疾画布/文天祥实景"赛场文化破题，文化场景法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层地气</span><p>用"实际/底蕴/人民"三层拆解文旅创意，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·周末到河北</span><p>用河北文旅口号论证精准定位，口号分析法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·接梗听劝</span><p>用"苏超接梗听劝"论证群众共创，群众工作法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·炙热土地</span><p>用"最好的创意在脚下土地"收束文化自信，升华收束法可用于"乡土"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「村晚舞台」看乡土创意"为题，模仿本文"赛场破题→地方实际→文化底蕴→炙热土地收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个乡村文化场景引题；②分"贴合现实/植根文脉"两层；③以"脚下土地"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"非遗活化"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月5日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
