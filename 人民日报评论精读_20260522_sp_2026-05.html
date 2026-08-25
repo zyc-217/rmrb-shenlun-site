@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 前瞻性眼光从何而来（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>前瞻性眼光从何而来（人民时评）</h1>
+    <div class="meta">战略眼光 · 因地制宜 · 区域协调 · 错位发展 | 2026年5月22日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">战略眼光</span><span class="tag-item">因地制宜</span><span class="tag-item">区域协调</span><span class="tag-item">错位发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以蓝莓、中国汽车、安徽汽车、庆阳智算、黄石飞地、武功电商等案例，论证前瞻性眼光源于把握趋势、辩证长短、开阔眼界，适合"战略眼光""区域协调"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"蓝莓自由""中国汽车夺冠"两则新闻破题，引出前瞻性布局之问。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">前瞻性眼光源于把握趋势+辩证长短+开阔眼界，错位竞争掌握主动<br><span style="color:#0d47a1;">▸ 写法：由蓝莓/汽车破题，点明三来源</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">基于对潮流趋势的把握，未雨绸缪主动布局<br><span style="color:#0d47a1;">▸ 写法：以安徽汽车战略咨询委论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">体现在对长短的辩证把握，短板变跳板<br><span style="color:#0d47a1;">▸ 写法：以庆阳智能算力论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">在于眼界的宽阔程度，跳出一地看一地<br><span style="color:#0d47a1;">▸ 写法：以黄石飞地/武功电商论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"趋势/长短/眼界"三维拆解前瞻性可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】前瞻性眼光，源于对潮流趋势的科学把握、对"长与短"的辩证考量、对眼界视野的宽阔观照；找准比较优势、错位竞争、差异化发展，方能在千帆竞发中抢占先机、掌握主动。</p><p><span class="highlight-gold">后发亦可先至，短板也能成为发展的跳板。找准比较优势，错位竞争，实现差异化发展，一地发展才会有"过人之处"。</span></p>
+
+<p>看似不相关的新闻，合起来看，则耐人寻味。</p>
+
+<p>"蓝莓自由"近期刷屏。蓝莓曾是高价舶来品，如今中国产量稳居全球第一，价格更亲民。</p>
+
+<p>再看中国汽车，据报道，2025年中国车企全球累计销量<span class="highlight-green">逼近2700万辆</span>，首次超越日本车企的<span class="highlight-green">约2500万辆</span>，夺得全球冠军。</p>
+
+<p>蓝莓做出大文章，汽车闯出大市场，回过头来看，这样的成绩来之不易，也引人思考：前瞻性布局是如何实现的？前瞻性眼光从何而来？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">前瞻性，往往基于对潮流、趋势的把握。潮流起势之初便科学判断走向，未雨绸缪、主动布局，方能立于潮头。</span></p>
+
+<p>前瞻性，往往基于对潮流、趋势的把握。潮流起势之初，便科学判断其走向，趋势未成之前，就预判未来动态，未雨绸缪、主动布局，等到潮流、趋势成形时，自然能立于潮头。</p>
+
+<p>就拿安徽来说，汽车产量从2020年全国第八，到2025年全国第一，省新能源汽车产业集群建设战略咨询委员会发挥了重要作用。成立之初，它就被赋予"站在未来看现在，站在后天看今天"的职责，不仅连接高校、产业等资源，为汽车发展出谋划策，还推动技术创新落地转化、产品创新迭代。</p>
+
+<p>要想抢占先机，就必须有战略眼光。保持"见微知著"的敏锐，练就"一叶知秋"的机警，擦亮捕捉机遇的"火眼金睛"，既立足当前，明确当务之急，也着眼未来，善谋长远之策，才能让发展的后劲源源不绝。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">眼光的前瞻性，也体现在对"长与短"的辩证把握上。换个角度思考，短板可能是潜力板、是未来努力的方向。</span></p>
+
+<p><span class="highlight-purple">眼光的前瞻性，也体现在对"长与短"的辩证把握上。有些地方的资源、区位等基础条件，从常规思路来看，可能是短板，换个角度思考，就可能是潜力板，是未来可以努力的方向。</span></p>
+
+<p>在<span class="highlight-blue">"东数西算"</span>全国八大枢纽节点中，甘肃庆阳起步最晚。没了先发优势，庆阳转换思路，不是发展通用算力，而是另辟蹊径，发展智能算力。于是，在国产AI（人工智能）大模型集中涌现、全国智算需求急速增长的窗口期，庆阳反而抢占了先机。截至2025年底，庆阳数据中心集群智算规模<span class="highlight-green">达11.4万P</span>（1P约等于每秒1000万亿次计算速度），成为全国增量最大、增速最快、智算化比例最高的枢纽节点和数据集群。</p>
+
+<p><span class="highlight-gold">后发亦可先至，短板也能成为发展的跳板。找准比较优势，错位竞争，实现差异化发展，一地发展才会有"过人之处"。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">眼光是否具有前瞻性，还在于眼界的宽阔程度。勇于跳出一地一隅的局限，以更宏阔视野观照一地，看见更多机遇与空间。</span></p>
+
+<p>眼光是否具有前瞻性，还在于眼界的宽阔程度。</p>
+
+<p>比如，能否跳出一地看一地，以协同之力成发展之势。湖北黄石，作为中部省份的中等城市，科教资源、科技人才优势并不突出，如何破局？借脑发展、借智创新，把外部智力变成黄石机遇。黄石创新探索<span class="highlight-blue">"飞地研发+本土转化"</span>路径，布局建设武汉、上海、深圳、北京离岸科创中心，<span class="highlight-green">累计引育企业超400家</span>。</p>
+
+<p>再比如，能否站在世界版图看一地，以国际市场开拓新空间。陕西咸阳武功县，借助10公里外杨凌的<span class="highlight-blue">"自贸试验区+综保区"</span>等政策叠加优势，设立"武功电商专用保税仓"。2025年，全县全网店铺<span class="highlight-green">超5000家</span>，跨境电商贸易额<span class="highlight-green">超1.02亿元</span>。</p>
+
+<p><span class="highlight-purple">他者也能成为自身发展的助力。勇于跳出一地一隅的局限，以更宏阔的视野、更开放的眼界观照一地，就能看到更多的市场机遇、更广的发展空间、更远的美好未来。</span></p>
+
+<p><span class="highlight-gold">行棋观大势，落子谋全局。对弈中，能多看一步，就多一分胜算，发展亦是如此。把握好当前与长远、识别好长板与短板、统筹好自身与他者，在千帆竞发中找准赛道、抢占先机，就能牢牢掌握发展的主动权。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月22日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·短板跳板</span><p>后发亦可先至，短板也能成为发展的跳板。找准比较优势，错位竞争，一地发展才会有"过人之处"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"错位发展"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·见微知著</span><p>保持"见微知著"的敏锐，练就"一叶知秋"的机警，擦亮捕捉机遇的"火眼金睛"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"战略眼光"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·长短辩证</span><p>眼光的前瞻性，体现在对"长与短"的辩证把握上。换个角度思考，短板可能是潜力板。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"辩证思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·他者助力</span><p>他者也能成为自身发展的助力。跳出一地一隅的局限，以更宏阔视野观照一地。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"区域协调"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·行棋落子</span><p>行棋观大势，落子谋全局。能多看一步，就多一分胜算，发展亦是如此。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"大局观"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·双新闻引题</span><p>用"蓝莓自由+汽车夺冠"两则新闻破题，新闻并置法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三维拆解</span><p>用"趋势/长短/眼界"三维拆解前瞻性眼光，三维框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·庆阳换道</span><p>用庆阳"不发展通用算力、另辟智能算力"论证换道超车，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·飞地研发</span><p>用黄石"飞地研发+本土转化"论证借脑发展，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·行棋落子</span><p>用"行棋观大势，落子谋全局"收束大局观，对仗收束法可用于"战略谋划"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「算力换道」看后发赶超"为题，模仿本文"双新闻引题→趋势把握→长短辩证→行棋落子收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用两则产业新闻引题；②分"把握趋势/辩证长短"两层；③以"落子谋全局"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"县域经济"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月22日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
