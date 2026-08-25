@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从“在中国生产”到“在中国创造”（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从“在中国生产”到“在中国创造”（人民时评）</h1>
+    <div class="meta">外商投资 · 科技创新 · 新质生产力 · 创新生态 | 2026年5月18日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">外商投资</span><span class="tag-item">科技创新</span><span class="tag-item">新质生产力</span><span class="tag-item">创新生态</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以高技术外资同比增30.7%、阿斯利康千亿投资、西门子26款本土研发等数据，论证外资"制造基地"升级为"创新策源地"源于产业体系、应用场景、政策环境三重支撑，适合"科技创新""外资利用"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"从在中国生产到在中国创造"的命题转换破题，点出研在中国趋势。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">从生产到创造源于产业体系+应用场景+政策环境三重支撑，制造基地升级为创新策源地<br><span style="color:#0d47a1;">▸ 写法：由外资数据破题，点明三重支撑</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">完备产业体系让创新落地有支撑，即研即产能力难比拟<br><span style="color:#0d47a1;">▸ 写法：以施耐德双创新方案论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">丰富应用场景让创新成果有市场，需求反哺研发<br><span style="color:#0d47a1;">▸ 写法：以西门子首发落地论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">持续优化政策环境让创新投资有信心，来了又来<br><span style="color:#0d47a1;">▸ 写法：以外资研发中心免税政策论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"产业/市场/政策"三维支撑框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从"在中国生产"到"在中国创造"，折射外资企业持续加码"研在中国"、在华"制造基地"正升级为"创新策源地"，其深层支撑在于完备的产业体系、丰富的应用场景与持续优化的政策环境三者协同。</p><p><span class="highlight-gold">越来越多跨国公司在华"制造基地"正升级为"创新策源地"，外资在华研发中心正从本地化适配升级为全球创新支点。</span></p>
+
+<p>商务部不久前发布的两个数据，引人关注。</p>
+
+<p>一个是，今年一季度，<span class="highlight-green">全国高技术产业实际使用外资同比增长30.7%</span>。</p>
+
+<p>另一个是，2025年我国科学研究和技术服务领域实际使用外资占我国实际使用外资总额的<span class="highlight-green">近1/5</span>，占比<span class="highlight-green">连续7年稳步上升</span>。</p>
+
+<p>向上攀升的数据，折射外资企业持续加码"研在中国"。</p>
+
+<p>数据之外，市场动态更是力证。今年初，跨国药企阿斯利康表示，计划在2030年前，向中国市场投资<span class="highlight-green">超过1000亿元</span>，进一步扩大在药品生产与研发领域的布局；3月，西门子首届科技大会在北京举办，<span class="highlight-green">26款中国本土研发的产品</span>推向市场；在中国发展高层论坛2026年年会上，路易达孚集团董事会主席表示，正筹划在中国建设第二座研发中心……从数据到市场，加码"研在中国"的趋势愈发清晰。</p>
+
+<p><span class="highlight-purple">还需看到，早期的外资研发中心更多服务于中国本土市场需要，而现在，越来越多的前沿技术研发和全球产品线核心迭代，正在中国完成，并反哺到国际市场。这说明，越来越多跨国公司在华"制造基地"正升级为"创新策源地"，外资在华研发中心正从本地化适配升级为全球创新支点。</span></p>
+
+<p>从"在中国生产"到"在中国创造"，这一趋势何以出现？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">完备的产业体系，让创新落地有支撑。从实验室到产业化的全链条协同，使"即研即产"能力成为难以比拟的优势。</span></p>
+
+<p>完备的产业体系，让创新落地有支撑。研发不是空中楼阁，需要从实验室到产业化的全链条支撑。中国拥有世界上最完整的工业体系和最齐全的产业配套，这意味着，要进行创新，能在这里找到从设计、试制到量产的全流程合作伙伴。去年进博会上，施耐德电气展示的"电力+冷却"双创新方案，就是由中国团队主导研发设计，本土供应链协同完成验证交付。研发、中试、量产高效协同，这种"即研即产"的能力，是其他许多经济体难以比拟的优势。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">丰富的应用场景，让创新成果有市场。庞大需求形成天然"试验场"，强大的市场需求能反哺研发、加速迭代。</span></p>
+
+<p>丰富的应用场景，让创新成果有市场。中国庞大人口基数叠加稳步提升的收入水平，催生出旺盛且多元的需求，形成了活跃的数字化、绿色化、智能化消费场景。医疗健康、智能制造、智慧城市等领域的海量需求，为新技术提供了天然的"试验场""健身房"。"很多事情首先发生在中国"，西门子股份公司董事会主席博乐仁表示，"当我们将创新推向市场时，中国往往是首发和率先落地的市场"。强大的市场需求能反哺研发，让创新从"想法"到"产品"的路径迭代更高效。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">持续优化的政策环境，让创新投资有信心。政策有力度、服务有温度，夯实外资"来了又来、投了又投"的信任基础。</span></p>
+
+<p>持续优化的政策环境，让创新投资有信心。政策稳定性是跨国企业长期布局的关键考量，尤其是研发中心的投入对长期性、稳定性、确定性的要求更高。今年以来，中国持续加大对外资研发中心的政策支持力度。比如，2月1日起生效的新版<span class="highlight-blue">鼓励外商投资产业目录</span>，在新型药物研发、数字创意技术研发等方面进一步增加鼓励类条目。2月，财政部、商务部等部门印发通知，继续对外资研发中心进口有关科研用品免征进口关税和进口环节增值税、消费税。政策有力度、服务有温度，夯实了外资"来了又来、投了又投"的信任基础。</p>
+
+<p><span class="highlight-blue">"十五五"规划纲要</span>提出，大力吸引外资企业在华设立地区总部、研发中心。外资企业加快布局"研在中国"，折射中国引资磁力的深层变化，见证中国创新生态的蓬勃生命力。未来，中国将继续发挥产业、市场、政策等综合优势，吸引更多跨国公司将研发环节放在中国，共享创新中国的发展机遇。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月18日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·创新策源</span><p>越来越多跨国公司在华"制造基地"正升级为"创新策源地"，外资在华研发中心正从本地化适配升级为全球创新支点。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"科技创新"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·研在中国</span><p>从"在中国生产"到"在中国创造"，这一趋势何以出现？</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：设问金句，适合"外资利用"引论。</p></div><div class="material-card"><span class="tag-shenlun">金句三·即研即产</span><p>研发、中试、量产高效协同，这种"即研即产"的能力，是其他许多经济体难以比拟的优势。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"产业体系"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·试验场</span><p>医疗健康、智能制造、智慧城市等领域的海量需求，为新技术提供了天然的"试验场""健身房"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"应用场景"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·创新生态</span><p>外资企业加快布局"研在中国"，折射中国引资磁力的深层变化，见证中国创新生态的蓬勃生命力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"创新生态"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·数据引题</span><p>用"两个数据"引题论证研在中国趋势，双数据引题法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三维支撑</span><p>用"产业体系/应用场景/政策环境"三维拆解创新策源，三维框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·即研即产</span><p>用施耐德"电力+冷却"方案论证全链条协同，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·试验场喻</span><p>用"试验场/健身房"比喻应用场景，比喻法可用于"市场牵引"话题。</p></div><div class="migration-card"><span class="tag-mig">迁移五·政策目录</span><p>用"鼓励外商投资产业目录"论证政策环境，政策抓手法可迁移。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「中国制造」到「中国智造」"为题，模仿本文"数据引题→产业体系/场景/政策三维→创新生态收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用产业数据引题；②分"体系支撑/场景牵引"两层；③以"创新生态"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"新质生产力"角度，用同一骨架写一句总论点，要求含"从……到……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月18日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
