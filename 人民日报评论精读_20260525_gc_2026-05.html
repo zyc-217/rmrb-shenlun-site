@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 与AI同行，答案在人手中（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>与AI同行，答案在人手中（评论员观察）</h1>
+    <div class="meta">人工智能 · 人才培养 · 人的价值 · 技术向善 | 2026年5月25日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">人工智能</span><span class="tag-item">人才培养</span><span class="tag-item">人的价值</span><span class="tag-item">技术向善</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以AI人才需供比3.5∶1、9200万岗位被替代与1.7亿新岗位涌现等数据，论证技术替代功能而非人本身、人的比较优势不可替代、育人使命不变，适合"人工智能""人才培养"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"人的价值坐标该如何锚定"之问破题，直击AI时代人的主体性。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">AI时代答案在人手中：技术替代功能而非人本身，育人使命永不变<br><span style="color:#0d47a1;">▸ 写法：由人才需供比破题，点明人的主体</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">锚定人的价值坐标，新技术替代功能而非人本身<br><span style="color:#0d47a1;">▸ 写法：以9200万/1.7亿岗位论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">AI改写能力图谱，凸显人的比较优势<br><span style="color:#0d47a1;">▸ 写法：以文科人才/跨界人才论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">育人的使命永远不会变，技术向善答案在人手<br><span style="color:#0d47a1;">▸ 写法：以徐梦桃/支教群体/消防员论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"价值坐标/比较优势/育人使命"三层框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】与AI同行，答案在人手中——技术替代的从来只是某种功能、某种职业而非人本身；机器越擅长标准化运算，越显出人在非标准化复杂场景中不可替代的价值，育人的使命永远不会变。</p><p><span class="highlight-gold">机器越是擅长标准化运算，越显出人在非标准化复杂场景中不可替代的价值。无论技术如何演变，育人的使命永远不会变。</span></p>
+
+<p>随着技术和场景的双重突破，当前各行业各领域对人工智能人才需求攀升。数据显示，人工智能相关人才供给不足，<span class="highlight-green">需供比是3.5∶1</span>。</p>
+
+<p>在人才供给侧，教育领域也在经历深刻变革。近日发布的《全球数字教育发展指数（2026）》显示，<span class="highlight-green">78%</span>的国家强调应更加重视学生高阶思维能力培养，中美等4国已率先进入"AI（人工智能）+教育"新阶段。</p>
+
+<p>就业市场提出新的需求，教育界随之作出调整，变化背后有一个深刻的时代命题：在人工智能深刻重塑生产生活方式的今天，人的价值坐标该如何锚定？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">锚定人的价值坐标。新技术替代的从来只是某种功能、某种职业，而非人本身；与其焦虑被替代，不如追问如何驾驭新技术凸显人的价值。</span></p>
+
+<p>回看历史，每一次技术跃迁，都伴随着人"向何处去"的焦虑。蒸汽机、流水线替代了手工作坊，同时催生出工程师、铁路调度员等全新职业，也把管理学、工业设计等新领域推上历史舞台。新技术替代的，从来只是某种功能、某种职业，而非人本身。世界经济论坛发布的报告预测，到2030年，全球将有<span class="highlight-green">9200万个</span>工作岗位被替代，但会有<span class="highlight-green">1.7亿个</span>工作岗位被新创造出来。一些传统岗位会消亡，但更多新工作在涌现。</p>
+
+<p>因此，与其焦虑"人会不会被替代"，不如追问一个更根本的问题：如何驾驭新技术以凸显人的价值？答案正在实践中浮现。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">AI改写能力图谱，凸显人的比较优势。从"会操作"到"善判断"、从"能执行"到"能整合"，恰恰是人的独特价值。</span></p>
+
+<p>机器人企业发现文科人才在用户洞察上不可或缺，汽车制造商转向寻觅兼具工程知识与数字素养的跨界人才，数据标注师、人工智能训练师等新职业从无到有……劳动力市场正在经历一场静悄悄的"价值迁移"。从"会操作"到"善判断"，从"能执行"到"能整合"，从"精通一门手艺"到"进行创造性联想"，人工智能改写能力图谱，凸显的恰恰是人的比较优势。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">育人的使命永远不会变。技术向善的命题持续回响，答案永远握在我们自己手中。</span></p>
+
+<p>习近平总书记强调：<span class="highlight-blue">"推进人工智能全学段教育和全社会通识教育，源源不断培养高素质人才。"</span>顺应人工智能带来的变革，关键在思维思路，根基在学习教育。从<span class="highlight-blue">《"人工智能+教育"行动计划》</span>推动人工智能教育全面纳入地方课程体系，到一些高校鼓励博士生读硕士、培养复合型人才，再到职业院校推进技能培训与产业需求精准对接，一系列部署举措的用意，在于塑造学生的创新思维，培养其解决问题、合作沟通、适应变化、面对复杂情境的能力。</p>
+
+<p><span class="highlight-purple">创造性思维、跨界整合、审美感知、对伦理边界的判断……这些都是算法难以复制的人类禀赋。机器越是擅长标准化运算，越显出人在非标准化复杂场景中不可替代的价值。技术可以刷新教育的手段，但改变不了教育的方向；算法可以优化知识的传递，但替代不了人格的养成。无论技术如何演变，育人的使命永远不会变。</span></p>
+
+<p>进一步看，仅仅在"有用"的维度讨论人的价值，显然不够。徐梦桃<span class="highlight-green">35岁五战冬奥</span>，她夺冠后激动的泪水，蕴藏着算法无法模拟的毅力；河北保定学院西部支教毕业生群体扎根边疆，背后是大模型不能量化的情怀；在火场中逆行的消防员，他们的崇高选择不能被机器定义。人工智能可以让世界运转得更快，但让人间变得更值得的，始终是人对意义的追问、对善的坚守、对彼此命运的真切关怀。<span class="highlight-purple">人心不能被算法优化，但这不是人的局限，恰恰是人的独特优势所在。</span></p>
+
+<p>技术的洪流奔涌向前，但真正的弄潮儿从来不会随波逐流，而是知道自己"为何出发"。从教育到就业，从产业转型到文明赓续，技术向善的命题持续回响。<span class="highlight-gold">答案，永远握在我们自己手中。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月25日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·不可替代</span><p>机器越是擅长标准化运算，越显出人在非标准化复杂场景中不可替代的价值。无论技术如何演变，育人的使命永远不会变。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"AI与人的价值"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·非人本身</span><p>新技术替代的，从来只是某种功能、某种职业，而非人本身。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"技术伦理"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·价值迁移</span><p>从"会操作"到"善判断"、从"能执行"到"能整合"，人工智能改写能力图谱，凸显的恰恰是人的比较优势。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"人才培养"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·人格养成</span><p>技术可以刷新教育的手段，但改变不了教育的方向；算法可以优化知识的传递，但替代不了人格的养成。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"育人本质"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·答案在手</span><p>人心不能被算法优化，但这不是人的局限，恰恰是人的独特优势所在。答案，永远握在我们自己手中。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"技术向善"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·数据破题</span><p>用"需供比3.5∶1"数据破题，数据切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·替代辩证</span><p>用"替代功能而非人本身"辩证技术与人，辩证框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·比较优势</span><p>用"会操作→善判断"能力图谱迁移论证人的优势，概念法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·全学段教育</span><p>用"人工智能全学段教育"政策论证育人，政策抓手法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·答案在手</span><p>用"答案永远握在我们自己手中"收束技术向善，金句收束法可用于"人的主体"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「人机协同」看教育的方向"为题，模仿本文"数据破题→替代辩证→比较优势→答案在手收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用人才数据引题；②分"功能替代/人格养成"两层；③以"答案在手"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"数字素养"角度，用同一骨架写一句总论点，要求含"从来只是……而非……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月25日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
