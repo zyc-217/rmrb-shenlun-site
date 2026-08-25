@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 在重拾耕读中感悟知行合一（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>在重拾耕读中感悟知行合一（人民时评）</h1>
+    <div class="meta">耕读教育 · 知行合一 · 立德树人 · 人才培养 | 2026年6月1日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">耕读教育</span><span class="tag-item">知行合一</span><span class="tag-item">立德树人</span><span class="tag-item">人才培养</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以清华、北大等多所高校耕读实践切入，论证重拾耕读补上脚踏实地一课、让"耕""读"相贯通、以深度胜广度，本质上体现知行合一理念，适合"劳动教育""立德树人"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"现代大学为何重拾耕读"之问破题，把传统耕读接入现代教育。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">重拾耕读补上脚踏实地一课，让耕读贯通、深度胜广度，本质知行合一<br><span style="color:#0d47a1;">▸ 写法：由多高校耕读实践破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">耕读教育回归，补上脚踏实地这一课<br><span style="color:#0d47a1;">▸ 写法：以中央民大113名学生论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">"耕"与"读"相贯通，书本理论与脚下土地对接<br><span style="color:#0d47a1;">▸ 写法：以清华小凉山茶园论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">防形式化，深度比广度更重要、追求穿透力<br><span style="color:#0d47a1;">▸ 写法：以高校教师"缩"的坦言论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"脚踏实地/耕读贯通/深度穿透"三层框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】重拾耕读并非复古，而是补上脚踏实地这一课，让"耕"与"读"相贯通，在弯腰与抬头之间重建年轻人与脚下土地的联系，本质上体现知行合一理念。</p><p>走出教室、走进田野，播种施肥、采茶除草，大学生们体验农耕之美、稼穑之艰，正悄然流行。一段时间以来，清华大学、北京大学、中央民族大学、上海财经大学等多所高校陆续开展耕读实践，引发关注热议。</p>
+
+<p>有人点赞，也有人不解：现代大学教育，为何要重拾"耕读"？</p>
+
+<p>"耕读传家久，诗书继世长"。在中华传统文化语境中，"耕"与"读"是经常相提并论的两件事。晴耕雨读、半农半学，既是一种生活方式，也是一种求知态度。随着城镇化进程加速和教育专业化水平提高，"耕"与"读"渐行渐远，如今不少大学生对耕作比较陌生。笔者采访中也曾遇到学生种薄荷时分不清哪棵是苗、哪棵是草，有学生说从未见过花生是怎么长出来的。</p>
+
+<p><span class="highlight-purple">当知识获取越来越依赖多媒体手段、智能化工具，年轻人和真实世界之间隔着屏幕，缺失了不少体验。知识与体验割裂开来，无异于让人在"空中楼阁"学习世界如何运转，这是现代教育面临的一个共性问题。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">耕读教育回归，补上的正是脚踏实地这一课，让年轻人在泥土中认知庄稼不等人、天气不如人意的真实世界。</span></p>
+
+<p>耕读教育回归，补上的正是脚踏实地这一课。中央民族大学<span class="highlight-green">113名学生</span>到河北农场劳动，有的女生穿着白帆布鞋下田摘毛豆，起初小心翼翼，很快就顾不上脏不脏了。北京大学学生在教学楼前种植物，遇上一场大风差点前功尽弃，"只能重新来过"。庄稼不等人、天气不如人意——这些在教室里难有深切认知的内容，到泥土中一学就会。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"耕"与"读"相贯通，才能真正凸显价值、提升育人质效，让书本理论与脚下土地对接。</span></p>
+
+<p>不过，耕读不能仅仅停留在体验农活上。"耕"与"读"相贯通，才能真正凸显价值，提升育人质效。</p>
+
+<p>清华大学马克思主义学院的做法颇有启示。学生们在小凉山的茶园劳动半个月，白天采茶、走访村民，晚上一起阅读<span class="highlight-blue">《摆脱贫困》</span>等著作。当书本上的理论和脚下的土地对接起来，一名同学感慨："和土地、人民相联系的学术研究才更有生命力。"</p>
+
+<p>脚踩广袤大地，"耕"与"读"方能更好融合。白天在田地里弯腰，晚上再翻开书本时，纸面上的道理或许就被田垄和劳作讲清楚了。看似寻常的农情农事，会成为大学生们理解乡村、理解社会的一扇窗口。如此耕读，更易转化为学生的心灵体验，升华为理性认识。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">耕读教育走热也现不良苗头，关键在深度比广度更重要、追求穿透力，以实效而非形式评价育人。</span></p>
+
+<p>当然，耕读教育走热，也出现了一些需要留意的不良苗头。有的学校将其简化为一两天的参观体验，流于拍照打卡等形式；有的学校把日程安排得满满当当，今天摘茶明天插秧后天磨豆腐，看似丰富，实则浮光掠影。一名高校教师坦言："我们在考虑'缩'，不是缩短时间，而是缩小范围。学生不用体验那么多，在一个村子里待住就行，关键是要扎得深。"<span class="highlight-purple">一个"深"字，道出了耕读教育的要害：深度比广度更重要，必须追求穿透力。</span></p>
+
+<p>形式可以多种多样，育人的初心不能忘。高校纷纷重拾耕读传统，如何进行效果评价？关键不在于开了多少门课、设置多少学分，而是能不能真正让年轻人在弯腰与抬头之间，在内心重建自我和脚下土地的联系。</p>
+
+<p><span class="highlight-gold">"耕读传家"，本质上体现着知行合一理念。</span>创设条件、完善机制、突出实效，让学生在田地感受四季轮回更替，在村庄读懂时代变迁，耕读教育的价值与潜力难以估量。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月1日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·耕读贯通</span><p>"耕"与"读"相贯通，才能真正凸显价值、提升育人质效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"劳动教育"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·空中楼阁</span><p>知识与体验割裂，无异于让人在"空中楼阁"学习世界如何运转。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"知行合一"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·生命力</span><p>和土地、人民相联系的学术研究才更有生命力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：名言金句，适合"扎根大地"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·深度广度</span><p>深度比广度更重要，必须追求穿透力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"育人实效"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·知行合一</span><p>"耕读传家"，本质上体现着知行合一理念。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"立德树人"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·设问破题</span><p>用"现代大学为何重拾耕读"设问破题，设问切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层框架</span><p>用"脚踏实地/耕读贯通/深度穿透"三层拆解耕读教育，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·泥土中学</span><p>用"113名学生到河北农场"论证补上脚踏实地，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·小凉山茶园</span><p>用清华小凉山茶园论证耕读贯通，场景法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·知行合一</span><p>用"知行合一"收束立德树人，理念收束法可用于"教育"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「田间课堂」看劳动教育"为题，模仿本文"设问破题→补上脚踏实地→耕读贯通→知行合一收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"为何开设田间课"设问；②分"落地认知/理论联系实际"两层；③以"知行合一"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"乡村振兴人才"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月1日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
