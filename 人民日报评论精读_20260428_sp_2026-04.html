@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 考实真政绩  画准实干人（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>考实真政绩  画准实干人（人民时评）</h1>
+    <div class="meta">干部考核 · 实干担当 · 正确政绩观 · 组织工作 | 2026年4月28日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">干部考核</span><span class="tag-item">实干担当</span><span class="tag-item">正确政绩观</span><span class="tag-item">组织工作</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以天津"政绩观察员"破题，论证考核要考实真政绩、画准实干人，把研究事与研究人结合，适合"干部考核""正确政绩观"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"25岁王晗暴雨中坚守"被观察员看见的细节，以小见大谈平时考核。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">考核是"指挥棒""风向标"，全方位多渠道了解干部、近距离全过程描绘画像，方能考实真政绩、画准实干人<br><span style="color:#0d47a1;">▸ 写法：由天津政绩观察员破题，点明考核导向</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">功夫下在平时，以场景式考察、陪伴式成长把真政绩和实干人凸显出来<br><span style="color:#0d47a1;">▸ 写法：以天津一线观察、王晗案例论证平时考核</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">考核既是指挥棒风向标，既要看显绩也要看潜绩，既用望远镜又用显微镜<br><span style="color:#0d47a1;">▸ 写法：以功成不必在我、遏制形象工程论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">立足实际探索分类考核，一把量尺不能包打天下<br><span style="color:#0d47a1;">▸ 写法：以浙江分类考核、福建泉州容错纠错论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"平时考核→显绩潜绩→分类差异化"的递进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】考核是"指挥棒"和"风向标"。全方位、多渠道了解干部，近距离、全过程描绘政绩画像，把研究事和研究人结合起来，既在小事上识德辨才，更在大事上看德识才，才能考实真政绩、画准实干人，树立正确导向，营造崇尚实干、主动担当、加油鼓劲的浓厚氛围。</p><p>全方位、多渠道了解干部，近距离、全过程描绘政绩画像，把研究事和研究人结合起来，既在小事上识德辨才，更在大事上看德识才。</p>
+
+<p>干部干得好不好，如何更科学地评价？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">功夫下在平时，考核瞄准实绩。将组织资源前置到实践一线，从事后评价转为动态跟踪，这样的场景式考察，也是"陪伴式成长"，可以更好掌握干部的日常状态和一贯表现，把真政绩和实干人凸显出来，进而促进干部成长与事业发展同频共振。</span></p>
+
+<p>到基层干部群众中、从百姓口碑中了解干部，是重要途径。<span class="highlight-green">天津市和平区设立70余名"政绩观察员"</span>，到一线看实景、听口碑，深入了解和掌握干部担当作为情况，让干部政绩画像更写实传神。</p>
+
+<p>干部业绩在实践，干部口碑在民间。近距离观察，有助于拉近观察视角，让埋头苦干的人赢得更多掌声。作为和平区排水管理所的干部，<span class="highlight-green">25岁的王晗负责巡查管网、清掏排污，工作又脏又累，不显山不露水</span>。而到现场考察的"政绩观察员"，看到了台账背后的付出，也看到了暴雨中的坚守。<span class="highlight-green">王晗所在单位先后3次获评天津市特等模范集体。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">考核是"指挥棒"和"风向标"，指向哪些方面、重点考核什么，党员干部往往会把更多精力和行动投向哪里。既用望远镜又用显微镜，既看显绩又看潜绩，才能涵养正确政绩观、遏制形象工程。</span></p>
+
+<p>如何涵养<span class="highlight-gold">"功成不必在我、功成必定有我"</span>的精神境界和历史担当？考核就要既用望远镜又用显微镜，既看显绩又看潜绩。</p>
+
+<p>如何遏制那些做表面文章、劳民伤财的<span class="highlight-blue">"形象工程"和"政绩工程"</span>？考核中就要常念<span class="highlight-blue">"紧箍咒"、多些"回头看"</span>，既审视决策过程又评估实际成效。</p>
+
+<p>全方位、多渠道了解干部，近距离、全过程描绘政绩画像，把研究事和研究人结合起来，既在小事上识德辨才，更在大事上看德识才，才能<span class="highlight-blue">树立正确导向，营造崇尚实干、主动担当、加油鼓劲的浓厚氛围</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">考核是一把量尺，但各地资源禀赋、基础水平、发展阶段、功能定位并不相同，不可能一种考核办法包打天下，而要立足实际探索分类考核方式。</span></p>
+
+<p>考核干部，要做到经常化、制度化、全覆盖。进一步完善政绩考核体系，需要在多样实践、动态变化中考准考实干部的状态和作为。</p>
+
+<p>比如，<span class="highlight-green">浙江实施综合考核时，将县（市、区）划分为山区县和非山区县两个类别，对省直部门单位、省属企业实行"一单位一策"差异化考核</span>，既全量化开展指标评分，又尽量把同一个量级的"选手"放在一起考核，进一步提升了针对性和公平性。</p>
+
+<p>考核政绩，不仅仅是评判优劣、实施奖惩，还在于通过激励先进、鞭策后进，充分调动各方面积极性、主动性、创造性，凝聚干事创业的最大合力。</p>
+
+<p>例如，<span class="highlight-green">福建泉州紧扣审批创新、监管执法、应急处置等10类高频履职场景</span>，明确容错纠错适用条件与负面清单，既划定"可为、不可为"清晰边界，又动态更新清单，为干部履职提供"导航图"。明确"警戒线"，设置"防护栏"，把严格管理干部和热情关心干部结合起来，在更好的干事创业环境中，"老黄牛"不会被埋没，"闯将"亦无后顾之忧，更多"实干家"将脱颖而出。</p>
+
+<p>科学合理考核干部，旨在推动事业发展、更好为民造福。<span class="highlight-gold">科学精准的政绩考核制度，是干事创业的有力推进器。</span>关注平时，瞄准实绩，着眼长远，动态追踪，进一步完善激励机制和容错纠错机制，<span class="highlight-purple">让每一个岗位的价值得到认可，让每一分辛勤的付出都有回响</span>，广大党员干部必将在新征程上不断焕发新活力、展现新作为。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月28日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·指挥棒</span><p>考核是"指挥棒"和"风向标"，指向哪些方面、重点考核什么，党员干部往往会把更多精力和行动投向哪里。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：高频表述，适合"考核导向/指挥棒"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·功成境界</span><p>如何涵养"功成不必在我、功成必定有我"的精神境界和历史担当？考核就要既用望远镜又用显微镜，既看显绩又看潜绩。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句化用，适合"正确政绩观"直接引用。</p></div><div class="material-card"><span class="tag-shenlun">金句三·陪伴式成长</span><p>将组织资源前置到实践一线……这样的场景式考察，也是"陪伴式成长"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，可用于"平时考核/干部培养"话题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·推进器</span><p>科学精准的政绩考核制度，是干事创业的有力推进器。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合收束"制度激励"段落。</p></div><div class="material-card"><span class="tag-shenlun">金句五·回响</span><p>让每一个岗位的价值得到认可，让每一分辛勤的付出都有回响。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：抒情收束句，适合"尊重实干/激励担当"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·观察员破题</span><p>用"政绩观察员"到一线看实景听口碑破题，具象机制可作干部工作话题引子。</p></div><div class="migration-card"><span class="tag-mig">迁移二·显微镜望远镜</span><p>"既用望远镜又用显微镜，既看显绩又看潜绩"双层论证政绩观，辩证结构可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·分类考核</span><p>用浙江山区县/非山区县差异化论证分类考核，因地制宜法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·容错纠错</span><p>用福建泉州"导航图""警戒线""防护栏"论证严管厚爱，机制设计法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三层递进</span><p>"平时考核→显绩潜绩→分类差异化"递进，适合写组织工作类策论。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「一线听诊器」看真抓实干"为题，模仿本文"案例破题→显绩潜绩→分类差异化→激励容错"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个基层考核细节引题；②分"看显绩/看潜绩"两层；③以"推进器"比喻收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"基层减负"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月28日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
