@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 珍视寻常生灵的生态价值（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>珍视寻常生灵的生态价值（人民时评）</h1>
+    <div class="meta">生物多样性 · 生态保护 · 三有动物 · 法治 · 系统思维 · 生态价值 · 人与自然 · 全链条治理 · 敬畏 · 生态文明 | 2026年4月8日 | 第05版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">生物多样性</span><span class="tag-item">生态保护</span><span class="tag-item">三有动物</span><span class="tag-item">法治</span><span class="tag-item">系统思维</span><span class="tag-item">生态价值</span><span class="tag-item">人与自然</span><span class="tag-item">全链条治理</span><span class="tag-item">敬畏</span><span class="tag-item">生态文明</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以老人捕麻雀被刑拘案例破题，从"生态基石、保护优先走出认知误区、全链条治理"三层，论证珍视寻常生灵的生态价值，是"案例+三层生态"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何保护野生动物"——树意识、明法律、全链条。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"寻常生灵的价值"——生态基石、法律红线、治理盲区。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"生态/法治"可借用"让每一个生命都被温柔以待"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（案例引题·三层生态）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">生物多样性保护是整体性工程，珍视寻常生灵的生态价值，树立保护优先意识、全链条治理，让人与自然和谐共生。<br><span style="color:#0d47a1;">▸ 写法：由捕鸟案例破题，点明整体性保护</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">寻常生灵是生态系统重要基石，作用不可替代。<br><span style="color:#0d47a1;">▸ 写法：基石维度：麻雀灭虫、蛇防鼠患</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">更好守护寻常生灵，要树立保护优先意识、走出认知误区。<br><span style="color:#0d47a1;">▸ 写法：意识维度：法律明确、不知不免责</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">非法捕猎“小散频”，需全链条治理消除监管盲区。<br><span style="color:#0d47a1;">▸ 写法：治理维度：前哨+联动+普法</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】生物多样性保护是整体性工程，珍视寻常生灵的生态价值，树立保护优先意识、全链条治理，让人与自然和谐共生。</p><p>珍稀或濒危动物需要保护，那生活中常见的动物，<span class="highlight-blue">可以随意捕获吗？答案是否定的。</span></p>
+
+<p>据报道，前不久，<span class="highlight-green">北京一位六旬老人，因架网捕获42只麻雀及2只国家二级保护野生动物红点颏被刑拘。</span>据专家解释，捕获珍稀野生动物，涉嫌“危害珍贵、濒危野生动物罪”，而<span class="highlight-blue">非法捕猎20只以上麻雀也可刑事立案，构成非法狩猎罪。</span></p>
+
+<p>这个案例，引人思考。生物多样性保护是一项整体性工程，不能简单地看物种的知名程度、经济价值，而要把每一种生灵放到整个生态系统中去衡量其价值。<span class="highlight-purple">倘若觉得物种数量多，或保护力度小，就随意捕杀，可能会触及法律与生态的双重红线。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-green">寻常生灵看似普通，却是生态系统的重要基石，对维系农田、森林、城市的平衡有不可替代的作用。</span></p>
+
+<p>事实上，我国法律严格保护的野生动物，从来不只有大熊猫、金丝猴等旗舰物种，还有一类数量更庞大、分布更广泛、与人类朝夕相伴的物种——<span class="highlight-blue">有重要生态、科学、社会价值的陆生野生动物，也就是常说的“三有”动物</span>，<span class="highlight-green">多达1900余种，麻雀、壁虎、刺猬、斑鸠、野鸡皆在其中。</span></p>
+
+<p>这些动物看似普通，却是生态系统的重要基石。<span class="highlight-green">一只麻雀一年可消灭数万只害虫；一条无毒蛇，是田间鼠患的天然防线；斑鸠、松鼠穿行林间，默默完成植物种子的传播。</span>它们并不濒危，但对于维系农田、森林、城市的生态平衡，有不可替代的作用。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">更好守护身边的寻常生灵，要树立保护优先意识，走出“认知误区”，不知并非免责理由。</span></p>
+
+<p>近年来，我国野生动植物保护成效显著：栖息地质量持续向好，重点保护物种种群稳步恢复，<span class="highlight-green">保护率超过80%。</span>为进步欣喜之余，还要清醒地看到，生态安全的根基，并不只在遥远的保护区，更在我们身边。<span class="highlight-purple">抬头可见的飞鸟、路边偶遇的小动物，我们以何种态度对待它们，大自然便会以何种方式回馈我们。</span></p>
+
+<p>更好守护身边的寻常生灵，要树立保护优先的意识，走出“认知误区”。<span class="highlight-blue">我国出台的相关法律法规，对捕猎、交易、运输“三有”动物等行为作出了明确规定。</span>有关违法犯罪行为，必须承担相应的法律责任。比如，<span class="highlight-green">福建省浦城县人民法院对猎捕夜鹭等7只“三有”动物的犯罪嫌疑人，以非法狩猎罪判处拘役并适用缓刑，判令赔偿生态损失。</span></p>
+
+<p>现实中，有人辩解说，捕杀是出于生活习惯，“不知道是保护动物”。但法律上的“知道”，包括事实上“真知道”和规则上“该知道”。<span class="highlight-gold">不知并非免责理由，习惯不能凌驾于法律之上</span>，千万不要贪图一时的口腹之欲，或抱有“无伤大雅”的侥幸心理，去伤害无辜的生灵。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-purple">“三有”动物分布广泛、非法捕猎“小散频”，需全链条治理消除监管盲区、织密保护网。</span></p>
+
+<p>“三有”动物分布广泛，而非法捕猎、贩卖等行为具有“小、散、频”的特点，隐蔽性强，<span class="highlight-blue">需要通过全链条治理消除监管盲区。</span>一方面，要充分发挥护林员、网格员“前哨”作用，做到早发现、早制止；另一方面，需要强化部门联动，不仅打击源头猎捕，更斩断非法运输通道、取缔非法交易场所、严管餐饮食用环节。同时，结合真实典型案例，向群众普及法律知识，提升保护意识，畅通举报渠道，<span class="highlight-gold">才能织密保护网，让寻常生灵更安然地与人类相伴共生。</span></p>
+
+<p><span class="highlight-blue">生物多样性使地球充满生机，是人类生存和发展的基础。</span>保持敬畏之心、恪守行为边界，在生态建设上往前走一步，主动掌握生态常识、积极参与保护活动，在法律红线前往后退一步，不乱捕、不私售、不滥食、不惊扰，<span class="highlight-gold">让每一个生命都被温柔以待，人与自然和谐共生将成为现代化道路上的动人图景。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月8日 第05版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>生物多样性使地球充满生机，是人类生存和发展的基础。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生物多样性"的规范金句，适配生态文明类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>保持敬畏之心、恪守行为边界，让每一个生命都被温柔以待。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"生态敬畏"的意象金句，适配人与自然类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>不知并非免责理由，习惯不能凌驾于法律之上。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法律底线"的警句，适配法治类论证</p></div><div class="material-card"><span class="tag-shenlun">规范表述</span><p>法律上的“知道”，包括事实上“真知道”和规则上“该知道”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"法律认知"的规范表述，适配普法类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>抬头可见的飞鸟、路边偶遇的小动物，我们以何种态度对待它们，大自然便会以何种方式回馈我们。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"态度与回馈"的辩证句，适配生态类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">案例引题</span><p>老人捕42只麻雀被刑拘。</p></div><div class="migration-card"><span class="tag-mig">三层生态</span><p>生态基石—保护优先—全链条治理。</p></div><div class="migration-card"><span class="tag-mig">数据落点</span><p>三有动物1900余种、保护率超80%。</p></div><div class="migration-card"><span class="tag-mig">法治落点</span><p>福建浦城判例、不知不免责。</p></div><div class="migration-card"><span class="tag-mig">收束落点</span><p>以"往前一步/后退一步"收束于温柔以待。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"守护身边的生态基石"为题，模仿本文"生态基石/保护优先/全链条治理三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①案例→②生态基石→③保护优先→④全链条。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不是……而是……"的句式，表达你对"保护价值"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
