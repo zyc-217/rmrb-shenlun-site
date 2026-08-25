@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "想在前头，赶在前头"（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"想在前头，赶在前头"（评论员观察）</h1>
+    <div class="meta">基层治理 · 系统思维 · 前瞻治理 · 以人民为中心 | 2026年5月11日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层治理</span><span class="tag-item">系统思维</span><span class="tag-item">前瞻治理</span><span class="tag-item">以人民为中心</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以北京花粉防控、荆州音乐节、漳州井盖等"想在前头"案例，论证前瞻治理需责任感+系统思维、多谋长远战略眼光、敢为人先创新锐气，适合"基层治理""系统思维"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"治花粉、留通道"两个小场景引出"提早研判、主动作为"工作思路，小中见大。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"想在前头、赶在前头"是以人民为中心的前瞻治理思维，需责任感系统思维、战略眼光、创新锐气<br><span style="color:#0d47a1;">▸ 写法：由治花粉/留通道破题，点明前瞻治理</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">既要有责任感坚持系统思维，举一反三办好一类事，由被动应对转向前瞻治理<br><span style="color:#0d47a1;">▸ 写法：以北京花粉/荆州音乐节/漳州井盖论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">要有多谋长远的战略眼光，把谋事和谋势、谋当下和谋未来统一起来<br><span style="color:#0d47a1;">▸ 写法：以合肥量子/雄安论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">还要有敢为人先的创新锐气，敢于打破路径依赖以思路创新引领发展升级<br><span style="color:#0d47a1;">▸ 写法：以北京12345/海南极简审批/免申即享论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"责任感→战略眼光→创新锐气"递进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"想在前头，赶在前头"，是一种以人民为中心的前瞻治理思维——既要有责任感、坚持系统思维举一反三办好一类事，也要有多谋长远的战略眼光，更要有敢为人先的创新锐气。把群众的急难愁盼当作优先事项，以小见大、由点及面，方能把今天的一锹土夯成明天的一方基石。</p><p>发展的引领性，往往来源于战略谋划的前瞻性。一条产业链的锻造、一个新领域的开辟，既基于资源禀赋，也离不开战略眼光。</p>
+
+<p>有些举措，看似寻常却给人启发。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">"想在前头，赶在前头"，既要有责任感，尽心尽力办好每一件事，也需要坚持系统思维，举一反三办好一类事。从被动应对转向前瞻治理，考验的是以人民为中心的行动自觉。</span></p>
+
+<p>怎么帮过敏者缓解春日烦恼？从修剪致敏树木到喷洒花粉固定剂，从实时监测花粉浓度到及时清扫地面……今年春天，通过科技助力、协同防治，<span class="highlight-green">北京30个花粉防控示范区取得较好的防控效果</span>。</p>
+
+<p>音乐节活动遇到突发情况怎么办？前不久，在湖北荆州沙市区五一路阳台音乐节现场，一名男子突发疾病，得益于提前预留的应急通道，执勤民警联动医护人员迅速开展紧急救助，全程仅用时3分钟便穿越2万人的人海，将患者送上救护车。因送医及时，男子现已无大碍。</p>
+
+<p>一个治花粉、一个留通道，领域不同，理念相通：提早研判、主动作为。这当中，蕴含着一条工作思路，"想在前头，赶在前头"。</p>
+
+<p>福建漳州市民陈声洪没想到，自己的一个建议，促成了一项精细化治理。"上班路上，一个井盖的'哐当'声让我心里咯噔一下"。接到市民建议，相关部门随即开展专项排查，<span class="highlight-green">首轮即发现并整改398处问题井盖</span>。同时，跨前一步、以点带面，当地出台<span class="highlight-blue">《城市窨井盖管理办法》</span>，从规划设计、建设施工到日常养护全流程进行规范，有效提升了城市基础设施管理的精细化水平。</p>
+
+<p>从"兵来将挡、水来土掩"的被动应对，转向"未雨绸缪、主动出击"的前瞻治理，考验的不仅是智慧与魄力，更是以人民为中心的行动自觉。<span class="highlight-purple">把群众的急难愁盼当作工作的优先事项，以小见大、由点及面，民生答卷就能更好写进群众心坎里。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"想在前头，赶在前头"，意味着要有多谋长远的战略眼光。善于从战略上看问题、想问题，把谋事和谋势、谋当下和谋未来统一起来。</span></p>
+
+<p>安徽合肥瞄准量子科技这条新赛道前瞻落子，从2009年孵化国内第一家从事量子科技产业化的公司开始，深化产学研协同，持续构建创新生态，<span class="highlight-green">如今集聚产业链企业97家、产业规模超60亿元</span>。雄安新区设立后的头两年，"几乎没有动一砖一瓦"，未建城先植绿，先地下后地上，<span class="highlight-green">截至2025年底累计完成投资超万亿元，总开发面积覆盖近215平方公里，5300多栋楼宇拔地而起</span>。</p>
+
+<p>发展的引领性，往往来源于战略谋划的前瞻性。一条产业链的锻造、一个新领域的开辟，既基于资源禀赋，也离不开战略眼光。善于从战略上看问题、想问题，认清机遇和挑战，把谋事和谋势、谋当下和谋未来统一起来，才能<span class="highlight-purple">把今天的每一锹土，夯成明天的一方基石</span>。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">"想在前头，赶在前头"，还要有敢为人先的创新锐气。从理念到制度、从场景到机制，敢于打破路径依赖，才能以思路创新引领发展升级。</span></p>
+
+<p>北京以12345热线海量工单为数据富矿，建立"每月一题"工作机制，聚焦高频共性难点问题，让被动接诉升级为主动治理；海南自贸港全面推行<span class="highlight-blue">极简审批投资制度</span>，极大降低经营主体制度性交易成本；多地推行惠企政策"免申即享"，变"企业找政策"为"政策找企业"，营商环境显著提升。</p>
+
+<p>从理念到制度、从场景到机制，勇于创新、善于创新，敢于打破路径依赖，才能以思路创新引领发展升级。越是局面胶着，越要敢跳出"一直都这么干"的惯性；越是竞争激烈，越要直面"从没干过"的空白。多想一层、抢先一步，才能始终牢牢掌握发展的主动权。</p>
+
+<p>"锐始者必图其终，成功者先计于始。""十五五"已经开局，以小切口撬动大民生、以长周期涵养大格局、以新思路打开新空间，<span class="highlight-gold">把先手棋下在关键处</span>，定能交出一份成色更足、质量更高的经济社会答卷。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月11日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·前瞻治理</span><p>"想在前头，赶在前头"，蕴含着一条工作思路——提早研判、主动作为。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"基层治理/前瞻治理"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·系统思维</span><p>既要有责任感，尽心尽力办好每一件事，也需要坚持系统思维，举一反三办好一类事。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：适合"系统思维/举一反三"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·夯基石</span><p>把今天的每一锹土，夯成明天的一方基石。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"战略眼光"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句四·创新锐气</span><p>越是局面胶着，越要敢跳出"一直都这么干"的惯性；越是竞争激烈，越要直面"从没干过"的空白。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"改革创新"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·先手棋</span><p>把先手棋下在关键处，定能交出一份成色更足、质量更高的经济社会答卷。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"主动作为"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·小切口</span><p>用北京花粉防控、荆州音乐节、漳州井盖三个小案例支撑"前瞻治理"，小切口案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移二·举一反三</span><p>用"举一反三办好一类事"论证系统思维，由点及面法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·前瞻落子</span><p>用合肥量子、雄安"未建城先植绿"论证战略眼光，长周期布局法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移四·免申即享</span><p>用"免申即享"变"企业找政策"为"政策找企业"，服务创新法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三层递进</span><p>"责任感/系统思维→战略眼光→创新锐气"三层，适合写作风建设类评论。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「未诉先办」看治理前移"为题，模仿本文"小案例破题→系统思维→战略眼光→创新锐气"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用基层治理小案例引题；②分"举一反三/谋长远"两层；③以"先手棋"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"应急管理"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月11日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
