@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 搬离的是故土，守望的是初心（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>搬离的是故土，守望的是初心（评论员观察）</h1>
+    <div class="meta">易地搬迁 · 政绩观 · 以人民为中心 · 系统观念 | 2026年6月2日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">易地搬迁</span><span class="tag-item">政绩观</span><span class="tag-item">以人民为中心</span><span class="tag-item">系统观念</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以云南德钦1600米海拔落差易地搬迁切入，论证读懂易地搬迁抉择中的为民初心、按规律办事的科学决策、系统性谋划的务实作风，领悟中国共产党人的政绩观，适合"以人民为中心""系统观念"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"搬离故土 vs 守望初心"张力破题，小搬迁见大政绩观。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">易地搬迁彰显政绩观：为民初心+按规律办事+系统性谋划<br><span style="color:#0d47a1;">▸ 写法：由德钦搬迁破题，点明三维</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">照见"过上好日子"的为民初心，坚定"让老百姓幸福就是党的事业"<br><span style="color:#0d47a1;">▸ 写法：以古浪/西海固论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">蕴含"按规律办事"的科学决策，在人与自然平衡中寻最优解<br><span style="color:#0d47a1;">▸ 写法：以长江大保护/新质生产力论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">体现"系统性谋划"的务实作风，从挪穷窝到换穷业拔穷根<br><span style="color:#0d47a1;">▸ 写法：以德钦招聘/千万工程论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"初心/规律/系统"三层政绩观框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】易地搬迁超越普通离愁，彰显时代价值旨归；读懂其中蕴含的为民初心、按规律办事的科学决策、系统性谋划的务实作风，方能更好领悟中国共产党人的政绩观。</p><p><span class="highlight-gold">一方水土的变迁，有"让高山低头，叫河水让路"的气魄，也有"老百姓说好才是真的好"的标尺</span></p>
+
+<p>安土重迁，蕴藏着中国人的乡愁。但是，有一种集体迁移，超越普通的离愁别绪，彰显时代的价值旨归。</p>
+
+<p>云南德钦，一场跨越<span class="highlight-green">1600米</span>海拔落差的易地搬迁，正在有条不紊地推进。</p>
+
+<p>为啥要搬？德钦坐落在川藏滇三地交界、茶马古道咽喉，周边密布着<span class="highlight-green">165处</span>滑坡、崩塌、泥石流等地质灾害隐患点。2020年，德钦县城整体搬迁工程启动。今年5月中旬，德钦县城第一批搬迁安置房交房，新德钦正拔节生长。对德钦人来说，从"头顶悬剑"的慌张到"面朝澜沧"的安心，易地搬迁是防患未然的举措，也是生活改善的写照。</p>
+
+<p>透过德钦，理解易地搬迁的抉择，能更好读懂中国共产党人的政绩观。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">这当中照见"过上好日子"的为民初心，始终坚定"让老百姓幸福就是党的事业"的信念，破解长期困扰贫困地区的难题。</span></p>
+
+<p>这当中，照见"过上好日子"的为民初心。</p>
+
+<p>一方水土养不好一方人，怎么办？曾经饱受缺水之苦的甘肃古浪南部山区，<span class="highlight-green">3个乡镇</span>整体搬迁到黄花滩移民区，<span class="highlight-green">96座</span>各类调蓄水池建设完毕，干净水直供群众家、温室大棚、产业园区；"苦瘠甲天下"的宁夏西海固，<span class="highlight-green">23万多</span>贫困群众陆续搬出大山，扎根红寺堡，打造特色产业、用上清洁能源，荒漠戈壁崛起生态新城……</p>
+
+<p>为什么易地搬迁被视为"中国伟大的扶贫创举"？其中一个很重要的方面，就在于始终坚定<span class="highlight-gold">"让老百姓幸福就是党的事业"</span>的信念，破解自然条件恶劣、资源匮乏等长期困扰贫困地区的难题，帮助千万家庭实现从贫瘠走向丰饶、从困苦迈向希望的命运转折。</p>
+
+<p>回望历史，放眼世界，如此大规模、系统性解决群众安居和生活问题，只有在中国才有可能。这是初心使然，也是使命所在。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">这当中蕴含"按规律办事"的科学决策，在人与自然的平衡中寻找最优解，正确认识、深刻把握、科学运用规律。</span></p>
+
+<p>这当中，蕴含"按规律办事"的科学决策。</p>
+
+<p>城乡建设，必然要处理人与自然的关系。从德钦县城趋利避害，到贫困山区群众易地而居，都不是"硬碰硬"，而是在人与自然的平衡中寻找最优解，在地理经济发展、人口空间分布、基础设施供给等诸多因素的共同作用下主动求变、顺势而为。</p>
+
+<p>以更大视野观之。<span class="highlight-blue">长江经济带"共抓大保护，不搞大开发"</span>，造福当下，惠及子孙；建设现代化人民城市"关键在于坚持城市内涵式发展"，符合发展规律，保持历史耐心；发展<span class="highlight-blue">新质生产力</span>"不能大呼隆、一哄而起、一哄而散"，传统产业转型升级、新兴产业积极发展、未来产业超前布局……正确认识规律、深刻把握规律、科学运用规律，是干事创业的科学方法，也是新时代我们党治国理政的鲜明特征。</p>
+
+<p>"我们干任何事情都有内在规律。"从实际出发、按规律办事，考验的是思维能力，锤炼的是政治定力，彰显的是担当魄力。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">这当中还体现"系统性谋划"的务实作风，从"挪穷窝"到"换穷业"再到"拔穷根"，谋定后动、先立后破、循序渐进。</span></p>
+
+<p>这当中，还体现"系统性谋划"的务实作风。</p>
+
+<p>搬家不易，迁一座城更难。在德钦首批群众领取新房钥匙之际，<span class="highlight-green">150余家企业、400余个岗位</span>的招聘信息也随之公布。</p>
+
+<p>"搬得出还得稳得住"，易地搬迁不是零散安置，而是从"挪穷窝"到"换穷业"再到"拔穷根"的系统工程；不是简单的物理位移，而是融入了新型城镇化、民族团结进步、生态文明建设等内容的综合实践。</p>
+
+<p>不禁想起，习近平总书记考察湖北宜昌三峡移民新村许家冲村。察看污水处理厂、便民洗衣池、电子商务服务站，彰显兼顾生产生活生态的系统思维。</p>
+
+<p>由此更能理解，从农村环境整治入手，由点及面、迭代升级，<span class="highlight-blue">"千万工程"经验</span>成为推进乡村全面振兴的实践范例；也更加深刻领悟，奋进<span class="highlight-blue">"十五五"</span>，以教育夯实人才根基，以科技引领产业变革，以人才激活创新动能，凝聚高质量发展合力。务实是共产党人的必备品格。<span class="highlight-purple">从"解决一个问题"到"解决一类问题"，谋定后动、先立后破、循序渐进，就能不断增强发展确定性和可持续性。</span></p>
+
+<p>一方水土的变迁，有"让高山低头，叫河水让路"的气魄，也有"老百姓说好才是真的好"的标尺。这是我们从何而来的足迹，也指引着现代化道路的方向。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月2日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·标尺</span><p>一方水土的变迁，有"让高山低头，叫河水让路"的气魄，也有"老百姓说好才是真的好"的标尺。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"政绩观"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·党的事业</span><p>始终坚定"让老百姓幸福就是党的事业"的信念，破解长期困扰贫困地区的难题。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：金句，适合"以人民为中心"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·按规律办事</span><p>我们干任何事情都有内在规律。从实际出发、按规律办事，考验的是思维能力、政治定力、担当魄力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"科学决策"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·系统思维</span><p>不是简单的物理位移，而是融入新型城镇化、民族团结进步、生态文明建设的综合实践。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"系统观念"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·解决一类</span><p>从"解决一个问题"到"解决一类问题"，谋定后动、先立后破、循序渐进。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"务实作风"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·张力破题</span><p>用"搬离故土 vs 守望初心"张力破题，反差切入法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层框架</span><p>用"初心/规律/系统"三层拆解政绩观，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·搬迁案例</span><p>用古浪/西海固论证为民初心，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·大保护</span><p>用长江大保护/新质生产力论证按规律办事，政策法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·解决一类</span><p>用"解决一个问题到解决一类问题"收束，升维收束法可用于"治理"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「避险搬迁」看民生底线"为题，模仿本文"张力破题→为民初心→按规律办事→解决一类收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"搬离 vs 守望"引题；②分"坚守初心/遵循规律"两层；③以"解决一类问题"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"城市更新"角度，用同一骨架写一句总论点，要求含"既……更……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
