@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 莫让赏景变“伤景”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>莫让赏景变“伤景”（评论员观察）</h1>
+    <div class="meta">系统观念 · 法治思维 · 精准治理 · 生态保护 | 2026年5月29日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">系统观念</span><span class="tag-item">法治思维</span><span class="tag-item">精准治理</span><span class="tag-item">生态保护</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以山野徒步垃圾治理切入，论证以系统思维谋全局、以法治思维固根基、以精准治理提质效，多管齐下破解户外垃圾难题，适合"系统观念""生态保护"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"赏景变伤景"反差破题，把生态治理上升为系统—法治—精准三维方法。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">系统思维+法治思维+精准治理，多管齐下破解户外垃圾治理难题<br><span style="color:#0d47a1;">▸ 写法：由山野垃圾破题，点明三维</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">系统观念是基础方法，构建政府主导、社会协同共治机制<br><span style="color:#0d47a1;">▸ 写法：以权责模糊论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">强化法治思维，针对性推进法规建设让治理有章可循<br><span style="color:#0d47a1;">▸ 写法：以四川金川办法论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">精准治理下好绣花功夫+严格执法监督防破窗效应<br><span style="color:#0d47a1;">▸ 写法：以环保押金/秦岭处罚论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"系统/法治/精准"三维治理框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以系统思维谋全局、以法治思维固根基、以精准治理提质效，在涵养习惯与治理升级、专业引领与群防群治的多管齐下中，可以找到户外垃圾治理的答案。</p><p>近年来，山野徒步成时尚，户外经济蓬勃发展。可在一些地方，伴随大批游客而来的，还有海量垃圾。饮料瓶、包装袋散落在山谷间、草丛中，不仅大煞风景，更会对生态造成持久伤害。</p>
+
+<p>如何在发展户外经济的同时，做好垃圾治理？除了加强宣传教育、唤醒道德自觉，不少地方通过政府兜底来清运垃圾，或依托志愿团队定期捡拾。此外，还有什么高招？</p>
+
+<p><span class="highlight-gold">以系统思维谋全局、以法治思维固根基、以精准治理提质效，在涵养习惯与治理升级、专业引领与群防群治的多管齐下中，可以找到答案。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">系统观念是具有基础性的思想和工作方法，理顺责任链条、统筹多种手段，构建政府主导、社会协同的共治机制。</span></p>
+
+<p>系统观念是具有基础性的思想和工作方法，为构建共治体系指明思路。徒步线路的规划管理，往往涉及林草、文旅、属地乡镇等多个部门，容易权责模糊，产生治理的罅隙。理顺各部门、各环节责任链条，统筹法治、经济等多种手段，构建政府主导、社会协同的共治机制，方能化解环保习惯养成难、治理成本高的双重挑战，还青山以纯净，护绿水以澄澈。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">针对监管缺位、无章可依，尤需强化法治思维、针对性推进法规建设，让治理有章可循、责任有人担当。</span></p>
+
+<p>一些地方山野垃圾成堆，与监管缺位、无章可依有很大关系。尤需强化运用法治思维的能力，针对性推进法规建设。以四川金川县为例，当地出台登山户外运动管理办法（试行版），明晰主体责任，明确要求徒步团队妥善处理垃圾，不可降解垃圾必须全部携带下山并按规定分类处置。持续完善地方立法、颁布针对性文件，让治理有章可循，让责任有人担当，户外垃圾治理就有更稳定、持久的动力。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">精准治理要下好"绣花功夫"，既有约束也有激励；同时严格执法监督、防范"破窗效应"，方能形成有效震慑。</span></p>
+
+<p>找准症结，还要找对疗法，下好"绣花功夫"。精准治理，就是要因时、因地、因人群而异，既有约束也有激励，用巧劲撬动难题破解。现实中，有的地方对全部进山者收取"卫生费"，引发争议。要看到，并非所有游客都乱扔垃圾，一些地方缺少垃圾桶等设施也是问题产生的原因之一。与之不同，有景区创新"环保押金"制度，游客返程带回一定重量垃圾，便可退费；有地方免费发放环保袋，鼓励捡拾垃圾、兑换纪念品。这些举措既有助于弥补设施短板，还能强化公众责任感。创新引导机制，营造人人主动参与的氛围，方是良策。</p>
+
+<p>防范"破窗效应"，严格执法监督是必要保障。今年3月，两名游客因在秦岭乱扔垃圾并与志愿者起冲突，被严肃批评、依法处罚，彰显了法治威严。加强<span class="highlight-blue">生态环境公益诉讼</span>，开展典型案例警示，不断提高违法成本，才能形成有效震慑，促使游客敬畏法规、约束己身。</p>
+
+<p>视野拉远，各种治理问题不断涌现，若只被动回应、头痛医头，便永远在救火。<span class="highlight-gold">胸怀系统观念，厘清因果链、找准干预点，用好法治方式，精准治理，难题方能得到妥善解决。</span>比如，上海推行垃圾分类，除了出台管理条例，还针对居民"嫌脏怕麻烦"的心态，配备洗手、除臭等设施，用精准服务化解治理阻力。再如，北京推动建设充电接口超<span class="highlight-green">100万个</span>，同时严查违规行为，疏堵结合，电动自行车入屋充电现象显著减少。</p>
+
+<p><span class="highlight-purple">拿出久久为功的韧劲和善作善成的巧劲，变"想到"为"做到"，让自律成自觉，文明之花定会绽放在山野间、扎根于人心深处。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月29日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·三维方法</span><p>以系统思维谋全局、以法治思维固根基、以精准治理提质效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"治理方法"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·共治机制</span><p>构建政府主导、社会协同的共治机制，方能化解环保习惯养成难、治理成本高的双重挑战。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"协同治理"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·有章可循</span><p>持续完善地方立法、颁布针对性文件，让治理有章可循，让责任有人担当。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"法治建设"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·破窗效应</span><p>防范"破窗效应"，严格执法监督是必要保障，才能形成有效震慑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"执法监督"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·想到做到</span><p>拿出久久为功的韧劲和善作善成的巧劲，变"想到"为"做到"，让自律成自觉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"抓落实"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·反差破题</span><p>用"赏景变伤景"反差破题，反差切入法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三维框架</span><p>用"系统/法治/精准"三维拆解治理，三维框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·绣花功夫</span><p>用"环保押金/免费环保袋"论证精准激励，巧劲法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·破窗效应</span><p>用秦岭处罚论证防范破窗效应，案例法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·想到做到</span><p>用"变想到为做到"收束落实，行动收束法可用于"执行力"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「垃圾分类」看社区治理"为题，模仿本文"反差破题→系统观念→法治思维→想到做到收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个治理反差引题；②分"法治保障/精准激励"两层；③以"变想到为做到"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"流域治理"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月29日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
