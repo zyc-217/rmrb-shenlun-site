@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “为了让草木能呼吸”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“为了让草木能呼吸”（评论员观察）</h1>
+    <div class="meta">生态文明 · 绿色发展 · 高质量发展 · 文化自信 | 2026年4月21日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">生态文明</span><span class="tag-item">绿色发展</span><span class="tag-item">高质量发展</span><span class="tag-item">文化自信</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以景迈山弹石路这一生活细节切入，论证生态文明见于生活、科技赋能保护与发展的平衡，适合“绿色发展”“生态文明”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用“为了让草木能呼吸”的 driver 语破题，小切口见大主题，故事性强。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">生态文明见于生活细节：我们愿让渡一点出行舒适，换取草木多一分舒展；让发展留白，为万物生灵留出自由生长空间<br><span style="color:#0d47a1;">▸ 写法：由景迈山弹石路故事破题，点明生态文明的生活意涵</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">更可贵的是科技赋能，在发展与保护的天平上摆下更多平衡砝码<br><span style="color:#0d47a1;">▸ 写法：以环保沥青减碳30%论证技术支撑</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">这份生态自信，源于5000多年文明赓续<br><span style="color:#0d47a1;">▸ 写法：以“天地与我并生”千年哲思论证文化根脉</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">这份生态自信，起于绿色发展的壮阔实践、彰于对世界的切实贡献<br><span style="color:#0d47a1;">▸ 写法：以造林1.85亿亩、风电70%光伏80%论证实力与担当</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“故事细节→哲理升华→三层并列支撑”的递进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从景迈山弹石路“为了让草木能呼吸”的生动实践，能看见生态文明就见于生活细节——我们愿意让渡一点出行的舒适，去换取草木多一分的舒展；让发展留白，为万物生灵留出自由生长的空间。</p><p>到云南普洱景迈山采风。车子在山路盘旋，偏偏还是崎岖不平的弹石路，颠得人骨头都在抗议。初来的游客不免抱怨，怎么不把路修得平整些？没想到司机笑着说：“为了让草木能呼吸。”</p>
+
+<p>一句解答，让全车人都静下来。原来，山上的千年古茶林，早已与这片土地融为一体。早年不是没想过把路修平整，但村里老人不答应，专家论证后也没同意。柏油路顺畅，可高温下传统沥青会释放多种化学物质，污染茶叶；水泥路平整，但路面反光，可能影响茶叶生长温度。</p>
+
+<p>弹石路呢？石头与石头间的缝隙，是留给雨水，留给小草，留给大地呼吸的。这样的路面融入山野气韵，也成就了一份别样的美感。车慢下来，风慢下来，时间也慢下来。颠簸不再是颠簸，仿佛山与人之间不加修饰的对话。有乘客会心一笑，“这倒成了仪式，还挺浪漫”。2023年，“普洱景迈山古茶林文化景观”入选《世界遗产名录》。<span class="highlight-blue">想来，世界看见的，不仅是莽莽林海，更是一份对自然的敬畏。</span></p>
+
+<p>车轮摇晃，思绪也随山风飘远。不由得想到，恰在20年前，范敬宜先生撰文《“要听懂草木的叹息”》，呼吁城市建设不能只重颜值，也要听懂草木心声，为它们留下适宜环境。二十载光阴流转，这颠簸的旅途，倒像是一个生动的回应。本地人守着茶林，在保护中相互滋养；外来客踏上山路，在理解中放慢脚步。<span class="highlight-purple">一份守护，一份认同，于双向奔赴间，完成了人与自然和谐共生的闭环。生态文明如何见于生活？或许，就是我们愿意让渡一点出行的舒适，去换取草木多一分的舒展；就是让发展留白，为万物生灵留出自由生长的空间。</span></p>
+
+<p>从这条路看开去，一份生态自信油然而生。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">更可贵的是，随着科技创新的飞速发展，我们在发展与保护的天平上，摆下更多平衡的砝码。</span></p>
+
+<p>景迈山的弹石路，有一段正在“修容”，采用了我国自主研发的环保型沥青，<span class="highlight-green">不仅高温稳定性强，而且无明显污染气体散发，每公里减少碳排放约30%。</span>建成后，这既是一条更舒适的生态路，也是一条高性能的现代路。<span class="highlight-purple">“中国创造”的硬核支撑，让我们能在人类需求与自然保护间，探寻更优的结合点。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">这份自信，源于5000多年的文明赓续。</span></p>
+
+<p><span class="highlight-gold">“天地与我并生，而万物与我为一”的千年哲思、“不涸泽而渔，不焚林而猎”的古老训诫，</span>经创造性转化、创新性发展，在神州大地处处生花。福建厦门于高楼大厦间，为“中国最美小鸟”栗喉蜂虎开辟保护区；北京为古柏让路，将松曹路向东平移10多米……<span class="highlight-blue">在发展中保护、在保护中发展，点滴绿意在时间洗礼下未曾褪色，反而愈发葱茏。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">这份自信，起于绿色发展的壮阔实践，也彰于对世界的切实贡献。</span></p>
+
+<p>这份自信，起于绿色发展的壮阔实践。<span class="highlight-blue">绿水青山就是金山银山，中国走出了一条不同于西方“先污染后治理”的发展道路，并建成全球最大的可再生能源体系。</span>漫山遍野、层层叠叠的“绿意”，是厚重的生态家底，也是坚实的发展底气。如今，全球能源格局动荡变换，而依托自主可控的“绿色支撑”，我们从容前行。</p>
+
+<p>这份自信，彰于对世界的切实贡献。<span class="highlight-green">“十四五”时期，中国造林1.85亿亩，那是多大一片绿？相当于一个福建省。全球近20年新增绿化面积中，约1/4由中国贡献。</span>新能源产业的快速发展，让绿色低碳之风吹拂地球村。<span class="highlight-green">我们向世界各国提供了70%的风电设备、80%的光伏组件设备，</span>为实现全球能源转型、可持续发展贡献了重要动力。<span class="highlight-blue">行动实实在在、增绿最多最快、减碳稳步有序，今日之中国，当得起负责任大国的称号。</span></p>
+
+<p>不知不觉，车至山巅。下车四顾，有人蹲下观察小草从石缝里探出头来，有人细数路边星星点点的野花，还有人赶忙和这弹石路来一张特别的合影……身旁，千年茶林氤氲着时光凝成的香气；脚下，层叠的缝隙流淌出山野自在的韵律；前方，一幅绿意磅礴、生机无限的时代画卷，正在徐徐铺展。</p>
+
+<p>草木无言，自在呼吸。春风拂过处，便是这画卷里最生动的笔触。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月21日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·生态哲思</span><p>“天地与我并生，而万物与我为一”“不涸泽而渔，不焚林而猎”，经创造性转化、创新性发展，在神州大地处处生花。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语金句，用于“生态文明/文化传承”类论证开篇或收束。</p></div><div class="material-card"><span class="tag-shenlun">金句二·发展留白</span><p>让发展留白，为万物生灵留出自由生长的空间。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：短句有力，可用于“绿色发展不是舍弃发展”的辩证表述。</p></div><div class="material-card"><span class="tag-shenlun">金句三·和谐闭环</span><p>一份守护，一份认同，于双向奔赴间，完成了人与自然和谐共生的闭环。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“双向奔赴”热词，适合写人与自然、保护与发展的互动。</p></div><div class="material-card"><span class="tag-shenlun">金句四·绿色道路</span><p>中国走出了一条不同于西方“先污染后治理”的发展道路，并建成全球最大的可再生能源体系。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：可直接引用论证“中国绿色发展模式”的独特性。</p></div><div class="material-card"><span class="tag-shenlun">金句五·大国称号</span><p>行动实实在在、增绿最多最快、减碳稳步有序，今日之中国，当得起负责任大国的称号。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比收束句，气势足，适合结尾升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·细节破题</span><p>用“弹石路让草木呼吸”的具体故事引出生态文明大主题，故事细节可作任意宏大命题引子。</p></div><div class="migration-card"><span class="tag-mig">迁移二·科技平衡</span><p>以环保沥青减碳30%论证“科技为保护与发展的天平增添砝码”，打通技术与人文。</p></div><div class="migration-card"><span class="tag-mig">迁移三·三层并列</span><p>“源于文明赓续／起于绿色实践／彰于世界贡献”三层并列支撑“自信”，结构可套用“自信/底气”类。</p></div><div class="migration-card"><span class="tag-mig">迁移四·数据佐证</span><p>用造林1.85亿亩、全球1/4、风电70%光伏80%等数据堆出“世界贡献”，数据论证范式可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·古语今用</span><p>把“天地与我并生”等古训作创造性转化，古为今用拔高立意。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“从家门口的‘口袋公园’看生态惠民”为题，模仿本文“生活细节破题→科技/文明/贡献三层并列→古语升华”的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个具体生活场景（口袋公园、绿道）引出生态主题；②分“科技赋能／文化根脉／民生实效”三层展开；③以古语或排比收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“低碳生活”角度，用同一骨架写一句总论点，要求含“不是……而是……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月21日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
