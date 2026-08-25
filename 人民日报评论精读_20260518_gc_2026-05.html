@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 心中有数   手上有招（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>心中有数   手上有招（评论员观察）</h1>
+    <div class="meta">战略思维 · 因时制宜 · 高质量发展 · 科学决策 | 2026年5月18日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">战略思维</span><span class="tag-item">因时制宜</span><span class="tag-item">高质量发展</span><span class="tag-item">科学决策</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以佛山陈村"莫氏鸡煲"、义乌发展经验、西部"沙戈荒"新能源等案例，论证顺势而为与逆向思考统一于因时因地制宜、把握战略主动，适合"战略思维""高质量发展"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"潜游的鱼，有的顺流而下，有的溯源而上"起兴，引出顺势与逆向两种思维方法。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"心中有数、手上有招"，顺势而为与逆向思考统一于因时因地制宜，把握战略主动<br><span style="color:#0d47a1;">▸ 写法：由潜游的鱼破题，点明思维方法</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">顺势而为，把握大局大势、在战略窗口期顺时谋势<br><span style="color:#0d47a1;">▸ 写法：以陈村/义乌/沙戈荒论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">善于逆向思考，转换思路另辟蹊径、寻求破局<br><span style="color:#0d47a1;">▸ 写法：以建德办不成事窗口/反向飞地论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">心中有数、手上有招，因时因地制宜牢牢把握战略主动<br><span style="color:#0d47a1;">▸ 写法：以识变应变求变收束</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"顺势而为+逆向思考"双维思维可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"心中有数、手上有招"，既指顺势而为、把握大局大势的思维能力，也指善于逆向思考、转换思路的破局智慧；二者统一于因时因地制宜、识变应变求变，本质是把谋事和谋势、谋当下和谋未来统一起来，牢牢把握战略主动。</p><p>潜游的鱼，有的顺流而下，有的溯源而上。不禁遐思，置身时代江河，如何既能借势顺风，亦能逆水行舟？</p>
+
+<p>既能顺势而为，也会逆向思考，彰显的是对大局大势的把握能力，是推动高质量发展的思维方法。最近的几个新闻颇有启迪。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">顺势而为，彰显的是对大局大势的把握能力。在战略窗口期顺时谋势，把谋事和谋势、谋当下和谋未来统一起来，是顺势而为的关键。</span></p>
+
+<p>一个镇，应时而动，话题热度转化为发展契机。</p>
+
+<p>广东佛山陈村镇，"莫氏鸡煲"走红。当地用一天时间修好新停车场，连夜铺出新路，顺势推出旅游线路，上线定制化公交。数据显示，<span class="highlight-green">周边餐饮商户营业额增长约30%</span>。</p>
+
+<p>一座城，踩准节拍，时代东风转化为发展优势。</p>
+
+<p>"鸡毛换糖"，畅通市场循环；接轨全球，抓住入世机遇；建设全球数贸中心，站上数字互联风口……"义乌发展经验"，换个角度看就是拥抱改革浪潮、跟上时代脚步、融入开放大局的成功之道。</p>
+
+<p>进而观察一片区域，因势而谋，资源禀赋转化为发展红利。首批"沙戈荒"新能源基地项目基本建成投产，一条条特高压大动脉跨越山海实现电能"毫秒级闪送"，西部地区向新而行、逐绿而兴，源源不断的清洁能源输往大江南北。</p>
+
+<p><span class="highlight-gold">"战略上判断得准确，战略上谋划得科学，战略上赢得主动，党和人民事业就大有希望。"</span>在科学理论指引下能够前瞻形势、把握趋势，在战略窗口期顺时谋势，是顺势而为的关键。</p>
+
+<p>当今世界，百年变局加速演进，新一轮科技革命和产业变革加速突破，迫切要求我们从历史长河、时代大潮、全球风云中分析演变机理、探究历史规律，提出因应的战略策略。抓住"人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾"，遵循<span class="highlight-blue">"贯彻新发展理念、构建新发展格局、推动高质量发展"</span>这个要求，理解"战略机遇和风险挑战并存、不确定难预料因素增多"这个形势判断……这是作决策、抓发展必须具备的基本功。</p>
+
+<p>当然，顺势而为不等于亦步亦趋。面向<span class="highlight-blue">"十五五"</span>，习近平总书记目光深远，指出"影响形势的因素是多重的，而且往往十分复杂"，强调"把握国内外形势新变化，目的在于胸怀全局、登高望远，在战略上保持定力、充满信心，在战术上精心运筹、趋利避害，不断增强我国发展的确定性和可持续性"。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">善于逆向思考，转换思路另辟蹊径，是"始终居于主动"的重要方面。逆向思考不是追求标新立异，而是摆脱思维定势、寻求破局之策。</span></p>
+
+<p>对形势的把握，如何"始终居于主动"？除了顺势而为，善于逆向思考也是重要方面。</p>
+
+<p>浙江建德，"办不成事"窗口给人启示。不仅从"怎么办成"出发，更从"为何办不成"切入，在问题的另一端找到了改进服务的突破口。自设立以来，已<span class="highlight-green">累计化解"疑难杂症"事项3000余件</span>。</p>
+
+<p><span class="highlight-purple">逆向思考，不是追求标新立异，而是要学会转换思路，在克服思维定势、摆脱路径依赖中另辟蹊径、寻求破局之策。</span></p>
+
+<p>比如，从接受辐射到主动嵌入。湖南桑植，产品优质但曾经打不开销路。通过在长沙设立"反向飞地"，实现"异地生产、税收共享、指标公认"，面向更广空间开展产品孵化和经贸合作，从"有什么干什么"变为"缺什么创什么"。</p>
+
+<p>再如，从竞争走向合作。浙江丽水大源镇、台州安岭乡、温州界坑乡，成立丽台温三区边界茶产业共富联合体，不再"各自提篮叫卖"，而是抱团发展，通过协作共享更大市场。</p>
+
+<p>又如，从"等风来"到"抢先机"。布局产业链关键环节，打造特色产业集群，提前卡位、注意错位、强调补位，才能创造属于自己的时间窗口。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">"心中有数、手上有招"，本质是因时因地制宜、识变应变求变，牢牢把握战略主动。既顺应时代大势，也从党的创新理论中悟规律、明方向、学方法、增智慧。</span></p>
+
+<p>无论顺势而为还是逆向思考，本质上都是因时因地制宜，在识变应变求变中科学决策，牢牢把握战略主动。这既要求"心中有数"，顺应时代大势，把谋事和谋势、谋当下和谋未来统一起来，将干事创业建立在扎实的调查研究和严谨的科学精神之上；也要求"手上有招"，运筹有利因素，从党的创新理论中悟规律、明方向、学方法、增智慧，使领导和决策体现时代性、把握规律性、富于创造性。</p>
+
+<p><span class="highlight-purple">从实际出发、按规律办事，既能顺势而为，也能逆势而上，这是奋进的智慧，也是笃行的底气。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月18日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·战略主动</span><p>"战略上判断得准确，战略上谋划得科学，战略上赢得主动，党和人民事业就大有希望。"</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"战略思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·心中有数</span><p>"心中有数、手上有招"，本质是因时因地制宜、识变应变求变，牢牢把握战略主动。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"科学决策"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句三·逆向思考</span><p>逆向思考不是追求标新立异，而是要学会转换思路，在克服思维定势、摆脱路径依赖中另辟蹊径、寻求破局之策。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"改革创新"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·顺势而为</span><p>顺势而为不等于亦步亦趋。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：短金句，适合"独立自主"辩证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·笃行底气</span><p>从实际出发、按规律办事，既能顺势而为，也能逆势而上，这是奋进的智慧，也是笃行的底气。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"实干"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·起兴破题</span><p>用"潜游的鱼"起兴引出思维方法，意象破题法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·双维思维</span><p>用"顺势而为+逆向思考"双维拆解战略主动，辩证框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·镇城区域</span><p>用"一镇/一城/一片区域"由小到大案例链，递进案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·反向飞地</span><p>用桑植"反向飞地"论证逆向思考，机制创新法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·心中有数</span><p>用"心中有数/手上有招"收束科学决策，对仗收束法可用于"干部素养"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「反向飞地」看山区突围"为题，模仿本文"起兴破题→顺势而为→逆向思考→心中有数收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个发展意象引题；②分"把握大势/转换思路"两层；③以"心中有数"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"区域协调"角度，用同一骨架写一句总论点，要求含"既能……也能……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月18日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
