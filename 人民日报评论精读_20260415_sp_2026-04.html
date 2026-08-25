@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 承包稳预期，信心地里来（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>承包稳预期，信心地里来（人民时评）</h1>
+    <div class="meta">乡村振兴 · 三农问题 · 民生保障 · 政策预期 · 高质量发展 | 2026年4月15日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">乡村振兴</span><span class="tag-item">三农问题</span><span class="tag-item">民生保障</span><span class="tag-item">政策预期</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以土地承包延期政策为样本，论证“稳预期”“乡村振兴”“政策连续性”等三农考点。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">三个小标题（稳民心／稳产新路／解人地矛盾）层层递进，且均有基层案例支撑。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">“延包30年”延长的不仅是承包期，更是亿万农民对美好生活的信心、农业农村高质量发展的成效<br><span style="color:#0d47a1;">▸ 写法：以“及时雨”比喻破题，点明稳预期主题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">稳住了承包关系，就稳住了民心<br><span style="color:#0d47a1;">▸ 写法：以安徽歙县网签案例论证“稳”的踏实</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">延长的是契约，更是稳产新路<br><span style="color:#0d47a1;">▸ 写法：以广西扶绥规模流转论证产权预期促增收</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">精准施策，解开人地矛盾的结<br><span style="color:#0d47a1;">▸ 写法：以云南、内蒙古基层探索论证绣花功夫</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“总—分（小标题）+基层案例”的乡村振兴论述结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】“延包30年”，延长的不仅是30年的承包期，更是亿万农民对美好生活的信心、农业农村高质量发展的成效。</p><p>春回大地，农事正忙。不久前，中办、国办关于做好第二轮土地承包到期后再延长30年试点工作的意见公布。<span class="highlight-purple">这份文件的分量，恰似春耕时节的一场“及时雨”，万众期盼、深得人心。</span></p>
+
+<p><span class="highlight-green">2024年至2025年，全国有近3000万农户的土地承包到期；“十五五”时期，这一数字将增至约1.6亿户。</span>土地是农业的根本，承包到期怎么办？<span class="highlight-blue">“以户为单位开展延包，确保绝大多数农户原有承包地继续保持稳定，不能推倒重来、打乱重分，不能借机违法调整或收回农户承包地。”</span>这不只是制度的延续，更是增进“三农”信心、稳住农业基本盘的关键举措。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">稳住了承包关系，就稳住了民心。</span></p>
+
+<p><span class="highlight-blue">土地不仅是农民的生计来源，更是生产经营的“底气”，关乎家家户户的钱袋子、粮袋子。</span>“延包30年”的政策内核在于“稳”，坚持集体所有制不动摇，坚持农户家庭承包经营，坚持“大稳定、小调整”。<span class="highlight-purple">这种“稳”，可以在基层转化为触手可及的踏实。</span></p>
+
+<p>在安徽歙县新溪口乡，村民通过手机网签完成手续后感叹：<span class="highlight-green">“这30年的土地承包权有了法律保障，往后种茶、发展产业更有底气了”。</span>这样的声音，反映出政策取得坚定农民信心的预期效果。当土地承包关系变成“稳稳的契约”，农民敢为长远发展作谋划，乡村全面振兴的发展根基将更为稳固。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">延长的是契约，更是稳产新路。</span></p>
+
+<p><span class="highlight-blue">稳定的产权预期，让土地流转更放心、规模经营更高效，为农业稳产提供保障。</span>在广西扶绥县岜盆乡岜盆社区弄底片区，借土地延包的契机，<span class="highlight-green">500亩曾经零碎撂荒的边角地，经过适度规模流转，变成了“高产高糖甘蔗种植示范片”，为182户农户铺开了增收新路。</span>田间地头的现代农业技术协同发力、“甘蔗+”复合种植模式的立体探索，实现了降本增效、一地多收。<span class="highlight-purple">土地承包关系稳定了，预期才会明朗；预期明朗了，则资本敢投、技术愿入，农业稳产增收的良性循环将更为顺畅。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">精准施策，解开人地矛盾的结。</span></p>
+
+<p>稳预期就要正视问题。二轮承包至今已近30年，人口增减、耕地毁损等原因造成人地矛盾。对此，再次延长承包关系，既坚持既定原则，也给了基层调整的空间：<span class="highlight-blue">对于确实需要调地的特殊情形，允许在“大稳定”的前提下，依法依规进行“小调整”。</span></p>
+
+<p>在云南景谷傣族彝族自治县益智乡和平村，工作组重点梳理了土地流转、界址争议等历史遗留问题，明确妇女和进城农户的土地权益保障。在内蒙古杭锦后旗蒙海镇，当地对不同类型的缺地农户采取差异化安置，用新增耕地和机动地解决未分地农户的种地需求，整户消亡的土地经过充分讨论后依法收回，由集体统一经营。<span class="highlight-gold">这些基层探索证明，既有定海神针般的坚定，也有绣花功夫般的细腻，才能守护好农民的切身福祉，确保政策红利公平惠及每一个人。</span></p>
+
+<p><span class="highlight-blue">处理好人与地的关系，一直是我国“三农”改革的主线，</span>新政策正是主线上的又一次稳健落子。<span class="highlight-purple">“延包30年”，延长的不仅是30年的承包期，更是亿万农民对美好生活的信心、农业农村高质量发展的成效。</span>展望前程，牢牢扭住这条主线不动摇，希望的田野将描绘出更加恢宏壮丽的画卷。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月15日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·稳预期</span><p>“延包30年”，延长的不仅是30年的承包期，更是亿万农民对美好生活的信心、农业农村高质量发展的成效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“稳预期”主题核心句，可迁移至各类政策连续性论述。</p></div><div class="material-card"><span class="tag-shenlun">金句二·政策内核</span><p>“延包30年”的政策内核在于“稳”，坚持集体所有制不动摇，坚持农户家庭承包经营，坚持“大稳定、小调整”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“大稳定、小调整”原则表述规范。</p></div><div class="material-card"><span class="tag-shenlun">金句三·良性循环</span><p>土地承包关系稳定了，预期才会明朗；预期明朗了，则资本敢投、技术愿入，农业稳产增收的良性循环将更为顺畅。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“稳定预期→要素涌入→良性循环”逻辑链可迁移。</p></div><div class="material-card"><span class="tag-shenlun">金句四·绣花功夫</span><p>既有定海神针般的坚定，也有绣花功夫般的细腻，才能守护好农民的切身福祉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“定海神针+绣花功夫”对仗，用于基层治理。</p></div><div class="material-card"><span class="tag-shenlun">金句五·主线论</span><p>处理好人与地的关系，一直是我国“三农”改革的主线。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“……是改革主线”句式可迁移。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·数据开篇</span><p>用“近3000万农户→约1.6亿户”数据凸显政策紧迫性。</p></div><div class="migration-card"><span class="tag-mig">迁移二·小标题递进</span><p>“稳民心／稳产新路／解人地矛盾”三小标题各有基层案例。</p></div><div class="migration-card"><span class="tag-mig">迁移三·基层案例</span><p>安徽网签、广西流转、云南内蒙调解——案例服务分论点。</p></div><div class="migration-card"><span class="tag-mig">迁移四·辩证表述</span><p>“大稳定、小调整”“定海神针+绣花功夫”体现原则性与灵活性。</p></div><div class="migration-card"><span class="tag-mig">迁移五·首尾呼应</span><p>开头“及时雨”与结尾“希望的田野”呼应，结构圆合。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“宅基地产权清晰，乡村活力自来”为题，模仿本文“数据开篇→三小标题+案例→首尾呼应”的写法，写一段150字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用数据/现象开篇；②分“稳权益／活利用／解纠纷”三层各配一案例；③以“希望的田野”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用“既……也……”写一句政策原则（如“既守住底线，也放活权能”）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月15日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
