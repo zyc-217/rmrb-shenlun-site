@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 服务随人走，发展添活力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>服务随人走，发展添活力（评论员观察）</h1>
+    <div class="meta">公共服务 · 新型城镇化 · 户籍改革 · 投资于人 | 2026年6月8日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">公共服务</span><span class="tag-item">新型城镇化</span><span class="tag-item">户籍改革</span><span class="tag-item">投资于人</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以国务院意见打破户籍限制、推行常住地公共服务为切口，论证"服务随人走"既能改善民生更能撬动全国统一大市场活力，把投资于人作为高质量发展支撑，适合"新型城镇化""公共服务"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"投资于人"与"发展活力"的因果破题，点出以人民为中心的系统思维。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">服务随人走：打破户籍限制既是民生改善更是撬动发展全局<br><span style="color:#0d47a1;">▸ 写法：由国务院意见破题，点明系统思维</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">以基本公共服务均等化促进人口自由流动，让统一大市场更具活力<br><span style="color:#0d47a1;">▸ 写法：以居住证互通互认论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">把投资于人和投资于物结合，激发高质量发展活力<br><span style="color:#0d47a1;">▸ 写法：以深圳/杭州安居政策论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">经济发展和民生改善相互促进，挖掘新经济增长点<br><span style="color:#0d47a1;">▸ 写法：以城镇化率67%论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"均等化/投资于人/民生促发展"框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】哪个地方在投资于人上做得更好，成为优质公共服务的高地，哪个地方就能吸引人才持续流入，从而保持发展活力、蓄积发展后劲。推行常住地提供基本公共服务、打破户籍限制，是以人民为中心的系统思维，既能改善民生更能撬动发展全局。</p><p>民之所盼，政之所向，发展之所趋。因<span class="highlight-blue">公共服务与户籍绑定</span>而带来的民生难题，如今有了更清晰的答案。</p>
+
+<p>近日，国务院印发<span class="highlight-blue">《关于推行常住地提供基本公共服务的实施意见》</span>，明确提出"促进未落户常住人口与户籍人口同等享有基本公共服务"，这意味着在子女教育、住房保障、医疗社保等各方面，基本公共服务与户籍挂钩因素将逐步消除，实现<span class="highlight-gold">"服务随人走"</span>，基本公共服务均等化水平将进一步提升。</p>
+
+<p>从制度层面打破户籍限制、打通服务堵点，<span class="highlight-gold">彰显以人民为中心的发展理念</span>。其意义不仅在改善民生，更能够撬动发展全局，照见推动高质量发展的系统思维。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">以基本公共服务均等化促进人口自由流动，让全国统一大市场更具活力。解除户籍约束，有助于保障流动人口连续享有基本公共服务，促进各类生产要素顺畅流动、高效配置。</span></p>
+
+<p>以基本公共服务均等化促进人口自由流动，让<span class="highlight-blue">全国统一大市场</span>更具活力。</p>
+
+<p>按照常住人口布局公共服务设施，可以优化资源配置。解除户籍约束，意味着公共服务可及性、普惠性进一步改善。特别是推广<span class="highlight-blue">居住证互通互认</span>、常住年限或常住积分转换等经验，有助于保障流动人口连续享有基本公共服务，不会因迁徙而中断。<span class="highlight-purple">为人口跨区域流动卸下顾虑，可以促进各类生产要素顺畅流动、高效配置，从而助力全国统一大市场经络畅通、协同发展。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">把投资于物和投资于人紧密结合的理念贯穿于政策设计，激发高质量发展活力。投资于人既是民生改善的温情举措，更是高质量发展的有力支撑。</span></p>
+
+<p>当下，哪个地方在投资于人上做得更好，成为优质公共服务的高地，哪个地方就能吸引人才持续流入，从而保持发展活力、蓄积发展后劲。</p>
+
+<p>比如，一座城市如果能更好满足青年人才的安居需求，不仅有助于吸引年轻人就业创业，还能因"相关转移支付考虑常住人口因素进行分配"而获得外部资源投入。现实中，广东深圳为青年人才提供过渡性住房，租金约为市场参考租金的<span class="highlight-green">60%</span>，优惠租期最长可达<span class="highlight-green">3年</span>，增强对青年人才"磁吸力"；浙江杭州以<span class="highlight-blue">"青荷驿站""人才专项租赁住房""公租房货币补贴"</span>等多项安居政策，把人口流入转化为人才留存。<span class="highlight-gold">由此来看，投资于人既是民生改善的温情举措，更是高质量发展的有力支撑，成为各地在竞争中脱颖而出的关键。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">实现经济发展和改善民生相互促进，在持续保障和改善民生过程中挖掘新的经济增长点。让农业转移人口更好融入新型城镇化，蕴藏巨大扩内需潜力。</span></p>
+
+<p>实现经济发展和改善民生相互促进，在持续保障和改善民生过程中挖掘新的经济增长点。</p>
+
+<p>当前，我国城镇常住人口占总人口比例达到<span class="highlight-green">67%</span>，而城镇户籍人口比重只有<span class="highlight-green">50%</span>左右。让约<span class="highlight-green">2.5亿</span>农业转移人口及其家属更好融入新型城镇化，既是改善民生的切实需要，也蕴藏巨大的扩内需潜力。根据测算，每1个百分点城镇化率提升，可拉动<span class="highlight-green">万亿规模</span>新增投资需求、<span class="highlight-green">2000多亿</span>新增消费需求。</p>
+
+<p>习近平总书记深刻指出：<span class="highlight-blue">"要把发展经济和改善民生有机统一起来，制定经济发展政策同步嵌入改善民生的要求，制定民生政策同步考虑促进经济发展的效应。"</span>推动社保扩面可以减少居民预防性储蓄，实现城市更新能够释放房地产需求，落实增收计划将会提升全社会消费意愿和能力……<span class="highlight-gold">以系统思维处理好经济与社会、发展与民生的关系，不断破解群众急难愁盼问题，有助于在增进民生福祉中培育新的经济增长点。</span></p>
+
+<p>中国式现代化，民生为大。基本公共服务均等化，为民生改善写下温暖注脚，<span class="highlight-gold">也将为提升城镇化质量、释放国内需求潜力、构建新发展格局提供有力支撑。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月8日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·投资于人</span><p>哪个地方在投资于人上做得更好，成为优质公共服务的高地，哪个地方就能吸引人才持续流入，从而保持发展活力、蓄积发展后劲。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"人才战略"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·服务随人走</span><p>实现"服务随人走"，基本公共服务均等化水平将进一步提升。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"户籍改革"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·民生全局</span><p>从制度层面打破户籍限制，其意义不仅在改善民生，更能够撬动发展全局。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"系统思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·投资于人支撑</span><p>投资于人既是民生改善的温情举措，更是高质量发展的有力支撑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"投资于人"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·民生为大</span><p>中国式现代化，民生为大。基本公共服务均等化，为提升城镇化质量、释放国内需求潜力提供有力支撑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"以人民为中心"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·政策意见破题</span><p>用"国务院实施意见"政策节点破题，政策切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·均等化框架</span><p>用"均等化/投资于人/民生促发展"三层拆解公共服务，框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·居住证互认</span><p>用"居住证互通互认"论证要素流动，机制法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·安居政策</span><p>用深圳60%租金/杭州青荷驿站论证投资于人，案例法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·民生为大</span><p>用"民生为大"收束新型城镇化，金句收束法可用于"以人民为中心"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「安居政策」看青年留量"为题，模仿本文"政策破题→均等化→投资于人→民生为大收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个安居政策引题；②分"要素流动/人才留存"两层；③以"民生为大"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"县域公共服务"角度，用同一骨架写一句总论点，要求含"既是……更是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
