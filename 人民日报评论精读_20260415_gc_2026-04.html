@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 何以锻造“场景竞争力”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>何以锻造“场景竞争力”（评论员观察）</h1>
+    <div class="meta">新质生产力 · 科技创新 · 高质量发展 · 扩大内需 · 场景创新 | 2026年4月15日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">新质生产力</span><span class="tag-item">科技创新</span><span class="tag-item">高质量发展</span><span class="tag-item">扩大内需</span><span class="tag-item">场景创新</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">从“场景”视角解读新质生产力与内需潜力，适合“数字经济与实体经济融合”“扩大内需”“创新生态”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">以一块“幸运棒”饼干的生活化场景切入，消解宏大概念的距离感。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">场景是技术落地的载体、消费升级的舞台、治理增效的抓手，更是发展活力潜力的集中呈现<br><span style="color:#0d47a1;">▸ 写法：以“回到中国的场景”点明场景竞争力内涵</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">推动场景创新，制度支撑是关键<br><span style="color:#0d47a1;">▸ 写法：以5G新基建、东数西算论证顶层设计</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">我国拥有庞大市场，需求的广度与深度造就场景的无限可能<br><span style="color:#0d47a1;">▸ 写法：以需求弹性、银发+Z世代论证市场潜力</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">技术与场景双向赋能，社会活力为场景创新注入“满格电力”<br><span style="color:#0d47a1;">▸ 写法：以5G反向赋能、社会共创论证生态协同</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“制度+市场+技术+社会”四维度协同分析框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】场景是技术落地的载体、消费升级的舞台、治理增效的抓手，更是发展活力潜力的集中呈现。</p><p>一份饼干，能吃出什么样的新鲜感？</p>
+
+<p>朋友分享了一种叫“幸运棒”的饼干。每小份饼干都有寄语，如“眼里有星辰，心中有暖阳”“白白胖胖，充满希望”。看到这些文字，不禁心头一暖、会心一笑。</p>
+
+<p>新花样，新体验。朋友颇有感触地说，<span class="highlight-purple">厂家做的不是零食，而是能在亲朋好友相聚时端上桌、送祝福的“场景”。</span>生活处处，皆有场景。观察发展，亦如此。</p>
+
+<p>有学者说，理解中国、认识中国，要回到“中国的场景”。从人工智能赋能千行百业，到文旅沉浸式体验刷屏出圈，再到政务服务精准匹配民生需求……<span class="highlight-blue">高质量发展实践中，场景是技术落地的载体、消费升级的舞台、治理增效的抓手，更是发展活力潜力的集中呈现。</span></p>
+
+<p>数字经济与实体经济深度融合的今天，中国何以锻造“场景竞争力”？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">推动场景创新，制度支撑是关键。</span></p>
+
+<p>如，5G等新基建纳入国家规划，为自动驾驶、远程医疗等场景提供底层支撑；“东数西算”通过数据中心布局，推动西部地区在算力应用场景中提质发展。</p>
+
+<p><span class="highlight-blue">顶层设计的战略谋划，宏观政策的有力引导，增强了政策驱动能力。</span>当一些国家的企业在为电力保障而焦虑时，我国的电网、能源结构、特高压工程等释放发展红利，彰显了集中力量办大事的优势。<span class="highlight-green">制度上的一盘棋，行动上的先手棋，让应用场景成为重要发展场域。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">我国拥有庞大市场，城乡、区域、产业间的差异性与互补性，造就场景的无限可能。</span></p>
+
+<p><span class="highlight-blue">我国拥有庞大市场，城乡、区域、产业间具有差异性、互补性。</span>这意味着，技术创新总能找到适配场景，个性需求也会催生全新场景。全国统一大市场的“需求矩阵”，呈现梯度多元、层级丰富、动态升级的特征。例如，一、二线城市的消费者偏好智能家电与无人配送，而下沉市场的直播助农则通过场景重构，带动农产品流通。</p>
+
+<p>对比一些成熟的经济体，中国市场的“需求弹性”尤为显著。比如，随着人口结构变化，中国的青年与老年同时成为消费主力群体，<span class="highlight-green">“银发经济”与“Z世代消费”相互渗透、彼此交融，催生出一批复合型消费场景。</span>从城市的品质生活，到乡村的普惠民生，从银发经济的适老化改造，到青年群体的潮流文旅，<span class="highlight-purple">需求的广度与深度正在造就场景的无限可能。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">技术与场景双向赋能，社会活力为场景创新注入“满格电力”。</span></p>
+
+<p><span class="highlight-blue">技术是场景创新的引擎。</span>5G技术不仅服务于通信行业，更通过港口自动化、远程医疗、自动驾驶等场景验证实际效用，进一步推动技术升级；无人机从最初的消费级产品，变为农业植保、电力巡检等领域的好帮手，低空经济由此不断延链强链。<span class="highlight-purple">今天，技术创新助力场景延展，场景应用反哺技术创新，这样的正向“双螺旋”使创新生态更具活力。</span></p>
+
+<p><span class="highlight-blue">技术与场景的双向赋能，源于产业链供应链的完整性稳定性。</span>从产品设计到终端制造，从云计算到物联网，完整的产业体系、制造能力，使得技术迭代与场景适配可同步推进。<span class="highlight-green">场景创新越是落得下、推得开，就越能为积蓄发展优势提供硬核支撑。</span></p>
+
+<p>再进一步看，当前全社会对新技术的包容性与参与度，为场景创新注入“满格电力”。共享单车的普及，社区团购的兴起，人工智能大模型的开源……<span class="highlight-purple">普通人是场景的使用者，也是共建者。正是基于“社会共创”的文化氛围，微创新一点点汇聚成大变革。</span>守住安全底线，在新领域、新业态中鼓励更多人参与，更有利于形成“场景入生活，创新成常态”的局面。</p>
+
+<p>“场景竞争力”的塑造，靠的是制度优势、市场潜力、技术生态与社会活力的协同共振。也要注意，新场景不能局限于“应用层”，也要为基础研究拓宽舞台，这是实现高质量、可持续发展的“源头活水”。<span class="highlight-gold">须相信，今天精心打磨的新场景，会成为定义明天的新赛道，孕育蓬勃生长的新力量。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月15日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·场景定义</span><p>场景是技术落地的载体、消费升级的舞台、治理增效的抓手，更是发展活力潜力的集中呈现。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“场景竞争力”标准定义，可迁移至数字经济话题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·双螺旋</span><p>技术创新助力场景延展，场景应用反哺技术创新，这样的正向“双螺旋”使创新生态更具活力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“双向赋能/双螺旋”比喻可迁移至产学研融合。</p></div><div class="material-card"><span class="tag-shenlun">金句三·需求弹性</span><p>需求的广度与深度正在造就场景的无限可能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：用于“扩大内需/超大规模市场优势”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·社会共创</span><p>普通人是场景的使用者，也是共建者。正是基于“社会共创”的文化氛围，微创新一点点汇聚成大变革。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“社会共创”适合基层治理、万众创新类。</p></div><div class="material-card"><span class="tag-shenlun">金句五·源头活水</span><p>新场景不能局限于“应用层”，也要为基础研究拓宽舞台，这是实现高质量、可持续发展的“源头活水”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“应用层+基础研究”辩证，适合创新体系论述。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·生活化引子</span><p>用“幸运棒饼干送祝福”的生活场景软化“场景竞争力”概念。</p></div><div class="migration-card"><span class="tag-mig">迁移二·四维度框架</span><p>制度支撑／市场潜力／技术引擎／社会活力——四维度可套分析任一新业态。</p></div><div class="migration-card"><span class="tag-mig">迁移三·双螺旋论证</span><p>“技术→场景→反哺技术”的双向逻辑，强化论证深度。</p></div><div class="migration-card"><span class="tag-mig">迁移四·超大规模市场</span><p>用“银发+Z世代相互渗透”论证需求弹性，可迁移至内需主题。</p></div><div class="migration-card"><span class="tag-mig">迁移五·结尾辩证</span><p>“不止应用层，也要宽基础研究”的辩证收尾，提升立意。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“从‘村晚’看乡村文化的新场景”为题，模仿本文“生活场景切入→制度/市场/技术/社会四维度”的写法，写一段150字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①以村晚火出圈的生活场景切入；②分“政策托举／乡土需求／传播技术／群众共创”四层；③辩证收尾。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用“既是……更是……”句式写一句场景定义。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月15日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
