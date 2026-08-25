@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “苹果”之中见因果（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“苹果”之中见因果（评论员观察）</h1>
+    <div class="meta">乡村振兴 · 科技创新 · 农业现代化 · 人民情怀 · 开放共享 | 2026年4月17日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">乡村振兴</span><span class="tag-item">科技创新</span><span class="tag-item">农业现代化</span><span class="tag-item">人民情怀</span><span class="tag-item">开放共享</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以小苹果折射农业现代化、三链融合、人民情怀与开放共享，适合“产业振兴”“科技自立自强”“人类命运共同体”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">以“甜”为隐喻贯穿全篇，三个“滋味的甜”引出三层次因果，生动不枯燥。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">创新链产业链人才链深度融合写出最接地气的“论文”；好产业靠好政策、好作风把“甜”留给百姓<br><span style="color:#0d47a1;">▸ 写法：以“甜”的隐喻点明产业与情怀双重因果</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">滋味的甜，源自从枝头到餐桌的环环相扣——现代化产业体系与三链融合<br><span style="color:#0d47a1;">▸ 写法：以甘肃果园、白水产值论证产业融合</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">滋味的甜，源自接续奋斗的“韧”劲——一张蓝图绘到底<br><span style="color:#0d47a1;">▸ 写法：以延安退耕、林县天河、华为手机论证韧性</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">甜在情怀——厚植人民情怀、开放共享<br><span style="color:#0d47a1;">▸ 写法：以“苹果林”隐喻论证人类命运共同体</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“隐喻贯穿+三层因果”的意象化论述结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】创新链产业链人才链深度融合，写出最接地气也最有分量的“论文”；好产业要靠好政策、好作风，把“甜”留给百姓，厚植人民情怀，我们的事业才会有深厚根基。</p><p>最近，中国苹果在海外社交平台的美食分享区火了。</p>
+
+<p>一名法国博主发文夸赞甘肃“一缕红”苹果，有网友追问：“中国的苹果为何能做到又多又好吃？”</p>
+
+<p>剖析苹果的滋味，便有了答案。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">滋味的甜，源自从枝头到餐桌的环环相扣、无缝衔接。</span></p>
+
+<p>甘肃甘谷县，标准化果园提产能，精细化管理增效益，直播销售“枝头鲜”，冷库保障“卖四季”，惠农政策全链赋能，地理品牌越擦越亮……<span class="highlight-blue">农工商牵手，政企研合力，现代化产业体系日渐茁壮，让小苹果长成大产业，从头到尾都透着甜。</span></p>
+
+<p>华夏沃土，“甜”得丰富。聚焦种业攻坚，打造“中国芯”，西北农林科技大学赵政阳团队培育出“三瑞”新品种，<span class="highlight-green">陕西白水县苹果全产业链产值突破110亿元。</span>助力产业富农，缩短育种期，山东农业大学陈学森团队将苹果新技术无偿传授果农和企业，<span class="highlight-green">新增效益超百亿元。</span><span class="highlight-blue">创新链产业链人才链深度融合，写出最接地气也最有分量的“论文”。</span></p>
+
+<p><span class="highlight-gold">强国必先强农，农强方能国强。</span>锚定农业现代化目标，强劲科技现代化引擎，夯实产业现代化支撑，“三农”工作定能结出硕果、收获香甜。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">滋味的甜，源自翻过圪梁梁、再蹽洼洼荒的一往无前、接续奋斗。</span></p>
+
+<p>曾经“下一场大雨脱一层皮”，陕西延安的黄土坡何以变为苹果种植的“黄金带”？</p>
+
+<p>兴修水利、引水上塬，开展“绿色革命”、向黄沙“宣战”，<span class="highlight-green">20余年退耕还林1077.5万亩，“再造一个秀美山川”；</span>农具不断迭代，农技持续更新，“汗水农业”迈向“智慧产业”，从农民到新农人的代际赓续，不断改造农业“筋骨”……<span class="highlight-purple">无他尔，就是“敢与天公试比高”，一代一代加油干。</span></p>
+
+<p>从1940年陕甘宁边区试栽引入苗木，到迈入新时代、搭上中欧班列“卖向全球”，延安的苹果枝繁叶茂，<span class="highlight-purple">靠的就是念好“韧”字诀，一张蓝图绘到底。</span></p>
+
+<p>不只田野，时光长卷中，“韧”的果实已漫山遍野。<span class="highlight-green">“宁愿苦干、不愿苦熬”，河南林县近10万儿女耗时近10年“抠”出1500公里“人工天河”，</span>也开拓出滋养斗志的精神之河；<span class="highlight-green">“不去想困难，干就完了，一步一步往前走”，在关键核心技术上苦练内功、冲破封锁，麒麟全链路自主，华为手机全面回归……</span>点点滴滴汇聚成中国发展的强大韧性，为动荡的世界注入更多确定性。</p>
+
+<p><span class="highlight-purple">坚韧从来都是成事之道。</span>新征程上，继续以“韧”的劲头齐心协力、闯关夺隘，定能摘得更多“金苹果”。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">“苹果”的滋味，品于果，生于根——厚植人民情怀，把“甜”留给百姓。</span></p>
+
+<p>“苹果”的滋味，品于果，生于根。正是因为“把屁股端端地坐在老百姓的这一面”，<span class="highlight-blue">投资于人、造福于民，发展的根脉才扎得深，结出的果子才更香甜。</span></p>
+
+<p><span class="highlight-green">超600万公里综合交通网络让天堑变通途，纵横捭阖的“能源大动脉”保障生产生活，统一大市场建设做大共赢蛋糕……</span>新时代以来，每一次的迎难而上都是为了刷新幸福指数。<span class="highlight-green">“十五五”时期，超7万亿元的投资将赋能“六张网”和重点领域建设。</span>在投资于物和投资于人的紧密结合中，“六张网”将化为更坚韧的“民生网”，培厚人民生活的“甜”。</p>
+
+<p>说到底，甜在情怀。就像辽沈战役时驻扎果园的解放军战士，再渴也不吃老百姓的一个苹果。<span class="highlight-blue">好产业要靠好政策、好作风，把“甜”留给百姓，厚植人民情怀，我们的事业才会有深厚根基。</span></p>
+
+<p>中国的“甜”，不是关门独享，而是开放共享。2014年捷克总统访华时带来一株苹果树苗，习近平主席指出，<span class="highlight-purple">“我们既要摘苹果，更要多栽树”。</span>小菌草种到100多个国家，中国人工智能通过开源分享智能红利……<span class="highlight-purple">中国式现代化的发展成果正成为造福世界的“甜”，人类共同的“苹果林”蔚为大观。</span></p>
+
+<p>中国的“苹果”为什么又多又好吃？因为我们的路“走对了”，所以还要“一步一个脚印坚定朝前走”，脚踏实地、久久为功。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月17日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·三链融合</span><p>创新链产业链人才链深度融合，写出最接地气也最有分量的“论文”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“三链融合”标准表述，农业现代化/科技自立通用。</p></div><div class="material-card"><span class="tag-shenlun">金句二·强国农为先</span><p>强国必先强农，农强方能国强。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：乡村振兴类高频金句。</p></div><div class="material-card"><span class="tag-shenlun">金句三·一张蓝图</span><p>靠的就是念好“韧”字诀，一张蓝图绘到底。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“一张蓝图绘到底”适合长期主义/接续奋斗。</p></div><div class="material-card"><span class="tag-shenlun">金句四·人民情怀</span><p>把屁股端端地坐在老百姓的这一面，投资于人、造福于民，发展的根脉才扎得深。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“屁股端端坐在老百姓一面”生动表达人民立场。</p></div><div class="material-card"><span class="tag-shenlun">金句五·开放共享</span><p>我们既要摘苹果，更要多栽树。中国式现代化的发展成果正成为造福世界的“甜”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“摘苹果+栽树”隐喻可用于人类命运共同体。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·隐喻贯穿</span><p>以“甜”为线索串起产业/奋斗/情怀三层，生动不空洞。</p></div><div class="migration-card"><span class="tag-mig">迁移二·小中见大</span><p>从一颗苹果折射三链融合、退耕还林、开放共享等大主题。</p></div><div class="migration-card"><span class="tag-mig">迁移三·数据点睛</span><p>“110亿元”“超百亿元”“1077.5万亩”增强说服力。</p></div><div class="migration-card"><span class="tag-mig">迁移四·精神谱系</span><p>林县天河、华为手机并置，串联物质与精神双重韧性。</p></div><div class="migration-card"><span class="tag-mig">迁移五·内外呼应</span><p>国内“民生网”与国外“苹果林”呼应，升华开放共享。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“从一片叶看生态富民的因果”为题，模仿本文“隐喻贯穿+三层因果”的写法，写一段150字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①以一片叶（如茶叶/菌草）设问；②分“产业链融合／久久为功／惠民情怀”三层；③以开放共享收尾。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用“源自从……到……”句式写一句分层因果。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月17日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
