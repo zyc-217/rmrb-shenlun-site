@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "向东看"见证中国感召力（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"向东看"见证中国感召力（人民时评）</h1>
+    <div class="meta">对外开放 · 中国式现代化 · 国际影响力 · 人类命运共同体 | 2026年5月8日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">对外开放</span><span class="tag-item">中国式现代化</span><span class="tag-item">国际影响力</span><span class="tag-item">人类命运共同体</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">从多国领导人"访华潮"切入，论证中国式现代化释放强大感召力，体现为互利共赢合作力、立己达人赋能力、全球秩序塑造力，适合"高水平对外开放""人类命运共同体"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"访华潮"与广交会、消博会不期而遇联动，揭示隐性感召力。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"向东看"背后是中国式现代化的感召力，体现为互利共赢合作力、立己达人赋能力、全球秩序塑造力<br><span style="color:#0d47a1;">▸ 写法：由访华潮破题，点明感召力三层内涵</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">感召力体现在经济上，是互利共赢的合作力<br><span style="color:#0d47a1;">▸ 写法：以广交会、消博会论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">感召力体现在现代化进程中，是立己达人的赋能力<br><span style="color:#0d47a1;">▸ 写法：以奇瑞西班牙、宁德时代德国论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">感召力体现在国际政治中，是对全球秩序的塑造力<br><span style="color:#0d47a1;">▸ 写法：以四点主张、全球治理倡议论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"经济/现代化/国际政治"三层并列结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"访华潮"反映的，正是国际社会对中国始终坚持真正的多边主义、为世界持续提供稳定性与确定性的高度认同。一个"赋能型大国"，秉计利天下之胸怀，行务实可行之举措，担立己达人之责任，日益成为道义之锚、信心之源、希望之光。</p><p><span class="highlight-gold">一个"赋能型大国"，秉计利天下之胸怀，行务实可行之举措，担立己达人之责任，日益成为道义之锚、信心之源、希望之光。</span></p>
+
+<p>中国带头讲信义、重情义、扬正义、树道义，给动荡世界持续注入和平力量、正向能量，日益被各国视为"动荡世界中的稳定器"。</p>
+
+<p>近段时间，中国再次迎来"访华潮"。多国领导人密集访华，并不约而同将访华足迹延伸向广袤中国大地。</p>
+
+<p>越共中央总书记、国家主席苏林赴雄安，看中国如何打造未来之城，并乘坐高铁列车，前往广西参访；莫桑比克总统查波在湖南长沙观看挖掘机表演穿针、叠酒杯等高难度动作，感知中国智造发展脉动；西班牙首相桑切斯到访小米科技园，现场体验小米汽车……</p>
+
+<p>读懂中国，关键要读懂<span class="highlight-blue">中国式现代化</span>。从了解国家战略的落地，到参访科技创新的热土，再到感受蒸蒸日上的生活，世界"向东看"背后，是中国式现代化的万千气象和强大感召力。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">这一感召力，体现在经济上，是互利共赢的合作力。"不以山海为远"的开放中国，在开放发展中分享机遇、实现共赢。</span></p>
+
+<p>中国的发展，就是世界的机遇。一个巧合是，近期的"访华潮"与两场国际经贸盛会不期而遇。珠江之畔，<span class="highlight-green">第139届广交会，参展企业超3.2万家，其中拥有专精特新、单项冠军等称号的优质企业超1.1万家</span>。南海之滨，<span class="highlight-green">第六届消博会，云集来自60多个国家和地区的3400多个品牌</span>。透过广交会、消博会，人们看到的是"不以山海为远"的开放中国，是"在开放发展中分享机遇、实现共赢"的负责任中国。</p>
+
+<p>更重要的是，中国的开放政策，具有连续性和稳定性，"与中国同行就是与机遇同行"是可预期的确定性。进博会、服贸会、数贸会等展会年年举办，外资准入负面清单持续缩减，入境消费环境不断优化……事实证明，中国有实现高质量发展的底气，也有以高水平对外开放同世界共享发展机遇的胸怀。<span class="highlight-purple">正如英国《金融时报》所言："中国正成为最稳固的长期合作伙伴。"</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">这一感召力，体现在现代化进程中，是立己达人的赋能力。区别于一些西方国家动辄"撤梯子"，中国乐于"递梯子"，帮助其他国家也"爬上来"。</span></p>
+
+<p>有学者指出，区别于一些西方国家动辄"撤梯子"，中国在实现自身发展的同时，乐于"递梯子"，帮助其他国家也"爬上来"。以绿色发展为例，中国是引领者，也是赋能者。在西班牙，奇瑞与当地老牌车企合作，重启闲置工厂并<span class="highlight-green">创造上千个就业岗位</span>，成为西班牙再工业化的标杆项目；在德国，宁德时代在图林根州阿恩施塔特建设电池工厂，推动这座传统汽车工业基地重焕生机，成为德国乃至整个欧洲的电池生产与研发高地。</p>
+
+<p>中国，既以中国式现代化发展自身，也用自身发展赋能世界。<span class="highlight-gold">一个"赋能型大国"，秉计利天下之胸怀，行务实可行之举措，担立己达人之责任，日益成为道义之锚、信心之源、希望之光。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">这一感召力，体现在国际政治中，是对全球秩序的塑造力。中国带头讲信义、重情义、扬正义、树道义，给动荡世界持续注入和平力量、正向能量。</span></p>
+
+<p>当今世界乱象丛生，和平赤字、发展赤字、安全赤字、治理赤字不断加剧。面对动荡不安的中东局势，中方就维护和促进中东和平稳定提出四点主张；面对个别国家大搞关税壁垒、脱钩断链，中国坚定维护公平开放的国际经贸秩序；当多边主义面临严峻冲击，中国提出全球治理倡议……<span class="highlight-purple">中国带头讲信义、重情义、扬正义、树道义，给动荡世界持续注入和平力量、正向能量</span>，日益被各国视为"动荡世界中的稳定器"。</p>
+
+<p>中国式现代化是走和平发展道路的现代化。"访华潮"反映的，正是国际社会对中国始终坚持真正的多边主义，为世界持续提供稳定性、确定性的高度认同。</p>
+
+<p>桑切斯访华时，在一场演讲中专门讲到一张地图——利玛窦来华时所带的世界地图，是以欧洲为中心，亚洲则被置于边缘，视角带有明显偏见。他呼吁，400多年过去了，不能用"扭曲的地图"看世界。<span class="highlight-purple">中国式现代化持续释放感召力，将推动世界各国增进理解、消除偏见</span>，携手同行现代化之路，朝着构建人类命运共同体阔步前行。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月8日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·赋能型大国</span><p>一个"赋能型大国"，秉计利天下之胸怀，行务实可行之举措，担立己达人之责任，日益成为道义之锚、信心之源、希望之光。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比金句，标题原句，适合"中国担当"升华。</p></div><div class="material-card"><span class="tag-shenlun">金句二·讲信义</span><p>中国带头讲信义、重情义、扬正义、树道义，给动荡世界持续注入和平力量、正向能量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比金句，适合"国际道义"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·稳定器</span><p>中国正成为最稳固的长期合作伙伴（英《金融时报》）。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：外媒引述，适合"确定性/稳定性"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·递梯子</span><p>区别于一些西方国家动辄"撤梯子"，中国乐于"递梯子"，帮助其他国家也"爬上来"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"立己达人/赋能"话题。</p></div><div class="material-card"><span class="tag-shenlun">金句五·扭曲的地图</span><p>400多年过去了，不能用"扭曲的地图"看世界。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"消除偏见/客观看中国"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·访华潮联动</span><p>把"访华潮"与经贸盛会联动解读，揭示隐性感召力，多现象互证法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层内涵</span><p>从经济/现代化/国际政治三层拆解"感召力"，多维并列结构可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·递梯子喻</span><p>用"撤梯子/递梯子"对比论证立己达人，比喻法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·数据盛会</span><p>用广交会3.2万家、消博会60多国3400品牌论证开放，数据范式可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·扭曲地图</span><p>用利玛窦地图"扭曲视角"比喻偏见，意象法可迁移至"客观认知"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「一带一路」朋友圈看中国亲和力"为题，模仿本文"现象破题→三层并列（经济/民生/治理）→意象收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个国际合作现象引题；②分"互利共赢/赋能发展"两层；③以"消除偏见"意象收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"全球治理"角度，用同一骨架写一句总论点，要求含"既是……也是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
