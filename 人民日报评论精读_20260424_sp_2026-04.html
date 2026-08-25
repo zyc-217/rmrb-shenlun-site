@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 让科技话语权与科研实力共生长（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>让科技话语权与科研实力共生长（人民时评）</h1>
+    <div class="meta">科技创新 · 科技话语权 · 国际传播 · 开放合作 | 2026年4月24日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">科技创新</span><span class="tag-item">科技话语权</span><span class="tag-item">国际传播</span><span class="tag-item">开放合作</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">从“中国科学十大进展”等发布切入，论证科技话语权需与科研实力共生长，适合“科技强国”“国际科技治理”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用两个科技发布联动解读，揭示话语权这一隐性竞争力。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">在自立自强基础上深化开放合作，让我国科技话语权与科研实力共生长，为成为全球创新高地提供助力<br><span style="color:#0d47a1;">▸ 写法：由两个科技发布破题，点明话语权与实力共生长</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">积极主动发声，占领科技创新的话语“高地”<br><span style="color:#0d47a1;">▸ 写法：以话语权影响评价、人才、资金流动论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">建强科技期刊，积累学术发表“主场”优势<br><span style="color:#0d47a1;">▸ 写法：以破解“两头在外”问题论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">参与国际科技治理，为全球科技交流提供公共产品<br><span style="color:#0d47a1;">▸ 写法：以“既做客也请客”论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“发声→筑基→治理”三层递进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】科技创新不仅是硬实力的比拼，也是国际话语权的较量。在自立自强基础上深化开放合作，推动实现高水平科技开放，让我国科技话语权与科研实力共生长，必能为我国成为全球创新高地提供助力。</p><p>近期，两个科技领域的发布联系起来看意味深长。国家自然科学基金委员会公布2025年度“中国科学十大进展”，中国工程院遴选出“2025全球工程前沿”，两个发布不仅具有专业领域的影响力，也彰显出我国科技领域的话语权持续提升。</p>
+
+<p>科技创新不仅是硬实力的比拼，也是国际话语权的较量。发布带有评价性质的“中国科学十大进展”，展示我国基础研究的重大进步，也彰显对科研的价值判断；遴选“全球工程前沿”，为洞察全球工程科技发展提供中国视角。两者通过传播创新理念，不断增强我国科技创新的号召力、影响力。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">积极主动发声，占领科技创新的话语“高地”。</span></p>
+
+<p><span class="highlight-blue">科技话语权，很大程度上影响着科研成果的评价、创新方向的选择，进而影响国际顶尖人才、资金等创新要素的流动。</span>长期以来，美西方通过在科研、高等教育等领域设置各种排行榜来霸占科技话语权。近年来，我国在一些前沿领域逐步从“并跑”向“领跑”跨越，为我们占领话语“高地”提供了底气。<span class="highlight-purple">无论是发布“科学进展”“科学突破”等榜单，还是对科技前沿方向作擘画，都有利于彰显由我主导的科技创新话语权。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">建强科技期刊，不断积累学术发表“主场”优势。</span></p>
+
+<p>科技期刊、国际会议等的刊文标准、研究趣味直接影响学术导向，是掌握科技话语权的关键途径。过去很长一段时间，我国基础研究存在题目从国外学术期刊上找、取得成果后再花钱到国外期刊和平台上发表的<span class="highlight-blue">“两头在外”</span>问题。这一现象滋生“唯西方期刊、唯国际顶会”的不良导向，也使我们承担了西方学术平台货币化带来的高额成本。锚定差距补短板，需要建设与我国科研实力相匹配的国际一流科技期刊，在期刊质量、内容传播等方面持续发力，吸引全球优质稿源，与国际科技界携手，共同树立新的学术评价风向标。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">参与国际科技治理，为全球科技交流提供公共产品。</span></p>
+
+<p>获得科技话语权，需要深度参与国际科技合作和治理。从深度参与国际热核聚变实验堆、平方公里阵列射电望远镜等国际合作项目，到牵头发起“深时数字地球”“海洋负排放”“植物星球计划”等国际大科学计划，从提出人工智能全球治理行动计划到成立世界数据组织，中国日益成为全球科技创新网络的关键节点，成为国际科技合作和治理的重要参与者。<span class="highlight-gold">我们既要“做客”也要“请客”，</span>努力在全球科技舞台扮演更重要的角色。</p>
+
+<p>高质量科研产出是获得话语权的前提，但话语权并不必然伴随科技发展而产生。与近年来快速崛起的科研实力相比，我国科技话语权提升相对缓慢。以人工智能为例，我国在该领域论文投稿量、科研贡献度全球领先，<span class="highlight-green">一些重要学术会议约半数录用成果来自中国学者。</span>然而，在人工智能学术社区、国际学术组织建设等方面，我国基础较为薄弱，存在受制于人的风险。<span class="highlight-gold">实现从科技大国向科技强国的关键一跃，掌握相匹配的国际话语权至关重要。</span></p>
+
+<p><span class="highlight-purple">在自立自强的基础上深化开放合作，这是中国一贯坚持的大道、正道。</span>在建设科技强国征途上，推动实现高水平科技开放，让我国科技话语权与科研实力共生长，必能为我国成为全球创新高地提供助力，为全球科技发展注入活力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月24日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·话语权影响</span><p>科技话语权，很大程度上影响着科研成果的评价、创新方向的选择，进而影响国际顶尖人才、资金等创新要素的流动。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：定义式金句，适合“科技话语权重要性”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·关键一跃</span><p>实现从科技大国向科技强国的关键一跃，掌握相匹配的国际话语权至关重要。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：可用于“科技强国”类收束。</p></div><div class="material-card"><span class="tag-shenlun">金句三·做客请客</span><p>我们既要“做客”也要“请客”，努力在全球科技舞台扮演更重要的角色。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合“国际科技合作”话题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·两头在外</span><p>我国基础研究存在题目从国外学术期刊上找、取得成果后再花钱到国外期刊和平台上发表的“两头在外”问题。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：现象概括金句，可用于“自主创新能力”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·大道正道</span><p>在自立自强的基础上深化开放合作，这是中国一贯坚持的大道、正道。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合“开放与自立”辩证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·双发布联动</span><p>把两个科技发布联动解读，揭示隐性竞争力，多现象互证法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·前提辨析</span><p>“高质量产出是前提，但话语权不必然伴随”的辩证辨析，可套用“实力与制度”类。</p></div><div class="migration-card"><span class="tag-mig">迁移三·两头在外</span><p>用“两头在外”概括基础研究窘境，问题概括法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·国际案例</span><p>用国际大科学计划、世界数据组织等论证参与治理，案例法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三层递进</span><p>“发声→筑基→治理”三层递进，适合写“软实力/话语权”类策论。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“让中国文化软实力与硬实力同频共振”为题，模仿本文“现象破题→三层递进（发声/筑基/治理）→辩证收束”的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①以某文化现象破题；②分“主动传播／夯实载体／参与治理”三层；③以“自立与开放”辩证收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“国际传播”角度，用同一骨架写一句总论点，要求含“既要……也要……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月24日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
