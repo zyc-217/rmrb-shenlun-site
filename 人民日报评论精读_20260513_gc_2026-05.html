@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 小河流水里的人文经济学（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>小河流水里的人文经济学（评论员观察）</h1>
+    <div class="meta">生态文明 · 美丽中国 · 绿色发展 · 共同富裕 | 2026年5月13日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">生态文明</span><span class="tag-item">美丽中国</span><span class="tag-item">绿色发展</span><span class="tag-item">共同富裕</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以北京北小河、贵阳三江口、上海蟠龙、长沙圭塘河等案例，论证小河流水兼具生态、文化、经济三重价值，适合"生态文明""绿色发展"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"从黑臭河到打卡地"的鲜明反差破题，点出群众身边水生态意义。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">小河流水里有人文经济学：生态+文化+经济三重价值，满足生态需要积蓄内生动力<br><span style="color:#0d47a1;">▸ 写法：由亲水之旅破题，点明三重价值</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">小河流水既是生态组成部分也是文化载体，治理沟渠留住乡愁<br><span style="color:#0d47a1;">▸ 写法：以北小河/三江口/蟠龙论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">小河流水能为经济发展助力，生态优势转化为发展优势<br><span style="color:#0d47a1;">▸ 写法：以长沙圭塘河蝶变论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">推动美丽河湖从大江大河向小微水体延伸，满足需要积蓄动力<br><span style="color:#0d47a1;">▸ 写法：以毛细血管延伸论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"生态/文化/经济"三维拆解人文经济学可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】小河流水里，有人文经济学——既是生态的重要组成部分、文化的承载体，也能为经济发展提供助力。推动美丽河湖从大江大河向小微水体延伸，在满足群众美好生态需要的同时，也为经济社会发展积蓄内生动力。</p><p>城乡的小河、潺潺的流水，既是生态的重要组成部分，也是文化的承载体。日升日落、四季更迭，小河流水里，不仅有自然意蕴，也有传统文化。</p>
+
+<p>小桥流水美景的重现，不仅有助于营造生态优势，还能提升一座城市对企业、人才的吸引力，从而增强城市发展韧性与活力。</p>
+
+<p>初夏，亲水之旅成为许多人度假的首选。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">小河流水既是生态的重要组成部分，也是文化的承载体。治理好群众身边的沟渠溪水，既强化源头治理、打通河湖保护"最后一公里"，也为了留住乡愁、丰富精神世界。</span></p>
+
+<p>北京北小河，游客坐上摇橹船，感受"船在花中行，人在画中游"的韵味；贵州贵阳三江口滨河公园，河水澄澈见底，岸边绿植繁茂，滨河步道与沿河景观相辉映。</p>
+
+<p>一北一南，从过去的黑臭河变成如今的打卡地，彰显生态文明建设实实在在的成效，也折射出解决好群众身边水生态环境问题的重要意义。</p>
+
+<p>"十五五"规划纲要提出："持续深入推进污染防治攻坚，以更高标准改善大气、水、土壤环境质量。"前不久，生态环境部修订印发<span class="highlight-blue">《美丽河湖保护与建设清单》</span>，推动美丽河湖保护与建设向小微水体等"毛细血管"延伸。</p>
+
+<p>在基本实现社会主义现代化的关键时期，为何要加快经济社会发展全面绿色转型？从人文经济学的视野剖析，我们更能理解增强绿色发展动能的深远影响。</p>
+
+<p>春日之际，漫步乡野，沿着溪流，更能体会"泉眼无声惜细流，树阴照水爱晴柔"的温婉；初夏之日，蝉鸣阵阵，静立溪岸，更能领会"溪水无情似有情，入山三日得同行"的闲适；秋雨初歇，且听水声，更能感受"明月松间照，清泉石上流"的旷远；冬雪初霁，行走河边，更能体味"晚来溪径侧，雪压小桥低"的清寂。</p>
+
+<p>大江大河孕育一方历史文脉，小河流水涵养一地传统底蕴。治理好群众身边的沟渠溪水，既是为了强化源头治理、打通河湖保护治理的"最后一公里"，也是为了留住乡愁、丰富人们的精神世界。</p>
+
+<p>水清岸绿，不仅能带来良好的生态体验，还能拓展消费场景，提升消费体验。场景焕新、体验升级，反过来又能促进生态文明理念更加深入人心。</p>
+
+<p>前不久，上海青浦蟠龙新天地的水上市集热闹开市，游客既可乘皮划艇穿梭水上逛市集，沉浸式体验"水上采买"的乐趣，也可漫步河岸步道赏景。亲水互动、水岸赶集的形式，给人带来一步一景、一船一趣的江南水乡别样体验，也进一步凝聚<span class="highlight-blue">"尊重自然、顺应自然、保护自然，促进人与自然和谐共生"</span>的生态共识。</p>
+
+<p>习近平总书记强调：<span class="highlight-gold">"生态文明建设最能给老百姓带来获得感，环境改善了，老百姓体会也最深。"</span>让水清岸绿、鱼翔浅底、人水和谐成为老百姓家门口的常驻风景，提升的是生态获得感，涵养的是生态文化。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">缓缓流淌的小河流水，还能为经济发展提供有益助力。良好的生态环境，也是许多企业投资、兴业的重要考虑。</span></p>
+
+<p>小桥流水美景的重现，不仅有助于营造生态优势，还能提升一座城市对企业、人才的吸引力，从而增强城市发展韧性与活力。</p>
+
+<p>从劣V类水质、挂牌督办，到系统治理为全省首条国家级美丽河流，湖南长沙圭塘河流域综合治理，是<span class="highlight-gold">绿水青山就是金山银山</span>的生动实践。"治水账"也是"发展账"：上游严控开发强度，做强"花木+文旅"产业链，<span class="highlight-green">年产值突破13亿元</span>；中游融合城市更新，好环境提升楼宇招商率、增强市民幸福感；下游导入高端服务业、数字经济，助力湖南自贸试验区长沙片区、雨花数谷、中非经贸深度合作先行区借"绿"生金，实现生态与产业双向赋能。<span class="highlight-purple">圭塘河的蝶变生动说明，生态质量就是生活质量，生态环境就是发展环境。</span>生态向好，城乡才有活力，发展才有后劲。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">推动美丽河湖保护与建设从大江大河"主动脉"向支流、小微水体等"毛细血管"延伸，是在不断满足群众美好生态需要，也为经济社会发展积蓄内生动力。</span></p>
+
+<p>小河流水里，有文化脉动，有生态理念，有经济动能。推动美丽河湖保护与建设从大江大河"主动脉"向支流、小微水体等"毛细血管"延伸，这是在不断满足人民群众对美好生态环境的需要和期待，也是在为经济社会发展积蓄内生动力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月13日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·人文经济学</span><p>小河流水里，有人文经济学——既是生态的重要组成部分、文化的承载体，也能为经济发展提供助力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"生态文明"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·绿水青山</span><p>绿水青山就是金山银山的生动实践，"治水账"也是"发展账"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"生态价值转化"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·生态获得感</span><p>生态文明建设最能给老百姓带来获得感，环境改善了，老百姓体会也最深。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"民生导向生态"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·生态质量</span><p>生态质量就是生活质量，生态环境就是发展环境。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"生态与发展"辩证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·毛细血管</span><p>推动美丽河湖从大江大河"主动脉"向小微水体等"毛细血管"延伸。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"补齐短板/延伸覆盖"话题。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·反差破题</span><p>用"黑臭河到打卡地"反差破题，反差引题法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·四季诗文</span><p>用春夏秋冬四季古诗文串联河流文化意蕴，诗文点缀法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·圭塘河账</span><p>用圭塘河"治水账也是发展账"论证生态产业双向赋能，案例法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·清单延伸</span><p>用《美丽河湖保护与建设清单》向小微水体延伸，政策抓手法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三维拆解</span><p>"生态/文化/经济"三维拆解人文经济学，多维框架可套用。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「口袋公园」看家门口的生态"为题，模仿本文"反差破题→生态文化→生态经济→延伸覆盖"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用城市小场景引题；②分"文化意蕴/经济助力"两层；③以"毛细血管"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"城市更新"角度，用同一骨架写一句总论点，要求含"既是……也是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月13日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
