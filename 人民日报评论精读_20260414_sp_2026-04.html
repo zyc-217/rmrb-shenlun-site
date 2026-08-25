@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 感悟能源安全的智慧（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>感悟能源安全的智慧（人民时评）</h1>
+    <div class="meta">能源安全 · 高质量发展 · 高水平安全 · 系统思维 · 新质生产力 | 2026年4月14日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">能源安全</span><span class="tag-item">高质量发展</span><span class="tag-item">高水平安全</span><span class="tag-item">系统思维</span><span class="tag-item">新质生产力</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以能源安全新战略为样本，论证“统筹发展和安全”“系统思维”“新质生产力”等高频考点。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">三个设问段（为什么中国能风雨不动？为什么一骑绝尘？为什么挺膺担当？）串起三层分论点，逻辑清晰。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">深入实施能源安全新战略，蕴含以系统思维统筹发展和安全的战略智慧和长远眼光<br><span style="color:#0d47a1;">▸ 写法：以“绝非简单环保/成本叙事”破题，点明系统思维</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">以系统思维统筹发展和安全，保持能源转型的战略定力<br><span style="color:#0d47a1;">▸ 写法：用“一定之略”与氢燃料数据论证定力</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">下好全国一盘棋，以高效能治理形成“放得活”“管得好”的经济秩序<br><span style="color:#0d47a1;">▸ 写法：以特高压、氢能试点论证制度执行力</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">能源转型是战略之举，撬动经济转型升级、发展新质生产力<br><span style="color:#0d47a1;">▸ 写法：以华龙一号、绿电数据中心论证新质生产力</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“三个设问段引三分论点”的设问推进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】深入实施能源安全新战略，绝非简单的环保叙事、成本叙事，而是蕴含以系统思维统筹发展和安全的战略智慧和长远眼光。</p><p>重型卡车拖着庞大身躯，却不再轰鸣着排放黑烟；公交车穿梭城市，排气管仅仅排出水滴；氢燃料电池动力船稳定运行，具有高舒适性和低能耗、低噪声等特点……<span class="highlight-green">交通工具“氢”装上阵，工程机械“燃油改电”，成为我国能源绿色转型的生动注脚。</span></p>
+
+<p><span class="highlight-blue">能源安全事关经济社会发展全局。</span>回顾以往，“十三五”时期我国能源自给率从83.4%降至80.7%，其间曾降至78.4%。<span class="highlight-gold">“石油能源建设对我们国家意义重大，中国作为制造业大国，要发展实体经济，能源的饭碗必须端在自己手里。”</span>习近平总书记对保障能源安全念兹在兹。</p>
+
+<p>近期，当霍尔木兹海峡的航运警报响起，当国际油气价格的曲线剧烈震荡，<span class="highlight-purple">中国工业生产、民生用电、交通物流却运行稳定，见证能源安全屏障的可靠和韧性。</span></p>
+
+<p>为什么中国可以“风雨不动安如山”？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">以系统思维统筹发展和安全，保持能源转型的战略定力，把能源的饭碗牢牢端在自己手中。</span></p>
+
+<p>“有一定之略，然后有一定之功。”截至2025年底，<span class="highlight-green">近4万辆氢燃料电池汽车驰骋于神州大地，500多座加氢站星罗棋布。</span>我们看到的不仅是零污染的风景线，更是一个国家能源转型的战略定力。</p>
+
+<p>推动煤电清洁高效、新能源规模化跃升，把能源的饭碗牢牢端在自己手中……<span class="highlight-blue">深入实施能源安全新战略，绝非简单的环保叙事、成本叙事，而是蕴含以系统思维统筹发展和安全的战略智慧和长远眼光。</span>我们党善于在重大历史关头从战略上认识、分析、判断面临的重大历史课题，并制定正确的战略策略，这正是我们的制度优势的重要体现。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">下好全国一盘棋，以高效能治理形成既“放得活”又“管得好”的经济秩序。</span></p>
+
+<p>环视世界，许多国家都极为重视能源转型，为什么中国一骑绝尘，蹚出了一条成功之路？</p>
+
+<p><span class="highlight-blue">纵横万里的特高压工程织就“能源大动脉”，风机光伏在荒漠戈壁大展身手，</span>这些超级工程的落地，无一不彰显下好全国一盘棋的执行力。不久前，工业和信息化部等3部门联合印发《关于开展氢能综合应用试点工作的通知》。<span class="highlight-green">国家顶层设计、各地试点推广，既避免了市场的盲目性，又激发了地方的创造性，有利于将战略蓝图高效转化为施工图。</span>正是得益于这种高效能治理，中国才能形成既“放得活”又“管得好”的经济秩序。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">能源转型是战略之举，是撬动经济转型升级、发展新质生产力的重要支点。</span></p>
+
+<p>实现“双碳”目标绝非易事，作为最大的发展中国家，中国为何挺膺担当，而且成为全球能耗强度、碳强度下降幅度最大的国家之一？</p>
+
+<p><span class="highlight-blue">能源转型是战略之举，是撬动经济转型升级、发展新质生产力的重要支点。</span>从氢能无人机开辟低空经济蓝海，到绿电赋能数据中心提升消纳水平，再到具有完整自主知识产权的“华龙一号”核电机组实现并网发电，<span class="highlight-green">新质生产力在能源绿色转型的过程中蓬勃生长。</span></p>
+
+<p><span class="highlight-blue">加快构建清洁低碳安全高效的新型能源体系，不仅解决了能源来源问题，更催生了科技含量高、经济效益好、生态效益优的万亿级产业链，</span>契合了中国式现代化的内在要求。<span class="highlight-purple">深入实施能源安全新战略，厚植起安全底色，强健着经济信心，增进了绿色动能，体现的正是坚持高质量发展和高水平安全良性互动的发展智慧。</span></p>
+
+<p>展望未来，中国式现代化的宏伟画卷徐徐展开，清洁低碳安全高效的现代能源体系，正是这幅画卷的俊秀脉络。<span class="highlight-purple">无论国际风云如何变幻，只要我们保持向新向绿的战略定力，久久为功建设能源强国，便能在时代潮流中“任凭风浪起，稳坐钓鱼台”。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月14日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·能源饭碗</span><p>中国作为制造业大国，要发展实体经济，能源的饭碗必须端在自己手里。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：习近平总书记原话，能源安全类必背。</p></div><div class="material-card"><span class="tag-shenlun">金句二·系统思维</span><p>深入实施能源安全新战略，绝非简单的环保叙事、成本叙事，而是蕴含以系统思维统筹发展和安全的战略智慧和长远眼光。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“系统思维统筹发展和安全”标准表述。</p></div><div class="material-card"><span class="tag-shenlun">金句三·高效能治理</span><p>中国才能形成既“放得活”又“管得好”的经济秩序。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“放得活+管得好”可迁移至营商环境、市场监管等。</p></div><div class="material-card"><span class="tag-shenlun">金句四·新质生产力</span><p>新质生产力在能源绿色转型的过程中蓬勃生长。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：用于“绿色转型催生新质生产力”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·良性互动</span><p>体现的正是坚持高质量发展和高水平安全良性互动的发展智慧。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：“高质量发展和高水平安全良性互动”重要论断。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·设问推进</span><p>“为什么中国能……？为什么一骑绝尘？为什么挺膺担当？”三设问引三分论点，结构清爽。</p></div><div class="migration-card"><span class="tag-mig">迁移二·数据引证</span><p>用“83.4%降至80.7%”“近4万辆、500多座”等数据增强说服力。</p></div><div class="migration-card"><span class="tag-mig">迁移三·制度优势</span><p>把“特高压一盘棋+氢能试点”归结为制度优势与高效能治理。</p></div><div class="migration-card"><span class="tag-mig">迁移四·战略与战术</span><p>“一定之略，然后有一定之功”可用于任何战略定力类论述。</p></div><div class="migration-card"><span class="tag-mig">迁移五·结尾升华</span><p>“任凭风浪起，稳坐钓鱼台”收束，适合国际风云类结尾。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“把粮食安全的主动权牢牢抓在自己手中”为题，模仿本文“三个设问段引三分论点”的写法，写一段150字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①设问“为何能稳住饭碗？”；②分“耕地红线定力／良技良法支撑／大食物观拓展”三层；③以“战略定力”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用“既……又……”句式写一句总结（如“既守得住底线，又打得开局面”）。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月14日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
