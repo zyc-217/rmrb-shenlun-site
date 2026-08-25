@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 何以乘"风"起（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>何以乘"风"起（评论员观察）</h1>
+    <div class="meta">抢抓机遇 · 因地制宜 · 新质生产力 · 县域经济 | 2026年5月7日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">抢抓机遇</span><span class="tag-item">因地制宜</span><span class="tag-item">新质生产力</span><span class="tag-item">县域经济</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以义乌世界杯"季风"等案例，论证能站上时代风口者占据先机，需善观全局精准定位、敢闯敢试、聚微成势，适合"抢抓机遇""县域经济"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"义乌吹来世界杯季风、订单爆发"这一鲜活意象破题，生动点题。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">能站上时代风口者占据先机，需善观全局精准定位、敢闯敢试乘风而上、聚微成势实现量变到质变<br><span style="color:#0d47a1;">▸ 写法：由义乌季风破题，点明乘"风"而起的方法</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">善观全局、精准定位，才能找准风口<br><span style="color:#0d47a1;">▸ 写法：以澳角村海洋牧场论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">看准风向是前提，敢闯敢试、乘风而上是关键<br><span style="color:#0d47a1;">▸ 写法：以常熟纺织转时尚品牌论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">风起于青蘋之末，聚微成势实现从量变到质变<br><span style="color:#0d47a1;">▸ 写法：以广西抢抓AI机遇论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"定位→敢试→聚势"的递进结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】历史浪潮奔涌向前，时代风口常新。能站上时代风口者，往往能占据发展先机。打破路径依赖、跳出一隅视野，善于在全局中找准自身定位，以"闻风而动"的姿态勇于先试，聚微成势实现量变到质变，各地定能不断突破瓶颈、激活动能。</p><p><span class="highlight-gold">打破路径依赖、跳出一隅视野，善于在全局中找准自身定位，方能抓住风口、开辟新局。</span></p>
+
+<p>看清发展趋势、摸清发展方向后，就要以"闻风而动"的姿态、勇于先试的魄力创新创优。</p>
+
+<p>最近，<span class="highlight-green">浙江义乌吹来世界杯"季风"。2026美加墨世界杯开赛在即，让义乌市场订单量迎来又一次爆发式增长。</span></p>
+
+<p>习近平总书记指出：<span class="highlight-gold">"义乌小商品闯出大市场、做成大产业，形成'义乌发展经验'，这是因地制宜发展县域经济的成功实践。"</span></p>
+
+<p>不由想起，上世纪80年代，改革春风催绽新芽，义乌乘风而起，用小商品撬动大市场，书写"鸡毛飞上天"的传奇。</p>
+
+<p>放眼神州，<span class="highlight-blue">从贴牌代工到品牌出海的福建晋江，从"中国电子第一街"迈向"全球硬件创新创业中心"的深圳华强北</span>……能站上时代风口者，往往能占据发展先机。义乌等地何以乘"风"起？发展热度为何始终不减？</p>
+
+<p>历史浪潮奔涌向前，时代风口常新，唯智者识之、勇者乘之、善谋者驭之。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">善观全局、精准定位，才能找准风口。各地发展的竞争力，不仅体现在资源禀赋、区位条件等基础要素上，更体现在通过思维升级找到机遇，甚至变劣势为优势。</span></p>
+
+<p>福建东山县澳角村，三面环海，村民曾经只能依靠单一捕捞谋生。乡村全面振兴东风吹来，当地打造海洋牧场，依托秀丽的滨海风光、独特的渔村文化，因地制宜做大"海"的文章，农文旅协同发展，<span class="highlight-green">"渔业养殖+亲海体验+休闲垂钓"多业态融合</span>，书写以海兴村、以海强村的篇章。</p>
+
+<p>各地发展的竞争力，不仅体现在资源禀赋、区位条件等基础要素上，更体现在通过思维升级找到机遇，甚至变劣势为优势。打破路径依赖、跳出一隅视野，善于在全局中找准自身定位，方能抓住风口、开辟新局。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">看准"风向"是前提，敢闯敢试、乘风而上是关键。主动求变应变、敢于自我迭代，才能适应变化、乘势而上。</span></p>
+
+<p>江苏常熟，拥有<span class="highlight-green">5000多家纺织企业，年产超5亿件服装</span>，但一度面临同质化竞争、利润率下滑的问题。如何破解发展瓶颈？依托AI（人工智能）全链赋能、户外经济兴起、时尚品牌升维，传统产业也能发展新质生产力，努力向全球价值链高端攀登。从"纺织服装制造基地"转型"时尚品牌策源地"，常熟启示我们，主动求变应变、敢于自我迭代，才能适应变化、乘势而上。</p>
+
+<p>历史从不等待观望者、懈怠者、犹豫者，一时一刻的行动迟缓，都可能与机遇擦肩而过。<span class="highlight-purple">看清发展趋势、摸清发展方向后，就要以"闻风而动"的姿态、勇于先试的魄力创新创优。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">风起于青蘋之末，聚微成势，才能实现从量变到质变的突破。练就识势之智、应势之勇、谋势之能，既敏锐捕捉时代风口，又深耕优势、培育产业。</span></p>
+
+<p>前不久，第六届中国国际消费品博览会在海南举行，"壮美广西"主题馆吸引眼球。AI中医体质辨识机、康养陪伴机器人、新能源电动摩托车……一批科技企业带来<span class="highlight-green">近百款人工智能和高新技术产品</span>，打破许多人心中广西仅有山水、歌舞、螺蛳粉的刻板印象，令观众直呼"没想到广西有这么多智能产品"。这份"没想到"背后，是广西抢抓时代机遇、积极布局人工智能产业结出的硕果。</p>
+
+<p><span class="highlight-gold">好风凭借力，送我上青云。练就识势之智、应势之勇、谋势之能</span>，既敏锐捕捉时代风口，又深耕优势、培育产业，各地定能不断突破瓶颈、激活动能，书写高质量发展的壮阔答卷。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月7日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·总书记语录</span><p>义乌小商品闯出大市场、做成大产业，形成"义乌发展经验"，这是因地制宜发展县域经济的成功实践。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记原话，适合"县域经济/因地制宜"直接引用。</p></div><div class="material-card"><span class="tag-shenlun">金句二·唯智者</span><p>历史浪潮奔涌向前，时代风口常新，唯智者识之、勇者乘之、善谋者驭之。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比金句，适合"抢抓机遇"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句三·闻风而动</span><p>看清发展趋势、摸清发展方向后，就要以"闻风而动"的姿态、勇于先试的魄力创新创优。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：可用于"敢闯敢试"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·青蘋之末</span><p>风起于青蘋之末，聚微成势，才能实现从量变到质变的突破。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语金句，适合"积小成大/培育产业"话题。</p></div><div class="material-card"><span class="tag-shenlun">金句五·好风凭借力</span><p>好风凭借力，送我上青云。练就识势之智、应势之勇、谋势之能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古句金句，适合"高质量发展"收束升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·季风意象</span><p>用"义乌吹来世界杯季风"意象破题，意象法可作机遇话题引子。</p></div><div class="migration-card"><span class="tag-mig">迁移二·总书记引述</span><p>以总书记"义乌发展经验"语录支撑，权威引述法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移三·变劣势为优势</span><p>用澳角村、新疆案例论证换视角找优势，比较分析法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·传统转新质</span><p>用常熟纺织转时尚品牌论证传统产业升级，转型案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三层递进</span><p>"精准定位→敢闯敢试→聚微成势"三层递进，适合写抢抓机遇策论。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「村播」看山乡乘「数」而起"为题，模仿本文"意象破题→精准定位→敢闯敢试→聚微成势"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个数字意象引题；②分"找准特色/敢试敢闯"两层；③以古语收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"低空经济"角度，用同一骨架写一句总论点，要求含"既是……也是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月7日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
