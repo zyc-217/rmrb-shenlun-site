@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以“中国效率”激荡奋进活力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以“中国效率”激荡奋进活力（评论员观察）</h1>
+    <div class="meta">高质量发展 · 制度优势 · 新质生产力 · 要素流动 | 2026年6月3日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">高质量发展</span><span class="tag-item">制度优势</span><span class="tag-item">新质生产力</span><span class="tag-item">要素流动</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以长江无人机"闪送"、中卫光伏直供算力、北粮南运等场景，论证"中国效率"源于制度支撑、藏着创新活力、更要在快与稳间守牢质量，适合"高质量发展""新质生产力"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"船员下单外卖、无人机10分钟投送"的鲜活场景破题，点出高质量发展"闪送"瞬间。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"中国效率"源于制度支撑、藏着创新活力，更要在效率之快与质量之稳间有机统一<br><span style="color:#0d47a1;">▸ 写法：由无人机闪送破题，点明快稳统一</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">源于制度支撑：全国一盘棋、集中力量办大事的创新实践<br><span style="color:#0d47a1;">▸ 写法：以中卫光伏/玉山人才飞地论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">藏着发展活力：科技创新与产业创新深度融合、新质生产力加速形成<br><span style="color:#0d47a1;">▸ 写法：以低空配送/数字产业论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">辩证看既要见效率之快，更要守质量之稳<br><span style="color:#0d47a1;">▸ 写法：以智能秒批/质量变革收束</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"制度/活力/质量"三层拆解效率可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】守制度之优、兴科技之新、固质量之基，让发展成果更有温度、更有质感。观察今日中国，要素畅通流动形成的"中国效率"，既源于制度支撑、又藏着创新活力，更要在效率之"快"与质量之"稳"之间实现有机统一。</p><p>长江南京段江面，一艘货轮停在锚地，船员下单外卖；岸上，低空飞行基地内，无人机"飞手"们忙着分拣、打包炸鸡、奶茶、水果……</p>
+
+<p>机翼划破江面薄雾，不到10分钟，美食被"投送"到船上，船员脸上漾开笑意。</p>
+
+<p>这不是科幻场景，是今日中国<span class="highlight-blue">高质量发展</span>的"闪送"瞬间。</p>
+
+<p>长距离，闪送到，不止于长江。</p>
+
+<p>腾格里沙漠东南边缘，宁夏中卫的戈壁滩上，光伏板铺成"蓝色瀚海"，阳光落地成电，直送算力园区，让西部风光变成数字时代的"算力动能"。</p>
+
+<p>东北黑土地收获的粮食，搭乘物流专用线，经由<span class="highlight-blue">"北粮南运"</span>大通道，上了南方百姓的餐桌；西南山区的特色农产品，通过电商物流"借网出山"，销往全国乃至海外。</p>
+
+<p>观察发展，东西南北，跨江越海，纵横联运，要素畅通流动形成的<span class="highlight-gold">"中国效率"</span>，是中国式现代化奔涌向前的注脚。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">"中国效率"源于制度支撑。这份支撑，是"全国一盘棋"的制度优势，是集中力量办大事的创新实践。</span></p>
+
+<p>中卫云基地，中国大唐的光伏电站默默发力。年发电量达<span class="highlight-green">9.7亿千瓦时</span>，不并网、直供算力园区，既能破解算力高能耗难题，也让西部清洁能源就近消纳。江西玉山县引导企业在长三角、珠三角建立<span class="highlight-blue">"人才飞地"</span>，打破地域壁垒。科研人才无需搬迁，通过远程协作、"借地研发"，将技术"送"至玉山的企业，助力产业升级。</p>
+
+<p>从<span class="highlight-blue">"算电协同"</span>的统筹布局，到人才跨区域合作的畅通无阻，背后都有顶层设计的引领，有政企协同的力量。<span class="highlight-purple">机制创新、制度赋能，让分散的资源聚成合力，让跨流域、跨区域、跨领域的协作成为常态，把不可能变成可能，为高质量发展打通"动脉血管"。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"中国效率"藏着发展活力。高效率源自科技创新与产业创新的深度融合，是新质生产力加速形成的体现。</span></p>
+
+<p>在技术层面，无人机技术的迭代升级，让低空配送从"试点探索"逐步走向"场景化应用"；在产业层面，数字产业让数据、技术等无形资源实现流通共享，现代农业升级促使育种技术、种植经验等快速惠及乡村，医疗技术提质推动优质诊疗资源下沉……<span class="highlight-purple">高效场景的拓展，很大程度上推动技术转化应用、产业深度融合，进而更好蓄积发展新能量。</span></p>
+
+<p>从技术迭代赋能提质增效，到产业升级拓宽应用赛道，越是以科技为引擎，以产业为载体，推动技术突破从实验室走向实践场，越能让创新成果快速转化为发展效能。从这个意义上讲，既有效激活科技创新的内生动力，也持续夯实产业升级的坚实根基，<span class="highlight-purple">才能让发展活力充分迸发。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">辩证地看，既要见效率之"快"，更要守质量之"稳"。</span></p>
+
+<p>发展不在于一味求"快"，而在于解决实际问题、提升民生福祉。无人机解决船员"购物难"，用机器人可以做跨越万里的手术，<span class="highlight-blue">"智能秒批"</span>让优化营商环境跑出"加速度"……"中国效率"赢得民心，是因为扎根实际需求、对接发展战略，<span class="highlight-purple">实现速度与质量、效率与效益、局部与全局的有机统一。</span></p>
+
+<p>这启示我们，推动向新发展，能以"快"破局，突破资源要素流动的堵点难点，服务发展大局；也要以"质"筑基，实现经济运行效率与发展质量的双向跃升。这也是我们需要推动的<span class="highlight-blue">质量变革、效率变革、动力变革</span>。</p>
+
+<p><span class="highlight-gold">"中国效率"</span>，是当下发展的缩影，也是未来征程的引擎。守制度之优、兴科技之新、固质量之基，让发展成果更有温度、更有质感，流动的中国永葆朝气。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月3日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·中国效率</span><p>观察发展，东西南北，跨江越海，纵横联运，要素畅通流动形成的"中国效率"，是中国式现代化奔涌向前的注脚。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"高质量发展"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·制度支撑</span><p>"中国效率"源于制度支撑。这份支撑，是"全国一盘棋"的制度优势，是集中力量办大事的创新实践。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"制度优势"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·快与稳</span><p>辩证地看，既要见效率之"快"，更要守质量之"稳"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：短金句，适合"质量变革"辩证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·有机统一</span><p>"中国效率"赢得民心，是因为扎根实际需求、对接发展战略，实现速度与质量、效率与效益、局部与全局的有机统一。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"以人民为中心"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·流动中国</span><p>守制度之优、兴科技之新、固质量之基，让发展成果更有温度、更有质感，流动的中国永葆朝气。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"发展质感"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·场景破题</span><p>用"船员下单外卖、无人机投送"场景破题高质量发展，场景切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层拆解</span><p>用"制度支撑/创新活力/质量之稳"三层拆解效率，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·直供算力</span><p>用中卫光伏直供算力园区论证制度协同，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·人才飞地</span><p>用玉山"人才飞地"论证打破地域壁垒，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·快稳统一</span><p>用"既要见快更要守稳"收束质量变革，辩证收束法可用于"发展与安全"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「算力直供」看西部新动能"为题，模仿本文"场景破题→制度支撑→创新活力→快稳统一收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个产业场景引题；②分"制度协同/产业融合"两层；③以"快稳统一"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"全国统一大市场"角度，用同一骨架写一句总论点，要求含"既要……更要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月3日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
