@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 培厚中国创新的文化优势（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>培厚中国创新的文化优势（评论员观察）</h1>
+    <div class="meta">创新文化 · 新质生产力 · 社会共识 · 系统思维 | 2026年6月4日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">创新文化</span><span class="tag-item">新质生产力</span><span class="tag-item">社会共识</span><span class="tag-item">系统思维</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以词元成为热词、算力平台上线、新能源汽车重塑格局等切入，论证培厚创新文化要在社会认知开放接纳、实践应用导向落地、系统思维合力推进三个维度同时用力，适合"创新文化""新质生产力"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"词元成为各行各业热词"这一新现象破题，点出创新文化土壤。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">培厚创新文化：社会认知开放接纳+实践应用导向落地+系统思维合力推进<br><span style="color:#0d47a1;">▸ 写法：由词元热词破题，点明三维发力</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">社会认知上对新生事物的开放和接纳，矢志创新成为共识<br><span style="color:#0d47a1;">▸ 写法：以苟日新/新能源汽车论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">强烈的实践导向、应用导向，把创新变成实在产业活动<br><span style="color:#0d47a1;">▸ 写法：以耐心资本/一人公司论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">用系统思维推动全面创新，形成共促创新合力<br><span style="color:#0d47a1;">▸ 写法：以人工智能+行动论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"认知/应用/系统"三维创新文化框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】人们敢于从新变化中寻找新机遇，也乐于为新技术、新产品、新体验买单，这样的氛围成为牵引创新的文化力量。培厚中国创新的文化优势，要在社会认知的开放接纳、实践应用的导向落地、系统思维的合力推进三个维度同时用力。</p><p>近期，词元（Token）成为各行各业的热词，将各方面信息综合起来看，可以洞悉未来趋势。</p>
+
+<p>以词元为资源成为新现象。如今，有人开始向学校等机构捐赠词元，也有企业尝试把发放词元作为员工激励，表明词元逐渐渗透到经济社会运行的"毛细血管"，社会认可度在不断提高。</p>
+
+<p>让词元更好用成为新动向。三大电信运营商纷纷推出词元套餐产品，打开更好调用词元的普惠入口；<span class="highlight-blue">中国算力平台（北京）</span>正式上线，有效提升北京市算力精细化管理能力。一系列举措，让个人和政企用户能够高效便捷获得算力资源。</p>
+
+<p>政府部门优化算力基础设施，让词元像电和水一样触手可及；经营主体则把人工智能运用于各种实际场景，以更便捷的词元调用服务各种新业态、新模式……不同主体默契配合，让词元成为新流量、让智能衍生新形态，汇聚起助力智能经济起飞的合力。<span class="highlight-purple">这样一种合力，既为个人创新创业赋能，又助力国家积蓄科创优势，折射中国正不断培厚创新文化土壤。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">中国创新文化，一个直观表现是在社会认知上对新生事物的开放和接纳，矢志创新成为社会共识。</span></p>
+
+<p><span class="highlight-gold">"苟日新，日日新，又日新"</span>，创新性是中华文明的突出特性之一。新时代以来，<span class="highlight-blue">"创新是第一动力"</span>的理念深入人心，创新在全社会蔚然成风。文明的滋养、政策的引导，共同培育积极拥抱创新的社会心态和文化土壤。</p>
+
+<p>这些年来，从<span class="highlight-blue">新能源汽车</span>重塑全球汽车工业格局，到低空经济起飞，再到人工智能赋能千行百业，越来越多的引领性创新在中国生发。<span class="highlight-gold">人们敢于从新变化中寻找新机遇，也乐于为新技术、新产品、新体验买单，这样的氛围成为牵引创新的文化力量。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">中国创新文化，还表现在强烈的实践导向、应用导向让创新落实到创造新的增长点上，把创新成果变成实实在在的产业活动。</span></p>
+
+<p>中国社会追求创新，不仅回答重大理论问题、拓展人类知识边界，更致力于把创新转化为现实生产力。在国家层面，<span class="highlight-blue">"推动科技创新和产业创新深度融合"</span>是发展新质生产力的顶层设计。在市场层面，从更多<span class="highlight-blue">耐心资本</span>投向前沿科创，到人工智能技术赋能生产，再到"一人公司"兴起，<span class="highlight-purple">创新这个第一引擎激发出巨大增量。</span></p>
+
+<p><span class="highlight-purple">"创新要实"，就在于从实际出发，用创新解决问题、改变世界、创造价值，给百姓生活带来实实在在的福祉，也为发展带来新的动力。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">中国创新文化，更体现在用系统思维看待创新，注重推动全面创新，形成共促创新的合力。</span></p>
+
+<p>重大创新突破会重塑生产关系，对经济社会运行带来系统性影响。<span class="highlight-blue">"抓创新就是抓发展"</span>，需要从各方面为创新保驾护航。就拿人工智能来说，在顶层设计层面，部署<span class="highlight-blue">"人工智能+"</span>行动；在产业落地层面，提出"打造智能经济新形态"；在法规伦理层面，对生成式人工智能、智能体等进行规范；在社会文化层面，着力提升全民人工智能素养……<span class="highlight-purple">各个层面协同配合、相互契合，才能推动创新从理念变为现实。</span></p>
+
+<p>在全社会形成创新的高度自觉，离不开共促创新的文化氛围。置身新一轮科技革命和产业变革，无论国家发展还是个人奋斗，<span class="highlight-gold">"惟创新者进，惟创新者强，惟创新者胜"</span>都是颠扑不破的真理。实现创新，我国不仅有产业优势、制度优势、人才优势，<span class="highlight-blue">更有文化优势</span>。积极拥抱创新，相信每一个个体都能为创新贡献力量，进而汇聚成国家创新发展的强大动能。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月4日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·文化力量</span><p>人们敢于从新变化中寻找新机遇，也乐于为新技术、新产品、新体验买单，这样的氛围成为牵引创新的文化力量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"创新文化"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·苟日新</span><p>"苟日新，日日新，又日新"，创新性是中华文明的突出特性之一。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语金句，适合"创新传统"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·创新要实</span><p>"创新要实"，就在于从实际出发，用创新解决问题、改变世界、创造价值。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"成果转化"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·系统合力</span><p>各个层面协同配合、相互契合，才能推动创新从理念变为现实。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"系统思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·惟创新者</span><p>"惟创新者进，惟创新者强，惟创新者胜"都是颠扑不破的真理。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"创新驱动"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·新现象破题</span><p>用"词元成为热词"新现象破题创新文化，新词切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三维拆解</span><p>用"认知/应用/系统"三维拆解创新文化，三维框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·苟日新</span><p>用"苟日新"古语论证文化特性，引经据典法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·耐心资本</span><p>用"耐心资本+一人公司"论证应用导向，概念法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·惟创新者</span><p>用"惟创新者进"收束创新决心，古语收束法可用于"奋进"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「低空经济」看创新文化土壤"为题，模仿本文"新现象破题→认知接纳→应用落地→惟创新者收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个新业态引题；②分"社会共识/产业转化"两层；③以"惟创新者"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"青年双创"角度，用同一骨架写一句总论点，要求含"不仅……更……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月4日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
