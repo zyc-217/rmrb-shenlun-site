@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从“无感之感”理解中国发展（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从“无感之感”理解中国发展（评论员观察）</h1>
+    <div class="meta">高质量发展 · 高效能治理 · 无感之感 · 人的关怀 · 统一大市场 · 创新链产业链 · 制度型开放 · 中国式现代化 · 新质生产力 · 幸福体验 | 2026年4月10日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">高质量发展</span><span class="tag-item">高效能治理</span><span class="tag-item">无感之感</span><span class="tag-item">人的关怀</span><span class="tag-item">统一大市场</span><span class="tag-item">创新链产业链</span><span class="tag-item">制度型开放</span><span class="tag-item">中国式现代化</span><span class="tag-item">新质生产力</span><span class="tag-item">幸福体验</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"中国游"走俏破题，从"产业链融合、统一大市场、高效能治理"三层，论证高质量发展是以幸福体验为底色、源于高质量建设与高效能治理协同，是"现象+三层逻辑"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何提升发展体验"——打通壁垒、系统治理、人民中心。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"无感之感的支撑"——要素流转、统一大市场、治理协同。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"高质量发展/治理"可借用"以幸福体验为底色""一体化抓好建设与治理"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（现象引题·三层逻辑）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">我们所追求的高质量发展是以幸福体验为底色的发展；“无感之感”源于高质量建设与高效能治理协同共进。<br><span style="color:#0d47a1;">▸ 写法：由“中国游”现象破题，点明发展底色</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">“无感之感”靠要素资源高效流转、创新链产业链深度融合。<br><span style="color:#0d47a1;">▸ 写法：产业链维度：丹阳眼镜模式</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">打通壁垒、精准对接，激扬可持续高质量的发展动能。<br><span style="color:#0d47a1;">▸ 写法：市场维度：统一大市场与六张网</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">“无感之感”是高质量建设与高效能治理协同的成果。<br><span style="color:#0d47a1;">▸ 写法：治理维度：雄安与企业开办</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】我们所追求的高质量发展是以幸福体验为底色的发展；“无感之感”源于高质量建设与高效能治理协同共进。</p><p><span class="highlight-gold">我们所追求的高质量发展，是一种以幸福体验为底色的发展。对效的追求、对质的打磨，落脚点都是对人的关怀。</span></p>
+
+<p>近段时间，“中国游”走俏海外。美国媒体称，中国已成为全球顶级旅游目的地之一。英国媒体报道，<span class="highlight-green">中国在“最适合外籍人士旅居目的地榜单”中，从2024年的第十九位跃升至2025年的第六位。</span>为何“中国游”的含金量有了明显提升？</p>
+
+<p><span class="highlight-green">对70多个国家单方面免签或全面互免签证，240小时过境免签政策适用55个国家</span>，来中国“说走就走”成为现实；支付时可“外卡内绑”，离境退税“即买即退”，“带着空箱子来中国”成热门选择。<span class="highlight-gold">以制度型开放的“加法”，创造入境便利、支付丝滑的“无感之感”，成就了“中国游”的高人气和好口碑。</span></p>
+
+<p>“无感之感”，还有更多具体体现。曾经的通信、交流等痛点，被实时翻译等“神器”消除；我国幅员辽阔，交通路网发达便利，酒店民宿丰俭由人，临时兴起添加几个目的地，也可以“说走就走”；在华强北“扫货”电子用品，去义乌“一站式”添置智能家居，全球潮品“信手拈来”，还不会让人顿感“囊中羞涩”……这些无感的便利、畅快的体验，让外国游客深深体会到，<span class="highlight-purple">中国的发展不是冷冰冰的数字增长，而是高质高效、幸福满满。</span></p>
+
+<p>购物几乎没有“卡顿”，服务适配度更高，背后有什么大逻辑作支撑？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">“无感之感”靠要素资源高效流转、创新链与产业链深度融合。</span></p>
+
+<p>最近，“去中国配眼镜”成为海外旅行论坛中的新话题。价格便宜、款式多，配镜“立等可取”，还能跨国快递，这些便捷体验，得益于产业链、创新链、物流链的高效运转。<span class="highlight-blue">江苏丹阳打造“跨境电商+产业带”模式，一方面以智能制造提升产品的精密度，另一方面以跨境电商开辟市场空间，占据全球镜片市场的半壁江山。</span>由此而言，<span class="highlight-gold">“无感之感”，靠的是要素资源的高效流转，靠的是创新链产业链深度融合。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">打通壁垒、精准对接，推动各要素丝滑运转，助力系统效率整体提升、激扬发展动能。</span></p>
+
+<p>打开视野看，“无感之感”是我们在更多领域追求的目标。<span class="highlight-blue">纵深推进全国统一大市场建设，以要素资源顺畅流通激活经济循环；大力建设“六张网”，以跨区域资源调配激发新质生产力；</span>“高效办成一件事”，推动政务服务从“能办”转向“好办、易办”，便利百姓生活……这些实践揭示了一个道理：打通壁垒、精准对接，推动各要素、资源丝滑运转，助力系统效率整体提升，就能激荡出可持续、高质量的发展动能。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">“无感之感”并非天然存在，而是“一体抓好高质量建设和高效能治理”的成果。</span></p>
+
+<p>“无感之感”并非天然存在，而是“一体抓好高质量建设和高效能治理”的成果。一企一策服务企业，京津冀三地“一盘棋”谋划、“一股绳”推进、“一站式”办理，治理提效支撑雄安新区拔节生长；建设企业开办“一网通办”平台、数据多部门同步推送，<span class="highlight-green">办理时间从20多个工作日压缩至4个</span>……<span class="highlight-gold">以系统思维促高质量发展和高效能治理协同共进，就能让群众的获得感成色更足、幸福感更可持续、安全感更有保障。</span></p>
+
+<p>无论是外国游客轻松自在的“中国游”，还是中国百姓不断增强的“小确幸”，体验感的提升都在传递一个信号：<span class="highlight-purple">中国式现代化，不只是指标的精进。</span>我们所追求的高质量发展，是一种以幸福体验为底色的发展。对效的追求、对质的打磨，落脚点都是对人的关怀。</p>
+
+<p>无论外部如何风云变幻，坚定不移办好自己的事，“一步一步往上走”，<span class="highlight-gold">我们必将书写“中国式现代化，民生为大”的更多动人篇章。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月10日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>我们所追求的高质量发展，是一种以幸福体验为底色的发展。对效的追求、对质的打磨，落脚点都是对人的关怀。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"发展底色"的核心金句，适配高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>无感之感，靠的是要素资源的高效流转，靠的是创新链产业链深度融合。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"无感逻辑"的规范金句，适配产业协同类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>中国式现代化，不只是指标的精进。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"现代化本质"的辩证金句，适配中国式现代化类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>以系统思维促高质量发展和高效能治理协同共进。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"建治协同"的规范金句，适配治理类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>带着空箱子来中国，成热门选择——便利背后是高质高效、幸福满满的发展。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"现象与本质"的辩证句，适配开放类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">现象引题</span><p>中国游走俏、外籍旅居榜跃升。</p></div><div class="migration-card"><span class="tag-mig">三层逻辑</span><p>产业链融合—统一大市场—建治协同。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>丹阳眼镜、雄安一站式、企业开办4日。</p></div><div class="migration-card"><span class="tag-mig">政策落点</span><p>统一大市场、六张网、高效办成一件事。</p></div><div class="migration-card"><span class="tag-mig">收束落点</span><p>以"民生为大、幸福底色"收束于动人篇章。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"发展里的幸福体验"为题，模仿本文"无感之感+三逻辑（产业链/统一大市场/高效治理）"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①现象→②产业链→③统一大市场→④高效治理。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"不只……而是……"的句式，表达你对"现代化"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月10日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
