@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以制度刚性护航基层治理（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以制度刚性护航基层治理（人民时评）</h1>
+    <div class="meta">基层治理 · 基层减负 · 权责清单 · 活力秩序 | 2026年6月8日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">基层治理</span><span class="tag-item">基层减负</span><span class="tag-item">权责清单</span><span class="tag-item">活力秩序</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以吉林辽源"证明文件夹"变薄、中办国办清单措施为切口，论证以制度刚性为基层减负松绑，靠细化颗粒度、增进协同度、增强预见性统筹活力与秩序，适合"基层治理""基层减负"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"一种文件夹的变化"具象反映基层减负成效，小切口破题。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以清单制度刚性为基层减负松绑，统筹活力与秩序<br><span style="color:#0d47a1;">▸ 写法：由文件夹变化破题，点明制度刚性</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">细化颗粒度，切忌眉毛胡子一把抓，把潜功做精细<br><span style="color:#0d47a1;">▸ 写法：以成都华西开门治堵论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">增进协同度，跳出一亩三分地，弹好治理协奏曲<br><span style="color:#0d47a1;">▸ 写法：以通辽/杨浦论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">增强预见性，既治陈疾也防未病，让末梢变前哨<br><span style="color:#0d47a1;">▸ 写法：以观察员制度论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"细粒度/协同度/预见性"三层治理框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】处理好活力和秩序的关系，让干部轻装上阵、举重若轻。以清单的制度刚性为基层减负松绑、赋能增效，理顺权责关系、激发治理效能，统筹活力与秩序。</p><p>一种文件夹的变化，直观反映为基层减负成效。</p>
+
+<p>吉林辽源西安区红城社区，<span class="highlight-green">4个</span>文件夹存放着十几沓过去的证明存档。按照职能定位，很多证明超出社区权限；根据群众所盼、办事单位要求，又不得不开。<span class="highlight-gold">而2025年以来的"证明"文件夹里，仅有寥寥10余张存档——吉林省出台相关办法，明确工作事项清单，取消多项村（社区）不合理证明事项。文件夹少了、负担减轻了，服务却不减，居民群众、基层干部都满意。</span></p>
+
+<p>前不久，中共中央办公厅、国务院办公厅印发<span class="highlight-blue">《关于用好乡镇（街道）履行职责事项清单的具体措施》</span>（以下简称《具体措施》），<span class="highlight-gold">以清单的制度刚性，进一步为基层减负松绑、赋能增效。</span></p>
+
+<p>基层治理事关群众切身利益。为民造福，就要不断激发基层治理效能，破解基层"小马拉大车"难题。<span class="highlight-purple">对于基层干部来说，工作任务层层加码、报表台账花样繁多等困扰仍时有出现。如果疲于应付不该管的事项，该管的却没管好，势必影响群众获得感。</span></p>
+
+<p>习近平总书记指出：<span class="highlight-blue">"一个现代化的社会，应该既充满活力又拥有良好秩序，呈现出活力和秩序有机统一。"</span>《具体措施》开出<span class="highlight-gold">3张清单</span>，明晰职责边界、减轻无谓负担，为基层更精准高效推进工作提供制度保障。<span class="highlight-purple">递进一层看，理顺权责关系、激发治理效能，有利于更好统筹活力与秩序。</span></p>
+
+<p>如何科学处理二者关系，切实为基层减负、激活"神经末梢"？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">细化颗粒度，切忌眉毛胡子一把抓。理清脉络、精准施策，才能找准病灶、对症下药，把潜功做精细。</span></p>
+
+<p>细化颗粒度，切忌眉毛胡子一把抓。理清脉络、精准施策，才能找准病灶、对症下药。四川成都华西医院附近，交通拥堵曾是"老大难"。以往关着门研究方案，干部很忙却成效不彰。如今"开门治堵"，面向医院、群众广纳良策，划分出<span class="highlight-green">3个</span>功能区，既降低交通流量，又提升抵离效率；同时依靠技术赋能，用<span class="highlight-blue">人工智能红绿灯</span>实时优化通行策略……<span class="highlight-purple">这样的"忙"，真正解决了问题，有意义、见成效。把潜功做精细，真正把情况摸清、把问题找准，才能把对策提实、让治理提效。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">增进协同度，跳出"一亩三分地"思维。弹好基层治理协奏曲，需以制度为基础，演绎"多手联弹"。</span></p>
+
+<p>增进协同度，跳出"一亩三分地"思维。治理上的小问题，背后往往有大文章，要求基层干部打开视野看问题、想办法。内蒙古通辽依托<span class="highlight-blue">"党群通"</span>智慧党建平台，推动<span class="highlight-green">1355个</span>党组织与社区结对，主动"奉上"<span class="highlight-green">1137个</span>服务供给资源清单。上海杨浦区平凉路街道推出<span class="highlight-blue">"物业治理服务超市"</span>，"货架"上是标准化服务包，"导购"是社区治理达人，各种实用文件陈列有序，"一站式"化解居民烦心事。<span class="highlight-purple">弹好基层治理协奏曲，需以制度为基础，演绎"多手联弹"。搭好台、算大账，相互补位、相互成就，方能形成多方联动、携手并进的良性循环。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">增强预见性，既治"陈疾"，也防"未病"。治理"向前一步"，将事后处置变为事前预防，为基层减负的有效之举。</span></p>
+
+<p>增强预见性，既治"陈疾"，也防"未病"。治理"向前一步"，将事后处置变为事前预防，何尝不是为基层减负的有效之举？如今，不少地方都在推行观察员制度，调动网约车司机、外卖员、网络主播等<span class="highlight-blue">新就业群体</span>，及时发现反馈苗头性问题。<span class="highlight-purple">这样的制度创新，让生活"末梢"变治理"前哨"，既是对社会治理体系的完善，也是对新形势下做好群众工作的深刻把握。与时俱进、把握规律，创新前置举措，能够惠及长远。</span></p>
+
+<p><span class="highlight-gold">"我国国家治理体系的一个优势就是把城乡社区基础筑牢。"处理好活力和秩序的关系，让干部轻装上阵、举重若轻，基层治理的高效能必将释放发展的新动能。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月8日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·制度刚性</span><p>以清单的制度刚性，进一步为基层减负松绑、赋能增效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"基层减负"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·文件夹</span><p>文件夹少了、负担减轻了，服务却不减，居民群众、基层干部都满意。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：场景金句，适合"减负实效"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·活力秩序</span><p>一个现代化的社会，应该既充满活力又拥有良好秩序，呈现出活力和秩序有机统一。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"治理平衡"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·潜功精细</span><p>把潜功做精细，真正把情况摸清、把问题找准，才能把对策提实、让治理提效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：说理金句，适合"调查研究"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·末梢前哨</span><p>让生活"末梢"变治理"前哨"，是对社会治理体系的完善。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"治理前置"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·文件夹破题</span><p>用"证明文件夹变薄"小切口破题基层减负，以小见大法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层治理</span><p>用"细粒度/协同度/预见性"三层拆解治理，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·开门治堵</span><p>用成都华西"开门治堵"论证精细治理，体验式调研法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·多手联弹</span><p>用通辽"党群通"/杨浦"服务超市"论证协同，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·末梢前哨</span><p>用"末梢变前哨"收束治理前置，比喻收束法可用于"风险防控"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「一张清单」看基层减负"为题，模仿本文"文件夹破题→细粒度→协同度→末梢前哨收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个减负小场景引题；②分"精准施策/多方联动"两层；③以"末梢前哨"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"数字赋能治理"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
