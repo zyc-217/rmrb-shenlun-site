@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以制度托举有温度的互助养老（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以制度托举有温度的互助养老（人民时评）</h1>
+    <div class="meta">互助养老 · 养老服务 · 制度赋能 · 基层治理 | 2026年5月28日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">互助养老</span><span class="tag-item">养老服务</span><span class="tag-item">制度赋能</span><span class="tag-item">基层治理</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以民政部等11部门《意见》为切入点，论证把自发善意、分散扶持编织为稳定可靠支持网络，需激发邻里善意、结合专业支持、站在体系高度盘活资源，适合"养老服务""基层治理"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"帮人一把，情长一寸"起兴，把守望相助传统接入现代养老体系。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以精细化制度建设把善意扶持织成稳定支持网，让互助养老有温度可持续<br><span style="color:#0d47a1;">▸ 写法：由11部门《意见》破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">激发邻里善意、强化服务保障规范性与体系化<br><span style="color:#0d47a1;">▸ 写法：以贵州湄潭三级网络论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">就近服务与专业支持结合，强化托底性和长效化<br><span style="color:#0d47a1;">▸ 写法：以低龄助高龄论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">站在养老服务体系高度盘活资源、打通堵点<br><span style="color:#0d47a1;">▸ 写法：以广州从化机制论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"善意激发/专业结合/体系盘活"三层框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以精细化的制度建设，把自发的善意、分散的扶持，编织成一张稳定、可靠的支持网络，让互助养老有温度、可持续，融入城乡社区治理体系。</p><p>帮人一把，情长一寸。日常生活互相照应，遇到困难彼此扶持，守望相助是中国社会的文化传统。在家庭结构小型化、人口流动常态化的今天，这种传统也是解决养老问题的珍贵资源。</p>
+
+<p>不久前，民政部等<span class="highlight-green">11部门</span>联合印发<span class="highlight-blue">《关于推进互助性养老服务发展的意见》</span>，首次在全国层面明确了什么是互助性养老服务，并就如何推进互助性养老服务发展作出部署。从发展目标到服务模式，从服务阵地到支撑保障，系统集成的制度框架，让互助养老有了更清晰的发展路线图。</p>
+
+<p>制度赋能，对互助养老健康发展至关重要。互助养老的优点在于成本低、接地气，能把<span class="highlight-purple">居家养老的便利性、社区养老的普惠性与本乡本土的亲近性</span>结合在一起，但也面临责任划分模糊、服务质量不稳、可持续性不足等现实挑战。</p>
+
+<p><span class="highlight-gold">进一步推动互助养老持续健康发展，需要通过精细化的制度建设，把自发的善意、分散的扶持，编织成一张稳定、可靠的支持网络。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">互助养老的生命力，在于有效激发邻里善意和志愿参与，应以制度框架强化服务保障的规范性和体系化、提升适配度。</span></p>
+
+<p>互助养老的生命力，在于有效激发邻里善意和志愿参与。探索一条低成本、可持续、有温度的养老新路子，应强化服务保障的规范性和体系化，结合实际提升养老服务的适配度。</p>
+
+<p>将柔性互助纳入制度框架，要不断优化机制，持续补短板、聚合力、增效能。比如，贵州湄潭县建设"县级统筹、镇级区域覆盖、村级服务到户"的三级网络，依托村级互助养老慈善基金保障机制等整合资源，实现服务的精准多元供给、站点的长期有效运行。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">可持续的互助养老，是就近服务与专业支持的结合，要强化服务支持的托底性和长效化。</span></p>
+
+<p>可持续的互助养老，是就近服务与专业支持的结合。<span class="highlight-purple">这不是说服务提供者必须是专业人士，而是要强化服务支持的托底性和长效化。</span></p>
+
+<p>从各地探索看，低龄健康老年人帮助高龄老年人，是较为普遍的一种方式。这是可贵的社会参与，但前者自身精力有限、抗风险能力较弱，只能承担力所能及的照护责任。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">发展互助养老，应站在完善养老服务体系的高度盘活资源、打通堵点，以社区为平台把老年人基本需求稳稳托住。</span></p>
+
+<p>发展互助养老，应站在完善养老服务体系的高度，去盘活资源、打通堵点。无论是助餐、助行、助乐等常见的生活需求，还是康复护理、紧急救助等专业性和风险度较高的服务需求，社区互助只是一个服务出口，其长效运行，需要基层组织牵头、专业力量扶持，还要有公共资源托底。</p>
+
+<p>广东广州市从化区，构建"村党组织引领、互助专员对接、银龄组织参与"机制，通过广泛对接社会资源、激活社区内生动力，打通互助性养老服务"最后一公里"。进一步提升互助养老的服务水平和吸引力，应以社区为平台，以长效为目标，因地制宜、就近就便，广泛链接人员、设施、资金、服务、技术等，积极探索多样化的发展模式，把老年人的基本需求稳稳托住。</p>
+
+<p>身处熟悉的社区环境，享受和谐的邻里关系，这样有温度的养老，是许多老年人中意的方式。在人口老龄化加速的今天，有效激活"邻里守望"的传统智慧，使之与现代养老服务相结合，融入<span class="highlight-blue">城乡社区治理体系</span>，将让更多人的晚年生活，不仅有身边的悉心照料，有需求的精准回应，更有情感的双向奔赴。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月28日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·编织网络</span><p>以精细化的制度建设，把自发的善意、分散的扶持，编织成一张稳定、可靠的支持网络。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"制度赋能"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·三性结合</span><p>把居家养老的便利性、社区养老的普惠性与本乡本土的亲近性结合在一起。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"养老优势"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·非专业</span><p>这不是说服务提供者必须是专业人士，而是要强化服务支持的托底性和长效化。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"专业支撑"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·最后一公里</span><p>打通互助性养老服务"最后一公里"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"服务落地"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·双向奔赴</span><p>让更多人的晚年生活，不仅有身边的悉心照料，更有情感的双向奔赴。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"养老温度"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·传统起兴</span><p>用"帮人一把，情长一寸"起兴接入现代养老，传统起兴法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层框架</span><p>用"善意激发/专业结合/体系盘活"三层拆解互助养老，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·三级网络</span><p>用贵州湄潭"三级网络"论证制度框架，网格化法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·最后一公里</span><p>用广州从化机制论证打通堵点，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·双向奔赴</span><p>用"情感的双向奔赴"收束养老温度，温情收束法可用于"民生"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「社区食堂」看互助养老"为题，模仿本文"传统起兴→善意激发→专业结合→双向奔赴收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一句俗语起兴；②分"激发参与/专业支撑"两层；③以"双向奔赴"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"银发经济"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月28日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
