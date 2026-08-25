@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 民生账本里的政绩观（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>民生账本里的政绩观（评论员观察）</h1>
+    <div class="meta">民生 · 政绩观 · 系统性 · 协同性 · 久久为功 · 以人民为中心 · 高质量发展 · 城乡融合 · 医改 · 生态价值 | 2026年4月8日 | 第05版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">民生</span><span class="tag-item">政绩观</span><span class="tag-item">系统性</span><span class="tag-item">协同性</span><span class="tag-item">久久为功</span><span class="tag-item">以人民为中心</span><span class="tag-item">高质量发展</span><span class="tag-item">城乡融合</span><span class="tag-item">医改</span><span class="tag-item">生态价值</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">议论文</span><span class="text">以"算算账"民生账本破题，从"重点协调并进、立行立改与久久为功、民生清单即发展清单"三层，论证为民造福是最大政绩，是"账本意象+三层方法"类典范。</span></div><div class="analysis-item"><span class="label blue">对策题</span><span class="text">对应"如何抓民生"——尽力而为量力而行、一张蓝图绘到底。</span></div><div class="analysis-item"><span class="label blue">归纳题</span><span class="text">归纳"民生工作的方法"——系统、协同、久久为功。</span></div><div class="analysis-item"><span class="label blue">应用文</span><span class="text">写"民生/政绩观"可借用"民生清单也是发展清单""审大小酌缓急"等表述。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解（账本意象·三层方法）</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">为民造福是最大政绩；民生工作千头万绪，系统性、整体性、协同性既是认识论也是方法论。<br><span style="color:#0d47a1;">▸ 写法：由民生账本破题，点明政绩观</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">改善民生讲方法，重点推进与协调并进相统一。<br><span style="color:#0d47a1;">▸ 写法：方法维度：片区协同、因地制宜</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">安民富民，既要立行立改，也要久久为功。<br><span style="color:#0d47a1;">▸ 写法：定力维度：攻坚战与稳扎稳打</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">民生清单也是发展清单，薄弱处往往即生长点。<br><span style="color:#0d47a1;">▸ 写法：转化维度：压力变机遇、思路变出路</span></span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】为民造福是最大政绩；民生工作千头万绪，系统性、整体性、协同性既是认识论也是方法论。</p><p><span class="highlight-gold">民生工作千头万绪，牵涉千家万户。系统性、整体性、协同性，是认识论层面的，也是方法论意义上的。</span></p>
+
+<p>“算算账”，这是普通人与国家发展直接的“利益联结”。</p>
+
+<p><span class="highlight-green">算“育儿账”，对符合条件的婴幼儿每月发放300元育儿补贴，连续发放3年就是10800元；算“养老账”，全国建有8.6万个老年助餐点，每天有300多万老年人就餐；算“健康账”，超九成居民15分钟内可达最近医疗服务点，5500多所二、三级医疗卫生机构开设健康体重管理门诊……</span></p>
+
+<p><span class="highlight-blue">“经济发展和社会发展相辅相成，必须协调并进。”</span>“开年第一课”上，习近平总书记强调：<span class="highlight-blue">“要把改善民生作为促进社会发展的重点，在发展经济的同时稳步提高人民生活品质。”</span></p>
+
+<p><span class="highlight-gold">为民造福是最大政绩。抓改革、促发展，归根到底就是为了让人民过上更好的日子。</span></p>
+
+<p>年初，《纽约时报》以“在中国，AI正在发现医生可能漏掉的致命肿瘤”为题刊发整版报道。<span class="highlight-green">报道中，浙江宁波一家医院运用AI技术，为一名患者筛查出潜在病症，患者仅花费了约25美元。</span><span class="highlight-gold">科技创新造福人，医疗普惠保障人，健康中国托举人。</span></p>
+
+<p>为了人民、造福人民，这是新征程干事创业的价值引擎。从<span class="highlight-blue">“准确把握新形势下人民群众对美好生活新期待和民生工作新特点”</span>，到“面对人民群众日益增长的多元化卫生健康需求”，实绩就出自俯身倾听、真诚回应、真抓实干。</p>
+
+<p>改善民生讲方法。得其法，则事半功倍。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-blue">改善民生讲方法，重点推进与协调并进相统一，不搞单打独斗、一哄而上。</span></p>
+
+<p>浙江海宁“神仙湖”，一个由废弃矿坑修复而成的“宝藏景区”。当地成立神仙湖乡村全面振兴片区综合党委，统筹10个行政村，实现从“单村治理”到“片区协同”。<span class="highlight-purple">不是单打独斗治水，而是齐心协力治流域，彰显的是重点推进与协调并进的统一。</span></p>
+
+<p>青海乌兰70公里外的牦牛山草场，因山洪冲刷道路阻绝，一座6米长的钢制便桥迅速搭建。在青海，“我家门前那座桥”专项民生工程，仅去年就建了500座、覆盖上百村。<span class="highlight-purple">审大小而图之，酌缓急而布之，既尽力而为，又量力而行。</span></p>
+
+<p>产业振兴是重中之重，但不意味着一哄而上、搞大呼隆。宁夏“靠沙”，把戈壁荒漠变成度假区；内蒙古“养草”，“养”出风光电和牛羊肉……<span class="highlight-blue">立足实际，因地制宜。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-blue">安民富民，既要立行立改，也要久久为功，保持战略定力、一张蓝图绘到底。</span></p>
+
+<p><span class="highlight-gold">安民富民，既要立行立改，也要久久为功。</span></p>
+
+<p><span class="highlight-gold">城市更新，“致广大而尽精微”。上海历史性解决“拎马桶”问题，为了“一平方米的幸福”，打攻坚战、啃硬骨头。</span></p>
+
+<p>医改是世界级难题，<span class="highlight-blue">国家医保药品准入谈判“灵魂砍价”，分级诊疗制度稳步推进，建成世界上最大的医疗保障体系</span>，迎难而上，稳扎稳打。</p>
+
+<p><span class="highlight-gold">“对当务之急，要立说立行、紧抓快办，不能慢慢吞吞、拖拖拉拉。对长期任务，要保持战略定力和耐心，坚持一张蓝图绘到底，滴水穿石，久久为功。”</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-blue">民生清单也是发展清单，民生薄弱处往往也是发展生长点，换个角度看即是机遇。</span></p>
+
+<p><span class="highlight-gold">民生清单，也是发展清单。换言之，民生薄弱处，往往也是发展生长点。</span></p>
+
+<p>人口老龄化有压力，换个角度看也是机遇。从康养旅居，到银发专列，再到智能穿戴设备、养老机器人，<span class="highlight-green">我国已成为银发经济消费潜力最大的国家。</span></p>
+
+<p><span class="highlight-purple">生态保护是要求，思路一变就是出路。</span>食品加工制造业的废水，摇身一变成为污水处理厂的“碳源”，湖北武汉一条“输碳管”串起两家企业，皆大欢喜。</p>
+
+<p><span class="highlight-gold">解决问题的过程，也是发展前进的过程。望远山而奋进，知方向而力行。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月8日 第05版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句</span><p>为民造福是最大政绩。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"政绩观"的核心金句，适配干部作风类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>民生工作千头万绪，牵涉千家万户。系统性、整体性、协同性，是认识论层面的，也是方法论意义上的。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生方法"的规范金句，适配治理类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>民生清单，也是发展清单。换言之，民生薄弱处，往往也是发展生长点。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"民生即发展"的辩证金句，适配高质量发展类论证</p></div><div class="material-card"><span class="tag-shenlun">金句</span><p>解决问题的过程，也是发展前进的过程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"问题与发展"的哲理金句，适配改革类论证</p></div><div class="material-card"><span class="tag-shenlun">辩证哲理</span><p>审大小而图之，酌缓急而布之，既尽力而为，又量力而行。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：讲"轻重缓急"的辩证句，适配施策类论证</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">账本引题</span><p>育儿/养老/健康三笔账硬数据。</p></div><div class="migration-card"><span class="tag-mig">三层方法</span><p>重点协调—久久为功—清单即生长点。</p></div><div class="migration-card"><span class="tag-mig">地方案例</span><p>海宁神仙湖、青海便桥、武汉输碳管。</p></div><div class="migration-card"><span class="tag-mig">辩证落点</span><p>老龄化变银发机遇、废水变碳源。</p></div><div class="migration-card"><span class="tag-mig">收束落点</span><p>以"望远山而奋进"收束于发展前进。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"民生账本里的治理智慧"为题，模仿本文"重点协调/久久为功/清单即生长点三层"写法，写一段 150 字左右的论证。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①账本引题→②重点协调→③久久为功→④生长点。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">用"既要……也要……"的句式，表达你对"民生工作"的理解。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
