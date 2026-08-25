@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从共富市集看共同富裕（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从共富市集看共同富裕（评论员观察）</h1>
+    <div class="meta">共同富裕 · 乡村振兴 · 城乡融合 · 民生保障 | 2026年5月14日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">共同富裕</span><span class="tag-item">乡村振兴</span><span class="tag-item">城乡融合</span><span class="tag-item">民生保障</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以杭州"7080"共富市集切入，论证小市集激活草根经济、流动要素、同频共振，体现投资于物与投资于人结合，适合"共同富裕""乡村振兴"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"7080"命名由来（七八十岁摆摊、70后80后消费）这一细节破题，生动有趣。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">共富市集看共同富裕：激活草根经济/流动要素/同频共振，投资物人结合<br><span style="color:#0d47a1;">▸ 写法：由7080市集破题，点明共富三层内涵</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">烟火味中有可触可感发展成果，激活草根经济新动能<br><span style="color:#0d47a1;">▸ 写法：以武林夜市/修水辣椒酱论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">烟火味中有资源要素加速流动，催生1+1>2新生态<br><span style="color:#0d47a1;">▸ 写法：以融合打破城乡壁垒论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">烟火味中有发展主体同频共振，铺展共建共治新局面<br><span style="color:#0d47a1;">▸ 写法：以7080市集街道介入论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"成果/要素/主体"三维拆解烟火味可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从共富市集看共同富裕——小市集里，有可触可感的发展成果、有资源要素的加速流动、有发展主体的同频共振。坚持投资于物和投资于人紧密结合，让物的投资筑牢根基、人的投资注入活水，共富之路就能走得更稳更宽。</p><p>携手同行，才能走得长远；同心共进，才能再上台阶。向着美好进发，各方不仅要避免各自为战，更应做到<span class="highlight-gold">握指成拳</span>。</p>
+
+<p>若一个街道有<span class="highlight-green">约4万名产业工人、2200多户农户</span>，远离大型商圈，出现的自发交易市场该如何管理？</p>
+
+<p>任由自发进行，容易带来散、乱、脏、差；进行有序引导，则可实现多方获益。浙江杭州钱塘区前进街道"7080"共富市集就是空闲地里"长"出来的活力市场。</p>
+
+<p>为啥叫"7080"？因为最初摆摊的大多是七八十岁的老人，消费的大多是70后和80后。如今，摆摊、消费的群体更广。比如，白天，工人们买的新鲜便宜蔬菜，是老奶奶自家种的；晚上，一些工人和家属当起"小老板"、摆夜摊；一些大学生也尝试在这里创业。有人说，这象征一场关乎生活与梦想的接力。</p>
+
+<p>一个市集，会聚各类人群。这样的"共富"叙事里，有老中青各自奔跑的身影，有小空间孕育大希望的耕耘。昼夜接力、热热闹闹的光景里，氤氲着发展新味。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">烟火味中有可触可感的发展成果，激活"草根经济"新动能。小市集既守住便民惠民的初心，又对接群众增收需求。</span></p>
+
+<p>市集中，难能可贵的是烟火味。杭州武林夜市串联起非遗、传统技艺、手工手作等业态，<span class="highlight-green">日均迎客近10万人次</span>；江西修水县山口镇的街道上，线下摆摊与线上直播同步，大山里的鲜辣椒酱等好产品，给群众带来好收益。小市集既守住便民惠民的初心，又对接群众增收需求，为特色产品搭建便捷销售渠道。</p>
+
+<p>市集里，市场交易、人心交织，这是对<span class="highlight-blue">"民生无小事"</span>的精准把握，是让发展成果更多更公平惠及人民群众的务实实践。共同富裕不是抽象概念，而是一个个正在发生的幸福故事。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">烟火味中有资源要素的加速流动，催生"1+1>2"新生态。以融合打破城乡壁垒、产业界限，实现多方共赢。</span></p>
+
+<p>共富，不是单一维度的增收，而是物质和精神的共进。有的地方推动资源要素流动，串联乡村的生态山水、特色农产品与城市的休闲消费、创意运营，打通种养、加工、文旅等产业链条；有的地方把老手艺制品如扎染、花灯等，融入新场景、赋予新意涵，通过品牌包装、线上线下推广，让手艺人既能"守艺"又能受益。</p>
+
+<p>以融合打破城乡壁垒、产业界限，通过构建城乡互助、资源共享、价值共升的方式，让群众在生活品质、精神文化层面多多受益，就能更好激发多方共赢的活力、筑牢共同富裕的基础。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">烟火味中有发展主体的同频共振，铺展共建共治的新局面。让不同群体在同一空间找准定位，荒土变热土。</span></p>
+
+<p>拿"7080"共富市集来说，市集所在地以前没人管，街道靠前介入，完成从土地整理、硬化铺装到水电接入等建设；专业运营团队进行招商管理，做好业态规划；周围的农户、工人与青年创客等，在同一空间里找准各自定位，荒土变热土，局部出彩正在带动全域提升。</p>
+
+<p>携手同行，才能走得长远；同心共进，才能再上台阶。向着美好进发，各方不仅要避免各自为战，更应做到握指成拳。<span class="highlight-purple">协调发展，正是破解发展不平衡难题的关键密钥。</span>当目标一致、行动协同，共富之路就能走得更稳更宽。</p>
+
+<p>从共富市集看共同富裕，更应坚持<span class="highlight-blue">投资于物和投资于人紧密结合</span>。投资于物，是夯实共富基础，如搭建展销平台、打通物流通道，让农产品有销路、产业有支撑。投资于人，则是激活共富动能，如开展技能培训，提升农户经营能力，让人们主动拓展致富路径。<span class="highlight-purple">物的投资为共富筑牢根基，人的投资为共富注入活水</span>，这是"造血"能力与创新创造活力的同步提升。</p>
+
+<p>从田间地头到市井街巷，从线下摊位到云端平台，共富市集，活力升腾。烟火气再浓些、融合味再足些、协同力再强些，更好守住为民初心、激活发展动能、凝聚奋进力量，每一个人都能在市场繁荣中共享发展成果，在携手同行中奔赴共富未来。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年5月14日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·握指成拳</span><p>向着美好进发，各方不仅要避免各自为战，更应做到握指成拳。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"协同发力"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·草根经济</span><p>烟火味中有可触可感的发展成果，激活"草根经济"新动能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"小微经济"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·民生无小事</span><p>市集里，市场交易、人心交织，这是对"民生无小事"的精准把握。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句化用，适合"民生导向"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·关键密钥</span><p>协调发展，正是破解发展不平衡难题的关键密钥。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"协调发展"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·造血</span><p>物的投资为共富筑牢根基，人的投资为共富注入活水，这是"造血"能力与创新创造活力的同步提升。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"内生动力"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·小切口</span><p>用"7080"共富市集小切口看共同富裕大主题，小中见大法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·烟火三维</span><p>用"发展成果/要素流动/同频共振"三层拆解烟火味，三维框架可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·武林夜市</span><p>用武林夜市、修水辣椒酱等案例论证便民惠民，案例法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·融合破壁</span><p>用"以融合打破城乡壁垒、产业界限"论证共赢，融合打法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·投资物人</span><p>用"投资于物与投资于人结合"论证造血能力，双层框架可套用共富话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「社区工坊」看家门口的共富"为题，模仿本文"小切口破题→烟火三维（成果/要素/主体）→投资于物与人"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一个社区小场景引题；②分"便民惠民/要素流动"两层；③以"造血"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"县域富民"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年5月14日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
