@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 中国何以“绕不开”（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>中国何以“绕不开”（评论员观察）</h1>
+    <div class="meta">对外开放 · 双循环 · 文化自信 · 高质量发展 | 2026年4月28日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">对外开放</span><span class="tag-item">双循环</span><span class="tag-item">文化自信</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以消博会“两句流行语”切入，从消费创新试验场、东方美学展示台、全球企业健身房三角度论证中国“绕不开”，适合“高水平对外开放”“双循环”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用“带着空箱子来中国”“在中国遇见未来”两句流行语破题，生动有力。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">无论外部暗流逆风，中国始终敞开怀抱，这里永远是机遇沃土、创新热土、共赢乐土<br><span style="color:#0d47a1;">▸ 写法：由消博会“两句流行语”破题，点明“绕不开”的根由</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">未来在这里“预演”，中国成为消费创新“试验场”<br><span style="color:#0d47a1;">▸ 写法：以飞行汽车、轮臂机器人论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">传统在这里“潮”出新生，中国摆出东方美学“展示台”<br><span style="color:#0d47a1;">▸ 写法：以国潮、文化IP论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">机遇在这里“炼”出真金，中国成为全球企业“健身房”<br><span style="color:#0d47a1;">▸ 写法：以阿瓦鲁、雅诗兰黛、完备工业体系论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“流行语→三场景并列（创新/文化/机遇）”结构可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】无论外部几多暗流逆风，中国始终敞开怀抱，欢迎八方来客，这里永远是机遇的沃土、创新的热土、共赢的乐土——“绕不开”源于创新创造、东方美学与全链路支撑的叠加优势。</p><p>近来，两句流行语从不同方面折射出“中国热”。</p>
+
+<p>一句是“带着空箱子来中国”，道出来华游客“扫货”的酣畅。另一句是“在中国，遇见我们的未来”，彰显跨国企业深耕中国的信心。一买一投，恰似两面镜子，映照中国市场的勃勃生机。</p>
+
+<p>前不久，第六届消博会成功举办，<span class="highlight-green">60多个国家和地区、超3400个品牌齐聚海南，国际展品占比65%，较上届提升20个百分点。</span>采访中，一句话令人印象深刻，<span class="highlight-gold">“你不必然在中国成功，但你不可能绕过中国成功”。</span>中国何以“绕不开”？透过消博会，能找到解答。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">未来在这里“预演”，中国成为消费创新“试验场”。</span></p>
+
+<p>走进科技消费展区，仿佛一步跨入明天。小鹏汇天带来飞行汽车“陆地航母”，能跑还能飞，一键操作即可自动分离、结合陆行体与飞行体；零次方展出的轮臂机器人，宛如“智能店长”，能够24小时自主提供接待服务、分拣商品……“新奇特酷”的产品，满足需求更创造需求。<span class="highlight-green">如今，“陆地航母”超前预订订单已超7000台，轮臂机器人在10余个地标场所落地应用。</span></p>
+
+<p>虽然部分产品还不够完美，尚未达到规模化的拐点，但未来不是等出来的，而是闯出来的。有参展商直言：<span class="highlight-gold">“蓝海不可能凭空出现，扎根技术一点点钻进去，才能实现创新突破。”</span>今天，有政策支持、市场包容、产业链托举，越来越多中国企业敢于并有能力挺进“无人区”，在不断试错中开辟新赛道。<span class="highlight-purple">大江大海，自能养出大鱼。</span>这些企业的产品生长于今日的向往，又共同奏响明日的前奏。中国正以创新创造“锻造明日”。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">传统在这里“潮”出新生，中国摆出东方美学“展示台”。</span></p>
+
+<p>消费市场一面奔向未来、日新月异，一面传承历史、文韵悠长。国潮出海展区内，菱花镜、千角灯等精巧雅致，远看以为是文物，走近才发现是三维金属拼图。流线蚀印还原古典纹样、传统榫卯结构与现代金属精密工艺结合，工艺技术的传承创新，让传统文化转化为可拼装、可收藏的中式艺术品。<span class="highlight-blue">千年以降的雅致风范，就这样被一片片拼图接住，又递到年轻人手中。</span></p>
+
+<p>古老的也可以是新潮的。从“十里红妆”“醒狮”等系列潮玩在国外热销，到“悟空”“哪吒”等文化IP（知识产权）受到欢迎，各种国货潮品让中华优秀传统文化在可感可知中绽放新彩，也持续增强中华文化吸引力。<span class="highlight-blue">让传统与现代交融，让文化与潮流交织，打造更多文化承载体，中华文化将继续展现强大“磁吸力”。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">机遇在这里“炼”出真金，中国成为全球企业“健身房”。</span></p>
+
+<p><span class="highlight-green">14亿多人口的超大规模市场，</span>孕育无数风口，不容错过。日益升级的消费需求、逐渐赶超的中国企业、快速迭代的技术环境，也在良性竞争中助力外企“强筋健骨”。新西兰的奶粉品牌阿瓦鲁，初到中国市场时曾“水土不服”，但其在磨合中拓宽品类，开发出适合不同人群的营养产品，实现了更大发展。<span class="highlight-purple">“在游泳中学会游泳”，这句曾激励中国企业出海的箴言，如今也同样适用于外企来华。</span></p>
+
+<p>“绕不开”，还因这里有最完备的工业体系、最庞大的工程师队伍，可为创新提供全链路支撑。雅诗兰黛将全球首家“端到端”综合性研发中心落户中国，看重的正是<span class="highlight-blue">中国有丰富的人才资源、浓厚的创新氛围。</span>越开越大的开放大门，不断优化的营商环境，为外企发展提供了确定性。今天的中国市场，早已超越单纯的“卖场”，是外企谋合作、“长肌肉”的广阔舞台。</p>
+
+<p>透过消博会，我们能够看到，<span class="highlight-blue">无论外部几多暗流逆风，中国始终敞开怀抱，欢迎八方来客，这里永远是机遇的沃土、创新的热土、共赢的乐土。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年4月28日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·绕不开</span><p>“你不必然在中国成功，但你不可能绕过中国成功”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：消博会金句，适合“中国市场重要性/对外开放”直接引用。</p></div><div class="material-card"><span class="tag-shenlun">金句二·蓝海</span><p>蓝海不可能凭空出现，扎根技术一点点钻进去，才能实现创新突破。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：可用于“自主创新/闯新赛道”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·大江大海</span><p>大江大海，自能养出大鱼。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合“超大规模市场孕育大企业”话题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·游泳中学游泳</span><p>“在游泳中学会游泳”，这句曾激励中国企业出海的箴言，如今也同样适用于外企来华。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，可用于“开放竞争中成长”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·三土收束</span><p>无论外部几多暗流逆风，中国始终敞开怀抱……这里永远是机遇的沃土、创新的热土、共赢的乐土。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比收束句，气势足，适合“高水平开放”结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·流行语破题</span><p>用“带着空箱子来中国”“遇见未来”两句流行语破题，流行语可作开放话题引子。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三场景并列</span><p>“创新试验场／美学展示台／企业健身房”三角度拆解“绕不开”，并列结构可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移三·数据佐证</span><p>用60多国、3400品牌、65%、7000台等数据论证吸引力，数据范式可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·文化IP</span><p>用“悟空”“哪吒”等文化IP论证东方美学，文化赋能法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三土排比</span><p>“机遇沃土／创新热土／共赢乐土”排比收束，排比法可迁移至各类开放话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“从‘China Travel’热潮看开放中国”为题，模仿本文“流行语破题→三场景并列（创新/文化/机遇）→排比收束”的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一句流行语或现象破题；②分“体验／文化／合作”三层；③以“三X沃土”排比收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“进博会”角度，用同一骨架写一句总论点，要求含“既是……也是……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年4月28日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
