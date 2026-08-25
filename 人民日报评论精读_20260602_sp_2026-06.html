@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 做到降成本、办实事两不误（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>做到降成本、办实事两不误（人民时评）</h1>
+    <div class="meta">政务服务 · 过紧日子 · 高效办成一件事 · 资源配置 | 2026年6月2日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">政务服务</span><span class="tag-item">过紧日子</span><span class="tag-item">高效办成一件事</span><span class="tag-item">资源配置</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以湖北政务服务中心综合改革切入，论证政务服务改革要算好惠民与节约两本账，系统梳理闲置资源、信息化标准化、强化共建共享，以更少公共资源撬动更高品质公共服务，适合"政务服务""过紧日子"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"一窗通办"普及后如何进一步提质增效之问破题，把降本与办事统一。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">算好惠民与节约两本账，降成本办实事两不误，以更少资源撬动更高品质服务<br><span style="color:#0d47a1;">▸ 写法：由湖北改革破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">系统梳理闲置资源、压缩无效环节，破解深层次堵点<br><span style="color:#0d47a1;">▸ 写法：以资源配置协同论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">信息化标准化建设，优化流程、纳入通办范围<br><span style="color:#0d47a1;">▸ 写法：以四川雅安论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">强化共建共享，破解资源错配与跨区域衔接<br><span style="color:#0d47a1;">▸ 写法：以京雄278项/209项论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"梳理闲置/信息标准/共建共享"三层框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】政务服务改革要算好惠民与节约两本账，做到降成本、办实事两不误——既厉行节约、避免浪费，又确保服务不减、标准不降，以更少的公共资源撬动更高品质的公共服务。</p><p>"一窗通办"和"一站式"办理日渐普及，政务服务如何进一步提质增效？</p>
+
+<p>打破行政层级和区域的界限，优化资源配置，是一种可行思路。前不久，湖北省出台推进政务服务中心综合改革工作方案（试行），鼓励市、县、乡、村和功能区跨区域、跨层级整合政务服务资源、集约共享，以降低运行成本。这一改革，契合政府职能转变的内在逻辑，也符合节俭办一切事业的硬性要求。</p>
+
+<p>过去的政务服务中心建设，往往是把同一区域、同一层级的政务服务集中在一起，主要解决"多头跑"的问题。湖北的探索，旨在进一步打通梗阻，既解决"上下跑"的问题，也破解资源低效闲置问题，更好落实<span class="highlight-blue">"高效办成一件事"</span>的服务理念。</p>
+
+<p>政务服务改革，一头连着政府运行成本，一头连着群众办事体验。它并非一项单向度的改革，而要在多重约束、多个目标之间寻找最优路径。改革的成色，不仅看群众办事便捷度提升了多少，也看服务壁垒打破了多少，还要看公共资源使用效益提高了多少。</p>
+
+<p>当前，人员异地工作生活、企业跨区域经营活动日益频繁，群众的办事预期不限于在属地"就近能办、一次办好"，还期待更多事项"跨区可办"。与此同时，过紧日子成为各级政府的必修课。在财政约束力度加大的情况下，更好满足群众新需求、高期待，是政务服务改革的难点所在，也是使命所向、分量所在。</p>
+
+<p><span class="highlight-purple">换言之，推进政务服务改革，要厉行节约，避免浪费，但前提是确保服务不减、标准不降。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">做到降成本、办实事两不误，须系统梳理闲置资源、压缩无效环节，同步做好资源配置、机制优化、层级协同，破解深层次堵点。</span></p>
+
+<p>实现这一目标，必须系统梳理闲置资源、压缩无效环节，但更重要的是，同步做好资源配置、机制优化、层级协同，进一步破解深层次堵点，以更少的公共资源撬动更高品质的公共服务。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">一方面要通过信息化和标准化建设优化服务流程，将更多民生事项纳入通办范围，实现无差别受理、同标准办理。</span></p>
+
+<p>一方面，要通过信息化和标准化建设，优化服务流程，将更多民生事项纳入通办范围。比如，四川雅安通过人员共管、流程再造、功能重构，实现了同一事项在全市范围内无差别受理和同标准办理。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">另一方面以强化共建共享为抓手，破解资源错配与跨区域衔接难题，适应人口流动带来的需求变化。</span></p>
+
+<p>另一方面，要以强化共建共享为抓手，加快破解资源错配与跨区域衔接难题，更好适应人口流动带来的需求变化。比如，北京和河北雄安新区两地，<span class="highlight-green">278项</span>政务服务实现"同城化"办理，<span class="highlight-green">209项</span>资质资格实现互认，人社、就医、交通等多场景实现互通。</p>
+
+<p>在政务服务改革中，做到降成本、办实事两不误，关键在于进一步推动资源配置从粗放向精准转变，构建起"跟人走"的公共服务新体系。</p>
+
+<p>从这个意义上讲，政务服务中心的整合，重点不在机构的具体增减，而是整体效率提升了多少、服务供给优化了多少。撤并或盘活闲置设施，不盲目新建服务阵地，是针对性优化；面向产业园区推出专班服务、专员帮办代办机制，则是靶向性提升。</p>
+
+<p>公共服务的最终指向，其实是人的满意度。把群众体验放在优先位置，切实践行<span class="highlight-blue">"投资于人"</span>理念，才能实现服务与人的精准适配，推动政务服务从"能办"向"好办、易办"转变。</p>
+
+<p><span class="highlight-gold">"足国之道，节用裕民"。</span>推进政务服务改革，算好惠民与节约两本账，<span class="highlight-purple">不是非此即彼的取舍，而是立足治理效能的精打细算、精准施策，紧贴群众需求的换位思考、动态适配。</span>让每一分投入都花在刀刃上，把每一分精力都用于为民造福，政务服务将更具效率、更有质感、更显温度，在便民利企中持续激发发展活力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月2日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·两不误</span><p>做到降成本、办实事两不误，以更少的公共资源撬动更高品质的公共服务。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"政务服务"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·服务不减</span><p>推进政务服务改革，要厉行节约，但前提是确保服务不减、标准不降。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"过紧日子"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·高效办成</span><p>更好落实"高效办成一件事"的服务理念。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：政策金句，适合"服务理念"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·投资于人</span><p>切实践行"投资于人"理念，推动政务服务从"能办"向"好办、易办"转变。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：理念金句，适合"以人为本"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·节用裕民</span><p>"足国之道，节用裕民"。算好惠民与节约两本账，不是非此即彼的取舍，而是立足治理效能的精打细算。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"惠民节约"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·设问破题</span><p>用"一窗通办后如何提质增效"设问破题，设问切口法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层框架</span><p>用"梳理闲置/信息标准/共建共享"三层拆解改革，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·同城化</span><p>用京雄278项/209项论证共建共享，数据法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·投资于人</span><p>用"投资于人"收束服务温度，理念法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·节用裕民</span><p>用"足国之道，节用裕民"收束惠民节约，典故收束法可用于"财政"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「跨域通办」看便民改革"为题，模仿本文"设问破题→梳理闲置→共建共享→节用裕民收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一项通办难题设问；②分"优化流程/跨区域协同"两层；③以"节用裕民"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"数字政府"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
