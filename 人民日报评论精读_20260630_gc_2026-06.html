@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 发展的主动性从何而来（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>发展的主动性从何而来（评论员观察）</h1>
+    <div class="meta">观念转变 · 因地制宜 · 发展主动权 · 新质生产力 · 前瞻布局 | 2026年6月30日 | 第7版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">观念转变</span><span class="tag-item">因地制宜</span><span class="tag-item">发展主动权</span><span class="tag-item">新质生产力</span><span class="tag-item">前瞻布局</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以黑龙江黑河“科技冰堡”、河南孟津人工气候室、浙江仙居杨梅深加工、浙江义乌、湖北竹山、江苏溧阳等案例，论证打破思维定式、化被动为主动，适合“思想解放”“区域发展”“新质生产力”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用南北中三地“看似无关的事，合起来看则耐人寻味”并置起笔，从现象归纳出“从靠天吃饭到按需供给”的共同规律。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">掌握发展主动，关键在打破“资源决定论”桎梏、跳出路径依赖，以需求为导向、以格局定方向，增强“需要什么就创造什么”的主动性<br><span style="color:#0d47a1;">▸ 写法：由三地并置现象起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">不固守现有资源、不被动等待机遇，把“靠天等条件”变为“造条件成事”<br><span style="color:#0d47a1;">▸ 写法：以义乌论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">不局限于一域视野，在更大格局中找准自身定位，让比较优势动态升级<br><span style="color:#0d47a1;">▸ 写法：以湖北竹山论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">不坐等需求显现，以前瞻眼光、世界眼光研判风向，科学锚定发展方向<br><span style="color:#0d47a1;">▸ 写法：以江苏溧阳论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“造条件—定方位—锚方向”三层主动性逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】发展的主动性来自观念破冰：打破“资源决定论”的桎梏、跳出路径依赖，坚持以需求为导向、以格局定方向、以前瞻眼光锚定方向，把外部约束转化为内生动力，才能真正把发展主动权牢牢握在自己手中。</p><p>观念破冰，发展破题。从“靠天吃饭”走向“按需供给”，关键就在于打破思维定式、转变思想观念、跳出路径依赖</p>
+
+<p>看似无关的事，合起来看，则耐人寻味。</p>
+
+<p>北方，黑龙江黑河打造“科技冰堡”，将“冬至”锁定在红河谷四季低温试验场，让高寒测试不再“追着冬天跑”。</p>
+
+<p>中部，河南洛阳孟津区智能化人工气候室，提供全年无间断、可重复的标准化试验环境，助瓜苗安稳生长。</p>
+
+<p>南方，浙江台州仙居县打造杨梅深加工基地，开发杨梅酥、烘焙果酱等高附加值产品，让仙居杨梅从“一季红”实现“四季火”。</p>
+
+<p>地域不同、产业各异，却有一个共同的特点：打破“靠天吃饭”的固有路径，实现<span class="highlight-blue">“按需供给”</span>，化被动为主动。</p>
+
+<p><span class="highlight-gold">没有落后的产业，只有惰性的思维。</span>有的地方坐拥独特资源禀赋，却不知挖掘转化；有的地方一度抢占先机，却缺乏向价值链高端攀升的勇气……凡此种种，看似受制于产业基础、市场周期等，实则是被陈旧观念捆住了手脚、被路径依赖锁住了步伐。</p>
+
+<p><span class="highlight-gold">观念破冰，发展破题。</span>从“靠天吃饭”走向“按需供给”，关键就在于打破思维定式、转变思想观念、跳出路径依赖。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">不固守现有资源、不被动等待机遇，坚持以需求为导向，把“靠天等条件”变为“造条件成事”，就能在看似无路之处闯出发展新路。</span></p>
+
+<p>比如，不固守现有资源、不被动等待机遇，坚持以需求为导向，把“靠天等条件”变为“造条件成事”。</p>
+
+<p>浙江义乌为何能创造<span class="highlight-green">210多万种商品</span>联通<span class="highlight-green">200多个国家和地区</span>的传奇？不靠江、不临海、不沿边，就“借道出境”“借港出海”。正是在不断打破“常识”的过程中，义乌闯出了一条“莫名其妙”“无中生有”“点石成金”的发展道路。</p>
+
+<p>事实上，许多地方并非没有潜力，而是困在“有什么才能干什么”的思维定式中。<span class="highlight-purple">不被先天条件束缚，紧盯市场需求与发展方向，主动创造条件，才能把外部约束转化为内生动力，在看似无路之处闯出发展新路。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">不局限于一域的视野，而在更大格局中找准自身定位，从全局谋划一域，让比较优势实现动态升级，开辟的将会是更大的发展空间。</span></p>
+
+<p>比如，不局限于一域的视野，而在更大格局中找准自身定位，敢于去更广阔的水域游泳，识得水性、畅游“大海”。</p>
+
+<p>面对重峦叠嶂的地理环境和薄弱的工业基础，如何让产业发展更上一层楼？湖北十堰竹山县放眼全国，敏锐捕捉到东南沿海的水暖卫浴产业向内陆转移的机遇，结合自身“水电大县”的禀赋，果断进军新蓝海，同时坚持<span class="highlight-blue">链式发展、集群攻坚</span>，推动水暖卫浴产业产值破<span class="highlight-green">百亿元</span>。</p>
+
+<p>以更大视角审视自身，才能进一步找准比较优势。打破视野局限，从全局谋划一域，并坚持发展眼光，让<span class="highlight-blue">比较优势实现动态升级</span>，开辟的将会是更大的发展空间。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">不坐等需求显现、被动追赶市场，而善于以前瞻眼光、世界眼光精准研判时代风向，主动布局、抢先落子，才能抢占制高点、塑造新优势。</span></p>
+
+<p>再比如，不坐等需求显现、被动追赶市场，而善于以前瞻眼光、世界眼光精准研判时代风向，科学锚定发展方向。</p>
+
+<p>江苏溧阳，<span class="highlight-green">2012年七成产值</span>还由水泥、钢铁产业贡献，如今已是<span class="highlight-green">千亿元级</span>动力电池产业之城。这样的蝶变，靠的就是当地以长远眼光洞察产业发展大势，前瞻布局动力电池产业赛道，并在这一领域持续深耕。当新能源汽车产业发展如火如荼，溧阳已经布局“动力+储能”新赛道。</p>
+
+<p><span class="highlight-purple">想要赢得未来，就要超越现在。</span>跳出当下局限，敏锐捕捉时代脉搏，主动布局、抢先落子，才能在激烈竞争格局中抢占制高点、塑造新优势。</p>
+
+<p>掌握发展主动，就是要打破“资源决定论”的桎梏，增强“需要什么就创造什么”的主动性。<span class="highlight-gold">不做追赶季节的候鸟，不做依附风口的过客，而是以需求为导向、以格局定方向，才能真正把发展主动权牢牢握在自己手中。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月30日 第7版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·惰性思维</span><p>没有落后的产业，只有惰性的思维。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：短促有力的判断句，适合“思想解放”“观念转变”开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·观念破冰</span><p>观念破冰，发展破题。从“靠天吃饭”走向“按需供给”，关键就在于打破思维定式、转变思想观念、跳出路径依赖。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：八字对仗+方法论，适合“改革创新”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·外部约束</span><p>不被先天条件束缚，紧盯市场需求与发展方向，主动创造条件，才能把外部约束转化为内生动力，在看似无路之处闯出发展新路。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证转化句，适合“后发地区突围”话题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·超越现在</span><p>想要赢得未来，就要超越现在。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：极简哲理句，适合“前瞻布局”收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·候鸟过客</span><p>不做追赶季节的候鸟，不做依附风口的过客，而是以需求为导向、以格局定方向，才能真正把发展主动权牢牢握在自己手中。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻收束金句，适合“发展主动权”结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·三地并置</span><p>用南北中三地案例并置起笔，“看似无关合起来看”归纳法可迁移至现象类开篇。</p></div><div class="migration-card"><span class="tag-mig">迁移二·设问引例</span><p>用“义乌为何能……？”设问带出案例，设问引例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·比如递进</span><p>用“比如—比如—再比如”三层平行分论点，平行结构可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·靠天/造条件</span><p>用“靠天等条件”对“造条件成事”的对照式表达，反义对举可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·候鸟过客</span><p>用“候鸟/过客”比喻收束发展主动权，比喻收束法可用于“主体性”话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“把‘靠天等条件’变为‘造条件成事’”为题，模仿本文“造条件—定方位—锚方向”写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用“没有落后的产业，只有惰性的思维”类判断句引题；②分“不固守资源/不局限一域/不坐等需求”三层；③以“把主动权握在自己手中”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“县域经济”角度，用同一骨架写一句总论点，要求含“不是……而是……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月30日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
