@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 谋在先、干在前（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>谋在先、干在前（人民时评）</h1>
+    <div class="meta">前瞻布局 · 统筹发展和安全 · 真抓实干 · 新三样 · 战略主动 | 2026年6月30日 | 第7版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">前瞻布局</span><span class="tag-item">统筹发展和安全</span><span class="tag-item">真抓实干</span><span class="tag-item">新三样</span><span class="tag-item">战略主动</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以“新三样”固废回收前瞻布局、太空算力、合肥存储芯片、能源供给新体系、特斯拉上海超级工厂等案例，论证谋在先干在前，适合“前瞻性思维”“统筹发展和安全”“抓落实”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">从“新三样”跑出加速度反推“后端利用规划”课题，由具体产业问题上升为“凡事谋在先、干在前”的方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">推动高质量发展没有坦途，只有凡事谋在先、干在前，看得准、留得足、落到行动，才能牢牢掌握发展主动<br><span style="color:#0d47a1;">▸ 写法：由“新三样”退役潮切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">首在“看得准”，增强前瞻性，摸清规律、深入调研后找准赛道，谋定后动<br><span style="color:#0d47a1;">▸ 写法：以太空算力/合肥芯片论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">要着眼“留得足”，打足提前量，适度超前布局、留足冗余空间<br><span style="color:#0d47a1;">▸ 写法：以能源体系/充换电设施论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">落脚在行动，再前瞻的布局最终都要靠真抓实干来绘就蓝图<br><span style="color:#0d47a1;">▸ 写法：以特斯拉上海工厂论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“看得准—留得足—落到行动”三层递进可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】发展越往前走，越需要把目光投向远方、把工作做到前头：谋在先、干在前，首在“看得准”增强前瞻性，要着眼“留得足”打足提前量，最终落脚在真抓实干的行动力，方能把战略远见转化为实实在在的发展成效。</p><p>机遇稍纵即逝，增强行动力，看准了就抓紧干，方能把战略远见转化为实实在在的发展成效</p>
+
+<p>观察我国“新三样”发展会发现，产业在跑出加速度的同时，“如何提前做好后端利用规划”的课题也摆在了面前。</p>
+
+<p>我国新能源汽车保有量已突破<span class="highlight-green">4300万辆</span>，作为新能源汽车“心脏”的动力电池将迎来规模化退役阶段；光伏装机规模连续多年全球第一，早期光伏组件陆续达到使用年限，退役潮渐行渐近……</p>
+
+<p>如何应对好这一课题？前不久，商务部召开“新三样”固废回收利用工作座谈会，部署加快完善顶层制度设计，推动出台政策文件。</p>
+
+<p>前瞻布局应对“新三样”退役潮，简单看是部署发展固废回收产业，往深处看，则有着着眼全局的考量。一块标准的光伏组件富含银、铝、硅、铜等资源，退役的动力电池更是被视为蕴含锂、钴、镍等关键金属的“城市矿山”……这些有不少是我国对外依存度较高的资源。在产业蓬勃发展时、在新课题到来之前，就尽早着手构建<span class="highlight-blue">闭环的回收体系</span>，是提早布局的“远虑”，也是降低产业原料成本、<span class="highlight-blue">保障产供链安全</span>的“先手”。</p>
+
+<p>前瞻布局“新三样”退役潮，体现这样一种清醒：发展越往前走，越需要把目光投向远方，把工作做到前头。<span class="highlight-gold">推动高质量发展没有坦途，机遇与挑战并存，只有凡事谋在先、干在前，尽早行动才能牢牢掌握发展主动。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">谋在先、干在前，首在“看得准”，增强前瞻性；尽早行动不是急躁冒进，而是在摸清发展规律、深入调查研究的基础上找准赛道，谋定后动。</span></p>
+
+<p>谋在先、干在前，首在“看得准”，增强前瞻性。尽早行动不是急躁冒进、盲目行动，而是在摸清发展规律、深入调查研究的基础上找准赛道，谋定后动。</p>
+
+<p>比如，人工智能浪潮推动算力需求日益增长，地面数据中心正面临能源、土地、散热等多重挑战。在满足现有需求的同时，多地开始部署<span class="highlight-blue">太空算力等新型算力</span>，丰富未来算力的供给路径。又如，多年前，我国在存储芯片领域几乎一片空白，安徽合肥结合国家战略和地方比较优势，选定存储芯片赛道久久为功，在这一轮人工智能浪潮中实现本地产业的异军突起。</p>
+
+<p><span class="highlight-purple">胸怀大局、登高望远，着眼发展全局、洞悉时代趋势，找到适合自己的发展路子，才能更好发挥比较优势，打开发展新空间。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">谋在先、干在前，要着眼“留得足”，打足提前量；适度超前布局、留足冗余空间，是统筹发展和安全的必然举措。</span></p>
+
+<p>谋在先、干在前，要着眼“留得足”，打足提前量。适度超前布局，留足冗余空间，是<span class="highlight-blue">统筹发展和安全</span>的必然举措。</p>
+
+<p>加快构建多元清洁、安全韧性的能源供给新体系，让我们在面对国际地缘冲突造成的能源市场波动时，有充足底气和能力抵御冲击；推动建立适度超前的充换电基础设施体系，打通补能网络堵点，有力支撑新能源汽车产业快速迭代、市场渗透率稳步提升……</p>
+
+<p><span class="highlight-purple">留足冗余空间，既体现居安思危的底线思维，也彰显谋远育新的前瞻考虑，既能为应对不确定性留出缓冲，也有利于为创新突破提供成长空间。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">谋在先、干在前，落脚在行动；无论多前瞻的布局，最终都要靠真抓实干来绘就蓝图。</span></p>
+
+<p>谋在先、干在前，落脚在行动。无论多前瞻的布局，最终都要靠真抓实干来绘就蓝图。</p>
+
+<p>特斯拉上海超级工厂从开工到首批整车交付<span class="highlight-green">不到一年</span>，以“当年开工、当年投产、当年交付”的效率跑出“中国速度”。正是这样的“中国速度”，推动新能源汽车供应链持续迭代升级，为国产新能源品牌崛起铺就更成熟的产业底座。</p>
+
+<p><span class="highlight-gold">机遇稍纵即逝，增强行动力，看准了就抓紧干，方能把战略远见转化为实实在在的发展成效。</span></p>
+
+<p>眼下，无论是建设现代化产业体系，还是加快高水平科技自立自强，都对我们长远谋划和落地执行的能力提出了更高要求。坚持谋在先、干在前，以前瞻布局夯实发展根基，我们定能在新一轮科技革命和产业变革中赢得更多主动。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月30日 第7版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·没有坦途</span><p>推动高质量发展没有坦途，机遇与挑战并存，只有凡事谋在先、干在前，尽早行动才能牢牢掌握发展主动。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总论点句，适合“战略主动”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·投向远方</span><p>发展越往前走，越需要把目光投向远方，把工作做到前头。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：递进式短句，适合“前瞻性思维”开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句三·冗余空间</span><p>留足冗余空间，既体现居安思危的底线思维，也彰显谋远育新的前瞻考虑，既能为应对不确定性留出缓冲，也有利于为创新突破提供成长空间。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：双“既……也……”辩证句，适合“统筹发展和安全”。</p></div><div class="material-card"><span class="tag-shenlun">金句四·登高望远</span><p>胸怀大局、登高望远，着眼发展全局、洞悉时代趋势，找到适合自己的发展路子，才能更好发挥比较优势，打开发展新空间。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：格局类金句，适合“大局观”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·机遇稍纵即逝</span><p>机遇稍纵即逝，增强行动力，看准了就抓紧干，方能把战略远见转化为实实在在的发展成效。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：抓落实收束金句，适合“干在实处”结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·由产业到方法</span><p>从“新三样”后端规划课题上升为普遍方法论，由小切口入大道理可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三字诀</span><p>用“看得准/留得足/落到行动”三字诀作分论点，凝练标签法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·远虑先手</span><p>用“远虑”“先手”对举点明双重意义，双关表述可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·居安思危</span><p>用“居安思危+谋远育新”双辩证句论证冗余空间，可迁移至“底线思维”。</p></div><div class="migration-card"><span class="tag-mig">迁移五·中国速度</span><p>用特斯拉工厂“当年开工、当年投产、当年交付”排比数据收束行动力，可用于“效率”话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“凡事谋在先、干在前”为题，模仿本文“看得准—留得足—落到行动”写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用“发展越往前走，越需要把目光投向远方”类递进句引题；②分“增强前瞻性/打足提前量/靠真抓实干”三层；③以“把战略远见转化为发展成效”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“统筹发展和安全”角度，用同一骨架写一句总论点，要求含“既……也……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月30日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
