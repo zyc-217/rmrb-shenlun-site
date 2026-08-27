@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 考出“三夏”好成绩（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>考出“三夏”好成绩（人民时评）</h1>
+    <div class="meta">粮食安全 · 乡村振兴 · 防灾减灾 · 农业韧性 | 2026年6月9日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">粮食安全</span><span class="tag-item">乡村振兴</span><span class="tag-item">防灾减灾</span><span class="tag-item">农业韧性</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以襄阳4000多台收割机跨省驰援、1.45万亿斤产能目标、1小时农机应急圈、9部门方案等数据，论证考出"三夏"好成绩需念好"快"字诀、融入全链条防灾、调动人积极性，适合"粮食安全""乡村振兴"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"粮食生产大考"比喻破题，以"快"字诀切入应急抢收。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">考出三夏好成绩需快字当头+全链条防灾+调动人积极性，提升农业韧性<br><span style="color:#0d47a1;">▸ 写法：由大考比喻破题，点明三层发力</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">念好"快"字诀，应急抢收彰显制度优势<br><span style="color:#0d47a1;">▸ 写法：以襄阳跨省驰援论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">备豫不虞，把防灾融入粮食生产全链条<br><span style="color:#0d47a1;">▸ 写法：以河南沟渠/安徽1小时圈/9部门论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">调动人的积极性，以制度设计稳定种粮预期<br><span style="color:#0d47a1;">▸ 写法：以中央一号文件/三位一体论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"快/全/人"三层韧性框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】在这场粮食生产"大考"里努力考出好成绩，需要念好"快"字诀应急抢收、把防灾减灾救灾能力建设融入全链条、以制度设计调动人的积极性，全方位增强粮食生产韧性，让中国饭碗端得更稳更牢。</p><p>在这场粮食生产"大考"里努力考出好成绩，我国农业的韧性将在风雨砥砺中不断提升。</p>
+
+<p>在夏收、夏种和夏管的"三夏"时节，各地抢收小麦，广袤田野一派繁忙景象。近期，我国出现入汛以来最强降水过程，增加了小麦主产区夏收紧迫感。</p>
+
+<p>"麦在地里不要笑，收到仓里才牢靠"，夏收与农时、气象变化密切相关。小麦生长周期长，适收窗口期却仅有数天。受去年秋季连阴雨影响，这个小麦生产季全程"不省心"，晚播、弱苗、冻害风险交织，各地抓住每一个生长节点，千方百计促弱转壮，追回了苗情。辛苦大半年，面临收获"关键一程"，尤应紧盯天气变化，切不可掉以轻心。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">应对不利天气威胁，及时把成熟的小麦收上来，首先要念好"快"字诀。麦收速度折射中国速度，协同作战彰显制度优势和治理效能。</span></p>
+
+<p>应对不利天气威胁，及时把成熟的小麦收上来，首先要念好"快"字诀。"你只管种麦子，整个中国替你收！"在湖北襄阳，麦收时节遭遇阴雨，<span class="highlight-green">4000多台收割机</span>从山东、河南、江苏等多地跨省驰援，在收获窗口仅<span class="highlight-green">3天左右</span>的情况下，突击完成小麦抢收。<span class="highlight-gold">麦收速度折射中国速度，滚滚麦浪里的协同作战，生动彰显制度优势和治理效能。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"快"字背后，关键在于备豫不虞，把握稳产保供主动权。必须把防灾减灾救灾能力建设融入粮食生产全链条。</span></p>
+
+<p>伴随全球气候变暖，气象灾害频发重发，抗灾夺丰收已成为近年来农业生产的重要任务。<span class="highlight-blue">"十五五"规划纲要</span>明确提出，加强粮食等重要农产品供给保障，"粮食综合生产能力达到<span class="highlight-green">1.45万亿斤左右</span>"。锚定新一轮千亿斤粮食产能提升行动，必须将防灾减灾救灾能力建设融入粮食生产全链条。</p>
+
+<p>"快"字背后，关键在于备豫不虞，把握稳产保供主动权。面对防旱防涝两难，河南加大沟渠整治力度，有效提升了农田排水散墒能力，使"三夏"在复杂天气变化面前更加从容。依托区域性农机社会化服务中心，安徽形成"<span class="highlight-green">1小时农机应急作业圈</span>"，确保紧急状态下能够迅速响应。今年，<span class="highlight-green">9部门</span>联合印发行动方案，精准指向粮油产地烘干能力短板。居安思危、未雨绸缪，加强高标准农田建设，提前布局履带式联合收割机、仓储烘干等基础设施及服务保障，才能留出安全冗余，更好应对各类不确定性。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">提升防灾减灾效能，还须进一步提升全要素生产率；全方位增强粮食生产韧性，归根结底要调动人的积极性。</span></p>
+
+<p>提升防灾减灾效能，还须进一步提升全要素生产率。目前，我国已建成全球规模最大的农业气象观测网，高效抗赤霉病小麦新品种"扬麦53"今年首次大面积推广应用，借助手机APP"巡田、浇地、约农机"正成为越来越多农户的日常……现代科技要素正以前所未有的深度和广度融入农业生产。将农业科技摆在更加突出的位置，为实现"知天而作"提供硬核支撑，将在无形中重塑农业生产组织方式。</p>
+
+<p>全方位增强粮食生产韧性，归根结底要调动人的积极性。从中央到地方，在制度设计上都在持续探索创新。今年<span class="highlight-blue">中央一号文件</span>强调"落实好粮食产销区省际横向利益补偿政策"，已有地方明确将资金用于支持粮食仓储、产业发展等相关项目建设，产粮贡献得到显性体现。长远看，仍要通过健全补贴、价格、保险"<span class="highlight-blue">三位一体</span>"支持政策体系，在生产经营模式上探索新路子，不断稳定种粮预期，让主产区抓粮产粮不吃亏、种粮主体有利可图。</p>
+
+<p><span class="highlight-purple">随着全国小麦机收全面展开，"三夏"生产进入最吃劲、最关键的攻坚阶段，夏粮收购、运输、储备等各环节也正在有序推进。在这场粮食生产"大考"里努力考出好成绩，我国农业的韧性将在风雨砥砺中不断提升，中国饭碗也定将端得更稳更牢。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月9日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·大考韧性</span><p>在这场粮食生产"大考"里努力考出好成绩，我国农业的韧性将在风雨砥砺中不断提升。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"粮食安全"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·快字诀</span><p>麦收速度折射中国速度，滚滚麦浪里的协同作战，生动彰显制度优势和治理效能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"制度优势"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·备豫不虞</span><p>"快"字背后，关键在于备豫不虞，把握稳产保供主动权。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语金句，适合"风险防控"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·全要素</span><p>将农业科技摆在更加突出的位置，为实现"知天而作"提供硬核支撑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"科技助农"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·中国饭碗</span><p>中国饭碗也定将端得更稳更牢。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"粮食安全"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·大考比喻</span><p>用"粮食生产大考"比喻破题，比喻法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层韧性</span><p>用"快/全/人"三层拆解农业韧性，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·跨省驰援</span><p>用襄阳4000台收割机跨省驰援论证制度优势，数据案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·1小时圈</span><p>用安徽"1小时农机应急作业圈"论证备豫不虞，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三位一体</span><p>用"补贴价格保险三位一体"收束制度设计，政策抓手法可用于"惠农"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「防汛大考」看城市韧性"为题，模仿本文"大考比喻→快字诀→全链条→中国饭碗收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用城市防汛比喻引题；②分"应急抢险/系统防御"两层；③以"人民城市"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"应急体系"角度，用同一骨架写一句总论点，要求含"既……更……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月9日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
