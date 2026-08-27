@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从开局起步看担当（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从开局起步看担当（评论员观察）</h1>
+    <div class="meta">政绩观 · 担当作为 · 为民造福 · 新质生产力 · 习近平党建思想 | 2026年6月23日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">政绩观</span><span class="tag-item">担当作为</span><span class="tag-item">为民造福</span><span class="tag-item">新质生产力</span><span class="tag-item">习近平党建思想</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以平陆运河、深圳低空经济、大同算力之城、北京亦庄人形机器人等案例，论证党员干部担当要"想清楚为了谁、弄明白怎么干、算好长远账"，适合"政绩观""担当作为""新质生产力"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"政绩好坏老百姓心里有杆秤"破题，以"为了谁/怎么干/长远账"三问搭起骨架。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">政绩好坏老百姓心里有杆秤，担当要"想清楚为了谁、弄明白怎么干、算好长远账"，把为民造福化为接续奋斗行动<br><span style="color:#0d47a1;">▸ 写法：由平陆运河实干破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">"为了谁"：对准群众急难愁盼，让新产业落点民生所需<br><span style="color:#0d47a1;">▸ 写法：以深圳低空经济论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">"怎么干"：因地制宜发展新质生产力，从实际出发按规律办事<br><span style="color:#0d47a1;">▸ 写法：以大同/洛阳/苏州/柳州论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">"长远账"：统筹显绩与潜绩，甘坐冷板凳把蓝图一绘到底<br><span style="color:#0d47a1;">▸ 写法：以亦庄机器人论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"三问"担当框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】政绩好坏，老百姓心里有杆秤；党员干部的担当体现为想清楚"为了谁"、弄明白"怎么干"、算好"长远账"，把为民造福化为接续奋斗的行动，凝聚为推动高质量发展的坚实力量。</p><p>政绩好坏，老百姓心里有杆秤。哪里有人民需要，哪里就能做出好事实事，哪里就能创造业绩</p>
+
+<p>我们党一路风雨兼程、披荆斩棘，不断从胜利走向新的胜利，靠的正是一代代共产党人把为民造福的担当化为接续奋斗的行动</p>
+
+<p>近期，平陆运河航道主体工程开挖全部完成，全线通水。这条新中国成立以来建设的首条通江达海大运河，开工不到<span class="highlight-green">4年</span>，整体工程量已完成超<span class="highlight-green">96%</span>。运河全线成立<span class="highlight-green">80余支</span>党员先锋队、青年突击队，<span class="highlight-green">24小时</span>昼夜轮换推进建设……变蓝图上的一条线为大地上的一条河，靠的是一锤接着一锤敲的实干，离不开久久为功、舍我其谁的担当。</p>
+
+<p>奋进新征程，各级党组织自觉运用<span class="highlight-blue">习近平党建思想</span>谋划和推进党的建设，激发攻坚克难的勇气、创新创造的活力，不断汇聚起发展新气象。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">担当，先要想清楚"为了谁"；对准群众急难愁盼，让新产业、新技术落点民生所需，经济发展就能打开新空间。</span></p>
+
+<p>担当，先要想清楚"为了谁"。</p>
+
+<p>广东深圳，建设低空起降点、开通商业航线、优化产业链条，大力推动无人机应用从快递配送拓展至城市巡检、医疗急救等多个领域，让低空经济加速起飞、便利百姓生活。</p>
+
+<p>政绩好坏，老百姓心里有杆秤。以旧换新加力扩围，千家万户用上更智能的家电、汽车；城市更新广泛开展，市民居住环境显著改善；大力发展托幼一体化服务，为育儿家庭"减负"……哪里有人民需要，哪里就能做出好事实事，哪里就能创造业绩。</p>
+
+<p><span class="highlight-purple">群众所需，指向创新蓝海；民生短板，可能是产业风口。</span>精准把握需求，让新产业、新技术落点对准群众急难愁盼，经济发展往往就能打开新空间。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">担当，必须弄明白"怎么干"；因地制宜发展新质生产力，坚持实事求是、从实际出发按规律办事，做到"一把钥匙开一把锁"。</span></p>
+
+<p>担当，必须弄明白"怎么干"。</p>
+
+<p>山西大同因煤而兴，如今多了一张"算力之城"名片。冷凉的气候、充裕的电力、紧邻京津冀的区位，当这些禀赋被"唤醒"，数据中心项目纷纷落户。当地投运服务器超<span class="highlight-green">75万台</span>，<span class="highlight-green">2025年</span>城市算力分指数已位居全国第三。从"输煤炭、输电力"，到"输算力、输服务"，转型既要"追风口"，更要因地制宜找准比较优势。</p>
+
+<p>开局阶段、关键时期，因地制宜发展<span class="highlight-blue">新质生产力</span>，必须坚持实事求是、求真务实。河南洛阳让古都文脉活化为文旅消费新场景，江苏苏州依托制造业优势培育人工智能产业，广西柳州把一碗螺蛳粉做成百亿元大产业……成功案例的共同经验在于从实际出发、按规律办事。这背后，靠的是调查研究的功夫、直面问题的勇气、精准施策的能力。把握矛盾的特殊性，坚持具体问题具体分析，认真审题、科学破题，才能真正做到"一把钥匙开一把锁"。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">担当，更要算好"长远账"；统筹"显绩"与"潜绩"，甘坐"冷板凳"，把打基础、利长远的难事做扎实，方能将好蓝图一绘到底。</span></p>
+
+<p>担当，更要算好"长远账"。</p>
+
+<p>今年<span class="highlight-green">4月</span>，人形机器人半程马拉松在北京亦庄再次鸣枪，机器人跑步"进化"之快超出预期。从出台专项政策精准赋能，到打造创新中心搭建平台，再到投用中试基地、全域开放应用场景……北京亦庄以持续多年的政策浇灌，吸引集聚<span class="highlight-green">300余家</span>具身智能企业，为产业做大做强铺就了快车道。</p>
+
+<p>创造好政绩，需要甘坐"冷板凳"。修复河流生态、办好乡村学校、发力基础研究，也许一时难以看到成效，却在为未来积蓄力量。统筹"显绩"与"潜绩"，既做让老百姓看得见、摸得着、得实惠的实事，也做打基础、利长远、增后劲的难事，方能将好蓝图一绘到底。</p>
+
+<p>习近平总书记强调：<span class="highlight-gold">"为官一任、造福一方，真抓实干、久久为功，把丰碑立在人民群众心中。"</span>我们党一路风雨兼程、披荆斩棘，不断从胜利走向新的胜利，靠的正是一代代共产党人把为民造福的担当化为接续奋斗的行动。学习贯彻习近平党建思想，一步一个脚印向前进，这份担当定将化为推动高质量发展的坚实力量。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月23日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·心里有杆秤</span><p>政绩好坏，老百姓心里有杆秤。哪里有人民需要，哪里就能做出好事实事，哪里就能创造业绩。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：开篇金句，适合"政绩观"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·一把钥匙</span><p>把握矛盾的特殊性，坚持具体问题具体分析，认真审题、科学破题，才能真正做到"一把钥匙开一把锁"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：方法论金句，适合"因地制宜"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·显绩潜绩</span><p>统筹"显绩"与"潜绩"，既做让老百姓看得见、摸得着、得实惠的实事，也做打基础、利长远、增后劲的难事。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"长远账"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·丰碑心中</span><p>"为官一任、造福一方，真抓实干、久久为功，把丰碑立在人民群众心中。"</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"为民造福"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·冷板凳</span><p>创造好政绩，需要甘坐"冷板凳"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：短金句，适合"久久为功"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·三问骨架</span><p>用"为了谁/怎么干/长远账"三问搭骨架，三问框架可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·杆秤破题</span><p>用"老百姓心里有杆秤"破题，比喻破题法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·显潜绩</span><p>用"显绩与潜绩"辩证收束，辩证框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·案例链</span><p>用"一城一地"案例链（大同/洛阳/苏州/柳州），由点到面法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·丰碑收束</span><p>用总书记"丰碑立在人民心中"收束，权威收束法可用于"干部素养"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「算力之城」看转型担当"为题，模仿本文"为了谁—怎么干—长远账"三问写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"心里有杆秤"类引题；②分"对准需求/因地制宜/算长远账"三层；③以"丰碑立在心中"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"基层治理"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月23日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
