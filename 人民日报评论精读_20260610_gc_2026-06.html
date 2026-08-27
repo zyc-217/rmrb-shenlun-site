@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 读懂时代深处的肌理（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>读懂时代深处的肌理（评论员观察）</h1>
+    <div class="meta">文化自信 · 文物保护 · 考古前置 · 中华文明 | 2026年6月10日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">文化自信</span><span class="tag-item">文物保护</span><span class="tag-item">考古前置</span><span class="tag-item">中华文明</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以绍兴稽中遗址"先考古后出让"、广州正平坊、南京地铁夫子庙站、何尊"中国"等案例，论证考古学既弥补历史遗憾、又观照当下城市灵魂、更从历史汲取开创未来智慧，适合"文化自信""文物保护"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"甲骨文被当龙骨入药"的遗憾起笔，引出考古前置亮点。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">考古学读懂时代肌理：弥补遗憾+观照当下+开创未来，筑牢文明自信<br><span style="color:#0d47a1;">▸ 写法：由遗憾破题，点明三层价值</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">考古前置弥补遗憾，保护遗址镌刻历史信度<br><span style="color:#0d47a1;">▸ 写法：以绍兴稽中/广州正平坊论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">读懂当下需借助考古学，历史文化是城市灵魂<br><span style="color:#0d47a1;">▸ 写法：以南京地铁夫子庙站论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">考古学是开创明天的锦囊，从历史汲取智慧<br><span style="color:#0d47a1;">▸ 写法：以何尊/五星出东方/全人类共同价值论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"遗憾/当下/未来"三层时间框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】考古学不仅挖掘深埋地下的器物与遗迹，更揭示文明演变的脉络、社会结构的转型、人与环境互动的规律；它既加速弥补历史遗憾、观照当下城市灵魂，更为把握今天、开创明天提供锦囊，帮助我们读懂时代深处的肌理、筑牢文明自信。</p><p>穿越历史，可知可感的文明叙事扑面而来，氤氲出新时代壮阔的文化气象。历经数千年而绵延不绝、迭遭忧患而经久不衰的中华文明，正是我们自信的底气。</p>
+
+<p>每每提及中华文明探源和夏商周断代，许多人心中总有一个遗憾。</p>
+
+<p>甲骨文最初被发现时，已被当作"龙骨"入药多年，许多都已损毁。若当时能尽早发现并收录进展馆，是不是能有更多珍贵史料留存、更多文字被溯源？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">认识历史离不开考古学。通过考古前置，一处处遗址免受破坏，以更加丰富的细节镌刻着历史信度。</span></p>
+
+<p>幸运的是，这样的遗憾如今正加速得到弥补。<span class="highlight-green">2023年</span>，浙江绍兴市稽山中学改扩建施工时，工人发现大量精心加工的木构件。依据考古前置制度要求，项目马上停工对遗迹进行原址保护。随后，绍兴稽中遗址考古工作正式展开，逐渐揭开越国都城的神秘面纱。"先考古、后出让"，考古前置，无疑是新时代文物保护工作的一个亮点。</p>
+
+<p>认识历史离不开考古学。广东广州越秀区闹市间，多个朝代的砖砌墙基遗迹被发掘出，为研究古代城市扩张提供直接证据；河南洛阳洛龙区，周边高楼林立，正平坊遗址安然伫立，诉说着唐代人的里坊生活……广博华夏，通过考古前置，一处处遗址免受破坏，勾勒出鲜活的历史场景，填补历史轴线的"空白"，以更加丰富的细节镌刻着历史信度。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">读懂当下，同样需要借助考古学。以考古的严谨审视当下，以历史的深度观照现实，方能跳出片面认知。</span></p>
+
+<p>读懂当下，同样需要借助考古学。土层之下的文明遗存、器物背后的生活脉络、遗迹承载的社会逻辑，皆是历史留给当下的参照。考古学不仅挖掘深埋地下的器物与遗迹，更揭示文明演变的脉络、社会结构的转型、人与环境互动的规律。以考古的严谨审视当下，以历史的深度观照现实，方能跳出片面认知，读懂时代深处的肌理。</p>
+
+<p>由此，更能理解<span class="highlight-gold">"历史文化是城市的灵魂"</span>。江苏南京地铁五号线夫子庙站，现代列车线路和从宋至明清的道路遗址共处一方空间，将历史垒层直观呈现，给人以古今同频之感。古遗址、老建筑是凝固的历史，镌刻着地域的人文记忆、民俗风情与发展脉络。加强城乡建设中历史文化保护传承，才能让城市既涌现日新月异的活力，也拥有历久弥新的韵味。</p>
+
+<p>由此，也更能理解，既要物质富足，也要精神富有，是中国式现代化的崇高追求。当最早的"中国"二字被发现于青铜器何尊之上，当"五星出东方利中国"锦护臂出土于新疆和田，当五乳神兽镜上"中国人民"的铭文表露出先民对家园的祝福……中华文明延续<span class="highlight-green">5000多年</span>的璀璨光辉，化为我们心中的深沉热爱，这份精神滋养更凝聚起推进<span class="highlight-blue">中国式现代化</span>的澎湃力量。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">考古学追溯文明的来处，也是把握今天、开创明天的锦囊。从历史中汲取智慧，弘扬好中华文明蕴含的全人类共同价值。</span></p>
+
+<p>考古学追溯文明的来处，也是把握今天、开创明天的锦囊。当世界走到新的十字路口，如何回答好中国之问、世界之问、人民之问、时代之问？从古代丝绸之路的声声驼铃中，从亚欧早期文明互动的考古发现中，我们更加明白"只要坚持团结互信、平等互利、包容互鉴、合作共赢，不同种族、不同信仰、不同文化背景的国家完全可以共享和平，共同发展"。如何创造美好生活、开辟光明未来？那就需要从历史中汲取智慧，弘扬好中华文明蕴含的<span class="highlight-blue">全人类共同价值</span>，为推动文明交流互鉴作出更多贡献。</p>
+
+<p><span class="highlight-purple">欲知大道，必先为史。穿越历史，可知可感的文明叙事扑面而来，氤氲出新时代壮阔的文化气象。历经数千年而绵延不绝、迭遭忧患而经久不衰的中华文明，正是我们自信的底气。保护好文化根脉，更加璀璨的发展篇章将由我们一起书写。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月10日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·文明底气</span><p>历经数千年而绵延不绝、迭遭忧患而经久不衰的中华文明，正是我们自信的底气。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"文化自信"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·城市灵魂</span><p>历史文化是城市的灵魂。加强城乡建设中历史文化保护传承，让城市既涌现日新月异的活力，也拥有历久弥新的韵味。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"城市更新"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·考古严谨</span><p>以考古的严谨审视当下，以历史的深度观照现实，方能跳出片面认知。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：方法金句，适合"历史思维"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·欲知大道</span><p>欲知大道，必先为史。保护好文化根脉，更加璀璨的发展篇章将由我们一起书写。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语金句，适合"以史为鉴"升华。</p></div><div class="material-card"><span class="tag-shenlun">金句五·全人类价值</span><p>弘扬好中华文明蕴含的全人类共同价值，为推动文明交流互鉴作出更多贡献。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"文明互鉴"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·遗憾起笔</span><p>用"甲骨文当龙骨入药"的遗憾起笔，反差起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层时间</span><p>用"遗憾/当下/未来"三层拆解考古价值，时间框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·考古前置</span><p>用绍兴稽中"先考古后出让"论证制度保护，机制法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·城市灵魂</span><p>用南京地铁夫子庙站论证历史文化是城市灵魂，古今同频法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·欲知大道</span><p>用"欲知大道，必先为史"收束文明自信，古训收束法可用于"以史鉴今"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「老街新生」看城市更新"为题，模仿本文"遗憾起笔→保护根脉→观照当下→欲知大道收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一处老街遗憾引题；②分"保护原真/活化利用"两层；③以"历久弥新"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"文化传承"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月10日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
