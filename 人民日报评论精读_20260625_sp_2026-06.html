@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 为市场“新陈代谢”主动清障（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>为市场“新陈代谢”主动清障（人民时评）</h1>
+    <div class="meta">要素市场化 · 营商环境 · 优胜劣汰 · 企业退出 · 高质量发展 | 2026年6月25日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">要素市场化</span><span class="tag-item">营商环境</span><span class="tag-item">优胜劣汰</span><span class="tag-item">企业退出</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以市场监管总局强制清算试点、江苏1.8万余件公益清算注销、北京简易注销64.95%、四川内江"诊疗式"分级分类处置等案例，论证完善企业退出制度、为市场"新陈代谢"主动清障，适合"要素市场化""营商环境""高标准市场体系"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"僵尸企业退出"难题切入，以"新陈代谢"生物学意象统摄制度设计。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">经营主体退出制度是现代化经济体系重要组成部分，完善企业退出制度、为市场"新陈代谢"主动清障，方能发挥优胜劣汰作用、激活高质量发展动力<br><span style="color:#0d47a1;">▸ 写法：由强制清算试点破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">打破"僵尸企业"退不出的不良循环，抓住申请主体关键环节，由登记机关主动作为<br><span style="color:#0d47a1;">▸ 写法：以江苏公益清算论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">强制清算是系统工程，同步完善配套机制，让土地劳动力等要素重新流动<br><span style="color:#0d47a1;">▸ 写法：以要素配置论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">做好精准识别、分类处置，把破与立、退与进统筹起来腾出空间<br><span style="color:#0d47a1;">▸ 写法：以内江诊疗式机制论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"新陈代谢"意象+分类处置框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】经营主体退出制度是现代化经济体系的重要组成部分；完善企业退出制度、为市场"新陈代谢"主动清障，抓住申请主体关键环节由登记机关主动作为，方能更好发挥优胜劣汰作用、促进资源向高效领域集聚，激活高质量发展的澎湃动力。</p><p>经营主体退出制度，是现代化经济体系的重要组成部分。当前，要素市场化改革持续深化，要求我们加快推进企业注销配套改革，完善企业退出制度</p>
+
+<p>让"僵尸企业"退出市场，一直是个难题。如今，解决这一棘手问题有了新抓手。不久前，市场监管总局选取北京、河北、江苏等<span class="highlight-green">7省（市）</span>开展由登记机关向人民法院申请强制清算试点工作。</p>
+
+<p>这一新举措，源于修订后的公司法专门增加的一项规定，有关部门或者公司登记机关可以作为申请人向人民法院申请清算。这不只是让"僵尸企业"的退出多了一种方式，而且大大增强了治理的主动性。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">打破"僵尸企业"退不出的不良循环，必须找准症结、精准发力；抓住申请主体这一关键环节，由登记机关主动作为，为市场"新陈代谢"清除障碍。</span></p>
+
+<p>以往，那些经营异常的企业，主要由公司股东、债权人等利害关系人向人民法院申请强制清算。由于这样的企业往往没有多少财产可供清偿，债权人推动强制清算的收益不大。退出市场需要完成清算、还债、销户等多个步骤，企业主动退出的动力也不足。此外，也有些地方担心企业退出带来不良影响，会对"僵尸企业"进行"输血"。多种原因交织，导致市场难以真正实现<span class="highlight-blue">优胜劣汰</span>。</p>
+
+<p>打破这样的不良循环，必须找准症结、精准发力。此次市场监管总局开展强制清算试点，正是抓住申请主体这一关键环节，由登记机关主动作为，<span class="highlight-gold">为市场"新陈代谢"清除障碍。</span>登记机关作为申请主体，可以更好整合多部门数据，提供更完整的证据链，缩短强制清算工作的周期，节约宝贵的行政和司法资源。比如，江苏构建经营异常企业公益强制清算退出的常态化机制，截至今年<span class="highlight-green">5月底</span>，共办理公益强制清算注销登记<span class="highlight-green">1.8万余件</span>。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">强制清算"僵尸企业"并非单纯司法或行政问题，而是提升政府效能、优化要素配置的系统工程；清退让土地、劳动力等要素重新流动，配置到更有活力的新业态。</span></p>
+
+<p>强制清算"僵尸企业"，并非单纯的司法或行政问题，而是涉及提升政府效能、优化要素配置的系统工程。清退的目的，是让土地、劳动力等生产要素重新流动起来，配置到更有活力的新产业、新业态中去。因此，必须同步完善资产处置、职工安置、债务化解等配套机制。</p>
+
+<p>此外，强制清算之前，应做好"帮扶疏导"，提升企业自主退出的便利度。比如，今年前<span class="highlight-green">5个月</span>，北京通过简易注销程序退出市场的企业占注销企业总数的<span class="highlight-green">64.95%</span>。<span class="highlight-purple">把破与立、退与进统筹起来，才能让市场上的无效供给尽快出清，为高质量发展腾出宝贵的空间。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">企业退出影响广泛，须做好精准识别、分类处置；建立"诊疗式"分级分类机制，把破与立、退与进统筹起来，有序引导"僵尸企业"退出。</span></p>
+
+<p>企业退出市场，会造成广泛的经济社会影响，主动积极作为、增强制度刚性的同时，必须做好精准识别，进行分类处置。比如，四川内江市在开展经营异常企业公益清算试点的过程中，建立起"诊疗式"分级分类挽救与处置机制：对有潜在风险的"未病"企业提前预警，对有经营隐患的"小毛病"企业精准帮扶，对患有"大病"的企业通过庭外重组、预重整、司法重整等方式救治，对"病入膏肓"的"僵尸企业"通过公益清算引导有序退出。</p>
+
+<p>经营主体退出制度，是现代化经济体系的重要组成部分。当前，<span class="highlight-blue">要素市场化改革</span>持续深化，要求我们加快推进企业注销配套改革，完善企业退出制度。更好发挥市场<span class="highlight-blue">优胜劣汰</span>作用，促进更多资源向高效领域集聚，方能以高水平社会主义市场经济体制建设，激活高质量发展的澎湃动力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月25日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·退出制度</span><p>经营主体退出制度，是现代化经济体系的重要组成部分。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"要素市场化"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·新陈代谢</span><p>由登记机关主动作为，为市场"新陈代谢"清除障碍。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：意象金句，适合"优胜劣汰"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·优胜劣汰</span><p>多种原因交织，导致市场难以真正实现优胜劣汰。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：金句，适合"市场出清"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·破与立</span><p>把破与立、退与进统筹起来，才能让市场上的无效供给尽快出清，为高质量发展腾出宝贵的空间。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"改革方法论"。</p></div><div class="material-card"><span class="tag-shenlun">金句五·诊疗式</span><p>建立"诊疗式"分级分类挽救与处置机制，把"未病"预警、"小毛病"帮扶、"大病"救治、"病入膏肓"有序退出贯通起来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：机制金句，适合"分类施策"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·新陈代谢</span><p>用"新陈代谢"生物学意象统摄制度设计，意象统摄法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·七省市</span><p>用"7省（市）试点"开篇论证新政，试点开篇法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·诊疗式</span><p>用"诊疗式"分级分类机制论证分类处置，机制表述可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移四·破立统筹</span><p>用"破与立、退与进统筹"收束，辩证收束法可用于"改革"话题。</p></div><div class="migration-card"><span class="tag-mig">迁移五·要素流动</span><p>用"让要素重新流动配置到新业态"论证清退意义，要素视角可套用。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「诊疗式清退」看市场出清"为题，模仿本文"主动作为—系统工程—分类处置"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"新陈代谢"类引题；②分"抓关键/配套机制/分类处置"三层；③以"激活高质量发展动力"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"低效产能退出"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月25日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
