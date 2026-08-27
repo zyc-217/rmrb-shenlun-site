@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 中国经济驰而不息的底气所在（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>中国经济驰而不息的底气所在（人民时评）</h1>
+    <div class="meta">五年规划 · 因地制宜 · 错位发展 · 先立后破 · 高质量发展 | 2026年7月2日 | 第8版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">五年规划</span><span class="tag-item">因地制宜</span><span class="tag-item">错位发展</span><span class="tag-item">先立后破</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以31个省份“十五五”规划纲要为观察样本，从全局与一域、抢位与错位、立新与破旧三组辩证关系解读中国经济底气，适合“五年规划”“区域协调”“因地制宜”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">以“31份地方规划纲要”作横向、交叉、纵览三重比较，用三组辩证关系撑起全篇骨架。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">三组辩证关系体现的都是如何因地制宜做好经济工作，坚持一切从实际出发、把科学规划和真抓实干结合起来，定能将协同优势转化为发展胜势<br><span style="color:#0d47a1;">▸ 写法：由31份规划纲要切入</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">有着眼全局与一域关系的系统谋划，既上下贯通步调一致，又各展所长各尽其责<br><span style="color:#0d47a1;">▸ 写法：以目标设定/任务部署论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">有对抢位与错位的科学把握，既你追我赶抢位发展，又竞合有序错位发展<br><span style="color:#0d47a1;">▸ 写法：以人工智能东中西部布局论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">有对立新与破旧的统筹协调，破立并举、先立后破<br><span style="color:#0d47a1;">▸ 写法：以贵州数谷/山西能源论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“横向比照—交叉对比—纵览时期”三重比较法可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从31份地方“十五五”规划纲要中可以读出三组辩证关系——全局与一域的系统谋划、抢位与错位的科学把握、立新与破旧的统筹协调，它们体现的都是如何因地制宜做好经济工作；坚持一切从实际出发，把科学规划和真抓实干结合起来，定能将协同发展的优势转化为高质量发展的胜势。</p><p>既你追我赶、抢位发展，又竞合有序、错位发展，各美其美、美美与共，构成中国经济向新向优的活力源泉</p>
+
+<p>坚持一切从实际出发，把科学规划和真抓实干结合起来，一茬接着一茬干，一步一步向上走，定能将协同发展的优势转化为高质量发展的胜势</p>
+
+<p>不久前，<span class="highlight-green">31个省份</span>的“十五五”规划纲要发布完毕。一份份发展规划，既是国家顶层设计的细化落地，也是各地发展路径的自主求索。</p>
+
+<p><span class="highlight-purple">五年规划，中国之治的突出优势。</span>从多角度观察各地“十五五”规划纲要，更能读懂中国经济成长壮大的内在逻辑，把握顶压前行、向新向优的发展态势。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">这其中，有着眼全局与一域关系的系统谋划；既上下贯通、步调一致，又各展所长、各尽其责，正是中国经济驰而不息的底气所在。</span></p>
+
+<p>这其中，有着眼全局与一域关系的系统谋划。横向比照各地规划，尽管地域不同、禀赋各异，但均从全国“一盘棋”中明确战略定位、找到发展方向，努力做到既为一域增光又为全局添彩。</p>
+
+<p>比如，在目标设定上，呼应<span class="highlight-blue">“推动经济实现质的有效提升和量的合理增长”</span>，绝大多数省份公布了“十五五”时期地区生产总值年均增长目标。在此基础上，部分省份还立足自身条件主动作为，创造性增设了城乡区域协调发展、产业转型等指标。又如，在任务部署上，“十五五”规划纲要将建设现代化产业体系摆在重大战略任务之首，<span class="highlight-green">31份地方规划纲要</span>在作出针对性部署的同时，设置差异化任务。既上下贯通、步调一致，又各展所长、各尽其责，正是中国经济驰而不息的底气所在。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">这其中，有对抢位与错位的科学把握；既你追我赶、抢位发展，又竞合有序、错位发展，各美其美、美美与共，构成中国经济向新向优的活力源泉。</span></p>
+
+<p>这其中，有对抢位与错位的科学把握。交叉对比各省份规划，既有抢抓机遇的“雄心壮志”，又有立足实际的“扬长避短”。各地认清优势与劣势，坚持有所为、有所不为。</p>
+
+<p>作为引领未来的战略性技术，人工智能已成为产业竞争的新焦点、新赛道。面对这片广阔蓝海，各地积极进取、竞相布局，又各有侧重、优势互补。东部地区依托先发优势，向“高”攀登：北京着力以人工智能驱动原始创新能力跃升，浙江剑指<span class="highlight-green">2030年规上人工智能核心产业营收达1.2万亿元</span>。中西部地区则发挥资源优势，向“深”拓展：贵州向“算”发力，加快建设<span class="highlight-blue">全国一体化算力网络国家（贵州）枢纽节点</span>；青海追“风”逐“日”，瞄准建设绿色算电协同发展示范区……既你追我赶、抢位发展，又竞合有序、错位发展，各美其美、美美与共，构成中国经济向新向优的活力源泉。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">这其中，有对立新与破旧的统筹协调；既科学预判、敢闯敢试，又循序渐进、稳扎稳打，破立并举、先立后破，成为中国经济行稳致远的韧性支撑。</span></p>
+
+<p>这其中，有对立新与破旧的统筹协调。纵览各地不同时期规划，从“十四五”到“十五五”，问题导向一以贯之，发展思路一脉相承。</p>
+
+<p><span class="highlight-purple">立与破，折射格局与思路。</span>培育壮大新动能，从“打造‘中国数谷’”到“深入开展‘数据要素×’行动”，贵州在培育新型产业时不急于“破”，而是利用地域优势，先把大数据产业“立”起来，再以数字技术赋能实体经济，让传统产业转型之路更加顺畅。着力推动能源转型，山西“迎风”“借光”，大力发展清洁能源的同时，努力做好煤炭大文章，两条能源赛道实现互补互动、协调发展。既科学预判、敢闯敢试，又循序渐进、稳扎稳打，<span class="highlight-blue">破立并举、先立后破</span>，成为中国经济行稳致远的韧性支撑。</p>
+
+<p>往深看一层，三组辩证关系，体现的都是如何因地制宜做好经济工作。其中有推动高质量发展的规律性认识，也有中国经济栉风沐雨、茁壮成长的密码。“十五五”时期是基本实现社会主义现代化夯实基础、全面发力的关键时期。<span class="highlight-gold">坚持一切从实际出发，把科学规划和真抓实干结合起来，一茬接着一茬干，一步一步向上走，定能将协同发展的优势转化为高质量发展的胜势。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月2日 第8版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·抢位错位</span><p>既你追我赶、抢位发展，又竞合有序、错位发展，各美其美、美美与共，构成中国经济向新向优的活力源泉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：区域协调核心金句，适合“错位发展”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·五年规划</span><p>五年规划，中国之治的突出优势。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：极简判断句，适合“制度优势”开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句三·上下贯通</span><p>既上下贯通、步调一致，又各展所长、各尽其责，正是中国经济驰而不息的底气所在。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：全局与一域辩证句，适合“一盘棋”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·破立并举</span><p>既科学预判、敢闯敢试，又循序渐进、稳扎稳打，破立并举、先立后破，成为中国经济行稳致远的韧性支撑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：新旧转换金句，适合“传统产业转型”。</p></div><div class="material-card"><span class="tag-shenlun">金句五·一茬接着一茬干</span><p>坚持一切从实际出发，把科学规划和真抓实干结合起来，一茬接着一茬干，一步一步向上走，定能将协同发展的优势转化为高质量发展的胜势。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合“抓落实”结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·三重比较</span><p>用“横向比照—交叉对比—纵览时期”三重比较法搭骨架，比较分析法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·这其中排比</span><p>用“这其中，有……”三段同构起句，同构排比可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·向高向深</span><p>用东部“向高攀登”、中西部“向深拓展”对举写差异化，方位对举可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·各美其美</span><p>用“各美其美、美美与共”提炼多元共生，成语化表达可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·立与破</span><p>用“立与破，折射格局与思路”作小切口议论，二字对举可用于“改革方法论”。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“抢位与错位”为题，模仿本文“全局与一域—抢位与错位—立新与破旧”写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用“五年规划，中国之治的突出优势”类判断句引题；②分“系统谋划/科学把握/统筹协调”三层，每层用“既……又……”；③以“协同优势转化为发展胜势”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“因地制宜”角度，用同一骨架写一句总论点，要求含“既……又……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月2日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
