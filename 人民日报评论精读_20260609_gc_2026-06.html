@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “换道超车”的门道（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“换道超车”的门道（评论员观察）</h1>
+    <div class="meta">换道超车 · 新质生产力 · 科技创新 · 差异化发展 | 2026年6月9日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">换道超车</span><span class="tag-item">新质生产力</span><span class="tag-item">科技创新</span><span class="tag-item">差异化发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以华为"韬定律"、中科院"香山"系统、国产人形机器人、DeepSeek开源、中国天眼等案例，论证换道超车立足增量思维、错位思维、共赢思维，适合"科技创新""新质生产力"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"换道"这一共性特征破题，从增量、差异化、大格局三层拆解中国创新底层逻辑。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">换道超车立足实际顺应规律，以增量/错位/共赢思维打开发展新空间<br><span style="color:#0d47a1;">▸ 写法：由多领域创新突破破题，点明三层思维</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">立足增量思维谋跨越，跳出存量做大蛋糕<br><span style="color:#0d47a1;">▸ 写法：以Mini LED换道论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">依托错位思维筑优势，扬长避短实现后发赶超<br><span style="color:#0d47a1;">▸ 写法：以国产人形机器人论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">秉持共赢思维向长远，开放合作共享成果<br><span style="color:#0d47a1;">▸ 写法：以DeepSeek/天眼/杂交水稻论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"增量/错位/共赢"三层思维框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"换道超车"并非避重就轻的妥协，而是立足实际、顺应趋势和规律的主动抉择；它立足增量思维谋跨越、依托错位思维筑优势、秉持共赢思维向长远，兼顾战略稳定性与策略灵活性，深刻揭示中国创新、中国发展的底层逻辑。</p><p>从实践看，通过换道实现追赶、突破，在许多领域都在发生，已经成为推动高质量发展的一条重要经验。</p>
+
+<p>技术创新也好，深化改革也好，困在既有格局里往往寸步难行。敢于转换思路、另辟蹊径、做优增量，才能不断打开事业发展新局面，掌握发展主动权。</p>
+
+<p>观察近期我国在一些领域的创新突破，"换道超车"是共同特征。</p>
+
+<p>华为发表"韬（τ）定律"，提出以"时间缩微"替代传统"几何缩微"，在半导体领域走出与摩尔定律不一样的新路径。</p>
+
+<p>中国科学院基于第五代精简指令集RISC—V，打造"香山"开源计算系统和"如意"原生操作系统，避开传统指令集设置的技术和生态壁垒，打开发展新空间。</p>
+
+<p>从实践看，通过换道实现追赶、突破，在许多领域都在发生，已经成为推动高质量发展的一条重要经验。</p>
+
+<p>何为换道？不是避重就轻的妥协，不是绕道而走的退缩，更不是盲目地另起炉灶，而是立足实际、顺应趋势和规律的主动抉择，兼顾了战略的稳定性与策略的灵活性。读懂换道背后的思维与智慧，就能更好理解中国创新、中国发展的底层逻辑。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">"换"出新天地，立足增量思维谋跨越。换道是跳出存量、着眼增量、做大蛋糕，既能减小前进阻力，更易拓展新空间、实现更大跨越。</span></p>
+
+<p>"换"出新天地，立足增量思维谋跨越。</p>
+
+<p>弯道超车不易，直道超车更难，不仅要面对先发者设置的障碍和壁垒，而且意味着身处红海，竞争十分激烈。换道则是跳出存量、着眼增量、做大蛋糕。这样不仅可以减小前进中的阻力，而且更易拓展出新空间、实现更大跨越。</p>
+
+<p>曾经，海外品牌电视凭借OLED（有机发光二极管）显示技术和专利优势建立护城河。中国品牌变换路径，发力Mini LED（次毫米发光二极管）新方向、实现突破，在有效提升画面品质和观看体验的同时，还让价格更加亲民，吸引更多普通消费者。</p>
+
+<p>换道，某种程度上就是往宽处走、向阔处行。技术创新也好，深化改革也好，困在既有格局里往往寸步难行。敢于转换思路、另辟蹊径、做优增量，才能不断打开事业发展新局面，掌握发展主动权。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"换"出差异化，依托错位思维筑优势。换道必须依据自身禀赋、扬长避短作出选择，实现错位发展。</span></p>
+
+<p>"换"出差异化，依托错位思维筑优势。</p>
+
+<p>换道绝非随性而为、草率改轨，必须依据自身禀赋、扬长避短作出选择，实现错位发展。</p>
+
+<p>国产人形机器人，没有走传统液压驱动老路，也没有因循"先造极致性能、再寻落地场景"的传统模式，而是依托国内成熟的电动化产业链条、充分发挥国内应用场景丰富的优势，采取"高性能电机直驱+高精度力控"技术路线，在应用中快速迭代，实现后发赶超。</p>
+
+<p>换道的过程，说到底是找寻适合自己发展路径的过程。从因地制宜培育<span class="highlight-blue">新质生产力</span>，到立足本地特点发展乡村特色产业，再到传统产业依托自身根基推进转型升级，内在逻辑一以贯之。找到最佳路线，充分发挥比较优势，踏踏实实走下去，就能走得稳走得远。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">"换"出大格局，秉持共赢思维向长远。换道不是为了挡道、抢道、霸道，而是为了共进、共赢。</span></p>
+
+<p>"换"出大格局，秉持共赢思维向长远。</p>
+
+<p>中国人讲殊途同归。换道，不是为了挡道、抢道、霸道，而是为了共进、共赢。</p>
+
+<p>DeepSeek（深度求索）突破大模型发展模式，却始终坚持开源、普惠；"中国天眼"（FAST）持续向全球科学家开放观测申请，成为国际天文学研究的重要基础设施；中国历尽艰辛攻克杂交水稻技术，并将其推向全球，为各国人民解决"吃饭问题"作出贡献。</p>
+
+<p><span class="highlight-purple">换道的终极要义，从不局限于一己之进、一时之胜。真正的创新超越，是突破壁垒后敞开怀抱，是掌握优势后共享成果。独行快但众行远，坚持开放合作、互利共赢，中国实践尽显格局、志在长远。</span></p>
+
+<p>从更大视角看，中国式现代化的伟大实践，何尝不是一次人类现代化进程中的全新探索。习近平总书记深刻指出：<span class="highlight-gold">"中国式现代化，打破了‘现代化＝西方化’的迷思，展现了现代化的另一幅图景，拓展了发展中国家走向现代化的路径选择，为人类对更好社会制度的探索提供了中国方案。"</span>国际人士感慨，中国式现代化是"人类社会发展的一项创举"。</p>
+
+<p><span class="highlight-purple">大道同行，天下一家。一个不断取得新突破、闯出新赛道的中国，必将以自己的"稳"与"进"，为世界提供更多"利"与"机"。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月9日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·换道本质</span><p>换道不是避重就轻的妥协，不是绕道而走的退缩，而是立足实际、顺应趋势和规律的主动抉择。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"改革创新"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·增量思维</span><p>"换"出新天地，立足增量思维谋跨越。跳出存量、着眼增量、做大蛋糕。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"新质生产力"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句三·错位发展</span><p>换道绝非随性而为，必须依据自身禀赋、扬长避短，实现错位发展。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：方法论金句，适合"因地制宜"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·独行众行</span><p>独行快但众行远，坚持开放合作、互利共赢，中国实践尽显格局、志在长远。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"合作共赢"升华。</p></div><div class="material-card"><span class="tag-shenlun">金句五·现代化迷思</span><p>中国式现代化，打破了"现代化＝西方化"的迷思，拓展了发展中国家走向现代化的路径选择。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"中国式现代化"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·特征破题</span><p>用"换道超车是共同特征"破题，共性强提法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层思维</span><p>用"增量/错位/共赢"三层拆解换道，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·Mini LED</span><p>用中国品牌换道Mini LED论证扬长避短，案例法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·人形机器人</span><p>用国产人形机器人依托产业链优势论证错位，机制法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·独行众行</span><p>用"独行快但众行远"收束共赢思维，对仗收束法可用于"开放合作"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「换道赛道」看后发赶超"为题，模仿本文"特征破题→增量思维→错位思维→共赢思维收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①点出某领域换道特征；②分"立足增量/错位优势"两层；③以"众行远"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"新质生产力"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月9日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
