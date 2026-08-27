@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从铁的纪律看底气（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从铁的纪律看底气（评论员观察）</h1>
+    <div class="meta">全面从严治党 · 制度治党 · 依规治党 · 权力监督 · 习近平党建思想 | 2026年6月25日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">全面从严治党</span><span class="tag-item">制度治党</span><span class="tag-item">依规治党</span><span class="tag-item">权力监督</span><span class="tag-item">习近平党建思想</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以三亚红塘湾生态修复、吉林朝阳村减负增收（960万元）、成都治堵（超20%）、苏州吴江招商、贵阳青年占比超60%、95.5%/92.2%满意度等案例，论证全面从严治党以制度治党筑牢底气、强化制度治权赢得民心，适合"从严治党""营商环境""作风建设"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"红塘湾伤疤"生态修复故事带入，把制度治党的抽象命题讲成可感变化。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">发挥好法规制度根本性作用，让权力始终在阳光下运行，以全面从严治党筑牢底气、强化制度治权，为干事创业营造好环境、赢得民心<br><span style="color:#0d47a1;">▸ 写法：由红塘湾新生破题</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">全面从严治党是推进中国式现代化的坚实底气，以习近平党建思想为根本遵循<br><span style="color:#0d47a1;">▸ 写法：以赶考之心/第一部党章论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">强化制度治权、依规用权，让铁规矩长出铁牙齿，把权力关进制度笼子<br><span style="color:#0d47a1;">▸ 写法：以风腐同查同治论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">全面从严治党关系民心向背，以优良党风引领社风民风，凝聚高质量发展力量<br><span style="color:#0d47a1;">▸ 写法：以企业/人才/满意度论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"制度治党—治权—民心"三层框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】发挥好法规制度根本性作用，让权力始终在阳光下运行，以全面从严治党筑牢底气、强化制度治权、依规用权，方能为干事创业营造良好环境，让敢干愿干的好风气更加充盈，赢得人心、赢得主动、赢得未来。</p><p>发挥好法规制度根本性作用，让权力始终在阳光下运行，方能为干事创业营造良好环境，让敢干愿干的好风气更加充盈</p>
+
+<p>坚持制度治党、依规治党，厘清权力边界、规范用权全流程，该谁管、管什么、担何责一目了然</p>
+
+<p>海南三亚红塘湾，蓝天、碧海、白沙滩，景美如画。就在一年多前，这片海还有一道巨大"伤疤"：开发项目未批先建，留下<span class="highlight-green">19个</span>比篮球场还大的钢圆筒。</p>
+
+<p>从违规填海造地，到心存侥幸规避整改，再到彻底拆除、修复生态、将履行生态环保政治责任情况纳入"一把手"监督清单……红塘湾的新生，见证<span class="highlight-blue">全面从严治党</span>不断取得新成效。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">全面从严治党是我们党推进中国式现代化必然成功的坚实底气；常怀"赶考"之心，以习近平党建思想为根本遵循，把党的领导的政治优势转化为治理效能。</span></p>
+
+<p>"我们党历史这么长、规模这么大、执政这么久，如何跳出治乱兴衰的历史周期率？"<span class="highlight-gold">常怀"赶考"之心，全面从严治党，这是我们党推进中国式现代化必然成功的坚实底气。</span></p>
+
+<p>抚今追昔，<span class="highlight-blue">"党要管党、从严治党"</span>贯穿我们党的奋斗史。党的二大通过的第一部党章，规定了党员应遵守的政治纪律和组织纪律，提出了<span class="highlight-green">6种</span>开除出党的情形。<span class="highlight-green">1926年</span>，《中共中央扩大会议通告——坚决清洗贪污腐化分子》发布，彰显反腐败的态度和决心。党的十八大以来，以习近平同志为核心的党中央以永远在路上的坚韧和执着纵深推进全面从严治党，以雷霆万钧之势开展反腐败斗争，推动党风政风持续向好。</p>
+
+<p><span class="highlight-blue">习近平党建思想</span>为加强新时代党的建设提供了根本遵循，对强党强国具有重大现实意义和长远指导意义。持续推动学习贯彻习近平党建思想走深走实，以更高标准、更实举措抓好全面从严治党各项工作，是当前和今后一个时期的一项重要政治任务。</p>
+
+<p>"党和人民事业发展到什么阶段，全面从严治党就要跟进到什么阶段。""十五五"时期，我国经济社会发展任务更加艰巨、形势更加复杂严峻。深入学习领会习近平党建思想的科学内涵、理论品格、实践基础和理论渊源，不断深化新时代全面从严治党的伟大实践，才能更好把党的领导的政治优势转化为治理效能。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">强化制度治权、依规用权，让铁规矩长出铁牙齿；织密制度笼子，既防"牛栏关猫"之弊，也解"纸笼禁虎"之困，把权力关进制度笼子。</span></p>
+
+<p>权力是人民赋予的，如何确保始终用来为人民谋幸福？</p>
+
+<p>党内法规体系持续完善，划定红线、明确界限；强化监督问责，深入推进<span class="highlight-blue">风腐同查同治</span>等举措；抓常、抓细、抓长，让铁规矩长出铁牙齿……党中央持续织密制度笼子，既防"牛栏关猫"之弊，也解"纸笼禁虎"之困，推动党员干部把他律要求转化为内在追求。</p>
+
+<p>发挥好法规制度根本性作用，让权力始终在阳光下运行，方能为干事创业营造良好环境，让敢干愿干的好风气更加充盈。</p>
+
+<p>让权力更好为人民服务，如何强化制度治权、依规用权？</p>
+
+<p>看整治形式主义为基层减负。吉林东辽县朝阳村，过去村干部大把时间花在迎检填表上，如今可以沉下心来干事创业，<span class="highlight-green">2025年</span>村集体经营性收入达<span class="highlight-green">960万元</span>。</p>
+
+<p>看治理交通堵点。四川成都，住建、城管、公安等多部门建立协同机制，各司其职、同向发力，重点区域拥堵指数下降幅度超过<span class="highlight-green">20%</span>。</p>
+
+<p>坚持制度治党、依规治党，厘清权力边界、规范用权全流程，该谁管、管什么、担何责一目了然，不仅减少推诿扯皮，也督促各部门履职尽责。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">全面从严治党关系民心向背；以优良党风引领社风民风，企业因此而来、人才因此而聚，凝聚起高质量发展的磅礴力量。</span></p>
+
+<p>全面从严治党关系民心向背。一个地方党风政风清新，赢得的是民心和信心。</p>
+
+<p>企业因此而来。某企业有<span class="highlight-green">7个</span>选址方案，江苏苏州吴江区从"备选"成为"首选"，政府的高效与诚意是打动企业负责人的关键因素。</p>
+
+<p>人才因此而聚。丰富的支持举措、贴心的公共服务、舒适宜居的城市氛围释放吸引力，<span class="highlight-green">2025年</span>贵州贵阳新增人口中，青年占比超<span class="highlight-green">60%</span>。</p>
+
+<p><span class="highlight-green">2025年</span>国家统计局调查显示，<span class="highlight-green">95.5%</span>的受访群众对中央八项规定精神贯彻成效表示肯定，<span class="highlight-green">92.2%</span>的受访群众对党风政风转变带动社会风气好转的效果表示满意。</p>
+
+<p>补贴发放精准高效、生态环境持续向好、行政执法更加规范……全面从严治党护航好政策落到实处，以看得见、摸得着的成效取信于民，凝聚起高质量发展的磅礴力量。</p>
+
+<p><span class="highlight-purple">管党治党越有效，经济社会发展的保障就越有力。</span>学习贯彻习近平党建思想，持之以恒正风肃纪反腐，以优良党风引领社风民风，我们定能不惧山高路远，赢得人心、赢得主动、赢得未来。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月25日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·法规制度</span><p>发挥好法规制度根本性作用，让权力始终在阳光下运行，方能为干事创业营造良好环境。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"制度治党"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·历史周期率</span><p>"我们党历史这么长、规模这么大、执政这么久，如何跳出治乱兴衰的历史周期率？"</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：经典之问金句，适合"从严治党"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·铁规矩牙齿</span><p>让铁规矩长出铁牙齿……既防"牛栏关猫"之弊，也解"纸笼禁虎"之困。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"制度笼子"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·民心向背</span><p>全面从严治党关系民心向背。一个地方党风政风清新，赢得的是民心和信心。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"营商环境"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·赢得未来</span><p>管党治党越有效，经济社会发展的保障就越有力……我们定能不惧山高路远，赢得人心、赢得主动、赢得未来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"作风建设"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·伤疤故事</span><p>用"红塘湾伤疤"生态修复故事带入，故事带入法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·历史之问</span><p>用"历史周期率之问"引论，经典之问法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·牛栏纸笼</span><p>用"牛栏关猫/纸笼禁虎"比喻制度漏洞，比喻论证法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移四·看字排比</span><p>用"看整治…/看治理…"排比举证，排比举证法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·企业人才</span><p>用"企业因此而来/人才因此而聚"收束民心逻辑，因果收束法可用于"作风"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「朝阳村减负」看作风建设"为题，模仿本文"制度治党—治权—民心"三层写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"伤疤/变化"类故事引题；②分"根本遵循/制度笼子/民心向背"三层；③以"赢得未来"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"营商环境"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月25日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
