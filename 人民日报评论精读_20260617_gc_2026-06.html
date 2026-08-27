@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从红色地标感悟精神力量（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从红色地标感悟精神力量（评论员观察）</h1>
+    <div class="meta">红色精神 · 党的建设 · 青年工作 · 长征精神 | 2026年6月17日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">红色精神</span><span class="tag-item">党的建设</span><span class="tag-item">青年工作</span><span class="tag-item">长征精神</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以贵州红色地标、长征每公里4名牺牲、一大代表平均28岁、长征队伍54%在24岁以下、新发展党员35岁下超80%等数据，论证从红色地标感悟信仰之光、精神谱系、赢得青年的青春密码，适合"党的建设""青年工作"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"今年建党105周年、长征胜利90周年"特殊年份起笔，引出系列文章。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">从红色地标感悟精神力量：信仰之光+精神谱系+赢得青年，永葆青春<br><span style="color:#0d47a1;">▸ 写法：由特殊年份系列文章起笔，点明三层力量</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">心中有信仰脚下有力量，红色地标见证伟大转折<br><span style="color:#0d47a1;">▸ 写法：以贵州地标/长征牺牲数据论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">精神谱系以伟大建党精神为源头，精神力量穿越时空<br><span style="color:#0d47a1;">▸ 写法：以遵义会议/中国精神论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">深蕴青年因子一直赢得青年，是党的青春密码<br><span style="color:#0d47a1;">▸ 写法：以一大代表/长征青年/新时代青年论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"信仰/精神/青年"三层力量框架可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】从红色地标感悟精神力量——心中有信仰、脚下有力量，党的精神谱系以伟大建党精神为源头，深蕴"青年因子"一直赢得青年；连接过去、现在和将来，信仰之光与精神力量是百年大党永葆青春的密码。</p><p>今年是中国共产党成立105周年、红军长征胜利90周年，也是"十五五"开局起步之年。作为马克思主义执政党，我们党跨越百余年壮阔征程，风华正茂、朝气蓬勃。本版今起推出系列文章，与读者共同感悟接续奋斗的力量之源。</p>
+
+<p class="note">——编  者</p>
+
+<p>长征，宛如一条铭刻在地球上的"红飘带"，标注着举世无双的壮举。在这场"无与伦比的史诗般远征"中，贵州是红军活动时间最长、范围最广的省份，见证了伟大转折。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">心中有信仰，脚下有力量。连接过去、现在和将来，与时间一同不朽的，是一个政党"虽千万人吾往矣"的至坚信念、至真信仰。</span></p>
+
+<p>特殊年份再访贵州，一座座红色地标熠熠生辉，一个个红色故事写照精神。抚今追昔，信仰之光照亮奋进之路，蕴藏着百年大党何以永葆青春的密码。</p>
+
+<p>回溯既往，历史感厚重。从娄山关到遵义会议会址，从钱壮飞烈士陵园到四渡赤水纪念馆……行走黔贵大地，寻访革命印记，深感"长征这条红飘带，是无数红军的鲜血染成的"。在这里，红色是最鲜明的底色。</p>
+
+<p>观照当下，时代感强烈。如今的贵州，山清水秀、交通便捷，<span class="highlight-green">全球高桥榜前100名中近半数</span>坐落于此，"算电协同"支撑数字经济增速连续多年位居全国前列。在这里，绿色蕴藏着"进一步向前"的动能。</p>
+
+<p>瞩望未来，使命感紧迫。弘扬<span class="highlight-blue">遵义会议精神</span>，推动革命老区旧貌换新颜，既要只争朝夕，又要久久为功，所遇干部群众斗志昂扬、精气神饱满。在这里，信心是金色的，孕育着收获和希望。</p>
+
+<p>心中有信仰，脚下有力量。连接过去、现在和将来，与时间一同不朽的，是一个政党"虽千万人吾往矣"的至坚信念、至真信仰。</p>
+
+<p>"革命理想高于天"。湘江血战，陈树湘率"绝命后卫师"负伤被俘，毅然断肠明志。娄山关战斗，钟赤兵腿部中弹，以顽强意志扛过<span class="highlight-green">3次截肢</span>，靠一条腿走完长征路。据测算，中央红军平均每走<span class="highlight-green">1公里就有4名</span>红军战士倒下，每<span class="highlight-green">14人只有1人</span>到达陕北。何以无惧万水千山、万死千伤？正是牢不可破的革命信仰、"跟党走"的坚定信念，支撑红军长征取得伟大胜利。</p>
+
+<p>穿越历史的激流，进行具有许多新的历史特点的伟大斗争，中国共产党经千难而百折不挠，历万险而矢志不渝，无论是处于顺境还是逆境，从未动摇对马克思主义的信仰，也因此无坚不摧、无往不胜，始终充满力量。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">胜负之征，精神先见。我们党构建起以伟大建党精神为源头的绚烂精神谱系，精神的力量穿越时空，化作阔步伟大征程的不竭动力。</span></p>
+
+<p>胜负之征，精神先见。上海兴业路、嘉兴南湖、井冈山、遵义、延安、大庆油田、红旗渠……一个个光辉坐标，凝结着无数人的奋斗。我们党构建起以<span class="highlight-blue">伟大建党精神</span>为源头的绚烂精神谱系，堪称精神最富有的政党，不断拓宽引领民族复兴的精神航道。</p>
+
+<p>精神的力量穿越时空，化作阔步伟大征程的不竭动力。在伟大精神的感召激励下，我们党跨过一道又一道沟坎，战胜一个又一个挑战。<span class="highlight-gold">"实现中国梦必须弘扬<span class="highlight-blue">中国精神</span>"</span>，今天，以爱国主义为核心的民族精神和以改革创新为核心的时代精神交相辉映，在广袤神州大地汇聚强大力量。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">深蕴"青年因子"，一直赢得青年，是中国共产党的青春密码。自创始至今，我们党一直洋溢着青春气息，散发着青年气质。</span></p>
+
+<p>深蕴"青年因子"，一直赢得青年，是中国共产党的青春密码。参加党的一大的<span class="highlight-green">13名代表</span>，平均<span class="highlight-green">年龄28岁</span>，成就了开天辟地的大事变。长征队伍中，约<span class="highlight-green">54%的人</span>在<span class="highlight-green">24岁以下</span>，他们历经锻造锤炼，最终"一个可以当十个，十个可以当百个"。党的十八大以来，每年新发展党员中<span class="highlight-green">35岁及以下</span>党员占比均超过<span class="highlight-green">80%</span>。自创始至今，我们党一直洋溢着青春气息，散发着青年气质。</p>
+
+<p>夏日的中国共产党历史展览馆，众多青年学生前来参观。一名中学生在长征展区感慨："走在新的长征路上也会遇到困难，但想想为革命牺牲的先辈们，就没有过不去的坎。"一以贯之吸引青年、影响青年，让青春与信仰对话，引领广大青年在新征程上贡献青春力量，我们党就能永葆生机活力。</p>
+
+<p><span class="highlight-purple">知所从来，明其将往。从"一叶红船"到"巍巍巨轮"，历史已经给出答案并深刻昭示——</span><span class="highlight-gold">"对马克思主义的信仰，对社会主义和共产主义的信念，是共产党人的政治灵魂，是共产党人经受住任何考验的精神支柱。"</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年6月17日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·信仰力量</span><p>心中有信仰，脚下有力量。连接过去、现在和将来，与时间一同不朽的，是一个政党"虽千万人吾往矣"的至坚信念。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：标题金句，适合"理想信念"开篇。</p></div><div class="material-card"><span class="tag-shenlun">金句二·革命理想</span><p>"革命理想高于天"。正是牢不可破的革命信仰、"跟党走"的坚定信念，支撑红军长征取得伟大胜利。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：金句，适合"长征精神"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·精神先见</span><p>胜负之征，精神先见。我们党构建起以伟大建党精神为源头的绚烂精神谱系。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"精神谱系"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·青春密码</span><p>深蕴"青年因子"，一直赢得青年，是中国共产党的青春密码。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：概念金句，适合"青年工作"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·政治灵魂</span><p>对马克思主义的信仰，对社会主义和共产主义的信念，是共产党人的政治灵魂，是经受住任何考验的精神支柱。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记金句，适合"党性修养"升华。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·特殊年份</span><p>用"建党105周年、长征胜利90周年"特殊年份起笔，节点起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层力量</span><p>用"信仰/精神/青年"三层拆解红色地标，三层框架可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·数据震撼</span><p>用"每公里4名牺牲、14人仅1人到达"论证信仰力量，数据震撼法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·精神谱系</span><p>用"伟大建党精神为源头"论证精神航道，谱系法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·青春密码</span><p>用"一大代表平均28岁/青年占比超80%"收束青年工作，数据收束法可用于"年轻干部"话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从「党史馆里的一幕」看党性修养"为题，模仿本文"节点起笔→信仰之光→精神谱系→青春密码收束"的写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用一处党史场景引题；②分"筑牢信仰/赓续精神"两层；③以"政治灵魂"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"年轻干部"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年6月17日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
