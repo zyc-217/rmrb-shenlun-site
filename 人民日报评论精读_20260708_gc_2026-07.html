@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 深深植根人民，始终拥有坚实根基（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>深深植根人民，始终拥有坚实根基（评论员观察）</h1>
+    <div class="meta">人民立场 · 群众路线 · 为民造福 · 党的优秀特质 · 正确政绩观 | 2026年7月8日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">人民立场</span><span class="tag-item">群众路线</span><span class="tag-item">为民造福</span><span class="tag-item">党的优秀特质</span><span class="tag-item">正确政绩观</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以江苏丰县“小马扎”会议、成都“满三入园”、延吉旅游纠纷快处点、宁夏同心县从一口老井到一泓碧水、刘希娅建议写入规划纲要等案例，论证党深深植根人民，适合“人民立场”“群众路线”“民生保障”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用三地民生小事并置起笔，“小事不小，民心为大”一句转折升华，由细节切入人民立场。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">一个为人民而生、因人民而兴的政党，一个把全心全意为人民服务作为根本宗旨的政党，永远青春，永远充满力量<br><span style="color:#0d47a1;">▸ 写法：由三地民生小事起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">历史波澜壮阔，始终不变的是共产党人“人民至上”的赤诚与坚守<br><span style="color:#0d47a1;">▸ 写法：以同心县老井到碧水论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">党始终代表最广大人民根本利益，没有任何自己特殊的利益<br><span style="color:#0d47a1;">▸ 写法：以“哪里有……哪里就有……”排比论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">为了人民，也依靠人民，善于汇聚起蕴藏在人民中的无穷智慧和力量<br><span style="color:#0d47a1;">▸ 写法：以刘希娅建议入规划论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“坚守—宗旨—依靠”三层人民逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】深深植根人民，是党始终拥有坚实根基的密码：历史变迁中不变的是“人民至上”的赤诚坚守，党始终代表最广大人民根本利益、没有任何自己特殊的利益，且既为了人民也依靠人民、善于汇聚蕴藏在人民中的无穷智慧和力量，因而拥有任何风浪都动摇不了的坚实根基。</p><p>一个为人民而生、因人民而兴的政党，一个把全心全意为人民服务作为根本宗旨的政党，永远青春，永远充满力量</p>
+
+<p>江苏丰县推行“小马扎”会议，现场协商解决群众碰到的难题；四川成都实施“满三入园”，破解幼儿“满三岁”与“入园季”错位矛盾，切实减轻家庭育儿负担；吉林延吉设立“旅游纠纷快处点”，消费投诉“半小时响应、当日办结”……</p>
+
+<p><span class="highlight-gold">小事不小，民心为大</span>，各地扎实开展树立和践行正确政绩观学习教育，为群众解决急难愁盼问题，砥砺为人民谋幸福的初心。</p>
+
+<p>在庆祝中国共产党成立<span class="highlight-green">105周年</span>大会上，习近平总书记精辟概括中国共产党的六大优秀特质，“深深植根人民，始终拥有坚实根基”是其中重要方面。我们党牢记<span class="highlight-blue">江山就是人民、人民就是江山</span>，坚持立党为公、执政为民，自觉践行全心全意为人民服务的根本宗旨，坚定地同人民站在一起、想在一起、干在一起，拥有任何风浪都动摇不了的坚实根基。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">历史波澜壮阔，时代潮流浩荡，始终不变的是共产党人“人民至上”的赤诚与坚守；始终把群众冷暖放在心头，始终与人民风雨同舟、生死与共。</span></p>
+
+<p>历史波澜壮阔，时代潮流浩荡，始终不变的是共产党人“人民至上”的赤诚与坚守。</p>
+
+<p>从一口老井，到一泓碧水，是有力见证。</p>
+
+<p><span class="highlight-green">1936年</span>，红军来到今宁夏中部的同心县，得知当地群众为吃水发愁，就淘了城中一口“官井”并新修井口。水进口中、甜在心里，群众更加拥护党和红军的革命主张。</p>
+
+<p><span class="highlight-green">2016年</span>，宁夏中南部城乡饮水安全工程通水，<span class="highlight-green">2023年</span>，清水河流域城乡供水工程通水，一根根水管穿山越岭、进村入户，告别苦窖水的老乡感慨，“比蜜还甜”。</p>
+
+<p>从水的甜能读懂中国共产党为什么能始终赢得人民衷心拥护。<span class="highlight-purple">穿越历史，答案格外清晰：始终把群众冷暖放在心头，始终与人民风雨同舟、生死与共。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">中国共产党始终代表最广大人民根本利益，没有任何自己特殊的利益；这不只是写在纸上的文字，更是落地生根的行动、刻进民心的答案。</span></p>
+
+<p>中国共产党为什么能始终坚守人民立场？为什么能深深植根人民？</p>
+
+<p>习近平总书记指出：<span class="highlight-gold">“中国共产党始终代表最广大人民根本利益，与人民休戚与共、生死相依，没有任何自己特殊的利益，从来不代表任何利益集团、任何权势团体、任何特权阶层的利益。”</span>这不只是写在纸上的文字，更是落地生根的行动、刻进民心的答案。</p>
+
+<p>脱贫困、战洪水、抗地震、灭山火……哪里有危险、有挑战，哪里就有党旗高高飘扬，无数中国共产党员用逆行与冲锋践行不负人民的铮铮誓言。</p>
+
+<p>落实中央八项规定精神，纠治“四风”，肃贪反腐……哪里让群众不满意、不认同，哪里就有<span class="highlight-blue">刀刃向内</span>，我们党以自我革命精神践行“让群众有更多获得感”的郑重承诺。</p>
+
+<p>走基层、调纠纷、办网诉……哪里有意见、有心声，哪里就有奔波的脚步，我们党以<span class="highlight-blue">新时代群众路线</span>恪守“把屁股端端地坐在老百姓的这一面”的坚定立场。</p>
+
+<p><span class="highlight-purple">利民之事，丝发必兴；厉民之事，毫末必去。</span>一个为人民而生、因人民而兴的政党，一个把全心全意为人民服务作为根本宗旨的政党，永远青春，永远充满力量。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">为了人民，也依靠人民，中国共产党善于汇聚起蕴藏在人民中的无穷智慧和力量；人民群众的“金点子”不断转化为发展的“金果子”。</span></p>
+
+<p>为了人民，也依靠人民，中国共产党善于汇聚起蕴藏在人民中的无穷智慧和力量。</p>
+
+<p>今年<span class="highlight-green">3月</span>，一封来自国家发展改革委办公厅的感谢信送达重庆谢家湾学校党委书记刘希娅手中。她提出的“有序推进小班化教学”建议，写入“十五五”规划纲要。</p>
+
+<p>人民群众的“金点子”，汇聚在“小院议事厅”，畅通于<span class="highlight-blue">基层立法联系点</span>，体现在代表建议和委员提案中，不断转化为发展的“金果子”。</p>
+
+<p>从惠民政策出台落地，到“卡脖子”技术实现突破；从重大工程相继投用，到乡村全面振兴结出硕果……新时代的动人篇章，背后是党的坚强领导，是无数新时代劳动者的不懈奋斗。中国共产党始终与人民心心相印、与人民同甘共苦、与人民团结奋斗，人民群众一心跟党走，打拼出国家昌盛、奋斗出幸福生活。</p>
+
+<p><span class="highlight-gold">“家事国事天下事，让人民过上幸福生活是头等大事”“千头万绪的事，说到底是千家万户的事”“中国式现代化，民生为大”……</span>习近平总书记的深情话语，诉说着一个百年大党既宏伟又朴素的奋斗目标。</p>
+
+<p>始终把人民放在心中最高位置，始终同人民同呼吸、共命运、心连心，朝着目标坚定前行，百年大党根深叶茂、基业长青，中华民族步履铿锵、走向复兴。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月8日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·永远青春</span><p>一个为人民而生、因人民而兴的政党，一个把全心全意为人民服务作为根本宗旨的政党，永远青春，永远充满力量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：人民立场核心金句，适合“为民造福”收束。</p></div><div class="material-card"><span class="tag-shenlun">金句二·小事不小</span><p>小事不小，民心为大。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：八字判断句，适合“民生小事”破题。</p></div><div class="material-card"><span class="tag-shenlun">金句三·利民厉民</span><p>利民之事，丝发必兴；厉民之事，毫末必去。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古语式对仗金句，适合“民生保障”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·风雨同舟</span><p>穿越历史，答案格外清晰：始终把群众冷暖放在心头，始终与人民风雨同舟、生死与共。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：历史升华句，适合“群众路线”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·民生为大</span><p>“家事国事天下事，让人民过上幸福生活是头等大事”“千头万绪的事，说到底是千家万户的事”“中国式现代化，民生为大”……</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记语排比，适合“民生”话题引用。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·三地小事</span><p>用三地民生小事并置起笔，再以“小事不小，民心为大”转折升华，可迁移至“民生”类开篇。</p></div><div class="migration-card"><span class="tag-mig">迁移二·老井到碧水</span><p>用“一口老井—一泓碧水”跨越90年的物象对比，物象贯通法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·哪里排比</span><p>用“哪里有……哪里就有……”三段排比写宗旨，句式排比可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·金点子金果子</span><p>用“金点子—金果子”转化写全过程人民民主，谐趣对举可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·根深叶茂</span><p>用“根深叶茂、基业长青”与“步履铿锵、走向复兴”并举收束，双四字收束可用于“党与人民”结尾。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“江山就是人民，人民就是江山”为题，模仿本文“坚守—宗旨—依靠”写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用三件民生小事并置引题，再以“小事不小，民心为大”转折；②分“人民至上的坚守/没有特殊利益的宗旨/依靠人民的智慧”三层；③以“永远青春，永远充满力量”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“全过程人民民主”角度，用同一骨架写一句总论点，要求含“既……也……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月8日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
