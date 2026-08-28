@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 攻克"无人区"，更要有定力（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>攻克"无人区"，更要有定力（人民时评）</h1>
+    <div class="meta">科技自立 · 基础研究 · 长周期耐心 · 原始创新 · 新型举国体制 | 2026年7月24日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">科技自立</span><span class="tag-item">基础研究</span><span class="tag-item">长周期耐心</span><span class="tag-item">原始创新</span><span class="tag-item">新型举国体制</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以运载火箭回收、8.6代AMOLED、自然指数2026榜首、张涛团队"单原子催化"20年、长周期评价机制、耐心资本等案例，论证攻克"无人区"要有定力，适合"基础研究""原始创新""科技自立自强"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"从跟跑并跑转向领跑，无人区横亘在前"起笔，由产业与科研两端突破引出长周期定力方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">攻克"无人区"更要有定力，需自主提出科学问题、涵养长周期历史耐心、依托系统化制度设计，回应长周期基础关键问题<br><span style="color:#0d47a1;">▸ 写法：由跟跑并跑到领跑起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">步入"无人区"，自主提出科学问题、定义前沿方向的能力至关重要<br><span style="color:#0d47a1;">▸ 写法：以产业端/科研端生态位论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">久久为功的耐心——以张涛团队"单原子催化"20年沉潜为例<br><span style="color:#0d47a1;">▸ 写法：以单原子催化/纳米到原子级论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">涵养长周期历史耐心，依托系统化制度设计<br><span style="color:#0d47a1;">▸ 写法：以长周期评价/非共识项目/耐心资本论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"自主提问—久久为功—制度托举"三层定力逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】攻克"无人区"更要有定力，需自主提出科学问题、定义前沿方向，以久久为功的耐心沉潜基础关键问题，并依托系统化制度设计涵养长周期历史耐心，走自主创新这条漫长而辽阔的跋涉之路，赢得原创性、引领性创新的巨大价值。</p><p>当下的产业突围和科技突破，多大程度上回应了那些长周期的基础、关键问题，往往决定了它们能走多远、能产生多大影响和价值</p>
+
+<p>当一些领域从跟跑、并跑转向领跑，更多的"无人区"，已横亘在科技创新的前进道路上。</p>
+
+<p>看产业端，我国首次成功实施运载火箭一子级可控回收，首条第<span class="highlight-green">8.6代</span>AMOLED生产线实现量产，在全球半导体领域首次提出指导产业发展的新原则……</p>
+<p>产业创新提出的科学问题越来越多，我们不仅要在已知领域守住阵地，更要在"无人区"里闯出新路。</p>
+
+<p>看科研端，不久前发布的自然指数<span class="highlight-green">2026</span>科研领导者榜单显示，中国继续位居全球科研产出榜首。</p>
+<p>在自然指数追踪的<span class="highlight-green">7个</span>学科领域中，中国在<span class="highlight-green">5个</span>学科领域位居全球第一。</p>
+<p>身处这样的科研生态位，已很难从别人的"博物馆"里找到答案，更多时候需要拿着自己的"罗盘"寻找突破口。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">步入创新的"无人区"，自主提出科学问题、定义前沿方向的能力变得至关重要；这不仅需要持之以恒的努力和拼搏，更考验着静待花开的耐心与智慧。</span></p>
+
+<p>步入创新的"无人区"，自主提出科学问题、定义前沿方向的能力变得至关重要。</p>
+<p><span class="highlight-purple">这不仅需要持之以恒的努力和拼搏，更考验着静待花开的耐心与智慧。</span></p>
+
+<p>前不久，中国科学院院士、中国科学院大连化学物理研究所研究员张涛团队凭借"单原子催化"成果，获得国家自然科学奖一等奖。</p>
+<p>长期以来，催化微观机理晦涩难解，被视作科研"黑匣子"。</p>
+<p>团队立足国家战略需求，付出近<span class="highlight-green">20年</span>的努力，将催化研究尺度从纳米级推进至原子级。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">原创性突破离不开久久为功；以"单原子催化"20年沉潜为例，开创全新研究范式，吸引全球跟进，孕育难以估量的巨大价值。</span></p>
+
+<p><span class="highlight-green">20年</span>沉潜，周期不可谓不长，但这样的久久为功，必不可少，极其值得。</p>
+<p>催化技术作为现代工业核心支撑，广泛应用于粮食生产、能源转化、精细化工等领域。</p>
+<p>张涛团队的这一成果，开创了全新研究范式，有望破解催化机理模糊的行业难题，吸引了<span class="highlight-green">百余个国家</span>、<span class="highlight-green">数千个</span>课题组跟进研究，今后可能会产生难以估量的巨大价值。</p>
+
+<p><span class="highlight-gold">放眼整个人类科技文明的发展史，重大原始创新、颠覆性创新、引领式创新始终是至关重要的变量</span>，能带来经济结构和产业形态的重大变革。</p>
+
+<p>由此而言，当下的产业突围和科技突破，多大程度上回应了那些长周期的基础、关键问题，往往决定了它们能走多远、能产生多大影响和价值。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">涵养着眼长周期的历史耐心，不能寄望于少数人的远见和决心，而要依托系统化制度设计，让科研人员心无旁骛研究真问题。</span></p>
+
+<p>也要看到，在科技"无人区"跋涉，难度高、不确定性大。</p>
+<p><span class="highlight-purple">涵养着眼长周期的历史耐心，不能寄望于少数人的远见和决心，而要依托系统化的制度设计。</span></p>
+<p>从经费分配、成果评价到人才培养、资源支持等，每一个环节都要留出接口和"气口"，让科研人员心无旁骛研究真问题、大问题、深问题。</p>
+
+<p>比如，完善长周期评价机制，以代表作和科学贡献的"里程碑"为标尺，包容"十年不鸣"，静待"一鸣惊人"；</p>
+<p>创新重大非共识项目遴选和资助机制，支持高风险、高价值基础研究；</p>
+<p>发展耐心资本，为周期长、投入大的科创领域注入活力……</p>
+<p>今日之中国，越来越多创新主体触及科学研究的边界，要进一步强化政策协同、资源统筹、评价联动，以更长远的视野、更灵活的机制，加大对"从<span class="highlight-blue">0到1</span>"科研的支持，为经济社会发展注入更多源头活水。</p>
+
+<p><span class="highlight-gold">自主创新没有捷径，注定是一场漫长的跋涉。</span></p>
+<p>放眼长远、保持定力，前方有无限风光，前行是辽阔天地。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月24日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·自主提问</span><p>步入创新的"无人区"，自主提出科学问题、定义前沿方向的能力变得至关重要。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：判断金句，适合"原始创新"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·静待花开</span><p>这不仅需要持之以恒的努力和拼搏，更考验着静待花开的耐心与智慧。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"长周期定力"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·至关重要变量</span><p>重大原始创新、颠覆性创新、引领式创新始终是至关重要的变量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：论断金句，适合"创新价值"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·久久为功</span><p>20年沉潜，周期不可谓不长，但这样的久久为功，必不可少，极其值得。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：叙事金句，适合"基础研究"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·漫长跋涉</span><p>自主创新没有捷径，注定是一场漫长的跋涉。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华收束句，适合"科技自立"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·两端突破</span><p>用"产业端AMOLED/科研端自然指数榜首"两端写领跑，两端举证法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·数据链</span><p>用"8.6代/7个中5个/近20年/百余国数千组"数据链证攻坚，数据递进法可用于"基础研究"。</p></div><div class="migration-card"><span class="tag-mig">迁移三·沉潜例</span><p>用"张涛团队单原子催化20年"写久久为功，长期主义例法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·制度托举</span><p>用"长周期评价/非共识项目/耐心资本"写制度设计，制度托举法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·从0到1</span><p>用"加大对从0到1科研支持"收束，源头活水比喻法可用于"创新策源"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在‘无人区’里保持定力"为题，模仿本文"自主提问—久久为功—制度托举"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"从跟跑到领跑"引题；②分"定义前沿方向/长期沉潜攻关/系统化制度设计"三层；③以"前方是辽阔天地"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"高校基础研究"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月24日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
