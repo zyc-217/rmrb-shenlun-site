@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 培厚乡村阅读氛围（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>培厚乡村阅读氛围（人民时评）</h1>
+    <div class="meta">乡村文化 · 农家书屋 · 文化惠民 · 城乡融合 · 乡村振兴 | 2026年7月15日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">乡村文化</span><span class="tag-item">农家书屋</span><span class="tag-item">文化惠民</span><span class="tag-item">城乡融合</span><span class="tag-item">乡村振兴</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以浙江德清开元书院、天津"选书团"、浙江文化综合体、苏州吴江三级联网等案例，论证以农家书屋改革提升为契机念好"链"字诀，激发兴趣、延伸功能、连接资源，适合"乡村文化""公共文化服务""城乡融合"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"农家书屋走过近20年、覆盖所有行政村"起笔，由一间小书屋的角色变迁引出"链"字诀这一文化惠民方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">培厚乡村阅读氛围，要以农家书屋改革提升为契机，在盘活用好资源上下更大功夫：激发乡亲阅读兴趣、把选择权交给群众，延伸场景功能、打造乡村新型文化空间，连接城乡资源、以创意机制跑出长效<br><span style="color:#0d47a1;">▸ 写法：由小书屋角色变迁起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">激发阅读兴趣是前提，把选择权交给群众、让书对路，农家书屋才能真正嵌入村民生活<br><span style="color:#0d47a1;">▸ 写法：以天津选书团论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">为书香多找"搭子"，同文化活动融为一体，打造多功能文化综合体<br><span style="color:#0d47a1;">▸ 写法：以浙江文化综合体论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">连接城乡资源、创意机制并重，让资源流动、以文化网络跑出长效<br><span style="color:#0d47a1;">▸ 写法：以苏州吴江三级联网论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"激发兴趣—延伸功能—连接资源"三层"链"字诀逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】培厚乡村阅读氛围，要以农家书屋改革提升为契机，在盘活用好资源上下更大功夫：激发乡亲们的阅读兴趣、把选择权交给群众，延伸场景功能、为书香多找"搭子"打造乡村新型文化空间，连接城乡资源、以创意与机制跑出长效，让农民在阅读中看见更大的世界，为乡村全面振兴提供深沉而持久的文化力量。</p><p>不知不觉间，农家书屋走过了近20年的发展历程。</p>
+
+<p>小小一间书屋，不仅覆盖了所有行政村，它的角色，也超越了单纯的阅读空间。</p>
+
+<p>这一方天地，有阅读的静谧，也有参与的欢腾。浙江德清县开元书院，一楼汇聚万余册图书，二楼是艺术培训与文化交流场地，门前空地则引入本土茶饮品牌。到了节假日，这处农家书屋日均客流量可达<span class="highlight-green">800人</span>，周末甚至常常要等位。</p>
+
+<p>学农技、看政策，陪孩子读书、与朋友相聚……一些合理叠加功能、延伸场景的农家书屋，"长"进村民的生活里，有了蓬勃的生命力。</p>
+
+<p>不过，总体而言，功能全、环境优、效能高、人气旺的农家书屋，还不够多。进一步提升乡村阅读服务效能，需要念好"链"字诀，在盘活用好资源上下更大功夫。</p>
+
+<p>前不久，中央宣传部、财政部、农业农村部<span class="highlight-green">3部门</span>联合印发《推进农家书屋改革提升促进乡村阅读行动方案》，着力推动<span class="highlight-blue">"书屋+"赋能</span>、灵活推进<span class="highlight-blue">"+书屋"融合</span>。这一独特的文化阵地，将承担起聚拢人气、激活乡情、连接外部的重要任务。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">激发乡亲们的阅读兴趣，是培厚阅读氛围的前提；把选择权交给群众、让书对路，农家书屋才能真正嵌入村民生活、留住人。</span></p>
+
+<p>乡村需要阅读，但前提是激发乡亲们的阅读兴趣。农家书屋配置什么样的书，首先要看乡亲们需要什么、喜欢什么。<span class="highlight-purple">书对路了，人们才愿意来、坐得住、看得进。</span></p>
+
+<p>近年来，一些地方探索"百姓点单"，把选择权交给群众，无疑是接地气也合民意的尝试。比如，天津专门举办农家书屋选书活动，由各区宣传部门、图书馆的工作人员，以及农家书屋管理员和村民代表共同组成"选书团"，让乡村书橱里的书更对村民的口味。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">把人长久留住，要为书香多找几个"搭子"；同热热闹闹的文化活动融为一体，打造乡村新型文化空间，让农家书屋在乡土中国找到属于自己的"活法"。</span></p>
+
+<p>把人长久留住，还得为书香多找几个"搭子"，同各种热热闹闹的文化活动融为一体，打造乡村新型文化空间。</p>
+
+<p>在浙江，农家书屋已升级为多功能的文化综合体，除了有图书借阅、文明实践、红色宣讲等功能，还举办农技讲座、研学旅游、非遗传承等活动。活动照着本地特色来搞，服务顺着群众意愿去添，每一间农家书屋都能在乡土中国找到属于自己的"活法"。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">连接城乡资源、创意机制并重，让城乡之间资源流动、互动加深；以文化网络跑出长效，为乡亲们提供新鲜而长久的精神食粮。</span></p>
+
+<p>文化活动天然具备"搭台"的功能。农家书屋的魂在乡土，但触角要伸出去——今天的书、今天的人、今天的信息、今天的资源，都可以从很远的地方来。</p>
+
+<p>近年来，多地出现"以书换蔬""以书换福""以书换咖"等创新实践，就体现了这种连接的活力。别小看这一换，城乡之间资源流动起来了，互动渠道变多了，彼此了解也加深了。</p>
+
+<p>创意开辟新路，机制跑出长效。江苏苏州吴江区，<span class="highlight-green">200多个</span>农家书屋和一家图书总馆、<span class="highlight-green">29家</span>镇（社区）分馆三级联网，两辆图书流动车每月定期对农家书屋的图书进行流转。依托这样的<span class="highlight-blue">文化网络</span>，更多农家书屋有了源头活水，可以为乡亲们提供更加新鲜而长久的精神食粮。</p>
+
+<p><span class="highlight-gold">最是书香能致远。</span>作为基层文化阵地，农家书屋不仅是一项重要的<span class="highlight-blue">文化惠民工程</span>，也承担着将更多优质文化和资源导入乡村腹地的重要作用。立足农村人口结构变化、顺应信息技术发展潮流，不断提升"书"的品质，丰富"屋"的功能，培厚"读"的氛围，让农民在阅读中看见更大的世界，也让外界在互动中发现乡村的魅力，定能为乡村全面振兴提供深沉而持久的文化力量。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月15日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·结尾升华</span><p>最是书香能致远。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：结尾升华金句，适合"文化浸润"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句二·兴趣前提</span><p>书对路了，人们才愿意来、坐得住、看得进。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：条件判断句，适合"以需定供"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·场景延伸</span><p>把人长久留住，还得为书香多找几个"搭子"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"延伸功能"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·连接活力</span><p>文化活动天然具备"搭台"的功能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"城乡连接"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·因地制宜</span><p>在乡土中国找到属于自己的"活法"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：提炼式金句，适合"因地制宜"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·链字诀</span><p>念好"链"字诀，在盘活用好资源上下更大功夫，链条思维可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·百姓点单</span><p>用"百姓点单"把选择权交给群众，需求导向法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·文化综合体</span><p>用浙江文化综合体写多功能融合，业态叠加法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·以书换蔬</span><p>用"以书换蔬"等实践写城乡资源连接，创意连接法可用于"城乡融合"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三级联网</span><p>用"200多个书屋+29家分馆三级联网"写长效机制，网络机制法可迁移。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在盘活用好资源上下更大功夫"为题，模仿本文"激发兴趣—延伸功能—连接资源"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"念好链字诀"引题；②分"把选择权交给群众/打造新型文化空间/城乡创意机制连接"三层；③以"为乡村全面振兴提供文化力量"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"公共文化服务"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月15日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
