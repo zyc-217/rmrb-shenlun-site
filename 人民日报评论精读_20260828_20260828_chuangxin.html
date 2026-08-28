@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 携手向前，成就中国创造（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读 · 人民时评</div>
+    <h1>携手向前，成就中国创造（人民时评）</h1>
+    <div class="meta">人民日报评论 | 科技创新·体系化攻关·协同创新·开放合作·反内卷 | 2026年8月28日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：科技自立自强/新型举国体制/产业生态/良性竞争/全球科技治理</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">科技创新</span>
+      <span class="tag-item">体系化攻关</span>
+      <span class="tag-item">协同创新</span>
+      <span class="tag-item">新型举国体制</span>
+      <span class="tag-item">产业生态</span>
+      <span class="tag-item">供应链韧性</span>
+      <span class="tag-item">科技自立自强</span>
+      <span class="tag-item">开放合作</span>
+      <span class="tag-item">反内卷</span>
+      <span class="tag-item">良性竞争</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">全球科技治理</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"以协同创新攀登科技高峰""把论文写在产业链上""在开放合作中自立自强""以良性竞争激发创新活力"等主题；本文<b>"硬核案例引入—立总论点—四层分论（必选项／系统集成／协同不排斥竞争／开放土壤）—升华"</b>结构，是写"科技创新类"文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">可直接提炼三条对策：<b>构建体系化攻关能力、强化产学研协同／引导企业从价格竞争转向价值竞争、整治内卷式竞争／坚持开放包容，以科技合作造福人类</b>，层次分明、可迁移性强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">哲理思辨</span>
+        <span class="text">"协同与合作""竞争与合作""自立与开放"多组辩证关系，是写<b>辩证类、关系类作文</b>的现成素材，尤其适合"自主创新与开放合作"类考题。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">公文写作</span>
+        <span class="text">可迁移为"关于强化科技创新体系化攻关的实施意见""促进产学研协同创新若干措施"素材；文中"增强体系化攻关能力""整治内卷式竞争""在阳光下运行"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 论证脉络（案—理—证—升）</h3>
+      <div class="analysis-item">
+        <span class="label">引</span>
+        <span class="text"><b>硬核案例</b>：小米发布 3 款芯片（含全球首个 6 纳米晶圆级堆叠、国内首款 3 纳米智驾芯片），背后是 20 多家企业科研机构协同攻关。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">总</span>
+        <span class="text"><b>立总论点</b>：合作是推动创新的"必选项"，构建更完备高效的国家创新体系、增强体系化攻关能力，是抢抓历史机遇的关键。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分一</span>
+        <span class="text"><b>协同是必选项</b>：朱雀三号靠覆盖全国近 700 家合作伙伴的协作网络，托举起商业航天持续突破。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分二</span>
+        <span class="text"><b>系统集成</b>：小米与晶圆厂协同攻关，从单点突破迈向系统集成，全面提升体系化攻关能力。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分三</span>
+        <span class="text"><b>协同不排斥竞争</b>：引导从规模价格竞争转向质量价值竞争，是整治"内卷式"竞争的题中应有之义。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分四</span>
+        <span class="text"><b>开放土壤</b>：中国科技创新植根于开放包容、互利共赢，以科技开放合作造福人类、赋能世界现代化。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text">"前沿案例+总书记金句立论+多案例分证+辩证升华"的写法，可迁移到<b>科技、产业、开放、竞争</b>等几乎所有"自立自强"类申论题。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+    <div class="article-body">
+      <p>近日，小米集团在北京发布3款芯片，涵盖高带宽计算、智驾与智能手机领域，包括<span class="highlight-green">全球首个在6纳米制程下实现晶圆级垂直堆叠的芯片、国内首款3纳米智驾芯片</span>。硬核突破的背后，是<span class="highlight-green">20多家企业、科研机构协同攻关</span>，标注中国创造锐意向新的坚实步伐。</p>
+
+      <div class="thesis">【总论点】合作是推动创新的"必选项"——构建更完备高效的国家创新体系、增强体系化攻关能力，成为抢抓历史机遇的关键。</div>
+      <p>新一轮科技革命和产业变革加速突破，科学研究复杂性、系统性、协同性显著增强。在这样的背景下，<span class="highlight-gold">合作是推动创新的"必选项"</span>，构建更完备高效的国家创新体系、增强体系化攻关能力，成为抢抓历史机遇的关键。</p>
+
+      <div class="sub-thesis">【分论点一】协同合作是创新的"必选项"——重大突破越来越依赖跨主体、跨区域的分工协作网络。</div>
+      <p>习近平总书记强调，<span class="highlight-blue">"增强科技创新体系化攻关能力。"</span>尤其是集成电路、人工智能、量子科技等前沿、重点领域的竞争，比的不只是技术创新能力，更是<span class="highlight-blue">政策体系的支撑、产供链的韧性、协同创新的生态</span>。</p>
+
+      <div class="sub-thesis">【分论点二】拧成一股绳，推动创新从单点突破向系统集成迈进——整体进步共同托举持续突破。</div>
+      <p>朱雀三号靠什么实现我国首次入轨级运载火箭一子级陆地回收？离不开<span class="highlight-green">一张覆盖全国近700家合作伙伴的协作网络</span>。火箭发动机产自<span class="highlight-green">浙江湖州</span>，协助精准"回家"的"方向盘"来自<span class="highlight-green">江苏无锡</span>，4条着陆支腿则产自<span class="highlight-green">四川</span>……从关键技术到重要材料，正是航天工业体系的整体进步，共同托举起中国商业航天的持续突破。</p>
+
+      <div class="sub-thesis">【分论点三】强调协同合作，不是排斥竞争——以创新发展拓展新空间，是整治"内卷式"竞争的题中应有之义。</div>
+      <p>如何勇闯6纳米工艺多层晶圆超高密度先进封装的技术"无人区"？小米集团和晶圆厂一起摸索、协同攻关，对晶圆转速和刀片方向、角度、切割速度等参数反复调整，历经数轮失败、排查、调整、再尝试，最终攻克难题，为业界探索出一条新路。</p>
+      <p><span class="highlight-gold">聚四海之气、借八方之力，创新的源泉才不会枯竭，创新的动能才会更加澎湃。</span><span class="highlight-purple">拧成一股绳，推动创新从单点突破向系统集成迈进</span>，全面提升体系化攻关能力，才能在激烈的竞争中牢牢掌握发展主动权。</p>
+      <p><span class="highlight-purple">强调协同合作，不是排斥竞争。</span>引导相关行业企业从规模扩张、价格竞争转向质量提升、价值竞争，以创新发展拓展新空间、激发新动能，是深入<span class="highlight-blue">整治"内卷式"竞争</span>的题中应有之义。<span class="highlight-purple">怎样应对竞争，考验实力，决定企业能否在市场大潮中站得住；怎样推进合作，检视格局，决定企业能否在千淘万漉中走得远。</span><span class="highlight-gold">互利共赢是大势所趋、人心所向</span>，如何在比拼"合作"的"竞争"中不掉队，成为当前企业必须回答好的课题。</p>
+
+      <div class="sub-thesis">【分论点四】中国的科技创新，从来植根于开放包容、互利共赢的土壤——开放合作不是权宜之计，而是主动选择。</div>
+      <p>摒弃零和博弈的心态和"卷"价格的路径依赖，在创新创造的赛道上并肩而行、竞逐奔腾，在良性互动中实现共同进步，广大经营主体才能为员工、用户、消费者和社会创造更大价值，为<span class="highlight-blue">高水平科技自立自强</span>积蓄更大势能。</p>
+      <p>放大观察的视角，中国的科技创新，从来植根于<span class="highlight-blue">开放包容、互利共赢</span>的土壤之中。不久前世界人工智能合作组织在上海成立，正是中国响应全球南方呼声、团结国际社会积极推动人工智能发展和治理的重大举措。从嫦娥六号搭载国际载荷，到"中国天眼"对全球科学界开放，再到上百家国内企业和单位参与国际大科学工程国际热核聚变实验堆项目，<span class="highlight-blue">开放合作不是权宜之计，而是中国发展的主动选择</span>。坚持以科技开放合作造福人类，是中国创造赋能世界各国现代化的生动写照。</p>
+
+      <p><span class="highlight-gold">携手向前，成就中国创造。</span>一个更加开放包容、自立自强的中国，也将与世界各国携手同行，以科技创新之力共创美好未来，书写和衷共济、合作共赢的崭新篇章。</p>
+      <p class="byline">（人民日报评论，2026年8月28日第05版）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="material-card">
+      <span class="tag-shenlun">创新·总领</span>
+      <p><span class="highlight-gold">合作是推动创新的"必选项"。</span>——立论金句，可置于科技创新/协同创新类文章开头，一句话点透"单打独斗已不够"的当下逻辑。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">攻关·规范</span>
+      <p><span class="highlight-blue">增强科技创新体系化攻关能力。</span>——总书记金句，写"新型举国体制、协同创新生态"的标准引语，权威性强。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">聚合·金句</span>
+      <p><span class="highlight-gold">聚四海之气、借八方之力，创新的源泉才不会枯竭，创新的动能才会更加澎湃。</span>——写"汇聚合力、开放协同"的铺排金句，气势足。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·关系</span>
+      <p><span class="highlight-purple">强调协同合作，不是排斥竞争。</span>——写"合作与竞争""自立与开放"辩证关系的破题句，可直接用在关系类作文。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">竞争·辩证</span>
+      <p><span class="highlight-purple">怎样应对竞争，考验实力……怎样推进合作，检视格局。</span>——对称句式，写"企业/国家如何统筹竞争与合作"的现成骨架。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">竞争·规范</span>
+      <p><span class="highlight-blue">引导企业从规模扩张、价格竞争转向质量提升、价值竞争，深入整治"内卷式"竞争。</span>——反内卷类对策的标准表述，申论高频可用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">开放·立场</span>
+      <p><span class="highlight-blue">开放合作不是权宜之计，而是中国发展的主动选择。</span>——写"高水平对外开放、科技自立与开放并行"的立场金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">收束·金句</span>
+      <p><span class="highlight-gold">携手向前，成就中国创造。</span>——标题即金句，用于科技创新类文章收尾或分论点凝练，简短有力。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">框架迁移</span>
+      <p>把本文"前沿硬核案例→总书记金句立论→多案例分证→辩证升华"的骨架，用于"文化传承/绿色发展/乡村振兴"类作文：以一项最新成果或现象入题，引权威论述立论，再用 2—3 个具体案例分证，最后以辩证关系收束。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">句式迁移</span>
+      <p>仿写对称句："怎样应对竞争，考验实力，决定企业能否在市场大潮中站得住；怎样推进合作，检视格局，决定企业能否在千淘万漉中走得远。"——可改造为"怎样直面挑战…怎样把握机遇…"，用于任何"挑战—机遇"主题段。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">论证迁移</span>
+      <p>用"产业链地图法"论证协同：把一项突破拆成"某地供A、某地供B、某地供C"的分工网络，直观呈现"体系化攻关"，比空喊"要加强协同"更有说服力。适用于"产业链韧性/补链强链"分析题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">意象迁移</span>
+      <p>"携手向前，成就中国创造""拧成一股绳"的意象，可整体迁移到"团结/协同/合力"类话题；"并肩而行、竞逐奔腾"适合写"在良性互动中共同进步"的收尾。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:12px;">
+      <h3>✍️ 仿写练习</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以<b>"在协同中攀登"</b>为题，模仿本文"硬核案例引入+一句总论+三层分论（必选项／系统集成／不排斥竞争）+辩证收尾"的结构，写一段 150 字左右的申论论证段（主题：区域协调发展或产业链协同）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">①一句案例（某跨域工程/产业联盟取得突破）→②【总论】协同是高质量发展的必选项→③分一：分工网络放大整体效能；分二：从单点突破到系统集成；分三：协同不排斥良性竞争→④辩证收尾（如"聚四海之气、借八方之力"）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">另写一句仿"开放合作不是权宜之计，而是中国发展的主动选择"的"不是……而是……"判断句，要求围绕"自主创新与开放合作"主题，不超过 25 字。</span>
+      </div>
+    </div>
+
+    <div class="footer">人民日报评论精读 · 每日申论素材积累 · 2026-08-28（人民时评版）</div>
+  </div>
+</div>
+</body>
+</html>
