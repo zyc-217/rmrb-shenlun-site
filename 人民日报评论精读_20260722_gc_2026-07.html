@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 地瓜"升值"的启示（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>地瓜"升值"的启示（评论员观察）</h1>
+    <div class="meta">新质生产力 · 乡村振兴 · 价值链跃升 · 系统思维 · 共同富裕 | 2026年7月22日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">新质生产力</span><span class="tag-item">乡村振兴</span><span class="tag-item">价值链跃升</span><span class="tag-item">系统思维</span><span class="tag-item">共同富裕</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以四川安岳生物酶、雄安"金招牌"、山东莒县芦笋尾菜、安吉黄杜茶苗、香格里拉飞地园区、福建连城生态薯等案例，论证从产业、视野、思维三层发掘价值，适合"新质生产力""乡村振兴""生态产品价值实现"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"一个地瓜能有啥门道"设问起笔，由地瓜从救荒粮到金招牌的跃升引出价值链升级方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">地瓜"升值"的启示在于以新发展理念牵引、新质生产力为动能，从产业、视野、思维三层发掘价值、创造价值，实现价值链全面跃升<br><span style="color:#0d47a1;">▸ 写法：由一个地瓜设问起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">产业层面，给传统存量寻找发展增量，做增量挖含金量<br><span style="color:#0d47a1;">▸ 写法：以安岳生物酶/莒县芦笋尾菜论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">视野层面，基于有限地域拓宽发展空间，在协同联通中扩大朋友圈<br><span style="color:#0d47a1;">▸ 写法：以地瓜经济/安吉茶苗/飞地园区论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">思维层面，让传统禀赋转化为发展资本，护绿换金借绿生金<br><span style="color:#0d47a1;">▸ 写法：以连城生态薯/绿水青山论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"产业—视野—思维"三层价值发掘逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】地瓜"升值"的启示在于以新发展理念为牵引、以新质生产力为动能、以高质量发展为目标，从产业、视野、思维三个层面发现价值、挖掘价值、创造价值：给传统存量找增量、基于有限地域拓空间、让生态禀赋变发展资本，实现价值链全面跃升，彰显系统思维与奋进之道。</p><p>以新发展理念为牵引，以新质生产力为动能，以高质量发展为目标，发现价值、挖掘价值、创造价值，实现价值链的全面跃升</p>
+
+<p>一个地瓜，能有啥门道？</p>
+
+<p>四川安岳，过去<span class="highlight-green">5毛钱一斤</span>的"救荒粮"，如今可以提取出<span class="highlight-green">10万元一吨</span>的生物酶，从根茎到藤蔓，浑身是宝。</p>
+<p>河北雄安，从田间到礼盒，从散装到品牌，走鲜食品质路线，地瓜从"土疙瘩"变为"金招牌"。</p>
+
+<p>地瓜"升值"，并非偶然。</p>
+<p>从中，可以找到培育壮大新动能的启迪。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">产业层面，给传统存量寻找发展增量；做增量、挖含金量，由卖原字号向卖制成品转变，变"废"为宝、"吃干榨净"。</span></p>
+
+<p>产业层面，如何给传统存量寻找发展增量？</p>
+<p>现在，发展乡村产业，不像过去就是种几亩地、养几头猪，有条件的要通过<span class="highlight-blue">全产业链</span>拓展产业增值增效空间，创造更多就业增收机会。</p>
+
+<p>柞水木耳、大同黄花、延安苹果、茂名荔枝……</p>
+<p>习近平总书记赴地方考察时，总是十分关心当地特产的价值转化。</p>
+
+<p><span class="highlight-purple">价值是商品的本质属性，但价值不会自动跃升，唯有做增量、挖含金量。</span></p>
+<p>比如科技赋能，开发多种功能，挖掘多元价值。</p>
+<p>山东莒县，一年产生的约<span class="highlight-green">4000吨</span>"芦笋尾菜"，要么作饲料，要么当垃圾扔掉。</p>
+<p>如今，快速脱水变原料、蒸汽爆破增活性，下脚料变身为高活性的功能性原料，芦笋粉、芦笋茶畅销，实现全方位利用。</p>
+
+<p>"农村遍地是黄金"，大白话里有硬道理，贵在顺势而为。</p>
+<p>延长农产品产业链，由卖原字号向卖制成品转变，从一次性加工到延展性利用，就能变"废"为宝、"吃干榨净"。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">视野层面，基于有限地域拓宽发展空间；从"地瓜经济"理论出发，在协同联通中扩大朋友圈，借势起飞、借智升级、借力突围。</span></p>
+
+<p>视野层面，如何基于有限地域拓宽发展空间？</p>
+<p>地瓜的藤蔓向四面八方延伸，为的是汲取更多的阳光、雨露和养分，但它的块茎始终是在根基部，藤蔓的延伸扩张最终为的是块茎能长得更加粗壮硕大。</p>
+
+<p>从<span class="highlight-blue">"地瓜经济"理论</span>出发，就会有不一样的视角。</p>
+<p><span class="highlight-green">2018年</span>，浙江安吉黄杜村捐赠<span class="highlight-green">1500万株</span>茶苗，帮助贫困地区群众脱贫，受到习近平总书记的肯定。</p>
+<p>如今，茶苗在当地扎稳了根、老百姓致了富，还通过返租倒包帮助安吉白茶实现量质齐升，为<span class="highlight-blue">共同富裕</span>写下新的注脚。</p>
+
+<p>发掘价值，靠埋头钻研，也需抬头合作，在协同联通中扩大朋友圈。</p>
+<p>云南香格里拉<span class="highlight-blue">"飞地园区"</span>，总部在昆明、生产在州（市）、市场在东盟，推动特色资源不断流转、高效利用，实现借势起飞、借智升级、借力突围。</p>
+
+<p><span class="highlight-purple">归根结底，这是一种大局中思考、全局下行动的系统思维。</span>既要站稳脚跟，把根扎深，也要延展协同，把蔓伸长，让资源和要素在更大范围内的流动中获得增加值。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">思维层面，让传统禀赋转化为发展资本；护绿换金、增绿添金、聚绿成金、借绿生金，从党的创新理论里找"钥匙"，发现通向新赛道的大门。</span></p>
+
+<p>思维层面，如何让传统禀赋转化为发展资本？</p>
+<p><span class="highlight-gold">良好生态环境既是自然财富，也是经济财富</span>，关系经济社会发展潜力和后劲。</p>
+
+<p>好地瓜，根子上靠的是好山水。</p>
+<p>福建连城，全面推广绿色防控、测土配方技术，富硒土壤孕育优质生态薯，生态"高颜值"与经济高质量双向奔赴。</p>
+
+<p>寻找生活的富矿，先要挖掘思想的富矿。</p>
+<p>听闻"砍树人"变"看树人"的故事，习近平总书记有感而发：<span class="highlight-gold">"生态本身就是价值。</span></p>
+<p><span class="highlight-gold">这里面不仅有林木本身的价值，还有绿肺效应，更能带来旅游、林下经济等。"</span></p>
+<p><span class="highlight-gold">"绿水青山就是金山银山"</span>，这实际上是增值的。</p>
+<p>今天，护绿换金、增绿添金、聚绿成金、借绿生金……越是呵护绿水青山，越是能发掘蕴藏其中的经济价值、社会价值和文化价值；</p>
+<p>越是从党的创新理论里找"钥匙"，越能发现通向新舞台、新赛道的大门。</p>
+
+<p>新征程，何以跑稳手中这一棒？</p>
+<p>以新发展理念为牵引，以新质生产力为动能，以高质量发展为目标，发现价值、挖掘价值、创造价值，实现价值链的全面跃升。</p>
+
+<p><span class="highlight-gold">这是地瓜蕴藏的发展密码，也是处处可学的奋进之道。</span></p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月22日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·价值跃升</span><p>价值是商品的本质属性，但价值不会自动跃升，唯有做增量、挖含金量。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"价值创造"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·生态财富</span><p>良好生态环境既是自然财富，也是经济财富。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记论断引用，适合"生态价值"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·绿水青山</span><p>"绿水青山就是金山银山"，这实际上是增值的。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：核心论断引用，适合"生态产品价值实现"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·系统思维</span><p>这是一种大局中思考、全局下行动的系统思维。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：方法论金句，适合"系统观念"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·奋进之道</span><p>这是地瓜蕴藏的发展密码，也是处处可学的奋进之道。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华收束句，适合"高质量发展"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·小切口</span><p>用"一个地瓜能有啥门道"设问起笔，小切口起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三层法</span><p>用"产业—视野—思维"三层发掘价值，维度拆解法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·变废为宝</span><p>用"芦笋尾菜变功能性原料"写延链增值，废料增值法可用于"循环经济"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·地瓜经济</span><p>用"地瓜经济理论/飞地园区"写协同联通，区域协同法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·护绿生金</span><p>用"护绿换金、增绿添金"排比写生态价值，排比升华法可用于"生态文明"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让传统禀赋转化为发展资本"为题，模仿本文"产业—视野—思维"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"挖掘价值"引题；②分"延链增值/协同联通/生态变现"三层；③以"实现价值链全面跃升"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"县域经济"角度，用同一骨架写一句总论点，要求含"不仅……更……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月22日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
