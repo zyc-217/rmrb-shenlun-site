@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 顺应发展潮流，始终走在时代前列（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>顺应发展潮流，始终走在时代前列（评论员观察）</h1>
+    <div class="meta">党的特质 · 历史主动 · 识变应变求变 · 与时俱进 · 战略眼光 | 2026年7月14日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">党的特质</span><span class="tag-item">历史主动</span><span class="tag-item">识变应变求变</span><span class="tag-item">与时俱进</span><span class="tag-item">战略眼光</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以“失去的二百年”、改革开放和平发展判断、自贸试验区480项成果、义乌“世界超市”、阳泉阀门专精特新等案例，论证顺应潮流走在前列，适合“历史主动”“改革开放”“新质生产力”等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">以“时间是最忠实的记录者”起笔，借“失去的二百年”痛楚与“后来居上”誓言形成历史张力，引出六大优秀特质。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">顺应发展潮流、始终走在时代前列，是党百年奋斗铸就的鲜明品格：以历史自觉把握大势、以识变应变求变锐意进取、以与时俱进向势借力赢得主动<br><span style="color:#0d47a1;">▸ 写法：由“失去的二百年”起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">秉持历史自觉与宽广世界眼光，从全局长远大势把稳方向、担当历史使命<br><span style="color:#0d47a1;">▸ 写法：以改革开放/新时代论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">积极识变应变求变，准确识变、科学应变、主动求变，打开新局面<br><span style="color:#0d47a1;">▸ 写法：以自贸试验区论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">与时俱进、向势借力，紧跟时代潮流知变求变、把握新质生产力趋势<br><span style="color:#0d47a1;">▸ 写法：以义乌/阳泉阀门论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">“把握大势—识变求变—向势借力”三层潮流逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】顺应发展潮流、始终走在时代前列，是我们党百年奋斗铸就的鲜明品格：以历史自觉和宽广眼光把握大势、担当使命，以识变应变求变锐意开拓进取，以与时俱进向势借力赢得主动，必将牢牢掌握发展主动权，在变局中开新局。</p><p>走过<span class="highlight-green">105年</span>风雨沧桑，我们党始终勇立时代潮头、走在时代前列、发出时代先声，引领中国号巨轮乘风破浪、行稳致远</p>
+
+<p>时间是最忠实的记录者，也是最客观的见证者。</p>
+
+<p>中国有过“失去的二百年”的历史痛楚：西方国家飞速前进，中国却一次次错失工业革命的机遇、全球化的机遇、科技革命和产业变革的浪潮，只是“蜗牛般地爬行”。</p>
+
+<p><span class="highlight-gold">"我们要后来居上，把'失去的二百年'找回来"</span>，铿锵誓言化作一个文明古国后发赶超的不懈奋斗，中华民族实现了从"赶上时代"到"引领时代"的伟大跨越。</p>
+
+<p>巨变何以发生？在庆祝中国共产党成立<span class="highlight-green">105周年</span>大会上，习近平总书记精辟概括中国共产党的六大优秀特质，“顺应发展潮流，始终走在时代前列”是其中重要方面。</p>
+
+<p>我们党秉持高度的历史自觉和宽广的世界眼光，清醒把握中国国情和时代主题，从全局、长远、大势上把稳方向、谋篇布局。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">我们党秉持高度历史自觉和宽广世界眼光，清醒把握国情与时代主题，从全局长远大势把稳方向，担当起实现民族独立、人民解放与伟大复兴的历史使命。</span></p>
+
+<p>百余年前，九原板荡，怎样的春雷能响彻沉寂的中国？当“诸路皆走不通了”之时，我们党担当起实现民族独立、人民解放的历史使命。</p>
+
+<p>犹记改革开放之初，我们党深刻把握历史潮流与世界大势，作出和平与发展是时代主题的重大战略判断，坚持以经济建设为中心，积极参与经济全球化，开启了中国人民和中华民族发展史上一次伟大革命。</p>
+
+<p>进入新时代，胸怀两个大局，把握时与势、危与机，我们党以历史主动精神克难关、战风险、迎挑战，集中力量办好自己的事，续写经济快速发展和社会长期稳定两大奇迹新篇章，奋力开创中国式现代化建设新局面。</p>
+
+<p>走过<span class="highlight-green">105年</span>风雨沧桑，我们党始终勇立时代潮头、走在时代前列、发出时代先声，引领中国号巨轮乘风破浪、行稳致远。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">适应形势变化必须积极识变应变求变，锐意开拓进取；坚持准确识变、科学应变、主动求变，以开拓进取姿态推进全面深化改革、打开新局面。</span></p>
+
+<p>适应形势变化，必须积极识变应变求变，锐意开拓进取，推动党的各项工作体现时代性、把握规律性、富于创造性。</p>
+
+<p>新时代以来，自贸试验区大胆试、大胆闯，<span class="highlight-green">超480项</span>制度创新成果在国家层面复制推广；深化科技体制改革，载人航天与深空探测、集成电路全产业链、人工智能基础软硬件等领域持续突破……我们党坚持准确识变、科学应变、主动求变，以锐意开拓进取的姿态推进全面深化改革，推动中国式现代化建设不断打开新局面。</p>
+
+<p>引领国家和民族在历史前进的逻辑中前进、在时代发展的潮流中发展，我们党成为当之无愧的时代先锋、民族脊梁。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">与时俱进、向势借力能事半功倍、赢得主动；紧跟时代潮流知变求变、把握新质生产力发展趋势，以技术创新驱动企业脱胎换骨。</span></p>
+
+<p>与时俱进、向势借力，能事半功倍、赢得主动。</p>
+
+<p>从确立“兴商建市”发展战略，到用改革“给成长快的孩子换上一件大衣服”，浙江义乌实现从“鸡毛换糖”到“世界超市”的蝶变，靠的是紧跟时代潮流，知变求变、抢抓机遇。</p>
+
+<p>数字机床高效运转，焊接机器人灵活作业，<span class="highlight-green">3D打印</span>产品精准成型，拥有百年历史的山西阳泉阀门股份有限公司入选国家级专精特新“小巨人”企业，靠的是牢牢把握<span class="highlight-blue">新质生产力</span>发展趋势，以技术创新驱动企业脱胎换骨。</p>
+
+<p>顺应发展潮流，始终走在时代前列，是我们党百年奋斗铸就的鲜明品格，也是走好新的赶考之路必须始终坚持的宝贵经验。新征程上，变局与机遇并存、攻坚与开拓同步。<span class="highlight-purple">善于从历史长周期看清大势，也善于从细微处洞察事物变化</span>，才能在危机中育新机、于变局中开新局，牢牢掌握发展的主动权。</p>
+
+<p>“历史只会眷顾坚定者、奋进者、搏击者，而不会等待犹豫者、懈怠者、畏难者。”处在前所未有的变革时代，干着前无古人的伟大事业，必须始终保持顺应潮流、走在前列的清醒自觉。历史的车轮滚滚向前，时代的潮流浩浩荡荡，我们有信心、有能力、有底气在新的长征路上创造更多奇迹。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月14日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·后来居上</span><p>“我们要后来居上，把‘失去的二百年’找回来”。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：誓言式金句，适合“后发赶超”破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·时代先锋</span><p>引领国家和民族在历史前进的逻辑中前进、在时代发展的潮流中发展，我们党成为当之无愧的时代先锋、民族脊梁。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华判断句，适合“党的领导”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·向势借力</span><p>与时俱进、向势借力，能事半功倍、赢得主动。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：八字对仗句，适合“把握趋势”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·危机育新机</span><p>善于从历史长周期看清大势，也善于从细微处洞察事物变化，才能在危机中育新机、于变局中开新局。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证哲思句，适合“化危为机”论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·眷顾坚定者</span><p>历史只会眷顾坚定者、奋进者、搏击者，而不会等待犹豫者、懈怠者、畏难者。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：排比对举金句，适合“奋斗精神”收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·时间见证</span><p>用“时间是最忠实的记录者”起笔，拟人起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·失去与找回</span><p>用“失去的二百年”痛楚与“后来居上”誓言形成张力，历史对照法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·数据佐证改革</span><p>用“超480项制度创新成果”数据证改革成效，数据链可用于“改革开放”。</p></div><div class="migration-card"><span class="tag-mig">迁移四·鸡毛换糖</span><p>用“鸡毛换糖→世界超市”变迁写知变求变，俗谚式例证可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·眷顾排比</span><p>用“眷顾坚定者、奋进者、搏击者”排比对举收束，排比收束法可用于“奋斗”话题。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以“在危机中育新机、于变局中开新局”为题，模仿本文“把握大势—识变求变—向势借力”写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用“时间是最忠实的记录者”引题；②分“历史自觉担使命/识变应变求变/向势借力赢主动”三层；③以“牢牢掌握发展主动权”收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从“新质生产力”角度，用同一骨架写一句总论点，要求含“既是……也是……”句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月14日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
