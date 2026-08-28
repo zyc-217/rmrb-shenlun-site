@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 警惕"小口子"越撕越大</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>警惕"小口子"越撕越大（纵横）</h1>
+    <div class="meta">人民日报评论 | 全面从严治党·基层监督·小微权力·纪律规矩·防微杜渐 | 2026年8月28日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：党风廉政建设/基层廉政风险/纪法情理/源头治理/以人民为中心</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">党风廉政建设</span>
+      <span class="tag-item">基层监督</span>
+      <span class="tag-item">小微权力</span>
+      <span class="tag-item">纪律规矩</span>
+      <span class="tag-item">中央八项规定</span>
+      <span class="tag-item">防微杜渐</span>
+      <span class="tag-item">纪法情理</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">源头治理</span>
+      <span class="tag-item">廉洁从政</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">系统观念</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"把纪律规矩挺在前面""防微杜渐守住底线""让小微权力在阳光下运行""严管就是厚爱"等主题；本文<b>"案例引入—立总论点—四层分论（红线意识／防微杜渐／监督紧随／赢得民心）—升华"</b>结构，是写"廉政与作风建设类"文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">可直接提炼三条对策：<b>划清纪法红线、不让'合情'突破原则／抓早抓小、做实前置提醒／聚焦惠民资金等重点领域监督，推动小微权力阳光运行</b>，层次分明、可迁移性强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">哲理思辨</span>
+        <span class="text">"公与私、纪与情一步之遥""职位不高不等于标准降低""千丈之堤以蝼蚁之穴溃"多组辩证与意象，是写<b>辩证类、关系类、底线类作文</b>的现成素材。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">公文写作</span>
+        <span class="text">可迁移为"关于加强基层小微权力监督的实施意见""深化作风建设若干措施"素材；文中"抓早抓小""前置提醒""在阳光下运行""把纪律规矩挺在前面"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 论证脉络（总分总·由案及理）</h3>
+      <div class="analysis-item">
+        <span class="label">引</span>
+        <span class="text"><b>案例导入</b>：某村以"大家辛苦、集体研究"为由违规发放误工燃油补助，看似合情实则踩了纪律红线——以具体个案引出普遍命题。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">总</span>
+        <span class="text"><b>立总论点</b>：小节不可放任，纪律没有例外（以"口子撕开"喻纪律底线失守的连锁风险）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分一</span>
+        <span class="text"><b>红线意识</b>：村级集体资金有明确红线，任何"合情"理由都不能成为违规借口，口子一开便易滥用。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分二</span>
+        <span class="text"><b>防微杜渐</b>：诸多失守始于"人情"（用 93.3% 数据支撑）；公与私、纪与情仅一步之遥，小口子会越撕越大。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分三</span>
+        <span class="text"><b>监督紧随</b>：全面从严治党向基层延伸，抓早抓小、前置提醒，推动小微权力在阳光下运行。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分四</span>
+        <span class="text"><b>升华收束</b>：遵规守纪体现在办事用权的每次选择，守住底线即赢得民心（典故意象收尾）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">可迁移</span>
+        <span class="text">"小切口案例 + 一句总论 + 多侧面分论 + 意象升华"的写法，可迁移到<b>廉政、作风、规则意识、底线思维</b>等几乎所有"立规矩、守底线"类申论题。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+    <div class="article-body">
+      <p>"当时想着大家扑在项目上连轴转太辛苦，发点补助也算情理之中，又是集体开会研究定的，没想到踩了纪律红线。"看似"合情"，实则违规，近日，<span class="highlight-green">某村违规发放误工、燃油补助的案例</span>，颇具启示意义。</p>
+
+      <div class="sub-thesis">【分论点一】"合情"不能成为违反纪律规矩的理由——村级集体资金有明确红线，口子一旦撕开便易滥用。</div>
+      <p>基层工作千头万绪，一些项目实施期间干部确实辛苦。大家的付出应当被看到，但慰藉这份辛苦，却不能随心所欲，应该依规而行。<span class="highlight-blue">村级集体资金使用有明确的红线</span>，任何看似"合情"的原因，都不能成为违反纪律规矩的理由。一旦这个口子撕开，就可能出现打着"合情"旗号滥用村级集体资金的情况。涉事的干部恰恰是在这点上犯了糊涂。</p>
+
+      <div class="thesis">【总论点】小节不可放任，纪律没有例外。</div>
+      <p><span class="highlight-gold">小节不可放任，纪律没有例外。</span>今年7月，全国查处的违反<span class="highlight-blue">中央八项规定精神问题</span>中，乡科级及以下干部问题有<span class="highlight-green">2.6万余起，占全部查处问题的93.3%</span>。探究诸多案例不难发现，很多失守，都始于所谓的"人情"。</p>
+
+      <div class="sub-thesis">【分论点二】许多失守始于"人情"——纪律底线会在一次次"下不为例"中松动，防微杜渐方为上策。</div>
+      <p>一顿饭，想着只是朋友聚餐；一份礼，认为就是人情往来；一次帮忙，安慰自己"大家都是熟人"……长此以往，纪律底线就会一点点松动。<span class="highlight-purple">公与私、纪与情，有时候就只有一步之遥</span>，一旦把人情放在纪律前面，原本不起眼的"小口子"就会越撕越大。</p>
+
+      <div class="sub-thesis">【分论点三】从严抓起、监督紧随——把纪律要求落到每个岗位环节，推动小微权力在阳光下运行。</div>
+      <p><span class="highlight-gold">从严抓起，党风政风才能为之一新。</span>随着<span class="highlight-blue">全面从严治党向基层延伸</span>，纪律要求要落到每一个岗位、每一个环节。对基层干部来说，<span class="highlight-purple">职位不高不等于标准降低</span>，身处一线、直面群众，更要划清边界，不能为人情突破原则。监督也要紧随权力运行，聚焦惠民资金、工程项目、行政审批等重点领域，做实<span class="highlight-blue">抓早抓小、前置提醒</span>，推动"小微权力"始终在<span class="highlight-blue">阳光下运行</span>。</p>
+
+      <div class="sub-thesis">【分论点四】遵规守纪不是抽象大道理——体现在办事用权的每次选择里，守住底线即赢得民心。</div>
+      <p><span class="highlight-gold">千丈之堤，以蝼蚁之穴溃；百尺之室，以突隙之烟焚。</span>对基层干部而言，遵规守纪、廉洁从政不是抽象的大道理，而体现在办事用权的每一次选择里。<span class="highlight-purple">把纪律规矩挺在前面，把群众冷暖放在心里</span>，守住的是底线，赢得的是民心。</p>
+      <p class="byline">（摘编自《北京日报》）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">廉政·总领</span>
+      <p><span class="highlight-gold">小节不可放任，纪律没有例外。</span>——立论金句，可置于廉政/作风类文章开头或段首，简洁有力。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">底线·辩证</span>
+      <p><span class="highlight-purple">公与私、纪与情，有时候就只有一步之遥。</span>——写"如何处理人情与原则、私情与公心"关系的绝佳辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">意象·升华</span>
+      <p><span class="highlight-gold">千丈之堤，以蝼蚁之穴溃；百尺之室，以突隙之烟焚。</span>——典故化意象，用于"防微杜渐、重视细节、守住底线"的收尾升华。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">监督·规范</span>
+      <p><span class="highlight-blue">做实抓早抓小、前置提醒，推动"小微权力"始终在阳光下运行。</span>——基层监督类对策的标准表述，可直接入文。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">治党·规范</span>
+      <p><span class="highlight-blue">随着全面从严治党向基层延伸，纪律要求要落到每一个岗位、每一个环节。</span>——写"管党治党向下扎根、严管厚爱"的规范句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">立场·辩证</span>
+      <p><span class="highlight-purple">职位不高不等于标准降低。</span>——写"基层干部同样要守纪律、不论职级"的精炼判断，反驳"小官无险"误区。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">民心·收束</span>
+      <p><span class="highlight-purple">把纪律规矩挺在前面，把群众冷暖放在心里，守住的是底线，赢得的是民心。</span>——双"把…放在"对仗收尾，兼及纪律与立场，气势足。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据·论据</span>
+      <p><span class="highlight-green">今年7月，违反中央八项规定精神问题中乡科级及以下干部问题占全部查处问题的93.3%。</span>——用硬数据说明"违纪问题大量发生在基层"，论证基层监督必要性时直接引用。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">框架迁移</span>
+      <p>把本文"小案例→一句总论→多侧面分论→意象升华"的骨架，用于"规则意识/诚信/底线思维"类作文：以一则社会新闻入题，立"小事不守，大事难成"之论，分"红线不可越／隐患早排除／监督须常态／民心是标尺"四层展开。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">句式迁移</span>
+      <p>仿写对仗收束："把纪律规矩挺在前面，把群众冷暖放在心里"——可改造为"把规矩立在细处，把担当写进实处""把红线划在事前，把信任留在事后"，用于任何"立规+为民"主题段尾。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">论证迁移</span>
+      <p>用"数据破题"法：先抛一个具体数字（如 93.3%）制造冲击力，再追问"为何集中在基层"，自然导出"抓早抓小、源头治理"对策。适用于"问题集中在某群体/某环节"类分析题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">意象迁移</span>
+      <p>"小口子越撕越大""蝼蚁之穴溃千丈之堤"意象链，可整体迁移到"风险防范/生态治理/隐患整治"等话题，比直说"要重视小问题"更有画面感与说服力。</p>
+    </div>
+
+    <div class="analysis-box" style="margin-top:12px;">
+      <h3>✍️ 仿写练习</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以<b>"守住小事里的公平"</b>为题，模仿本文"案例引入+一句总论+四层分论+意象升华"的结构，写一段 150 字左右的申论论证段（主题自定，建议：校园/社区/政务窗口中的规则与公平）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">参考骨架</span>
+        <span class="text">①一句话案例（某次"变通"看似方便实则破坏规则）→②【总论】小事之中的公平，最见治理成色→③分一：规则面前没有"特殊情况"；分二：一次破例会诱发更多破例；分三：公开透明让小事经得起看；分四：守住公平才能赢得信任→④意象收尾（如"堤溃蚁穴，信失毫末"）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">加练</span>
+        <span class="text">另写一句仿"把纪律规矩挺在前面，把群众冷暖放在心里"的对仗句，要求同时包含"规则"与"人心"两个元素，不超过 20 字。</span>
+      </div>
+    </div>
+
+    <div class="footer">人民日报评论精读 · 每日申论素材积累 · 2026-08-28</div>
+  </div>
+</div>
+</body>
+</html>
