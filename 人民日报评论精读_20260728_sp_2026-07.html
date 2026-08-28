@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 锤炼穿越风雨的能力（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>锤炼穿越风雨的能力（人民时评）</h1>
+    <div class="meta">粮食安全 · 农业韧性 · 防灾减灾 · 科技赋能 · 三农高质量发展 | 2026年7月28日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">粮食安全</span><span class="tag-item">农业韧性</span><span class="tag-item">防灾减灾</span><span class="tag-item">科技赋能</span><span class="tag-item">三农高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以今年夏粮3014.9亿斤首破3000亿斤、黄淮海晚播、农机跨区调度、粮食安全党政同责、良田良种良机良法等案例，论证中国粮食生产的韧性来自责任链条、灵活应变与制度协同，适合"粮食安全""农业抗风险""三农"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"农业现代化价值在逆境减损稳产出"起笔，由夏粮逆势增长引出韧性三层方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">中国粮食生产的韧性来自稳住阵脚的责任感、因时因地的灵活应变、制度优势与治理效能的协同发挥<br><span style="color:#0d47a1;">▸ 写法：由夏粮逆势增长起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">韧性是风雨袭来时稳住阵脚、有效应对的能力<br><span style="color:#0d47a1;">▸ 写法：以粮食安全党政同责论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">韧性体现为因时因地灵活应变的能力<br><span style="color:#0d47a1;">▸ 写法：以晚播补救/农机调度论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">韧性更来自制度优势与治理效能的充分发挥<br><span style="color:#0d47a1;">▸ 写法：以良田良种良机良法集成论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"责任链条—灵活应变—制度协同"三层韧性逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】中国粮食生产的韧性，来自风雨袭来时稳住阵脚的责任感、因时因地灵活应变的能力、制度优势与治理效能的充分发挥：以完整责任链条兜住底线，以适用技术把局面扳回来，以体系协同对冲各种风险，在应对不确定性中积累能力、完善机制，端牢中国饭碗。</p><p>农业现代化的价值，不只在于顺境中提高效率，更在于能在逆境中减少损失、稳定产出。</p>
+<p>从"看天吃饭"到更加注重"知天而作"，科技正不断为粮食生产赋能。</p>
+
+<p>今年全国夏粮产量达到<span class="highlight-green">3014.9亿斤</span>，首次突破<span class="highlight-green">3000亿斤</span>，比上年增长<span class="highlight-green">0.7%</span>——沉甸甸的数字，为"十五五"开局写下浓重一笔。</p>
+
+<p>丰收，并不意味着风调雨顺。</p>
+<p>去年秋季，黄淮海地区连阴雨导致冬小麦大面积晚播；</p>
+<p>今年麦收期间，部分地区又遭遇强降水。</p>
+<p>与此同时，国际农资市场波动等因素也给粮食生产带来压力。</p>
+<p>从播种时的苗情偏弱，到收获时的"龙口夺粮"，这一季夏粮闯过一道道关口。</p>
+
+<p>中国粮食产量在自然条件不利情况下逆势增长，展现出抵御风险、适应变化、稳定产出的坚强韧性。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">韧性，是风雨袭来时有能力稳住阵脚、有效应对。</span></p>
+
+<p>韧性，是风雨袭来时有能力稳住阵脚、有效应对。</p>
+<p><span class="highlight-gold">"中国要靠自力更生，自己养活自己""咱们这个国家再现代化，粮食主要还是要靠自己"，习近平总书记为保障粮食安全敲警钟。</span></p>
+<p>从落实<span class="highlight-blue">粮食安全党政同责</span>，到强化价格、补贴、保险等政策协同，再到把播种面积分解落实，各方面形成完整责任链条，时刻绷紧安全之弦。</p>
+<p>可以说，筑牢粮食安全的压舱石，先要有"时时放心不下"的责任感。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">韧性，体现为因时因地灵活应变的能力。</span></p>
+
+<p>韧性，体现为因时因地灵活应变的能力。</p>
+<p>应对大面积晚播，关键在于及时找到补救办法。</p>
+<p>"以种补晚、以密补晚、以好补晚、以肥补晚"，促弱转壮、"一喷三防"，一项项适用技术落到田间，把局面一步步扳了回来。</p>
+<p>收获窗口缩短，农机跨区调度、烘干设备衔接、气象预警跟进，努力把不利天气影响降到最低。</p>
+<p>农业现代化的价值，不只在于顺境中提高效率，更在于能在逆境中减少损失、稳定产出。</p>
+<p>从"看天吃饭"到更加注重"知天而作"，科技正不断为粮食生产赋能。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">韧性，更来自制度优势与治理效能的充分发挥。</span></p>
+
+<p>韧性，更来自制度优势与治理效能的充分发挥。</p>
+<p>粮食从种到收，要经过耕地、种子、农资、农技、农机、仓储等多个环节。</p>
+<p>任何一处梗阻，都可能影响最终收成。</p>
+<p>面对风险挑战，既需要<span class="highlight-blue">高标准农田</span>和水利设施增强基础支撑，也需要良田、良种、良机、良法集成增效；</p>
+<p>既要发挥市场配置资源的作用，也要提高跨区域、跨部门组织调度能力。</p>
+<p><span class="highlight-purple">单项技术可以解决一个难题，体系协同才能对冲各种风险。</span></p>
+<p>中国粮食生产的"稳"，正是一个个主体、一项项政策、一道道环节共同托举的结果。</p>
+
+<p>越是连年丰收，越不能把丰收当作理所当然；</p>
+<p>越是面对不确定性，越要以确定的责任守住底线。</p>
+<p>连续的"稳"，不是简单重复，而是在一次次应对风险中积累能力、完善机制。</p>
+<p>当前，秋粮生产仍在推进，极端天气多发频发，资源环境约束趋紧，保障粮食安全任何时候都不能轻言过关，还需要继续以坚强韧性迎接大战大考。</p>
+
+<p>粮食生产的韧性，检验的是农业应对不确定性的能力，折射的是"三农"高质量发展的成色。</p>
+<p>把粮食安全责任落得更实，把防灾减灾的关口移得更前，把农民种粮的账算得更好，才能把更多不可预知的风险，转化为可以应对的挑战。</p>
+<p>来之不易的丰收，告诉我们一个朴素道理：中国饭碗端得稳，靠的不是运气，而是我们不断锤炼穿越风雨的能力。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月28日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·自力更生</span><p>"中国要靠自力更生，自己养活自己""咱们这个国家再现代化，粮食主要还是要靠自己"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记论断引用，适合"粮食安全"立骨。</p></div><div class="material-card"><span class="tag-shenlun">金句二·责任链条</span><p>从落实粮食安全党政同责，到强化价格、补贴、保险等政策协同，各方面形成完整责任链条。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：机制金句，适合"责任体系"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·体系协同</span><p>单项技术可以解决一个难题，体系协同才能对冲各种风险。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"系统观念"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·不轻言过关</span><p>保障粮食安全任何时候都不能轻言过关，还需要继续以坚强韧性迎接大战大考。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：警醒金句，适合"底线思维"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·穿越风雨</span><p>中国饭碗端得稳，靠的不是运气，而是我们不断锤炼穿越风雨的能力。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华收束句，适合"粮食安全"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·逆势数据</span><p>用"3014.9亿斤首破3000亿斤/0.7%"写逆势增长，逆势数据法可用于"抗风险"。</p></div><div class="migration-card"><span class="tag-mig">迁移二·闯关例</span><p>用"从苗情偏弱到龙口夺粮闯过一道道关口"写闯关，闯关叙事法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移三·四补晚</span><p>用"以种补晚、以密补晚、以好补晚、以肥补晚"写补救，排比补救法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·良田良法</span><p>用"良田良种良机良法集成增效"写体系协同，集成法可用于"农业基础"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·关口前移</span><p>用"把防灾减灾关口移得更前"写前置防控，关口前移法可用于"风险管理"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在不确定性中锤炼农业韧性"为题，模仿本文"责任链条—灵活应变—制度协同"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"端牢饭碗靠韧性"引题；②分"党政同责兜底线/适用技术扳局面/体系协同冲风险"三层；③以"中国饭碗端得稳"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"产业链安全"角度，用同一骨架写一句总论点，要求含"不仅……更……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月28日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
