@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 科技向善的中国答案（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>科技向善的中国答案（评论员观察）</h1>
+    <div class="meta">科技向善 · 人工智能治理 · 中国式现代化 · 以人为本 · 人类命运共同体 | 2026年7月24日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">科技向善</span><span class="tag-item">人工智能治理</span><span class="tag-item">中国式现代化</span><span class="tag-item">以人为本</span><span class="tag-item">人类命运共同体</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以2026世界人工智能大会主席论断、24小时AI社工、单原子催化/国产芯片突破、人工智能就业影响评估、柬埔寨智慧农场、全球人工智能治理倡议等案例，论证科技向善的中国答案在坚守人民性、确保安全性、实现普惠性，适合"人工智能治理""科技为民""新质生产力"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"机器开始思考，人类如何相处"时代之问起笔，由2026世界人工智能大会主席回答引出科技向善三重维度。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">科技向善的中国答案，在于坚守人民性锚定向善之本、确保安全性筑牢发展之基、实现普惠性拓宽共赢之路<br><span style="color:#0d47a1;">▸ 写法：由时代之问起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">坚守人民性，锚定向善之本，科技必须造福人民<br><span style="color:#0d47a1;">▸ 写法：以AI社工/科技经济结合论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">确保安全性，筑牢发展之基，高水平科技自立自强<br><span style="color:#0d47a1;">▸ 写法：以国产芯片/举国体制/安全法规论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">实现普惠性，拓宽共赢之路，前沿技术造福人类社会<br><span style="color:#0d47a1;">▸ 写法：以柬埔寨农场/全球治理倡议论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"人民性—安全性—普惠性"三层科技向善逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】科技向善的中国答案，在于坚守人民性锚定向善之本、确保安全性筑牢发展之基、实现普惠性拓宽共赢之路：让科技创新造福人民、以高水平自立自强抵御风险、以共享共治惠及全球，既能培育创新果实、也能抵御风险挑战，彰显中国创新体系的强大与中国经济的韧性。</p><p>不仅能够培育出丰硕的创新果实，也能有效抵御新技术、新事物带来的风险挑战，这是中国创新体系的强大之处</p>
+
+<p>黄浦江畔，这样的时代之问引人深思：当机器开始思考，人类如何与之相处？</p>
+<p>当算法参与决策，安全如何保障？</p>
+<p>当技术挑战伦理，治理如何跟上？</p>
+<p>当鸿沟不断拉大，普惠如何实现？</p>
+
+<p><span class="highlight-gold">在2026世界人工智能大会暨人工智能全球治理高级别会议开幕式上，习近平主席给出回答，"秉持以人为本、向上向善理念，让人工智能成为促进共同繁荣、维护共同安全的一个重要动力源"。</span></p>
+
+<p>开局之年，"开年第一课"强调"扎扎实实建设现代化产业体系"，首次地方考察来到位于北京亦庄的国家信创园，首次中共中央政治局集体学习聚焦未来产业……</p>
+<p>习近平总书记的讲话与足迹，凸显科技创新对于"十五五"乃至更长时期我国发展的战略意义。</p>
+
+<p>新一轮科技革命和产业变革加速突破，"形势催人，也逼人"，中国如何把握未来？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">坚守人民性，锚定向善之本；任何前沿技术说到底要服务于实体经济、解决实际问题、改善民生，科技必须造福人民。</span></p>
+
+<p>坚守人民性，锚定向善之本。</p>
+<p>实验室里的好点子，融资市场上的好项目，最终都要转化为好应用，才能发挥最大价值。</p>
+
+<p>凌晨两点的居民诉求，谁第一时间秒回？</p>
+<p>垃圾桶满了，谁第一个知道？</p>
+<p>北京不少街道社区里，<span class="highlight-green">24小时</span>AI（人工智能）社工悄然"上岗"，效果立竿见影。</p>
+<p>AI嵌入基层治理，让服务更高效、管理更精细、群众享便捷。</p>
+
+<p>推动传统制造业升级，完善城市基层治理，提升农业现代化水平，哪一项不需要创新支撑？</p>
+<p>"推动科技和经济紧密结合""突出应用导向""让创新链和产业链无缝对接"，这些发展要求，体现了科技必须造福人民的价值遵循。</p>
+
+<p><span class="highlight-purple">任何一项前沿技术，说到底还是要服务于实体经济、服务于解决实际问题、服务于改善民生。</span></p>
+<p>场景多、应用广、迭代快、惠于民，是中国创新的特点，也是赢得未来的优势。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">确保安全性，筑牢发展之基；关键核心技术是要不来、买不来、讨不来的，唯有推动高水平自立自强，牢牢掌握发展主动权。</span></p>
+
+<p>确保安全性，筑牢发展之基。</p>
+<p>"关键核心技术是要不来、买不来、讨不来的"，唯有推动高水平自立自强。</p>
+
+<p>不惧国外的断供、打压，国产芯片等不断取得新突破；</p>
+<p>破解种质资源"卡脖子"，种源自主可控加快实现；</p>
+<p>冲破高端工业母机的垄断、封锁，五轴联动机床等被攻克……</p>
+<p><span class="highlight-blue">发挥新型举国体制优势</span>，迎难而上、攻坚克难，我们牢牢掌握发展主动权。</p>
+
+<p>前沿、新颖，也往往意味着未知、风险，<span class="highlight-purple">"人工智能等前沿技术加速迭代应用，'双刃剑'效应日益显现"。</span></p>
+
+<p>建立人工智能就业影响评估体系，最大限度减少它对就业的冲击；</p>
+<p>出台<span class="highlight-blue">数据安全与个人信息保护法规</span>，从严整治过度采集隐私数据；</p>
+<p>完善智能网联汽车准入与OTA（空中下载）备案制度，守住自动驾驶行车与数据双重安全……</p>
+<p><span class="highlight-blue">统筹发展和安全的中国实践</span>树起标杆。</p>
+
+<p>不仅能够培育出丰硕的创新果实，也能有效抵御新技术、新事物带来的风险挑战，这是中国创新体系的强大之处，也是中国经济韧性所在。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">实现普惠性，拓宽共赢之路；共享、共治是必由之路，前沿技术不是某个国家的"专利"，而应更好造福人类社会。</span></p>
+
+<p>实现普惠性，拓宽共赢之路。</p>
+<p>先进科技用得好，造福全球；用不好，没有国家能独善其身。</p>
+<p>共享、共治是必由之路。</p>
+
+<p>依托中国智慧农场一体化发展计划，柬埔寨农户培育的罗氏沼虾苗种成活率和质量大幅提高，每公顷土地年收入从约<span class="highlight-green">1000美元</span>增加到<span class="highlight-green">3000美元</span>以上。</p>
+<p>"北斗"赋能，绿电出海，大模型开源……</p>
+<p><span class="highlight-gold">中国用行动证明，前沿技术不是某个国家的"专利"，而应更好造福人类社会。</span></p>
+
+<p><span class="highlight-gold">"帮助全球南方国家加强能力建设，弥合数智鸿沟，促进可持续发展，避免在人工智能领域造成新的历史不公"，习近平主席的宣示，鼓舞人心。</span></p>
+<p>确保前沿科技普惠包容，中国一直在行动。</p>
+
+<p>提出<span class="highlight-blue">《全球人工智能治理倡议》</span>，倡议成立世界人工智能合作组织，支持世界数据组织在北京成立……</p>
+<p><span class="highlight-purple">红利共享，难题共解，风险共担，和合共生的中国之道，亦是应对科技领域全球挑战的一把金钥匙。</span></p>
+
+<p>"智能伙伴  共创未来"，是2026世界人工智能大会暨人工智能全球治理高级别会议的主题。</p>
+<p>"伙伴"，意味着以科技为伴、善用智能，更意味着发展道路上，各国都是同行者、追梦人。</p>
+
+<p>肩负以科技创新支撑和引领中国式现代化的艰巨使命，胸怀<span class="highlight-blue">构建人类命运共同体</span>的宏图愿景，中国创新奋进不息、脚步向前。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月24日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·以人为本</span><p>秉持以人为本、向上向善理念，让人工智能成为促进共同繁荣、维护共同安全的一个重要动力源。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：主席论断引用，适合"AI治理"立骨。</p></div><div class="material-card"><span class="tag-shenlun">金句二·服务民生</span><p>任何一项前沿技术，说到底还是要服务于实体经济、服务于解决实际问题、服务于改善民生。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"科技为民"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·自立自强</span><p>关键核心技术是要不来、买不来、讨不来的，唯有推动高水平自立自强。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：论断式金句，适合"科技安全"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·造福人类</span><p>前沿技术不是某个国家的"专利"，而应更好造福人类社会。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"科技普惠"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·金钥匙</span><p>和合共生的中国之道，亦是应对科技领域全球挑战的一把金钥匙。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻收束句，适合"全球治理"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·时代之问</span><p>用"机器思考/算法决策/技术伦理/普惠鸿沟"四问起笔，连问排比法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·AI社工</span><p>用"24小时AI社工秒回诉求"写科技向善，微观案例法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·举国体制</span><p>用"国产芯片/种源自主/五轴机床"写自立自强，举国体制法可用于"科技安全"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·安全法规</span><p>用"就业影响评估/数据安全法规/OTA备案"写统筹安全，制度闭环法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·全球倡议</span><p>用"全球人工智能治理倡议/合作组织"写普惠共赢，倡议引领法可用于"人类命运共同体"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让人工智能更好造福人民"为题，模仿本文"人民性—安全性—普惠性"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"时代之问"引题；②分"服务民生/自立自强/惠及全球"三层；③以"和合共生的金钥匙"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"数字经济"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月24日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
