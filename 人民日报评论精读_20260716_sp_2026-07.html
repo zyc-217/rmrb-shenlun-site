@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "重新认识中国"缘何出现（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"重新认识中国"缘何出现（人民时评）</h1>
+    <div class="meta">国际认知 · 中国式现代化 · 发展机遇 · 开放包容 · 软实力 | 2026年7月16日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">国际认知</span><span class="tag-item">中国式现代化</span><span class="tag-item">发展机遇</span><span class="tag-item">开放包容</span><span class="tag-item">软实力</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以墨西哥街采、福山表态、纽约时报刊文、脱贫攻坚、新能源11年第一、会展矩阵等案例，论证"重新认识中国"源于实打实成绩、长期确定性、机遇性，根本在走中国式现代化道路，适合"中国道路""国际传播""高质量发展"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"墨西哥街采请说出3个中国品牌"微观切入，由海外民众自发传播引出"打破信息茧房、重新认识中国"的认知之变。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"重新认识中国"缘何出现，源于实打实发展成绩、长期确定性、发展带来的机遇性，根本在坚持走中国式现代化道路<br><span style="color:#0d47a1;">▸ 写法：由海外街采起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">源于中国实打实的发展成绩，两大奇迹与历史性脱贫的底气<br><span style="color:#0d47a1;">▸ 写法：以工业化历程/脱贫论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">源于中国发展的长期确定性，一年接着一年干的韧劲<br><span style="color:#0d47a1;">▸ 写法：以新能源11年第一/平陆运河论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">源于中国发展带来的机遇性，以自身新发展为世界提供新机遇<br><span style="color:#0d47a1;">▸ 写法：以会展矩阵/负面清单论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"发展成绩—长期确定性—机遇性"三层溯源逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"重新认识中国"缘何出现，源于中国实打实的发展成绩、长期确定性、发展带来的机遇性；根本在于坚持走中国式现代化道路，既造福中国人民、也为世界提供新机遇，打破"信息茧房"的刻板印象，让更多人看见真实立体全面的中国。</p><p>前段时间，一个在墨西哥的街采视频在短视频平台引发热议。"请说出3个中国品牌。""华为、比亚迪、安踏……"来自不同国家的民众脱口而出中国的手机、新能源汽车、体育用品等品牌。</p>
+
+<p>这不禁让人想到另一些场景：带着《兰花草》旋律的无人驾驶清扫车，清晨缓缓驶过英国伦敦泰晤士河畔；"倒车，请注意"的提示音回响在东南亚、非洲、欧美的街巷乡村……这一幕幕折射出一个事实：中国品牌已逐步嵌入世界各地民众的生活肌理。</p>
+
+<p>看似寻常的细节，往往能照见心态的真实变化。海外社交平台上，"中国式养生""电蹦蹦"等话题受到一波又一波关注；"中国游""中国购"火热，越来越多外国游客眼见为实，惊叹于中国的安全、活力与魅力……普通民众对中国经济发展、科技应用和社会生活的欣赏和自发传播，打破<span class="highlight-blue">"有色滤镜"</span>的刻板印象，穿透刻意营造的<span class="highlight-blue">"信息茧房"</span>，让更多人"重新认识中国"。</p>
+
+<p>海外民众重新认识的，不仅是中国的现实情况，还有中国所走的道路。曾以"历史终结论"闻名的美国政治学者弗朗西斯·福山，前不久在接受采访时直言，中国人开创了一个非常了不起的模式。美国《纽约时报》刊文称，"如今的中国，已经开始指引未来的方向。"中国成就、中国道路在国际社会越来越多地被看见、被肯定、被借鉴。</p>
+
+<p>改变认知，向来不易。"重新认识中国"缘何出现？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">"重新认识中国"源于中国实打实的发展成绩：书写两大奇迹新篇章、历史性解决绝对贫困问题，中国能、中国共产党能，这是世人都看得见的底气。</span></p>
+
+<p>源于中国实打实的发展成绩。仅用几十年时间就走完发达国家几百年走过的工业化历程，在新时代书写了经济快速发展和社会长期稳定两大奇迹新篇章；用<span class="highlight-green">8年</span>时间让<span class="highlight-green">近1亿</span>农村贫困人口实现脱贫，历史性地解决了绝对贫困问题。中国能、中国共产党能，这是世人都看得见的底气。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">"重新认识中国"源于中国发展的长期确定性：一年接着一年干、一步接着一步走，无惧风雨、埋头苦干，这是世人都能感受到的确定性。</span></p>
+
+<p>源于中国发展的长期确定性。一年接着一年干，塔克拉玛干沙漠锁边工程入选"2025全球十大工程成就"；一步接着一步走，中国新能源汽车产销量连续<span class="highlight-green">11年</span>全球第一；一锤接着一锤敲，平陆运河全线通水，为中国与东盟开辟共赢新航道……中国人民始终无惧风雨、埋头苦干，向着既定目标、沿着既定方向前行，这是世人都能感受到的确定性。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">"重新认识中国"源于中国发展带来的机遇性：打开大门搞建设，以自身新发展为世界提供市场、投资、增长机遇，中国不断惠及世界。</span></p>
+
+<p>源于中国发展带来的机遇性。从"新三样"到<span class="highlight-blue">"新新三样"</span>，中国产品让更多国家和地区的群众用得起、用得上新兴技术；从中国大模型被海外用户高频使用，到中国跨境电商物流服务圈粉外国网友，中国服务为国外民众带来实实在在的红利；从形成进博会、广交会、服贸会、消博会等国家级<span class="highlight-blue">"会展矩阵"</span>，到<span class="highlight-blue">外资准入负面清单</span>持续缩减，中国打开大门搞建设，为世界带来市场机遇、投资机遇、增长机遇。中国不断以自身新发展为世界提供新机遇。</p>
+
+<p>往深看一层，中国之所以能取得这些成绩，就在于始终坚持走<span class="highlight-blue">中国式现代化</span>道路。这样一条道路，既符合中国实际，又为人类现代化提供了新选择。<span class="highlight-purple">中国的发展启示世界，每个国家都能走适合本国国情的现代化道路。</span>正如有人所言，<span class="highlight-gold">中国式现代化是"赠予世界的礼物"</span>。</p>
+
+<p><span class="highlight-purple">发展自己，也造福世界。</span>一个致力于复兴的民族，一个在中国式现代化道路上笃行不怠的国度，正不断刷新世人的认知。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月16日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·打破滤镜</span><p>普通民众对中国…的欣赏和自发传播，打破"有色滤镜"的刻板印象，穿透刻意营造的"信息茧房"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：认知类金句，适合"国际传播"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·发展成绩</span><p>仅用几十年时间就走完发达国家几百年走过的工业化历程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对比式金句，适合"发展成就"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·长期确定性</span><p>中国人民始终无惧风雨、埋头苦干，向着既定目标、沿着既定方向前行。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：韧性金句，适合"战略定力"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·赠予世界</span><p>正如有人所言，中国式现代化是"赠予世界的礼物"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"中国贡献"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·造福世界</span><p>发展自己，也造福世界。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：极简辩证句，适合"互利共赢"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·街采切入</span><p>用墨西哥街采"请说出3个中国品牌"切入，微观视角起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·缘何三问</span><p>用"源于发展成绩/长期确定性/机遇性"三层"源于"排比展开，溯源排比法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·数据链</span><p>用"8年/近1亿/连续11年第一"数据证成绩与确定性，数据递进法可用于"发展成就"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·会展矩阵</span><p>用"进博会、广交会、服贸会、消博会"国家级会展矩阵写开放机遇，矩阵列举法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移五·礼物升华</span><p>用"赠予世界的礼物"升华中国式现代化世界意义，价值升华法可用于"中国贡献"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"'重新认识中国'的启示"为题，模仿本文"发展成绩—长期确定性—机遇性"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"打破信息茧房"引题；②分"实打实成绩/长期确定性/带来机遇"三层；③以"为世界提供新机遇"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"高质量发展"角度，用同一骨架写一句总论点，要求含"既是……也是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月16日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
