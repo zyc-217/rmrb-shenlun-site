@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 在区域协同中激发经济活力（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>在区域协同中激发经济活力（人民时评）</h1>
+    <div class="meta">区域协调发展 · 全国统一大市场 · 战略叠加 · 比较优势 · 高质量发展 | 2026年7月23日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">区域协调发展</span><span class="tag-item">全国统一大市场</span><span class="tag-item">战略叠加</span><span class="tag-item">比较优势</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以宜宾动力电池蝶变、长三角G60科创走廊、西部陆海新通道、珠江—西江经济带、深圳武汉重庆等案例，论证在区域协同中从战略叠加捕捉机遇、从区域联动寻找空间、从扬长补短强化优势，适合"区域协调发展""全国统一大市场""新发展格局"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"三江交汇处"宜宾从化工围江到新能源赛道蝶变起笔，由一城之变引出区域协调发展方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">在区域协同中激发经济活力，需从战略叠加捕捉机遇、从区域联动寻找空间、从扬长补短强化优势，以全国统一大市场加速要素流通<br><span style="color:#0d47a1;">▸ 写法：由宜宾蝶变起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">区域协调加速要素自由流通，为创新聚合势能<br><span style="color:#0d47a1;">▸ 写法：以长三角一体化/G60科创走廊论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">破壁联通重塑区位优势，为发展拓宽空间<br><span style="color:#0d47a1;">▸ 写法：以西部陆海新通道/珠西经济带论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">以跨流域大通道、城市群联动为载体，发挥战略叠加效应<br><span style="color:#0d47a1;">▸ 写法：以深圳武汉重庆全国例证论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"要素流通—区位重塑—战略叠加"三层协同逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】在区域协同中激发经济活力，需从战略叠加中捕捉机遇、从区域联动中寻找空间、从扬长补短中强化优势：以全国统一大市场加速要素自由流通、以跨流域大通道重塑区位优势、以城市群联动发挥战略叠加效应，让各地找到差异化发展之路、不断积累发展胜势。</p><p>从战略叠加中捕捉机遇、从区域联动中寻找空间、从扬长补短中强化优势，各地就能找到差异化发展之路，不断积累发展胜势</p>
+
+<p>三江交汇处，转型引深思。</p>
+<p>四川宜宾，一度"化工围江、污染绕城"，如今切入新能源赛道，全世界每<span class="highlight-green">10块</span>动力电池，就有<span class="highlight-green">1块</span>是宜宾造。</p>
+<p>今年上半年，当地动力电池产业增加值同比增长<span class="highlight-green">37.8%</span>，经济发展量质齐升。</p>
+
+<p>宜宾为什么能实现蝶变？</p>
+
+<p>从全国发展一盘棋的视角来观察，能洞悉发展密码。</p>
+<p>作为区域经济的重要支点，宜宾积极参与<span class="highlight-blue">成渝地区双城经济圈</span>汽车产业高质量协同发展，与成渝两地形成产业链深度协作。</p>
+<p>同时，立足<span class="highlight-blue">长江经济带</span>高质量发展，充分运用长江黄金水道降低物流成本。</p>
+<p>在主动融入国家区域发展战略中夯实产业基础、加速要素流动，宜宾抓住了转型升级的机遇。</p>
+
+<p>新时代以来，以习近平同志为核心的党中央不断丰富完善<span class="highlight-blue">区域协调发展</span>的理念、战略和政策体系，推动经济发展空间格局持续向纵深拓展，我国逐步构建起主体功能明显、优势互补、高质量发展的区域经济布局。</p>
+<p>随着<span class="highlight-blue">全国统一大市场</span>加快建设，各区域间相互赋能，激发区域协调发展新的化学反应，为各地发展带来新活力、新机遇。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">区域协调，加速要素自由流通，为创新聚合势能；各个区域既各美其美，又美美与共，才能协同提升发展效能。</span></p>
+
+<p>区域协调，加速要素自由流通，为创新聚合势能。</p>
+<p>比如<span class="highlight-blue">长三角一体化</span>之于长江经济带，在科技创新上，从<span class="highlight-blue">G60科创走廊</span>城市携手打造创新策源地，到上海加强对沿江城市科技辐射，"研发在长三角、转化在长江经济带"的协同创新格局加快形成；</p>
+<p>在要素流动上，通过区域之间的制度创新和产业承接，长江经济带"聚产业、强节点"的作用更加凸显。</p>
+<p><span class="highlight-gold">各个区域既各美其美，又美美与共，才能协同提升发展效能。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">破壁联通，重塑区位优势，为发展拓宽空间；让内陆变开放前沿、腹地开增量空间，激活欠发达地区潜力。</span></p>
+
+<p>破壁联通，重塑区位优势，为发展拓宽空间。</p>
+<p>比如<span class="highlight-blue">西部陆海新通道</span>连接"一带一路"，让内陆变成开放前沿，让腹地打开增量空间。</p>
+<p>又如珠江—西江经济带规划建设，为广西梧州承接<span class="highlight-blue">粤港澳大湾区</span>产业转移创造有利条件，研发在深圳、制造在梧州、物流走西江水运到珠三角出海，不仅激活了欠发达地区的发展潜力，也为粤港澳大湾区打开了新的发展空间。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">以跨区域跨流域大通道为基础、城市群联动为载体，统筹推进区域发展战略实施与联动，发挥战略叠加效应。</span></p>
+
+<p>以跨区域跨流域大通道为基础，以城市群联动发展为载体，统筹推进区域内发展战略实施和区域间联动发展，有利于发挥战略叠加效应。</p>
+
+<p>放眼全国，广东深圳既锚定建设中国特色社会主义先行示范区锐意改革，又以<span class="highlight-blue">粤港澳大湾区</span>国际科技创新中心为引擎矢志创新，成为全国创新高地；</p>
+<p>湖北武汉依托<span class="highlight-blue">中部崛起战略</span>和长江经济带发展战略，在光电子信息等新兴产业赛道锻造长板；</p>
+<p>重庆凭借新时代西部大开发和西部陆海新通道，让新能源汽车畅销海外……</p>
+<p><span class="highlight-gold">融入全国发展大局，从战略叠加中捕捉机遇、从区域联动中寻找空间、从扬长补短中强化优势，各地就能找到差异化发展之路，不断积累发展胜势。</span></p>
+
+<p><span class="highlight-purple">中国经济高质量发展，既需要发挥重点区域增长极作用，也需要跨区域经济带穿针引线、贯通经纬。</span></p>
+<p>为各地发挥比较优势创造条件，让发展的增长极更加稳固，让循环的大通道愈发畅通，将推动中国号巨轮劈波斩浪、一往无前。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月23日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·差异化路</span><p>从战略叠加中捕捉机遇、从区域联动中寻找空间、从扬长补短中强化优势，各地就能找到差异化发展之路。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总起排比金句，适合"区域协调"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·各美其美</span><p>各个区域既各美其美，又美美与共，才能协同提升发展效能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"协同发展"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·相互赋能</span><p>随着全国统一大市场加快建设，各区域间相互赋能。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：判断金句，适合"统一大市场"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·穿针引线</span><p>既需要发挥重点区域增长极作用，也需要跨区域经济带穿针引线、贯通经纬。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"区域格局"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·劈波斩浪</span><p>让循环的大通道愈发畅通，将推动中国号巨轮劈波斩浪、一往无前。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：意象收束句，适合"高质量发展"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·一城蝶变</span><p>用"宜宾从化工围江到新能源赛道"小城起笔，一城蝶变法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·数据亮变</span><p>用"每10块电池1块宜宾造/增长37.8%"数据证蝶变，数据亮变法可用于"产业升级"。</p></div><div class="migration-card"><span class="tag-mig">迁移三·协同格局</span><p>用"研发在长三角、转化在长江经济带"写协同创新，协同格局法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·通道重塑</span><p>用"西部陆海新通道让内陆变前沿"写破壁联通，通道重塑法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·三城例证</span><p>用"深圳武汉重庆"三城写战略叠加，多城排比法可用于"区域发展"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"在区域协同中积蓄发展胜势"为题，模仿本文"要素流通—区位重塑—战略叠加"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"全国发展一盘棋"引题；②分"统一大市场流通/跨流域通道重塑/城市群战略叠加"三层；③以"找到差异化发展之路"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"县域协同发展"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月23日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
