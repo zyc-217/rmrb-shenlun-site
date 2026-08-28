@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以诚相交，前路自宽（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以诚相交，前路自宽（人民时评）</h1>
+    <div class="meta">对外开放 · 中非合作 · 真实亲诚 · 互利共赢 · 人类命运共同体 | 2026年7月20日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">对外开放</span><span class="tag-item">中非合作</span><span class="tag-item">真实亲诚</span><span class="tag-item">互利共赢</span><span class="tag-item">人类命运共同体</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以卢旺达辣椒变长沙辣椒酱、中非贸易1.14万亿元、53个非洲建交国零关税、马达加斯加杂交水稻、鲁班工坊、中老铁路、26张赞成票等案例，论证以诚相交、摒弃零和博弈，适合"高水平对外开放""中非合作""人类命运共同体"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"卢旺达辣椒漂洋过海变湖南辣椒酱"小切口起笔，由一门好生意引出"以诚相交、前路自宽"的相处之道。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以诚相交，前路自宽，秉持真实亲诚理念、摒弃零和博弈，以短期让利换长久互信，彰显开放包容、相互成就的相处之道<br><span style="color:#0d47a1;">▸ 写法：由卢旺达辣椒起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">以诚相交方能互利共赢，义利相兼、以义为先，做大发展蛋糕<br><span style="color:#0d47a1;">▸ 写法：以53个非洲零关税论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">真朋友授人以渔，帮对方把产业立起来、把本事练出来<br><span style="color:#0d47a1;">▸ 写法：以马达加斯加杂交水稻/鲁班工坊论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">合作从来不是单向馈赠，而是彼此成就，筑牢牢不可破互信<br><span style="color:#0d47a1;">▸ 写法：以中老铁路/26张赞成票论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"互利共赢—授人以渔—彼此成就"三层交往逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以诚相交，前路自宽，秉持真实亲诚理念、摒弃零和博弈，以短期让利换长久互信：从互利共赢到授人以渔、共同成长，再到牢不可破的互信，中非合作彰显开放包容、相互成就的相处之道，也为国与国相处提供有益启示。</p><p><span class="highlight-gold">这个星球足够宽广，容得下各国共同发展、共同繁荣，有条件让更多人从开放合作中实实在在获益</span></p>
+
+<p>卢旺达地处东非高原，这里的辣椒辣度高、品质好；湖南人无辣不欢，恰好"对味"。零关税通关入境，<span class="highlight-blue">"绿色通道"</span>即申即审……一批批卢旺达干辣椒漂洋过海来到位于湖南长沙的中非经贸合作创新促进示范园，在加工车间里变身辣椒酱，再摆上国内多个省份的商超货架。非洲的好食材、中国的大市场，合在一起就是一门好生意。</p>
+
+<p>今年前<span class="highlight-green">5个月</span>，我国对非洲国家进出口<span class="highlight-green">1.14万亿元</span>，历史同期首次突破<span class="highlight-green">1万亿元</span>大关，同比增长<span class="highlight-green">18.2%</span>。如今，南非鲜苹果、埃及鲜橙、肯尼亚鲜牛油果摆上中国货架，中国的新能源汽车、光伏组件走进非洲市场。开启外交关系<span class="highlight-green">70年</span>来，面对各种风雨，中非合作之路何以越走越宽？</p>
+
+<p>以诚相交，方能互利共赢。今年<span class="highlight-green">5月1日</span>起，我国对<span class="highlight-green">53个</span>非洲建交国全面实施<span class="highlight-blue">零关税</span>举措，成为全球首个对所有非洲建交国和所有建交的最不发达国家实现单方面、全覆盖零关税待遇的主要经济体。关税归零、通关提速，减的是真金白银的成本，递的是实实在在的诚意。有人或许会问：这么大幅度的让利，图的是什么？</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">以诚相交，方能互利共赢；摒弃零和博弈思维，义利相兼、以义为先，以短期让利换长久互信，中国的发展正在成为各国的机遇。</span></p>
+
+<p>国之交，若只盯着"利益多少"的眼前账，只会越算路越窄。<span class="highlight-purple">摒弃零和博弈的思维，才能做大发展蛋糕。</span>进博会年年如约、链博会应运而生，高质量共建<span class="highlight-blue">"一带一路"</span>走深走实……中国的发展正在成为各国的机遇。义利相兼、以义为先，以短期让利换长久互信，这笔账越算越明白。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">真朋友是用真心换真心；不只授人以鱼，更授人以渔，愿帮对方把产业立起来、把本事练出来，让发展红利惠及更广泛人群。</span></p>
+
+<p>好朋友，是用真心换真心。在马达加斯加，中国专家团队成功培育出多种适合当地土壤、气候的高产杂交水稻种子。育种、制种、种植、加工和销售……如今，马达加斯加有了杂交水稻全产业链，当地人将杂交水稻亲切唤作"擦拉贝"（意为"最好的东西"）。在多个非洲国家落地的<span class="highlight-blue">"鲁班工坊"</span>，把职业技能送上门，让更多年轻人掌握了谋生的手艺。<span class="highlight-gold">真朋友，不只授人以鱼，更授人以渔</span>，愿帮对方把产业立起来、把本事练出来。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">合作共赢也能共同成长；各展所长、相互借力，合作从来不是单向馈赠，而是彼此成就，用行动铸就牢不可破的互信。</span></p>
+
+<p>合作共赢，也能共同成长。中老铁路通车运营，老挝实现从"陆锁国"到"陆联国"的历史性跨越，中国企业则在被称为"地质博物馆"的铁路沿线磨砺了隧道施工技术。放眼世界各地，走出去的中国企业，在一个个陌生市场里摸爬滚打，带回来的不只是合同和订单，更有对国际规则的切身理解、对不同文化的深入认知。<span class="highlight-purple">各展所长、相互借力，合作从来不是单向馈赠，而是彼此成就。</span></p>
+
+<p>友谊之舟，经得起风浪。1971年联合国大会表决，<span class="highlight-green">26张</span>来自非洲的赞成票助力中国恢复合法席位。决议通过后，在场不少非洲国家代表情不自禁跳起舞蹈。这份情谊，中国人始终铭记。援建坦赞铁路，架起通信网络，建起水电站，<span class="highlight-green">60多年</span>不间断派遣医疗队，世纪疫情来袭时支援疫苗和物资……<span class="highlight-gold">"疾风知劲草，烈火见真金"</span>，中非关系之所以历久弥坚，正在于双方始终秉持<span class="highlight-blue">真实亲诚理念</span>，在彼此最需要的时候从未缺席，用行动铸就了牢不可破的互信。</p>
+
+<p>别国的发展，究竟是威胁还是机遇？<span class="highlight-purple">零和博弈的逻辑下，关税壁垒层层加码，看似护住了本国产业，实则推高了商品价格、加重了民众的生活负担。</span>主动降低门槛，让各国优质商品进入中国市场，使消费者有更丰富的选择；帮别的国家把产业立起来，让发展的红利惠及更广泛的人群。这个星球足够宽广，容得下各国共同发展、共同繁荣，有条件让更多人从开放合作中实实在在获益。</p>
+
+<p>把大门敞开，终将看到更大的世界。<span class="highlight-gold">以诚相交、彼此成就，是中非70年走出来的经验</span>，又何尝不是国与国相处应有的样子？</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月20日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·星球宽广</span><p>这个星球足够宽广，容得下各国共同发展、共同繁荣。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总起意象句，适合"开放包容"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·绿色通道</span><p>零关税通关入境，"绿色通道"即申即审。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：机制金句，适合"贸易便利"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·授人以渔</span><p>真朋友，不只授人以鱼，更授人以渔。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对举金句，适合"合作共赢"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·疾风真金</span><p>"疾风知劲草，烈火见真金"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古训金句，适合"互信友谊"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·以诚相交</span><p>以诚相交、彼此成就，是中非70年走出来的经验。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"相处之道"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·好生意</span><p>用"卢旺达辣椒变长沙辣椒酱"小切口切入，民生小故事起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·数据链</span><p>用"1.14万亿元/18.2%/53个零关税/26张赞成票/60多年医疗队"数据链证合作，数据递进法可用于"对外开放"。</p></div><div class="migration-card"><span class="tag-mig">迁移三·鲁班工坊</span><p>用"鲁班工坊送职业技能上门"写授人以渔，技能援助法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·彼此成就</span><p>用"中老铁路陆锁国变陆联国"写相互成就，双向受益法可用于"一带一路"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·零和博弈</span><p>用"摒弃零和博弈才能做大蛋糕"辩证收束，反义对举法可用于"合作共赢"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以诚相交方能行稳致远"为题，模仿本文"互利共赢—授人以渔—彼此成就"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"这个星球足够宽广"引题；②分"短期让利换互信/授人以渔立产业/相互成就共成长"三层；③以"国与国相处应有的样子"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"高水平对外开放"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月20日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
