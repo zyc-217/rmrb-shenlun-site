@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 告别以价换量，共促优质优价（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>告别以价换量，共促优质优价（人民时评）</h1>
+    <div class="meta">汽车产业 · 优质优价 · 反内卷 · 技术溢价 · 供应链自主 | 2026年7月27日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">汽车产业</span><span class="tag-item">优质优价</span><span class="tag-item">反内卷</span><span class="tag-item">技术溢价</span><span class="tag-item">供应链自主</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以工信部座谈会、整车成本测算规则、17家车企60天账期、消费者差异化需求、技术溢价护城河、供应链自主可控、汽车出口509.6万辆等案例，论证告别以价换量须聚焦差异化需求、以技术领先争溢价、掌控供应链自主、向外拓展第二曲线，适合"产业升级""反内卷""高质量发展"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"整车利润率持续承压"起笔，由"卖得更多"到"赚得也多"的必答题引出优质优价方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">告别以价换量、共促优质优价，需聚焦差异化需求、以技术领先争溢价、掌控供应链自主、向外拓展第二曲线<br><span style="color:#0d47a1;">▸ 写法：由利润率承压起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">聚焦差异化需求，精准定位细分领域，赢得消费者青睐<br><span style="color:#0d47a1;">▸ 写法：以日用车/越野车需求差异论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">以技术领先争取技术溢价，掌控供应链自主可控<br><span style="color:#0d47a1;">▸ 写法：以多维较量/护城河/供应链短板论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">向"外"拓展，在全球市场寻找"第二曲线"<br><span style="color:#0d47a1;">▸ 写法：以汽车出口509.6万辆/出海稳健论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"差异化—技术溢价—向外拓展"三层优质优价逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】告别以价换量、共促优质优价，需聚焦差异化需求精准定位细分领域、以技术领先争取技术溢价、掌控供应链自主可控、向全球市场寻找"第二曲线"：让核心技术创新与供应链自主受到更多重视，新的价值蓝海会不断涌现，推动中国汽车在高质量发展轨道上驶向更辽阔的远方。</p><p>当优质优价成为共识，核心技术创新、供应链自主等受到更多重视，新的价值蓝海会不断涌现</p>
+
+<p>一段时间以来，汽车行业整车利润率持续承压。</p>
+<p><span class="highlight-gold">破解产业竞争困局，让"卖得更多"的繁荣结出"赚得也多"的果实</span>，成为中国汽车产业高质量发展的一道必答题。</p>
+
+<p>不久前，工业和信息化部召开重点汽车生产企业座谈会，部署规范行业竞争秩序等工作；</p>
+<p>中国汽车工业协会发布国内首套整车成本测算规则，从源头约束非理性低价竞争。</p>
+<p>从政策引导到行业自律，信号密集且清晰："价格战"危害甚大、不可持续，国内车企必须告别以价换量的低价策略，奔赴优质优价的价值高地。</p>
+
+<p>谁也不愿深陷泥潭，问题的关键在于怎么跳出泥潭。</p>
+<p>自<span class="highlight-green">2025年</span><span class="highlight-green">17家</span>车企作出<span class="highlight-green">60天</span>账期承诺以来，制度监管与行业自律持续同向发力，汽车领域<span class="highlight-blue">"反内卷"</span>的共识和合力一直在凝聚。</p>
+<p>从"内卷式"竞争的泥潭中实现关键一跃，车企需要破解产品同质化、竞争维度单一化等问题。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">聚焦差异化需求，精准定位细分领域；从消费者真实参考因素出发，才能赢得消费者青睐，跳出同质化泥潭。</span></p>
+
+<p>从消费者角度看，除了价格，购车还有很多参考因素。</p>
+<p>购买日用车，考虑更多的是安全可靠、续航真实，智驾辅助是加分项；</p>
+<p>购买越野车，讨论最多的是"短轴距好还是长轴距好""能爬多大倾角的坡""分动箱有没有金属油底壳"。</p>
+<p>只有聚焦差异化需求，精准定位细分领域，才能赢得消费者青睐。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">健康的市场竞争是技术、产品、服务、品牌、生态的多维较量，要以技术领先争取技术溢价、掌控供应链自主可控。</span></p>
+
+<p>健康的市场竞争，应该是技术、产品、服务、品牌、生态的多维较量，其中技术是一个关键因子。</p>
+<p>打破"下沉螺旋"，实现"向上突围"，要争取更多技术溢价。</p>
+<p>人工智能重构人车关系，让智驾更加"懂你"；分钟级闪充续航，重新定义电动出行的效率；一套模型适配各类路况，智驾方案在更多场景实现落地……</p>
+<p><span class="highlight-gold">一家企业的"护城河"可能有多条，但最可靠管用的一条始终是技术领先。</span></p>
+
+<p>从智能驾驶处理器到车规级存储再到高端变速箱，车企陷入同质化竞争的一个深层症结，在于部分核心零部件仍受制于人，<span class="highlight-blue">供应链自主可控</span>能力仍存短板。</p>
+<p>外部成本波动传导至整车，削弱了整车企业的定价自主权。</p>
+<p><span class="highlight-purple">努力掌控关键核心技术和零部件，引领产品功能实现代际跨越，有助于国内车企实现品质与成本的再平衡，从而掌握市场竞争主动权。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">向"外"拓展，在全球市场中寻找"第二曲线"；以技术创新定义产品独特性，深度参与全球质量体系顶层设计，获得更大发展空间。</span></p>
+
+<p>向"外"拓展，在全球市场中寻找"第二曲线"，是车企获得更大发展空间的突破口。</p>
+<p>今年上半年，我国汽车出口<span class="highlight-green">509.6万辆</span>，同比增长<span class="highlight-green">65.3%</span>。</p>
+<p>国际市场竞争激烈，为什么不少车企的出海步伐从容而稳健？</p>
+<p>其中既有供应链垂直整合强化成本优势的原因，更有新能源叠加智能驾驶带来优越体验的因素。</p>
+<p>以技术创新定义产品独特性和吸引力，深度参与全球质量体系顶层设计，推动品牌、运营国际化，国内车企将获得更多发展机遇。</p>
+
+<p>转型不可能一蹴而就，汽车业仍需在多重挑战中苦练内功。</p>
+<p><span class="highlight-gold">没有一场风雨不会过去，没有一个春天不会到来。</span></p>
+<p>当优质优价成为共识，核心技术创新、供应链自主等受到更多重视，新的价值蓝海会不断涌现。</p>
+<p>踩好差异化、品质化、智能化、国际化的加速踏板，中国汽车将在高质量发展轨道上驶向更辽阔的远方。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月27日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·卖赚之问</span><p>让"卖得更多"的繁荣结出"赚得也多"的果实。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对举金句，适合"产业提质"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·护城河</span><p>一家企业的"护城河"可能有多条，但最可靠管用的一条始终是技术领先。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：比喻金句，适合"技术溢价"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·再平衡</span><p>努力掌控关键核心技术，实现品质与成本的再平衡，从而掌握市场竞争主动权。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"供应链自主"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·风雨春天</span><p>没有一场风雨不会过去，没有一个春天不会到来。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：诗意金句，适合"长期主义"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·价值蓝海</span><p>当优质优价成为共识，新的价值蓝海会不断涌现。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"高质量发展"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·必答题</span><p>用"卖得更多结出赚得也多果实"立必答题，对举起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·政策自律</span><p>用"工信部座谈+协会成本规则"写政策引导行业自律，双向发力法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·需求差异</span><p>用"日用车安全续航/越野车倾角油底壳"写细分需求，需求拆解法可用于"消费升级"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·技术护城河</span><p>用"护城河最可靠是技术领先"写多维较量，护城河比喻法可用于"竞争优势"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·第二曲线</span><p>用"汽车出口509.6万辆/65.3%"写向外拓展，出海数据法可用于"双循环"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"从以价换量走向优质优价"为题，模仿本文"差异化—技术溢价—向外拓展"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"利润率承压"引题；②分"精准定位需求/技术领先争溢价/全球第二曲线"三层；③以"驶向更辽阔远方"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"光伏产业"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月27日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
