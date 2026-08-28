@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "中国智造"的三种能力（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"中国智造"的三种能力（人民时评）</h1>
+    <div class="meta">中国智造 · 新质生产力 · 产业链韧性 · 前瞻创新 · 精准供给 | 2026年7月29日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">中国智造</span><span class="tag-item">新质生产力</span><span class="tag-item">产业链韧性</span><span class="tag-item">前瞻创新</span><span class="tag-item">精准供给</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以中国车企欧洲市占率超日本、5家车企31国售13.84万辆、即插即用空调、世界杯周边、柔性生产等案例，论证"中国智造"具备前瞻创新力、快速响应力、精准触达力三种能力，适合"新质生产力""产业链韧性""外贸"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"别处讨论能不能造、中国命题多快能送到"起笔，由三种能力引出全球产业链"稳定器"定位。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">"中国智造"以前瞻创新力、快速响应力、精准触达力，成为全球产业链独特"稳定器"，为世界提供确定性<br><span style="color:#0d47a1;">▸ 写法：由欧洲市占率反超起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">新赛道上跑得快，体现前瞻创新力<br><span style="color:#0d47a1;">▸ 写法：以新能源全产业链/跟跑到领跑论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">关键时刻顶得上，体现快速响应力<br><span style="color:#0d47a1;">▸ 写法：即插即用空调/救灾物资论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">细分需求接得住，体现精准触达力<br><span style="color:#0d47a1;">▸ 写法：以世界杯周边/手账胶带论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"前瞻创新—快速响应—精准触达"三层能力逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】"中国智造"以新赛道上的前瞻创新力、关键时刻的快速响应力、对细分需求的精准触达力，将突发需求迅速转化为产品、再将产品快速送达，成为全球产业链中一个独特的"稳定器"，为世界提供难能可贵的确定性，加快形成新质生产力。</p><p>当别处还在讨论"能不能造"时，中国的命题已经是"多快能送到"。</p>
+<p>这种将突发需求迅速转化为产品、再将产品快速送达的能力，让中国成为全球产业链中一个独特的"稳定器"。</p>
+
+<p>不久前，欧洲汽车制造商协会发布数据：今年5月，<span class="highlight-green">5家</span>中国车企在<span class="highlight-green">31个</span>欧洲国家售出<span class="highlight-green">13.84万辆</span>汽车，市场占有率首次超越日本车企。</p>
+<p>这是中国新能源汽车在全球价值链上的一次重要跃迁。</p>
+
+<p>从新能源汽车出海看外贸全局，今年上半年，机电产品占出口比重已近<span class="highlight-green">六成</span>，高技术产品等成为出口增长主力。</p>
+<p><span class="highlight-gold">"几亿件衬衫换一架飞机"已成过往</span>，"中国智造"作为一张新的亮丽名片，展现出中国经济的综合竞争优势与蓬勃创新活力。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">新赛道上跑得快，体现前瞻创新力。</span></p>
+
+<p>新赛道上跑得快，体现前瞻创新力。</p>
+<p>中国汽车在欧洲市场占有率反超日本，并非靠低价走量。</p>
+<p>在新能源汽车赛道上，中国有最完整的动力电池产业链、快速迭代的技术和产品、丰富的应用场景积累。</p>
+<p><span class="highlight-purple">反超，是厚积薄发的结果，更是前瞻布局的回报。</span></p>
+<p>类似的故事，正在创新药、工业机器人等新兴领域不断上演。</p>
+<p>从"能用"到"好用"，从"单点突破"到<span class="highlight-blue">"全链贯通"</span>，中国在越来越多新赛道上实现了从跟跑到领跑。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">关键时刻顶得上，体现快速响应力。</span></p>
+
+<p>关键时刻顶得上，体现快速响应力。</p>
+<p>前不久，热浪来袭，欧洲仅约<span class="highlight-green">两成</span>家庭有空调。</p>
+<p>中国产的分体式空调，不需打孔、不装外机、即插即用，精准满足了欧洲民众的需求。</p>
+<p>从向遭受严重灾害的国家提供救灾物资，到欧洲能源危机时以电热毯、暖水袋助民众过冬，"中国智造"总能及时响应突发需求，背后是完整产业体系作支撑。</p>
+<p>当别处还在讨论"能不能造"时，中国的命题已经是"多快能送到"。</p>
+<p>这种将突发需求迅速转化为产品、再将产品快速送达的能力，让中国成为全球产业链中一个独特的"稳定器"，为世界提供了难能可贵的确定性。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">细分需求接得住，体现精准触达力。</span></p>
+
+<p>细分需求接得住，体现精准触达力。</p>
+<p>世界杯的哨声还没吹响，中国生产的旗帜、喇叭等商品就已漂洋过海，铺满赛场周边的货架。</p>
+<p>从满足"手账"爱好者喜好的胶带，到切中生活小痛点的创意厨具，"中国智造"借助数字赋能，把全球消费者千差万别的"微需求"接住，再转化为适销对路的产品。</p>
+
+<p>这种能力，来自不计其数的中小企业、发达的新型基础设施和日益高效的<span class="highlight-blue">柔性生产能力</span>。</p>
+<p>跨境电商平台让远方的需求信号被看见，产业集群让零散的订单被高效整合，智能物流让一个个包裹漂洋过海、及时交付。</p>
+<p>对全球市场需求的精准捕捉、高效满足，让"中国智造"融入了不同文化、不同国度民众的日常生活，成为一种有质地的供给。</p>
+
+<p>向下扎根、向上生长、向外延展，"中国智造"持续释放澎湃新动能，加快形成<span class="highlight-blue">新质生产力</span>。</p>
+<p>从一辆辆驶入欧洲街头的新能源汽车，到一台台即插即用的空调；</p>
+<p>从发往全球的快递包裹，到实验室里正在迭代的人形机器人——这些看似不相关的画面，其实都在讲述同一个故事："中国智造"仍在不断迭代升级，并以更立体、更深入、更温暖的方式造福全球。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月29日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·稳定器</span><p>当别处还在讨论"能不能造"时，中国的命题已经是"多快能送到"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对比金句，适合"产业跃升"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·衬衫飞机</span><p>"几亿件衬衫换一架飞机"已成过往。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：意象金句，适合"外贸升级"立骨。</p></div><div class="material-card"><span class="tag-shenlun">金句三·前瞻回报</span><p>反超，是厚积薄发的结果，更是前瞻布局的回报。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"前瞻创新"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·全链贯通</span><p>从"单点突破"到"全链贯通"，中国在越来越多新赛道上实现了从跟跑到领跑。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"产业链"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·造福全球</span><p>"中国智造"仍在不断迭代升级，并以更立体、更深入、更温暖的方式造福全球。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华收束句，适合"新质生产力"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·市占率</span><p>用"5家车企31国售13.84万辆反超日本"写跃迁，市占率数据法可用于"出海"。</p></div><div class="migration-card"><span class="tag-mig">迁移二·即插即用</span><p>用"即插即用空调精准满足欧洲热浪需求"写快速响应，场景响应法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移三·世界杯周边</span><p>用"世界杯哨声未响周边已铺满货架"写前置供给，预判供给法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·柔性生产</span><p>用"柔性生产能力+跨境电商+智能物流"写能力来源，能力矩阵法可用于"供应链"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·稳定器</span><p>用"为全球产业链提供难能可贵的确定性"收束，稳定器喻法可用于"双循环"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以三种能力锻造产业韧性"为题，模仿本文"前瞻创新—快速响应—精准触达"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"别处讨论能不能造、中国命题多快能送到"引题；②分"新赛道前瞻/关键时刻响应/微需求触达"三层；③以"全球产业链稳定器"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"先进制造"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月29日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
