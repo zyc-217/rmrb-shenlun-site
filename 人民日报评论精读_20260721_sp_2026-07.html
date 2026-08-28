@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以治理效能更好激发创新效益（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以治理效能更好激发创新效益（人民时评）</h1>
+    <div class="meta">国家治理 · 治理效能 · 创新发展 · 制度规范 · 高质量发展 | 2026年7月21日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">国家治理</span><span class="tag-item">治理效能</span><span class="tag-item">创新发展</span><span class="tag-item">制度规范</span><span class="tag-item">高质量发展</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以动力电池规模化退役前瞻标准、AI服务包容审慎分类分级监管、外卖"食安封签"等案例，论证以治理效能激发创新效益需增强预见性、提高精准度、注重"小快灵"，适合"制度创新""新质生产力治理""放管服"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"家用车体积变大/AI智能体落地/预制菜关切"三组热点现象起笔，由配套标准规范之问引出治理方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">以治理效能更好激发创新效益，要增强预见性、提高精准度、注重"小快灵"，以现代化国家治理适应发展新趋势新要求<br><span style="color:#0d47a1;">▸ 写法：由三组热点现象设问起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">增强预见性，才能既兜住底线，又拓宽空间<br><span style="color:#0d47a1;">▸ 写法：以动力电池退役前瞻标准论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">提高精准度，才能既"管得好"，又"放得活"<br><span style="color:#0d47a1;">▸ 写法：以AI服务分类分级监管/因地制宜论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">注重"小快灵"，才能更好跟紧时代节拍、创新步子<br><span style="color:#0d47a1;">▸ 写法：以外卖监管/总书记立法形式论述证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"预见性—精准度—小快灵"三层治理逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】以治理效能更好激发创新效益，要增强预见性、提高精准度、注重"小快灵"：以超前预判兜住底线、拓宽空间，以精准施策兼顾制度刚性与弹性，以"小快灵"的法治手段及时回应新变化新挑战，不断提高治理体系和治理能力现代化水平，为创新发展引领方向、留足空间。</p><p>近年来的一些热点现象，联系起来看，引人深思。</p>
+
+<p>家用车体积不断变大，车宽屡超<span class="highlight-green">2米</span>，多数停车位仍沿用多年前设计标准，"车大位小"矛盾凸显；</p>
+<p>AI（人工智能）智能体加速落地，能自主调用数据并独立完成任务，但信息安全、隐私保护与权责边界等问题相伴而生；</p>
+<p>预制菜产业规模扩大，公众对其概念定义、安全水平等问题更加关注……</p>
+
+<p>今日中国，新技术、新产品、新业态层出不穷，彰显发展活力，这也对配套的标准和规范提出更高要求。</p>
+<p>如何以治理效能更好激发创新效益？</p>
+<p>这是推进高质量发展的一道现实课题。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">增强预见性，才能既兜住底线，又拓宽空间。前瞻预判、下好先手棋，为创新发展引领方向、留足空间。</span></p>
+
+<p>随着新能源汽车产业迅猛发展，我国即将迎来动力电池规模化退役。</p>
+<p>国家有关部门早有预判，前瞻性制定一系列国家标准，引领带动动力电池回收利用，促使企业采用标准通用、节约资源、易拆解、易回收利用的产品设计，推动全行业绿色低碳可持续发展。</p>
+
+<p>完善制度和规范，既要解决老问题，也要提高对新问题的预见性。</p>
+<p>从为数字经济、未来产业等提供政策支撑，到前瞻性制定智能驾驶等细分领域标准……</p>
+<p><span class="highlight-purple">登高望远，下好先手棋，才能既有效应对风险，也为创新发展引领方向、留足空间。</span></p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">提高精准度，才能既"管得好"，又"放得活"。精准施策、因地制宜，兼顾制度刚性与弹性，为发展增强韧性。</span></p>
+
+<p>智能问诊、智能导购、家政机器人……</p>
+<p>AI拟人化互动服务不断涌现，如何规范和管理？</p>
+<p>不久前出台的相关办法，采取<span class="highlight-blue">包容审慎、分类分级监管</span>理念，既划出红线，严禁危害国家安全和社会稳定的内容，也预留空间，鼓励在文化、养老等民生领域进行探索。</p>
+<p>这样的精细操作，既满足安全需求，也不会抑制创新。</p>
+
+<p>我国地域广阔，不同行业情况各异，必然要求精准施策。</p>
+<p>顶层设计划定底线、边界，细分标准则需区分情况、对接现实。</p>
+<p><span class="highlight-purple">坚持因地制宜，不搞"一刀切"，才能兼顾制度刚性与弹性，为发展增强韧性。</span></p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">注重"小快灵"，才能更好跟紧时代的节拍、创新的步子。以法治手段及时回应新变化新挑战，有力推动经济社会发展。</span></p>
+
+<p>外卖行业的监管与规范就是例证。</p>
+<p>早期聚焦商户资质审核，根治"无证上线"乱象；</p>
+<p>随后，逐步推开"明厨亮灶"后厨直播、配送人员健康管理等举措。</p>
+<p>今年，监管部门不仅下大力气整治"幽灵外卖"，而且出台规定，要求外卖在出餐前必须加贴<span class="highlight-blue">食安封签</span>。</p>
+<p>这些制度规范直击痛点、紧盯细节，有力回应消费者关切。</p>
+
+<p><span class="highlight-gold">习近平总书记指出："要研究丰富立法形式，可以搞一些'大块头'，也要搞一些'小快灵'，增强立法的针对性、适用性、可操作性。"</span></p>
+<p>在保持政策、制度稳定性的同时，以法治手段及时回应新变化、新挑战，有利于更好推动经济社会发展。</p>
+
+<p><span class="highlight-purple">发展就是破题、解题的动态过程。</span>时代在发展，环境在变化，人民对美好生活的向往更加强烈，必须以现代化的国家治理适应社会发展新趋势新要求。</p>
+<p>不断提高治理体系和治理能力的现代化水平，日新又新的中国必将给世界带来更多惊喜。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月21日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·治理先手</span><p>登高望远，下好先手棋，才能既有效应对风险，也为创新发展引领方向、留足空间。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"前瞻布局"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句二·因地制宜</span><p>坚持因地制宜，不搞"一刀切"，才能兼顾制度刚性与弹性。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：方法论金句，适合"精准施策"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·立法形式</span><p>要研究丰富立法形式，可以搞一些"大块头"，也要搞一些"小快灵"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记论断引用，适合"立法供给"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句四·破题解题</span><p>发展就是破题、解题的动态过程。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：哲理金句，适合"改革方法论"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·治理现代化</span><p>不断提高治理体系和治理能力的现代化水平，日新又新的中国必将给世界带来更多惊喜。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华收束句，适合"制度创新"结尾。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·现象起笔</span><p>用"家用车变宽/AI智能体/预制菜关切"三组现象起笔，现象排比法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·三问三法</span><p>用"预见性—精准度—小快灵"三法对应三现象，方法论排比法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·分类分级</span><p>用"包容审慎、分类分级监管"写精细操作，分类监管法可用于"新业态治理"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·食安封签</span><p>用"外卖食安封签直击痛点"写小快灵，细节治理法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·先手棋</span><p>用"下好先手棋"写前瞻预判，先手棋比喻法可用于"战略主动"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"以制度效能激发市场活力"为题，模仿本文"预见性—精准度—小快灵"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"发展新趋势提出新要求"引题；②分"超前预判留空间/精准施策增韧性/小快灵回应新挑战"三层；③以"提高治理现代化水平"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"数字经济治理"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月21日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
