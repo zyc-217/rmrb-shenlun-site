@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 将"就业友好"融入发展过程（人民时评）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>将"就业友好"融入发展过程（人民时评）</h1>
+    <div class="meta">就业优先 · 宏观经济治理 · 高质量充分就业 · 政策协调 · 民生保障 | 2026年7月22日 | 第5版（人民时评）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">就业优先</span><span class="tag-item">宏观经济治理</span><span class="tag-item">高质量充分就业</span><span class="tag-item">政策协调</span><span class="tag-item">民生保障</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以湖南稳岗扩容提质行动、浙江天台"含岗量"标尺、贵州"六六就业稳岗计划"、投资财政科创政策协同等案例，论证将"就业友好"融入发展全过程，适合"就业优先""宏观政策协调""民生保障"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"就业是民生之本"总起，以总书记"构建就业友好型发展方式"论断立骨，由供需不匹配之问引出政策协同方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">将"就业友好"融入发展过程，需把就业影响评估嵌入重大决策、在决策中充分考虑就业因素、推动就业政策与其他政策协调联动<br><span style="color:#0d47a1;">▸ 写法：由供需不匹配之问起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">把就业影响评估嵌入重大发展决策全过程，实现转岗平稳过渡<br><span style="color:#0d47a1;">▸ 写法：以湖南稳岗行动/投资人物结合论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">决策时充分考虑就业因素，管产业就要管就业、促消费就要促就业<br><span style="color:#0d47a1;">▸ 写法：以结构性矛盾/天台贵州探索论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">推动就业政策与其他经济社会政策协调联动、形成合力<br><span style="color:#0d47a1;">▸ 写法：以宏观政策体系/系统观念论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"嵌入评估—考虑因素—政策协调"三层就业逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】将"就业友好"融入发展过程，需把就业影响评估嵌入重大发展决策全过程、在决策时充分考虑就业因素、推动就业政策与其他经济社会政策协调联动形成合力，让产业转型升级与就业扩容提质互促共进，确保各类政策相互衔接、有机统一，提升宏观经济治理效能。</p><p>确保各类政策相互衔接、有机统一，是提升宏观经济治理效能的题中应有之义</p>
+
+<p>就业是民生之本。</p>
+<p><span class="highlight-gold">习近平总书记强调，"构建就业友好型发展方式"。</span></p>
+<p>如何把"就业友好"理念落实到发展实际中？</p>
+
+<p>前不久，湖南印发《推进稳岗扩容提质行动若干措施》，加强产业与就业的协调联动，进一步深化就业影响评估机制，全年开展就业政策一致性评价不少于<span class="highlight-green">500件次</span>。</p>
+
+<p>把就业影响评估嵌入重大发展决策的全过程，有助于确保在产业转型升级的同时，实现劳动力转岗就业平稳过渡。</p>
+<p><span class="highlight-purple">这是坚持投资于物和投资于人紧密结合的生动实践</span>，也在宏观政策取向一致性评估中突出了"就业友好"理念。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">把就业影响评估嵌入重大发展决策全过程，有助于产业转型升级同时实现劳动力转岗平稳过渡，是投资于物和投资于人结合的实践。</span></p>
+
+<p>为什么就业市场会存在"有活没人干"和"有人没活干"的供需不匹配？</p>
+<p>产业规划与教育布局、就业安排未能统筹，是导致结构性就业矛盾的重要原因之一。</p>
+
+<p>全面促进高质量充分就业，就得在决策时充分考虑就业因素——管产业就要管就业、促消费就要促就业、上项目就要扩就业。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">在决策时充分考虑就业因素，管产业就要管就业、促消费就要促就业、上项目就要扩就业，以"硬约束"推动产业与就业协同共进。</span></p>
+
+<p>这样的改革探索，在全国各地已有不少。</p>
+<p>浙江天台县建立重大项目就业影响评估机制，让决策有了"含岗量"的硬标尺；</p>
+<p>贵州实施"六六就业稳岗计划"，促进就业目标与经济发展目标深度融合……</p>
+<p>从决策把关到精准服务再到制度创新，使<span class="highlight-blue">就业优先</span>成为"硬约束"，不断推动产业发展与就业提升协同共进，方能让经济增长始终蕴含"就业友好"的温度。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">构建就业友好型发展方式，需要推动就业政策与其他经济社会政策协调联动、形成合力，确保各类政策相互衔接、有机统一。</span></p>
+
+<p><span class="highlight-blue">宏观政策</span>是一个囊括财政、货币、就业、产业、区域、科技、环保等方面的复杂体系，每项政策都有各自侧重，同时又对其他领域产生直接或间接的影响。</p>
+<p>构建就业友好型发展方式，需要推动就业政策与其他经济社会政策协调联动、形成合力。</p>
+
+<p>在投资政策中，推动更多资金资源投资于人，让人力资源更加匹配岗位需求；</p>
+<p>在财政政策中，用好社会保险补贴、税费减免等政策，激励民营企业更多吸纳高校毕业生就业；</p>
+<p>在科技创新领域，根据高校毕业生等青年群体特点和需求，推广"科技成果+创业""民生需求+创业"等模式……</p>
+<p><span class="highlight-blue">坚持系统观念</span>，着眼经济发展全局，从严从细把握各项政策对经济总量和结构、供给和需求、行业和区域、就业和预期等的影响，确保各类政策相互衔接、有机统一，是提升宏观经济治理效能的题中应有之义。</p>
+
+<p><span class="highlight-gold">"就业是家事，更是国事。"</span></p>
+<p>增强宏观政策取向一致性和有效性，让产业转型升级与就业扩容提质互促共进，让高质量发展与<span class="highlight-blue">高质量充分就业</span>同频共振，这是塑造中国经济新优势的必然要求。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月22日 第5版 · 人民时评）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·就业为本</span><p>就业是民生之本。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总起金句，适合"就业优先"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·就业友好</span><p>习近平总书记强调，"构建就业友好型发展方式"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记论断引用，适合"就业友好"立骨。</p></div><div class="material-card"><span class="tag-shenlun">金句三·家事国事</span><p>"就业是家事，更是国事。"</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"就业优先"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句四·投资于人</span><p>这是坚持投资于物和投资于人紧密结合的生动实践。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：辩证金句，适合"政策协同"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句五·同频共振</span><p>让高质量充分就业与高质量发展同频共振。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：对仗金句，适合"民生发展"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·含岗量</span><p>用"重大项目就业影响评估让决策有含岗量硬标尺"写就业嵌入，硬标尺法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·六六计划</span><p>用"贵州六六就业稳岗计划"写目标融合，计划融合法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·三管并举</span><p>用"管产业就要管就业、促消费就要促就业、上项目就要扩就业"写决策考量，排比法可用于"系统观念"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·政策矩阵</span><p>用"投资/财政/科创三类政策协同"写政策联动，政策矩阵法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·同频共振</span><p>用"产业转型升级与就业扩容提质互促共进"收束，互促法可用于"宏观治理"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"把就业导向嵌入发展决策"为题，模仿本文"嵌入评估—考虑因素—政策协调"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"就业是民生之本"引题；②分"评估嵌入决策/管产业管就业/多政策协同"三层；③以"提升宏观治理效能"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"青年就业"角度，用同一骨架写一句总论点，要求含"既……也……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月22日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
