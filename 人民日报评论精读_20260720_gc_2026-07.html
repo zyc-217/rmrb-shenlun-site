@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 注重强健自身，始终充满生机活力（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>注重强健自身，始终充满生机活力（评论员观察）</h1>
+    <div class="meta">党的特质 · 全面从严治党 · 自我革命 · 忧患意识 · 党建思想 | 2026年7月20日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">党的特质</span><span class="tag-item">全面从严治党</span><span class="tag-item">自我革命</span><span class="tag-item">忧患意识</span><span class="tag-item">党建思想</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以历史展览馆纪律守则、伟大建党精神、两个务必到三个务必、一体推进三不腐、153个月公布查处情况、95.5%/92.2%满意度等案例，论证注重强健自身、全面从严治党，适合"党的建设""自我革命""作风建设"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"历史展览馆纪律守则"起笔，由革命年代纪律建设引出六大优秀特质之"注重强健自身"，贯通历史与新时代。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">注重强健自身、始终充满生机活力，是党的重要优秀特质：以全面从严治党筑牢根本、紧跟时代推进党建创新，以强烈忧患意识永葆清醒，以自我革命精神完善自己、取信于民<br><span style="color:#0d47a1;">▸ 写法：由历史展览馆纪律起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">紧跟时代发展要求，推进党的建设理论创新、实践创新、制度创新<br><span style="color:#0d47a1;">▸ 写法：以党章纪律/党建思想论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">始终增强忧患意识，安而不忘危，保持清醒务实的"赶考"清醒<br><span style="color:#0d47a1;">▸ 写法：以赶考清醒/两个务必三个务必论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">以自我革命精神完善自己，一体推进三不腐，以全面从严治党取信于民<br><span style="color:#0d47a1;">▸ 写法：以三不腐/数据成效论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"党建创新—忧患清醒—自我革命"三层治党逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】注重强健自身、始终充满生机活力，是我们党的重要优秀特质：以全面从严治党筑牢根本、紧跟时代推进党的建设理论创新实践创新制度创新，以强烈忧患意识永葆清醒务实，以自我革命精神完善自己、取信于民，把党建设得更加坚强有力，定能始终走在时代前列、任凭风浪起稳坐钓鱼台。</p><p>不断深化新时代全面从严治党的伟大实践，把党建设得更加坚强有力，我们就能始终走在时代前列，任凭风浪起、稳坐钓鱼台</p>
+
+<p>办好中国的事情，关键在党，关键在坚持党要管党、<span class="highlight-blue">全面从严治党</span>。</p>
+
+<p>北京，中国共产党历史展览馆。"人民的城市——新中国成立前后中国共产党接管治理城市"专题展览上，1948年6月《军委批转东北野战军入城纪律守则》等一系列珍贵文献，展现了革命年代我们党对加强纪律建设的高度重视。</p>
+
+<p>文字无声，却振聋发聩，蕴藏着我们党永葆青春活力的密码。在庆祝中国共产党成立105周年大会上，习近平总书记精辟概括中国共产党的六大优秀特质，"注重强健自身，始终充满生机活力"是其中重要方面。</p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">紧跟时代发展要求，不断推进党的建设理论创新、实践创新、制度创新，故而永不僵化、永不停滞，把党建设得更加坚强有力。</span></p>
+
+<p>紧跟时代发展要求，不断推进党的建设理论创新、实践创新、制度创新，故而永不僵化、永不停滞。</p>
+
+<p>中国共产党成立之初就突出强调党的建设，第一部《中国共产党章程》专设"纪律"一章，提出涉及组织、宣传、党员从业等的<span class="highlight-green">9条</span>纪律。</p>
+
+<p><span class="highlight-gold">"党和人民事业发展到什么阶段，全面从严治党就要跟进到什么阶段"。</span><span class="highlight-blue">习近平党建思想</span>是新时代探索马克思主义执政党建设规律形成的重大理论创新成果，对强党强国具有重大现实意义和长远指导意义。</p>
+
+<p>深入学习贯彻习近平党建思想，不断深化新时代全面从严治党的伟大实践，把党建设得更加坚强有力，我们就能始终走在时代前列，任凭风浪起、稳坐钓鱼台。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">始终增强忧患意识，安而不忘危、存而不忘亡、治而不忘乱；从"赶考"的清醒到两个务必、三个务必，葆有高度自省与无比自信。</span></p>
+
+<p><span class="highlight-purple">始终增强忧患意识，安而不忘危、存而不忘亡、治而不忘乱，方能初心不改、本色依旧。</span></p>
+
+<p>面对"中国共产党的特别之处在哪里"的问题，德国作家米夏埃尔·盖格尔表示："即便创造了举世瞩目的发展成就，中国共产党仍始终保持清醒务实的态度"。</p>
+
+<p>这是一以贯之的精神状态：从"我们决不当李自成"的深刻警示，到"必须永葆'赶考'的清醒和坚定"的郑重宣示，突破千难万险、越过千山万水，<span class="highlight-blue">全面从严治党</span>永远在路上。</p>
+
+<p>这是一脉相承的优良作风：从即将赢得革命全面胜利、执掌国家政权之际提出"<span class="highlight-blue">两个务必</span>"，到成功实现第一个百年奋斗目标时提出"<span class="highlight-blue">三个务必</span>"，历尽千锤百炼、经受千磨万击，惕厉之心不改、拼搏之志更坚。</p>
+
+<p>张富清一辈子深藏功名、默默耕耘，黄旭华为研制核潜艇"甘做隐姓埋名人"……不计较个人得失、不贪图享受，我们党在成绩、鲜花和掌声面前始终保持清醒。"四大考验""四种危险"长期存在，新的长征路上任务更加艰巨、形势更加复杂，但我们葆有高度的自省、怀有无比的自信。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">坚持全面从严治党作为长期战略、永恒课题，以自我革命精神完善自己、一体推进三不腐，以全面从严治党的实际成效取信于民。</span></p>
+
+<p>坚持全面从严治党，将其作为党的长期战略、永恒课题，才能不惧风雨、永葆青春。</p>
+
+<p>习近平总书记深刻指出：<span class="highlight-gold">"把党的建设作为一项伟大工程来推进，并且始终坚持党要管党、从严治党的原则和方针，是我们党的一大创举，也是立党立国、兴党强国的一大法宝。"</span></p>
+
+<p>中央八项规定"一子落"、作风建设"满盘活"，完善一体推进<span class="highlight-blue">"三不腐"</span>工作机制，修改《中华人民共和国监察法》……制度的笼子越扎越紧，不断压缩作风异化和权力滥用的空间。</p>
+
+<p><span class="highlight-gold">"胜人者有力，自胜者强"。</span>我们党善于以时代发展要求审视自己、以强烈忧患意识警醒自己、以<span class="highlight-blue">自我革命</span>精神完善自己，坚持党性党风党纪一起抓、正风肃纪反腐相贯通，以全面从严治党的实际成效取信于民。<span class="highlight-green">6月24日</span>，中央纪委国家监委连续第<span class="highlight-green">153个月</span>公布全国查处违反<span class="highlight-blue">中央八项规定</span>精神问题汇总情况。<span class="highlight-green">2025年</span>国家统计局调查显示，<span class="highlight-green">95.5%</span>的受访群众对中央八项规定精神贯彻成效表示肯定，<span class="highlight-green">92.2%</span>的受访群众对党风政风转变带动社会风气好转的效果表示满意。</p>
+
+<p>正如匈牙利《民主主义者》周刊总编辑本齐克·安德拉什所说，"这种能够主动识别问题并自我完善的能力，是中国共产党长盛不衰的奥秘。"</p>
+
+<p>全面贯彻习近平党建思想，落实新时代党的建设总要求，不断增强政治领导力、思想引领力、群众组织力、社会号召力，走过百余年历程的中国共产党，定将在把握历史主动、推进伟大事业中团结带领全国各族人民创造新的伟大奇迹。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月20日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·治党治国</span><p>办好中国的事情，关键在党，关键在坚持党要管党、全面从严治党。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总起判断句，适合"党的领导"破题。</p></div><div class="material-card"><span class="tag-shenlun">金句二·跟进阶段</span><p>"党和人民事业发展到什么阶段，全面从严治党就要跟进到什么阶段"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：总书记论断引用，适合"从严治党"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·一大法宝</span><p>把党的建设作为一项伟大工程来推进……是我们党的一大创举，也是立党立国、兴党强国的一大法宝。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：论断式金句，适合"党的建设"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句四·自胜者强</span><p>"胜人者有力，自胜者强"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：四字对仗金句，适合"自我革命"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·忧患警醒</span><p>安而不忘危、存而不忘亡、治而不忘乱，方能初心不改、本色依旧。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：古训金句，适合"忧患意识"论证。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·历史展览</span><p>用"历史展览馆纪律守则"切入治党主题，历史物证起笔法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·赶考清醒</span><p>用"从不当李自成到永葆赶考清醒"写忧患意识，历史警醒法可复用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·两个三个务必</span><p>用"两个务必到三个务必"写作风传承，今昔对照法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移四·三不腐</span><p>用"一体推进三不腐/修改监察法"写制度笼子，制度闭环法可用于"反腐"。</p></div><div class="migration-card"><span class="tag-mig">迁移五·数据服人</span><p>用"第153个月公布/95.5%肯定/92.2%满意"数据证成效，数据佐证法可用于"作风建设"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"把党建设得更加坚强有力"为题，模仿本文"党建创新—忧患清醒—自我革命"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"关键在党"引题；②分"紧跟时代推进创新/增强忧患意识/以自我革命完善自己"三层；③以"始终走在时代前列"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"基层治理"角度，用同一骨架写一句总论点，要求含"不是……而是……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月20日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
