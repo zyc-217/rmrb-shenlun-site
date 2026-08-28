@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 既见"绿树"也见"人"（评论员观察）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>既见"绿树"也见"人"（评论员观察）</h1>
+    <div class="meta">生态文明 · 人与自然和谐共生 · 绿色发展 · 生态产品价值 · 乡村振兴 | 2026年7月28日 | 第5版（评论员观察）</div>
+  </div>
+  <div class="content">
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list"><span class="tag-item">生态文明</span><span class="tag-item">人与自然和谐共生</span><span class="tag-item">绿色发展</span><span class="tag-item">生态产品价值</span><span class="tag-item">乡村振兴</span></div>
+    <div class="analysis-box" style="margin-top:10px;"><h3>🎯 高频命题角度提示</h3><div class="analysis-item"><span class="label blue">命题角度</span><span class="text">以西溪南村生态轮休、国家公园制度体系、福建长汀生态扶贫、浙江安吉竹林碳汇、河北崇礼绿富同兴等案例，论证推进生态文明建设要让人科学"融"入自然、理顺人与自然关系、让"绿树"与"人"相互成就，适合"生态文明""绿色发展""乡村振兴"等话题。</span></div><div class="analysis-item"><span class="label blue">破题亮点</span><span class="text">用"推进生态文明建设让人融入自然、树与人各得其所"起笔，由西溪南村"出圈"引出生态与发展双赢方法论。</span></div></div>
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box"><h3>文章结构拆解</h3><div class="analysis-item"><span class="label blue">总论点</span><span class="text">推进生态文明建设要让"绿树"与"人"相互成就，以更科学方式让人"融"入自然、理顺人与自然关系，实现生态保护、绿色发展、民生改善相统一<br><span style="color:#0d47a1;">▸ 写法：由西溪南村起笔</span></span></div><div class="analysis-item"><span class="label">分论点一</span><span class="text">绿色发展关键在于理顺人与自然关系，让人类成为生态文明共建者、受益者<br><span style="color:#0d47a1;">▸ 写法：以国家公园制度体系论证</span></span></div><div class="analysis-item"><span class="label">分论点二</span><span class="text">推进生态文明建设要让人以科学方式"融"入自然、各得其所<br><span style="color:#0d47a1;">▸ 写法：以生态扶贫到竹林碳汇论证</span></span></div><div class="analysis-item"><span class="label">分论点三</span><span class="text">呵护青山葱郁、繁盛人间烟火，让"绿树"与"人"相互成就<br><span style="color:#0d47a1;">▸ 写法：以庄子畅想到现代化突破论证</span></span></div><div class="analysis-item"><span class="label blue">可迁移</span><span class="text">"理顺关系—科学融入—相互成就"三层生态逻辑可迁移</span></div></div>
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+  <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+  <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+  <div class="legend-item"><span class="legend-color gold"></span>申论金句／名言</div>
+  <div class="legend-item"><span class="legend-color blue"></span>规范表述／政策术语</div>
+  <div class="legend-item"><span class="legend-color green"></span>数据／事实论据</div>
+  <div class="legend-item"><span class="legend-color purple"></span>辩证关系／哲理表述</div>
+</div>
+    <div class="article-body">
+<p class="thesis">【总论点】推进生态文明建设，要让"绿树"与"人"相互成就：以更科学的方式让人"融"入自然、理顺人与自然关系，实现生态保护、绿色发展、民生改善相统一，让百姓腰包因生态厚实、群众生活因生态增色，以生态保护与经济发展的统筹兼顾绘就人类文明新图景。</p><p>推进生态文明建设，要让人以更科学的方式"融"入自然，让"树"与"人"各得其所，实现生态永续、民生向好的双向奔赴。</p>
+
+<p>安徽黄山西溪南村，丰乐河穿村而过，滋养着沿岸绵延数公里的原生枫杨林，也造就了宛如"绿野仙踪"的梦幻景致。</p>
+<p>过去寂寂无闻，如今年游客接待量已经突破<span class="highlight-green">200万人次</span>。</p>
+
+<p>西溪南村之所以成功"出圈"，靠的不仅是生态禀赋，更有管理创新。</p>
+<p>通过创设湿地生态轮休机制、实施免门票策略，既避免了游客激增导致生态退化，也避免了"圈地卖票"引发村民和游客不满，实现的是生态保护、乡村发展和游客舒心的多赢。</p>
+
+<p>近年来，喜爱山水观光、野外徒步的人越来越多。</p>
+<p>这带来了一个新课题：如何科学把控旅游开发程度，确保自然生态得到有效保护、民生需要得到合理满足。</p>
+
+<p>从生态治理实践看，"只见人、不见绿树"的盲目开发要不得，"只见树木、不见人"的孤立保护同样不足取。</p>
+<p>比如，限制性举措层层加码，非核心区域同样禁止任何人为活动；</p>
+<p>禁伐禁牧未配套产业转型举措，当地群众失去收入来源；</p>
+<p>用铁丝网等方式圈占山林，将生态环境保护异化为"与世隔绝"……</p>
+<p><span class="highlight-purple">种种做法，看似守住了青山绿水，实则偏离了人与自然和谐共生的追求，割裂了生态保护与民生发展的内在关联。</span></p>
+
+<p class="sub-thesis">【分论点一】<span class="highlight-gold">绿色发展，关键就在于理顺人与自然的关系，让人类成为生态文明的共建者、受益者。</span></p>
+
+<p>绿色发展，关键就在于理顺人与自然的关系，让人类成为生态文明的共建者、受益者。</p>
+<p>以<span class="highlight-blue">国家公园制度体系</span>为例，国家公园法作出"核心保护区内禁止人为活动"的严格要求，但同时列出了几种例外情形，其中就包括原有居民必要的生产生活活动。</p>
+<p><span class="highlight-blue">"实现生态保护、绿色发展、民生改善相统一"</span>，成为一项明确的法治原则。</p>
+
+<p class="sub-thesis">【分论点二】<span class="highlight-gold">推进生态文明建设，要让人以更科学的方式"融"入自然，让"树"与"人"各得其所。</span></p>
+
+<p>推进生态文明建设，要让人以更科学的方式"融"入自然，让"树"与"人"各得其所，实现生态永续、民生向好的双向奔赴。</p>
+<p>从福建长汀的生态扶贫到浙江安吉的竹林碳汇，再到云南贡山的林下经济，各地生态保护的典型案例有力表明，让百姓的腰包因生态而厚实，让群众生活因生态而增色，生态环境保护才能获得更广泛、更持久的内生动力。</p>
+
+<p class="sub-thesis">【分论点三】<span class="highlight-gold">呵护青山葱郁、繁盛人间烟火，让"绿树"与"人"相互成就，以生态保护与经济发展的统筹兼顾绘就人类文明新图景。</span></p>
+
+<p>2000多年前，庄子就畅想过"天地与我并生，而万物与我为一"。</p>
+<p>今天，中国式现代化的一项重要突破，就在于跳出了"先污染后治理"的老路、打破了"征服自然、掠夺自然"的窠臼，也避免了"守着绿水青山过苦日子"的弊端，以生态保护与经济发展的统筹兼顾绘就人类文明新图景。</p>
+
+<p><span class="highlight-gold">从"人与自然是生命共同体"的系统观念，到"绿水青山既是自然财富、生态财富，又是社会财富、经济财富"的科学论断，习近平生态文明思想为我们把生态优势转化为发展优势提供了指引。</span></p>
+<p>东北大兴安岭的伐木声消失了，避暑产业、林下经济欣欣向荣，"以前树倒下去，是钱；</p>
+<p>现在树立在那，是更多的钱"。</p>
+<p>过去"穷在深山"，如今绿富同兴，冬季滑雪赛、夏季越野赛让河北张家口崇礼区声名远播。</p>
+<p>在严守<span class="highlight-blue">生态保护红线、环境质量底线、资源利用上线</span>的基础上，拓宽"绿水青山"向"金山银山"转化的通道，"青山定不负人"。</p>
+
+<p>既有"芳草鲜美，落英缤纷"的山水美景，又有"黄发垂髫，并怡然自乐"的人间烟火，这是千百年来中国人心向往之的"桃花源"。</p>
+<p>呵护青山葱郁，繁盛人间烟火，让"绿树"与"人"相互成就，中国式现代化的永续发展之路将越走越宽广。</p>
+      <p style="text-indent:0; text-align:right; color:#999; font-size:13px;">（人民日报2026年7月28日 第5版 · 评论员观察）</p>
+    </div>
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card"><span class="tag-shenlun">金句一·生态指引</span><p>从"人与自然是生命共同体"的系统观念，到"绿水青山既是自然财富、生态财富，又是社会财富、经济财富"的科学论断，习近平生态文明思想为我们把生态优势转化为发展优势提供了指引。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：论断金句，适合"生态文明"立骨。</p></div><div class="material-card"><span class="tag-shenlun">金句二·红线底线</span><p>在严守生态保护红线、环境质量底线、资源利用上线的基础上，拓宽"绿水青山"向"金山银山"转化的通道。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：规范金句，适合"生态管控"论证。</p></div><div class="material-card"><span class="tag-shenlun">金句三·相互成就</span><p>呵护青山葱郁，繁盛人间烟火，让"绿树"与"人"相互成就。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：收束金句，适合"绿色发展"结尾。</p></div><div class="material-card"><span class="tag-shenlun">金句四·统筹兼顾</span><p>以生态保护与经济发展的统筹兼顾绘就人类文明新图景。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：升华金句，适合"中国式现代化"收束。</p></div><div class="material-card"><span class="tag-shenlun">金句五·青山不负</span><p>"青山定不负人"。</p><p style="margin:6px 0 0; font-size:12.5px; color:#8d6e63; text-indent:0;">💡 用法：意象金句，适合"生态回报"收束。</p></div>
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card"><span class="tag-mig">迁移一·出圈例</span><p>用"西溪南村生态轮休免门票出圈"起笔，小村逆袭例法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移二·错误画像</span><p>用"只见人不见绿树/只见树木不见人"写两种偏差，正反对比法可套用。</p></div><div class="migration-card"><span class="tag-mig">迁移三·制度例</span><p>用"国家公园法核心保护区例外情形"写制度刚柔并济，制度例法可用于"生态文明"。</p></div><div class="migration-card"><span class="tag-mig">迁移四·内生动力</span><p>用"生态扶贫到竹林碳汇让腰包厚实"写内生动力，惠民转化法可迁移。</p></div><div class="migration-card"><span class="tag-mig">迁移五·红线三线</span><p>用"生态保护红线/环境质量底线/资源利用上线"写底线思维，三线法可用于"生态治理"。</p></div>
+    <div class="analysis-box" style="margin-top:14px;"><h3>✍️ 仿写练习（建议今晚10分钟完成）</h3><div class="analysis-item"><span class="label">题目</span><span class="text">请以"让生态优势转化为发展优势"为题，模仿本文"理顺关系—科学融入—相互成就"写法，写一段150字左右的申论论证段。</span></div><div class="analysis-item"><span class="label blue">参考骨架</span><span class="text">①用"生态保护与民生改善相统一"引题；②分"制度兜底/惠民转化/红线管控"三层；③以"绘就人类文明新图景"收束。</span></div><div class="analysis-item"><span class="label">加练</span><span class="text">再从"流域生态保护"角度，用同一骨架写一句总论点，要求含"既要……也要……"句式。</span></div></div>
+  </div>
+  <div class="footer">人民日报评论精读 · 2026年7月28日 · 申论素材积累（精读回补）</div>
+</div>
+</body>
+</html>
