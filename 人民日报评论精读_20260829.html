@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 毫不放松做好"三农"工作</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>毫不放松做好"三农"工作</h1>
+    <div class="meta">人民日报评论 | 乡村振兴·粮食安全·巩固脱贫·农民增收·高质量发展 | 2026年8月29日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：三农工作/守牢底线常态化帮扶/粮食安全国之大者/产业融合富民/城乡融合</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">粮食安全</span>
+      <span class="tag-item">巩固拓展脱贫攻坚成果</span>
+      <span class="tag-item">常态化帮扶</span>
+      <span class="tag-item">农民增收</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">城乡融合</span>
+      <span class="tag-item">产业融合</span>
+      <span class="tag-item">新质生产力（农业）</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">底线思维</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">大食物观</span>
+      <span class="tag-item">供给侧改革</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"把饭碗牢牢端在自己手中""守住不发生规模性返贫底线""产业兴旺促民富""写好乡村振兴大文章"等主题；本文<b>"会议定调—立总论点—三层分论（守底线／抓粮安／促增收）—升华"</b>结构，是写"三农与高质量发展类"文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">可直接提炼三条对策：<b>建强常态化防止返贫监测帮扶体系、让大数据精准捕捉风险线索／抓实秋粮生产、良田良种良机良法集成增效守住粮食关口／延伸产业链条、完善联农带农利益联结机制拓宽增收渠道</b>，层次分明、可迁移性强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">哲理思辨</span>
+        <span class="text">"农为邦本，本固邦宁""从被动应对向主动防控转变、从集中攻坚向常态发力转变、从外部托举向内生赋能转变"多组辩证，是写<b>底线类、辩证类、长效类作文</b>的现成素材。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">公文写作</span>
+        <span class="text">可迁移为"关于做好下半年'三农'工作的实施意见""健全防止返贫动态监测帮扶机制若干措施"素材；文中"常态化帮扶""联农带农""粮头食尾、畜头肉尾、农头工尾"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分—总）</h3>
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text"><b>会议定调</b>：以7月30日中央政治局会议关于"三农"工作的部署开篇，引总书记重要讲话，确立全年"三农"工作总要求（首段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">总论点</span>
+        <span class="text"><b>立总论点</b>：以"农为邦本，本固邦宁"破题，用上半年农业农村经济硬数据印证"稳中向好"，落点于下半年"农业增效益、农村增活力、农民增收入"的总目标（第二、三段，独立色块呈现）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论一</span>
+        <span class="text"><b>守牢底线·常态化帮扶</b>：以脱贫户龙明华就业案例切入，引出贵州"常态化防返贫就业帮扶机制"，用1770亿元资金、监测体系"三个转变"论证"长效"导向（第四至七段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论二</span>
+        <span class="text"><b>抓实秋粮·夺取丰收</b>：以种粮大户邱守先密植滴灌案例，带出夏粮首破3000亿斤、1.4万亿斤产量关口、商业化育种体系，论证"稳产"底色（第八至十一段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论三</span>
+        <span class="text"><b>拓宽渠道·夯实富民</b>：以鄂州武昌鱼三产融合案例，引出乡村产业提质增效、联农带农利益联结机制，论证"多元"增收（第十二至十五段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text"><b>回扣升华</b>：以记者采写署名收束，将"守底线、抓生产、促增收"统一于"为经济社会高质量发展奠定坚实基础"的大局（末段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">写作技法</span>
+        <span class="text">全文采用<b>"观点句（分论点）＋案例（一线百姓/基层干部原声）＋数据（硬支撑）＋专家点睛（张琦）"四段式论证</b>，每一分论点都"有故事、有数字、有道理"，是申论"用事例和数据说话"的范本。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>7月30日，习近平总书记主持中共中央政治局会议。会议强调：<span class="highlight-gold">"要毫不放松做好'三农'工作，持续巩固拓展脱贫攻坚成果""促进农民稳定增收""抓好农业生产，夺取秋粮和全年粮食丰收"</span>。</p>
+
+      <p><span class="highlight-gold">农为邦本，本固邦宁。</span>今年以来，面对极端天气等挑战，我国农业农村经济交出了一份沉甸甸的答卷。<span class="highlight-green">夏粮产量首次突破3000亿斤，截至6月底脱贫劳动力就业规模超3200万人，上半年农村居民人均可支配收入达到12699元、同比实际增长5.5%</span>。"十五五"开局之年，农业农村经济保持稳中向好的良好势头，为国民经济延续总体平稳、向新向优的态势提供有力支撑。</p>
+
+      <div class="thesis">【总论点】广袤田野，生机涌动。下半年，抓好秋粮生产，因地制宜发展乡村特色产业，全力抓好抓紧常态化帮扶，努力实现<span class="highlight-gold">农业增效益、农村增活力、农民增收入</span>，为经济社会高质量发展奠定更加坚实基础。</div>
+
+      <div class="sub-thesis">【分论点一】守牢底线，持续深化常态化帮扶工作</div>
+      <p>"每月到手6000多元，旺季收入还能再往上提。"贵州省龙里县奋进社区脱贫户龙明华此前四处打零工。一年多前，龙明华通过社区推送的招工信息进入本地快递物流园做装卸工，家离园区很近，骑车上下班十分便利。"现在工作踏实多了，我打算长期在这干。"龙明华说。</p>
+      <p>大力挖掘县域就业岗位，是贵州建立<span class="highlight-blue">常态化防止返贫致贫就业帮扶机制</span>的工作重点。"下一步，我们持续对快递物流园等园区进行提档升级，常态化开展专场招聘，优先吸纳脱贫劳动力、易地搬迁群众就近稳定就业。"龙里县就业局局长蒋正秀介绍。</p>
+      <p>2026年帮扶工作已进入常态化阶段。巩固拓展脱贫攻坚成果，<span class="highlight-purple">"长效"是明确导向</span>。中央财政安排的<span class="highlight-green">1770亿元常态化帮扶资金</span>延续过渡期标准，为产业就业扶持与乡村振兴重点帮扶县等欠发达地区基础设施持续补短板。上半年，脱贫县农村居民人均可支配收入增速继续高于全国农村平均水平。</p>
+      <p>下半年是常态化帮扶"见实效"的关键一程。防止返贫致贫监测范围逐步覆盖全体农村人口，同时，健全建强监测体系，让大数据精准捕捉风险线索，让一线干部当好预警前哨，细化帮扶举措，让困难群众得到精准纾困。</p>
+      <p>何以"精准"？北京师范大学中国乡村振兴与发展研究中心主任张琦表示，实施常态化精准帮扶，要聚焦重点区域、重点人群、重点风险，实现<span class="highlight-blue">对象精准、措施精准、投入精准、成效精准</span>。重点需要实现<span class="highlight-purple">从被动应对风险向主动防控风险转变，从阶段性集中攻坚向持续性常态发力转变，从外部政策托举向内生发展赋能转变</span>。</p>
+
+      <div class="sub-thesis">【分论点二】抓实秋粮生产，夺取全年粮食丰收</div>
+      <p>"这片玉米，比一般农户早播四五天，无人机辅助授粉后正在灌浆，水肥需求正旺。"在河南省商水县张庄镇绿油油的玉米地边，种粮大户邱守先边检测水肥一体化设备出水情况边说，"秋粮丰收还要过病虫害等关口，但我有底气。"</p>
+      <p>作为全市"吨半粮田"示范区，邱守先的2100亩地块今年全部实施密植滴灌技术，每亩留苗5500株，比常规田多了800株。"滴灌带可多施水肥，这是丰收关键。"他说，"我们会抓实秋管，让丰收成色更足。"</p>
+      <p>粮食安全底盘，<span class="highlight-purple">"稳产"是鲜明底色</span>。<span class="highlight-green">2026年夏粮产量历史性突破3000亿斤，其中小麦单产每亩402.6公斤，增加3.4公斤，增长0.9%</span>。<span class="highlight-blue">良种、良田、良机、良法集成增效</span>成效凸显，<span class="highlight-green">10亿亩高标准农田</span>筑牢产能底盘，种业自主保障能力持续提升。</p>
+      <p>秋粮大体占到<span class="highlight-green">全年粮食产量的3/4</span>。目前从全国看，秋粮种植面积基本落地、预计稳中略增，且基本种在了丰产期，整体苗情长势比较正常；田间管护体系全面铺开，农资保供、农机跨区调度机制顺畅运行。农业农村部决定组织实施奋战100天强田管抗灾害夺秋粮丰收行动，聚焦重点作物、重点区域、重大灾情，坚持全过程全环节不放松，全力以赴守住<span class="highlight-green">全年1.4万亿斤左右粮食产量关口</span>。</p>
+      <p>单产创新高，离不开良种支撑。"下一步，农业农村部将加快健全以企业为主体的商业化育种创新体系，加快选育高产、优质、抗逆、专用突破性新品种，同时，严格品种审定和知识产权保护，加大市场监管执法力度，让<span class="highlight-gold">'中国粮'主要用'中国种'</span>，让农民用上'放心种'。"农业农村部相关负责人说。</p>
+
+      <div class="sub-thesis">【分论点三】拓宽多元增收渠道，夯实富民基础</div>
+      <p>"现在村里旅游火了，武昌鱼作为游客餐桌上的招牌菜，根本不愁卖！"湖北省鄂州市鄂城区杜山镇三山村鱼塘边，村民吴永军边拉网边说。晨光中，一尾尾鲜活的武昌鱼翻腾跳跃，溅起晶莹水花。"鱼塘年产量可达2.4万斤，其中武昌鱼占了近一半，纯利润稳稳达到8万元。"吴永军说。</p>
+      <p>武昌鱼是鄂州市农产品的"金字招牌"，近年来渔业产业全链条升级，走出了一条<span class="highlight-blue">三产融合、富民兴村</span>之路。吴永军在这片水面上倾注了半辈子心血。"现在，成鱼只要出塘，就可以拉去合作社做成风干武昌鱼，每年这块也能增收5000块钱。"</p>
+      <p>拓宽农民增收渠道，<span class="highlight-purple">"多元"是关键举措</span>。<span class="highlight-green">2026年上半年农村居民人均可支配收入增速比城镇居民高出2.1个百分点</span>。乡村产业提质增效，<span class="highlight-green">上半年第一产业增加值31522亿元，同比增长3.7%；规模以上农副食品加工业增加值同比增长4.8%</span>，特别是果蔬和肉类加工业发展较快。乡村休闲旅游、农村电商等新产业新业态蓬勃发展。</p>
+      <p>下半年，聚焦富民增收目标，各地立足资源禀赋壮大特色种养产业，持续发展农产品初加工、精深加工，延伸产业链条，做实<span class="highlight-blue">"粮头食尾""畜头肉尾""农头工尾"</span>增值文章；加快补齐产地仓储保鲜、冷链物流设施短板，打通农产品出村进城通道，放大地理标志、绿色农产品品牌溢价效应。</p>
+      <p>如何让特色产业有效带动农民持续增收？张琦介绍，完善<span class="highlight-blue">联农带农利益联结机制</span>，让产业发展成果赋能乡村全面振兴。"特色产业的各个环节，如种植养殖、加工运输、市场销售等，都能够创造大量的就业岗位。农业社会化服务组织等平台的带动，订单农业、股份合作等模式的推广应用，都能使农民增收的渠道更加多样，为乡村全面振兴夯实富民基础。"张琦说。</p>
+
+      <p class="byline">（本报记者陈隽逸、吴君参与采写）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">底线·国之大者</span>
+      <p><b>"要毫不放松做好'三农'工作，持续巩固拓展脱贫攻坚成果""促进农民稳定增收""抓好农业生产，夺取秋粮和全年粮食丰收。"</b>——总书记关于"三农"工作的总要求，可作为一切乡村振兴类文章的开篇定调。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">经典名句</span>
+      <p><b>"农为邦本，本固邦宁。"</b>——四字箴言，写粮食安全、城乡融合、乡村振兴类作文的"镇舱石"金句，典雅有力。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">目标表述</span>
+      <p><b>"农业增效益、农村增活力、农民增收入。"</b>——三农工作总目标的"三增"排比，可直接当分论点或结尾升华。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据（硬支撑）</span>
+      <p><b>夏粮产量首次突破3000亿斤｜脱贫劳动力就业超3200万人｜农村人均可支配收入12699元、实际增长5.5%｜1770亿元常态化帮扶资金｜小麦单产402.6公斤/亩｜10亿亩高标准农田｜秋粮占全年3/4｜全年1.4万亿斤产量关口｜第一产业增加值31522亿元、增3.7%｜农村收入增速高于城镇2.1个百分点</b>——一组"三农"硬数据，论证"稳中向好"时直接引用，胜过空泛论述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证思维</span>
+      <p><b>"从被动应对风险向主动防控风险转变，从阶段性集中攻坚向持续性常态发力转变，从外部政策托举向内生发展赋能转变。"</b>——"三个转变"是写"长效机制""源头治理""激发内生动力"类对策的现成框架。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">规范表述</span>
+      <p><b>"对象精准、措施精准、投入精准、成效精准""良田、良种、良机、良法集成增效""粮头食尾、畜头肉尾""农头工尾""联农带农利益联结机制"。</b>——公考高频规范词，可直接嵌入对策与公文。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">粮食安全</span>
+      <p><b>"让'中国粮'主要用'中国种'。"</b>——种业自主可控的生动表述，写"把饭碗牢牢端在自己手中""科技赋能农业"的亮点句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>以"农为邦本，本固邦宁"起笔，接总书记"毫不放松做好'三农'工作"总要求，再用"夏粮首破3000亿斤、农村收入增速高于城镇2.1个百分点"两组数据收束引论，自然引出"守底线、抓粮安、促增收"的论述主线。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>直接套用本文"守牢底线—抓实生产—拓宽渠道"三层框架写乡村振兴类文章：①守住不发生规模性返贫底线（监测帮扶）；②抓住粮食这个"国之大者"（稳产保供）；③拓宽农民增收渠道（产业融合）。观点句＋案例＋数据＋专家点睛的四段式可复用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把"三个转变"改写为对策：由被动救灾转向主动防灾、由运动式攻坚转向常态化发力、由外部输血转向内生造血；再补"联农带农利益联结机制"，即可形成一条完整对策链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·结尾升华</span>
+      <p>用"农业增效益、农村增活力、农民增收入"收束，并上拔到"为经济社会高质量发展奠定坚实基础"，把三农工作放进全局，避免就农谈农。</p>
+    </div>
+    <div class="analysis-box" style="margin-top:12px;">
+      <h3>✍️ 仿写练习</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以<b>"把饭碗牢牢端在自己手中"</b>为主题，写一段 150 字左右的议论文核心段落。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">写作要求</span>
+        <span class="text">①须包含 1 个分论点句（蓝色块式观点）；②至少引用 1 组本文数据（如"1.4万亿斤产量关口""10亿亩高标准农田"）；③用"良田、良种、良机、良法集成增效"或"中国粮主要用中国种"作收束亮点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">参考练笔</span>
+        <span class="text">端牢中国饭碗，关键在"稳产"筑底。粮食安全是"国之大者"，须以系统思维守住全年1.4万亿斤左右粮食产量关口。要坚持良田、良种、良机、良法集成增效，以10亿亩高标准农田筑牢产能底盘，以商业化育种体系提升单产，让"中国粮"主要用"中国种"。唯有把根基扎稳，方能任凭风浪起、稳坐钓鱼台。</span>
+      </div>
+    </div>
+
+    <div class="footer">📌 本文精读由 AI 按人民日报评论原文整理，仅供申论备考积累使用 · 2026-08-29</div>
+  </div>
+</div>
+</body>
+</html>
