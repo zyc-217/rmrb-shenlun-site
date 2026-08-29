@@ -529,5 +529,35 @@
     人民日报评论精读 · 2026年8月23日 · 申论素材积累（现代化产业体系建设）
   </div>
 </div>
+
+<style>
+.fx-toggle{display:inline-block;margin:8px 0 2px;padding:6px 14px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+.fx-answer{display:none;}
+.fx-answer.show{display:block;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.analysis-box').forEach(function(box){
+    var h3=box.querySelector('h3');
+    if(h3 && h3.textContent.indexOf('仿写练习')>=0){
+      box.querySelectorAll('.analysis-item').forEach(function(it){
+        var lab=it.querySelector('.label');
+        if(lab && lab.textContent.trim()==='参考骨架'){
+          it.classList.add('fx-answer');
+          var btn=document.createElement('button');
+          btn.className='fx-toggle';
+          btn.textContent='✍️ 显示参考骨架（先自己写一遍）';
+          btn.onclick=function(){
+            var on=it.classList.toggle('show');
+            btn.textContent= on?'🙈 隐藏参考骨架':'✍️ 显示参考骨架（先自己写一遍）';
+          };
+          box.insertBefore(btn,it);
+        }
+      });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
