@@ -66,10 +66,8 @@
     <p>每日一篇 · 申论考点拆解 · 金句素材积累</p>
   </div>
   <div class="wrap">
-    <div class="tip">📱 <b>手机使用：</b>浏览器打开本页 → 点右上角「···」→「添加到主屏」。<b>筛选：</b>月份 / 八大热点 / 申论题型 可组合；搜索框可搜标题、日期、<b>金句、真题</b>全文。<b>备考：</b>每篇右上角 ☆收藏、○→📝待背→✅已背（点圆圈切换，本地保存不丢）。点开文章后，第⑤「题型真题」参考答案默认隐藏，先自己写再看；按文章题型双标签，每类出一道真题附完整答案。</div>
+    <div class="tip">📱 <b>手机使用：</b>浏览器打开本页 → 点右上角「···」→「添加到主屏」。<b>筛选：</b>八大热点 / 申论题型 可组合；搜索框可搜标题、日期、<b>金句、真题</b>全文。<b>备考：</b>每篇右上角 ☆收藏、○→📝待背→✅已背（点圆圈切换，本地保存不丢）。点开文章后，第⑤「题型真题」参考答案默认隐藏，先自己写再看；按文章题型双标签，每类出一道真题附完整答案。</div>
     <div class="searchbar"><input id="q" type="search" placeholder="搜索标题 / 日期 / 金句 / 真题（如 乡村振兴 或 2026-07）" enterkeyhint="search"></div>
-    <div class="flabel">📅 按月浏览</div>
-    <div class="filters" id="monthFilters"><span class="chip month all active" data-month="__all__">全部</span><span class="chip month" data-month="2026-08">2026-08</span><span class="chip month" data-month="2026-07">2026-07</span><span class="chip month" data-month="2026-06">2026-06</span><span class="chip month" data-month="2026-05">2026-05</span><span class="chip month" data-month="2026-04">2026-04</span><span class="chip month" data-month="2026-03">2026-03</span><span class="chip month" data-month="2026-02">2026-02</span><span class="chip month" data-month="2026-01">2026-01</span></div>
     <div class="flabel">🏷️ 按主题检索（八大热点）</div>
     <div class="filters" id="tagFilters"><span class="chip all active" data-tag="__all__">全部</span><span class="chip" data-tag="乡村振兴">乡村振兴</span><span class="chip" data-tag="经济发展">经济发展</span><span class="chip" data-tag="党的建设">党的建设</span><span class="chip" data-tag="社会治理">社会治理</span><span class="chip" data-tag="科技创新">科技创新</span><span class="chip" data-tag="民生保障">民生保障</span><span class="chip" data-tag="文化建设">文化建设</span><span class="chip" data-tag="生态环保">生态环保</span></div>
     <div class="flabel">📝 按申论题型</div>
@@ -2211,10 +2209,8 @@ const SUBTAG_TO_THEME={'产业兴旺':'乡村振兴','人才支撑':'乡村振�
 const cards=[...document.querySelectorAll('.card')];
 const q=document.getElementById('q');
 const count=document.getElementById('count');
-const monthChips=[...document.querySelectorAll('#monthFilters .chip')];
 const tagChips=[...document.querySelectorAll('#tagFilters .chip')];
 const typeChips=[...document.querySelectorAll('#typeFilters .chip')];
-let selMonth='__all__';
 let selTags=new Set();
 let selTypes=new Set();
 
@@ -2268,10 +2264,8 @@ function apply(){
     const subtags=(c.dataset.tags||'').split(' ').filter(Boolean);
     const themes=(c.dataset.themes||'').split(' ').filter(Boolean);
     const types=(c.dataset.types||'').split(' ').filter(Boolean);
-    const cm=c.dataset.date.slice(0,4)+'-'+c.dataset.date.slice(4,6);
     let ok=true;
     if(kw && !hay.includes(kw)) ok=false;
-    if(selMonth!=='__all__' && cm!==selMonth) ok=false;
     if(selTags.size){
       const hitBySubtag=subtags.some(t=>SUBTAG_TO_THEME[t] && selTags.has(SUBTAG_TO_THEME[t]));
       if(!subtags.some(t=>selTags.has(t)) && !themes.some(t=>selTags.has(t)) && !hitBySubtag) ok=false;
@@ -2285,10 +2279,6 @@ function apply(){
 }
 updateStats();
 q.addEventListener('input',apply);
-monthChips.forEach(ch=>ch.addEventListener('click',()=>{
-  selMonth=ch.dataset.month;
-  monthChips.forEach(x=>x.classList.remove('active')); ch.classList.add('active'); apply();
-}));
 tagChips.forEach(ch=>ch.addEventListener('click',()=>{
   const t=ch.dataset.tag;
   if(t==='__all__'){ selTags.clear(); tagChips.forEach(x=>x.classList.remove('active')); ch.classList.add('active'); }
