@@ -235,35 +235,32 @@
     </div>
   </div>
 
+        <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「心怀热爱 向上生长（记者手记）」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「心怀热爱 向上生长（记者手记）」——这一论断深刻揭示了心怀热爱 向上生长（记者手记）的内在逻辑。做好心怀热爱 向上生长（记者手记），必须在心怀热爱 向上生长（记者手记）上夯基固本，在心怀热爱 向上生长（记者手记）上提质增效，在心怀热爱 向上生长（记者手记）上久久为功。<br><br>以心怀热爱 向上生长（记者手记）。方向对了，路再远也能抵达。唯有把心怀热爱 向上生长（记者手记）摆在突出位置，才能为心怀热爱 向上生长（记者手记）注入源源不断的动力。<br><br>以心怀热爱 向上生长（记者手记）。方法对了，事再难也能办成。要把心怀热爱 向上生长（记者手记）转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以心怀热爱 向上生长（记者手记）。行百里者半九十。心怀热爱 向上生长（记者手记）与心怀热爱 向上生长（记者手记）的成效，最终要靠心怀热爱 向上生长（记者手记）来巩固和拓展。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。心怀热爱 向上生长（记者手记）是一场接力跑，每一棒都要跑出好成绩。让我们以「心怀热爱 向上生长（记者手记）」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
   <div style="text-align:center;color:#999;font-size:12px;margin-top:30px;">
     每日人民日报评论精读 · 2026年8月2日 · 手机端查看
   </div>
 
 <style>
-.fx-toggle{display:inline-block;margin:8px 0 2px;padding:6px 14px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+.fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
 .fx-answer{display:none;}
 .fx-answer.show{display:block;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.analysis-box').forEach(function(box){
-    var h3=box.querySelector('h3');
-    if(h3 && h3.textContent.indexOf('仿写练习')>=0){
-      box.querySelectorAll('.analysis-item').forEach(function(it){
-        var lab=it.querySelector('.label');
-        if(lab && lab.textContent.trim()==='参考骨架'){
-          it.classList.add('fx-answer');
-          var btn=document.createElement('button');
-          btn.className='fx-toggle';
-          btn.textContent='✍️ 显示参考骨架（先自己写一遍）';
-          btn.onclick=function(){
-            var on=it.classList.toggle('show');
-            btn.textContent= on?'🙈 隐藏参考骨架':'✍️ 显示参考骨架（先自己写一遍）';
-          };
-          box.insertBefore(btn,it);
-        }
-      });
-    }
+  document.querySelectorAll('.fx-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ans=btn.nextElementSibling;
+      if(ans && ans.classList.contains('fx-answer')){
+        var on=ans.classList.toggle('show');
+        btn.textContent= on?'🙈 隐藏参考答案':'👀 显示参考答案（先自己写一遍）';
+      }
+    });
   });
 });
 </script>
