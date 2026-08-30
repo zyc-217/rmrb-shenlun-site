@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 新能源汽车产业崛起，定义汽车新标准</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>新能源汽车产业崛起，定义汽车新标准</h1>
+    <div class="meta">人民日报评论 | 新质生产力·产业升级·高质量发展·中国制造·新能源汽车 | 2026年8月30日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：新质生产力/制度优势/新发展理念/产业链供应链/高水平开放/现代化产业体系</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">产业升级</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">新能源汽车</span>
+      <span class="tag-item">中国制造</span>
+      <span class="tag-item">制度优势</span>
+      <span class="tag-item">新发展理念</span>
+      <span class="tag-item">高水平科技自立自强</span>
+      <span class="tag-item">产业链供应链</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">实体经济</span>
+      <span class="tag-item">中国标准</span>
+      <span class="tag-item">绿色发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+      <div class="analysis-item">
+        <span class="label">议论文</span>
+        <span class="text">适配"以新质生产力塑造发展新优势""从制造大国迈向制造强国""把发展的基点放在自主创新上""在开放中做强中国制造"等主题；本文<b>"亮明名片—立总论点—四大优势支撑—五大理念践行—五大标准引领—三向加速"</b>的递进式论证，是写"产业高质量发展类"文章的高分框架。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">对策题</span>
+        <span class="text">可直接提炼四条对策：<b>发挥制度优势、有效市场与有为政府结合／贯通产业链供应链、强化自主创新能力／完整贯彻新发展理念（创新协调绿色开放共享）／稳步扩大制度型开放、在共赢中做强中国品牌</b>，层次分明、可迁移性强。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">哲理思辨</span>
+        <span class="text">"制度优势、市场活力、产业韧性、人才红利的集中兑现""从新赛道迈向新蓝海""把世界的机遇转变为中国的机遇，把中国的机遇转变为世界的机遇"等多组辩证，是写<b>制度与发展、自立与开放、量变与质变类作文</b>的现成素材。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">公文写作</span>
+        <span class="text">可迁移为"关于加快智能网联新能源汽车产业发展的实施意见""关于培育战略性新兴产业集群的若干措施"素材；文中"<b>有效市场与有为政府结合</b>""<b>现代化产业体系</b>""<b>全生命周期服务</b>"等表述极适合写进公文与申论。</span>
+      </div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分—总）</h3>
+      <div class="analysis-item">
+        <span class="label">引论</span>
+        <span class="text"><b>亮明名片</b>：以总书记"中国智造已成为中国式现代化的又一亮丽名片"破题，点出新能源汽车是这张名片上的标志性符号，抛出核心之问"中国新能源汽车产业为什么能"（首段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">总论点</span>
+        <span class="text"><b>立总论点</b>：以"四大优势"（制度／需求／供给／人才）回答"为什么能"，落点于产业崛起是强国建设时间轴上多重优势的集中兑现（第二至六段，独立色块呈现）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论一</span>
+        <span class="text"><b>贯彻新发展理念</b>：用"创新是灵魂、协调是筋脉、绿色是底色、开放是胸怀、共享是境界"统领，论证产业内核（第七至十六段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论二</span>
+        <span class="text"><b>引领五大新标准</b>：以安全、功能、品质、服务、价值五个"新标准"，论证中国从跟跑迈向并跑领跑、定义行业规则（第十七至二十一段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">分论三</span>
+        <span class="text"><b>三向加速跃迁</b>：向自动驾驶新阶段、现代服务业、价值链拉长加速，呼应"十五五"高质量发展新周期（第二十二至二十五段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">结论</span>
+        <span class="text"><b>回扣升华</b>：以"走对了、走稳了、还将走得更远"收束，将产业跃迁统一于制造强国与新质生产力大局（末段）。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">写作技法</span>
+        <span class="text">全文采用<b>"总问（为什么能）—分答（四大优势＋五理念＋五标准）—升华（三向加速）"的递进式论证</b>，每一层都"有论断、有数据、有案例（特斯拉、比亚迪、蔚来等）"，是申论"用事实与数字立论"的范本。</span>
+      </div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>"<span class="highlight-gold">中国智造已成为中国式现代化的又一亮丽名片。</span>"习近平总书记在2026世界人工智能大会暨人工智能全球治理高级别会议开幕式上的主旨讲话，铿锵有力。中国新能源汽车产业，是这张亮丽名片上的一个标志性符号。</p>
+
+      <div class="thesis">【总论点】中国新能源汽车产业的崛起，不只是赛道切换的成功，更是<span class="highlight-purple">制度优势、市场活力、产业韧性、人才红利在强国建设时间轴上的集中兑现</span>——它是深入践行新发展理念、发展新质生产力的"聚合器"，是建设现代化产业体系、做强做优做大实体经济的重要支撑。</div>
+
+      <div class="sub-thesis">【分论点一】四大独特优势，筑牢产业崛起根基</div>
+      <p>中国新能源汽车产业为什么能？<span class="highlight-blue">得益于独一无二的制度优势</span>。制度优势是一个国家的最大优势，我国以"<span class="highlight-blue">一张蓝图绘到底</span>"的战略定力统筹全局，将<span class="highlight-blue">有效市场与有为政府紧密结合</span>，推动顶层规划、财税补贴与基建布局落地显效。</p>
+      <p><span class="highlight-blue">得益于无可比拟的需求优势</span>。我国汽车保有量全球最大，汽车销量连年保持在<span class="highlight-green">2000万辆以上</span>；从大型城市到县域乡镇、从基础入门款到中高端车型，内需市场规模大、层次多、场景多。</p>
+      <p><span class="highlight-blue">得益于难以复制的供给优势</span>。经过10多年发展，中国新能源汽车产业贯通了基础材料、关键零部件、整车、制造装备、补能设施等关键环节，<span class="highlight-green">产业链的全面性、系统性、完整性全球领先</span>。<span class="highlight-blue">得益于源源不断的人才优势</span>——我国研发人员总量居世界首位，工程师红利持续显现。</p>
+
+      <div class="sub-thesis">【分论点二】完整贯彻新发展理念，塑造产业发展内核</div>
+      <p><span class="highlight-gold">创新是中国新能源汽车产业的灵魂。</span>中国车企改写了全球新能源汽车技术演进格局，并实现技术反向输出；<span class="highlight-blue">高水平科技自立自强</span>是驱动由大到强、迈向全球价值链顶端的关键引擎。统计数据显示，<span class="highlight-green">近10年中国新能源汽车领域专利公开量年均增长率达17.1%</span>。</p>
+      <p><span class="highlight-gold">协调是中国新能源汽车产业的筋脉。</span>产业链攥指成拳，整车龙头牵头搭建协同平台，带动中小配套企业同步升级；依托东中西部资源禀赋，逐步形成长三角、粤港澳大湾区、京津冀、鄂豫湘、成渝五大整车产业集聚板块。<span class="highlight-gold">绿色是中国新能源汽车产业的底色</span>——将"双碳"目标深度融入产业全生命周期。<span class="highlight-gold">开放是中国新能源汽车产业的胸怀</span>，<span class="highlight-purple">把世界的机遇转变为中国的机遇，把中国的机遇转变为世界的机遇</span>。<span class="highlight-gold">共享是中国新能源汽车产业的境界</span>，产业始终贴合普通群众出行需求，强化民生属性。</p>
+      <p>生产端推行绿色智能制造，产品端大幅降低碳排放；<span class="highlight-green">2020年至2025年新能源汽车下乡累计销量达2436.27万辆</span>，截至今年7月底我国电动汽车充电基础设施总数达<span class="highlight-green">2368.3万个、同比增长41.9%</span>。在拉美，已有超过<span class="highlight-green">6000辆</span>中国制造电动客车运行。</p>
+
+      <div class="sub-thesis">【分论点三】从"新赛道"迈向"新蓝海"，引领全球五大新标准</div>
+      <p>能源、动力与数据深度交融，智能网联新能源汽车早已不是孤立行业，而是串联人工智能革命、能源革命、出行革命的"<span class="highlight-gold">超级接口产业</span>"，是发展新质生产力的"聚合器"。在高质量发展的全新轨道上，中国车企展开新的竞速。</p>
+      <p><b>引领安全新标准。</b>我国出台<span class="highlight-blue">全球最严动力电池安全标准</span>，明确热扩散2小时不起火、不爆炸；截至今年8月初，华为乾崑智驾累计辅助驾驶里程突破<span class="highlight-green">130亿公里</span>。<b>引领功能新标准</b>，钓鱼座舱、移动会客厅、人车家全生态陆续落地。<b>引领品质新标准</b>，"彩电、冰箱、大沙发"成为跨国车企座舱设计新潮流。<b>引领服务新标准</b>，蔚来用8年建成超<span class="highlight-green">4000座</span>换电站，把"补能"做成差异化长板。<b>引领价值新标准</b>，坚持科技平权、普惠创新，高端智能配置全面下沉。</p>
+
+      <div class="sub-thesis">【分论点四】奋进"十五五"，向三个方向加速跃迁</div>
+      <p>"十五五"规划纲要提出，加快智能网联新能源汽车等战略性新兴产业发展，<span class="highlight-blue">着力打造一批成长潜力大、技术含量高、渗透领域广的新兴支柱产业</span>。当前产业正开启新一轮高质量发展周期。</p>
+      <p>——<b>向自动驾驶新阶段加速迈进</b>。2025年底，长安与北汽两款车型获国内首批<span class="highlight-blue">L3级有条件自动驾驶产品准入许可</span>，我国自动驾驶正从"技术验证"迈向"量产应用"。——<b>向现代服务业加速跃迁</b>。今年6月，商务部等9部门联合印发通知，聚焦汽车改装、房车露营等六大领域推出17项举措。——<b>向价值链拉长加速拓展</b>，产业价值重心正从制造、销售向研发设计、软件服务、充换电网络、出行服务等全生命周期环节延伸。</p>
+      <p>中国新能源汽车产业的崛起，<span class="highlight-purple">不只是赛道切换的成功，更是制度优势、市场活力、产业韧性、人才红利在强国建设时间轴上的集中兑现</span>。这条产业跃迁之路，我们走对了，走稳了，还将走得更远。</p>
+
+      <p class="byline">（人民日报评论部 · 新能源汽车产业透视系列报道之五）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">总括·亮丽名片</span>
+      <p><b>"中国智造已成为中国式现代化的又一亮丽名片。"</b>——总书记金句，可作为一切"中国制造/新质生产力/产业升级"类文章的开篇定调，典雅有力。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·集中兑现</span>
+      <p><b>"中国新能源汽车产业的崛起，不只是赛道切换的成功，更是制度优势、市场活力、产业韧性、人才红利在强国建设时间轴上的集中兑现。"</b>——可当产业类议论文总论点或结尾升华，四组优势排比气势足。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">五理念·筋骨</span>
+      <p><b>"创新是灵魂、协调是筋脉、绿色是底色、开放是胸怀、共享是境界。"</b>——以五喻写新发展理念，是"贯彻新发展理念"类文章的分论点现成骨架，直接可拆成五个分论点。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·开放共赢</span>
+      <p><b>"把世界的机遇转变为中国的机遇，把中国的机遇转变为世界的机遇。"</b>——写"高水平对外开放/国内国际双循环/人类命运共同体"的绝佳辩证句，对仗工整。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">新质生产力</span>
+      <p><b>"智能网联新能源汽车是发展新质生产力的'聚合器'，是建设现代化产业体系、做强做优做大实体经济的重要支撑。"</b>——点明产业与新质生产力关系，写"以新质生产力塑造发展新优势"必引。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">制度优势</span>
+      <p><b>"以'一张蓝图绘到底'的战略定力统筹全局，将有效市场与有为政府紧密结合。"</b>——写"制度优势/政府与市场关系/战略定力"的规范表述，可直接入文。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据论据（硬支撑）</span>
+      <p><b>专利公开量年均增17.1%｜充电设施2368.3万个(+41.9%)｜新能源下乡累计2436.27万辆｜特斯拉上海占全球产量45%以上｜华为乾崑辅助驾驶里程130亿公里｜蔚来换电站超4000座｜L3级自动驾驶首批准入</b>——一组产业硬数据，论证"崛起有支撑"时直接引用，胜过空泛论述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·自信</span>
+      <p><b>"这条产业跃迁之路，我们走对了，走稳了，还将走得更远。"</b>——三"走"排比收尾，自信从容，写"中国制造/高质量发展"结尾升华的亮点句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>以总书记"中国智造已成为中国式现代化的亮丽名片"起笔，接"中国新能源汽车产业为什么能"之问，再用"四大优势集中兑现"总论点收束引论，自然引出"优势—理念—标准—跃迁"的论述主线。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文"总问—分答"框架写产业类文章：①以制度优势聚合力（有效市场+有为政府）；②以自主创新强内核（高水平科技自立自强）；③以完整产业链筑底座（供应链韧性）；④以扩大开放拓空间（制度型开放）。观点句＋案例＋数据四段式可复用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把"五理念"改写为对策：以创新强魂、以协调通络、以绿色铸底、以开放拓圈、以共享惠民；再补"贯通产业链供应链、强化全生命周期服务"，即可形成一条完整对策链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·结尾升华</span>
+      <p>用"集中兑现"收束，上拔到"制造强国与新质生产力"，把单一产业放进"高质量发展全局"，避免就车谈车、格局打开。</p>
+    </div>
+    <div class="analysis-box" style="margin-top:12px;">
+      <h3>✍️ 仿写练习</h3>
+      <div class="analysis-item">
+        <span class="label">题目</span>
+        <span class="text">请以<b>"以新质生产力塑造发展新优势"</b>为主题，写一段 150 字左右的议论文核心段落。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label blue">写作要求</span>
+        <span class="text">①须包含 1 个分论点句（蓝色块式观点）；②至少引用 1 组本文数据（如"专利年均增17.1%""充电设施2368.3万个"）；③用"聚合器"或"从新赛道迈向新蓝海"作收束亮点。</span>
+      </div>
+      <div class="analysis-item">
+        <span class="label">参考练笔</span>
+        <span class="text">塑造发展新优势，关键在以新质生产力激活产业内核。新能源汽车产业的跃迁启示我们：唯有把高水平科技自立自强摆在核心位置，才能由跟跑迈向并跑领跑。近10年该领域专利公开量年均增长17.1%，印证创新之为"灵魂"。应贯通产业链供应链、强化全生命周期服务，让智能网联新能源汽车成为发展新质生产力的"聚合器"，从新赛道阔步迈向发展"新蓝海"。</span>
+      </div>
+    </div>
+
+    <div class="footer">📌 本文精读由 AI 按人民日报评论原文整理，仅供申论备考积累使用 · 2026-08-30</div>
+  </div>
+</div>
+
+<style>
+.fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+.fx-answer{display:none;}
+.fx-answer.show{display:block;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.fx-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ans=btn.nextElementSibling;
+      if(ans && ans.classList.contains('fx-answer')){
+        var on=ans.classList.toggle('show');
+        btn.textContent= on?'🙈 隐藏参考答案':'👀 显示参考答案（先自己写一遍）';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
