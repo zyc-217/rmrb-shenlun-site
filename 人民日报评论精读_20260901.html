@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 如常凭什么非凡常</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>如常凭什么非凡常</h1>
+    <div class="meta">人民日报评论员观察 | 民生保障·基础设施·精细治理·制度优势·高质量发展 | 2026年9月1日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：如常生活中的非凡成就/大国实力·制度优势·民生温度深度交融/基建底座/精细治理/接续奋斗</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">基础设施建设</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">制度优势</span>
+      <span class="tag-item">系统思维</span>
+      <span class="tag-item">社会治理现代化</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">公共服务均等化</span>
+      <span class="tag-item">农业现代化</span>
+      <span class="tag-item">城市更新</span>
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">共同富裕</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">久久为功</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“以民生温度标注发展高度”“把非凡成就沉淀为民生常态”“让如常生活更有质感”“在厚积薄发中托举稳稳幸福”等主题；本文<b>“入境游外宾视角切入—生活片段铺陈—立如常非凡常之问—四维归因作答—接续奋斗升华”</b>的递进式论证，是写“民生福祉类”文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>持续夯实以“六张网”为代表的现代化基础设施体系／健全现代农业体系与保供稳价机制，守住百姓餐桌／以科学布局、精细管护、前瞻规划提升城市更新与生态修复质效／坚持中央统筹与地方探索相结合，在风险挑战中保持发展定力</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“波澜不惊的如常非凡常”“看得见的投资与看不见的服务”“宏大基建撑起骨架，科学治理激活血脉”“单一领域的突破本就不易，更难的是广泛覆盖、普惠可及”“量变积累催生的质变跃升”等多组辩证，是写<b>平凡与伟大、量变与质变、硬支撑与软治理、发展与安全类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于持续提升民生保障水平的实施意见”“关于推进现代化基础设施体系建设的若干措施”素材；文中“<b>统筹发展、系统施策</b>”“<b>中央善统筹、地方敢探索</b>”“<b>普惠可及</b>”“<b>驰而不息的坚守精进</b>”“<b>稳得住、可持续的发展能力</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（他者视角—生活片段—四维归因—升华）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>外宾视角切入</b>：以今夏入境游持续火热、“中国值得反复探索”“中国，我还会再来”的外国友人心声起笔，铺陈“中国速度”“中国好物”“东方美学”的立体中国形象，随即一转“而对很多中国人来说，这些点点滴滴不过是日常”（第一至三段，独立成段铺垫）。</span></div>
+        <div class="analysis-item"><span class="label">总论点</span><span class="text"><b>立“如常非凡常”之问</b>：用“清晨下单的生鲜”“周末乘高铁半日穿梭两城”“家门口的公园”“四季蔬果”四个生活片段并置，点出“事实上，波澜不惊的如常非凡常”，亮出核心判断“甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融”（第四段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>厚积薄发</b>：世间的从容如常，皆源自默默用力、厚积薄发。以数十年前“缺鲜蔬、难避暑、出行难”与今日“物产丰饶、四通八达、普惠均衡”今昔对照，归因于“一个个‘五年规划’有力实施”“一代代人接续奋斗”（第五段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>基建底座</b>：如常里的不凡，依托于全方位夯实的基建底座。以云南宣威尼珠河大峡谷“悬崖电梯”变“空中校车”的典型案例切入，延伸到以“六张网”为代表的现代化基础设施体系建设，再以“看得见的投资、看不见的服务”辩证收束（第六至八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>精细治理</b>：非凡中的底气，得益于精细治理与系统布局。以“百姓餐桌”与“推窗见绿”两个切口，逐层展开现代农业体系、保供稳价机制、设施农业冷链物流、种业技术突破，以及城市更新、生态修复、盘活闲置空地等“组合拳”（第九至十一段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>制度优势</b>：岁岁如常彰显着举国同心的制度优势与发展定力。由“民生之利关乎个体获得感，背后是统筹发展、系统施策的大棋局”立论，指出难在“广泛覆盖、普惠可及、驰而不息”，并在市场波动、灾害冲击、外部环境变化中检验这份坚韧（第十二至十三段）。</span></div>
+        <div class="analysis-item"><span class="label">结论</span><span class="text"><b>接续奋斗升华</b>：以“站在新的起点，看见平凡背后的奋斗，深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态”收束，把宏大成就落回个体责任与未来期许（末段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“他者视角导入—生活片段铺陈—亮出反常之问—四维归因（奋斗／基建／治理／制度）—升华”的并列递进式结构</b>，每一维都“有论断、有案例、有今昔对照（一日上行一分钟 vs 手脚并用抓绳攀爬）”，是申论“用小切口讲大道理”的范本；四个分论点句句式整齐（源自／依托于／得益于／彰显着），可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融</p>
+
+      <p>今年夏天，随着入境游持续火热，“中国值得反复探索”“中国，我还会再来”成为不少外国友人的心声。</p>
+
+      <p>出行时感受<span class="highlight-blue">“中国速度”</span>，行李箱里装着<span class="highlight-blue">“中国好物”</span>，山水田园间感受<span class="highlight-blue">“东方美学”</span>……从自然风貌到人文景观，从技术支持到政策服务，一个立体、鲜活的中国，让“头回客”赞叹、给“回头客”惊喜。而对很多中国人来说，这些点点滴滴不过是日常。</p>
+
+      <p>不妨看看中国人的生活片段。<span class="highlight-green">清晨下单的生鲜能短时送达，炎夏居家时尽享一室清凉，周末乘高铁列车可半日穿梭两城，家门口的公园绿意盎然，四季蔬果琳琅满目</span>……今日中国，充满幸福感的烟火生活，成为随处可见的寻常光景。<span class="highlight-purple">事实上，波澜不惊的如常非凡常。</span>甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融。</p>
+
+      <div class="thesis">【总论点】<span class="highlight-purple">波澜不惊的如常非凡常</span>——甜蜜的生活图景背后，是<span class="highlight-purple">大国实力、制度优势与民生温度的深度交融</span>：这份如常<span class="highlight-purple">源自</span>默默用力、厚积薄发，<span class="highlight-purple">依托于</span>全方位夯实的基建底座，<span class="highlight-purple">得益于</span>精细治理与系统布局，<span class="highlight-purple">彰显着</span>举国同心的制度优势与发展定力；唯有深耕不辍、接续拼搏，<span class="highlight-purple">让更多非凡成就沉淀为民生常态</span>。</div>
+
+      <div class="sub-thesis">【分论点一】世间的从容如常，皆源自默默用力、厚积薄发。</div>
+      <p><span class="highlight-green">回望数十年前，冬日缺鲜蔬、夏日难避暑，长途出行耗时费力，物流运输效率低下，商品流通受限，城乡供需失衡。</span>一个个<span class="highlight-blue">“五年规划”</span>有力实施，中国实现<span class="highlight-blue">从物资匮乏到物产丰饶、从出行艰难到四通八达、从城乡二元分割到更普惠均衡的跨越</span>。<span class="highlight-gold">翻天覆地的变化，是一代代人接续奋斗的成果，是量变积累催生的质变跃升。</span></p>
+
+      <div class="sub-thesis">【分论点二】如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑。</div>
+      <p><span class="highlight-green">云南宣威尼珠河大峡谷，谷底的孩子想到谷顶上学，以前靠手脚并用、抓绳攀爬。</span>近几年，悬崖电梯<span class="highlight-blue">“青云梯”与“扶摇梯”</span>相继投用，<span class="highlight-green">上行只需一分钟左右</span>。并肩立于绝壁上的电梯，成为独特的“空中校车”。如今，推进以<span class="highlight-blue">“六张网”</span>为代表的<span class="highlight-blue">现代化基础设施体系</span>建设，为生产、生活一体赋能的步伐稳健有力。</p>
+
+      <p>无论是<span class="highlight-purple">“看得见”的投资，还是“看不见”的服务</span>，都在<span class="highlight-blue">提升有效需求、促进产业升级、推动区域协调</span>等方面发挥重要作用。<span class="highlight-gold">正是持续优化、系统构建、有序运转的基建网络，托举着民生安稳、发展安全，让曾经的奢望化为今日的寻常。</span></p>
+
+      <div class="sub-thesis">【分论点三】非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉。</div>
+      <p>以四季丰盛的百姓餐桌为例，高品质的稳定供给，靠的是<span class="highlight-blue">现代农业体系、保供稳价机制与民生保障政策</span>等协同发力。从<span class="highlight-blue">设施农业、冷链物流，到种业技术突破、产销精准对接</span>，<span class="highlight-blue">农业现代化与服务业高质量发展</span>携手前行，告别“靠天吃饭”、守护稳稳幸福。再拿推窗见绿来说，群众的生态福祉，是各地持续推进<span class="highlight-blue">城市更新、生态修复，以及盘活闲置空地、改造老旧片区</span>等一系列“组合拳”的成果。</p>
+
+      <p><span class="highlight-gold">融入日常的细微美好，没有惊天动地的声势，却彰显治理精度、发展温度。</span><span class="highlight-purple">以科学布局破解发展失衡难题，以精细管护守牢民生底线，以前瞻规划赋能长远发展</span>，亿万人民的安稳日常、山河大地的蓬勃向好，就有了更持久的保障。</p>
+
+      <div class="sub-thesis">【分论点四】进一步看，岁岁如常彰显着举国同心的制度优势与发展定力。</div>
+      <p>民生之利关乎个体获得感，背后是<span class="highlight-blue">统筹发展、系统施策</span>的大棋局。<span class="highlight-purple">基建落地、物产丰盈、生态宜居等，单一领域的突破本就不易，更难的是广泛覆盖、普惠可及，以及驰而不息的坚守精进。</span></p>
+
+      <p>可贵的是，在时代浪潮与风险挑战中，这份坚韧与定力更坚实了。<span class="highlight-purple">无论是遇到市场波动、灾害冲击，还是面对外部环境变化</span>，随着好政策渐次落地、新政策不断显效，<span class="highlight-blue">中央善统筹、地方敢探索</span>，才让寻常生活不受惊扰、民生福祉持续升级。<span class="highlight-gold">这种稳得住、可持续的发展能力，何尝不在积蓄走得好、走得远的未来潜力。</span></p>
+
+      <p><span class="highlight-gold">站在新的起点，我们自当珍惜来之不易的美好生活，看见平凡背后的奋斗，深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态，让百姓的幸福底色更厚重、时代的发展步伐更铿锵。</span></p>
+
+      <p class="byline">（人民日报2026年9月1日 第09版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">如常非凡常·破题</span>
+      <p><b>“事实上，波澜不惊的如常非凡常。”</b>——七字反转定全篇，可做一切“民生福祉/发展成就/平凡与伟大”类文章的开篇或转折句，反差有力、耐人回味。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·三重交融</span>
+      <p><b>“甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融。”</b>——“实力+制度+温度”三维归因，是写“成就归因/中国式现代化”类文章的总论点万能句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">分论一·厚积薄发</span>
+      <p><b>“世间的从容如常，皆源自默默用力、厚积薄发。”</b>——“从容”对“默默用力”，写“接续奋斗/久久为功/政绩观”可直接作分论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">量变·质变</span>
+      <p><b>“翻天覆地的变化，是一代代人接续奋斗的成果，是量变积累催生的质变跃升。”</b>——写“积累与跃升/战略定力/一张蓝图绘到底”的归因金句，兼具哲理与政策味。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">基建·托举日常</span>
+      <p><b>“正是持续优化、系统构建、有序运转的基建网络，托举着民生安稳、发展安全，让曾经的奢望化为今日的寻常。”</b>——“奢望化为寻常”极具画面感，写“基础设施建设/公共服务”类文章的收束佳句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·骨架血脉</span>
+      <p><b>“宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉。”</b>——“骨架/血脉”对仗比喻，写“硬投入与软治理/统筹软硬件”的辩证段最佳开篇。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·显隐</span>
+      <p><b>“无论是‘看得见’的投资，还是‘看不见’的服务，都在提升有效需求、促进产业升级、推动区域协调等方面发挥重要作用。”</b>——显性工程与隐性服务并论，写“投资于人/软硬并举”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">治理·三个以</span>
+      <p><b>“以科学布局破解发展失衡难题，以精细管护守牢民生底线，以前瞻规划赋能长远发展。”</b>——三组“以”字排比，是“城市治理/基层治理/系统思维”类对策段的黄金句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">治理精度·温度</span>
+      <p><b>“融入日常的细微美好，没有惊天动地的声势，却彰显治理精度、发展温度。”</b>——把宏大治理落回日常细节，写“以人民为中心/绣花功夫”的点睛之笔。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">统筹·两个积极性</span>
+      <p><b>“中央善统筹、地方敢探索，才让寻常生活不受惊扰、民生福祉持续升级。”</b>——写“全国一盘棋/中央与地方两个积极性/制度优势”的凝练表述，短而有力。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·民生常态</span>
+      <p><b>“让更多非凡成就沉淀为民生常态，让百姓的幸福底色更厚重、时代的发展步伐更铿锵。”</b>——“沉淀”一词把发展成就与百姓日常打通，是民生类文章结尾升华的亮点句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“他者视角+生活片段”起笔：先用外国友人的赞叹（“中国值得反复探索”）建立外部观照，再用“清晨下单的生鲜”“周末乘高铁穿梭两城”等四个具象生活片段铺陈，最后以“事实上，波澜不惊的如常非凡常”一句反转亮题，形成“外看惊艳—内视平常—反问归因”的完整引论闭环。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“源自—依托于—得益于—彰显着”四句框架写民生类文章：①厚积薄发（历史纵深，今昔对照）；②基建底座（硬件支撑，典型案例）；③精细治理（软件赋能，百姓餐桌+推窗见绿）；④制度优势（举国同心，风险中检验）。四个动词不重复，层次由实到虚、由浅入深。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把四维度改写为可操作对策：持续推进以“六张网”为代表的现代化基础设施体系建设，提升有效需求、促进产业升级、推动区域协调（基建）；健全现代农业体系与保供稳价机制，推进设施农业、冷链物流、种业技术突破（保供）；以科学布局、精细管护、前瞻规划推进城市更新与生态修复（治理）；坚持中央统筹与地方探索结合，在波动与冲击中保持发展定力（制度）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“显隐对照”写法：宏大基建是“看得见”的投资，治理体系是“看不见”的服务，二者共同托举民生安稳；再如“撑起骨架/激活血脉”“奢望/寻常”“单一突破/普惠可及”，都是“硬与软、点与面、一时与长远”的辩证模板，写“统筹兼顾类”段落可直接套用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>用“让更多非凡成就沉淀为民生常态”收束，再对仗推进“幸福底色更厚重、发展步伐更铿锵”，把宏大发展叙事落回百姓日常与接续奋斗，格局打开且有余味。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「波澜不惊的如常非凡常——甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融：这份如常源自默默用力、厚积薄发，依托于全方位夯实的基建底座，得益于精细治理与系统布局，彰显着举国同心的制度优势与发展定力；唯有深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对「波澜不惊的如常非凡常——甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融：这份如常源自默默用力、厚积薄发，依托于全方位夯实的基建底座，得益于精细治理与系统布局，彰显着举国同心的制度优势与发展定力；唯有深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态。」这一重要论断，应从三方面理解。首先，其内涵在于世间的从容如常，皆源自默默用力、厚积薄发。其次，重要意义在于如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑。（“事实上，波澜不惊的如常非凡常。”）最后，落实路径在于非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉。（“甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融。”）唯有统筹兼顾、系统施策，方能行稳致远。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「如常凭什么非凡常」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对此，建议从三方面着力：一是世间的从容如常，皆源自默默用力、厚积薄发。“事实上，波澜不惊的如常非凡常。”二是如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑。三是非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉。通过系统施策、久久为功，推动各项工作落地见效。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「如常凭什么非凡常」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「波澜不惊的如常非凡常——甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融：这份如常源自默默用力、厚积薄发，依托于全方位夯实的基建底座，得益于精细治理与系统布局，彰显着举国同心的制度优势与发展定力；唯有深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态。」——这一论断深刻揭示了如常凭什么非凡常的内在逻辑。做好如常凭什么非凡常，必须在世间的从容如常，皆源自默默用力、厚积薄发上夯基固本，在如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑上提质增效，在非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉上久久为功。<br><br>以世间的从容如常，皆源自默默用力、厚积薄发。方向对了，路再远也能抵达。“事实上，波澜不惊的如常非凡常。”唯有把世间的从容如常，皆源自默默用力、厚积薄发摆在突出位置，才能为如常凭什么非凡常注入源源不断的动力。<br><br>以如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑。方法对了，事再难也能办成。“甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融。”要把如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉。行百里者半九十。世间的从容如常，皆源自默默用力、厚积薄发与如常里的不凡，依托于全方位夯实的基建底座。民生福祉的改善、生活品质的提升，从来离不开硬核基础设施的支撑的成效，最终要靠非凡中的底气，得益于精细治理与系统布局。宏大的基建工程撑起发展的骨架，科学的治理体系则激活发展的血脉来巩固和拓展。“世间的从容如常，皆源自默默用力、厚积薄发。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。如常凭什么非凡常是一场接力跑，每一棒都要跑出好成绩。让我们以「波澜不惊的如常非凡常——甜蜜的生活图景背后，是大国实力、制度优势与民生温度的深度交融：这份如常源自默默用力、厚积薄发，依托于全方位夯实的基建底座，得益于精细治理与系统布局，彰显着举国同心的制度优势与发展定力；唯有深耕不辍、接续拼搏，让更多非凡成就沉淀为民生常态。」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-01</div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.fx-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var ans = btn.nextElementSibling;
+    if(ans && ans.classList.contains('fx-answer')){
+      var on = ans.classList.toggle('show');
+      btn.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+    }
+  });
+});
+</script>
+
+
+<style>
+.fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+.fx-answer{display:none;}
+.fx-answer.show{display:block;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.fx-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ans=btn.nextElementSibling;
+      if(ans && ans.classList.contains('fx-answer')){
+        var on=ans.classList.toggle('show');
+        btn.textContent= on?'🙈 隐藏参考答案':'👀 显示参考答案（先自己写一遍）';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
