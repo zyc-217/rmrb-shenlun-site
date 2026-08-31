@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 智能时代，如何与算法共处</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>智能时代，如何与算法共处</h1>
+    <div class="meta">人民日报评论 | 人工智能治理·算法向善·数字治理·包容审慎·新质生产力 | 2026年8月31日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：人工智能治理/算法向善/包容审慎监管/法治思维/体系化创新/开放合作</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">人工智能治理</span>
+      <span class="tag-item">算法向善</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">数字治理</span>
+      <span class="tag-item">包容审慎监管</span>
+      <span class="tag-item">全面依法治国</span>
+      <span class="tag-item">系统思维</span>
+      <span class="tag-item">科技伦理</span>
+      <span class="tag-item">数据安全</span>
+      <span class="tag-item">平台经济</span>
+      <span class="tag-item">改革创新</span>
+      <span class="tag-item">开放合作</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">高质量发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“以算法向善引领人工智能健康发展”“让技术创新与制度规范同频共振”“在包容审慎中守护科技向善”“以开放合作厚植AI发展优势”等主题；本文<b>“三例导入—立时代之问—善用·善治·善创三维作答—人人参与升华”</b>的递进式论证，是写“人工智能治理类”文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼三条对策：<b>以改革思维精准施策推进算法向善（跨部门数据共享、政企联动、行业协同）／以包容审慎监管与法治方式设置“红绿灯”、厘清边界／以体系化创新与开放合作破解风险挑战</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“AI发展一日千里、算法迭代日新月异，而社会运行、制度规则等具有相对稳定性”“若认定训练行为本身即构成侵权……若放任所有数据被无偿使用……”“技术的生命力在于开放流动”等多组辩证，是写<b>创新与监管、发展与安全、自立与开放、快与稳类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推进算法向善治理的实施意见”“关于加强人工智能领域包容审慎监管的若干措施”素材；文中“<b>包容审慎</b>”“<b>设置红绿灯、厘清边界</b>”“<b>法治思维和法治方式</b>”“<b>体系化创新</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象—问题—三维对策—升华）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>三例导入</b>：以近期三则AI与算法新闻——AI“偷声”、AI入口收费、“红灯停表”——并置观察，点出“背后的治理课题引人思考”（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">总论点</span><span class="text"><b>立时代之问</b>：由三例归纳“既有新问题新表现，也有反思、规范与改进”，抛出核心之问“当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？”，并以“善用—善治—善创”三维作答（第五段，独立色块呈现）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>善用</b>：在各领域推进算法向善，需要改革思维、精准施策。以“红灯停表”为例，论证创新举措的实现得益于交通信号数据实时接入、立足于跨部门跨主体数据共享、关键在政企联动与行业协同（第六至七段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>善治</b>：对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界。以AI训练阶段采集声音数据的两难切入，举广州人工智能发展促进条例立法探索，落到运用法治思维和法治方式找最优解（第八至九段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>善创</b>：算法迭代创新的风险挑战依然要靠创新来破解。一方面跳出算法看算法、推进体系化创新（算力、数据、模型协同）；另一方面在开放合作中谋创新（非洲北斗植保无人机、巴西光明电力大模型）（第十至十一段）。</span></div>
+        <div class="analysis-item"><span class="label">结论</span><span class="text"><b>人人参与升华</b>：以“让AI锚定向上向善方向、跑得既快又稳，每个人都可以是参与者，也能作出属于自己的贡献”收束，将宏大议题落到个体责任（末段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象集群（三例）—提出之问—三维对策（善用/善治/善创）—升华”的并列递进式结构</b>，每一维都“有论断、有案例、有数据（12%佣金、8月17日立法、1+1+1&gt;3）”，是申论“用事实与数字立论”的范本；三字词组“善用·善治·善创”对仗好记，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>近期，几则有关AI（人工智能）和算法的新闻备受关注。放在一起观察，<span class="highlight-blue">背后的治理课题引人思考</span>。</p>
+
+      <p>一是AI“偷声”。随着AI“克隆”声音技术不断迭代升级，<span class="highlight-green">只需十几秒语音素材</span>，就能精准复刻一个人的声线、模拟其情绪语气，有的商家甚至偷用配音演员声音生成带货视频。</p>
+
+      <p>二是AI入口收费。有的社交平台打造“AI导购”直接推送商品，有的大模型对酒店订单<span class="highlight-green">抽取12%佣金</span>，<span class="highlight-blue">AI商业变现</span>渐次落地。</p>
+
+      <p>三是“红灯停表”。<span class="highlight-blue">三家外卖平台率先在北京探索实施“红灯停表”</span>，骑手等红灯时长可在考核时间中顺延。</p>
+
+      <p>AI“偷声”暴露安全隐患，易成为诈骗新方式，侵权成本低廉，维权困难重重；AI大模型探索商业化落地，一些佣金绑定模式的客观性受到质疑；为骑手“松绑”，将遵守交通规则的刚性要求嵌入平台逻辑之中，体现善意。<span class="highlight-purple">既有新问题新表现，也有反思、规范与改进</span>，均指向不得不直面的时代之问：<span class="highlight-purple">当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？</span></p>
+
+      <div class="thesis">【总论点】当AI无所不在、日益深刻改变生产生活方式，与算法共处之道在于<span class="highlight-purple">善用、善治、善创三者并举</span>——以改革思维、精准施策推进<span class="highlight-purple">算法向善</span>，以<span class="highlight-purple">包容审慎</span>监管与法治方式设置“红绿灯”、厘清边界，以体系化创新和开放合作破解风险挑战，<span class="highlight-purple">确保技术始终沿着造福于人、增进公共利益的轨道前行</span>，让人工智能跑得既快又稳。</div>
+
+      <div class="sub-thesis">【分论点一】首先要善用。在各领域推进算法向善，需要改革思维、精准施策。</div>
+      <p>回溯人类文明史，<span class="highlight-gold">每一次科技革命都会带来经济社会的重大变革</span>。<span class="highlight-purple">AI发展一日千里、算法迭代日新月异，而社会运行、制度规则等具有相对稳定性，难免衍生问题矛盾</span>。<span class="highlight-gold">老套路难有出路，保持改革姿态、拿出精细举措，才能找到最大公约数，扎扎实实解难题、谋福祉</span>。比如“红灯停表”这一创新举措的实现，得益于交通信号数据实时接入，基础是<span class="highlight-blue">跨部门、跨主体的数据共享</span>，关键在于<span class="highlight-blue">政企联动、行业协同</span>。</p>
+
+      <div class="sub-thesis">【分论点二】善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。</div>
+      <p>比如，怎样监管AI模型在训练阶段大量采集他人声音数据的行为？<span class="highlight-purple">若认定训练行为本身即构成侵权，将对大模型产业发展构成压力；若放任所有数据被无偿使用，则会产生风险隐患。</span>针对类似问题，广东广州的探索值得借鉴。<span class="highlight-green">今年8月17日</span>，<span class="highlight-blue">《广州市人工智能发展促进条例（草案修改稿·征求意见稿）》</span>发布，公开征求意见和建议，拟以立法形式明确监管原则和禁止行为。<span class="highlight-gold">把握好平衡，运用法治思维和法治方式，往往能够找到复杂问题的最优解。</span></p>
+
+      <div class="sub-thesis">【分论点三】善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。</div>
+      <p>一方面，<span class="highlight-gold">要跳出算法看算法</span>，推进<span class="highlight-blue">体系化创新</span>。当前，<span class="highlight-purple">算力、数据、模型日益演变为相互依存、互为驱动的有机整体</span>，以<span class="highlight-blue">系统思维</span>整合资源，放大三者间的协同效应，有利于形成<span class="highlight-green">“1+1+1&gt;3”</span>的叠加优势。另一方面，要在<span class="highlight-blue">开放合作</span>中谋创新。<span class="highlight-gold">技术的生命力在于开放流动。</span>在非洲，基于<span class="highlight-green">北斗导航技术</span>的植保无人机极大提升作业效率；在巴西，国家电网<span class="highlight-green">光明电力大模型</span>助力电网智能化运维……<span class="highlight-gold">中国AI帮助发展中国家补齐智能化转型短板，也在开放合作中积累了新优势。</span></p>
+
+      <p>当机器开始推演、算法参与决策、技术鸿沟不断拉大……想方设法<span class="highlight-gold">让AI锚定向上向善方向、跑得既快又稳，每个人都可以是参与者，也能作出属于自己的贡献</span>。</p>
+
+      <p class="byline">（人民日报2026年8月31日 第09版 · 微观）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">时代之问·破题</span>
+      <p><b>“当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？”</b>——一句时代之问定全篇，可做一切“人工智能治理/算法向善/科技伦理”类文章的开篇引语，设问有力。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">善用·改革思维</span>
+      <p><b>“首先要善用。在各领域推进算法向善，需要改革思维、精准施策。”</b>——“善用”二字统领第一维对策，写“推动技术向善应用”可直接作分论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">善治·包容审慎</span>
+      <p><b>“对新事物的监管既要包容审慎，也要设置‘红绿灯’、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。”</b>——监管尺度的最佳表述，“包容审慎+红绿灯”是写新兴领域监管的黄金搭配。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">法治·最优解</span>
+      <p><b>“把握好平衡，运用法治思维和法治方式，往往能够找到复杂问题的最优解。”</b>——写“全面依法治国/两难抉择/复杂治理”的收束句，稳妥而有分量。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">善创·以创新解风险</span>
+      <p><b>“算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。”</b>——辩证处理“发展与风险”关系，写“以创新解决创新带来的问题”必引。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·快与稳</span>
+      <p><b>“AI发展一日千里、算法迭代日新月异，而社会运行、制度规则等具有相对稳定性，难免衍生问题矛盾。”</b>——技术迭代快与制度稳定性慢的张力，是“改革与法治/变与不变”类作文的高级辩证。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">体系化·协同效应</span>
+      <p><b>“算力、数据、模型日益演变为相互依存、互为驱动的有机整体，以系统思维整合资源，放大三者间的协同效应，有利于形成‘1+1+1&gt;3’的叠加优势。”</b>——系统思维的规范表述，写“统筹推进/系统集成”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">开放·流动</span>
+      <p><b>“技术的生命力在于开放流动。”</b>——八字短句，金句密度极高，写“高水平对外开放/科技国际合作/人类命运共同体”的开篇或分论点均适用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·人人参与</span>
+      <p><b>“想方设法让AI锚定向上向善方向、跑得既快又稳，每个人都可以是参与者，也能作出属于自己的贡献。”</b>——把宏大议题落到个体责任，是“科技治理类”文章结尾升华的亮点句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>以三则AI新闻（AI“偷声”、入口收费、“红灯停表”）并置起笔，接“背后的治理课题引人思考”，再抛时代之问“我们究竟该怎样与算法共处”，用“善用—善治—善创”总论点收束引论，形成“现象—问题—答案”的完整引论闭环。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“善用/善治/善创”三字框架写科技治理类文章：①善用——以改革思维精准施策，推动技术向善应用；②善治——包容审慎监管，以法治方式厘清边界；③善创——体系化创新+开放合作，以创新破解风险。三字对仗、好记好用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“善用/善治/善创”改写为可操作对策：打通跨部门跨主体数据共享、推动政企联动行业协同（善用）；设置监管红绿灯、明确禁止行为清单、健全立法（善治）；以系统思维整合算力数据模型、在开放合作中补齐短板（善创）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·两段式辩证</span>
+      <p>学本文“两难写法”：先摆“若认定侵权则产业承压，若放任使用则风险隐忧”，再以“把握好平衡，运用法治思维和法治方式往往能找到最优解”收束。写“发展与规范、效率与公平、创新与安全”类辩证段落可直接套用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>用“让AI锚定向上向善方向、跑得既快又稳”收束，再落到“每个人都可以是参与者”，把技术治理从政府责任扩展到社会共治，格局打开且有余味。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「当AI无所不在、日益深刻改变生产生活方式，与算法共处之道在于善用、善治、善创三者并举——以改革思维、精准施策推进算法向善，以包容审慎监管与法治方式设置“红绿灯”、厘清边界，以体系化创新和开放合作破解风险挑战，确保技术始终沿着造福于人、增进公共利益的轨道前行，让人工智能跑得既快又稳。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对「当AI无所不在、日益深刻改变生产生活方式，与算法共处之道在于善用、善治、善创三者并举——以改革思维、精准施策推进算法向善，以包容审慎监管与法治方式设置“红绿灯”、厘清边界，以体系化创新和开放合作破解风险挑战，确保技术始终沿着造福于人、增进公共利益的轨道前行，让人工智能跑得既快又稳。」这一重要论断，应从三方面理解。首先，其内涵在于首先要善用。在各领域推进算法向善，需要改革思维、精准施策。。其次，重要意义在于善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。。（“当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？”）最后，落实路径在于善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。。（“首先要善用。在各领域推进算法向善，需要改革思维、精准施策。”）唯有统筹兼顾、系统施策，方能行稳致远。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「智能时代，如何与算法共处」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对此，建议从三方面着力：一是首先要善用。在各领域推进算法向善，需要改革思维、精准施策。。“当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？”二是善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。。三是善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。。通过系统施策、久久为功，推动各项工作落地见效。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「智能时代，如何与算法共处」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「当AI无所不在、日益深刻改变生产生活方式，与算法共处之道在于善用、善治、善创三者并举——以改革思维、精准施策推进算法向善，以包容审慎监管与法治方式设置“红绿灯”、厘清边界，以体系化创新和开放合作破解风险挑战，确保技术始终沿着造福于人、增进公共利益的轨道前行，让人工智能跑得既快又稳。」——这一论断深刻揭示了智能时代，如何与算法共处的内在逻辑。做好智能时代，如何与算法共处，必须在首先要善用。在各领域推进算法向善，需要改革思维、精准施策。上夯基固本，在善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。上提质增效，在善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。上久久为功。<br><br>以首先要善用。在各领域推进算法向善，需要改革思维、精准施策。。方向对了，路再远也能抵达。“当AI无所不在，日益深刻改变生产生活方式，我们究竟该怎样与算法共处？”唯有把首先要善用。在各领域推进算法向善，需要改革思维、精准施策。摆在突出位置，才能为智能时代，如何与算法共处注入源源不断的动力。<br><br>以善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。。方法对了，事再难也能办成。“首先要善用。在各领域推进算法向善，需要改革思维、精准施策。”要把善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。。行百里者半九十。首先要善用。在各领域推进算法向善，需要改革思维、精准施策。与善治必不可少。对新事物的监管既要包容审慎，也要设置“红绿灯”、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。的成效，最终要靠善创才有未来。算法的持续迭代创新，推动了AI技术的跃迁，其发展过程中存在的风险挑战，依然要靠创新来破解。来巩固和拓展。“对新事物的监管既要包容审慎，也要设置‘红绿灯’、厘清边界，确保技术始终沿着造福于人、增进公共利益的轨道前行。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。智能时代，如何与算法共处是一场接力跑，每一棒都要跑出好成绩。让我们以「当AI无所不在、日益深刻改变生产生活方式，与算法共处之道在于善用、善治、善创三者并举——以改革思维、精准施策推进算法向善，以包容审慎监管与法治方式设置“红绿灯”、厘清边界，以体系化创新和开放合作破解风险挑战，确保技术始终沿着造福于人、增进公共利益的轨道前行，让人工智能跑得既快又稳。」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-08-31</div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.fx-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var ans = btn.nextElementSibling;
+    if(ans && ans.classList.contains('fx-answer')){
+      var on = ans.classList.toggle('show');
+      btn.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+    }
+  });
+});
+</script>
+
+
+<style>
+.fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+.fx-answer{display:none;}
+.fx-answer.show{display:block;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.fx-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ans=btn.nextElementSibling;
+      if(ans && ans.classList.contains('fx-answer')){
+        var on=ans.classList.toggle('show');
+        btn.textContent= on?'🙈 隐藏参考答案':'👀 显示参考答案（先自己写一遍）';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
