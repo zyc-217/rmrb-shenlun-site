@@ -437,35 +437,25 @@
 </div>
 
 <script>
-document.querySelectorAll('.fx-toggle').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var ans = btn.nextElementSibling;
-    if(ans && ans.classList.contains('fx-answer')){
-      var on = ans.classList.toggle('show');
-      btn.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
     }
-  });
-});
-</script>
-
-
-<style>
-.fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
-.fx-answer{display:none;}
-.fx-answer.show{display:block;}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.fx-toggle').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var ans=btn.nextElementSibling;
-      if(ans && ans.classList.contains('fx-answer')){
-        var on=ans.classList.toggle('show');
-        btn.textContent= on?'🙈 隐藏参考答案':'👀 显示参考答案（先自己写一遍）';
-      }
-    });
-  });
-});
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
 </script>
 
 </body>
