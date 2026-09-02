@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8b0000">
+<meta name="robots" content="noindex">
+<title>原文自测 · 何以锻造“场景竞争力”</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+
+  /* ===== 原文自测页（报纸版面）===== */
+  .hdr { position:sticky; top:0; z-index:40; background:#efe9d8;
+         border-bottom:1px solid #d6cdb4; }
+  .topbar { display:flex; align-items:center; gap:7px; padding:9px 12px;
+            padding-top:calc(9px + env(safe-area-inset-top)); }
+  .tb-back { font-size:22px; color:#8b0000; text-decoration:none; padding:0 3px; line-height:1; }
+  .tb-title { flex:1; min-width:0; font-size:13px; color:#5c5340; font-weight:600;
+              white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tb-btn { flex:0 0 auto; padding:6px 11px; border-radius:9px; border:1px solid #c9bfa3;
+            background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tb-btn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .tb-link { flex:0 0 auto; padding:6px 10px; border-radius:9px; background:#f7f3e6;
+             border:1px solid #c9bfa3; color:#8b0000; font-size:12.5px; text-decoration:none; }
+  .palette { display:none; gap:9px; padding:8px 14px 10px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; }
+  .palette.show { display:flex; }
+  .pc { width:32px; height:32px; border-radius:50%; border:0; cursor:pointer;
+        box-shadow:0 0 0 1.5px #b9ae90; padding:0; }
+  .pc.on { box-shadow:0 0 0 2.5px #333; }
+  .pbtn { padding:6px 12px; border-radius:9px; border:1px solid #c9bfa3; background:#f7f3e6;
+          font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .phint { font-size:11.5px; color:#9a907a; margin-left:auto; }
+  /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
+  .sheet { max-width:720px; margin:0 auto; padding:14px 10px 40px; }
+  .paper { position:relative; background-color:#f7f3e6;
+           background-image:
+             repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
+             radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.55) 0%, rgba(168,150,110,.18) 100%);
+           box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
+           padding:0 0 60px; min-height:75vh; overflow:hidden; }
+  .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
+               -webkit-touch-callout:none; }
+  /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
+     用 multiply 混合模拟真实荧光笔：涂过的地方纸变彩色，而黑色墨字不受影响，
+     视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
+  #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
+        mix-blend-mode:multiply; }
+  #text { position:relative; z-index:1; }
+  /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
+  .paper.pen #text { pointer-events:none; }
+  /* 报头 */
+  .masthead { position:relative; z-index:1; padding:16px 18px 6px; }
+  .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
+             font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
+             text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  .mh-rule { border-top:3px solid #181512; border-bottom:1px solid #181512;
+             height:3px; margin:6px 0 5px; }
+  .mh-meta { display:flex; justify-content:space-between; align-items:center;
+             font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
+             padding:2px 2px 0; }
+  .mh-meta i { font-style:normal; }
+  /* 文章标题区 */
+  .art-head { position:relative; z-index:1; padding:18px 22px 12px; text-align:center; }
+  .art-title { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:24px;
+               font-weight:700; line-height:1.5; color:#181512; letter-spacing:1px; }
+  .art-sub { font-family:"SimSun","Songti SC",serif; font-size:12px; color:#6b6152;
+             margin-top:7px; letter-spacing:2px; }
+  .art-rule { border-top:1px solid #b9ae90; margin:12px 22px 0; }
+  /* 正文：宋体、两端对齐、首行缩进 */
+  #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:17.5px;
+              line-height:2.08; color:#1c1915; text-align:justify;
+              margin:0 20px 13px; text-indent:2em; }
+  .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
+             color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
+  /* 精读页悬浮入口 */
+  .orig-fab { position:fixed; right:14px; bottom:calc(18px + env(safe-area-inset-bottom));
+              z-index:999; background:#fff; border:1.5px solid #ffcdd2; color:#c0392b;
+              font-size:13px; font-weight:600; padding:10px 15px; border-radius:999px;
+              text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.16); }
+  .orig-fab:active { transform:scale(.95); }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="topbar">
+      <a class="tb-back" href="index.html">‹</a>
+      <span class="tb-title">何以锻造“场景竞争力”</span>
+      <button class="tb-btn" id="bPen">✏️ 勾画</button>
+      <a class="tb-link" href="人民日报评论精读_20260415_gc_2026-04.html">📖 精读</a>
+    </div>
+    <div class="palette" id="pal">
+      <button class="pc on" data-c="gold" style="background:#e8b81f" title="金句/名言"></button>
+      <button class="pc" data-c="blue" style="background:#4a90e2" title="规范表述/政策术语"></button>
+      <button class="pc" data-c="green" style="background:#4caf50" title="数据/事实论据"></button>
+      <button class="pc" data-c="purple" style="background:#9b6bd6" title="辩证关系/哲理"></button>
+      <button class="pbtn" id="bUndo">↩ 撤销</button>
+      <button class="pbtn" id="bClr">🗑 清空</button>
+      <span class="phint">笔划过即上色 · 轻点整句切换</span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="paper" id="paper">
+      <canvas id="cv"></canvas>
+
+      <div class="masthead">
+        <div class="mh-name">人民日报</div>
+        <div class="mh-rule"></div>
+        <div class="mh-meta">
+          <i>2026年4月15日 星期三</i>
+          <i>第05版 · 评论员观察</i>
+        </div>
+      </div>
+
+      <div class="art-head">
+        <div class="art-title">何以锻造“场景竞争力”</div>
+        <div class="art-sub">第05版 · 评论员观察</div>
+        <div class="art-rule"></div>
+      </div>
+
+      <div id="text">
+      <p class="ln" data-i="0">一份饼干，能吃出什么样的新鲜感？</p>
+      <p class="ln" data-i="1">朋友分享了一种叫“幸运棒”的饼干。每小份饼干都有寄语，如“眼里有星辰，心中有暖阳”“白白胖胖，充满希望”。看到这些文字，不禁心头一暖、会心一笑。</p>
+      <p class="ln" data-i="2">新花样，新体验。朋友颇有感触地说，厂家做的不是零食，而是能在亲朋好友相聚时端上桌、送祝福的“场景”。生活处处，皆有场景。观察发展，亦如此。</p>
+      <p class="ln" data-i="3">有学者说，理解中国、认识中国，要回到“中国的场景”。从人工智能赋能千行百业，到文旅沉浸式体验刷屏出圈，再到政务服务精准匹配民生需求……高质量发展实践中，场景是技术落地的载体、消费升级的舞台、治理增效的抓手，更是发展活力潜力的集中呈现。</p>
+      <p class="ln" data-i="4">数字经济与实体经济深度融合的今天，中国何以锻造“场景竞争力”？</p>
+      <p class="ln" data-i="5">推动场景创新，制度支撑是关键。</p>
+      <p class="ln" data-i="6">如，5G等新基建纳入国家规划，为自动驾驶、远程医疗等场景提供底层支撑；“东数西算”通过数据中心布局，推动西部地区在算力应用场景中提质发展。</p>
+      <p class="ln" data-i="7">顶层设计的战略谋划，宏观政策的有力引导，增强了政策驱动能力。当一些国家的企业在为电力保障而焦虑时，我国的电网、能源结构、特高压工程等释放发展红利，彰显了集中力量办大事的优势。制度上的一盘棋，行动上的先手棋，让应用场景成为重要发展场域。</p>
+      <p class="ln" data-i="8">我国拥有庞大市场，城乡、区域、产业间的差异性与互补性，造就场景的无限可能。</p>
+      <p class="ln" data-i="9">我国拥有庞大市场，城乡、区域、产业间具有差异性、互补性。这意味着，技术创新总能找到适配场景，个性需求也会催生全新场景。全国统一大市场的“需求矩阵”，呈现梯度多元、层级丰富、动态升级的特征。例如，一、二线城市的消费者偏好智能家电与无人配送，而下沉市场的直播助农则通过场景重构，带动农产品流通。</p>
+      <p class="ln" data-i="10">对比一些成熟的经济体，中国市场的“需求弹性”尤为显著。比如，随着人口结构变化，中国的青年与老年同时成为消费主力群体，“银发经济”与“Z世代消费”相互渗透、彼此交融，催生出一批复合型消费场景。从城市的品质生活，到乡村的普惠民生，从银发经济的适老化改造，到青年群体的潮流文旅，需求的广度与深度正在造就场景的无限可能。</p>
+      <p class="ln" data-i="11">技术与场景双向赋能，社会活力为场景创新注入“满格电力”。</p>
+      <p class="ln" data-i="12">技术是场景创新的引擎。5G技术不仅服务于通信行业，更通过港口自动化、远程医疗、自动驾驶等场景验证实际效用，进一步推动技术升级；无人机从最初的消费级产品，变为农业植保、电力巡检等领域的好帮手，低空经济由此不断延链强链。今天，技术创新助力场景延展，场景应用反哺技术创新，这样的正向“双螺旋”使创新生态更具活力。</p>
+      <p class="ln" data-i="13">技术与场景的双向赋能，源于产业链供应链的完整性稳定性。从产品设计到终端制造，从云计算到物联网，完整的产业体系、制造能力，使得技术迭代与场景适配可同步推进。场景创新越是落得下、推得开，就越能为积蓄发展优势提供硬核支撑。</p>
+      <p class="ln" data-i="14">再进一步看，当前全社会对新技术的包容性与参与度，为场景创新注入“满格电力”。共享单车的普及，社区团购的兴起，人工智能大模型的开源……普通人是场景的使用者，也是共建者。正是基于“社会共创”的文化氛围，微创新一点点汇聚成大变革。守住安全底线，在新领域、新业态中鼓励更多人参与，更有利于形成“场景入生活，创新成常态”的局面。</p>
+      <p class="ln" data-i="15">“场景竞争力”的塑造，靠的是制度优势、市场潜力、技术生态与社会活力的协同共振。也要注意，新场景不能局限于“应用层”，也要为基础研究拓宽舞台，这是实现高质量、可持续发展的“源头活水”。须相信，今天精心打磨的新场景，会成为定义明天的新赛道，孕育蓬勃生长的新力量。</p>
+      <p class="ln" data-i="16">（人民日报2026年4月15日 第5版 · 评论员观察）</p>
+      </div>
+      <div class="pen-tip">— 全文完 —</div>
+    </div>
+  </div>
+<script>
+const PAGE="人民日报评论精读_20260415_gc_2026-04.html", STORE='rmrb_read_v1';
+const COL={gold:'#e8b81f',blue:'#4a90e2',green:'#4caf50',purple:'#9b6bd6'};
+let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[]};
+let rec=db[PAGE];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
+const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const pal=document.getElementById('pal');
+let cur='gold',pen=false,drawing=false,pts=[],last=null;
+
+function pr(){return paper.getBoundingClientRect()}
+function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
+function wOf(e){const p=(e.pointerType==='pen'&&e.pressure>0)?e.pressure:0.5;return 9+p*15}
+function redraw(){
+  const r=pr();ctx.clearRect(0,0,r.width,r.height);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  (rec.strokes||[]).forEach(function(s){
+    ctx.strokeStyle=COL[s.c]||COL.gold;ctx.globalAlpha=0.5;ctx.lineWidth=s.w||16;
+    ctx.beginPath();
+    s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height;
+      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y)});
+    ctx.stroke();
+  });
+  ctx.globalAlpha=1;
+}
+function fit(){
+  const r=pr(),d=window.devicePixelRatio||1;
+  cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);
+  cv.style.width=r.width+'px';cv.style.height=r.height+'px';
+  ctx.setTransform(d,0,0,d,0,0);redraw();
+}
+/* 笔画 bbox 反查被覆盖的句子。
+   关键：横划时 bbox 高度≈0，若按面积交集判定会恒为 0 而永不命中，
+   故细笔画改用「中心 y 是否落在该句行内」判定，粗涂改按交集比例判定。 */
+function hits(minx,miny,maxx,maxy){
+  const r=pr(),out=[];
+  const cy=(miny+maxy)/2;
+  const thin=(maxy-miny)*r.height<12;
+  document.querySelectorAll('.ln').forEach(function(el){
+    const q=el.getBoundingClientRect();
+    const y0=(q.top-r.top)/r.height,y1=(q.bottom-r.top)/r.height;
+    if(thin){ if(cy>=y0&&cy<=y1) out.push(el.dataset.i); }
+    else if(Math.min(maxy,y1)-Math.max(miny,y0) > (y1-y0)*0.25) out.push(el.dataset.i);
+  });
+  return out;
+}
+function bbox(ps){let a=1,b=0,c=1,d=0;
+  ps.forEach(function(p){a=Math.min(a,p[0]);b=Math.max(b,p[0]);c=Math.min(c,p[1]);d=Math.max(d,p[1])});
+  return [a,c,b,d]}
+function recompute(){
+  const m={};
+  (rec.strokes||[]).forEach(function(s){
+    const bb=bbox(s.p);hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){m[i]=s.c});
+  });
+  rec.marks=m;
+}
+/* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
+cv.addEventListener('pointerdown',function(e){
+  if(!pen)return;e.preventDefault();drawing=true;
+  try{cv.setPointerCapture(e.pointerId)}catch(err){}
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];
+});
+cv.addEventListener('pointermove',function(e){
+  if(!drawing)return;e.preventDefault();
+  const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  ctx.strokeStyle=COL[cur];ctx.globalAlpha=0.5;
+  ctx.lineWidth=wOf(e);ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
+  ctx.globalAlpha=1;last=[x,y];pts.push(p);
+});
+function up(e){
+  if(!drawing)return;drawing=false;
+  if(!pts.length)return;
+  const r=pr(),bb=bbox(pts);
+  const moved=Math.max((bb[2]-bb[0])*r.width,(bb[3]-bb[1])*r.height);
+  if(moved<8){ /* 轻点=整句切换颜色；坐标反查，不依赖层叠/命中测试 */
+    const cx=pts[0][0]*r.width+r.left, cy=pts[0][1]*r.height+r.top;
+    let target=null,best=1e12;
+    document.querySelectorAll('.ln').forEach(function(el){
+      const q=el.getBoundingClientRect();
+      if(cx>=q.left&&cx<=q.right&&cy>=q.top&&cy<=q.bottom){target=el;best=-1;return;}
+      const dx=Math.max(q.left-cx,0,cx-q.right), dy=Math.max(q.top-cy,0,cy-q.bottom);
+      const dist=dx*dx+dy*dy; if(dist<best){best=dist;target=el;}
+    });
+    if(target){const i=target.dataset.i,q=target.getBoundingClientRect(),yy=(q.top+q.height*0.6-r.top)/r.height;
+      if(rec.marks[i]===cur){delete rec.marks[i];
+        rec.strokes=(rec.strokes||[]).filter(function(s){
+          return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
+      }else{
+        rec.marks[i]=cur;
+        rec.strokes.push({c:cur,w:16,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+      }
+      save();redraw();
+    }
+    return;
+  }
+  rec.strokes.push({c:cur,w:wOf(e)||16,p:pts});
+  hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur});
+  save();redraw();
+}
+cv.addEventListener('pointerup',up);
+cv.addEventListener('pointercancel',up);
+
+const bPen=document.getElementById('bPen');
+bPen.onclick=function(){
+  pen=!pen;paper.classList.toggle('pen',pen);
+  cv.style.pointerEvents=pen?'auto':'none';
+  bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
+  pal.classList.toggle('show',pen);
+};
+document.querySelectorAll('.pc').forEach(function(el){
+  el.onclick=function(){
+    cur=el.dataset.c;
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.toggle('on',x===el)});
+  };
+});
+document.getElementById('bUndo').onclick=function(){
+  rec.strokes.pop();recompute();save();redraw();
+};
+document.getElementById('bClr').onclick=function(){
+  if(!confirm('清空本篇全部勾画？'))return;
+  rec.strokes=[];rec.marks={};save();redraw();
+};
+if(window.ResizeObserver){new ResizeObserver(fit).observe(paper)}
+window.addEventListener('resize',fit);
+window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+fit();
+</script>
+</body>
+</html>
