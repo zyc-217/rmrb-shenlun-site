@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 取舍之间显格局</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>取舍之间显格局</h1>
+    <div class="meta">人民日报评论员观察 | 高质量发展·因地制宜·正确政绩观·取舍之道 | 2026年9月3日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：稳中求进必须辨重点、懂取舍、强优势／眼光·清醒·智慧三层递进／发展如棋、落子有章法</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">区域协调发展</span>
+      <span class="tag-item">产业链供应链</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">战略定力</span>
+      <span class="tag-item">取舍智慧</span>
+      <span class="tag-item">产业发展路径</span>
+      <span class="tag-item">调查研究</span>
+      <span class="tag-item">人文经济学</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">统筹兼顾</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“有所为有所不为”“把有限资源用在刀刃上”“以重点突破带动全局提升”“因地制宜发展新质生产力”等主题；本文<b>“生活小事起兴—提炼成事逻辑—转入地方发展—亮总论点—三维展开（眼光/清醒/智慧）—棋局收束”</b>的层进式结构，是写“战略取舍/产业发展/政绩观类”文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>坚持因地制宜，摸清家底、明晰“缺什么、引什么”，围绕产业链关键环节定向招引／保持战略清醒，对不符合规划、同质低质的项目敢于说“不”，善于算大账、总账、长远账／强化链式思维，把上下游串起来、产业链搭起来，提升本地配套率／保持战略定力，认准方向后不频繁换赛道，持续向前看、向上攀、向智转</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“精力有限，重点不突出就会处处平庸”“贪大求全，付出的机会成本更大”“有的自以为是包袱，放到更大范围辩证看，反而是资源”“在一米宽中掘出万米深”“想清楚‘做什么’，守得住‘不做什么’”等多组辩证，是写<b>舍与得、多与少、加法与减法、当前与长远类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推动产业高质量发展的实施意见”“关于开展产业链精准招商的工作方案”素材；文中“<b>稳中求进</b>”“<b>现代化产业体系</b>”“<b>因地制宜与因时制宜</b>”“<b>锚定长远突围的方向</b>”“<b>不能只算地方账、部门账、眼前账</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（小事起兴—反面蓄势—三维递进—棋局收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>以小见大起兴</b>：从一名企业家“每天早上列出待办、按重要程度排序、果断划掉后面几件、只把前3件做深做透”的工作习惯切入，一句“看似简单的取舍，蕴含成事的逻辑”，把个人方法论提炼为普遍规律（第一至二段，先叙事后说理，破题平易近人）。</span></div>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>由点到面转入</b>：以“放到地方发展，道理亦然”一句完成转折，随即摆反面现象——“产业跟风”“多多益善”“样样有、样样不精，核心部件全靠买”，指出“技术空心、产业链趋同”的模式很容易“一哄而散”，为总论点蓄势（第三至五段）。</span></div>
+        <div class="analysis-item"><span class="label">总论点</span><span class="text"><b>立论作答</b>：紧承问题给出判断——“稳中求进推动高质量发展，必须辨重点、懂取舍、强优势”，十五字拎出“辨、懂、强”三个动词，既回应前面“跟风”之弊，也为后文三个分论点铺开留出通道（第五段末，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>眼光·敢闯善为</b>：以“安徽新能源汽车年产量何以全国第一？”设问作答，举“组建汽车办统筹全局”“在电池、芯片等十几个产业链关键环节分别确定‘已有企业’与‘招引目标’”，并以2020年注资蔚来、2021年引入比亚迪生产基地、2023年引入大众汽车科创中心三步落子作证，落脚“步步为营把上下游串起来、产业链搭起来”（第六至八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>清醒·有所不为</b>：先以“能否按住政绩冲动说‘不’？”的反问直击痛点，再引习近平总书记“善于算大账、总账、长远账，不能只算地方账、部门账、眼前账”的重要论述立魂，继而从“点”（企业）与“面”（现代化产业体系）的辩证提出“兼顾重点突破与整体提升”，最后以“缺少‘舍’的勇气，就难以聚焦”“贪大求全，付出的机会成本更大”双向论证（第九至十三段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>智慧·取长补短</b>：以田忌赛马“胜在知己知彼”起笔，提出“在调研中多比较”；用“包袱与资源”“丰厚与薄弱”的转化说明辩证看家底；面对竞争“红海”提出“寻找细分生态位，在一米宽中掘出万米深”；再以景德镇从“挖瓷土、烧瓷器”到先进陶瓷进军通信电子、航空航天并打造全域遗产文旅，宁城县从卖化肥到多品类猫砂再到宠物产业全链条两例，说明“不能频繁换赛道，而要优化路径、升级打法”（第十四至二十二段）。</span></div>
+        <div class="analysis-item"><span class="label blue">结论</span><span class="text"><b>棋局意象收束</b>：以“发展如棋，落子有章法。取舍之间，显格局，见高度”两句短句定调，再以“善谋、善断、善于扬弃”三词概括全文方法论，落到“把因地制宜与因时制宜结合起来，想清楚‘做什么’，守得住‘不做什么’”，最后用“千帆竞发中找准航道”“百舸争流中驶向更远彼岸”的对称意象收篇（第二十三至二十四段）。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>一名企业家分享工作习惯，听来颇有启发：<span class="highlight-green">每天早上列出所有待办事项，按重要程度排序，继而果断划掉后面几件，集中力量只把前3件做深做透。</span></p>
+
+      <p>看似简单的取舍，蕴含成事的逻辑——<span class="highlight-purple">精力有限，重点不突出就会处处平庸；集中力量在重要事情上，才更容易以重点突破带动全局提升。</span></p>
+
+      <p>放到地方发展，道理亦然。<span class="highlight-purple">资源有限，必须看投入产出比，区别不鲜明就会同质竞争。</span></p>
+
+      <p>有的地方习惯<span class="highlight-purple">“产业跟风”</span>，不管自身禀赋，什么热就追什么；有的抱着<span class="highlight-purple">“多多益善”</span>的想法，招商来者不拒，最后样样有、样样不精，核心部件全靠买。</p>
+
+      <p>这种<span class="highlight-blue">技术空心、产业链趋同</span>的模式，到头来很容易<span class="highlight-purple">“一哄而散”</span>。<span class="highlight-gold">稳中求进推动高质量发展，必须辨重点、懂取舍、强优势。</span></p>
+
+      <div class="thesis">【总论点】<span class="highlight-purple">稳中求进推动高质量发展，必须辨重点、懂取舍、强优势</span>——<span class="highlight-purple">以敢闯善为的战略眼光锚定长远突围的方向，夯实产业根基、优化创新生态</span>；<span class="highlight-purple">以“有所不为”的战略清醒算大账、总账、长远账，敢于对同质低质项目说“不”</span>；<span class="highlight-purple">以取长补短的智慧找准细分生态位，在一米宽中掘出万米深</span>；<span class="highlight-purple">想清楚“做什么”，守得住“不做什么”，方能在千帆竞发中找准航道</span>。</div>
+
+      <div class="sub-thesis">【分论点一】辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态。</div>
+
+      <p>安徽新能源汽车年产量何以全国第一？组建汽车办，统筹全局，在电池、芯片等<span class="highlight-green">十几个产业链关键环节</span>，分别确定<span class="highlight-blue">“已有企业”与“招引目标”</span>。</p>
+
+      <p>知道缺什么、明晰引什么，<span class="highlight-green">2020年注资蔚来，2021年引入比亚迪生产基地，2023年引入大众汽车科创中心。</span></p>
+
+      <p>步步为营把上下游串起来、产业链搭起来，这才有了安徽在新能源汽车赛道上的后来居上。</p>
+
+      <div class="sub-thesis">【分论点二】辨重点还必须保持“有所不为”的战略清醒。</div>
+
+      <p>如果有不符合规划的项目主动上门，同质、低质但短期数据亮眼，<span class="highlight-purple">能否按住政绩冲动说“不”？</span></p>
+
+      <p>习近平总书记强调，“<span class="highlight-gold">善于算大账、总账、长远账，不能只算地方账、部门账、眼前账</span>”。</p>
+
+      <p>发展布局、招商投资，既要看到企业这一个个点，更要着眼<span class="highlight-blue">现代化产业体系建设</span>这个面，兼顾<span class="highlight-blue">重点突破与整体提升</span>，如此才能争光一域、添彩全局。</p>
+
+      <p>反之，<span class="highlight-purple">缺少“舍”的勇气，就难以聚焦，也就难以形成核心竞争力。</span></p>
+
+      <p>一个区域，土地、资金等要素都是有限的，<span class="highlight-purple">贪大求全，付出的机会成本更大，错失的还有转型机会。</span></p>
+
+      <div class="sub-thesis">【分论点三】“舍”得坚决，也要“取”得智慧。</div>
+
+      <p>确定重点的过程，就是把握自身特点取长补短的过程。</p>
+
+      <p><span class="highlight-gold">田忌赛马，胜在知己知彼。</span>摸透自身情况、熟悉外部格局，要在调研中多比较。</p>
+
+      <p><span class="highlight-purple">有的自以为是包袱，放到更大范围辩证看，反而是资源；看似丰厚的基础，在复合型创新要求下，也有可能显得薄弱。</span></p>
+
+      <p>当下，各地区都在抢抓<span class="highlight-blue">新一轮科技革命和产业变革</span>的机遇，充分竞争有利于创新发展，可也要警惕脱离实际的盲从。</p>
+
+      <p>面对一些产业的竞争“红海”，不妨更灵活地寻找<span class="highlight-blue">细分生态位</span>，<span class="highlight-gold">在一米宽中掘出万米深。</span></p>
+
+      <p>取长补短是为了夯实核心竞争力，这就意味着不能频繁换赛道，而要优化路径、升级打法，找准当下与未来的连接点、不断进位。</p>
+
+      <p>江西景德镇曾经“挖瓷土、烧瓷器”，而今推动先进陶瓷业进军通信电子、航空航天等业态，并依托瓷文化打造全域遗产文旅体系，蹚出<span class="highlight-blue">人文经济</span>新路子。</p>
+
+      <p>内蒙古宁城县膨润土资源丰富，起初守着矿田卖化肥，后来智能化生产多品类猫砂，现在又向宠物产业全链条突破，<span class="highlight-green">产品出口百余个国家和地区。</span></p>
+
+      <p>这些地方的共同点，就是持续向前看、向上攀、向智转，从而<span class="highlight-gold">“日日新，又日新”。</span></p>
+
+      <p><span class="highlight-gold">发展如棋，落子有章法。取舍之间，显格局，见高度。</span></p>
+
+      <p>善谋、善断、善于扬弃，把<span class="highlight-blue">因地制宜与因时制宜</span>结合起来，<span class="highlight-gold">想清楚“做什么”，守得住“不做什么”</span>，方能于千帆竞发中找准航道，在百舸争流中驶向更远彼岸。</p>
+
+      <p class="byline">（人民日报2026年9月3日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">破题·以小见大</span>
+      <p><b>“看似简单的取舍，蕴含成事的逻辑。”</b>——从个人工作习惯直接提炼普遍规律，是“以小见大”起笔的范式，比空喊口号更有说服力，适用于一切“方法论/工作作风”类主题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·三动词</span>
+      <p><b>“稳中求进推动高质量发展，必须辨重点、懂取舍、强优势。”</b>——“辨、懂、强”三个单字动词并列，节奏铿锵、指向明确，是申论总论点炼句的绝佳示范。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·精力有限</span>
+      <p><b>“精力有限，重点不突出就会处处平庸；集中力量在重要事情上，才更容易以重点突破带动全局提升。”</b>——先破后立，用“处处平庸”与“重点突破”对举，写“集中力量办大事/抓主要矛盾”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语</span>
+      <p><b>“善于算大账、总账、长远账，不能只算地方账、部门账、眼前账。”</b>——三对“大与小”“总与分”“长远与眼前”的对照，是写“正确政绩观/全国一盘棋/系统观念”必背的权威表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·舍与聚焦</span>
+      <p><b>“缺少‘舍’的勇气，就难以聚焦，也就难以形成核心竞争力。”</b>——把“舍”与“核心竞争力”直接因果相连，写“有所为有所不为/专注主业/久久为功”的现成论断。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·机会成本</span>
+      <p><b>“一个区域，土地、资金等要素都是有限的，贪大求全，付出的机会成本更大，错失的还有转型机会。”</b>——“机会成本”引入申论论证，把“贪大求全”的代价说透，写“集约发展/要素配置/转型窗口期”极为贴切。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·一米宽万米深</span>
+      <p><b>“面对一些产业的竞争‘红海’，不妨更灵活地寻找细分生态位，在一米宽中掘出万米深。”</b>——“一米宽”与“万米深”形成强烈反差，是写“差异化竞争/专精特新/深耕细分领域”最亮眼的一句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·包袱与资源</span>
+      <p><b>“有的自以为是包袱，放到更大范围辩证看，反而是资源；看似丰厚的基础，在复合型创新要求下，也有可能显得薄弱。”</b>——双向转化的辩证写法，写“辩证看家底/比较优势/换个角度看问题”可直接借用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·棋局意象</span>
+      <p><b>“发展如棋，落子有章法。取舍之间，显格局，见高度。”</b>——以“棋局”喻发展，“格局”“高度”双收，四两拨千斤；再接“想清楚‘做什么’，守得住‘不做什么’”，是全文最值得背诵的收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“生活小事起兴”法：先讲一个具体可感的小故事（企业家列待办、划掉后几件），再从故事中提炼一句普遍道理（“看似简单的取舍，蕴含成事的逻辑”），最后用“放到……道理亦然”转入大主题。三步走完“叙事—说理—转题”，比直接讲大道理更容易入题，适用于一切“方法论/工作方法”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“眼光—清醒—智慧”三层递进搭建骨架：①眼光层解决“往哪看”（敢闯善为、锚定长远、夯实根基）；②清醒层解决“不做什么”（有所不为、算大账总账长远账、按住政绩冲动）；③智慧层解决“怎么做深”（取长补短、细分生态位、一米宽万米深）。此法可迁移到人才工作、乡村振兴、基层治理等任何“资源有限、需要取舍”的话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把三层改写为可操作对策：坚持因地制宜，摸清家底、梳理本地配套能力，明确“缺什么、引什么”，围绕产业链关键环节定向招引（眼光）；强化规划刚性约束，对不符合产业规划、同质低质的项目敢于说“不”，树立和践行正确政绩观，算大账、总账、长远账（清醒）；引导经营主体深耕细分领域，优化路径、升级打法，避免频繁换赛道，持续向前看、向上攀、向智转（智慧）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“包袱与资源”的双向转化写法：先说“有的自以为是包袱，放到更大范围辩证看，反而是资源”，再反手一句“看似丰厚的基础，在复合型创新要求下，也有可能显得薄弱”。同一段内完成正反两次翻转，是写“辩证看待优势劣势/比较优势动态变化”最有张力的段落模板。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>先用短句定调（“发展如棋，落子有章法。取舍之间，显格局，见高度”），再用三个词概括方法论（“善谋、善断、善于扬弃”），最后以一组对称意象收篇（“于千帆竞发中找准航道，在百舸争流中驶向更远彼岸”）。这种“短句定调—三词概括—对偶收束”的三段式结尾，适合一切需要拔高的议论文。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「稳中求进推动高质量发展，必须辨重点、懂取舍、强优势——以敢闯善为的战略眼光锚定长远突围的方向，夯实产业根基、优化创新生态；以“有所不为”的战略清醒算大账、总账、长远账，敢于对同质低质项目说“不”；以取长补短的智慧找准细分生态位，在一米宽中掘出万米深；想清楚“做什么”，守得住“不做什么”，方能在千帆竞发中找准航道。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对「稳中求进推动高质量发展，必须辨重点、懂取舍、强优势——以敢闯善为的战略眼光锚定长远突围的方向，夯实产业根基、优化创新生态；以“有所不为”的战略清醒算大账、总账、长远账，敢于对同质低质项目说“不”；以取长补短的智慧找准细分生态位，在一米宽中掘出万米深；想清楚“做什么”，守得住“不做什么”，方能在千帆竞发中找准航道。」这一重要论断，应从三方面理解。首先，其内涵在于辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态。其次，重要意义在于辨重点还必须保持“有所不为”的战略清醒。（“看似简单的取舍，蕴含成事的逻辑。”）最后，落实路径在于“舍”得坚决，也要“取”得智慧。（“稳中求进推动高质量发展，必须辨重点、懂取舍、强优势。”）唯有统筹兼顾、系统施策，方能行稳致远。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「取舍之间显格局」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对此，建议从三方面着力：一是辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态。“看似简单的取舍，蕴含成事的逻辑。”二是辨重点还必须保持“有所不为”的战略清醒。三是“舍”得坚决，也要“取”得智慧。通过系统施策、久久为功，推动各项工作落地见效。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「取舍之间显格局」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「稳中求进推动高质量发展，必须辨重点、懂取舍、强优势——以敢闯善为的战略眼光锚定长远突围的方向，夯实产业根基、优化创新生态；以“有所不为”的战略清醒算大账、总账、长远账，敢于对同质低质项目说“不”；以取长补短的智慧找准细分生态位，在一米宽中掘出万米深；想清楚“做什么”，守得住“不做什么”，方能在千帆竞发中找准航道。」——这一论断深刻揭示了取舍之间显格局的内在逻辑。做好取舍之间显格局，必须在辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态上夯基固本，在辨重点还必须保持“有所不为”的战略清醒上提质增效，在“舍”得坚决，也要“取”得智慧上久久为功。<br><br>以辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态。方向对了，路再远也能抵达。“看似简单的取舍，蕴含成事的逻辑。”唯有把辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态摆在突出位置，才能为取舍之间显格局注入源源不断的动力。<br><br>以辨重点还必须保持“有所不为”的战略清醒。方法对了，事再难也能办成。“稳中求进推动高质量发展，必须辨重点、懂取舍、强优势。”要把辨重点还必须保持“有所不为”的战略清醒转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以“舍”得坚决，也要“取”得智慧。行百里者半九十。辨重点要有敢闯善为的战略眼光，锚定长远突围的方向，夯实产业根基，优化创新生态与辨重点还必须保持“有所不为”的战略清醒的成效，最终要靠“舍”得坚决，也要“取”得智慧来巩固和拓展。“精力有限，重点不突出就会处处平庸；集中力量在重要事情上，才更容易以重点突破带动全局提升。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。取舍之间显格局是一场接力跑，每一棒都要跑出好成绩。让我们以「稳中求进推动高质量发展，必须辨重点、懂取舍、强优势——以敢闯善为的战略眼光锚定长远突围的方向，夯实产业根基、优化创新生态；以“有所不为”的战略清醒算大账、总账、长远账，敢于对同质低质项目说“不”；以取长补短的智慧找准细分生态位，在一米宽中掘出万米深；想清楚“做什么”，守得住“不做什么”，方能在千帆竞发中找准航道。」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-03</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="原文_人民日报评论精读_20260903.html">✏️ 原文自测</a>
+</body>
+</html>
