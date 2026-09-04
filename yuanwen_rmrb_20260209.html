@@ -153,10 +153,7 @@
      视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
   #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
         mix-blend-mode:multiply; }
-  #text { position:relative; z-index:1; padding:0 16px; }
-  @media (min-width:560px){
-    #text { column-count:2; column-gap:30px; column-rule:1px solid #e1d9bf; padding:0 22px; }
-  }
+  #text { position:relative; z-index:1; }
   /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
   .paper.pen #text { pointer-events:none; }
   /* 报头 */
@@ -164,8 +161,7 @@
   .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
              font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
              text-shadow:0 1px 0 rgba(255,255,255,.6); }
-  .mh-rule { height:0; border:none; border-top:3px solid #c41e3a; position:relative; margin:10px 0 8px; }
-  .mh-rule::after { content:""; position:absolute; left:0; right:0; top:5px; border-top:1px solid #c41e3a; }
+  .mh-rule { border-top:2px solid #181512; height:0; margin:9px 0 7px; }
   .mh-meta { display:flex; justify-content:space-between; align-items:center;
              font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
              padding:2px 2px 0; }
@@ -205,6 +201,7 @@
         <button class="pc" data-c="red" style="background:#ff0000" title="红"></button>
         <button class="pc" data-c="blue" style="background:#0000ff" title="蓝"></button>
         <button class="pc" data-c="green" style="background:#00ff00" title="绿"></button>
+        <button class="pc" data-c="gold" style="background:#ffd700" title="金"></button>
       </div>
       <div class="pgroup">
         <button class="pcsz" data-w="2">细</button>
@@ -246,6 +243,7 @@
       <span class="lg"><i style="background:#ff0000"></i><span class="lg-t" contenteditable="true" data-c="red">红</span></span>
       <span class="lg"><i style="background:#0000ff"></i><span class="lg-t" contenteditable="true" data-c="blue">蓝</span></span>
       <span class="lg"><i style="background:#00ff00"></i><span class="lg-t" contenteditable="true" data-c="green">绿</span></span>
+      <span class="lg"><i style="background:#ffd700"></i><span class="lg-t" contenteditable="true" data-c="gold">金</span></span>
     </div>
   </div>
 
@@ -287,7 +285,7 @@
   </div>
 <script>
 const PAGE="rmrb_20260209.html", STORE='rmrb_read_v1';
-const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00'};
+const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00',gold:'#ffd700'};
 let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
 if(!db[PAGE]) db[PAGE]={marks:{},strokes:[],notes:[],bookmarks:{}};
 let rec=db[PAGE];
@@ -487,7 +485,7 @@ bPenMode.onclick=function(){penMode=!penMode;bPenMode.classList.toggle('on',penM
 
 /* ===== 颜色图例自定义（全局记忆 rmrb_legend_v1） ===== */
 const LEGP='rmrb_legend_v1';
-let legend={black:'黑',red:'红',blue:'蓝',green:'绿'};
+let legend={black:'黑',red:'红',blue:'蓝',green:'绿',gold:'金'};
 try{const l=JSON.parse(localStorage.getItem(LEGP)||'{}'); if(l)Object.assign(legend,l);}catch(e){}
 document.querySelectorAll('.lg-t').forEach(function(el){
   el.textContent=legend[el.dataset.c]||el.dataset.c;
