@@ -168,10 +168,10 @@
     </div>
     <div class="palette" id="pal">
       <div class="pgroup">
-        <button class="pc on" data-c="black" style="background:#111111" title="黑"></button>
-        <button class="pc" data-c="red" style="background:#e53935" title="红"></button>
-        <button class="pc" data-c="blue" style="background:#1e6fd9" title="蓝"></button>
-        <button class="pc" data-c="green" style="background:#2e9e3f" title="绿"></button>
+        <button class="pc on" data-c="black" style="background:#000000" title="黑"></button>
+        <button class="pc" data-c="red" style="background:#ff0000" title="红"></button>
+        <button class="pc" data-c="blue" style="background:#0000ff" title="蓝"></button>
+        <button class="pc" data-c="green" style="background:#00ff00" title="绿"></button>
       </div>
       <div class="pgroup">
         <button class="pcsz" data-w="2">细</button>
@@ -250,7 +250,7 @@
   </div>
 <script>
 const PAGE="rmrb_20260708.html", STORE='rmrb_read_v1';
-const COL={black:'#111111',red:'#e53935',blue:'#1e6fd9',green:'#2e9e3f'};
+const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00'};
 let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
 if(!db[PAGE]) db[PAGE]={marks:{},strokes:[]};
 let rec=db[PAGE];
