@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8b0000">
+<meta name="robots" content="noindex">
+<title>原文自测 · 为市场“新陈代谢”主动清障</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+
+  /* ===== 原文自测页（报纸版面）===== */
+  .hdr { position:sticky; top:0; z-index:40; background:#efe9d8;
+         border-bottom:1px solid #d6cdb4; }
+  .topbar { display:flex; align-items:center; gap:7px; padding:9px 12px;
+            padding-top:calc(9px + env(safe-area-inset-top)); }
+  .tb-back { font-size:22px; color:#8b0000; text-decoration:none; padding:0 3px; line-height:1; }
+  .tb-title { flex:1; min-width:0; font-size:13px; color:#5c5340; font-weight:600;
+              white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tb-btn { flex:0 0 auto; padding:6px 11px; border-radius:9px; border:1px solid #c9bfa3;
+            background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tb-btn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .tb-link { flex:0 0 auto; padding:6px 10px; border-radius:9px; background:#f7f3e6;
+             border:1px solid #c9bfa3; color:#8b0000; font-size:12.5px; text-decoration:none; }
+  .palette { display:none; gap:9px; padding:8px 14px 10px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; }
+  .palette.show { display:flex; }
+  .pc { width:32px; height:32px; border-radius:50%; border:0; cursor:pointer;
+        box-shadow:0 0 0 1.5px #b9ae90; padding:0; }
+  .pc.on { box-shadow:0 0 0 2.5px #333; }
+  .pbtn { padding:6px 12px; border-radius:9px; border:1px solid #c9bfa3; background:#f7f3e6;
+          font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .phint { font-size:11.5px; color:#9a907a; margin-left:auto; }
+  .pgroup { display:flex; align-items:center; gap:9px; }
+  .pgroup + .pgroup { padding-left:10px; border-left:1px solid #e0d8c0; }
+  .pcsz { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .pcsz.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .pbtn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
+  .sheet { max-width:720px; margin:0 auto; padding:14px 10px 40px; }
+  .paper { position:relative; background-color:#f7f3e6;
+           background-image:
+             repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
+             radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.55) 0%, rgba(168,150,110,.18) 100%);
+           box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
+           padding:0 0 60px; min-height:75vh; overflow:hidden; }
+  .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
+               -webkit-touch-callout:none; }
+  /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
+     用 multiply 混合模拟真实荧光笔：涂过的地方纸变彩色，而黑色墨字不受影响，
+     视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
+  #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
+        mix-blend-mode:multiply; }
+  #text { position:relative; z-index:1; }
+  /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
+  .paper.pen #text { pointer-events:none; }
+  /* 报头 */
+  .masthead { position:relative; z-index:1; padding:16px 18px 6px; }
+  .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
+             font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
+             text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  .mh-rule { border-top:3px solid #181512; border-bottom:1px solid #181512;
+             height:3px; margin:6px 0 5px; }
+  .mh-meta { display:flex; justify-content:space-between; align-items:center;
+             font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
+             padding:2px 2px 0; }
+  .mh-meta i { font-style:normal; }
+  /* 文章标题区 */
+  .art-head { position:relative; z-index:1; padding:18px 22px 12px; text-align:center; }
+  .art-title { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:24px;
+               font-weight:700; line-height:1.5; color:#181512; letter-spacing:1px; }
+  .art-sub { font-family:"SimSun","Songti SC",serif; font-size:12px; color:#6b6152;
+             margin-top:7px; letter-spacing:2px; }
+  .art-rule { border-top:1px solid #b9ae90; margin:12px 22px 0; }
+  /* 正文：宋体、两端对齐、首行缩进 */
+  #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:17.5px;
+              line-height:2.08; color:#1c1915; text-align:justify;
+              margin:0 20px 13px; text-indent:2em; }
+  .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
+             color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
+  /* 精读页悬浮入口 */
+  .orig-fab { position:fixed; right:14px; bottom:calc(18px + env(safe-area-inset-bottom));
+              z-index:999; background:#fff; border:1.5px solid #ffcdd2; color:#c0392b;
+              font-size:13px; font-weight:600; padding:10px 15px; border-radius:999px;
+              text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.16); }
+  .orig-fab:active { transform:scale(.95); }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="topbar">
+      <a class="tb-back" href="index.html">‹</a>
+      <span class="tb-title">为市场“新陈代谢”主动清障</span>
+      <button class="tb-btn" id="bPen">✏️ 勾画</button>
+      <a class="tb-link" href="rmrb_20260625_1.html">📖 精读</a>
+    </div>
+    <div class="palette" id="pal">
+      <div class="pgroup">
+        <button class="pc on" data-c="gold" style="background:#e8b81f" title="金句/名言"></button>
+        <button class="pc" data-c="blue" style="background:#4a90e2" title="规范表述/政策术语"></button>
+        <button class="pc" data-c="green" style="background:#4caf50" title="数据/事实论据"></button>
+        <button class="pc" data-c="purple" style="background:#9b6bd6" title="辩证关系/哲理"></button>
+      </div>
+      <div class="pgroup">
+        <button class="pcsz" data-w="4">细</button>
+        <button class="pcsz on" data-w="8">中</button>
+        <button class="pcsz" data-w="13">粗</button>
+      </div>
+      <div class="pgroup">
+        <button class="pbtn" id="bEra" title="橡皮擦：擦除勾画">🧽 橡皮</button>
+        <button class="pbtn" id="bUndo">↩ 撤销</button>
+        <button class="pbtn" id="bClr">🗑 清空</button>
+      </div>
+      <span class="phint">划过即上色 · 轻点整句 · 选粗细/橡皮</span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="paper" id="paper">
+      <canvas id="cv"></canvas>
+
+      <div class="masthead">
+        <div class="mh-name">人民日报</div>
+        <div class="mh-rule"></div>
+        <div class="mh-meta">
+          <i>2026年6月25日 星期四</i>
+          <i>第05版 · 人民时评</i>
+        </div>
+      </div>
+
+      <div class="art-head">
+        <div class="art-title">为市场“新陈代谢”主动清障</div>
+        <div class="art-sub">第05版 · 人民时评</div>
+        <div class="art-rule"></div>
+      </div>
+
+      <div id="text">
+      <p class="ln" data-i="0">经营主体退出制度，是现代化经济体系的重要组成部分。当前，要素市场化改革持续深化，要求我们加快推进企业注销配套改革，完善企业退出制度</p>
+      <p class="ln" data-i="1">让&quot;僵尸企业&quot;退出市场，一直是个难题。如今，解决这一棘手问题有了新抓手。不久前，市场监管总局选取北京、河北、江苏等7省（市）开展由登记机关向人民法院申请强制清算试点工作。</p>
+      <p class="ln" data-i="2">这一新举措，源于修订后的公司法专门增加的一项规定，有关部门或者公司登记机关可以作为申请人向人民法院申请清算。这不只是让&quot;僵尸企业&quot;的退出多了一种方式，而且大大增强了治理的主动性。</p>
+      <p class="ln" data-i="3">打破&quot;僵尸企业&quot;退不出的不良循环，必须找准症结、精准发力；抓住申请主体这一关键环节，由登记机关主动作为，为市场&quot;新陈代谢&quot;清除障碍。</p>
+      <p class="ln" data-i="4">以往，那些经营异常的企业，主要由公司股东、债权人等利害关系人向人民法院申请强制清算。由于这样的企业往往没有多少财产可供清偿，债权人推动强制清算的收益不大。退出市场需要完成清算、还债、销户等多个步骤，企业主动退出的动力也不足。此外，也有些地方担心企业退出带来不良影响，会对&quot;僵尸企业&quot;进行&quot;输血&quot;。多种原因交织，导致市场难以真正实现优胜劣汰。</p>
+      <p class="ln" data-i="5">打破这样的不良循环，必须找准症结、精准发力。此次市场监管总局开展强制清算试点，正是抓住申请主体这一关键环节，由登记机关主动作为，为市场&quot;新陈代谢&quot;清除障碍。登记机关作为申请主体，可以更好整合多部门数据，提供更完整的证据链，缩短强制清算工作的周期，节约宝贵的行政和司法资源。比如，江苏构建经营异常企业公益强制清算退出的常态化机制，截至今年5月底，共办理公益强制清算注销登记1.8万余件。</p>
+      <p class="ln" data-i="6">强制清算&quot;僵尸企业&quot;并非单纯司法或行政问题，而是提升政府效能、优化要素配置的系统工程；清退让土地、劳动力等要素重新流动，配置到更有活力的新业态。</p>
+      <p class="ln" data-i="7">强制清算&quot;僵尸企业&quot;，并非单纯的司法或行政问题，而是涉及提升政府效能、优化要素配置的系统工程。清退的目的，是让土地、劳动力等生产要素重新流动起来，配置到更有活力的新产业、新业态中去。因此，必须同步完善资产处置、职工安置、债务化解等配套机制。</p>
+      <p class="ln" data-i="8">此外，强制清算之前，应做好&quot;帮扶疏导&quot;，提升企业自主退出的便利度。比如，今年前5个月，北京通过简易注销程序退出市场的企业占注销企业总数的64.95%。把破与立、退与进统筹起来，才能让市场上的无效供给尽快出清，为高质量发展腾出宝贵的空间。</p>
+      <p class="ln" data-i="9">企业退出影响广泛，须做好精准识别、分类处置；建立&quot;诊疗式&quot;分级分类机制，把破与立、退与进统筹起来，有序引导&quot;僵尸企业&quot;退出。</p>
+      <p class="ln" data-i="10">企业退出市场，会造成广泛的经济社会影响，主动积极作为、增强制度刚性的同时，必须做好精准识别，进行分类处置。比如，四川内江市在开展经营异常企业公益清算试点的过程中，建立起&quot;诊疗式&quot;分级分类挽救与处置机制：对有潜在风险的&quot;未病&quot;企业提前预警，对有经营隐患的&quot;小毛病&quot;企业精准帮扶，对患有&quot;大病&quot;的企业通过庭外重组、预重整、司法重整等方式救治，对&quot;病入膏肓&quot;的&quot;僵尸企业&quot;通过公益清算引导有序退出。</p>
+      <p class="ln" data-i="11">经营主体退出制度，是现代化经济体系的重要组成部分。当前，要素市场化改革持续深化，要求我们加快推进企业注销配套改革，完善企业退出制度。更好发挥市场优胜劣汰作用，促进更多资源向高效领域集聚，方能以高水平社会主义市场经济体制建设，激活高质量发展的澎湃动力。</p>
+      <p class="ln" data-i="12">（人民日报2026年6月25日 第5版 · 人民时评）</p>
+      </div>
+      <div class="pen-tip">— 全文完 —</div>
+    </div>
+  </div>
+<script>
+const PAGE="rmrb_20260625_1.html", STORE='rmrb_read_v1';
+const COL={gold:'#e8b81f',blue:'#4a90e2',green:'#4caf50',purple:'#9b6bd6'};
+let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[]};
+let rec=db[PAGE];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
+const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const pal=document.getElementById('pal');
+let cur='gold',pen=false,drawing=false,pts=[],last=null;
+let curW=8,mode='pen';
+
+function pr(){return paper.getBoundingClientRect()}
+function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
+function wOf(e){return curW}
+function redraw(){
+  const r=pr();ctx.clearRect(0,0,r.width,r.height);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+    else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[s.c]||COL.gold;ctx.globalAlpha=0.5;}
+    ctx.lineWidth=s.w||curW;
+    ctx.beginPath();
+    s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height;
+      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y)});
+    ctx.stroke();
+  });
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+}
+function fit(){
+  const r=pr(),d=window.devicePixelRatio||1;
+  cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);
+  cv.style.width=r.width+'px';cv.style.height=r.height+'px';
+  ctx.setTransform(d,0,0,d,0,0);redraw();
+}
+/* 笔画 bbox 反查被覆盖的句子。
+   关键：横划时 bbox 高度≈0，若按面积交集判定会恒为 0 而永不命中，
+   故细笔画改用「中心 y 是否落在该句行内」判定，粗涂改按交集比例判定。 */
+function hits(minx,miny,maxx,maxy){
+  const r=pr(),out=[];
+  const cy=(miny+maxy)/2;
+  const thin=(maxy-miny)*r.height<12;
+  document.querySelectorAll('.ln').forEach(function(el){
+    const q=el.getBoundingClientRect();
+    const y0=(q.top-r.top)/r.height,y1=(q.bottom-r.top)/r.height;
+    if(thin){ if(cy>=y0&&cy<=y1) out.push(el.dataset.i); }
+    else if(Math.min(maxy,y1)-Math.max(miny,y0) > (y1-y0)*0.25) out.push(el.dataset.i);
+  });
+  return out;
+}
+function bbox(ps){let a=1,b=0,c=1,d=0;
+  ps.forEach(function(p){a=Math.min(a,p[0]);b=Math.max(b,p[0]);c=Math.min(c,p[1]);d=Math.max(d,p[1])});
+  return [a,c,b,d]}
+function recompute(){
+  const m={};
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase)return;
+    const bb=bbox(s.p);hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){m[i]=s.c});
+  });
+  rec.marks=m;
+}
+/* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
+cv.addEventListener('pointerdown',function(e){
+  if(!pen)return;e.preventDefault();drawing=true;
+  try{cv.setPointerCapture(e.pointerId)}catch(err){}
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];
+});
+cv.addEventListener('pointermove',function(e){
+  if(!drawing)return;e.preventDefault();
+  const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  if(mode==='erase'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=0.5;}
+  ctx.lineWidth=wOf(e);ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;last=[x,y];pts.push(p);
+});
+function up(e){
+  if(!drawing)return;drawing=false;
+  if(!pts.length)return;
+  const r=pr(),bb=bbox(pts);
+  const moved=Math.max((bb[2]-bb[0])*r.width,(bb[3]-bb[1])*r.height);
+  if(moved<8){ /* 轻点 */
+    if(mode==='erase'){ /* 橡皮轻点：删掉覆盖该点的整条笔画 */
+      const x=pts[0][0],y=pts[0][1];
+      rec.strokes=rec.strokes.filter(function(s){
+        if(s.erase)return true;
+        return !s.p.some(function(pt){return Math.hypot(pt[0]-x,pt[1]-y)*r.width < (s.w||curW)/2+6});
+      });
+      save();redraw();return;
+    }
+    const cx=pts[0][0]*r.width+r.left, cy=pts[0][1]*r.height+r.top;
+    let target=null,best=1e12;
+    document.querySelectorAll('.ln').forEach(function(el){
+      const q=el.getBoundingClientRect();
+      if(cx>=q.left&&cx<=q.right&&cy>=q.top&&cy<=q.bottom){target=el;best=-1;return;}
+      const dx=Math.max(q.left-cx,0,cx-q.right), dy=Math.max(q.top-cy,0,cy-q.bottom);
+      const dist=dx*dx+dy*dy; if(dist<best){best=dist;target=el;}
+    });
+    if(target){const i=target.dataset.i,q=target.getBoundingClientRect(),yy=(q.top+q.height*0.6-r.top)/r.height;
+      if(rec.marks[i]===cur){delete rec.marks[i];
+        rec.strokes=(rec.strokes||[]).filter(function(s){
+          return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
+      }else{
+        rec.marks[i]=cur;
+        rec.strokes.push({c:cur,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+      }
+      save();redraw();
+    }
+    return;
+  }
+  if(mode==='erase'){ rec.strokes.push({erase:true,w:curW,p:pts}); }
+  else{ rec.strokes.push({c:cur,w:curW,p:pts});
+        hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur}); }
+  save();redraw();
+}
+cv.addEventListener('pointerup',up);
+cv.addEventListener('pointercancel',up);
+
+const bPen=document.getElementById('bPen');
+bPen.onclick=function(){
+  pen=!pen;paper.classList.toggle('pen',pen);
+  cv.style.pointerEvents=pen?'auto':'none';
+  bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
+  pal.classList.toggle('show',pen);
+};
+document.querySelectorAll('.pc').forEach(function(el){
+  el.onclick=function(){
+    cur=el.dataset.c;mode='pen';
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.toggle('on',x===el)});
+    document.getElementById('bEra').classList.remove('on');
+  };
+});
+const bEra=document.getElementById('bEra');
+bEra.onclick=function(){
+  if(mode==='erase'){mode='pen';bEra.classList.remove('on');}
+  else{mode='erase';bEra.classList.add('on');
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.remove('on')});}
+  pal.classList.add('show');
+};
+document.querySelectorAll('.pcsz').forEach(function(el){
+  el.onclick=function(){
+    curW=+el.dataset.w;
+    document.querySelectorAll('.pcsz').forEach(function(x){x.classList.toggle('on',x===el)});
+  };
+});
+document.getElementById('bUndo').onclick=function(){
+  rec.strokes.pop();recompute();save();redraw();
+};
+document.getElementById('bClr').onclick=function(){
+  if(!confirm('清空本篇全部勾画？'))return;
+  rec.strokes=[];rec.marks={};save();redraw();
+};
+if(window.ResizeObserver){new ResizeObserver(fit).observe(paper)}
+window.addEventListener('resize',fit);
+window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+fit();
+</script>
+</body>
+</html>
