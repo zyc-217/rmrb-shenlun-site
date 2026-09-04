@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | “渐”的耐心与“进”的节奏</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>“渐”的耐心与“进”的节奏</h1>
+    <div class="meta">人民日报评论员观察 | 循序渐进·历史耐心·尽力而为量力而行·战略留白 | 2026年9月4日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：把握好“渐”的耐心与“进”的节奏／统筹快与慢的方法论／尽力而为与量力而行／为未来预留战略空间</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">循序渐进</span>
+      <span class="tag-item">历史耐心</span>
+      <span class="tag-item">尽力而为</span>
+      <span class="tag-item">量力而行</span>
+      <span class="tag-item">战略思维</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">久久为功</span>
+      <span class="tag-item">实事求是</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">战略留白</span>
+      <span class="tag-item">统筹发展和安全</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“把握好‘渐’的耐心与‘进’的节奏”“既要尽力而为，又要量力而行”“把战略留白留给未来”“久久为功，跑好历史的接力棒”等主题；本文<b>“小场景起笔—引总书记论述立魂—总论点立统筹快慢—三分论点递展开（历史耐心/实事求适配/战略留白）—马拉松式收束”</b>的论证链，是写“方法论/工作节奏/长期主义”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>保持历史耐心，多做打基础、利长远的事，宁可慢一点也要把根基筑牢／坚持实事求是，把需要与可能结合起来，既要尽力而为又要量力而行，不做超越发展阶段的事／强化战略思维，统筹‘当下计’与‘未来谋’，为技术迭代、产业演进、功能升级预留战略空间／锚定目标、徐徐用力、久久为功，以‘好了还要再好’的进取心跑好历史的接力棒</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“渐”与“进”、“快”与“慢”、“尽力而为”与“量力而行”、“给钱给物”与“授人以渔”、“需要与可能”、“当下计”与“未来谋”、“留白”与“余地”等多组辩证，是写<b>快与慢、破与立、当前与长远、尽力与量力类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于坚持循序渐进推进民生实事的指导意见”“关于为长远发展预留战略空间的通知”素材；文中“<b>渐的耐心与进的节奏</b>”“<b>尽力而为、量力而行</b>”“<b>一个阶段一个阶段向前推进</b>”“<b>留有余地、避免寅吃卯粮</b>”“<b>徐徐用力、久久为功</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（小场景起笔—论述立魂—统筹快慢立论—历史耐心/实事求是/战略思维三层递进—接力棒收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>小场景起笔</b>：以“最近，社交平台上有不少上班族分享身边的变化——”领起，分列两个生活细节：“点外卖更放心了，下单时可筛选‘明厨亮灶’商户；看病就医更省心了，一些医院推出延时服务，下班顺路就能就诊治疗”（第二段）。</span></div>
+        <div class="analysis-item"><span class="label">由事及理</span><span class="text"><b>小事见大势</b>：以“场景虽小，却照见民生保障一步一步趋于完善的趋势，从中也能感悟循序渐进的方法智慧”一句，由生活细节跃升到方法论（第三段）。</span></div>
+        <div class="analysis-item"><span class="label">立魂</span><span class="text"><b>引总书记论述</b>：用“论落实……谋改革……谈民生……”三组排比引出习近平总书记关于“循序渐进”的系列要求，点明“这是思想方法，也是工作方法”，为全文立魂（第四段）。</span></div>
+        <div class="analysis-item"><span class="label">总论点</span><span class="text"><b>点题并设问</b>：先以“做工作，往往不可能一蹴而就”铺陈客观规律、阶段约束、需求升级三重考量，提出“必须把握好‘渐’的耐心与‘进’的节奏”；随即以“如何循序渐进？”设问自答——“它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势”（第五至六段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>历史耐心·脱贫之问</b>：以“为何我们能打赢人类历史上规模最大的脱贫攻坚战？”设问，答以“脱贫不是毕其功于一役”的清醒；再用“组织技能培训，拓宽增收渠道；开展产业扶贫，提供就业岗位”铺陈，以“给钱给物”与“授人以渔”对照，说明看似见效慢实则增强自我发展能力；最后以“就像跑马拉松，一时的快不是胜利，率先抵达终点才是冠军”收束（第七至九段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>实事求是·尽力与量力</b>：以“向前进，步子迈多大，得讲适配度”领起，指出循序渐进“折射实事求是的务实品质”；以民生答卷为例，一方面承认群众对教育、医疗、生态的期盼，另一方面点明“我国仍处于社会主义初级阶段，发展不平衡不充分问题仍然突出”，从而落到“既要尽力而为……又要量力而行，不做超越发展阶段的事”；再以“相比有的国家受高福利所累”作国际对照，落到“把需要与可能结合起来”（第十至十二段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>战略思维·当下与未来</b>：以“循序渐进，也映照战略思维，体现在统筹‘当下计’与‘未来谋’”领起，连举两例——长株潭城市群核心地带500多平方公里的生态“绿心”战略性“留白”、湖北鄂州花湖国际机场北区刻意“留白”的空地（正是这块空地让机场得以建设公共国际货站，抢抓跨境电商机遇，2025年货邮吞吐量跃居全球前列）——最后升华到“为未来发展预留战略空间，就是为技术迭代、产业演进、功能升级留下更多可能”（第十三至十六段）。</span></div>
+        <div class="analysis-item"><span class="label">结论</span><span class="text"><b>马拉松式收束</b>：以“‘好了还要再好，不能止步。’民生保障如此，事业发展同样如此”由民生推及各项事业，用“不满足于已取得的成果，保持永远在路上的使命感、紧迫感，锚定目标，徐徐用力、久久为功”回扣总论点，以“我们定能跑好历史的接力棒”作结（第十七段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“小场景起笔—论述立魂—总论点立统筹快慢—三分论点递进（历史耐心/实事求是/战略思维）—接力棒收束”的“总—分—总”结构</b>，三段分论点分别对应时间维度（历史耐心）、能力维度（尽力与量力）、空间维度（战略留白），构成“时间—能力—空间”的立体论证；论证上三次设问自答（“如何循序渐进？”“为何我们能打赢……？”“为何？”）层层推进，比喻上以“跑马拉松”贯穿首尾，是申论“用小切口讲方法论、用日常叙事承载重大主题”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-purple">统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势</span></p>
+
+      <p>最近，社交平台上有不少上班族分享身边的变化：点外卖更放心了，下单时可筛选<span class="highlight-blue">“明厨亮灶”</span>商户；看病就医更省心了，一些医院推出<span class="highlight-blue">延时服务</span>，下班顺路就能就诊治疗。</p>
+
+      <p>场景虽小，却照见<span class="highlight-purple">民生保障一步一步趋于完善的趋势</span>，从中也能感悟<span class="highlight-blue">循序渐进</span>的方法智慧。</p>
+
+      <p>论落实，强调<span class="highlight-gold">“根据轻重缓急循序渐进、稳扎稳打，不超前、不滞后”</span>；谋改革，指出<span class="highlight-gold">“改革是循序渐进的工作”</span>；谈民生，要求<span class="highlight-gold">“实打实地做，循序渐进地推”</span>……习近平总书记多次强调<span class="highlight-gold">“循序渐进”</span>。<span class="highlight-purple">这是思想方法，也是工作方法。</span></p>
+
+      <p>做工作，往往不可能一蹴而就。事物发展的客观规律，发展阶段的现实约束，群众需求的逐步升级……这些都是谋划工作时必须考量的因素。<span class="highlight-gold">时代答卷常出常新，必须把握好“渐”的耐心与“进”的节奏，不断在新的起点上作出新的回答。</span></p>
+
+      <div class="thesis">【总论点】做工作往往不可能一蹴而就，<span class="highlight-purple">必须把握好“渐”的耐心与“进”的节奏</span>——<span class="highlight-purple">如何循序渐进？它体现在统筹快与慢</span>，<span class="highlight-purple">既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势</span>；<span class="highlight-purple">既保持历史耐心、谋定而动，又坚持实事求是、尽力而为与量力而行，还要以战略思维统筹“当下计”与“未来谋”</span>，在<span class="highlight-blue">循序渐进</span>中赢得历史主动。</div>
+
+      <p>如何<span class="highlight-blue">循序渐进</span>？它体现在<span class="highlight-purple">统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势</span>。</p>
+
+      <div class="sub-thesis">【分论点一】保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军。</div>
+
+      <p>为何我们能打赢<span class="highlight-green">人类历史上规模最大的脱贫攻坚战</span>？一个重要原因就在于保持着<span class="highlight-gold">“脱贫不是毕其功于一役，要安居、乐业，有致富的产业、可持续发展”</span>的清醒。</p>
+
+      <p>组织技能培训，拓宽增收渠道；开展产业扶贫，提供就业岗位……<span class="highlight-purple">给钱给物，固然能在短时间让数据变好看，却无法从根源上解决问题，更不可持续；授人以渔，看似见效慢，实则增强了群众的自我发展意愿与能力</span>，不仅助力脱贫攻坚，也为<span class="highlight-blue">乡村全面振兴</span>打下深厚基础。</p>
+
+      <p><span class="highlight-gold">就像跑马拉松，一时的快不是胜利，率先抵达终点才是冠军。</span>保持<span class="highlight-blue">历史耐心</span>，谋定而动，循序渐进的每一步，都在赢得历史主动。</p>
+
+      <div class="sub-thesis">【分论点二】向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事。</div>
+
+      <p>向前进，步子迈多大，得讲适配度。<span class="highlight-blue">循序渐进</span>，折射<span class="highlight-blue">实事求是</span>的务实品质，在科学把握所需与所能中，<span class="highlight-gold">积跬步至千里</span>。</p>
+
+      <p>以民生答卷为例，群众期盼更好的教育资源、医疗资源，期待天更蓝、水更清、土更净，但<span class="highlight-blue">我国仍处于社会主义初级阶段，发展不平衡不充分问题仍然突出</span>。因此，我们<span class="highlight-gold">既要尽力而为，根据现有条件把能做的事情尽量做起来，又要量力而行，不做超越发展阶段的事</span>。</p>
+
+      <p>相比有的国家受高福利所累，发展与民生这道题，我们找到的是<span class="highlight-purple">既有效又长效</span>的解法，实现二者的同频共振。<span class="highlight-purple">把需要与可能结合起来，不脱离实际，不好高骛远</span>，<span class="highlight-gold">“一个阶段一个阶段向前推进”</span>，才能使工作达到愿望和效果相统一。</p>
+
+      <div class="sub-thesis">【分论点三】循序渐进也映照战略思维——统筹“当下计”与“未来谋”，为未来发展预留战略空间。</div>
+
+      <p>循序渐进，也映照<span class="highlight-blue">战略思维</span>，体现在统筹<span class="highlight-purple">“当下计”与“未来谋”</span>。</p>
+
+      <p>长株潭城市群核心地带，有一片<span class="highlight-green">500多平方公里</span>的“留白”——生态<span class="highlight-blue">“绿心”</span>。这一战略性“留白”，既是出于<span class="highlight-blue">生态优先</span>的考虑，更是为城市群的可持续发展预留宝贵的弹性。</p>
+
+      <p>湖北鄂州花湖国际机场北区，曾有一块刻意“留白”的空地。正是这块空地，让花湖国际机场得以建设公共国际货站，抢抓<span class="highlight-blue">跨境电商</span>业务迅猛增长的机遇。<span class="highlight-green">2025年</span>，机场货邮吞吐量跃居全球前列。</p>
+
+      <p>为未来发展预留战略空间，就是为<span class="highlight-blue">技术迭代、产业演进、功能升级</span>留下更多可能。<span class="highlight-purple">既立足当下，也着眼长远，留有余地、避免寅吃卯粮</span>，才能积蓄发展后劲，赢得发展主动权。</p>
+
+      <p><span class="highlight-gold">“好了还要再好，不能止步。”</span>民生保障如此，事业发展同样如此。不满足于已取得的成果，保持<span class="highlight-blue">永远在路上</span>的使命感、紧迫感，锚定目标，<span class="highlight-gold">徐徐用力、久久为功</span>，我们定能跑好历史的接力棒。</p>
+
+      <p class="byline">（人民日报2026年9月4日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">破题·小题大做</span>
+      <p><b>“最近，社交平台上有不少上班族分享身边的变化……”</b>——从外卖“明厨亮灶”、医院延时服务两个生活细节起笔，把宏大方法论落到烟火气里，是申论“以小见大”开头的范式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·由事及理</span>
+      <p><b>“场景虽小，却照见民生保障一步一步趋于完善的趋势，从中也能感悟循序渐进的方法智慧。”</b>——“场景虽小，却照见……”是由现象到本质的万能过渡句，适用于一切“小事见大势”类开头。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思想方法</span>
+      <p><b>“习近平总书记多次强调‘循序渐进’。这是思想方法，也是工作方法。”</b>——“这是X，也是Y”的判断句式，把理念与方法统一起来，是引用论述后最有力的收束。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·渐与进</span>
+      <p><b>“时代答卷常出常新，必须把握好‘渐’的耐心与‘进’的节奏，不断在新的起点上作出新的回答。”</b>——“渐”与“进”、“耐心”与“节奏”两两相对，是全文题眼，写“长期主义/工作方法/历史主动”必背。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">总论点·统筹快慢</span>
+      <p><b>“如何循序渐进？它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势。”</b>——设问自答+“既……也……而是……”三层转折，把“快与慢”的辩证法讲透，可直接作总分论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·脱贫清醒</span>
+      <p><b>“脱贫不是毕其功于一役，要安居、乐业，有致富的产业、可持续发展。”</b>——一句话讲清“为什么不能图快”，写“正确政绩观/防止形式主义/可持续发展”极具分量。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·授人以渔</span>
+      <p><b>“给钱给物，固然能在短时间让数据变好看，却无法从根源上解决问题，更不可持续；授人以渔，看似见效慢，实则增强了群众的自我发展意愿与能力。”</b>——“快与慢”“输血与造血”的对照典范，写“内生动能/帮扶方式/久久为功”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·马拉松</span>
+      <p><b>“就像跑马拉松，一时的快不是胜利，率先抵达终点才是冠军。”</b>——以赛跑喻治理，一句讲透历史耐心，是全文最值得背诵的比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·尽力与量力</span>
+      <p><b>“既要尽力而为，根据现有条件把能做的事情尽量做起来，又要量力而行，不做超越发展阶段的事。”</b>——民生工作的基本原则，写“保障和改善民生/实事求是/防止福利陷阱”可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·需要与可能</span>
+      <p><b>“把需要与可能结合起来，不脱离实际，不好高骛远，‘一个阶段一个阶段向前推进’，才能使工作达到愿望和效果相统一。”</b>——“需要与可能”“愿望与效果”两组对偶，把主观能动与客观约束统一起来，是辩证段的标准表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·战略留白</span>
+      <p><b>“为未来发展预留战略空间，就是为技术迭代、产业演进、功能升级留下更多可能。”</b>——把“留白”讲成发展智慧，写“前瞻布局/留有余地/可持续发展”极具新意。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·当下与长远</span>
+      <p><b>“既立足当下，也着眼长远，留有余地、避免寅吃卯粮，才能积蓄发展后劲，赢得发展主动权。”</b>——“当下与长远”“留有余地与寅吃卯粮”正反对照，是写“战略思维/统筹当前和长远”的现成句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·接力棒</span>
+      <p><b>“‘好了还要再好，不能止步。’……锚定目标，徐徐用力、久久为功，我们定能跑好历史的接力棒。”</b>——以“接力棒”呼应前文“马拉松”，首尾一贯，是全文最完整的收束示范。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“生活细节起笔”三步法：先以“最近，社交平台上有不少上班族分享身边的变化”总起，再分列两个同向的小场景（外卖更放心、就医更省心），最后用“场景虽小，却照见……”一句跃升到方法论。小切口、低门槛、高立意，适用于一切“民生改善/治理效能/方法智慧”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“时间—能力—空间”三维骨架搭建分论点：①时间维度写“历史耐心”（不图一时之快，谋定而动、久久为功）；②能力维度写“尽力与量力”（把需要与可能结合起来，不做超越发展阶段的事）；③空间维度写“战略留白”（立足当下、着眼长远，为未来预留弹性）。此法可迁移到城市建设、生态保护、产业发展等一切“中长期工作”话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把三维改写为可操作对策：坚持规划先行、谋定而动，多做打基础、利长远的事，宁可慢一点也要把根基筑牢（历史耐心）；建立需求与能力双向评估机制，既要尽力而为把能做的事做起来，又要量力而行不吊高胃口，一个阶段一个阶段向前推进（实事求是）；在国土空间、产业布局、基础设施上预留战略空间，为技术迭代、产业演进、功能升级留下更多可能（战略留白）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“给钱给物 vs 授人以渔”的对照写法：先承认前者的短期效果（“固然能在短时间让数据变好看”），再用“却”字转折到根本缺陷（“无法从根源上解决问题，更不可持续”），最后用“看似……实则……”翻转到正确做法（“看似见效慢，实则增强了……自我发展意愿与能力”）。三步对照，比直接讲“要注重长效”更有说服力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>先用一句引语领起（“好了还要再好，不能止步”），再由个别推及一般（“民生保障如此，事业发展同样如此”），然后用三组短语回扣全文（“不满足于已取得的成果”“保持永远在路上的使命感、紧迫感”“徐徐用力、久久为功”），最后以呼应开篇比喻的意象收篇（“跑好历史的接力棒”）。这种“引语领起—由点及面—回扣分论—意象呼应”的四步结尾，适合一切方法论类议论文。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「做工作往往不可能一蹴而就，必须把握好“渐”的耐心与“进”的节奏——如何循序渐进？它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势；既保持历史耐心、谋定而动，又坚持实事求是、尽力而为与量力而行，还要以战略思维统筹“当下计”与“未来谋”，在循序渐进中赢得历史主动。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对「做工作往往不可能一蹴而就，必须把握好“渐”的耐心与“进”的节奏——如何循序渐进？它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势；既保持历史耐心、谋定而动，又坚持实事求是、尽力而为与量力而行，还要以战略思维统筹“当下计”与“未来谋”，在循序渐进中赢得历史主动。」这一重要论断，应从三方面理解。首先，其内涵在于保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军。其次，重要意义在于向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事。（“最近，社交平台上有不少上班族分享身边的变化……”）最后，落实路径在于循序渐进也映照战略思维——统筹“当下计”与“未来谋”，为未来发展预留战略空间。（“场景虽小，却照见民生保障一步一步趋于完善的趋势，从中也能感悟循序渐进的方法智慧。”）唯有统筹兼顾、系统施策，方能行稳致远。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「“渐”的耐心与“进”的节奏」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「做工作往往不可能一蹴而就，必须把握好“渐”的耐心与“进”的节奏——如何循序渐进？它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势；既保持历史耐心、谋定而动，又坚持实事求是、尽力而为与量力而行，还要以战略思维统筹“当下计”与“未来谋”，在循序渐进中赢得历史主动。」——这一论断深刻揭示了“渐”的耐心与“进”的节奏的内在逻辑。做好“渐”的耐心与“进”的节奏，必须在保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军上夯基固本，在向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事上提质增效，在循序渐进也映照战略思维——统筹“当下计”与“未来谋”，为未来发展预留战略空间上久久为功。<br><br>以保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军。方向对了，路再远也能抵达。“最近，社交平台上有不少上班族分享身边的变化……”唯有把保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军摆在突出位置，才能为“渐”的耐心与“进”的节奏注入源源不断的动力。<br><br>以向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事。方法对了，事再难也能办成。“场景虽小，却照见民生保障一步一步趋于完善的趋势，从中也能感悟循序渐进的方法智慧。”要把向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以循序渐进也映照战略思维——统筹“当下计”与“未来谋”，为未来发展预留战略空间。行百里者半九十。保持历史耐心，谋定而动——一时的快不是胜利，率先抵达终点才是冠军与向前进，步子迈多大，得讲适配度——既要尽力而为，又要量力而行，不做超越发展阶段的事的成效，最终要靠循序渐进也映照战略思维——统筹“当下计”与“未来谋”，为未来发展预留战略空间来巩固和拓展。“习近平总书记多次强调‘循序渐进’。这是思想方法，也是工作方法。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。“渐”的耐心与“进”的节奏是一场接力跑，每一棒都要跑出好成绩。让我们以「做工作往往不可能一蹴而就，必须把握好“渐”的耐心与“进”的节奏——如何循序渐进？它体现在统筹快与慢，既锚定目标，认准了就抓紧干，也戒骄戒躁，不急于求成，而是积厚成势；既保持历史耐心、谋定而动，又坚持实事求是、尽力而为与量力而行，还要以战略思维统筹“当下计”与“未来谋”，在循序渐进中赢得历史主动。」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-04</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260904.html">✏️ 原文自测</a>
+</body>
+</html>
