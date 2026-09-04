@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8b0000">
+<meta name="robots" content="noindex">
+<title>原文自测 · 在重拾耕读中感悟知行合一</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+
+  /* ===== 原文自测页（报纸版面）===== */
+  .hdr { position:sticky; top:0; z-index:40; background:#efe9d8;
+         border-bottom:1px solid #d6cdb4; }
+  .topbar { display:flex; align-items:center; gap:7px; padding:9px 12px;
+            padding-top:calc(9px + env(safe-area-inset-top)); }
+  .tb-back { font-size:22px; color:#8b0000; text-decoration:none; padding:0 3px; line-height:1; }
+  .tb-title { flex:1; min-width:0; font-size:13px; color:#5c5340; font-weight:600;
+              white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tb-btn { flex:0 0 auto; padding:6px 11px; border-radius:9px; border:1px solid #c9bfa3;
+            background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tb-btn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .tb-link { flex:0 0 auto; padding:6px 10px; border-radius:9px; background:#f7f3e6;
+             border:1px solid #c9bfa3; color:#8b0000; font-size:12.5px; text-decoration:none; }
+  .palette { display:none; gap:9px; padding:8px 14px 10px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; }
+  .palette.show { display:flex; }
+  .pc { width:32px; height:32px; border-radius:50%; border:0; cursor:pointer;
+        box-shadow:0 0 0 1.5px #b9ae90; padding:0; }
+  .pc.on { box-shadow:0 0 0 2.5px #333; }
+  .pbtn { padding:6px 12px; border-radius:9px; border:1px solid #c9bfa3; background:#f7f3e6;
+          font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .phint { font-size:11.5px; color:#9a907a; margin-left:auto; }
+  .pgroup { display:flex; align-items:center; gap:9px; }
+  .pgroup + .pgroup { padding-left:10px; border-left:1px solid #e0d8c0; }
+  .pcsz { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .pcsz.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .pbtn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
+  .sheet { max-width:720px; margin:0 auto; padding:14px 10px 40px; }
+  .paper { position:relative; background-color:#f7f3e6;
+           background-image:
+             repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
+             radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.55) 0%, rgba(168,150,110,.18) 100%);
+           box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
+           padding:0 0 60px; min-height:75vh; overflow:hidden; }
+  .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
+               -webkit-touch-callout:none; }
+  /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
+     用 multiply 混合模拟真实荧光笔：涂过的地方纸变彩色，而黑色墨字不受影响，
+     视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
+  #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
+        mix-blend-mode:multiply; }
+  #text { position:relative; z-index:1; }
+  /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
+  .paper.pen #text { pointer-events:none; }
+  /* 报头 */
+  .masthead { position:relative; z-index:1; padding:16px 18px 6px; }
+  .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
+             font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
+             text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  .mh-rule { border-top:3px solid #181512; border-bottom:1px solid #181512;
+             height:3px; margin:6px 0 5px; }
+  .mh-meta { display:flex; justify-content:space-between; align-items:center;
+             font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
+             padding:2px 2px 0; }
+  .mh-meta i { font-style:normal; }
+  /* 文章标题区 */
+  .art-head { position:relative; z-index:1; padding:18px 22px 12px; text-align:center; }
+  .art-title { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:24px;
+               font-weight:700; line-height:1.5; color:#181512; letter-spacing:1px; }
+  .art-sub { font-family:"SimSun","Songti SC",serif; font-size:12px; color:#6b6152;
+             margin-top:7px; letter-spacing:2px; }
+  .art-rule { border-top:1px solid #b9ae90; margin:12px 22px 0; }
+  /* 正文：宋体、两端对齐、首行缩进 */
+  #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:17.5px;
+              line-height:2.08; color:#1c1915; text-align:justify;
+              margin:0 20px 13px; text-indent:2em; }
+  .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
+             color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
+  /* 精读页悬浮入口 */
+  .orig-fab { position:fixed; right:14px; bottom:calc(18px + env(safe-area-inset-bottom));
+              z-index:999; background:#fff; border:1.5px solid #ffcdd2; color:#c0392b;
+              font-size:13px; font-weight:600; padding:10px 15px; border-radius:999px;
+              text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.16); }
+  .orig-fab:active { transform:scale(.95); }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="topbar">
+      <a class="tb-back" href="index.html">‹</a>
+      <span class="tb-title">在重拾耕读中感悟知行合一</span>
+      <button class="tb-btn" id="bPen">✏️ 勾画</button>
+      <a class="tb-link" href="rmrb_20260601.html">📖 精读</a>
+    </div>
+    <div class="palette" id="pal">
+      <div class="pgroup">
+        <button class="pc on" data-c="gold" style="background:#e8b81f" title="金句/名言"></button>
+        <button class="pc" data-c="blue" style="background:#4a90e2" title="规范表述/政策术语"></button>
+        <button class="pc" data-c="green" style="background:#4caf50" title="数据/事实论据"></button>
+        <button class="pc" data-c="purple" style="background:#9b6bd6" title="辩证关系/哲理"></button>
+      </div>
+      <div class="pgroup">
+        <button class="pcsz" data-w="4">细</button>
+        <button class="pcsz on" data-w="8">中</button>
+        <button class="pcsz" data-w="13">粗</button>
+      </div>
+      <div class="pgroup">
+        <button class="pbtn" id="bEra" title="橡皮擦：擦除勾画">🧽 橡皮</button>
+        <button class="pbtn" id="bUndo">↩ 撤销</button>
+        <button class="pbtn" id="bClr">🗑 清空</button>
+      </div>
+      <span class="phint">划过即上色 · 轻点整句 · 选粗细/橡皮</span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="paper" id="paper">
+      <canvas id="cv"></canvas>
+
+      <div class="masthead">
+        <div class="mh-name">人民日报</div>
+        <div class="mh-rule"></div>
+        <div class="mh-meta">
+          <i>2026年6月1日 星期一</i>
+          <i>第05版 · 人民时评</i>
+        </div>
+      </div>
+
+      <div class="art-head">
+        <div class="art-title">在重拾耕读中感悟知行合一</div>
+        <div class="art-sub">第05版 · 人民时评</div>
+        <div class="art-rule"></div>
+      </div>
+
+      <div id="text">
+      <p class="ln" data-i="0">走出教室、走进田野，播种施肥、采茶除草，大学生们体验农耕之美、稼穑之艰，正悄然流行。一段时间以来，清华大学、北京大学、中央民族大学、上海财经大学等多所高校陆续开展耕读实践，引发关注热议。</p>
+      <p class="ln" data-i="1">有人点赞，也有人不解：现代大学教育，为何要重拾&quot;耕读&quot;？</p>
+      <p class="ln" data-i="2">&quot;耕读传家久，诗书继世长&quot;。在中华传统文化语境中，&quot;耕&quot;与&quot;读&quot;是经常相提并论的两件事。晴耕雨读、半农半学，既是一种生活方式，也是一种求知态度。随着城镇化进程加速和教育专业化水平提高，&quot;耕&quot;与&quot;读&quot;渐行渐远，如今不少大学生对耕作比较陌生。笔者采访中也曾遇到学生种薄荷时分不清哪棵是苗、哪棵是草，有学生说从未见过花生是怎么长出来的。</p>
+      <p class="ln" data-i="3">当知识获取越来越依赖多媒体手段、智能化工具，年轻人和真实世界之间隔着屏幕，缺失了不少体验。知识与体验割裂开来，无异于让人在&quot;空中楼阁&quot;学习世界如何运转，这是现代教育面临的一个共性问题。</p>
+      <p class="ln" data-i="4">耕读教育回归，补上的正是脚踏实地这一课，让年轻人在泥土中认知庄稼不等人、天气不如人意的真实世界。</p>
+      <p class="ln" data-i="5">耕读教育回归，补上的正是脚踏实地这一课。中央民族大学113名学生到河北农场劳动，有的女生穿着白帆布鞋下田摘毛豆，起初小心翼翼，很快就顾不上脏不脏了。北京大学学生在教学楼前种植物，遇上一场大风差点前功尽弃，&quot;只能重新来过&quot;。庄稼不等人、天气不如人意——这些在教室里难有深切认知的内容，到泥土中一学就会。</p>
+      <p class="ln" data-i="6">&quot;耕&quot;与&quot;读&quot;相贯通，才能真正凸显价值、提升育人质效，让书本理论与脚下土地对接。</p>
+      <p class="ln" data-i="7">不过，耕读不能仅仅停留在体验农活上。&quot;耕&quot;与&quot;读&quot;相贯通，才能真正凸显价值，提升育人质效。</p>
+      <p class="ln" data-i="8">清华大学马克思主义学院的做法颇有启示。学生们在小凉山的茶园劳动半个月，白天采茶、走访村民，晚上一起阅读《摆脱贫困》等著作。当书本上的理论和脚下的土地对接起来，一名同学感慨：&quot;和土地、人民相联系的学术研究才更有生命力。&quot;</p>
+      <p class="ln" data-i="9">脚踩广袤大地，&quot;耕&quot;与&quot;读&quot;方能更好融合。白天在田地里弯腰，晚上再翻开书本时，纸面上的道理或许就被田垄和劳作讲清楚了。看似寻常的农情农事，会成为大学生们理解乡村、理解社会的一扇窗口。如此耕读，更易转化为学生的心灵体验，升华为理性认识。</p>
+      <p class="ln" data-i="10">耕读教育走热也现不良苗头，关键在深度比广度更重要、追求穿透力，以实效而非形式评价育人。</p>
+      <p class="ln" data-i="11">当然，耕读教育走热，也出现了一些需要留意的不良苗头。有的学校将其简化为一两天的参观体验，流于拍照打卡等形式；有的学校把日程安排得满满当当，今天摘茶明天插秧后天磨豆腐，看似丰富，实则浮光掠影。一名高校教师坦言：&quot;我们在考虑&#x27;缩&#x27;，不是缩短时间，而是缩小范围。学生不用体验那么多，在一个村子里待住就行，关键是要扎得深。&quot;一个&quot;深&quot;字，道出了耕读教育的要害：深度比广度更重要，必须追求穿透力。</p>
+      <p class="ln" data-i="12">形式可以多种多样，育人的初心不能忘。高校纷纷重拾耕读传统，如何进行效果评价？关键不在于开了多少门课、设置多少学分，而是能不能真正让年轻人在弯腰与抬头之间，在内心重建自我和脚下土地的联系。</p>
+      <p class="ln" data-i="13">&quot;耕读传家&quot;，本质上体现着知行合一理念。创设条件、完善机制、突出实效，让学生在田地感受四季轮回更替，在村庄读懂时代变迁，耕读教育的价值与潜力难以估量。</p>
+      <p class="ln" data-i="14">（人民日报2026年6月1日 第5版 · 人民时评）</p>
+      </div>
+      <div class="pen-tip">— 全文完 —</div>
+    </div>
+  </div>
+<script>
+const PAGE="rmrb_20260601.html", STORE='rmrb_read_v1';
+const COL={gold:'#e8b81f',blue:'#4a90e2',green:'#4caf50',purple:'#9b6bd6'};
+let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[]};
+let rec=db[PAGE];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
+const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const pal=document.getElementById('pal');
+let cur='gold',pen=false,drawing=false,pts=[],last=null;
+let curW=8,mode='pen';
+
+function pr(){return paper.getBoundingClientRect()}
+function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
+function wOf(e){return curW}
+function redraw(){
+  const r=pr();ctx.clearRect(0,0,r.width,r.height);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+    else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[s.c]||COL.gold;ctx.globalAlpha=0.5;}
+    ctx.lineWidth=s.w||curW;
+    ctx.beginPath();
+    s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height;
+      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y)});
+    ctx.stroke();
+  });
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+}
+function fit(){
+  const r=pr(),d=window.devicePixelRatio||1;
+  cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);
+  cv.style.width=r.width+'px';cv.style.height=r.height+'px';
+  ctx.setTransform(d,0,0,d,0,0);redraw();
+}
+/* 笔画 bbox 反查被覆盖的句子。
+   关键：横划时 bbox 高度≈0，若按面积交集判定会恒为 0 而永不命中，
+   故细笔画改用「中心 y 是否落在该句行内」判定，粗涂改按交集比例判定。 */
+function hits(minx,miny,maxx,maxy){
+  const r=pr(),out=[];
+  const cy=(miny+maxy)/2;
+  const thin=(maxy-miny)*r.height<12;
+  document.querySelectorAll('.ln').forEach(function(el){
+    const q=el.getBoundingClientRect();
+    const y0=(q.top-r.top)/r.height,y1=(q.bottom-r.top)/r.height;
+    if(thin){ if(cy>=y0&&cy<=y1) out.push(el.dataset.i); }
+    else if(Math.min(maxy,y1)-Math.max(miny,y0) > (y1-y0)*0.25) out.push(el.dataset.i);
+  });
+  return out;
+}
+function bbox(ps){let a=1,b=0,c=1,d=0;
+  ps.forEach(function(p){a=Math.min(a,p[0]);b=Math.max(b,p[0]);c=Math.min(c,p[1]);d=Math.max(d,p[1])});
+  return [a,c,b,d]}
+function recompute(){
+  const m={};
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase)return;
+    const bb=bbox(s.p);hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){m[i]=s.c});
+  });
+  rec.marks=m;
+}
+/* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
+cv.addEventListener('pointerdown',function(e){
+  if(!pen)return;e.preventDefault();drawing=true;
+  try{cv.setPointerCapture(e.pointerId)}catch(err){}
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];
+});
+cv.addEventListener('pointermove',function(e){
+  if(!drawing)return;e.preventDefault();
+  const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  if(mode==='erase'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=0.5;}
+  ctx.lineWidth=wOf(e);ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;last=[x,y];pts.push(p);
+});
+function up(e){
+  if(!drawing)return;drawing=false;
+  if(!pts.length)return;
+  const r=pr(),bb=bbox(pts);
+  const moved=Math.max((bb[2]-bb[0])*r.width,(bb[3]-bb[1])*r.height);
+  if(moved<8){ /* 轻点 */
+    if(mode==='erase'){ /* 橡皮轻点：删掉覆盖该点的整条笔画 */
+      const x=pts[0][0],y=pts[0][1];
+      rec.strokes=rec.strokes.filter(function(s){
+        if(s.erase)return true;
+        return !s.p.some(function(pt){return Math.hypot(pt[0]-x,pt[1]-y)*r.width < (s.w||curW)/2+6});
+      });
+      save();redraw();return;
+    }
+    const cx=pts[0][0]*r.width+r.left, cy=pts[0][1]*r.height+r.top;
+    let target=null,best=1e12;
+    document.querySelectorAll('.ln').forEach(function(el){
+      const q=el.getBoundingClientRect();
+      if(cx>=q.left&&cx<=q.right&&cy>=q.top&&cy<=q.bottom){target=el;best=-1;return;}
+      const dx=Math.max(q.left-cx,0,cx-q.right), dy=Math.max(q.top-cy,0,cy-q.bottom);
+      const dist=dx*dx+dy*dy; if(dist<best){best=dist;target=el;}
+    });
+    if(target){const i=target.dataset.i,q=target.getBoundingClientRect(),yy=(q.top+q.height*0.6-r.top)/r.height;
+      if(rec.marks[i]===cur){delete rec.marks[i];
+        rec.strokes=(rec.strokes||[]).filter(function(s){
+          return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
+      }else{
+        rec.marks[i]=cur;
+        rec.strokes.push({c:cur,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+      }
+      save();redraw();
+    }
+    return;
+  }
+  if(mode==='erase'){ rec.strokes.push({erase:true,w:curW,p:pts}); }
+  else{ rec.strokes.push({c:cur,w:curW,p:pts});
+        hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur}); }
+  save();redraw();
+}
+cv.addEventListener('pointerup',up);
+cv.addEventListener('pointercancel',up);
+
+const bPen=document.getElementById('bPen');
+bPen.onclick=function(){
+  pen=!pen;paper.classList.toggle('pen',pen);
+  cv.style.pointerEvents=pen?'auto':'none';
+  bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
+  pal.classList.toggle('show',pen);
+};
+document.querySelectorAll('.pc').forEach(function(el){
+  el.onclick=function(){
+    cur=el.dataset.c;mode='pen';
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.toggle('on',x===el)});
+    document.getElementById('bEra').classList.remove('on');
+  };
+});
+const bEra=document.getElementById('bEra');
+bEra.onclick=function(){
+  if(mode==='erase'){mode='pen';bEra.classList.remove('on');}
+  else{mode='erase';bEra.classList.add('on');
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.remove('on')});}
+  pal.classList.add('show');
+};
+document.querySelectorAll('.pcsz').forEach(function(el){
+  el.onclick=function(){
+    curW=+el.dataset.w;
+    document.querySelectorAll('.pcsz').forEach(function(x){x.classList.toggle('on',x===el)});
+  };
+});
+document.getElementById('bUndo').onclick=function(){
+  rec.strokes.pop();recompute();save();redraw();
+};
+document.getElementById('bClr').onclick=function(){
+  if(!confirm('清空本篇全部勾画？'))return;
+  rec.strokes=[];rec.marks={};save();redraw();
+};
+if(window.ResizeObserver){new ResizeObserver(fit).observe(paper)}
+window.addEventListener('resize',fit);
+window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+fit();
+</script>
+</body>
+</html>
