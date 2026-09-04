@@ -108,14 +108,44 @@
   .tsz, .tlh { min-width:34px; height:30px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
               background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
   .tsz.on, .tlh.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .psty { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .psty.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .toolrow { display:flex; gap:8px; padding:7px 14px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; background:#fbf8ef; }
+  .legend { display:flex; gap:12px; flex-wrap:wrap; padding:5px 14px; background:#fbf8ef;
+            border-top:1px dashed #d6cdb4; font-size:11.5px; color:#6b6152; align-items:center; }
+  .lg { display:inline-flex; align-items:center; gap:5px; }
+  .lg i { width:13px; height:13px; border-radius:3px; box-shadow:0 0 0 1px #b9ae90; }
+  .lg-t { outline:none; min-width:22px; border-bottom:1px dotted #c9bfa3; }
+  .lg-t:focus { border-bottom-color:#8b0000; }
+  .note { position:absolute; width:152px; background:#fffec6; border:1px solid #e6d98a;
+          border-radius:7px; box-shadow:0 3px 10px rgba(90,74,40,.28); z-index:6;
+          font-size:13px; line-height:1.5; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .note-h { display:flex; justify-content:space-between; align-items:center; cursor:move;
+            background:#f3e27e; border-radius:6px 6px 0 0; padding:2px 7px; font-size:11px; color:#7a5b00;
+            user-select:none; }
+  .note-x { cursor:pointer; color:#b00000; font-weight:700; padding:0 2px; }
+  .note-b { padding:6px 8px; outline:none; min-height:42px; max-height:180px; overflow:auto; }
+  #text .ln.bm::before { content:"★"; position:absolute; left:-16px; top:0; color:#e53935;
+            font-size:13px; line-height:inherit; }
+  .paper.note-mode { cursor:crosshair; }
+  @media print{
+    .hdr,.orig-fab { display:none!important; }
+    body { background:#fff; }
+    .paper { box-shadow:none; overflow:visible; min-height:0; }
+    .note-h .note-x { display:none; }
+  }
   /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
   .sheet { max-width:720px; margin:0 auto; padding:14px 10px 40px; }
   .paper { position:relative; background-color:#f7f3e6;
            background-image:
              repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
-             radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.55) 0%, rgba(168,150,110,.18) 100%);
+             repeating-linear-gradient(90deg, rgba(0,0,0,.010) 0 2px, transparent 2px 3px),
+             radial-gradient(ellipse at 50% 38%, rgba(255,255,255,.6) 0%, rgba(150,132,92,.20) 100%);
            box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
-           padding:0 0 60px; min-height:75vh; overflow:hidden; }
+           padding:0 0 60px; min-height:75vh; overflow:hidden;
+           -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
                -webkit-touch-callout:none; }
   /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
@@ -131,8 +161,7 @@
   .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
              font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
              text-shadow:0 1px 0 rgba(255,255,255,.6); }
-  .mh-rule { border-top:3px solid #181512; border-bottom:1px solid #181512;
-             height:3px; margin:6px 0 5px; }
+  .mh-rule { border-top:2px solid #181512; height:0; margin:9px 0 7px; }
   .mh-meta { display:flex; justify-content:space-between; align-items:center;
              font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
              padding:2px 2px 0; }
@@ -147,7 +176,7 @@
   /* 正文：宋体、两端对齐、首行缩进 */
   #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:var(--rmrb-fs,17.5px);
               line-height:var(--rmrb-lh,2.08); color:#1c1915; text-align:justify;
-              margin:0 20px 13px; text-indent:2em; }
+              margin:0 0 13px; text-indent:2em; letter-spacing:.3px; position:relative; }
   .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
              color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
   /* 精读页悬浮入口 */
@@ -172,11 +201,18 @@
         <button class="pc" data-c="red" style="background:#ff0000" title="红"></button>
         <button class="pc" data-c="blue" style="background:#0000ff" title="蓝"></button>
         <button class="pc" data-c="green" style="background:#00ff00" title="绿"></button>
+        <button class="pc" data-c="gold" style="background:#ffd700" title="金"></button>
       </div>
       <div class="pgroup">
         <button class="pcsz" data-w="2">细</button>
         <button class="pcsz on" data-w="6">中</button>
         <button class="pcsz" data-w="11">粗</button>
+      </div>
+      <div class="pgroup">
+        <button class="psty on" data-st="hl">荧光</button>
+        <button class="psty" data-st="ul">下划</button>
+        <button class="psty" data-st="wave">波浪</button>
+        <button class="pbtn" id="bPenMode" title="压感钢笔（Apple Pencil）">🖊 钢笔</button>
       </div>
       <div class="pgroup">
         <button class="pbtn" id="bEra" title="橡皮擦：擦除勾画">🧽 橡皮</button>
@@ -196,6 +232,18 @@
       <button class="tlh" data-lh="1.6">紧</button>
       <button class="tlh on" data-lh="2.08">适中</button>
       <button class="tlh" data-lh="2.6">宽松</button>
+    </div>
+    <div class="toolrow">
+      <button class="tb-btn" id="bNote">📝 便利贴</button>
+      <button class="tb-btn" id="bMark">☆ 书签</button>
+      <button class="tb-btn" id="bExport">📤 导出</button>
+    </div>
+    <div class="legend" id="legend">
+      <span class="lg"><i style="background:#000000"></i><span class="lg-t" contenteditable="true" data-c="black">黑</span></span>
+      <span class="lg"><i style="background:#ff0000"></i><span class="lg-t" contenteditable="true" data-c="red">红</span></span>
+      <span class="lg"><i style="background:#0000ff"></i><span class="lg-t" contenteditable="true" data-c="blue">蓝</span></span>
+      <span class="lg"><i style="background:#00ff00"></i><span class="lg-t" contenteditable="true" data-c="green">绿</span></span>
+      <span class="lg"><i style="background:#ffd700"></i><span class="lg-t" contenteditable="true" data-c="gold">金</span></span>
     </div>
   </div>
 
@@ -238,30 +286,50 @@
   </div>
 <script>
 const PAGE="rmrb_20260401.html", STORE='rmrb_read_v1';
-const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00'};
+const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00',gold:'#ffd700'};
 let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
-if(!db[PAGE]) db[PAGE]={marks:{},strokes:[]};
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[],notes:[],bookmarks:{}};
 let rec=db[PAGE];
 function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
 const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
 const pal=document.getElementById('pal');
-let cur='black',pen=false,drawing=false,pts=[],last=null;
-let curW=6,mode='pen';
+let cur='black',pen=false,drawing=false,pts=[],ws=[],last=null;
+let curW=6,mode='pen',curStyle='hl',penMode=false,noteMode=false,markMode=false;
 
 function pr(){return paper.getBoundingClientRect()}
 function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
 function wOf(e){return curW}
+function widthOf(s){return (Array.isArray(s.w)?s.w[0]:s.w)||curW;}
+function drawWave(pts,r,w,col){
+  ctx.strokeStyle=col;ctx.globalAlpha=1;ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();
+  for(let i=0;i<pts.length-1;i++){
+    const a=pts[i],b=pts[i+1];
+    const ax=a[0]*r.width,ay=a[1]*r.height,bx=b[0]*r.width,by=b[1]*r.height;
+    const len=Math.hypot(bx-ax,by-ay); if(len<1)continue;
+    const nx=-(by-ay)/len, ny=(bx-ax)/len, seg=4;
+    ctx.moveTo(ax,ay);
+    for(let t=0;t<=len;t+=seg){const f=t/len;const px=ax+(bx-ax)*f,py=ay+(by-ay)*f;const off=Math.sin(t/5)*3;ctx.lineTo(px+nx*off,py+ny*off);}
+  }
+  ctx.stroke();
+}
 function redraw(){
   const r=pr();ctx.clearRect(0,0,r.width,r.height);
   ctx.lineCap='round';ctx.lineJoin='round';
   (rec.strokes||[]).forEach(function(s){
-    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
-    else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[s.c]||COL.black;ctx.globalAlpha=0.5;}
-    ctx.lineWidth=s.w||curW;
-    ctx.beginPath();
-    s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height;
-      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y)});
-    ctx.stroke();
+    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;
+      ctx.lineWidth=widthOf(s);
+      ctx.beginPath();s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height; i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();
+      return;}
+    ctx.globalCompositeOperation='source-over';
+    const col=COL[s.c]||COL.black;
+    if(s.style==='wave'){ drawWave(s.p,r,widthOf(s),col); return; }
+    const a=(s.style==='ul')?1:0.5; ctx.globalAlpha=a; ctx.strokeStyle=col;
+    for(let i=1;i<s.p.length;i++){
+      const x0=s.p[i-1][0]*r.width,y0=s.p[i-1][1]*r.height,x1=s.p[i][0]*r.width,y1=s.p[i][1]*r.height;
+      ctx.lineWidth=Array.isArray(s.w)?s.w[i]:(s.w||curW);
+      ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();
+    }
   });
   ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
 }
@@ -299,16 +367,19 @@ function recompute(){
 }
 /* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
 cv.addEventListener('pointerdown',function(e){
-  if(!pen)return;e.preventDefault();drawing=true;
+  if(!pen)return;e.preventDefault();drawing=true;ws=[];
   try{cv.setPointerCapture(e.pointerId)}catch(err){}
-  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];ws.push(curW);
 });
 cv.addEventListener('pointermove',function(e){
   if(!drawing)return;e.preventDefault();
   const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  let w=curW;
+  if(penMode&&e.pointerType==='pen') w=curW*(0.35+(e.pressure||0.5)*1.4);
+  ws.push(w);
   if(mode==='erase'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
-  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=0.5;}
-  ctx.lineWidth=wOf(e);ctx.lineCap='round';ctx.lineJoin='round';
+  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=(curStyle==='ul'||curStyle==='wave')?1:0.5;}
+  ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
   ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
   ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;last=[x,y];pts.push(p);
 });
@@ -340,14 +411,15 @@ function up(e){
           return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
       }else{
         rec.marks[i]=cur;
-        rec.strokes.push({c:cur,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+        rec.strokes.push({c:cur,style:curStyle,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
       }
       save();redraw();
     }
     return;
   }
   if(mode==='erase'){ rec.strokes.push({erase:true,w:curW,p:pts}); }
-  else{ rec.strokes.push({c:cur,w:curW,p:pts});
+  else{ const s={c:cur,style:curStyle,p:pts}; if(penMode&&pts.length>1)s.w=ws; else s.w=curW;
+        rec.strokes.push(s);
         hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur}); }
   save();redraw();
 }
@@ -356,7 +428,11 @@ cv.addEventListener('pointercancel',up);
 
 const bPen=document.getElementById('bPen');
 bPen.onclick=function(){
-  pen=!pen;paper.classList.toggle('pen',pen);
+  pen=!pen;
+  if(pen){noteMode=false;markMode=false;
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');
+    document.getElementById('bMark').classList.remove('on');bMark.textContent='☆ 书签';}
+  paper.classList.toggle('pen',pen);
   cv.style.pointerEvents=pen?'auto':'none';
   bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
   pal.classList.toggle('show',pen);
@@ -399,6 +475,96 @@ document.querySelectorAll('.tsz').forEach(function(el){
 document.querySelectorAll('.tlh').forEach(function(el){
   el.onclick=function(){tp.lh=+el.dataset.lh;localStorage.setItem(TPREF,JSON.stringify(tp));applyText();};
 });
+/* ===== 线型 / 压感钢笔 ===== */
+document.querySelectorAll('.psty').forEach(function(el){
+  el.onclick=function(){curStyle=el.dataset.st;
+    document.querySelectorAll('.psty').forEach(function(x){x.classList.toggle('on',x===el)});
+    pal.classList.add('show');};
+});
+const bPenMode=document.getElementById('bPenMode');
+bPenMode.onclick=function(){penMode=!penMode;bPenMode.classList.toggle('on',penMode);pal.classList.add('show');};
+
+/* ===== 颜色图例自定义（全局记忆 rmrb_legend_v1） ===== */
+const LEGP='rmrb_legend_v1';
+let legend={black:'黑',red:'红',blue:'蓝',green:'绿',gold:'金'};
+try{const l=JSON.parse(localStorage.getItem(LEGP)||'{}'); if(l)Object.assign(legend,l);}catch(e){}
+document.querySelectorAll('.lg-t').forEach(function(el){
+  el.textContent=legend[el.dataset.c]||el.dataset.c;
+  el.addEventListener('input',function(){legend[el.dataset.c]=el.textContent.trim();localStorage.setItem(LEGP,JSON.stringify(legend));});
+});
+
+/* ===== 便利贴批注 ===== */
+const bNote=document.getElementById('bNote');
+function noteAt(cx,cy){const r=pr();let x=(cx-r.left)/r.width,y=(cy-r.top)/r.height;
+  x=Math.max(0,Math.min(.82,x));y=Math.max(0,Math.min(.92,y));return [x,y];}
+function renderNote(n,idx){
+  const d=document.createElement('div');d.className='note';d.dataset.i=idx;
+  d.style.left=(n.x*100)+'%';d.style.top=(n.y*100)+'%';
+  d.innerHTML='<div class="note-h">📝<span class="note-x">×</span></div><div class="note-b" contenteditable="true"></div>';
+  d.querySelector('.note-b').textContent=n.text||'';
+  paper.appendChild(d);
+  d.querySelector('.note-b').addEventListener('input',function(){rec.notes[idx].text=this.textContent;save();});
+  d.querySelector('.note-x').addEventListener('click',function(e){e.stopPropagation();
+    rec.notes.splice(idx,1);d.remove();reindexNotes();save();});
+  const h=d.querySelector('.note-h');
+  h.addEventListener('pointerdown',function(e){
+    if(e.target.classList.contains('note-x'))return;
+    e.preventDefault();try{h.setPointerCapture(e.pointerId)}catch(err){}
+    const r=pr(),sx=e.clientX,sy=e.clientY,ox=parseFloat(d.style.left),oy=parseFloat(d.style.top);
+    function mv(ev){const dl=(ev.clientX-sx)/r.width*100,dt=(ev.clientY-sy)/r.height*100;
+      let nl=Math.max(0,Math.min(82,ox+dl)),nt=Math.max(0,Math.min(92,oy+dt));
+      d.style.left=nl+'%';d.style.top=nt+'%';rec.notes[idx].x=nl/100;rec.notes[idx].y=nt/100;}
+    function up(ev){h.removeEventListener('pointermove',mv);h.removeEventListener('pointerup',up);save();}
+    h.addEventListener('pointermove',mv);h.addEventListener('pointerup',up);
+  });
+}
+function reindexNotes(){(document.querySelectorAll('.note')).forEach(function(n){n.remove();});
+  (rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+function renderAllNotes(){(rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+renderAllNotes();
+bNote.onclick=function(){
+  noteMode=!noteMode;
+  if(noteMode){pen=false;markMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bMark').classList.remove('on');document.getElementById('bMark').textContent='☆ 书签';}
+  bNote.classList.toggle('on',noteMode);paper.classList.toggle('note-mode',noteMode);
+};
+paper.addEventListener('click',function(e){
+  if(!noteMode)return;
+  if(e.target.closest('.note'))return;
+  const p=noteAt(e.clientX,e.clientY);
+  if(!rec.notes)rec.notes=[];
+  rec.notes.push({x:p[0],y:p[1],text:''});
+  const idx=rec.notes.length-1;save();renderNote(rec.notes[idx],idx);
+  const nd=document.querySelector('.note[data-i="'+idx+'"] .note-b');if(nd)nd.focus();
+});
+
+/* ===== 书签收藏 ===== */
+const bMark=document.getElementById('bMark');
+function applyBookmarks(){document.querySelectorAll('.ln').forEach(function(el){el.classList.toggle('bm',!!(rec.bookmarks&&rec.bookmarks[el.dataset.i]));});}
+function countMarks(){return rec.bookmarks?Object.keys(rec.bookmarks).length:0;}
+applyBookmarks();
+bMark.onclick=function(){
+  markMode=!markMode;
+  if(markMode){pen=false;noteMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');}
+  bMark.classList.toggle('on',markMode);
+  bMark.textContent=markMode?'★ 书签中':'☆ 书签'+(countMarks()?('('+countMarks()+')'):'');
+};
+document.getElementById('text').addEventListener('click',function(e){
+  if(!markMode)return;
+  const el=e.target.closest('.ln');if(!el)return;
+  const i=el.dataset.i;
+  if(!rec.bookmarks)rec.bookmarks={};
+  if(rec.bookmarks[i])delete rec.bookmarks[i];else rec.bookmarks[i]=true;
+  el.classList.toggle('bm',!!rec.bookmarks[i]);save();
+  bMark.textContent='★ 书签'+(countMarks()?('('+countMarks()+')'):'');
+});
+if(countMarks())bMark.textContent='☆ 书签('+countMarks()+')';
+
+/* ===== 导出（打印为PDF，含批注） ===== */
+document.getElementById('bExport').onclick=function(){window.print();};
 document.getElementById('bUndo').onclick=function(){
   rec.strokes.pop();recompute();save();redraw();
 };
