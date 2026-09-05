@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 涵养共生共荣的商业生态</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>涵养共生共荣的商业生态</h1>
+    <div class="meta">人民日报评论·微观 | 商业生态·反内卷式竞争·法治经济·企业家精神 | 2026年9月1日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：利益失衡则生态共损／超越零和博弈与“囚徒困境”／以法治经济稳定预期／从“不敢乱为”到“不愿短视”／大力弘扬企业家精神</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">商业生态</span>
+      <span class="tag-item">反内卷式竞争</span>
+      <span class="tag-item">全国统一大市场</span>
+      <span class="tag-item">法治经济</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">民营经济促进法</span>
+      <span class="tag-item">公平竞争</span>
+      <span class="tag-item">企业家精神</span>
+      <span class="tag-item">高水平科技自立自强</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">义利兼顾</span>
+      <span class="tag-item">诚信建设</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">效率与公平</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“涵养共生共荣的商业生态”“从零和博弈到各方受益”“让市场既充满活力又充满秩序”“大力弘扬企业家精神”等主题；本文<b>“两则新闻起笔—由事及理立论—五分论点递展开（教训·溯源·制度·文化·主体）—总书记论述升华”</b>的论证链，是写“市场环境/竞争秩序/经营主体”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼五条对策：<b>强化反不正当竞争执法，禁止平台强制或变相强制商家低于成本价销售，遏制‘内卷式’竞争／落实民营经济促进法及配套制度清单，以平等准入稳定经营主体预期／发挥行业协会作用，编制成本核算等标准，引导企业从价格内卷转向价值驱动／弘扬义利兼顾、取财有道的商业文化，推动经营主体从‘不敢乱为’转向‘不愿短视’／大力弘扬企业家精神，激励经营主体在创新创造中开辟发展新空间</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“零和博弈”与“各方受益”、“你赢我输”与“囚徒困境”、“不敢乱为”与“不愿短视”、“价格内卷”与“价值驱动”、“各自为战”与“共护生态”、“效率与公平”、“活力与秩序”等多组辩证，是写<b>竞争与合作、短期与长远、活力与秩序类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于综合整治‘内卷式’竞争、营造良好市场生态的实施意见”“关于进一步优化营商环境的若干措施”素材；文中“<b>涵养共生共荣的商业生态</b>”“<b>不敢乱为→不愿短视</b>”“<b>从各自为战到共护生态</b>”“<b>稳定公平透明、可预期的环境</b>”“<b>兼顾效率与公平、活力与秩序</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（两则新闻起笔—由事及理立论—教训/溯源/制度/文化/主体五层递进—总书记论述升华）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>两则新闻起笔</b>：以“近来，两则商业新闻引发广泛关注”领起，并列两个反差强烈的案例——农夫山泉创始人钟睒睒做客央视财经《对话》栏目批评电商平台是“板上钉钉的中间商”；胖东来创始人于东来宣布运营24年、年利润过亿的许昌生活广场店因个别房东借门店红火漫天抬租要价，将于年底彻底关闭（第一段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>由事及理</b>：用“跳出个案去看，两件事指向同一个命题”一句完成从个案到普遍规律的跃升，亮出总论点——“市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态”（第二段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>教训·零和博弈没有赢家</b>：以“这样的教训，在许多领域反复上演”领起，连举三例——旅游景区旺季“宰客”致口碑崩塌、平台在社区团购搞“烧钱大战”致摊贩歇业与商品质量下降、新能源汽车行业价格混战致企业“增收不增利”；最后以“无论是坐地起价的短视逐利，还是烧钱混战的‘内卷式’竞争，结果都是多败俱伤，造成社会资源的巨大浪费”收束（第三段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>溯源·突破思维定式</b>：以“何以至此？”设问自答，直指病根——“市场参与者把商业关系理解成了零和博弈”；引《吕氏春秋》“竭泽而渔，岂不获得？而明年无鱼”点明竭泽而渔之弊，进而指出“一个良性的市场生态，是不同主体各安其位、各展所长的产物”“平台与商户、经营者与物业方、产业链上游和下游，从来都是唇齿相依”，落到“只有超越‘你赢我输’的思维定式，才能避免‘囚徒困境’，找到各方受益的更优解”（第四段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>制度·法治经济筑基</b>：以“市场经济本质上是法治经济”立骨，指出良性竞争“根基在于对规则的尊重、对合作的珍视、对长远利益的考量”；举证新修订的反不正当竞争法明确禁止平台强制或变相强制商家低于成本价销售、围绕落实民营经济促进法完成平等准入等重点领域配套制度清单任务38项；落到“好的制度安排和政策举措，厘清经营主体能做什么、不能做什么，为公平竞争和良性合作提供稳定预期”（第五段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>文化·从不敢乱为到不愿短视</b>：以“让经营主体从‘不敢乱为’转向‘不愿短视’，更需涵养健康向上的商业文化”领起，从中华商道中取源——中国人崇尚义利兼顾、取财有道，陶朱公薄利济世、胡庆余堂悬“戒欺”牌匾、晋商秉持信义共生，说明“这份古老智慧仍为现代商业提供丰厚的文化滋养”；继而以去年多家车企将供应商付款账期压缩至60天以内、今年中国光伏行业协会牵头编制《光伏行业成本核算模型通则》引导企业从价格内卷转向价值驱动、近两年国产品牌集体崛起三组实践，落到“从各自为战到共护生态，有赖于重新体认‘合则强，孤则弱’这一朴素道理”（第六至七段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论五</span><span class="text"><b>主体·企业家精神</b>：以“企业家是市场经济中最活跃的因子，也是商业生态最重要的建设者”领起，举华为一年投入研发超1900亿元推进高水平科技自立自强、曹德旺深耕汽车玻璃40余年带领福耀从乡镇小厂成长为全球龙头两例，落到“大力弘扬企业家精神，激励更多经营主体在创新创造中开辟发展新空间，共生共荣的商业生态必将根深叶茂”（第八段）。</span></div>
+        <div class="analysis-item"><span class="label">结论</span><span class="text"><b>总书记论述升华</b>：引习近平总书记“坚决破除地方保护、市场分割、‘内卷式’竞争，为全社会创业创新营造稳定公平透明、可预期的环境”的重要论述立魂，以“我国近2亿户经营主体活跃在超大规模市场之中”铺陈现实基础，用“兼顾效率与公平、活力与秩序，让这个大市场更加高效规范”回扣全篇，以“中国经济高质量发展将有更坚实的依托”作结（第九段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“两则新闻起笔—由事及理立论—五分论点递进（教训·溯源·制度·文化·主体）—总书记论述升华”的“总—分—总”结构</b>，五个分论点构成“现象—病根—制度—文化—主体”的完整治理闭环：先摆多败俱伤之痛，再挖零和博弈之根，继之以法治划边界、以文化育自觉、以企业家担主力；论证上<b>案例密集而类型各异</b>（企业个案＋行业现象＋法律条文＋历史典故＋人物事例），<b>引经据典自然</b>（《吕氏春秋》“竭泽而渔”、胡庆余堂“戒欺”、“合则强，孤则弱”），是申论“用热点新闻讲治理大道理”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>近来，两则商业新闻引发广泛关注。农夫山泉创始人钟睒睒做客央视财经《对话》栏目，批评电商平台是“板上钉钉的中间商”；胖东来创始人于东来宣布，运营<span class="highlight-green">24年</span>、<span class="highlight-green">年利润过亿</span>的许昌生活广场店，因个别房东借门店红火漫天抬租要价，将于年底彻底关闭。</p>
+
+      <p>跳出个案去看，两件事指向同一个命题：<span class="highlight-purple">市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态</span>。</p>
+
+      <div class="thesis">【总论点】跳出个案，两件事指向同一个命题——<span class="highlight-purple">市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态</span>。涵养<span class="highlight-blue">共生共荣的商业生态</span>，就要超越<span class="highlight-purple">“你赢我输”的零和思维</span>，以<span class="highlight-blue">法治经济</span>厘清经营主体能做什么、不能做什么，以<span class="highlight-blue">健康向上的商业文化</span>推动从“不敢乱为”转向“不愿短视”，以<span class="highlight-blue">企业家精神</span>激励创新创造，让不同主体<span class="highlight-purple">各安其位、各展所长、唇齿相依</span>，在<span class="highlight-purple">兼顾效率与公平、活力与秩序</span>中为中国经济高质量发展筑牢坚实依托。</div>
+
+      <div class="sub-thesis">【分论点一】教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤。</div>
+
+      <p>这样的教训，在许多领域反复上演。有的旅游景区一到旺季就“宰客”，口碑崩了、客源散了，曾经的“金字招牌”被自己砸碎。有的平台在社区团购领域搞“烧钱大战”，一些菜市场摊贩和街边果蔬店被迫歇业，消费者买到的商品质量也严重下降。新能源汽车行业一度陷入价格混战，整车利润率持续承压，企业“增收不增利”。无论是坐地起价的短视逐利，还是烧钱混战的<span class="highlight-blue">“内卷式”竞争</span>，<span class="highlight-purple">结果都是多败俱伤，造成社会资源的巨大浪费</span>。</p>
+
+      <div class="sub-thesis">【分论点二】溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”。</div>
+
+      <p>何以至此？市场参与者把商业关系理解成了<span class="highlight-purple">零和博弈</span>。<span class="highlight-gold">《吕氏春秋》有言，“竭泽而渔，岂不获得？而明年无鱼”</span>。一个良性的市场生态，是不同主体各安其位、各展所长的产物。平台与商户、经营者与物业方、产业链上游和下游，从来都是<span class="highlight-purple">唇齿相依</span>。<span class="highlight-gold">只有超越“你赢我输”的思维定式，才能避免“囚徒困境”，找到各方受益的更优解。</span></p>
+
+      <div class="sub-thesis">【分论点三】制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期。</div>
+
+      <p>市场经济本质上是<span class="highlight-blue">法治经济</span>。市场经济崇尚的竞争是<span class="highlight-blue">良性竞争</span>，其根基在于对规则的尊重、对合作的珍视、对长远利益的考量。<span class="highlight-blue">新修订的反不正当竞争法</span>明确禁止平台经营者强制或变相强制商家低于成本价销售商品；围绕落实<span class="highlight-blue">民营经济促进法</span>，有关部门完成<span class="highlight-blue">平等准入</span>等重点领域配套制度清单任务<span class="highlight-green">38项</span>……好的制度安排和政策举措，<span class="highlight-purple">厘清经营主体能做什么、不能做什么，为公平竞争和良性合作提供稳定预期</span>。</p>
+
+      <div class="sub-thesis">【分论点四】文化·从“不敢乱为”转向“不愿短视”——以商业文化滋养自觉，从各自为战走向共护生态。</div>
+
+      <p>让经营主体从<span class="highlight-gold">“不敢乱为”转向“不愿短视”</span>，更需涵养健康向上的商业文化。中国人崇尚<span class="highlight-purple">义利兼顾、取财有道</span>，商道智慧古已有之。陶朱公薄利济世，胡庆余堂悬<span class="highlight-gold">“戒欺”</span>牌匾昭示本心，晋商秉持<span class="highlight-gold">信义共生</span>、谋求长远基业……这份古老智慧仍为现代商业提供丰厚的文化滋养。</p>
+
+      <p>去年多家车企集体承诺将供应商付款账期压缩至<span class="highlight-green">60天以内</span>，以实际行动维护产业链持久繁荣。今年，<span class="highlight-blue">中国光伏行业协会</span>牵头编制《光伏行业成本核算模型通则》，引导企业从价格内卷转向<span class="highlight-blue">价值驱动</span>。近两年国产品牌的集体崛起也表明，消费者越来越愿意为品质和创新买单。<span class="highlight-purple">从各自为战到共护生态</span>，有赖于重新体认<span class="highlight-gold">“合则强，孤则弱”</span>这一朴素道理。</p>
+
+      <div class="sub-thesis">【分论点五】主体·企业家是商业生态最重要的建设者——大力弘扬企业家精神，生态方能根深叶茂。</div>
+
+      <p>企业家是市场经济中最活跃的因子，也是商业生态最重要的建设者。从自研芯片到推出鸿蒙系统再到发布“韬定律”，华为一年投入研发超<span class="highlight-green">1900亿元</span>，坚定不移推进<span class="highlight-blue">高水平科技自立自强</span>。曹德旺深耕汽车玻璃制造<span class="highlight-green">40余年</span>，带领福耀从乡镇小厂成长为全球龙头企业，市场份额全球第一。大力弘扬<span class="highlight-blue">企业家精神</span>，激励更多经营主体在创新创造中开辟发展新空间，共生共荣的商业生态必将<span class="highlight-gold">根深叶茂</span>。</p>
+
+      <p><span class="highlight-gold">习近平总书记强调：“坚决破除地方保护、市场分割、‘内卷式’竞争，为全社会创业创新营造稳定公平透明、可预期的环境。”</span>当前，我国<span class="highlight-green">近2亿户</span>经营主体活跃在<span class="highlight-blue">超大规模市场</span>之中。<span class="highlight-purple">兼顾效率与公平、活力与秩序</span>，让这个大市场更加高效规范，<span class="highlight-blue">中国经济高质量发展</span>将有更坚实的依托。</p>
+
+      <p class="byline">（人民日报2026年9月1日 第09版 · 微观）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">破题·新闻起笔</span>
+      <p><b>“近来，两则商业新闻引发广泛关注。”</b>——用两则同期热点新闻并列开篇，一「商家怨平台」一「商家被房东」，瞬间把抽象的“生态失衡”具象化，是申论“以热点切入”开头的范式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·由事及理</span>
+      <p><b>“跳出个案去看，两件事指向同一个命题……”</b>——“跳出个案去看”是从现象到本质的万能过渡，适用于一切“多案例归因”类开头。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总论点</span>
+      <p><b>“市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。”</b>——“不是某一方”“整个”两处限定，一句话讲清生态的系统性，写“营商环境/市场秩序/协同治理”可直接作总论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·多败俱伤</span>
+      <p><b>“无论是坐地起价的短视逐利，还是烧钱混战的‘内卷式’竞争，结果都是多败俱伤，造成社会资源的巨大浪费。”</b>——“无论……还是……”归纳两类乱象，“多败俱伤”四字定性，是写“综合整治内卷式竞争”的核心表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">典故·竭泽而渔</span>
+      <p><b>“《吕氏春秋》有言，‘竭泽而渔，岂不获得？而明年无鱼’。”</b>——以古语点破短期逐利的不可持续，比直说“要有长远眼光”更有分量，写“可持续发展/长远利益”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·良性生态</span>
+      <p><b>“一个良性的市场生态，是不同主体各安其位、各展所长的产物。”</b>——“各安其位、各展所长”八字定义良性生态，写“分工协作/产业链协同/共生共赢”是现成判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">辩证·唇齿相依</span>
+      <p><b>“平台与商户、经营者与物业方、产业链上游和下游，从来都是唇齿相依。”</b>——三组关系并列＋“唇齿相依”定性，把抽象的生态写成可感的关系网，写“利益相关方/共同体”可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·超越零和</span>
+      <p><b>“只有超越‘你赢我输’的思维定式，才能避免‘囚徒困境’，找到各方受益的更优解。”</b>——零和博弈与囚徒困境两个概念并用，“只有……才能……”句式把破与立一次说清，是全文最值得背诵的方法句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·法治经济</span>
+      <p><b>“市场经济本质上是法治经济。”</b>——一句定性，是全文制度段的总纲，写“法治化营商环境/依法治理市场”必备。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·稳定预期</span>
+      <p><b>“好的制度安排和政策举措，厘清经营主体能做什么、不能做什么，为公平竞争和良性合作提供稳定预期。”</b>——“能做什么、不能做什么”是权力（权利）边界最朴素准确的表述，“稳定预期”是营商环境的核心关键词，写“制度供给/预期管理”可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·不敢与不愿</span>
+      <p><b>“让经营主体从‘不敢乱为’转向‘不愿短视’，更需涵养健康向上的商业文化。”</b>——“不敢”靠外部约束、“不愿”靠内生自觉，一字之差讲清法治与德治的分工，是写“法治与德治相结合”的金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">典故·商道智慧</span>
+      <p><b>“陶朱公薄利济世，胡庆余堂悬‘戒欺’牌匾昭示本心，晋商秉持信义共生、谋求长远基业……”</b>——三个典故一气呵成，写“诚信建设/义利观/企业家精神”是高密度素材段。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·合则强孤则弱</span>
+      <p><b>“从各自为战到共护生态，有赖于重新体认‘合则强，孤则弱’这一朴素道理。”</b>——“各自为战”与“共护生态”对照，古语收束，是治理类作文极佳的段尾句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·企业家精神</span>
+      <p><b>“企业家是市场经济中最活跃的因子，也是商业生态最重要的建设者。”</b>——“最活跃的因子”“最重要的建设者”两个定位，写“弘扬企业家精神/经营主体作用”可直接作分论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">结尾·高质量发展</span>
+      <p><b>“兼顾效率与公平、活力与秩序，让这个大市场更加高效规范，中国经济高质量发展将有更坚实的依托。”</b>——“效率与公平”“活力与秩序”两组对举，是市场治理类文章的标准收束。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“两则新闻起笔”三步法：先以“近来，两则商业新闻引发广泛关注”总起，再并列两个反差强烈却指向一致的案例（商家怨平台中间商、老店被房东抬租逼停），最后用“跳出个案去看，两件事指向同一个命题”一句跃升到普遍规律。热点切入、归因明确、立意拔高，适用于一切“市场秩序/营商环境/协同治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“现象—病根—制度—文化—主体”五维骨架搭建分论点：①摆现象写“多败俱伤”之痛；②挖病根写“零和博弈”之困；③立制度写“法治经济”之基；④育文化写“从不敢到不愿”之变；⑤强主体写“企业家精神”之力。此法可迁移到平台经济治理、产业链协同、社区商业、文旅市场秩序等一切“多元主体共治”话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把五维改写为可操作对策：强化反不正当竞争执法，禁止强制或变相强制低于成本价销售，遏制“内卷式”竞争（制度）；落实民营经济促进法及配套制度清单，推进平等准入，稳定经营主体预期（制度）；支持行业协会制定成本核算等行业标准，引导企业从价格内卷转向价值驱动（行业）；弘扬义利兼顾、取财有道的商业文化，推动从“不敢乱为”转向“不愿短视”（文化）；大力弘扬企业家精神，激励经营主体在创新创造中开辟发展新空间（主体）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“零和博弈 vs 各方受益”的对照写法：先以设问“何以至此？”引出错误认知（“把商业关系理解成了零和博弈”），再引古语揭示其不可持续（“竭泽而渔，岂不获得？而明年无鱼”），接着正面立论（“各安其位、各展所长”“唇齿相依”），最后用“只有超越……才能避免……”落到正确路径。四步推进，比直接讲“要合作共赢”更有说服力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>先用总书记重要论述立魂（“坚决破除地方保护、市场分割、‘内卷式’竞争”），再用一组规模数据铺陈现实基础（“近2亿户经营主体活跃在超大规模市场之中”），然后用两组对举回扣全篇（“兼顾效率与公平、活力与秩序”），最后落到更高目标（“中国经济高质量发展将有更坚实的依托”）。这种“论述立魂—数据铺底—对举回扣—目标收篇”的四步结尾，适合一切经济治理类议论文。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「跳出个案，两件事指向同一个命题——市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。涵养共生共荣的商业生态，就要超越“你赢我输”的零和思维，以法治经济厘清经营主体能做什么、不能做什么，以健康向上的商业文化推动从“不敢乱为”转向“不愿短视”，以企业家精神激励创新创造，让不同主体各安其位、各展所长、唇齿相依，在兼顾效率与公平、活力与秩序中为中国经济高质量发展筑牢坚实依托。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对「跳出个案，两件事指向同一个命题——市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。涵养共生共荣的商业生态，就要超越“你赢我输”的零和思维，以法治经济厘清经营主体能做什么、不能做什么，以健康向上的商业文化推动从“不敢乱为”转向“不愿短视”，以企业家精神激励创新创造，让不同主体各安其位、各展所长、唇齿相依，在兼顾效率与公平、活力与秩序中为中国经济高质量发展筑牢坚实依托。」这一重要论断，应从三方面理解。首先，其内涵在于教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤。其次，重要意义在于溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”。（“近来，两则商业新闻引发广泛关注。”）最后，落实路径在于制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期。（“跳出个案去看，两件事指向同一个命题……”）唯有统筹兼顾、系统施策，方能行稳致远。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「涵养共生共荣的商业生态」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">对此，建议从三方面着力：一是教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤。“近来，两则商业新闻引发广泛关注。”二是溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”。三是制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期。通过系统施策、久久为功，推动各项工作落地见效。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「涵养共生共荣的商业生态」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">时代之问，呼唤破题之策。「跳出个案，两件事指向同一个命题——市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。涵养共生共荣的商业生态，就要超越“你赢我输”的零和思维，以法治经济厘清经营主体能做什么、不能做什么，以健康向上的商业文化推动从“不敢乱为”转向“不愿短视”，以企业家精神激励创新创造，让不同主体各安其位、各展所长、唇齿相依，在兼顾效率与公平、活力与秩序中为中国经济高质量发展筑牢坚实依托。」——这一论断深刻揭示了涵养共生共荣的商业生态的内在逻辑。做好涵养共生共荣的商业生态，必须在教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤上夯基固本，在溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”上提质增效，在制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期上久久为功。<br><br>以教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤。方向对了，路再远也能抵达。“近来，两则商业新闻引发广泛关注。”唯有把教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤摆在突出位置，才能为涵养共生共荣的商业生态注入源源不断的动力。<br><br>以溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”。方法对了，事再难也能办成。“跳出个案去看，两件事指向同一个命题……”要把溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”转化为可知可感可及的实效，让人民群众有更多获得感。<br><br>以制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期。行百里者半九十。教训·零和博弈没有赢家——无论是坐地起价的短视逐利，还是烧钱混战的“内卷式”竞争，结果都是多败俱伤与溯源·何以至此——市场参与者把商业关系理解成了零和博弈，只有超越“你赢我输”，才能避免“囚徒困境”的成效，最终要靠制度·市场经济本质上是法治经济——好的制度安排厘清能与不能，为公平竞争和良性合作提供稳定预期来巩固和拓展。“市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。涵养共生共荣的商业生态是一场接力跑，每一棒都要跑出好成绩。让我们以「跳出个案，两件事指向同一个命题——市场经济中，利益关系一旦失衡，吃亏的绝不是某一方，最终受损的是整个商业生态。涵养共生共荣的商业生态，就要超越“你赢我输”的零和思维，以法治经济厘清经营主体能做什么、不能做什么，以健康向上的商业文化推动从“不敢乱为”转向“不愿短视”，以企业家精神激励创新创造，让不同主体各安其位、各展所长、唇齿相依，在兼顾效率与公平、活力与秩序中为中国经济高质量发展筑牢坚实依托。」为指引，干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-05</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260905.html">✏️ 原文自测</a>
+</body>
+</html>
