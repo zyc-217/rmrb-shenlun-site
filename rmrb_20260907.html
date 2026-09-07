@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 在守正创新中把老字号传承发展好</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>在守正创新中把老字号传承发展好</h1>
+    <div class="meta">人民日报·专题深思 | 老字号·守正创新·文化传承发展·品牌建设 | 2026年9月7日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：在守正创新中把老字号的“金字招牌”擦亮／激发市场潜力深挖经济价值／激发公益潜力深挖社会价值／激发文化潜力深挖文化价值</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">老字号传承发展</span>
+      <span class="tag-item">守正创新</span>
+      <span class="tag-item">文化传承发展</span>
+      <span class="tag-item">中华优秀传统文化创造性转化创新性发展</span>
+      <span class="tag-item">国货潮牌·品牌建设</span>
+      <span class="tag-item">消费扩容升级</span>
+      <span class="tag-item">工匠精神</span>
+      <span class="tag-item">诚信经营·重信守诺</span>
+      <span class="tag-item">数字经济赋能传统产业</span>
+      <span class="tag-item">非物质文化遗产保护</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">扩大内需战略</span>
+      <span class="tag-item">义利并举·社会责任</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“守正创新”“老字号传承发展”“推动中华优秀传统文化创造性转化、创新性发展”“坚定文化自信”等主题；本文<b>“总书记讲话立魂—规划纲要定向—特点·成效·问题铺陈—经济·社会·文化三维价值分论—逐维对策收束”</b>的论证链，是写“传统与现代／文化传承与创新发展”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>建立老字号创新扶持机制，支持产品创新、营销创新、业态创新，推动数字化转型、智能化升级／推动老字号进社区，与社区党委、居民群众联合互动做大公益市集，更好践行社会责任／加强老字号与历史文化资源联动，将非遗技艺、传统节庆等元素融入产品设计和消费场景／支持建设老字号博物馆，把无形的文化记忆转化为有形的文化载体</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“守正”与“创新”、“保留住真正的内涵”与“提升各方面的服务”、“保持原有特色”与“融入创新设计元素”、“无形的文化记忆”与“有形的文化载体”等多组辩证，是写<b>继承与发展、内涵与形式、老品牌与新业态类作文</b>的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推动老字号守正创新、做精做强的实施意见”“关于支持老字号传承发展的倡议书”素材；文中“<b>推动老字号、国货潮牌做精做强</b>”“<b>在守正创新中把老字号的‘金字招牌’擦亮</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总书记讲话＋规划纲要定调—特点成效问题铺陈—经济·社会·文化三维价值分论—逐维对策收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>总书记讲话＋规划纲要“双引”定调</b>：先以“老字号是我国工商业长期发展过程中形成的民族品牌，蕴含着巨大的经济价值、社会价值、文化价值”一句破题定性，随即引习近平总书记在北京考察时的重要讲话立魂，再以“十五五”规划纲要“推动老字号、国货潮牌做精做强”定向，两段之内完成“是什么—为什么—怎么办”的总领（第一段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>特点—成效—问题—总论点四步推进</b>：先以七个四字短语铺陈老字号的鲜明特点，再用《中华老字号年度发展报告（2025）》数据佐证发展活力增强，随即笔锋一转点出款式缺少新意、功能设计不足、营销手段滞后等现实短板，最终以“针对这些问题”引出总论点——“要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的‘金字招牌’擦亮”（第二段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>市场潜力·经济价值</b>：以“产品创新、营销创新和业态创新”三管齐下为纲，落到开拓线上渠道、与大数据云计算结合、推动数字化转型智能化升级、发展“老字号+”模式催生新产业新业态新模式，回答“老字号怎样赚钱、怎样助力产业升级和消费扩容”（第三段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>公益潜力·社会价值</b>：由“根植于民间、服务于大众”起笔，用“回顾过去／着眼当下”的时间对照，点明匠心精工、诚信经营、实干兴邦、心系家国是老字号经久不衰的“密码”，再落到秉承工匠精神、坚持义利并举、引导科学理性绿色节俭的消费方式、推动老字号进社区（第四段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>文化潜力·文化价值</b>：以“主要体现在三个方面”总起，用“其一／其二／其三”分述承载中华优秀传统文化、承载城市文化与民俗文化、以童叟无欺至诚至信的企业文化滋养现代商业文明，再落到与历史文化资源联动、融入创新设计元素走向世界、建设老字号博物馆（第五段）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>硬数据＋权威引述＋典型场景</b>：全国<span class="highlight-green">1450个</span>中华老字号、品牌平均存续超过<span class="highlight-green">145年</span>、百年老店占比超<span class="highlight-green">六成</span>、拥有各类非遗<span class="highlight-green">1200多项</span>，四组数据构成“历史厚度”的事实支撑；总书记讲话与“十五五”规划纲要构成“政治高度”；“老字号+”“公益市集”“老字号博物馆”构成“实践落点”，三层论据互相咬合。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“价值内涵总起—三维价值分论（经济／社会／文化）—每维‘意义＋路径’闭环”的“总—分—总”结构</b>：三个分论点句“激发……潜力，深挖……价值”句式完全对仗，形成极强的节奏感与记忆点；每一分论点段落内部都遵循<b>“判断句亮观点—阐释为什么—给出怎么做”</b>三段式；语言上<b>“回顾过去／着眼当下”的时间对照</b>、<b>“无形的文化记忆转化为有形的文化载体”的虚实对举</b>，是申论“用老话题讲新发展理念”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>老字号是我国工商业长期发展过程中形成的<span class="highlight-blue">民族品牌</span>，蕴含着巨大的<span class="highlight-purple">经济价值、社会价值、文化价值</span>。</p>
+
+      <p>今年年初，习近平总书记在北京考察时指出：<span class="highlight-gold">“现在一些老字号传承发展也面临挑战，怎么激发活力？这并不是简单地改头换面，要保留住真正的内涵，同时提升各方面的服务。”</span></p>
+
+      <p><span class="highlight-blue">“十五五”规划纲要</span>提出<span class="highlight-blue">“推动老字号、国货潮牌做精做强”</span>。这为我们在<span class="highlight-blue">守正创新</span>中把老字号传承发展好指明了方向、提供了遵循。</p>
+
+      <p>老字号具有<span class="highlight-gold">历史底蕴深厚、文化特色鲜明、工艺技术独特、设计制造精良、产品服务优质、营销渠道高效、社会广泛认同</span>等鲜明特点。近年来，在一系列政策推动下，我国老字号发展活力不断增强。</p>
+
+      <p>根据《中华老字号年度发展报告（2025）》，全国<span class="highlight-green">1450个</span>中华老字号企业总体发展良好，品牌平均存续时间超过<span class="highlight-green">145年</span>，百年老店占比超过<span class="highlight-green">六成</span>，拥有各类非遗<span class="highlight-green">1200多项</span>。</p>
+
+      <p>与此同时，随着市场发展，产品供给越来越丰富，消费者需求日趋多样化、个性化，一些老字号产品因款式缺少新意、功能设计不足等导致美誉度下降，也有的因市场营销手段滞后造成客户流失。针对这些问题，要<span class="highlight-purple">激发老字号潜力、深挖老字号价值</span>，在守正创新中把老字号的<span class="highlight-gold">“金字招牌”</span>擦亮。</p>
+
+      <div class="thesis">【总论点】要激发老字号潜力、深挖老字号价值，在<span class="highlight-blue">守正创新</span>中把老字号的<span class="highlight-gold">“金字招牌”</span>擦亮。守正，是<span class="highlight-purple">保留住真正的内涵</span>；创新，是<span class="highlight-purple">同时提升各方面的服务</span>——唯其如此，老字号才能在<span class="highlight-blue">传承传统技艺</span>与<span class="highlight-blue">数字化智能化升级</span>之间找到新坐标，让民族品牌在新时代焕发新光彩。</div>
+
+      <div class="sub-thesis">【分论点一】激发老字号的市场潜力，深挖经济价值——以产品、营销、业态创新释放老品牌的新动能。</div>
+
+      <p>通过<span class="highlight-blue">产品创新、营销创新和业态创新</span>激发老字号的市场潜力，不仅可以给企业带来可观的经济回报和无形资产增值，而且能助力<span class="highlight-blue">产业升级和消费扩容</span>。</p>
+
+      <p>为此，要推动老字号顺应市场趋势、不断推陈出新，打造符合市场需求的新产品、新服务。</p>
+
+      <p>推动老字号品牌开拓线上渠道、创新营销方式，将传统经营方式与<span class="highlight-blue">大数据、云计算</span>等现代信息技术相结合。</p>
+
+      <p>引导老字号利用新技术推动<span class="highlight-blue">数字化转型、智能化升级</span>，在<span class="highlight-purple">传承传统技艺的基础上加强技术研发与产品创新</span>。</p>
+
+      <p>还可通过创新发展“老字号+”模式，与科技产业融合推动生产智能化、供应链数字化等，催生出<span class="highlight-blue">新产业、新业态、新模式</span>。</p>
+
+      <div class="sub-thesis">【分论点二】激发老字号的公益潜力，深挖社会价值——以义利并举、重信守诺厚植核心竞争力。</div>
+
+      <p>老字号根植于民间，服务于大众，其社会价值体现在对社会生活的深度参与和对社会风尚的积极引导上。</p>
+
+      <p>回顾过去，老字号的开创者和经营者们在服务社会中磨砺技艺、积累口碑。</p>
+
+      <p>着眼当下，老字号蕴含的<span class="highlight-gold">匠心精工、诚信经营、实干兴邦、心系家国</span>等精神内涵，已成为其核心竞争力的重要组成部分，也是老字号经久不衰的<span class="highlight-gold">“密码”</span>。</p>
+
+      <p>深挖老字号的社会价值，要鼓励老字号秉承<span class="highlight-gold">精益求精的工匠精神</span>，坚持<span class="highlight-blue">义利并举</span>，以更高的追求、更严的标准生产产品、提升服务，以深厚的历史文化内涵引导消费者树立<span class="highlight-blue">科学理性、绿色节俭、积极健康</span>的消费方式，涵养<span class="highlight-gold">重信守诺</span>的市场风气。</p>
+
+      <p>也可推动老字号进社区，通过探索与社区党委、居民群众联合互动做大公益市集等方式，更好践行社会责任、服务群众生活。</p>
+
+      <div class="sub-thesis">【分论点三】激发老字号的文化潜力，深挖文化价值——以创造性转化、创新性发展坚定文化自信。</div>
+
+      <p>老字号的文化价值主要体现在三个方面：其一，老字号承载着中华优秀传统文化，致力于把中华优秀传统商业伦理道德和处世哲学<span class="highlight-blue">创造性转化、创新性发展</span>为现代企业的经营之道。</p>
+
+      <p>其二，老字号承载着长久历史积淀下来的城市文化和民俗文化，其传统工艺和产品特色、店铺建筑风格等，都是城市文化和民俗文化的重要内容。</p>
+
+      <p>其三，老字号<span class="highlight-gold">童叟无欺、至诚至信</span>的企业文化，对于现代商业文化发展和社会主义先进文化发展具有积极作用。</p>
+
+      <p>我国众多老字号都拥有<span class="highlight-blue">非物质文化遗产</span>，蕴含着增强<span class="highlight-blue">文化自信</span>的重要源泉。</p>
+
+      <p>深挖老字号的文化价值，需加强老字号与历史文化资源联动，将非遗技艺、传统节庆等元素融入产品设计和消费场景，促进中华优秀传统文化融入现代生活。</p>
+
+      <p>推动老字号<span class="highlight-purple">在保持原有特色的同时融入创新设计元素</span>，让更多承载中华优秀传统文化、现代化建设成果的老字号走向世界。</p>
+
+      <p>还可通过建设老字号博物馆等，将老字号<span class="highlight-purple">无形的文化记忆转化为有形的文化载体</span>，让人们直观感受中华商业文明的博大精深。</p>
+
+      <p class="byline">（作者为北京市习近平新时代中国特色社会主义思想研究中心研究员）</p>
+
+      <p class="byline">（人民日报2026年9月7日 第09版 · 专题深思）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总论点</span>
+      <p><b>“要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的‘金字招牌’擦亮。”</b>——“潜力”与“价值”对举、“守正创新”点题，写“老字号／民族品牌／传统产业转型”可直接作总论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语</span>
+      <p><b>“这并不是简单地改头换面，要保留住真正的内涵，同时提升各方面的服务。”</b>——一语道破“守正”与“创新”的边界，写“传承与发展／形式与内容”是最高权威的引述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·守正创新</span>
+      <p><b>“推动老字号在保持原有特色的同时融入创新设计元素。”</b>——“保持”与“融入”并举，把辩证法写成可操作的路径，写“传统工艺振兴／文创开发”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·规划纲要</span>
+      <p><b>“推动老字号、国货潮牌做精做强。”</b>——“十五五”规划纲要表述，八字定调品牌建设，写“国货崛起／消费升级”是必备政策语汇。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·老字号特点</span>
+      <p><b>“历史底蕴深厚、文化特色鲜明、工艺技术独特、设计制造精良、产品服务优质、营销渠道高效、社会广泛认同。”</b>——七个四字短语一气呵成，写“老字号是什么”是现成的高密度定义句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·精神内涵</span>
+      <p><b>“匠心精工、诚信经营、实干兴邦、心系家国。”</b>——四个四字短语，从技艺到品格到家国情怀层层抬升，写“企业家精神／商业文明”极佳。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·工匠精神</span>
+      <p><b>“鼓励老字号秉承精益求精的工匠精神，坚持义利并举。”</b>——“精益求精”与“义利并举”合一，写“质量强国／诚信建设”可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·密码</span>
+      <p><b>“匠心精工、诚信经营、实干兴邦、心系家国等精神内涵……是老字号经久不衰的‘密码’。”</b>——以“密码”作喻，把软实力说成硬道理，写“核心竞争力／品牌长青”是亮点句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·企业文化</span>
+      <p><b>“童叟无欺、至诚至信。”</b>——八个字写尽中华传统商业伦理，写“诚信经营／营商环境／市场风气”是极简而有力的引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文化载体</span>
+      <p><b>“将老字号无形的文化记忆转化为有形的文化载体。”</b>——“无形”与“有形”的虚实对举，写“文化遗产活化／博物馆建设”可直接搬用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·价值转化</span>
+      <p><b>“不仅可以给企业带来可观的经济回报和无形资产增值，而且能助力产业升级和消费扩容。”</b>——以“不仅……而且……”递进，把企业收益上升到产业与消费大局，写“扩大内需／供给侧改革”是标准论证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·消费方式</span>
+      <p><b>“引导消费者树立科学理性、绿色节俭、积极健康的消费方式。”</b>——三组定语定义“好消费”，写“绿色消费／健康中国／文明风尚”可直接化用。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“总书记讲话＋规划纲要”的双引开头法：先以一句“老字号是……民族品牌，蕴含着巨大的经济价值、社会价值、文化价值”定性破题，再引总书记考察讲话立魂、引“十五五”规划纲要定向，两段之内完成“是什么—为什么—怎么办”。适用于一切“传统产业振兴／文化传承发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三维价值”骨架：①经济价值——以产品、营销、业态创新释放市场潜力；②社会价值——以义利并举、重信守诺厚植核心竞争力；③文化价值——以创造性转化、创新性发展坚定文化自信。三个分论点句“激发……潜力，深挖……价值”句式完全对仗，此法可迁移到“非遗活化／乡村振兴／城市更新”等一切“老资源·新价值”话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“守正创新”拆成可操作举措：设立老字号创新扶持资金，支持产品创新、营销创新、业态创新，推动数字化转型、智能化升级（创新）；建立老字号技艺档案与非遗传承人带徒制度，保留住真正的内涵（守正）；推动老字号进社区，联合社区党委、居民群众做优公益市集（惠民）；支持建设老字号博物馆，把无形的文化记忆转化为有形的文化载体（传薪）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“回顾过去／着眼当下”的时间对照与“保持原有特色／融入创新设计元素”的辩证统一：先承认“款式缺少新意、功能设计不足”等短板，再以“针对性”引出“守正创新”的解法，最后用“在传承传统技艺的基础上加强技术研发与产品创新”把两端缝合。比直说“既要传承又要创新”更有说服力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“老字号”通向“文化自信”：先用“我国众多老字号都拥有非物质文化遗产，蕴含着增强文化自信的重要源泉”完成价值抬升，再用“让更多承载中华优秀传统文化、现代化建设成果的老字号走向世界”打开国际视野，最后以“让人们直观感受中华商业文明的博大精深”收篇。这种“由物及文、由企业及文明”的结尾适合一切“品牌建设／文化输出”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的“金字招牌”擦亮。守正，是保留住真正的内涵；创新，是同时提升各方面的服务——唯其如此，老字号才能在传承传统技艺与数字化智能化升级之间找到新坐标，让民族品牌在新时代焕发新光彩。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是激发老字号的市场潜力，深挖经济价值——以产品、营销、业态创新释放老品牌的新动能。<br>二是激发老字号的公益潜力，深挖社会价值——以义利并举、重信守诺厚植核心竞争力。<br>三是激发老字号的文化潜力，深挖文化价值——以创造性转化、创新性发展坚定文化自信。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的‘金字招牌’擦亮。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「在守正创新中把老字号传承发展好」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是建立老字号创新扶持机制，支持产品创新、营销创新、业态创新，推动数字化转型、智能化升级。<br>二是推动老字号进社区，与社区党委、居民群众联合互动做大公益市集，更好践行社会责任。<br>三是加强老字号与历史文化资源联动，将非遗技艺、传统节庆等元素融入产品设计和消费场景。<br>四是支持建设老字号博物馆，把无形的文化记忆转化为有形的文化载体，层次分明、可迁移性强。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的‘金字招牌’擦亮。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于在守正创新中把老字号传承发展好的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">关于在守正创新中把老字号传承发展好的倡议书<br><br>各相关单位（或广大市民朋友）：<br><br>为扎实推进在守正创新中把老字号传承发展好，现就有关事项告知如下：<br>一、激发老字号的市场潜力，深挖经济价值——以产品、营销、业态创新释放老品牌的新动能。<br>二、激发老字号的公益潜力，深挖社会价值——以义利并举、重信守诺厚植核心竞争力。<br>三、激发老字号的文化潜力，深挖文化价值——以创造性转化、创新性发展坚定文化自信。<br>可迁移金句：“要激发老字号潜力、深挖老字号价值，在守正创新中把老字号的‘金字招牌’擦亮。”<br><br>请各单位高度重视、抓好落实，共同推动工作取得实效。<br><br>XX单位<br>2026年X月X日</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-07</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260907.html">✏️ 原文自测</a>
+</body>
+</html>
