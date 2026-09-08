@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 把书读薄，把自己读厚</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>把书读薄，把自己读厚</h1>
+    <div class="meta">人民日报·人民时评 | 全民阅读·书香社会·经典阅读·终身学习 | 2026年9月8日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：把书读薄不是在标签化拆解中浅尝辄止／只有把书读厚才能把书读薄／经典阅读最终指向“读自己”、把修养培厚</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全民阅读</span>
+      <span class="tag-item">书香社会</span>
+      <span class="tag-item">经典阅读</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">学习型社会</span>
+      <span class="tag-item">精神生活共同富裕</span>
+      <span class="tag-item">思辨能力培养</span>
+      <span class="tag-item">批判性思维</span>
+      <span class="tag-item">中华优秀传统文化</span>
+      <span class="tag-item">知识服务</span>
+      <span class="tag-item">短视频与深度阅读</span>
+      <span class="tag-item">终身学习</span>
+      <span class="tag-item">自我修养</span>
+      <span class="tag-item">主流价值引领</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“全民阅读”“书香社会”“终身学习”“文化自信”“自我修养”等主题；本文<b>“现象引入—破立辩证—升华读己”</b>的论证链，是写“阅读／学习／修身”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>开展形式多样阅读活动、建设书香社会，搭建全民阅读平台／倡导深阅读，引导短视频博主对接经典时保留完整逻辑链条／将经典阅读纳入家庭与学校教育，以读书修身、以经典润心／抵制浅阅读误区，涵养思辨能力与主动探索精神</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>只有把书读厚，才能把书读薄</b>”“<b>从‘薄’到‘厚’、再从‘厚’到‘薄’</b>”“不应成为知识的被动接受者，而应成为主动探索的思考者”等多组辩证，是写<b>学习与思考／传承与创新／输入与输出</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于深入开展全民阅读、建设书香社会的倡议书”“关于抵制浅阅读误区、倡导深阅读的实施意见”等素材；文中“<b>以读书修身、以经典润心</b>”“<b>在潜心研读中涵养性情、观照自身</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象引入＋设问破题—破立辩证—升华读己）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>现象铺陈＋设问破题</b>：先以“我与地坛”北京书市、“鲁迅文学周”、南国书香节等各地阅读活动起笔，再以“如今获取知识那么方便，还有必要‘啃’大部头吗”的设问引出争论，两段之内完成“书香热潮 vs 浅阅读便利”的张力铺设（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">立论·破误</span><span class="text"><b>先破“标签化拆解＝把书读薄”的误区</b>：以“5分钟读懂《牡丹亭》”等压缩式概括为例，指出其“砍断经典叙事的完整逻辑链条”、只是“经过他人过滤的二手信息”，再以王阳明“致良知”说明短视频无法给出系统解答，论证“浅尝辄止并非真正读薄”（第五至十一段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>辨正：把书读薄不是标签化拆解，而是涵泳咀嚼理解意图</b>：以卡尔维诺《为什么读经典》“越是道听途说以为懂了，实际读才觉独特新颖”点破“读过≠读懂”的误区（第十二至十三段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>立论：只有把书读厚，才能把书读薄</b>：以文学经典“娓娓道来、人性矛盾复杂”的魅力，说明标签化结论会滋生思维惰性、钝化思辨能力，唯有回归经典本身、与作者深层对话，方能理解深层次意义（第十四至十七段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>升华：把书读薄更要“读自己”</b>：由“理解经典”推进到“内化智慧”，再以“经典阅读的最终指向是‘读自己’”收束，落到“以经典观照自身、把自己的修养培厚”，把阅读从向外求知识升华为向内修自身（第十八至二十四段）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>权威引述＋典型例证＋对比论证</b>：卡尔维诺《为什么读经典》构成“理论高度”；王阳明“致良知·从百死千难中得来”构成“圣贤印证”；短视频浅阅读与原著深阅读的<b>对比</b>，把抽象的“读薄读厚”讲成可感的阅读方法论，三层论据互相咬合。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象引入—破立辩证—升华读己”的递进结构</b>：先摆现象与设问，再破误区、立正解，最后升华为“修自身”；<b>“只有把书读厚，才能把书读薄”“从‘薄’到‘厚’、再从‘厚’到‘薄’”</b>的辩证金句贯穿；结尾以“不应成为知识的被动接受者，而应成为主动探索的思考者”完成主体觉醒，是申论“小切口讲大道理”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据（本篇无数据）</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>收获知识和信息固然是阅读的目的之一，但更可贵的，是在<span class="highlight-blue">潜心研读</span>的过程里<span class="highlight-purple">涵养性情，并学会用前人的智慧观照自身、解决困惑</span>。</p>
+
+      <p>“我与地坛”北京书市持续预热，“2026中国文学盛典·鲁迅文学周”系列活动在上海举办，2026南国书香节带来一场场书香盛宴……近段时间，各地阅读活动不断，浓厚的氛围吸引越来越多人走近<span class="highlight-blue">经典</span>、阅读<span class="highlight-blue">经典</span>。</p>
+
+      <p>也有人心生疑问，如今获取知识那么方便，还有必要“啃”大部头作品吗？</p>
+
+      <p>就拿短视频来说，它精准适配人们碎片化的时间，不少短视频博主还会以标签化的方式拆解经典，提炼金句并对接现实场景，降低了阅读门槛，拉近了人们与<span class="highlight-blue">经典</span>的距离。</p>
+
+      <p>表面看，这确实起到了把书读薄的效果。问题在于，它能取代对经典原著的阅读吗？书真的读薄了吗？</p>
+
+      <div class="thesis">【总论点】把书读薄，从来不是把经典压缩成单一的标签、几句金句，而是<span class="highlight-purple">在涵泳咀嚼中理解作者意图、提升思辨能力</span>，最终<span class="highlight-gold">以经典观照自身、把自己的修养培厚</span>——唯有把书读厚，才能真正把书读薄。</div>
+
+      <div class="sub-thesis">【分论点一】把书读薄不是简单标签化拆解，而是在涵泳咀嚼中理解作者意图——浅尝辄止的短视频式阅读只是二手信息，并非真正意义上的读薄。</div>
+
+      <p>其实，把书读薄并不是简单地把经典拆解成单一的标签、浓缩为几句金句，而是在<span class="highlight-blue">涵泳咀嚼</span>中，理解作者的意图。</p>
+
+      <p>“5分钟读懂《牡丹亭》”“1分钟提炼儒家金句”“30秒让你重新认识贾宝玉”……类似的概括，是信息高度压缩的产物，<span class="highlight-purple">会砍断经典叙事的完整逻辑链条</span>，我们从中收获的，实际上只是经过他人过滤的二手信息。</p>
+
+      <p>这种<span class="highlight-purple">浅尝辄止的阅读方式，并非真正意义上的把书读薄</span>。</p>
+
+      <p>就像刷短视频，或许能让一个人记住，王阳明心学的主旨是<span class="highlight-gold">“致良知”</span>。</p>
+
+      <p>但倘若追问“良知”的真正内涵，王阳明为何说这一学说是“从百死千难中得来”，我们又该如何结合自身境遇践行<span class="highlight-gold">“致良知”</span>，短视频往往无法给出深入且系统的解答。</p>
+
+      <p>标签化的概括、脱离语境的解读虽通俗易懂，却难免单薄片面，唯有<span class="highlight-blue">回归经典本身</span>，才能真正领会作者的深意。</p>
+
+      <div class="sub-thesis">【分论点二】只有把书读厚，才能把书读薄——在完整叙事与深层对话中领会经典深层次意义，钝化思维惰性的滋生。</div>
+
+      <p>只有把书读厚，才能把书读薄。</p>
+
+      <p>作家卡尔维诺在《为什么读经典》中写道：<span class="highlight-gold">“经典作品是这样一些书，我们越是道听途说，以为我们懂了，当我们实际读它们，我们就越是觉得它们独特、意想不到和新颖。”</span>这番话恰恰点明了人们对待经典作品的一个误区：读过了就以为读懂了，了解了就认为理解了。</p>
+
+      <p>以<span class="highlight-blue">文学经典</span>为例，其魅力往往在于娓娓道来的从容铺陈，人物形象在完整的叙事中自然展开，生活的本真面貌得以细腻还原，读者也能在阅读、思考中探寻真善美。</p>
+
+      <p>人性的矛盾、复杂和幽微，世界的多重面向，绝非一两个标签、几句话就能简单概括。</p>
+
+      <p>当读者习惯接受短平快的简单结论，便容易滋生<span class="highlight-purple">思维惰性</span>，钝化<span class="highlight-blue">思辨能力</span>。</p>
+
+      <p>要想把书读薄，就必须<span class="highlight-blue">回归经典本身</span>，在与作者“对话”中，思接千载、视通万里，理解经典的深层次意义。</p>
+
+      <div class="sub-thesis">【分论点三】把书读薄更要“读自己”——以经典观照自身、涵养性情，把修养培厚，这是快餐式阅读难以企及的。</div>
+
+      <p>把书读薄，不仅要深入理解经典，更是要将经典内化为自身的知识，甚至是智慧。</p>
+
+      <p>经典是历经时间淘洗、跨越时代仍能引发<span class="highlight-blue">精神共鸣</span>的媒介。它承载着人类的深刻思考，既映照现实，又能启迪未来。</p>
+
+      <p>读薄正是在不断读厚的过程中，解锁其永恒的<span class="highlight-blue">精神价值、文化价值</span>。</p>
+
+      <p>更重要的是，经典阅读的最终指向，是<span class="highlight-gold">“读自己”</span>。</p>
+
+      <p>收获知识和信息固然是阅读的目的之一，但更可贵的，是在潜心研读的过程里<span class="highlight-purple">涵养性情，并学会用前人的智慧观照自身、解决困惑</span>。</p>
+
+      <p><span class="highlight-gold">以读书修身，以经典润心</span>，这份厚重的精神滋养，是快餐式阅读难以企及的。</p>
+
+      <p>在这个意义上，把书读薄实际上也是在理解作者意图、提升思辨能力、获得精神启迪的基础上，<span class="highlight-gold">以经典观照自身、校准方向，把自己的修养培厚</span>。</p>
+
+      <p>经典从来不是故纸堆里的过往云烟，而是一个有背景、有延展、有温度的精神世界。</p>
+
+      <p>真正的经典阅读，必定要经历<span class="highlight-purple">从“薄”到“厚”、再从“厚”到“薄”</span>的过程。</p>
+
+      <p>在这个过程中，我们<span class="highlight-purple">不应成为知识的被动接受者，而应成为一名主动探索的思考者</span>。把书读薄，意义正在于此。</p>
+
+      <p class="byline">（人民日报2026年9月8日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·标题总论</span>
+      <p><b>“把书读薄，把自己读厚。”</b>——八字标题一语点破阅读真义，写“阅读／学习／修身”是极简而有力的总领句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·卡尔维诺</span>
+      <p><b>“经典作品是这样一些书，我们越是道听途说，以为我们懂了，当我们实际读它们，我们就越是觉得它们独特、意想不到和新颖。”</b>——点破“读过了≠读懂了”的误区，写“经典阅读”是权威引述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·读自己</span>
+      <p><b>“经典阅读的最终指向，是‘读自己’。”</b>——把阅读从“向外求知识”升华为“向内修自身”，写“阅读意义／自我成长”是点睛句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·涵养性情</span>
+      <p><b>“更可贵的，是在潜心研读的过程里涵养性情，并学会用前人的智慧观照自身、解决困惑。”</b>——写“阅读价值／自我修养”可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·修身润心</span>
+      <p><b>“以读书修身，以经典润心，这份厚重的精神滋养，是快餐式阅读难以企及的。”</b>——“修身”“润心”对举，写“书香社会／终身学习”极佳。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·修养培厚</span>
+      <p><b>“把书读薄实际上也是在理解作者意图、提升思辨能力、获得精神启迪的基础上，以经典观照自身、校准方向，把自己的修养培厚。”</b>——把阅读落到“修养培厚”，写“自我修养”是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·致良知</span>
+      <p><b>“王阳明为何说这一学说是‘从百死千难中得来’，我们又该如何结合自身境遇践行‘致良知’。”</b>——以“致良知”说明经典需结合境遇深研，写“知行合一／经典内化”可作引述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证循环</span>
+      <p><b>“真正的经典阅读，必定要经历从‘薄’到‘厚’、再从‘厚’到‘薄’的过程。”</b>——“薄—厚—薄”的辩证循环，写“学习方法论”是范式句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主动思考</span>
+      <p><b>“我们不应成为知识的被动接受者，而应成为一名主动探索的思考者。”</b>——以“被动—主动”对照，写“批判性思维／自主学习”是立场句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·逻辑链条</span>
+      <p><b>“类似的概括，是信息高度压缩的产物，会砍断经典叙事的完整逻辑链条。”</b>——揭示“标签化阅读”的危害，写“反对浅阅读／倡导深阅读”是论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“由现象到设问再到立论”的开头：先铺陈各地书香活动与短视频拆解经典的现象，再以“还有必要啃大部头吗”设问，顺势立论，比直说“阅读很重要”更有思辨张力。适用于“全民阅读／书香社会”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“破—立—升”三层：①破“标签化拆解≠读薄”（理解作者意图）；②立“只有读厚才能读薄”（深层对话）；③升“更要读自己”（修养培厚）。三个分论点由“辨误”到“正解”再到“升华”，可迁移到“传承／创新／学习”类话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·辩证段落</span>
+      <p>学本文“薄与厚”的辩证：“只有把书读厚，才能把书读薄”“从‘薄’到‘厚’、再从‘厚’到‘薄’”，把一对反义概念写成螺旋上升的方法论，比直说“要深入阅读”更有哲理味。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·驳论技法</span>
+      <p>学本文“先立靶子再拆解”的驳论：先摆出“短视频降低门槛、把书读薄”的表面合理性，再以“砍断逻辑链条”“二手信息”“无法系统解答”逐层批驳，最后落到“回归经典本身”，这种“承认合理性—指出局限—给出正解”的结构可迁移到一切“破误区”类论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“读经典”通向“修自身”：以“以读书修身，以经典润心”收束，再用“不应成为知识的被动接受者，而应成为主动探索的思考者”打开主体自觉，适合“终身学习／书香社会建设”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「把书读薄，把自己读厚」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把书读薄不是简单标签化拆解，而是在涵泳咀嚼中理解作者意图。浅尝辄止的短视频式阅读只是二手信息，并非真正意义上的读薄。<br>二是只有把书读厚，才能把书读薄。在完整叙事与深层对话中领会经典深层次意义，钝化思维惰性的滋生。<br>三是把书读薄更要“读自己”。以经典观照自身、涵养性情，把修养培厚，这是快餐式阅读难以企及的。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「把书读薄，从来不是把经典压缩成单一的标签、几句金句，而是在涵泳咀嚼中理解作者意图、提升思辨能力，最终以经典观照自身、把自己的修养培厚——唯有把书读厚，才能真正把书读薄。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把书读薄不是简单标签化拆解，而是在涵泳咀嚼中理解作者意图——浅尝辄止的短视频式阅读只是二手信息，并非真正意义上的读薄。<br>二是只有把书读厚，才能把书读薄——在完整叙事与深层对话中领会经典深层次意义，钝化思维惰性的滋生。<br>三是把书读薄更要“读自己”——以经典观照自身、涵养性情，把修养培厚，这是快餐式阅读难以企及的。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“把书读薄，把自己读厚。”</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-08</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260908_1.html">✏️ 原文自测</a>
+</body>
+</html>
