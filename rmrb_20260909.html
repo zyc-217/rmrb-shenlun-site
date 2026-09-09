@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以高质量金融司法服务实体经济发展</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以高质量金融司法服务实体经济发展</h1>
+    <div class="meta">人民日报·专题深思 | 金融服务实体经济·法治化营商环境·防范化解金融风险·高质量发展 | 2026年9月9日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：守好服务实体经济本分／固根本、稳预期、利长远／信用建设·司法创新·专业司法三维分论／以规则明确、类案同判打造可预期营商环境</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">金融服务实体经济</span>
+      <span class="tag-item">法治化营商环境</span>
+      <span class="tag-item">防范化解系统性金融风险</span>
+      <span class="tag-item">金融供给侧结构性改革</span>
+      <span class="tag-item">科技金融·绿色金融·普惠金融·养老金融·数字金融</span>
+      <span class="tag-item">社会信用体系建设</span>
+      <span class="tag-item">科创型企业培育</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">产业链供应链安全</span>
+      <span class="tag-item">审判工作现代化</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">民营经济与中小金融机构</span>
+      <span class="tag-item">投资者合法权益保护</span>
+      <span class="tag-item">监管套利治理</span>
+      <span class="tag-item">稳企纾困</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“金融服务实体经济”“法治化营商环境”“防范化解重大风险”“高质量发展”等主题；本文<b>“总书记语破题—现实两面性辨析—法治保障总述—三维分论（信用建设／司法创新／专业司法）—固根本稳预期利长远收束”</b>的论证链，是写“经济与法治关系”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>以赋能信用建设夯实市场基础，在立案、审判、执行全链条依法修复交易关系／以司法创新稳定企业预期，创新全链条纾困机制，推动科技创新周期、企业成长周期与资本供给周期协同适配／以专业司法助力金融高质量发展，在个案中发现问题、在类案中总结规则／优化金融管理部门、金融法院、调解组织协同治理格局，打造稳定、公平、透明、可预期的营商环境</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>实体经济是金融的根基，脱离实体经济的支撑，金融就会成为无源之水、无本之木</b>”“<b>金融创新具有两面性</b>”“<b>正确处理金融的功能性和盈利性的关系</b>”等多组辩证，是写<b>脱实向虚／金融与实体经济共生关系／发展与安全</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于以高质量金融司法服务实体经济发展的实施意见”“关于优化法治化营商环境、防范化解金融风险的倡议书”等素材；文中“<b>固根本、稳预期、利长远</b>”“<b>精准滴灌实体经济</b>”“<b>规则明确、类案同判</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（权威引述开局—根基论与两面性辨析—法治保障总述—信用建设/司法创新/专业司法三维分论—固根本稳预期利长远收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>权威引述＋战略定位开局</b>：首段以“金融是现代经济的核心，实体经济是一国经济的立身之本、财富之源”定调，随即引习近平总书记“决不能脱实向虚”重要论述和“十五五”规划纲要关于“五篇大文章”的部署，再落到金融法院的法定职责与《中共中央关于加强新时代审判工作的意见》要求，一段之内完成“政治高度—政策依据—职能定位”的三重叠加（第一段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>“根基论—两面性—法治保障”三层铺垫</b>：第二段以“实体经济是金融的根基”立本，以“金融创新具有两面性”揭示风险，以金融纠纷“标的金额大、涉及主体多、法律关系复杂、风险传导性强”点明治理难度；第三段以“法治是金融有效服务实体经济的重要保障”承上启下，用三个“通过……能够……”的排比把司法功能讲透，逼近总论点（第二至三段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>信用建设·夯实市场基础</b>：以“信用是金融的基础，违约失信是金融纠纷产生和激化的一个重要原因”切入，提出在立案、审判、执行全链条熟练运用法律手段，精准匹配与具体金融纠纷类型相适应的裁判方法，实行“一案一策、精准靶向治理”，并强调“避免机械适用法律”，兼顾规则落实与整体法律秩序的价值追求（第四段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>司法创新·稳定企业预期</b>：聚焦科创型企业“研发投入高、回报周期长”的痛点，提出以司法创新推动科技创新周期、企业成长周期与资本供给周期协同适配，引导金融机构把功能性放在更加重要位置，并以“创新全链条纾困机制，把纠纷化解覆盖立案、审判、执行各环节”保障产业链供应链稳定安全（第五段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>专业司法·助力金融高质量发展</b>：着眼“十五五”时期降低市场交易成本、防范化解债务违约风险的目标，提出依法平等保护各类经营主体、兼顾大型与中小金融机构合法权益，优化金融管理部门、金融法院、调解组织协同治理格局，最终落到“以规则明确、类案同判的金融司法，打造稳定、公平、透明、可预期的营商环境”（第六段）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>权威引述＋政策文本＋事理推演</b>：习近平总书记<span class="highlight-gold">“我国金融必须守好服务实体经济本分，决不能脱实向虚”</span>构成“政治高度”；“十五五”规划纲要与《中共中央关于加强新时代审判工作的意见》构成“制度依据”；<span class="highlight-green">我国金融总量合理增长、信贷结构继续优化</span>与金融纠纷“四性特征”构成“事实支撑”，三层论据互相咬合，全文以事理推演替代个案铺陈，是理论文章的典型写法。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“权威引述—问题辨析—三维分论—升华收束”的“总—分—总”结构</b>：三个分论点句统一使用<b>“以……夯实／稳定／助力”的“以”字句式</b>，工整而有节奏；<b>“无源之水、无本之木”“精准滴灌”“固根本、稳预期、利长远”</b>三组比喻贯穿首尾；结尾以“站在中国式现代化建设全局的高度”抬升站位，是申论“以专业领域切口服务宏大主题”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>金融是现代经济的核心，实体经济是一国经济的立身之本、财富之源。习近平总书记强调：<span class="highlight-gold">“我国金融必须守好服务实体经济本分，推动高质量发展，决不能脱实向虚”</span>。<span class="highlight-blue">“十五五”规划纲要</span>提出：“提升金融服务实体经济质效，大力发展<span class="highlight-blue">科技金融、绿色金融、普惠金融、养老金融、数字金融</span>，加强对重大战略、重点领域和薄弱环节的优质金融服务。”金融法院担负着服务保障国家金融战略实施、营造良好金融法治环境、促进经济健康发展的职责，能够为金融服务实体经济提供重要司法支撑和保障。《中共中央关于加强新时代审判工作的意见》提出“加强金融审判工作”并作出具体部署，为金融司法工作提供了指南。充分发挥金融法院在促进金融服务实体经济方面的积极作用，能够在守住<span class="highlight-blue">不发生系统性金融风险底线</span>的基础上，以高质量金融司法服务实体经济发展。</p>
+
+      <p><span class="highlight-purple">实体经济是金融的根基，脱离实体经济的支撑，金融就会成为无源之水、无本之木</span>。近年来，<span class="highlight-blue">金融供给侧结构性改革</span>不断推进，金融服务实体经济的质效大幅提升。今年以来，<span class="highlight-green">我国金融总量合理增长，信贷结构继续优化</span>，金融体系较好满足了实体经济的资金需求。应当看到，<span class="highlight-purple">金融是创新活跃的行业，金融创新具有两面性</span>。随着金融供给侧结构性改革的深入推进，金融产品和服务的创新在服务实体经济的同时，如果缺乏必要的规范，也可能引发风险、造成乱象。<span class="highlight-green">金融纠纷往往具有标的金额大、涉及主体多、法律关系复杂、风险传导性强等特征</span>。处理得好不好，直接关系人民财产安全、经营主体生存发展乃至宏观经济稳定。</p>
+
+      <p>法治是金融有效服务实体经济的重要保障。金融司法以法治手段疏通资金进入实体经济的堵点，有利于推动金融活水与实体经济良性循环。具体而言，金融司法通过打击金融犯罪与违规行为，能够防范化解<span class="highlight-blue">系统性金融风险</span>，为实体经济筑牢安全底线；通过保护经营主体与投资者合法权益，能够<span class="highlight-blue">优化营商环境</span>，为经营主体提供稳定预期；通过裁判规则规范金融创新，能够遏制<span class="highlight-blue">资金空转与监管套利</span>，<span class="highlight-gold">引导金融资源精准滴灌实体经济</span>。为此，要站在<span class="highlight-blue">中国式现代化建设全局</span>的高度做好金融司法工作，为实体经济发展提供<span class="highlight-gold">固根本、稳预期、利长远</span>的保障作用。</p>
+
+      <div class="thesis">【总论点】金融要守好服务实体经济本分，司法要扛起保驾护航之责——以<span class="highlight-blue">法治手段疏通资金进入实体经济的堵点</span>，在守住不发生系统性金融风险底线的基础上，以高质量金融司法服务实体经济发展，为实体经济提供<span class="highlight-gold">固根本、稳预期、利长远</span>的保障作用。</div>
+
+      <div class="sub-thesis">【分论点一】以赋能信用建设夯实市场基础——信用是金融的基础，司法要在法治轨道上推动稳企纾困。</div>
+
+      <p>信用是金融的基础，违约失信是金融纠纷产生和激化的一个重要原因。金融司法要尊重金融发展规律，坚持法治思维和法治方式，在立案、审判、执行全链条熟练运用各种法律手段，引导实体经济企业树立<span class="highlight-blue">诚实守信的信用观</span>，在法治轨道上推动<span class="highlight-blue">稳企纾困</span>。比如，围绕实体经济企业信用降级、融资受阻等痛点问题，精准匹配与具体金融纠纷类型相适应的裁判方法，能够帮助相关企业把<span class="highlight-purple">金融纠纷转化为盘活企业资产、促进生产经营、保障交易安全的契机</span>，充分彰显民商事法律维护和鼓励交易的功能。可实行一案一策，精准靶向治理，依法修复交易关系，以法律关系的稳定保障金融市场交易安全有序。同时，<span class="highlight-purple">避免机械适用法律的误区，不仅注重落实法律规则，也要注重实现整体法律秩序的价值追求</span>。</p>
+
+      <div class="sub-thesis">【分论点二】以司法创新稳定企业预期——推动科技创新周期、企业成长周期与资本供给周期协同适配。</div>
+
+      <p>现代化产业体系以实体经济为重要支撑，科创型企业是建设现代化产业体系的重要力量。科创型企业研发投入高、回报周期长，金融资本供给的灵活性要求更高。金融司法要尊重产业发展规律，以司法创新推动<span class="highlight-blue">科技创新周期、企业成长周期与资本供给周期协同适配</span>，引导金融机构正确处理金融的功能性和盈利性的关系，<span class="highlight-gold">把功能性放在更加重要位置</span>，营造有利于科技创新和产业创新深度融合的良好发展生态，提振科创型企业发展信心。比如，创新<span class="highlight-blue">全链条纾困机制</span>，把纠纷化解覆盖立案、审判、执行各环节，实现全流程护企助企，保障<span class="highlight-blue">产业链供应链稳定、安全</span>。</p>
+
+      <div class="sub-thesis">【分论点三】以专业司法助力金融高质量发展——以规则明确、类案同判打造稳定公平透明可预期的营商环境。</div>
+
+      <p>“十五五”时期推动金融高质量发展，对金融司法的专业化水平提出更高要求。以更加专业的金融司法助力降低市场交易成本、防范化解债务违约风险，能够不断涵养金融机构长期投资的恒心，推动金融资源持续向实体经济流动。要<span class="highlight-blue">依法保护、平等保护各类经营主体</span>，兼顾大型金融机构与中小金融机构合法权益，助力<span class="highlight-blue">普惠金融</span>提质增效，中小金融机构稳健成长。优化金融管理部门、金融法院、调解组织<span class="highlight-blue">协同治理格局</span>。在这个过程中，金融法院应在<span class="highlight-gold">个案中发现问题、在类案中总结规则</span>，推动各方在联动中完善制度、协同治理，以<span class="highlight-blue">规则明确、类案同判</span>的金融司法，打造<span class="highlight-gold">稳定、公平、透明、可预期</span>的营商环境。</p>
+
+      <p class="byline">（作者为北京金融法院党组成员、副院长 · 人民日报2026年9月9日 第09版 · 专题深思）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语</span>
+      <p><b>“我国金融必须守好服务实体经济本分，推动高质量发展，决不能脱实向虚。”</b>——总书记原话，一句话同时立起“本分观”与“方向观”，写“金融服务实体经济／脱实向虚”是最高维度的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总论点</span>
+      <p><b>“以高质量金融司法服务实体经济发展，为实体经济提供固根本、稳预期、利长远的保障作用。”</b>——“固根本、稳预期、利长远”三层递进，把司法的保障功能概括得极准，写“法治保障高质量发展”是标准收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·根基论</span>
+      <p><b>“实体经济是金融的根基，脱离实体经济的支撑，金融就会成为无源之水、无本之木。”</b>——以“源”与“本”作喻，揭示金融与实体经济的共生关系，写“脱实向虚／实体经济根基”是点睛之笔。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·精准滴灌</span>
+      <p><b>“引导金融资源精准滴灌实体经济。”</b>——“滴灌”二字写出金融服务的精准度与渗透力，写“普惠金融／金融服务质效”是极简而有力的表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·两面性</span>
+      <p><b>“金融创新具有两面性：在服务实体经济的同时，如果缺乏必要的规范，也可能引发风险、造成乱象。”</b>——先肯定后限定，把创新与规范统一起来，写“发展与安全的辩证关系”是标准表态句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·价值追求</span>
+      <p><b>“不仅注重落实法律规则，也要注重实现整体法律秩序的价值追求。”</b>——由“规则”上升到“秩序”，写“司法裁判的社会效果／避免机械办案”是逻辑枢纽句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·功能性</span>
+      <p><b>“引导金融机构正确处理金融的功能性和盈利性的关系，把功能性放在更加重要位置。”</b>——以“功能性优先”定义金融本质，写“金融的社会责任／科创企业融资”是精准的定语式金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·规则治理</span>
+      <p><b>“在个案中发现问题、在类案中总结规则。”</b>——从个案到类案的治理方法论，八字对仗，写“司法裁判的规则引领作用／诉源治理”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·营商环境</span>
+      <p><b>“打造稳定、公平、透明、可预期的营商环境。”</b>——四词定语是企业信心的完整画像，写“法治化营商环境”是万能收尾句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·周期适配</span>
+      <p><b>“推动科技创新周期、企业成长周期与资本供给周期协同适配。”</b>——三个“周期”并置，把科创企业融资难的本质说透，写“科技金融／耐心资本”极具分量。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·五篇大文章</span>
+      <p><b>“大力发展科技金融、绿色金融、普惠金融、养老金融、数字金融。”</b>——“十五五”规划纲要原文，五类金融一体铺开，写“金融服务实体经济”是最权威的政策依据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·风险底线</span>
+      <p><b>“守住不发生系统性金融风险底线。”</b>——底线思维的标准表述，写“防范化解重大风险／金融安全”是现成的立论基石。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“权威引述＋战略定位开局法”：首句先以“金融是现代经济的核心，实体经济是一国经济的立身之本、财富之源”定调，随即引总书记“决不能脱实向虚”与“十五五”规划纲要部署，一段之内完成“政治高度—政策依据—职能定位”三重叠加。比直说“金融很重要”站位更高、底气更足。适用于“金融服务实体经济／法治保障高质量发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三维分论”骨架：①以赋能信用建设夯实市场基础（立规则、修复交易关系）；②以司法创新稳定企业预期（周期协同、全链条纾困）；③以专业司法助力金融高质量发展（类案同判、协同治理）。三个分论点统一用“以……夯实／稳定／助力”的“以”字句式，工整且有节奏，此法可迁移到“法治化营商环境／基层治理现代化”等一切“以专业切口服务宏大主题”的话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“高质量金融司法”拆成可操作举措：在立案、审判、执行全链条熟练运用法律手段，实行一案一策、精准靶向治理（信用修复）；创新全链条纾困机制，把纠纷化解覆盖各环节（助企纾困）；依法平等保护各类经营主体，兼顾大型与中小金融机构（公平保护）；优化金融管理部门、金融法院、调解组织协同治理格局（协同共治）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“两面性”辩证立论：先承认金融创新“服务实体经济”的正向价值，再指出“如果缺乏必要的规范，也可能引发风险、造成乱象”，最后用“避免机械适用法律，不仅注重落实法律规则，也要注重实现整体法律秩序的价值追求”收束。把“发展与安全”写成有对比、有张力的论证，比直说“既要创新又要监管”更有力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“个案裁判”通向“中国式现代化全局”：以“站在中国式现代化建设全局的高度”抬升站位，再用“固根本、稳预期、利长远”三层递进收束。这种“由专业职能及国家战略”的结尾适合“法治中国／高质量发展／防范化解重大风险”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「以高质量金融司法服务实体经济发展」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以赋能信用建设夯实市场基础。信用是金融的基础，司法要在法治轨道上推动稳企纾困。<br>二是以司法创新稳定企业预期。推动科技创新周期、企业成长周期与资本供给周期协同适配。<br>三是以专业司法助力金融高质量发展。以规则明确、类案同判打造稳定公平透明可预期的营商环境。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「金融要守好服务实体经济本分，司法要扛起保驾护航之责——以法治手段疏通资金进入实体经济的堵点，在守住不发生系统性金融风险底线的基础上，以高质量金融司法服务实体经济发展，为实体经济提供固根本、稳预期、利长远的保障作用。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以赋能信用建设夯实市场基础——信用是金融的基础，司法要在法治轨道上推动稳企纾困。<br>二是以司法创新稳定企业预期——推动科技创新周期、企业成长周期与资本供给周期协同适配。<br>三是以专业司法助力金融高质量发展——以规则明确、类案同判打造稳定公平透明可预期的营商环境。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“我国金融必须守好服务实体经济本分，推动高质量发展，决不能脱实向虚。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「以高质量金融司法服务实体经济发展」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以赋能信用建设夯实市场基础，在立案、审判、执行全链条依法修复交易关系。<br>二是以司法创新稳定企业预期，创新全链条纾困机制，推动科技创新周期、企业成长周期与资本供给周期协同适配。<br>三是以专业司法助力金融高质量发展，在个案中发现问题、在类案中总结规则。<br>四是优化金融管理部门、金融法院、调解组织协同治理格局，打造稳定、公平、透明、可预期的营商环境。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“我国金融必须守好服务实体经济本分，推动高质量发展，决不能脱实向虚。”</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-09</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260909.html">✏️ 原文自测</a>
+</body>
+</html>
