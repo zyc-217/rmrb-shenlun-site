@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 构建融合新生态  塑造传播新格局</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>构建融合新生态  塑造传播新格局<br><span style="font-size:0.62em;font-weight:400;">——2026党报评论融合发展论坛综述</span></h1>
+    <div class="meta">人民日报·第05版（论坛综述） | 主流媒体系统性变革·新闻舆论四力·媒体深度融合·评论创新 | 2026年9月9日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：让党报评论成为舆论场不可替代的权威声音／思想铸魂·创新为要·人才为重三维分论／以穿透力提高传播力、以主动权赢得话语权</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">主流媒体系统性变革</span>
+      <span class="tag-item">新闻舆论传播力引导力影响力公信力</span>
+      <span class="tag-item">媒体深度融合</span>
+      <span class="tag-item">舆论引导与主流思想舆论</span>
+      <span class="tag-item">党报评论创新</span>
+      <span class="tag-item">文风建设（短实新）</span>
+      <span class="tag-item">人工智能赋能内容生产</span>
+      <span class="tag-item">正能量·高质量·大流量</span>
+      <span class="tag-item">意识形态工作</span>
+      <span class="tag-item">网络舆论场治理</span>
+      <span class="tag-item">文化强国建设</span>
+      <span class="tag-item">全媒体传播体系建设</span>
+      <span class="tag-item">评论人才队伍建设</span>
+      <span class="tag-item">个人IP与人格化表达</span>
+      <span class="tag-item">调查研究·一线素材</span>
+      <span class="tag-item">守正创新</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“主流媒体系统性变革”“提升新闻舆论传播力引导力影响力公信力”“守正创新”“文化强国”等主题；本文<b>“设问破题—三维分论（思想铸魂／创新为要／人才为重）—嘉宾观点佐证—目标收束”</b>的论证链，是写“媒体融合／舆论引导”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>坚定正确政治方向、舆论导向、价值取向，追求流量但不唯流量／推动文风创新，力求“短实新”，以轻量化形式传递清晰态度／以体制创新打破“评论只是评论部门的事”的思维定式，建立“专兼结合、全员参与”的大评论格局／构建三级评论人才梯队，打造评论员个人IP与栏目IP，增添人格化表达</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>追求流量但不唯流量，追求共情但不为情绪所裹挟</b>”“<b>创新不是推倒重来，融合不是另起炉灶</b>”“<b>变的是姿势和话风，不变的是政治方向、舆论导向、价值取向</b>”等多组辩证，是写<b>守正与创新／技术与价值／流量与质量</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于深化主流媒体系统性变革、提升党报评论引导力的实施意见”“关于推动党报评论创新发展的倡议书”等素材；文中“<b>以穿透力提高传播力、以主动权赢得话语权</b>”“<b>实现正能量、高质量、大流量有机统一</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（双设问破题—思想铸魂/创新为要/人才为重三维分论—嘉宾观点佐证—穿透力传播力收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>双设问破题＋会议背景＋共识立论</b>：开篇以“主流媒体如何乘风破浪”“党报评论怎样把握舆论主导权”两个设问直击时代之问；随即引总书记“着力提升新闻舆论传播力引导力影响力公信力”重要指示定调，再交代论坛时间、地点、参会规模，最后以“共识在沟通交流中增进”落到总论点（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>“思想—创新—人才”三维骨架</b>：三个分论点标题“思想铸魂，深耕核心优势／创新为要，激活融媒势能／人才为重，厚植发展根基”均为四字对偶＋六字落脚，分别回答“立身之本”“动力之源”“长远之基”，由价值到路径再到主体，逻辑层层抬升。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>思想铸魂·深耕核心优势</b>：先引总书记“旗帜鲜明坚持正确的政治方向、舆论导向、价值取向”，以“时代桅杆上的瞭望者”设问，再用“正确的导向是新闻舆论的生命线”“追求流量但不唯流量”立住导向底线；随后以“好评论”三问三答展开——<b>思想性</b>（找准共同点、共鸣点、交汇点）、<b>稀缺性</b>（把“最大变量”变“最大增量”）、<b>功能性</b>（与网民一起明晰是非边界），最终落到“在党言党、为党立言的使命不能变”（第五至十三段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>创新为要·激活融媒势能</b>：以总书记“九个创新”论述开篇，铺开四条路径——<b>文风清新</b>（“人民锐评”累计超300篇）、<b>体制创新</b>（贵州日报一体策划、多元传播）、<b>传播焕新</b>（轻量化形式 vs 深耕细作分类施策）、<b>技术赋能</b>（人工智能辅助创作）；随后以“一键速成”反问转入“不可替代性”之辩，用毛莉“到创新现场找活水、抓活鱼”、袁媛“尊重现场”两段回答，最后以“创新不是推倒重来，融合不是另起炉灶”辩证收束（第十四至二十五段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>人才为重·厚植发展根基</b>：以总书记“媒体竞争关键是人才竞争”立论，用解放日报<b>三级人才梯队</b>（核心圈／中间圈／外围圈）、北京日报“日新说”视频化转化、浙江广电“新闻姐”等<b>个人IP</b>三个案例层层展开，点明“打造评论员个人IP、栏目IP”是深化系统性变革的重要抓手，以“让有能力、有业绩的优秀人才得到充分尊重”作结（第二十六至三十二段）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>权威引述＋硬数据＋一线案例</b>：习近平总书记<span class="highlight-gold">“着力提升新闻舆论传播力引导力影响力公信力”</span>构成“政治高度”；<span class="highlight-green">30余家省级党报、累计推出文章超300篇、17个千万级粉丝账号、4200万名粉丝、全网点击量突破2000万、粉丝数突破360万</span>构成“事实支撑”；“人民锐评”“新闻姐”“Z世代·Z视线”“新闻胖哥”等具体品牌构成“实践落点”，三层论据互相咬合。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“设问引入—三维分论—目标收束”的“总—分—总”结构</b>：三个分论点句均为<b>“四字＋四字，四字＋六字”的对偶句式</b>，节奏铿锵易记；<b>“时代桅杆上的瞭望者”“找活水、抓活鱼”“从纸面上立起来”</b>等比喻贯穿全篇；结尾以“加强思想引领，创新话语表达，坚持技术赋能”三条并提，落到“以穿透力提高传播力、以主动权赢得话语权”。是申论“用行业切口讲宏大主题”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>技术进步日新月异，主流媒体如何乘风破浪？传播格局深刻变化，党报评论怎样把握舆论主导权？</p>
+
+      <p>习近平总书记对宣传思想文化工作作出重要指示强调，<span class="highlight-gold">“着力提升新闻舆论传播力引导力影响力公信力”</span>。在深化<span class="highlight-blue">主流媒体系统性变革</span>的大潮中，党报评论立足全局、引领导向，唱响主旋律、传播正能量，成为提升新闻舆论<span class="highlight-blue">传播力引导力影响力公信力</span>的重要力量。</p>
+
+      <p>由人民日报社评论部支持、四川日报社主办的<span class="highlight-green">2026党报评论融合发展论坛9月3日在四川绵阳举行</span>。来自中央媒体、地方省委宣传部、<span class="highlight-green">30余家省级党报</span>和学界、业界、新媒体平台的代表齐聚一堂，围绕“系统性变革中的党报评论新生态”主题分享观点、激荡思维，为巩固壮大自信自强、团结奋进的<span class="highlight-blue">主流思想舆论</span>贡献力量。</p>
+
+      <p>共识在沟通交流中增进，智慧在互学互鉴中凝聚。与会嘉宾认为，让党报评论成为舆论场不可替代、不可或缺的权威声音，就要坚定正确前进方向，突出思想优势，推动评论创新，更好<span class="highlight-blue">传播党的创新理论、宣传党的政策主张、反映群众呼声心声、凝聚社会思想共识</span>。</p>
+
+      <div class="thesis">【总论点】让党报评论成为<span class="highlight-purple">舆论场不可替代、不可或缺</span>的权威声音——就要坚定正确前进方向，突出思想优势，推动评论创新，更好<span class="highlight-blue">传播党的创新理论、宣传党的政策主张、反映群众呼声心声、凝聚社会思想共识</span>，实现<span class="highlight-gold">正能量、高质量、大流量有机统一</span>。</div>
+
+      <div class="sub-thesis">【分论点一】思想铸魂，深耕核心优势——思想性这个最鲜明、最突出的优势不能丢。</div>
+
+      <p>习近平总书记强调：“要旗帜鲜明坚持正确的<span class="highlight-blue">政治方向、舆论导向、价值取向</span>。”舆论导向正确，才能凝聚人心、汇聚力量。</p>
+
+      <p>智媒时代，党报评论如何确保立于时代潮头，当好<span class="highlight-gold">“时代桅杆上的瞭望者”</span>？</p>
+
+      <p><span class="highlight-gold">“正确的导向是新闻舆论的生命线。”</span>河南日报社党委委员、副社长王大庆认为，越是热点丛生、情绪先行，越要秉持公正、客观、理性的态度。南方报业传媒集团（南方日报社）副社长、副总编辑金强表示，<span class="highlight-purple">党报评论追求流量但不唯流量，追求共情但不为情绪所裹挟</span>，不能为博取眼球牺牲价值导向。</p>
+
+      <p>大时代需要好评论。何为好评论？与会嘉宾认为，好评论具有思想的力量、逻辑的力量、事实的力量，能在众声喧哗中一锤定音，穿透圈层直抵人心，有效引领舆论走向、弥合信息差、凝聚社会共识。</p>
+
+      <p>好评论体现在思想性。新闻战线杂志社执行主编武艳珍说，找准思想认识共同点、情感交流共鸣点、利益关系交汇点，评论就能够实现价值增值和思想跃迁。</p>
+
+      <p>好评论体现在稀缺性。在江西日报社副总编辑张晶看来，有思想、有立场、有情怀的好评论是稀缺品，党报评论要将互联网这个<span class="highlight-purple">“最大变量”转化为提升传播力引导力影响力公信力的“最大增量”</span>。</p>
+
+      <p>好评论体现在功能性。四川日报报业集团编委兼四川日报专职编委姜明表示，评论价值的一个重要方面就是跟网民一起明晰是非边界、一起规范言行、一起汇聚合力，进而推动社会进步。</p>
+
+      <p>四川省委常委、绵阳市委书记左永祥表示，借助党报评论融合发展论坛，大家进一步强化思想激荡和经验交流，深化信息共享、观点共享、资源共享、渠道共享，努力创造更多向上向善的作品，实现<span class="highlight-gold">正能量、高质量、大流量有机统一</span>。</p>
+
+      <p>与会嘉宾形成这样的共识：无论媒体形态、传播形式如何改变，党报评论<span class="highlight-blue">在党言党、为党立言</span>的使命不能变，思想性这个最鲜明、最突出的优势不能丢，巩固和壮大主流思想舆论的责任感不能淡。</p>
+
+      <div class="sub-thesis">【分论点二】创新为要，激活融媒势能——从创作理念、生产流程到评价体系、组织架构都要锐意改革。</div>
+
+      <p>挑战有目共睹，机遇时不我待。习近平总书记指出：“随着形势发展，党的新闻舆论工作必须<span class="highlight-blue">创新理念、内容、体裁、形式、方法、手段、业态、体制、机制</span>，增强针对性和实效性。”</p>
+
+      <p>党报评论工作要因势而谋、应势而动、顺势而为，在深化主流媒体系统性变革的进程中锚定奋进目标、找准发展坐标。</p>
+
+      <p>文风清新，增强吸引力。今年以来，人民日报新推出的“人民锐评”网评品牌不回避热点、不畏惧交锋，力求“短实新”，以新锐之气挺进网络舆论最前沿。截至8月，<span class="highlight-green">累计推出文章超300篇</span>，不断输出“新”观点、塑造“锐”文风。</p>
+
+      <p>体制创新，提升生产力。贵州日报跳出“纸媒为本、新媒体为延伸”的传统路径，对纸媒与网端、文字产品与视频产品实行一体策划、多元传播，打破“评论只是评论部门的事”的思维定式，建立<span class="highlight-blue">“专兼结合、全员参与”的大评论格局</span>。</p>
+
+      <p>传播焕新，扩大影响力。在中国青年报社评论部主任王钟的看来，对于社会共识明确的议题，百余字的短评、创意海报、短视频等轻量化形式就能清晰传递态度；对于争议较大、认知多元、关乎大局的重点议题，必须深耕细作、深度剖析、正本清源。</p>
+
+      <p>技术赋能，夯实内容根本。不少媒体的评论员结合政策导向、现实调研、学识积累，运用<span class="highlight-blue">人工智能辅助创作</span>，既体现评论的思想深度与价值底色，又有效提升热点响应速度与内容生产效率。</p>
+
+      <p>从“人人都有麦克风”，到“人人都能使用人工智能”，“一键速成”成为可能。党报评论的不可替代性究竟在哪里？</p>
+
+      <p><span class="highlight-gold">“只有到火热的创新现场中去找‘活水’、抓‘活鱼’，才能写出有生气、锐气、热气的评论。”</span>科技日报评论小组成员毛莉认为，通过深入创新一线获取鲜活素材，那种亲历、亲见、亲闻、亲感触发的灵感，是任何算法都无法生成的。</p>
+
+      <p>“尊重现场，为评论注入生命力。”新华日报评论员袁媛分享《今夜，千万双手举起奖杯》的创作经验：真实可感的现场，往往能让评论从纸面上“立”起来、从镜头里“长”出来，为评论提供更多“附加值”。</p>
+
+      <p>实践证明，党报评论要经得起时间检验，离不开扎实的采访调研、独到的视角、深入的分析、严密的逻辑、理性的观点、高质量的原创内容。</p>
+
+      <p><span class="highlight-purple">创新不是推倒重来，融合不是另起炉灶。</span>湖南日报社副总编辑蒙志军分享了将评论生产嵌入既有指挥链路的做法：强化全媒体调度，优化生产流程，建立策划、创作、推广联动机制。“评论员刘雪松”账号主理人刘雪松认为，系统性变革，<span class="highlight-purple">变的是姿势和话风，不变的是党报评论的政治方向、舆论导向、价值取向</span>。</p>
+
+      <p>与会嘉宾表示，从创作理念、生产流程，到评价体系、组织架构，党报评论只有锐意改革，才能实现内容创新、表达创新、融合创新的相辅相成。</p>
+
+      <div class="sub-thesis">【分论点三】人才为重，厚植发展根基——重在人才辈出、人尽其才、才尽其用。</div>
+
+      <p>习近平总书记强调：<span class="highlight-gold">“媒体竞争关键是人才竞争，媒体优势核心是人才优势。”</span>推动党报评论事业欣欣向荣，重在人才辈出、人尽其才、才尽其用，让党报评论员在互联网浪潮和新技术革命中迎接挑战、实现成长。</p>
+
+      <p>让事业激励人才，让人才成就事业，就要加快破除不适应创新发展要求的思想藩篱、路径依赖。</p>
+
+      <p>解放日报构建起<span class="highlight-blue">三级评论人才梯队</span>：专职评论员是骨干力量，也是必须锻强的核心圈；通过项目制、约稿制等柔性组合鼓励报社内部记者编辑写评论，激活中间圈；同时还精心遴选、积极吸纳专家学者、行业观察者组建社会优秀评论人才队伍，拓展外围圈。</p>
+
+      <p>北京日报将优质评论作为底稿进行视频转化，推出热点解读类视频栏目“日新说”，评论员以知识博主形象出镜，每期拆解一个硬核话题。</p>
+
+      <p>打造评论员<span class="highlight-blue">个人IP（知名内容品牌）、栏目IP</span>，增添鲜活生动的人格化表达，是党报评论深化系统性变革、提升舆论引导质效的重要抓手。</p>
+
+      <p>浙江广电已培育出<span class="highlight-green">17个千万级粉丝账号</span>，其中评论主播“新闻姐”邹雯拥有<span class="highlight-green">4200万名粉丝</span>；江西日报的评论类IP工作室“Z世代·Z视线”，以青年视角、青春语态“聊青年关心的事”，上线两年来作品<span class="highlight-green">全网点击量突破2000万</span>；绵阳市新闻传媒中心的评述类短视频账号“新闻胖哥”<span class="highlight-green">全网粉丝数突破360万</span>……</p>
+
+      <p>让有能力、有业绩的优秀人才得到充分尊重，才能激发人的主动性创造性。</p>
+
+      <p>今天，记录壮阔征程，唱响奋进凯歌，书写新时代荣光，党报评论舞台更广、担子更重、责任更大。与会嘉宾相信：加强思想引领，创新话语表达，坚持技术赋能，定能<span class="highlight-gold">以穿透力提高传播力、以主动权赢得话语权</span>，让党报评论在高质量发展中展现新气象。</p>
+
+      <p class="byline">（人民日报2026年9月9日 第05版 · ——2026党报评论融合发展论坛综述）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语</span>
+      <p><b>“着力提升新闻舆论传播力引导力影响力公信力。”</b>——总书记重要指示，“四力”一体概括新闻舆论工作的评价标准，写“主流媒体变革／舆论引导”是最高维度的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“以穿透力提高传播力、以主动权赢得话语权。”</b>——“穿透力—传播力”“主动权—话语权”两组递进对仗，写“国际传播／舆论引导质效”是最佳结尾句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·有机统一</span>
+      <p><b>“实现正能量、高质量、大流量有机统一。”</b>——把价值、品质、规模三者统一，破解“流量与质量对立”的误区，写“网络内容建设”是标准表态句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·舆论导向</span>
+      <p><b>“正确的导向是新闻舆论的生命线。”</b>——以“生命线”定义导向，写“党性原则／舆论阵地”是极简而有力的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·流量观</span>
+      <p><b>“追求流量但不唯流量，追求共情但不为情绪所裹挟。”</b>——两组“追求…但不…”的辩证平衡，写“流量与价值／情绪与理性”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·最大增量</span>
+      <p><b>“将互联网这个‘最大变量’转化为提升传播力引导力影响力公信力的‘最大增量’。”</b>——“变量”变“增量”一字之差见功力，写“互联网这个最大变量”是经典表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新本质</span>
+      <p><b>“创新不是推倒重来，融合不是另起炉灶。”</b>——先破后立，用两个“不是”划清改革边界，写“守正创新／系统性变革”是点睛之笔。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·变与不变</span>
+      <p><b>“变的是姿势和话风，不变的是政治方向、舆论导向、价值取向。”</b>——“三变三不变”对仗工整，写“媒体融合中的变与不变”是逻辑枢纽句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·人才观</span>
+      <p><b>“媒体竞争关键是人才竞争，媒体优势核心是人才优势。”</b>——总书记原话，把竞争落到人才，写“队伍建设／人才强国”是最权威的依据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·现场论</span>
+      <p><b>“只有到火热的创新现场中去找‘活水’、抓‘活鱼’，才能写出有生气、锐气、热气的评论。”</b>——“活水活鱼”与“三气”呼应，写“调查研究／脚力眼力”极有画面感。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·好评论标准</span>
+      <p><b>“好评论具有思想的力量、逻辑的力量、事实的力量。”</b>——“三力”并列给出评价标准，写“内容为王／评论写作”是现成的分论点小标题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·瞭望者</span>
+      <p><b>“当好‘时代桅杆上的瞭望者’。”</b>——以“桅杆瞭望者”喻媒体职责，写“媒体使命／新闻工作者担当”极具意象张力。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“双设问破题法”：开篇以“主流媒体如何乘风破浪”“党报评论怎样把握舆论主导权”两个设问直击时代之问，随即引总书记重要指示定调，再交代会议背景与规模。比直说“媒体融合很重要”更有张力、站位更高。适用于“主流媒体系统性变革／文化强国”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三维分论”骨架：①思想铸魂·深耕核心优势（立身之本）；②创新为要·激活融媒势能（动力之源）；③人才为重·厚植发展根基（长远之基）。三个分论点统一为“四字对偶＋六字落脚”的句式，节奏铿锵易记，此法可迁移到“高质量发展／基层治理”等一切“价值—路径—主体”三段式话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“深化系统性变革”拆成可操作举措：坚定正确政治方向、舆论导向、价值取向，追求流量但不唯流量（把方向）；推动文风创新力求“短实新”，按议题轻重分类选择轻量化或深耕式表达（改文风）；打破“评论只是评论部门的事”的思维定式，建立专兼结合、全员参与的大评论格局（变体制）；构建三级人才梯队、打造个人IP与栏目IP（强队伍）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“变与不变”的辩证立论：先以“创新不是推倒重来，融合不是另起炉灶”划清改革边界，再以“变的是姿势和话风，不变的是政治方向、舆论导向、价值取向”收束。把守正创新写成有对比、有分寸的论证，比直说“既要传承又要创新”更有力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“论坛共识”通向“时代使命”：以“加强思想引领，创新话语表达，坚持技术赋能”三条并提，落到“以穿透力提高传播力、以主动权赢得话语权”。这种“三条路径＋两组递进对仗”的结尾适合“文化强国／国际传播能力建设”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「让党报评论成为舆论场不可替代、不可或缺的权威声音——就要坚定正确前进方向，突出思想优势，推动评论创新，更好传播党的创新理论、宣传党的政策主张、反映群众呼声心声、凝聚社会思想共识，实现正能量、高质量、大流量有机统一。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是思想铸魂，深耕核心优势——思想性这个最鲜明、最突出的优势不能丢。<br>二是创新为要，激活融媒势能——从创作理念、生产流程到评价体系、组织架构都要锐意改革。<br>三是人才为重，厚植发展根基——重在人才辈出、人尽其才、才尽其用。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“着力提升新闻舆论传播力引导力影响力公信力。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于构建融合新生态  塑造传播新格局的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于构建融合新生态  塑造传播新格局的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进构建融合新生态  塑造传播新格局，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、思想铸魂，深耕核心优势——思想性这个最鲜明、最突出的优势不能丢。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、创新为要，激活融媒势能——从创作理念、生产流程到评价体系、组织架构都要锐意改革。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、人才为重，厚植发展根基——重在人才辈出、人尽其才、才尽其用。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“着力提升新闻舆论传播力引导力影响力公信力。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「构建融合新生态  塑造传播新格局」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：构建融合新生态  塑造传播新格局<br><br>时代之问，呼唤破题之策。构建融合新生态  塑造传播新格局，是发展所需，也是民心所向。可从三个维度展开：思想铸魂，深耕核心优势、创新为要，激活融媒势能、人才为重，厚植发展根基。<br><br>分论点一：思想铸魂，深耕核心优势——思想性这个最鲜明、最突出的优势不能丢。方向对了，路再远也能抵达。“着力提升新闻舆论传播力引导力影响力公信力。”<br><br>分论点二：创新为要，激活融媒势能——从创作理念、生产流程到评价体系、组织架构都要锐意改革。方法对了，事再难也能办成。“以穿透力提高传播力、以主动权赢得话语权。”<br><br>分论点三：人才为重，厚植发展根基——重在人才辈出、人尽其才、才尽其用。行百里者半九十。“实现正能量、高质量、大流量有机统一。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。构建融合新生态  塑造传播新格局是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-09</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260909_1.html">✏️ 原文自测</a>
+</body>
+</html>
