@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 守护同一时空的各自安宁</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>守护同一时空的各自安宁</h1>
+    <div class="meta">人民日报·人民时评 | 城市治理现代化·噪声污染防治·生活安宁权·多元共治 | 2026年9月10日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：治理的刻度对准人心的尺度／源头治理·机制共治·将心比心三层递进／靠共识滋养持久安宁</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">城市治理现代化</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">噪声污染防治</span>
+      <span class="tag-item">生活安宁权</span>
+      <span class="tag-item">生态环境法典</span>
+      <span class="tag-item">源头治理</span>
+      <span class="tag-item">多元共治</span>
+      <span class="tag-item">矛盾纠纷调解机制</span>
+      <span class="tag-item">宁静小区建设</span>
+      <span class="tag-item">社区自治与公约</span>
+      <span class="tag-item">公共文明素养</span>
+      <span class="tag-item">人性化治理</span>
+      <span class="tag-item">获得感幸福感安全感</span>
+      <span class="tag-item">法治保障民生</span>
+      <span class="tag-item">人民城市人民建</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“城市治理现代化”“基层治理”“公共文明”“法治保障民生”等主题；本文<b>“生活现象破题—典型案例定性—数据揭示现状—三维分论（源头治理／机制共治／人心尺度）—文明刻度收束”</b>的论证链，是写“治理如何对准人心”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析</span><span class="text">本文核心句“<b>治理的刻度才能对准人心的尺度</b>”内涵丰富：可从“是什么（治理标尺从分贝数值转向人的感受）—为什么（人们对生活品质要求提高，生活安宁权关乎切身感受）—怎么办（源头治理＋机制共治＋将心比心）”三层解读，是练习观点分析题的绝佳对象。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>把宁静理念融入规划设计，铺设降噪路面、打造降噪绿篱带，把治理关口前移／建立有效的噪声扰民调解与处理机制，以灯光为“哨”约定活动时段／组建宁静商铺自治联盟，对商户每月综合评分、动态劝退／将心比心，不把自己的自由变成他人的负担，营造相互理解包容的居住氛围</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推进宁静小区建设的实施方案”“关于共建共享宁静居住环境的倡议书”等素材；文中“<b>让每一种声音都有边界、守秩序</b>”“<b>靠共识滋养出来的安宁，往往比强制管出来的安静，更持久也更牢固</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象案例破题—数据立论—源头治理/机制共治/人心尺度三层递进—文明刻度收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>生活现象＋典型案例开局</b>：首段以“夜晚的广场舞、装修的电钻声、楼上的跑跳、空调的共振”四个排比镜头点出噪声之扰，直指“社会关注度很高”；第二段借《中华人民共和国生态环境法典》实施当天衢州法院审理的噪声污染责任纠纷案，亮出“既‘不唯监测数据论’，也尽可能降低对经营主体的冲击”的裁判智慧，一案定调（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>“幸福追求—数据现状—人心标尺”三层铺垫</b>：第三段以“享受安宁生活，是许多人的幸福追求”立本，用“2025年全国地级及以上城市受理噪声投诉约683万件，其中社会生活噪声投诉占比高达73.2%”的数据揭示治理之迫；第四段以“在降低噪声分贝的基础上，进一步细化举措”引出全篇总纲——治理的刻度对准人心的尺度（第三至四段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>源头治理·规划先行</b>：以“最有效的办法是从源头开始治理”立论，举深圳新建小区透水降噪沥青、人车分流、层次降噪绿篱带等做法，归结为“把宁静理念融入规划设计，把噪声治理关口前移”，摆脱“头痛医头、脚痛医脚”的被动局面（第五至六段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>机制共治·共识滋养</b>：先承认“不同群体的认知仍有差别，有的地方改造难度大”，再举山东威海社区以灯光为“哨”约定散场时间、浙江杭州“宁静商铺自治联盟”月度评分动态管理两例，落到“尊重规则、理性沟通，靠共识滋养出来的安宁，往往比强制管出来的安静，更持久也更牢固”（第七至八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>人心尺度·将心比心</b>：从“居住形态更加多样化、生活节奏各不相同”的现实出发，提出“不把自己的自由变成他人的负担”；再以“城市治理的核心是人”“生活安宁权是城市文明最朴素的刻度”收拢，用“每一种声音都各安其位，每一种生活也定会从容舒展”升华（第九至十一段）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>法律文本＋数据支撑＋场景案例</b>：《中华人民共和国生态环境法典》关于<span class="highlight-blue">噪声污染认定依据</span>的规定构成“制度依据”；<span class="highlight-green">噪声投诉约683万件、社会生活噪声占比73.2%</span>构成“事实支撑”；衢州法院判决、深圳宁静小区、威海灯光之“哨”、杭州商铺自治联盟四个案例横跨司法、规划、社区、商圈，构成“场景支撑”，三层论据互相咬合，是人民时评“以案说法、以数立论”的典型写法。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象破题—案例定性—数据立论—三维分论—文明升华”的“总—分—总”结构</b>：三个分论点分别落在<b>“从源头开始治理”“建立调解与处理机制”“将心比心”</b>，由“物”及“制”再及“人”，层层深入；<b>“治理的刻度才能对准人心的尺度”</b>首尾呼应；结尾以“劳动作业的声响、市井往来的动静、深夜安眠的呼吸”排比收束，是申论“以治理切口写民生温度”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度</p>
+
+      <p>夜晚的广场舞、装修的电钻声、楼上的跑跳、空调的共振……日常生活中的噪声，搅人清静，耗人心神。怎么合理解决，社会关注度很高。</p>
+
+      <p>前不久，<span class="highlight-blue">《中华人民共和国生态环境法典》</span>正式实施当天，浙江衢州衢江区人民法院开庭审理了一起噪声污染责任纠纷案。法典明确，噪声污染认定以<span class="highlight-blue">“超过噪声排放标准或者未依法采取防控措施产生噪声，并干扰他人正常生活、工作和学习”</span>为依据。一楼水产商铺低频振动噪声影响楼上居民休息，尽管监测数值未超国家标准，但超出普通人容忍限度，法院判决要求经营者限期完成降噪减振整改。这份判决书，既<span class="highlight-purple">“不唯监测数据论”</span>，也尽可能降低对经营主体的冲击，为噪声纠纷的更好化解提供了启示。</p>
+
+      <p>享受安宁生活，是许多人的幸福追求。随着经济社会发展，各类噪声尤其是社会生活噪声越来越常见，人们对噪声污染的敏感度更高了。数据显示，<span class="highlight-green">2025年，全国地级及以上城市受理噪声投诉约683万件，其中社会生活噪声投诉占比高达73.2%</span>。</p>
+
+      <p>时代在发展，条件改善了，人们对生活品质的要求也越来越高。在降低噪声分贝的基础上，进一步细化举措，更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度。</p>
+
+      <div class="thesis">【总论点】更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，<span class="highlight-purple">治理的刻度才能对准人心的尺度</span>——在降低噪声分贝的基础上进一步细化举措，守护好同一时空下每个人的安宁。</div>
+
+      <div class="sub-thesis">【分论点一】让需求各异、节奏不同的人在同一时空中和谐共处，让每一种声音都有边界、守秩序，最有效的办法是从源头开始治理。——把宁静理念融入规划设计，把治理关口前移。</div>
+
+      <p>近年来，全国多地积极探索<span class="highlight-blue">宁静小区建设</span>，切实提升了居民生活质量。比如，深圳的一些新建小区，路面铺设透水降噪沥青，实行人车分流，有效降低车辆行驶噪声；在临街围墙打造层次降噪绿篱带，楼栋之间打造绿篱围墙隔离带分隔活动区与居住区……把宁静理念融入规划设计，把噪声治理关口前移，才能摆脱<span class="highlight-purple">“头痛医头、脚痛医脚”</span>的被动局面。</p>
+
+      <div class="sub-thesis">【分论点二】也要看到，关于噪声治理，不同群体的认知仍有差别，有的地方改造难度大。——由此而言，建立有效的噪声扰民调解与处理机制，共同营造一种舒适、和谐、相互理解包容的居住氛围，才能守护好同一时空下的各自安宁。</div>
+
+      <p>在山东威海，凤林顺和社区约定以灯光为“哨”：广场大灯一亮，大家安心跳舞；晚上8点半小灯开启、大灯熄灭，舞蹈队自觉散场；在浙江杭州，拱墅区祥符街道引导社区、经济联合社、商户、居民共同参与治理，组建<span class="highlight-blue">“宁静商铺自治联盟”</span>，对商户每月进行综合评分，连续两个月低于三星的商铺将被劝退或清退。尊重规则、理性沟通，<span class="highlight-gold">靠共识滋养出来的安宁，往往比强制管出来的安静，更持久也更牢固</span>。</p>
+
+      <div class="sub-thesis">【分论点三】当前，城市空间的居住形态更加多样化，人们的生活节奏也各不相同。——只要将心比心，不把自己的自由变成他人的负担，再多元的生活方式也能在同一个屋檐下和谐共处。</div>
+
+      <p>有的人早出晚归，有的人居家办公，有的人夜间直播，但只要<span class="highlight-purple">将心比心，不把自己的自由变成他人的负担</span>，再多元的生活方式也能在同一个屋檐下和谐共处。</p>
+
+      <p><span class="highlight-blue">城市治理的核心是人</span>，检验治理成效的根本标尺是人民群众实实在在的<span class="highlight-blue">获得感、幸福感、安全感</span>。<span class="highlight-blue">生活安宁权</span>关乎群众切身感受，是城市文明最朴素的刻度。<span class="highlight-gold">看见自己的责任，体谅他人的难处，就能共享安宁，守护城市最美的模样。</span>劳动作业的声响、市井往来的动静、深夜安眠的呼吸，<span class="highlight-gold">每一种声音都各安其位，每一种生活也定会从容舒展</span>。</p>
+
+      <p class="byline">（人民日报2026年9月10日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治理标尺</span>
+      <p><b>“更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度。”</b>——“治理刻度”对“人心尺度”，一句话把治理的落点从数字转到人，写“城市治理／人性化治理”是最高维度的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共识与强制</span>
+      <p><b>“靠共识滋养出来的安宁，往往比强制管出来的安静，更持久也更牢固。”</b>——“滋养”对“管出”、“安宁”对“安静”，两组对照写尽自治与强制的分野，写“基层治理／多元共治”是点睛之笔。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文明刻度</span>
+      <p><b>“生活安宁权关乎群众切身感受，是城市文明最朴素的刻度。”</b>——把一项具体权利升华为城市文明的标尺，写“公共文明／权利保障”是精准的定语式金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·责任体谅</span>
+      <p><b>“看见自己的责任，体谅他人的难处，就能共享安宁，守护城市最美的模样。”</b>——由“看见”到“体谅”再到“共享”，三步递进，写“公共精神／邻里关系”是可直接引用的判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·自由边界</span>
+      <p><b>“不把自己的自由变成他人的负担。”</b>——十三个字道尽自由的边界，写“公共空间规则意识／权利与义务”是极简而有力的哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·各安其位</span>
+      <p><b>“每一种声音都各安其位，每一种生活也定会从容舒展。”</b>——“声音”与“生活”对举，“各安其位”与“从容舒展”呼应，写“多元共生／城市包容”是高分收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·源头治理</span>
+      <p><b>“把宁静理念融入规划设计，把噪声治理关口前移。”</b>——两个“把”字句写明源头治理的抓手，写“前端防控／规划先行”可直接化用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·被动局面</span>
+      <p><b>“摆脱‘头痛医头、脚痛医脚’的被动局面。”</b>——以医学比喻点破末端治理之弊，写“治理方式转型”是现成的对照表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据支撑</span>
+      <p><b>“2025年，全国地级及以上城市受理噪声投诉约683万件，其中社会生活噪声投诉占比高达73.2%。”</b>——“683万件”与“73.2%”两个数字确立问题的量级与结构，写“噪声治理”是最有力的事实论据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·核心是人</span>
+      <p><b>“城市治理的核心是人，检验治理成效的根本标尺是人民群众实实在在的获得感、幸福感、安全感。”</b>——“核心”与“标尺”双定位，写“人民城市／以人民为中心”是标准立论基石。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“排比现象＋典型案例破题法”：首段用“夜晚的广场舞、装修的电钻声、楼上的跑跳、空调的共振”四个镜头把抽象问题写具体，再借《生态环境法典》实施当天的噪声纠纷案完成定性。比空谈“噪声污染危害大”更有画面感。适用于“城市治理／公共文明／法治保障民生”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“物—制—人”三层递进骨架：①最有效的办法是从源头开始治理（技术与规划之维）；②建立有效的噪声扰民调解与处理机制（制度与共治之维）；③只要将心比心，不把自己的自由变成他人的负担（文明与人心之维）。三个分论点由“物”及“制”再及“人”，此法可迁移到“垃圾分类／电动车治理／社区养老”等一切城市治理话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“数据与感受”辩证立论：先承认“监测数值未超国家标准”，再强调“超出普通人容忍限度”，进而提出“既‘不唯监测数据论’，也尽可能降低对经营主体的冲击”。把“合规”与“合理”、“安宁”与“活力”写成有张力的统一，比直说“要兼顾各方利益”更有力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“守护安宁”拆成可操作举措：路面铺设透水降噪沥青、实行人车分流、打造降噪绿篱带（源头规划）；以灯光为“哨”约定活动时段、约定自觉散场（社区公约）；组建宁静商铺自治联盟，每月综合评分、动态劝退（商圈自治）；建立噪声扰民调解与处理机制，营造相互理解包容的居住氛围（机制兜底）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“一种声音”通向“一种文明”：以“劳动作业的声响、市井往来的动静、深夜安眠的呼吸”三组生活声响收束，再落到“每一种声音都各安其位，每一种生活也定会从容舒展”。这种“由具体声响及城市文明”的结尾适合“人民城市／治理现代化／美好生活”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「守护同一时空的各自安宁」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是让需求各异、节奏不同的人在同一时空中和谐共处，让每一种声音都有边界、守秩序，最有效的办法是从源头开始治理。把宁静理念融入规划设计，把治理关口前移。<br>二是也要看到，关于噪声治理，不同群体的认知仍有差别，有的地方改造难度大。由此而言，建立有效的噪声扰民调解与处理机制，共同营造一种舒适、和谐、相互理解包容的居住氛围，才能守护好同一时空下的各自安宁。<br>三是当前，城市空间的居住形态更加多样化，人们的生活节奏也各不相同。只要将心比心，不把自己的自由变成他人的负担，再多元的生活方式也能在同一个屋檐下和谐共处。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度——在降低噪声分贝的基础上进一步细化举措，守护好同一时空下每个人的安宁。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是让需求各异、节奏不同的人在同一时空中和谐共处，让每一种声音都有边界、守秩序，最有效的办法是从源头开始治理。——把宁静理念融入规划设计，把治理关口前移。<br>二是也要看到，关于噪声治理，不同群体的认知仍有差别，有的地方改造难度大。——由此而言，建立有效的噪声扰民调解与处理机制，共同营造一种舒适、和谐、相互理解包容的居住氛围，才能守护好同一时空下的各自安宁。<br>三是当前，城市空间的居住形态更加多样化，人们的生活节奏也各不相同。——只要将心比心，不把自己的自由变成他人的负担，再多元的生活方式也能在同一个屋檐下和谐共处。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于守护同一时空的各自安宁的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于守护同一时空的各自安宁的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进守护同一时空的各自安宁，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、让需求各异、节奏不同的人在同一时空中和谐共处，让每一种声音都有边界、守秩序，最有效的办法是从源头开始治理。——把宁静理念融入规划设计，把治理关口前移。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、也要看到，关于噪声治理，不同群体的认知仍有差别，有的地方改造难度大。——由此而言，建立有效的噪声扰民调解与处理机制，共同营造一种舒适、和谐、相互理解包容的居住氛围，才能守护好同一时空下的各自安宁。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、当前，城市空间的居住形态更加多样化，人们的生活节奏也各不相同。——只要将心比心，不把自己的自由变成他人的负担，再多元的生活方式也能在同一个屋檐下和谐共处。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“更加注重熨帖人的具体感受，兼顾城市生活安宁和发展活力，治理的刻度才能对准人心的尺度。”</span></span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-10</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260910_1.html">✏️ 原文自测</a>
+</body>
+</html>
