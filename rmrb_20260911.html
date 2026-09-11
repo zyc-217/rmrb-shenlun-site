@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 与青春中国共成长</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>与青春中国共成长</h1>
+    <div class="meta">人民日报·评论员观察 | 青年挺膺担当·人才强国·把青春融入中国式现代化 | 2026年9月11日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：青春之我与青春中国双向成就／仰望星空敢为人先·脚踏实地埋头耕耘·平视世界开放自信三维分论／大有可为的机遇与大有作为的底气</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">青年成长与挺膺担当</span>
+      <span class="tag-item">人才强国战略</span>
+      <span class="tag-item">教育科技人才一体推进</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">科技自立自强</span>
+      <span class="tag-item">敢为人先的创新精神</span>
+      <span class="tag-item">实干笃行与基层磨砺</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">青年发展型城市</span>
+      <span class="tag-item">把“投资于人”落到实处</span>
+      <span class="tag-item">家国情怀与全球视野</span>
+      <span class="tag-item">把个人理想融入国家需要</span>
+      <span class="tag-item">青年科技人才队伍建设</span>
+      <span class="tag-item">群像叙事论证法</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“青年挺膺担当”“人才强国”“把青春融入中国式现代化”“创新创造”等主题；本文<b>“现象群像破题—‘钱学森之问’立骨—三维分论（仰望星空·敢为人先／脚踏实地·埋头耕耘／平视世界·开放自信）—青春之我与青春中国双向成就收束”</b>的论证链，是写“青年与发展”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>以人才政策、科研扶持、生活保障多措并举为青年减负撑腰，让青年心无旁骛、大展身手／完善长周期科研支持与容错机制，鼓励青年勇挑重担、敢闯“无人区”／搭建世界青年发展论坛、世界青年科学家峰会等国际交流平台，支持青年与全球同行携手攻关／破除“心浮气躁”“娇滴滴”的刻板印象，引导青年扎根基层一线锤炼过硬本领</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>青春之我，塑造青春中国；青春中国，为青年成长搭建舞台</b>”“<b>如果说，仰望星空、抬头看路是中国青年身上的鲜明标识，那么脚踏实地、埋头耕耘则是他们身上的另一重品格</b>”“<b>才智不凡，追求更不凡</b>”等多组辩证，是写<b>个人与时代／理想与实干／志气与底气</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“建设青年发展型城市的实施意见”“致广大青年朋友的一封信”“在青年科技人才座谈会上的发言提纲”等公文素材；文中“<b>这里有大有可为的机遇</b>”“<b>这里还有大有作为的底气</b>”“<b>让青春闪耀，让理想翱翔</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（群像破题—总纲立论—创新力/实干品格/全球视野三维分论—青春之我与青春中国双向成就收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>群像破题＋权威之问立骨</b>：首段以“越来越多中国青年正闪耀世界舞台，刷新世人的认知”一句立起全篇气象；第二至四段以“前不久”“把视线拉长”两组镜头，密集推出登上《时代》周刊封面的创业者、入选《自然》年度十大科学人物的科学家、CR450高速动车组青年研制团队、斩获菲尔兹奖的青年数学家等群像，再以“20多年前，‘钱学森之问’振聋发聩”陡然抬升，一句“今天，中国青年用敢为人先的创新力，挑大梁、攀高峰、挑重担，为这个问题书写下精彩答案”完成从现象到论断的跃迁（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>“有所为—何以可为”一体两面</b>：篇首即以“青年一代有‘用青春之我创造青春之中国’的家国情怀，亦不乏‘一起向未来’的人类情怀”立起全篇总纲，一句之内同时标定“家国情怀”与“人类情怀”两个向度，为后文三个分论点预留出“创新—实干—视野”的完整展开空间（篇首立论段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>仰望星空·敢为人先的创新力</b>：以“他们不服输，勇于挺进无人区”“他们不信邪，敢在国际舞台跟老牌企业‘掰手腕’、争长短”两句作分论骨架，举武汉光电国家研究中心研究员主导研发玻璃多维光存储技术、“张雪机车”力压海外品牌两例，落到“才智不凡，追求更不凡”，写出青年创新的锐气与骨气（第一分论组，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>脚踏实地·埋头耕耘的实干品格</b>：以“如果说，仰望星空、抬头看路是中国青年身上的鲜明标识，那么脚踏实地、埋头耕耘则是他们身上的另一重品格”完成转场，连用“谁说年轻人心浮气躁？”“谁说年轻人娇滴滴？”两个设问句破偏见，举“听声辨伤”的检车锤绝活、牛羊粪变有机肥带动近2500户牧民增收、95后返乡造林7000余亩、“蹲行医生”扎根戈壁四例，落到“将个人理想融入国家需要”（第二分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>平视世界·兼具全球视野的开放气度</b>：由“如今的中国青年，不仅胸怀家国大义，还兼具全球视野，他们平视世界、放眼世界，具有开放自信的气度”领起，以活跃于世界青年发展论坛、世界青年科学家峰会分享成果，在绿色能源、生物医药领域与全球同行携手攻关，在国际体育赛事中友好竞技三场景铺开，把青年形象从“国家主角”推向“世界同行”（第三分论组）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>群像案例＋数据支撑＋权威引述</b>：<span class="highlight-green">近2500户牧民增收</span>、<span class="highlight-green">累计造林7000余亩</span>、<span class="highlight-green">存储介质寿命普遍只有5到10年</span>等数据构成“事实支撑”；宇树科技、《自然》年度十大科学人物、CR450、菲尔兹奖等构成“群像支撑”；<span class="highlight-gold">“钱学森之问”</span>、<span class="highlight-blue">“投资于人”</span>构成“政治高度与政策支撑”，三层论据互相咬合，是评论员观察“以群像写气象、以群像证论断”的典型写法。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“群像破题—总纲立论—三维分论—双向成就收束”的“总—分—总”结构</b>：三个分论点分别从“<b>敢为人先的创新力</b>”“<b>埋头耕耘的实干品格</b>”“<b>开放自信的全球视野</b>”三个维度展开，角度互不重叠却层层递进；<b>“谁说……？”</b>的反问连用与<b>“服输／不信邪”</b>的对举短句让论述富有锋芒；结尾以<b>“青春之我，塑造青春中国；青春中国，为青年成长搭建舞台”</b>构成回环互文，再由“大有可为的机遇”“大有作为的底气”两句分述，是申论“以人物群像服务宏大主题”的范本，可直接化为分论点小标题。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】青年一代有<span class="highlight-gold">“用青春之我创造青春之中国”</span>的家国情怀，亦不乏<span class="highlight-gold">“一起向未来”</span>的人类情怀——<span class="highlight-purple">青春之我，塑造青春中国；青春中国，为青年成长搭建舞台</span>。</div>
+
+      <p>越来越多中国青年正闪耀世界舞台，刷新世人的认知。</p>
+
+      <p>前不久，宇树科技创始人王兴兴与载人机甲产品GD01共同登上美国《时代》周刊封面。英国一家媒体则把目光聚焦到月之暗面创始人杨植麟，从他的经历解读中国日益增强的人工智能生态吸引力。</p>
+
+      <p>把视线拉长。从深度求索创始人梁文锋、中国科学院科学家杜梦然入选英国《自然》杂志评出的<span class="highlight-green">2025年度十大科学人物</span>，到国铁集团<span class="highlight-green">CR450高速动车组青年研制团队</span>助力<span class="highlight-green">“全球最快高铁列车”</span>领跑世界，再到王虹、邓煜斩获菲尔兹奖，一大批中国年轻人在创新前沿崭露头角，打破外界的刻板印象。</p>
+
+      <p>20多年前，<span class="highlight-gold">“钱学森之问”</span>振聋发聩。今天，中国青年用敢为人先的创新力，挑大梁、攀高峰、挑重担，为这个问题书写下精彩答案。</p>
+
+      <div class="sub-thesis">【分论点一】仰望星空、抬头看路，中国青年以敢为人先的创新力挑大梁、攀高峰。——不服输，勇于挺进无人区；不信邪，敢在国际舞台跟老牌企业争长短。</div>
+
+      <p>他们不服输，勇于挺进无人区。大数据时代，机械硬盘、固态硬盘等主流存储介质的寿命普遍只有<span class="highlight-green">5到10年</span>，每隔几年就须耗费巨资进行数据迁移。武汉光电国家研究中心研究员张静宇主导研发玻璃多维光存储技术，找到一条延续数据存储寿命的新路径。正如他所说，<span class="highlight-gold">“从零突破的创新，总要有人勇挑重担、敢闯无人区”</span>。</p>
+
+      <p>他们<span class="highlight-purple">不信邪，敢在国际舞台跟老牌企业“掰手腕”、争长短</span>。有人说“中国造不出高端摩托发动机”，张雪偏要搞研发，死磕到底，“张雪机车”不仅造出来了，还在国际赛事上力压海外品牌，屡夺冠军。</p>
+
+      <p><span class="highlight-gold">才智不凡，追求更不凡。</span>在科技前沿勇攀高峰，在产业一线奋发进取，一个个中国青年<span class="highlight-gold">承先辈之志、开时代之新</span>，让青春中国绽放青春光彩。</p>
+
+      <div class="sub-thesis">【分论点二】脚踏实地、埋头耕耘，中国青年褪去浮躁、潜心成长。——将个人理想融入国家需要，在平凡岗位上默默发光发热。</div>
+
+      <p><span class="highlight-purple">如果说，仰望星空、抬头看路是中国青年身上的鲜明标识，那么脚踏实地、埋头耕耘则是他们身上的另一重品格。</span></p>
+
+      <p>谁说年轻人心浮气躁？新时代铁路榜样刘曜宁，扎根货车检修一线，用一把检车锤练就“听声辨伤”的绝活；西藏那曲青年次仁明久，大学期间受一则关于有机肥的新闻启发，决心将草原上随处可见的牛羊粪“变废为宝”，如今生产的有机肥辐射带动<span class="highlight-green">近2500户牧民增收</span>。</p>
+
+      <p>谁说年轻人娇滴滴？95后青年仲麟在“读了大学还回来吃沙子”的质疑中，扛起铁锹回到家乡，带领团队<span class="highlight-green">累计造林7000余亩</span>；“蹲行医生”李创业自立自强、刻苦学医，扎根戈壁扛起基层乡村医生的使命。</p>
+
+      <p>他们将个人理想融入国家需要，<span class="highlight-purple">褪去浮躁、潜心成长，在日复一日的精耕细作中锤炼过硬本领，在平凡岗位上默默发光发热</span>，书写下不凡的时代担当。</p>
+
+      <div class="sub-thesis">【分论点三】胸怀家国大义，兼具全球视野，中国青年平视世界、放眼世界。——以开放自信的气度深化中外友谊、展现精神面貌。</div>
+
+      <p>如今的中国青年，不仅胸怀家国大义，还兼具全球视野，他们<span class="highlight-blue">平视世界、放眼世界</span>，具有开放自信的气度。</p>
+
+      <p>他们活跃于<span class="highlight-blue">世界青年发展论坛、世界青年科学家峰会</span>等平台，分享创新成果、交流前沿问题；在<span class="highlight-blue">绿色能源、生物医药</span>等领域与全球同行携手攻关，以务实合作深化中外友谊；在国际体育赛事中友好竞技，让世界看见热情包容、阳光向上的精神面貌……</p>
+
+      <p><span class="highlight-gold">与国家共成长，与时代同进步。</span>青年一代有<span class="highlight-gold">“用青春之我创造青春之中国”</span>的家国情怀，亦不乏<span class="highlight-gold">“一起向未来”</span>的人类情怀。</p>
+
+      <p><span class="highlight-gold">青春之我，塑造青春中国；青春中国，为青年成长搭建舞台。</span>这里有<span class="highlight-purple">大有可为的机遇</span>：完整的产业链条、广阔的产业蓝海、持续加码的科研投入以及开放包容的创新环境，培厚了施展才干的沃土。这里还有<span class="highlight-purple">大有作为的底气</span>：<span class="highlight-blue">“投资于人”</span>深入人心，<span class="highlight-blue">人才政策、科研扶持、生活保障</span>多措并举，为青年减负撑腰，让他们<span class="highlight-blue">心无旁骛、大展身手</span>。</p>
+
+      <p><span class="highlight-gold">让青春闪耀，让理想翱翔</span>，中国青年正与青春中国共成长。</p>
+
+      <p class="byline">（人民日报2026年9月11日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·双向成就</span>
+      <p><b>“青春之我，塑造青春中国；青春中国，为青年成长搭建舞台。”</b>——一句之内写出青年与国家的双向成就关系，写“青年担当／个人与时代”是最高维度的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新骨气</span>
+      <p><b>“才智不凡，追求更不凡。”</b>——八个字写尽青年创新者的志气与追求，写“科技自立自强／新质生产力”是极简而有力的判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·无人区精神</span>
+      <p><b>“从零突破的创新，总要有人勇挑重担、敢闯无人区。”</b>——把原始创新的艰难与担当一次说透，写“基础研究／关键核心技术攻关”是可直接引用的金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·时代舞台</span>
+      <p><b>“这里有大有可为的机遇……这里还有大有作为的底气。”</b>——“机遇”与“底气”对举，写“青年发展型城市／人才政策”是绝佳的分论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证品格</span>
+      <p><b>“如果说，仰望星空、抬头看路是中国青年身上的鲜明标识，那么脚踏实地、埋头耕耘则是他们身上的另一重品格。”</b>——“仰望星空”与“脚踏实地”对举，写“理想与实干”是现成的辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·干事作风</span>
+      <p><b>“褪去浮躁、潜心成长，在日复一日的精耕细作中锤炼过硬本领，在平凡岗位上默默发光发热。”</b>——把成长写成可检验的日常功夫，写“基层磨砺／工匠精神”是精确定语式金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放气度</span>
+      <p><b>“他们平视世界、放眼世界，具有开放自信的气度。”</b>——“平视”一词标定新一代青年的世界姿态，写“人类命运共同体／高水平对外开放”是点睛之笔。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·格局境界</span>
+      <p><b>“这里还有大有作为的底气：‘投资于人’深入人心，人才政策、科研扶持、生活保障多措并举，为青年减负撑腰，让他们心无旁骛、大展身手。”</b>——“投资于人”是政策新语，写“人才强国／民生保障”是最具时代感的表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·传承担当</span>
+      <p><b>“一个个中国青年承先辈之志、开时代之新，让青春中国绽放青春光彩。”</b>——“承”与“开”两个动词串起传承与开创，写“青年与中国式现代化”是万能收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束升华</span>
+      <p><b>“让青春闪耀，让理想翱翔，中国青年正与青春中国共成长。”</b>——两句对偶收束全篇并回扣标题，写“青春报国”类主题是高分结尾。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据支撑</span>
+      <p><b>“辐射带动近2500户牧民增收”“累计造林7000余亩”。</b>——两个数字把青春实干的成效落到具体群众身上，写“乡村振兴／返乡创业”是最有力的事实论据。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“群像破题法”：不先讲大道理，而是密集推出登上《时代》周刊封面的创业者、入选《自然》年度科学人物的青年科学家、CR450青年研制团队、斩获菲尔兹奖的青年数学家四组群像，再以“20多年前，‘钱学森之问’振聋发聩”抬升，一句点题。比直说“青年要担当”更有气象、更易入题。适用于“青年挺膺担当／人才强国／科技自立自强”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三维分论”骨架：①仰望星空、抬头看路，中国青年以敢为人先的创新力挑大梁、攀高峰（创新的锐气）；②脚踏实地、埋头耕耘，中国青年褪去浮躁、潜心成长（实干的底色）；③胸怀家国大义，兼具全球视野，中国青年平视世界、放眼世界（开放的格局）。三个分论点分别从“创新—实干—视野”三个维度展开，此法可迁移到“青年成长／队伍建设／时代新人”等一切“以人物写主题”的话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“为青年成长搭建舞台”拆成可操作举措：以人才政策、科研扶持、生活保障多措并举为青年减负撑腰，让他们心无旁骛、大展身手；完善长周期科研支持与容错机制，鼓励青年勇挑重担、敢闯“无人区”；依托完整的产业链条与开放包容的创新环境，为青年提供更多施展才干的沃土；搭建国际交流平台，支持青年与全球同行携手攻关；加强舆论引导，破除“心浮气躁”“娇滴滴”的刻板印象，鼓励青年扎根基层一线。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“品格互文”辩证立论：先承认“仰望星空、抬头看路”是中国青年的鲜明标识，再指出“脚踏实地、埋头耕耘”是他们的另一重品格，最后用“褪去浮躁、潜心成长”落到日常功夫。把“理想与实干”写成互为表里、缺一不可的论证，比直说“既要仰望星空又要脚踏实地”更有层次。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由“双向成就”通向“时代舞台”：以“青春之我，塑造青春中国；青春中国，为青年成长搭建舞台”构成回环互文，再用“大有可为的机遇”“大有作为的底气”两句分述，最后落到“让青春闪耀，让理想翱翔，中国青年正与青春中国共成长”。这种“由个人奋斗及国家发展”的结尾适合“中国式现代化／青年担当／人才强国”主题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「与青春中国共成长」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是仰望星空、抬头看路，中国青年以敢为人先的创新力挑大梁、攀高峰。不服输，勇于挺进无人区；不信邪，敢在国际舞台跟老牌企业争长短。<br>二是脚踏实地、埋头耕耘，中国青年褪去浮躁、潜心成长。将个人理想融入国家需要，在平凡岗位上默默发光发热。<br>三是胸怀家国大义，兼具全球视野，中国青年平视世界、放眼世界。以开放自信的气度深化中外友谊、展现精神面貌。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「青年一代有“用青春之我创造青春之中国”的家国情怀，亦不乏“一起向未来”的人类情怀——青春之我，塑造青春中国；青春中国，为青年成长搭建舞台。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是仰望星空、抬头看路，中国青年以敢为人先的创新力挑大梁、攀高峰。——不服输，勇于挺进无人区；不信邪，敢在国际舞台跟老牌企业争长短。<br>二是脚踏实地、埋头耕耘，中国青年褪去浮躁、潜心成长。——将个人理想融入国家需要，在平凡岗位上默默发光发热。<br>三是胸怀家国大义，兼具全球视野，中国青年平视世界、放眼世界。——以开放自信的气度深化中外友谊、展现精神面貌。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“青春之我，塑造青春中国；青春中国，为青年成长搭建舞台。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于与青春中国共成长的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于与青春中国共成长的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进与青春中国共成长，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、仰望星空、抬头看路，中国青年以敢为人先的创新力挑大梁、攀高峰。——不服输，勇于挺进无人区；不信邪，敢在国际舞台跟老牌企业争长短。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、脚踏实地、埋头耕耘，中国青年褪去浮躁、潜心成长。——将个人理想融入国家需要，在平凡岗位上默默发光发热。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、胸怀家国大义，兼具全球视野，中国青年平视世界、放眼世界。——以开放自信的气度深化中外友谊、展现精神面貌。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“青春之我，塑造青春中国；青春中国，为青年成长搭建舞台。”</span></span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-11</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+<a class="orig-fab" href="yuanwen_rmrb_20260911.html">✏️ 原文自测</a>
+</body>
+</html>
