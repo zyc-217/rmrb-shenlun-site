@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以优化营商环境激发企业有效投资活力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以优化营商环境激发企业有效投资活力</h1>
+    <div class="meta">人民日报·专题深思 | 营商环境·有效投资·民营经济促进·新质生产力 | 2026年9月9日 | 第09版</div>
+    <div class="meta" style="margin-top:4px;">主题：投资双重属性＋营商环境意义／提升服务便利度·加强要素保障·优化投资导向·完善信用体系四维分论／提振企业信心·增强经济动能</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">优化营商环境</span>
+      <span class="tag-item">有效投资与扩大内需</span>
+      <span class="tag-item">民营经济促进</span>
+      <span class="tag-item">供给侧结构性改革</span>
+      <span class="tag-item">要素市场化配置</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">全国统一大市场</span>
+      <span class="tag-item">法治政府与规范执法</span>
+      <span class="tag-item">社会信用体系</span>
+      <span class="tag-item">反内卷式竞争</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">十五五规划纲要</span>
+      <span class="tag-item">稳定预期与长期主义</span>
+      <span class="tag-item">民间投资</span>
+      <span class="tag-item">政务服务改革</span>
+      <span class="tag-item">投资审批制度改革</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配「优化营商环境」「有效投资」「民营经济促进」等主题；本文<b>「总论点（投资的双重属性＋营商环境意义）—四维分论（服务便利度／要素保障／投资导向／信用体系）—收束」</b>的论证链，是写「营商环境」类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>深化投资审批制度改革，减环节优流程压时间增便利，加强优质高效服务支撑／构建完善的要素市场化配置体制机制，促进要素资源畅通流动／引导国家中小企业发展基金带动社会资本投早投小投长期投硬科技，推动有效投资向新质生产力集聚、避免内卷式竞争／健全以信用为基础的新型监管机制，建立清理和防止拖欠账款长效机制，推进综合查一次联合执法</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">归纳概括</span><span class="text">可概括「优化营商环境激发企业有效投资的四方面关键举措」：提升投资服务便利度、持续加强要素保障、优化投资导向、完善社会信用体系，是写「举措概括」类题的现成模板。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为「关于进一步优化营商环境的实施意见」「致广大企业家朋友的一封信」「在优化营商环境大会上的发言提纲」等公文素材；文中<b>「打造市场化、法治化、国际化一流营商环境」</b><b>「让企业投资的信心更强、底气更足」</b>等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（双重属性立论—总纲意义—服务便利度/要素保障/投资导向/信用体系四维分论—信心底气收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>「双重属性」立论＋政策引述托底</b>：首段以「投资是当期的需求，也是未来的供给」这一朴素判断破题，随即引述习近平总书记「要全面改善投资环境，形成良好投资预期，激发全社会投资活力」的论断与「十五五」规划纲要关于「积极营造一流营商环境」的部署，由常识判断跃升到政策高度，立起全篇的权威底座（第一段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>「意义—目标」一体两面</b>：以「优化营商环境对于扩大企业有效投资具有重要意义」标定总纲，一句之内既点出营商环境与有效投资的因果关联，又落到「以一流营商环境提振企业发展信心，以有效投资助力增强经济发展动能」的双重目标，为后文四个分论点预留出「便利度—保障—导向—信用」的完整展开空间（立论段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>提升投资服务便利度</b>：以「企业投资从项目谋划到建设投产，往往涉及多个部门和环节」点出痛点，举深化投资审批制度改革、精简报建审批事项、强化审批管理信息系统集约化建设、发布鼓励民营经济投资重大项目信息、推进「综合查一次」联合执法等举措，落到「激发企业投资意愿」（第一分论组，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>持续加强要素保障</b>：由「土地、能源、资金、技术、数据和人才等要素协同保障」切入，落到「构建更加完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置」；并提巩固企业投资主体地位、建立民间投资资金和要素保障工作机制、畅通高校科研院所企业人才交流通道，帮助企业提高投资效益（第二分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>优化投资导向</b>：以「改善营商环境的落脚点在于提升经济发展质效」领起，举引导国家中小企业发展基金带动社会资本投早投小投长期投硬科技、推动有效投资向新质生产力集聚、避免「内卷式」竞争、完善民营企业参与重大项目建设长效机制，把投资引向新旧动能转换与高质量发展领域（第三分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>完善社会信用体系</b>：以「打造高质量社会信用环境，增强投资者信心」立起，举健全以信用为基础的新型监管机制、深入推进法治政府建设、建立清理和防止拖欠账款长效机制、加强投资者权益保护，以信用环境厚植投资沃土（第四分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>「总—分—总」结构</b>：总论点从「投资的双重属性」与「营商环境的意义」两个维度立论；四个分论点按<b>「审批服务—要素保障—投资导向—信用环境」</b>四个治理环节展开，角度互不重叠却层层递进，形成「松绑减负—要素护航—导向提质—信用筑基」的闭环；结尾回扣「让企业投资的信心更强、底气更足」，是申论「以制度建设写经济发展」的范本，分论点小标题可直接化用。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】投资是<span class="highlight-purple">当期的需求，也是未来的供给</span>；优化营商环境对于扩大企业有效投资具有重要意义——要以打造一流营商环境<span class="highlight-gold">提振企业发展信心</span>，以有效投资助力增强经济发展动能。</div>
+
+      <p>投资是当期的需求，也是未来的供给。习近平总书记强调：<span class="highlight-gold">"要全面改善投资环境，形成良好投资预期，激发全社会投资活力。"</span>企业是扩大有效投资的重要主体，<span class="highlight-blue">优化营商环境</span>对于扩大企业有效投资具有重要意义。<span class="highlight-blue">"十五五"规划纲要</span>围绕"积极营造一流营商环境"作出部署，提出要"持续推进营商环境改进提升，打造<span class="highlight-blue">市场化、法治化、国际化一流营商环境</span>"。贯彻落实党中央决策部署，要以打造一流营商环境提振企业发展信心，以有效投资助力增强经济发展动能。</p>
+
+      <p><span class="highlight-purple">有效投资是深化供给侧结构性改革和扩大有效需求的有机结合点。</span>当前，扩大投资重在"有效"，不仅要看规模，更要看是否能够改善供给结构、提升生产效率、增进民生福祉等。作为市场经济的微观基础，企业的投资行为是推动高质量发展的重要动力。在这一过程中，改进提升营商环境能够进一步降低制度性交易成本、打破各类隐性壁垒等，是推动企业扩大有效投资的重要保障。</p>
+
+      <p>这主要体现在以下方面：保持制度规则的稳定性连续性，增强政策目标、政策工具、政策执行之间的协同性，能够帮助企业稳定预期，树立"长期主义"理念，依据市场"信号"安排投资；打造规范高效的政务环境，推进政务数据共享和跨部门业务协同，优化项目审批流程，能够帮助企业把更多资金和精力投向技术、设备、人才等真正创造价值的环节；破除市场准入、招标投标、政府采购等领域的不合理限制，依法平等保护各种所有制经济产权和合法权益，能够使各类企业平等参与竞争，为企业投资拓展更广阔的市场空间；尊重科技创新和产业成长规律，形成多层次、广覆盖、差异化的金融服务体系，能够使资金真正投向具有创新价值和成长潜力的项目，为企业投资注入源源不断的金融活水。为此，要把"十五五"规划纲要关于"积极营造一流营商环境"的部署落到实处，持续推进营商环境改进提升，让企业投资的信心更强、底气更足。</p>
+
+      <div class="sub-thesis">【分论点一】提升投资服务便利度——深化投资审批制度改革，减环节优流程压时间增便利，激发企业投资意愿。</div>
+
+      <p>企业投资从项目谋划到建设投产，往往涉及多个部门和环节。优化审批流程，能够不断提高投资服务的精准性、时效性和满意度，激发企业投资意愿。要深化投资审批制度改革，进一步精简投资项目报建审批事项，强化投资审批管理信息系统集约化建设，依法依规减环节、优流程、压时间、增便利，加强优质高效服务支撑。持续加强项目服务，发布鼓励民营经济投资的重大项目信息，在项目推介对接、前期工作和报建审批等方面提供规范、高效、便利的服务，方便企业投资项目申报，营造促进民间投资发展的良好环境。开展规范涉企执法专项行动，健全规范涉企执法长效机制，防止和纠正违规异地执法、趋利性执法，推进<span class="highlight-blue">"综合查一次"</span>等联合执法方式。</p>
+
+      <div class="sub-thesis">【分论点二】持续加强要素保障——构建完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。</div>
+
+      <p>企业实施投资项目，需要土地、能源、资金、技术、数据和人才等要素协同保障。要素配置不畅，不仅会延误项目建设，也可能造成设备闲置、技术与人才错配等。为此，要构建更加完善的<span class="highlight-blue">要素市场化配置体制机制</span>，持续推进土地、资本、劳动力、技术、数据等要素市场建设，让各类要素在公平竞争中实现优化配置，帮助企业提高投资效益。进一步巩固企业投资主体地位，建立完善促进民间投资资金和要素保障工作机制，强化企业投资项目核准、备案管理政策和要素资金管理政策的协同，促进要素资源畅通流动，加快释放市场潜力。支持企业加大高端投融资人才的引进和培养，加强研发人员培养、职工技能提升和组织管理创新，畅通高校、科研院所、企业人才交流通道，推动更多高层次人才向企业集聚。</p>
+
+      <div class="sub-thesis">【分论点三】优化投资导向——推动有效投资向新质生产力集聚，避免"内卷式"竞争。</div>
+
+      <p>改善营商环境的落脚点在于提升经济发展质效。当前，通过精准的引导与服务机制，提高投资综合效益，能够更好发挥投资对支撑国家战略、优化供给结构、满足民生需求等方面的重要作用，推动有效投资加速向新旧动能转换、发展<span class="highlight-blue">新质生产力</span>等高质量发展领域集聚。要推动企业投资向创新环节倾斜，引导国家中小企业发展基金带动更多社会资本投早投小投长期投硬科技，推动形成生产、市场、效益、投资相互促进的良性循环，避免<span class="highlight-blue">"内卷式"竞争</span>。完善民营企业参与重大项目建设长效机制，积极支持民营企业参与具有一定收益的铁路、核电、水电等重点领域项目建设。</p>
+
+      <div class="sub-thesis">【分论点四】完善社会信用体系——健全以信用为基础的新型监管机制，打造诚实守信的金融生态环境。</div>
+
+      <p>这能够打造高质量社会信用环境，增强投资者信心。要健全以信用为基础的新型监管机制，以信用风险为导向优化配置监管资源。深入推进<span class="highlight-blue">法治政府建设</span>，在政府和社会资本合作、招商引资等活动中依法诚信履约。建立健全清理和防止拖欠账款长效机制，提升司法公信，推动被执行人积极履行法律义务，依法惩治虚假诉讼。加强投资者权益保护，打造诚实守信的金融生态环境。</p>
+
+      <p class="byline">（人民日报2026年9月9日 第09版 · 专题深思）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记论投资环境</span>
+      <p><b>「要全面改善投资环境，形成良好投资预期，激发全社会投资活力。」</b>——习近平总书记关于营商环境与投资的核心论断，写「优化营商环境」是最高权威支撑。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·投资辩证属性</span>
+      <p><b>「投资是当期的需求，也是未来的供给。」</b>——一句写透投资的双重属性，写「扩大内需／有效投资」是立论金句，自带辩证法。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·有效投资定义</span>
+      <p><b>「有效投资是深化供给侧结构性改革和扩大有效需求的有机结合点。」</b>——把投资与供给结构的关系一次说清，写「投资与高质量发展」是标准判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·营商环境目标</span>
+      <p><b>「打造市场化、法治化、国际化一流营商环境。」</b>——「十五五」规划纲要原文表述，写「优化营商环境」是官方标准语，必背。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·长期主义</span>
+      <p><b>「树立'长期主义'理念，依据市场'信号'安排投资。」</b>——把稳定预期写成企业行为准则，写「稳定预期／企业信心」是精准表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·综合查一次</span>
+      <p><b>「推进'综合查一次'等联合执法方式。」</b>——规范涉企执法的新举措，写「营商环境温度／减负松绑」是鲜活素材。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·要素市场化</span>
+      <p><b>「构建更加完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。」</b>——写「要素保障／全国统一大市场」是政策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·新质生产力集聚</span>
+      <p><b>「推动有效投资加速向新旧动能转换、发展新质生产力等高质量发展领域集聚。」</b>——写「投资导向／新质生产力」是现成论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·反内卷</span>
+      <p><b>「推动形成生产、市场、效益、投资相互促进的良性循环，避免'内卷式'竞争。」</b>——写「反内卷／高质量发展」是点睛表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·信用环境</span>
+      <p><b>「打造诚实守信的金融生态环境。」</b>——写「社会信用体系／投资者保护」是收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文框架</span>
+      <p>学本文「总论点（投资的双重属性＋营商环境意义）—四维分论（服务便利度／要素保障／投资导向／信用体系）—收束」结构，适用于「营商环境／有效投资／民营经济」类作文，分论点从治理环节切入，稳妥不跑题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文「四维分论」骨架：①提升投资服务便利度，深化审批改革、推进综合查一次（松绑）；②持续加强要素保障，构建要素市场化配置体制机制（护航）；③优化投资导向，引导投向新质生产力、避免内卷式竞争（提质）；④完善社会信用体系，健全信用监管与清理拖欠账款（筑基）。四个分论点从「审批—要素—导向—信用」四个环节展开，互不重叠、层层递进，可迁移到「政府治理／产业发展」等话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把「优化营商环境激发有效投资」拆成可操作举措：深化投资审批制度改革减环节优流程压时间增便利；构建要素市场化配置体制机制促进要素畅通流动；引导国家中小企业发展基金带动社会资本投早投小投长期投硬科技、推动有效投资向新质生产力集聚、避免内卷式竞争；健全以信用为基础的新型监管机制、建立清理和防止拖欠账款长效机制、推进综合查一次联合执法。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学「投资是当期的需求，也是未来的供给」「不仅要看规模，更要看是否能够改善供给结构」的辩证立论，把「规模与质量」「当期与长远」写成互为表里、缺一不可的论证，比直说「既要扩大投资又要注重质量」更有层次。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由「营商环境—企业信心—有效投资—经济动能」的逻辑链收束，落到「让企业投资的信心更强、底气更足」，适合「高质量发展／十五五规划」主题，既回扣标题又给出正向预期。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「以优化营商环境激发企业有效投资活力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是提升投资服务便利度。深化投资审批制度改革，减环节优流程压时间增便利，激发企业投资意愿。<br>二是持续加强要素保障。构建完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。<br>三是优化投资导向。推动有效投资向新质生产力集聚，避免"内卷式"竞争。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「投资是当期的需求，也是未来的供给；优化营商环境对于扩大企业有效投资具有重要意义——要以打造一流营商环境提振企业发展信心，以有效投资助力增强经济发展动能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是提升投资服务便利度——深化投资审批制度改革，减环节优流程压时间增便利，激发企业投资意愿。<br>二是持续加强要素保障——构建完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。<br>三是优化投资导向——推动有效投资向新质生产力集聚，避免"内卷式"竞争。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：「要全面改善投资环境，形成良好投资预期，激发全社会投资活力。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「以优化营商环境激发企业有效投资活力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是深化投资审批制度改革，减环节优流程压时间增便利，加强优质高效服务支撑。<br>二是构建完善的要素市场化配置体制机制，促进要素资源畅通流动。<br>三是引导国家中小企业发展基金带动社会资本投早投小投长期投硬科技，推动有效投资向新质生产力集聚、避免内卷式竞争。<br>四是健全以信用为基础的新型监管机制，建立清理和防止拖欠账款长效机制，推进综合查一次联合执法。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：「要全面改善投资环境，形成良好投资预期，激发全社会投资活力。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于以优化营商环境激发企业有效投资活力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于以优化营商环境激发企业有效投资活力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进以优化营商环境激发企业有效投资活力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、提升投资服务便利度——深化投资审批制度改革，减环节优流程压时间增便利，激发企业投资意愿。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、持续加强要素保障——构建完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、优化投资导向——推动有效投资向新质生产力集聚，避免"内卷式"竞争。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：「要全面改善投资环境，形成良好投资预期，激发全社会投资活力。」</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「以优化营商环境激发企业有效投资活力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：以优化营商环境激发企业有效投资活力<br><br>时代之问，呼唤破题之策。以优化营商环境激发企业有效投资活力，是发展所需，也是民心所向。可从三个维度展开：提升投资服务便利度、持续加强要素保障、优化投资导向。<br><br>分论点一：提升投资服务便利度——深化投资审批制度改革，减环节优流程压时间增便利，激发企业投资意愿。方向对了，路再远也能抵达。「要全面改善投资环境，形成良好投资预期，激发全社会投资活力。」<br><br>分论点二：持续加强要素保障——构建完善的要素市场化配置体制机制，让各类要素在公平竞争中实现优化配置。方法对了，事再难也能办成。「投资是当期的需求，也是未来的供给。」<br><br>分论点三：优化投资导向——推动有效投资向新质生产力集聚，避免"内卷式"竞争。行百里者半九十。「有效投资是深化供给侧结构性改革和扩大有效需求的有机结合点。」保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。以优化营商环境激发企业有效投资活力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-12</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
