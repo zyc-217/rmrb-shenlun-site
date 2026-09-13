@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从审美出圈读懂“中国引力”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从审美出圈读懂“中国引力”</h1>
+    <div class="meta">人民日报·评论员观察 | 文化自信·文明互鉴·软实力·中国式现代化 | 2026年9月8日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：中国引力归于文明古国的生命力与包容性／厚植文化底蕴·涵养开放包容·夯实发展底色三维度／现代化≠西方化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">中华优秀传统文化创造性转化</span>
+      <span class="tag-item">文明交流互鉴</span>
+      <span class="tag-item">国家软实力与文化出海</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">过境免签与文化旅行</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">中华美学与青年文化</span>
+      <span class="tag-item">国际传播能力建设</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">综合国力</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配「文化自信」「文明交流互鉴」「中国式现代化」等主题；本文「总论点（中国引力归于文明古国的生命力与包容性）—三维分论（厚植文化底蕴／涵养开放包容／夯实发展底色）—收束」的论证链，是写「文化出海／软实力／中国式现代化」类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可提炼四条对策：<b>深耕中华优秀传统文化、以东方美学赋能文化出海／培育开放包容的文化心态、以本土美学方案参与全球叙事／扩大高水平对外开放、以便利化举措吸引国际客流与人才／以创新驱动高质量发展、为文明互鉴筑牢综合国力根基</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">归纳概括</span><span class="text">可概括「『中国引力』不断提升的主要支撑」：厚重的文化底蕴、开放包容的文化心态、蓬勃向上的发展底色与创新发展的广阔机遇，是写「现象成因概括」类题的现成模板。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为「关于加强国际传播能力建设的倡议书」「致海内外朋友的一封信」「在文明交流互鉴论坛上的发言提纲」等公文素材；文中<b>「与中国同行就是与机遇同行，相信中国就是相信明天」</b><b>「以文化动人、以服务迎客、以创新赋能」</b>等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（场景破题—题记立骨—文化底蕴/开放包容/发展底色三维分论—文明生命力收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>「场景破题＋现象铺陈」</b>：以天坛公园里外国友人跟中国“师父”练太极的生活化一幕起笔，再以社交平台上打太极、练八段锦、新中式穿搭、晨起喝热水等场景，点出海外年轻人主动亲近中华文化、融入中式生活的真实缩影（第一段—第三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>「题记立骨＋总纲收束」</b>：以题记「‘现代化’不等于‘西方化’，不同的土壤同样可以长出繁茂的花园」标定全篇立意，再把主旨凝为「『中国引力』不止于文化奇观与优质商品，更在于现代化生活图景与创新发展机遇，最终归于文明古国的生命力与包容性」，为后文三个分论点预留「底蕴—心态—底色」的展开空间。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>厚植文化底蕴</b>：由「中式审美引发共鸣，根基在于厚重的文化底蕴」立起，举大白兔奶糖糖纸被海外博主称赞为「平面设计的神来之笔」、成都90后店主用人工智能创作34秒「中式天庭」短片收获海量播放，落到「看似偶然的出圈，实则是千年文脉在当代语境下的必然回响」（第一分论组，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>涵养开放包容</b>：由「审美走红的另一面，映照开放包容的文化心态」领起，以从「习惯性向外对标」到「自信拿出本土美学方案参与全球叙事」转变、好莱坞「蜘蛛侠」系列中国独家海报「反向圈粉」为例，落到「文化包容从来不是单向接纳，而是从容发掘自身价值、乐于开展文明交流互鉴」（第二分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>夯实发展底色</b>：以「审美出圈，更要看见蓬勃向上的发展底色」推进，用「China Travel」「China Cool」「Becoming Chinese」等海外热词与义乌、深圳、上海外资加码布局为例，落到「吸引全球的，不只是『中国景』，更是『中国理』」与「《2026年全球软实力指数》中国位居全球第二」，把文化现象溯源到综合国力（第三分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text"><b>「由表及里、层层递进」</b>：全文循「审美现象—文化底蕴—开放心态—发展底色—文明生命力」逐层深入，把一则文化新闻升华为对「中国式现代化」的阐释；题记与结尾两次呼应「现代化≠西方化」，形成首尾闭环，是申论「以小切口写大主题」的范本，分论点小标题可直接化用。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】“中国引力”不止于文化奇观与优质商品，更在于所呈现的现代化生活图景与创新发展的广阔机遇——它证明<span class="highlight-purple">“现代化”不等于“西方化”，不同的土壤同样可以长出繁茂的花园</span>。</div>
+
+      <p><span class="highlight-purple">“现代化”不等于“西方化”，不同的土壤同样可以长出繁茂的花园。</span></p>
+
+      <p>去北京天坛公园，偶遇一群外国友人跟着中国“师父”练太极，动作略显生涩，一招一式却格外认真。笔者感到很新奇，同行的朋友笑说这早就是公园里常见的一幕。</p>
+
+      <p>浏览社交平台不难发现，从打太极、练八段锦到新中式穿搭、晨起喝热水，这样的场景成为不少海外年轻人主动亲近中华文化、融入中式生活的真实缩影，彰显超越国别的<span class="highlight-blue">文化向心力</span>。</p>
+
+      <div class="sub-thesis">【分论点一】厚植文化底蕴——中式审美引发共鸣，根基在于厚重的文化底蕴，千年文脉在当代语境下必然回响。</div>
+
+      <p>中式审美引发共鸣，根基在于厚重的文化底蕴。<span class="highlight-green">大白兔奶糖糖纸走红海外</span>，承载着几代中国人集体记忆的红、白、蓝版式，被海外博主称赞为<span class="highlight-gold">“平面设计的神来之笔”</span>；成都90后店主用人工智能创作的<span class="highlight-green">34秒</span>“中式天庭”短片，无台词、无字幕，仅凭飞檐琼楼、云海仙宫的东方意境，迅速收获海量播放……<span class="highlight-gold">看似偶然的出圈，实则是千年文脉在当代语境下的必然回响。</span>浸润于日常的东方美学，具备<span class="highlight-blue">与世界青年对话的感染力</span>。</p>
+
+      <div class="sub-thesis">【分论点二】涵养开放包容——审美走红的另一面，映照开放包容的文化心态，以本土方案参与全球叙事。</div>
+
+      <p>审美走红的另一面，映照开放包容的文化心态。曾经，不少文艺创作、设计审美习惯性向外对标。如今，中国设计者自信地拿出本土美学方案参与全球叙事。近期，好莱坞“蜘蛛侠”系列电影的中国独家海报<span class="highlight-green">“反向圈粉”</span>。融合莲花、皮影、祥云等元素，以东方美学重构超级英雄叙事，让海外网友感叹“中国从不失手”。从中可见，<span class="highlight-purple">文化包容从来不是单向接纳，而是从容发掘自身价值、乐于开展文明交流互鉴。</span>这份<span class="highlight-blue">不卑不亢的文化姿态</span>，让中式审美拥有持续向外传播的底气。</p>
+
+      <div class="sub-thesis">【分论点三】夯实发展底色——审美出圈，更要看见蓬勃向上的发展底色与创新发展的广阔机遇。</div>
+
+      <p>审美出圈，更要看见蓬勃向上的发展底色。近年来，围绕中国的海外热词不断涌现，背后是日益坚实的<span class="highlight-blue">综合国力</span>在支撑。探访风景的<span class="highlight-green">“China Travel”</span>，得益于<span class="highlight-blue">过境免签政策</span>持续扩容、通关流程不断简化、移动支付覆盖更多场景、旅游服务优化等便利化举措；在中国“体验凉”也“带走凉”的<span class="highlight-green">“China Cool”</span>，折射中国制造、中国服务等优势；<span class="highlight-green">“Becoming Chinese”</span>或是<span class="highlight-green">“Chinamaxxing”</span>，不只是“买中国货”，更是“过中国日子”。<span class="highlight-gold">吸引全球的，不只是“中国景”，更是“中国理”。</span></p>
+
+      <p>今天，“中国引力”不止于文化奇观、优质商品，更在于所呈现的现代化生活图景。<span class="highlight-purple">它证明了“现代化”不等于“西方化”，不同的土壤同样可以长出繁茂的花园。</span></p>
+
+      <p>中国吸引世界的，不只是山河风景与文化魅力，更有<span class="highlight-blue">创新发展的广阔机遇</span>。<span class="highlight-green">浙江义乌</span>，来自世界各地的创业者把生意做向全球；深圳、上海、北京等创新高地，众多外资企业持续加码布局。从跨境电商到数字经济，从人工智能到绿色发展，越来越多外国人才选择在中国创新创业，与中国共享发展机遇——中国从一种体验，变成一种事业、一种人生选项。这就不难理解，为何英国一家咨询公司发布的<span class="highlight-green">《2026年全球软实力指数》报告显示，中国位居全球第二，且是排名前10中唯一评分上升的国家</span>。</p>
+
+      <p>习近平总书记强调，<span class="highlight-gold">“与中国同行就是与机遇同行，相信中国就是相信明天”</span>。从东方美学到中式生活，<span class="highlight-blue">“中国引力”最终归于一个文明古国在现代化进程中展现出的生命力与包容性</span>。面向未来，这个文明古国将继续<span class="highlight-gold">以文化动人、以服务迎客、以创新赋能</span>，在交流互鉴之中，与世界一同寻找多样的发展答案，共同勾勒文明交流的全新图景。</p>
+
+      <p class="byline">（人民日报2026年9月8日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记论机遇</span>
+      <p><b>「与中国同行就是与机遇同行，相信中国就是相信明天。」</b>——习近平总书记关于开放合作的核心论断，写「高水平对外开放／中国机遇」是最高权威支撑。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·现代化辩证</span>
+      <p><b>「‘现代化’不等于‘西方化’，不同的土壤同样可以长出繁茂的花园。」</b>——一句写透中国式现代化的世界意义，写「中国式现代化／文明多样性」是立论金句，自带辩证法。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·中国景与中国理</span>
+      <p><b>「吸引全球的，不只是‘中国景’，更是‘中国理’。」</b>——把文化现象升华为道路自信，写「软实力／文明吸引力」是高分判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文明互鉴</span>
+      <p><b>「文化包容从来不是单向接纳，而是从容发掘自身价值、乐于开展文明交流互鉴。」</b>——写「文明交流互鉴／文化包容」是规范金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·千年文脉</span>
+      <p><b>「看似偶然的出圈，实则是千年文脉在当代语境下的必然回响。」</b>——写「传统文化现代表达／文化自信」是点睛表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·不卑不亢</span>
+      <p><b>「这份不卑不亢的文化姿态，让中式审美拥有持续向外传播的底气。」</b>——写「文化主体性／国际传播」是精准论据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文化向心力</span>
+      <p><b>「彰显超越国别的文化向心力。」</b>——写「中华文化吸引力」是凝练表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·服务迎客</span>
+      <p><b>「以文化动人、以服务迎客、以创新赋能。」</b>——三个动宾写三种路径，写「文明交流的抓手」是排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·生命力与包容性</span>
+      <p><b>「‘中国引力’最终归于一个文明古国在现代化进程中展现出的生命力与包容性。」</b>——写「中国式现代化的底色」是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·神来之笔</span>
+      <p><b>「被海外博主称赞为‘平面设计的神来之笔’。」</b>——写「中华美学感染力」是鲜活素材。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文框架</span>
+      <p>学本文「总论点（中国引力归于文明古国的生命力与包容性）—三维分论（厚植文化底蕴／涵养开放包容／夯实发展底色）—收束」结构，适用于「文化自信／文明互鉴／中国式现代化」类作文，分论点从「底蕴—心态—底色」切入，稳妥不跑题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文「三维分论」骨架：①厚植文化底蕴，以东方美学讲好中国故事（根）；②涵养开放包容，以本土方案参与全球叙事（态）；③夯实发展底色，以综合国力支撑创新机遇（基）。三个分论点从「根—态—基」层层递进，可迁移到「国际传播／文化出海／对外开放」等话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把「提升文化吸引力与国际影响力」拆成可操作举措：深耕中华优秀传统文化、以东方美学赋能出海；培育开放包容心态、以本土方案参与全球叙事；扩大高水平对外开放、以便利化举措吸引国际客流；以创新驱动高质量发展、筑牢综合国力根基。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学「‘现代化’不等于‘西方化’，不同的土壤同样可以长出繁茂的花园」的辩证立论，把「普遍与特殊」「外来与本土」写成各有价值、互鉴共生，比直说「要文化自信」更有高度。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由「审美—文化—国力—文明生命力」的逻辑链收束，落到「以文化动人、以服务迎客、以创新赋能」，适合「文化强国／人类文明新形态」主题，既回扣题记又给出正向前瞻。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从审美出圈读懂“中国引力”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是厚植文化底蕴。中式审美引发共鸣，根基在于厚重的文化底蕴，千年文脉在当代语境下必然回响。<br>二是涵养开放包容。审美走红的另一面，映照开放包容的文化心态，以本土方案参与全球叙事。<br>三是夯实发展底色。审美出圈，更要看见蓬勃向上的发展底色与创新发展的广阔机遇。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「“中国引力”不止于文化奇观与优质商品，更在于所呈现的现代化生活图景与创新发展的广阔机遇——它证明“现代化”不等于“西方化”，不同的土壤同样可以长出繁茂的花园。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是厚植文化底蕴——中式审美引发共鸣，根基在于厚重的文化底蕴，千年文脉在当代语境下必然回响。<br>二是涵养开放包容——审美走红的另一面，映照开放包容的文化心态，以本土方案参与全球叙事。<br>三是夯实发展底色——审美出圈，更要看见蓬勃向上的发展底色与创新发展的广阔机遇。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：「与中国同行就是与机遇同行，相信中国就是相信明天。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从审美出圈读懂“中国引力”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是深耕中华优秀传统文化、以东方美学赋能文化出海。<br>二是培育开放包容的文化心态、以本土美学方案参与全球叙事。<br>三是扩大高水平对外开放、以便利化举措吸引国际客流与人才。<br>四是以创新驱动高质量发展、为文明互鉴筑牢综合国力根基。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：「与中国同行就是与机遇同行，相信中国就是相信明天。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从审美出圈读懂“中国引力”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从审美出圈读懂“中国引力”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从审美出圈读懂“中国引力”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、厚植文化底蕴——中式审美引发共鸣，根基在于厚重的文化底蕴，千年文脉在当代语境下必然回响。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、涵养开放包容——审美走红的另一面，映照开放包容的文化心态，以本土方案参与全球叙事。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、夯实发展底色——审美出圈，更要看见蓬勃向上的发展底色与创新发展的广阔机遇。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：「与中国同行就是与机遇同行，相信中国就是相信明天。」</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从审美出圈读懂“中国引力”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从审美出圈读懂“中国引力”<br><br>时代之问，呼唤破题之策。从审美出圈读懂“中国引力”，是发展所需，也是民心所向。可从三个维度展开：厚植文化底蕴、涵养开放包容、夯实发展底色。<br><br>分论点一：厚植文化底蕴——中式审美引发共鸣，根基在于厚重的文化底蕴，千年文脉在当代语境下必然回响。方向对了，路再远也能抵达。「与中国同行就是与机遇同行，相信中国就是相信明天。」<br><br>分论点二：涵养开放包容——审美走红的另一面，映照开放包容的文化心态，以本土方案参与全球叙事。方法对了，事再难也能办成。「‘现代化’不等于‘西方化’，不同的土壤同样可以长出繁茂的花园。」<br><br>分论点三：夯实发展底色——审美出圈，更要看见蓬勃向上的发展底色与创新发展的广阔机遇。行百里者半九十。「吸引全球的，不只是‘中国景’，更是‘中国理’。」保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从审美出圈读懂“中国引力”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-13</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
