@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 激发机器人的现实生产力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>激发机器人的现实生产力</h1>
+    <div class="meta">人民日报·现场评论 | 新质生产力·具身智能·供需对接·成果转化 | 2026年9月14日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：真刀真枪解决问题＋供需对接关键一招／高水平供需对接·全产业链协同·应用牵引三维分论／赋能千行百业·创新中国新名片</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">具身智能</span>
+      <span class="tag-item">科技成果转化</span>
+      <span class="tag-item">供需对接</span>
+      <span class="tag-item">人工智能+</span>
+      <span class="tag-item">产业链协同</span>
+      <span class="tag-item">先进制造业与现代服务业融合</span>
+      <span class="tag-item">产学研用协同创新</span>
+      <span class="tag-item">创新驱动发展</span>
+      <span class="tag-item">制造强国</span>
+      <span class="tag-item">应用场景拓展</span>
+      <span class="tag-item">开放合作</span>
+      <span class="tag-item">战略性新兴产业</span>
+      <span class="tag-item">数实融合</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">中国智造</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配「新质生产力」「科技成果转化」「人工智能+」「创新驱动」等主题；本文<b>「总论点（真刀真枪解决问题＋供需对接关键一招）—三维分论（供需对接／产业链协同／应用牵引）—赋能收束」</b>的论证链，是写「新质生产力落地」类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼三条对策：<b>推动供需精准对接，以新供给刺激新需求、以新需求引领新供给，支持企业针对生产场景提供个性化解决方案／推动全产业链协同发力，搭建开源生态、筑牢智算底座、推进数据采集计划，唱好产学研用协同创新的「大合唱」／以应用为牵引驱动产品迭代升级，从展台到车间、从试点到规模化，推动供需双向奔赴</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">归纳概括</span><span class="text">可概括「激发机器人现实生产力的三方面着力点」：推动供需精准对接、推动全产业链协同发力、以应用为牵引驱动迭代升级，是写「举措概括」类题的现成模板。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析</span><span class="text">可分析「从『舞台上动起来』到『工厂里干起来』」的跨越：本质是<b>科技成果从『小批量试用』到『大规模落地』的转化跃迁</b>，需供需两端双向奔赴、全产业链协同发力，是分析「新技术如何走出实验室」类观点题的范本。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现场场景破题—硬道理立论—供需对接/产业链协同/应用牵引三维分论—赋能千行百业收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>现场场景破题＋对比立意</b>：首段以走进2026世界机器人大会的「直观感受」切入，点出<b>「具身智能正褪去『表演属性』，变得更加务实能干」</b>；次段以接单交付、咖啡空间等具体场景铺陈，用「与以往翻跟头、跳舞等表演不同」的今昔对比，把「务实」二字落到实处（第一、二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>「硬道理＋关键一招」双句立论</b>：以<b>「发展具身智能，『真刀真枪』解决问题是硬道理」</b>立起总纲，接着指出机器人需完成从「小批量试用」到「大规模落地」的成果转化跃迁，落点于<b>「推动供需精准对接，正是激发机器人现实生产力的关键一招」</b>，为后文三个分论点预留展开空间（第三段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>高水平供需对接</b>：以「既要通过新供给刺激新需求，也需要以新需求引领新供给」的辩证句领起，举「方案订阅」模式流行、京东展区实景落地板块等新变化，落到<b>「针对买家生产场景提供个性化解决方案，正是中国智造的核心竞争力」</b>，以及先进制造业和现代服务业深度融合的判断（第四、五段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>全产业链协同发力</b>：由「推动具身智能的发展行稳致远，离不开全产业链协同发力」立起，举「全球机器人应用探索计划」每年遴选1000个应用场景、世界模型专家委员会把脉定向、开源社区人才认证体系等举措，落到<b>「开放中谋合作，以协同聚合力」</b>的鲜明特征与「慧思开物」开源生态、智算底座、千万小时级数据采集的产业生态图景（第六、七段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>以应用为牵引</b>：正视「技术与真实世界适配能力尚有短板，应用场景还有待进一步拓展」的问题，提出从展台到车间、从试点到规模化，<b>「以应用为牵引驱动产品迭代升级，推动供需双向奔赴」</b>，落到助推战略性新技术赋能千行百业、成为创新中国亮丽新名片的愿景（第八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>「总—分—总」结构</b>：总论点从「硬道理」与「关键一招」两个维度立论；三个分论点按<b>「供需对接—产业链协同—应用牵引」</b>层层递进，从市场机制到产业生态再到落地路径，闭环完整；结尾以「赋能千行百业」「亮丽新名片」回扣升华，是申论「以应用促转化写新兴产业」的范本，分论点小标题可直接化用。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】发展具身智能，<span class="highlight-gold">"真刀真枪"解决问题是硬道理</span>——<span class="highlight-purple">推动供需精准对接，正是激发机器人现实生产力的关键一招</span>，要以应用为牵引驱动迭代升级，助推这一战略性新技术加快赋能千行百业。</div>
+
+      <p>走进2026世界机器人大会现场，一个直观感受扑面而来：<span class="highlight-gold">具身智能正褪去"表演属性"，变得更加务实能干</span>。</p>
+
+      <p>观众通过小程序随机下单，星海图机器人自主识别，独立完成从接单到交付的全套动作；"人机共生沉浸式机器人咖啡空间"，无界动力机器人提供饮品端送、桌面清理、座椅归位等服务……<span class="highlight-purple">与以往翻跟头、跳舞等表演不同，具身智能如今的服务更贴近日常需求</span>。</p>
+
+      <p>发展具身智能，<span class="highlight-gold">"真刀真枪"解决问题是硬道理</span>。理论上讲，具身智能可广泛应用于<span class="highlight-blue">工业制造、仓储物流、应急救援、边检安防、家政服务</span>等领域。但和所有新兴装备一样，机器人实现从"舞台上动起来""赛场上跑起来"到"家庭里用起来""工厂里干起来"的跨越，也需要完成从"小批量试用"到"大规模落地"的<span class="highlight-blue">成果转化跃迁</span>。<span class="highlight-purple">推动供需精准对接，正是激发机器人现实生产力的关键一招</span>。</p>
+
+      <div class="sub-thesis">【分论点一】高水平供需对接——既要通过新供给刺激新需求，也要以新需求引领新供给，让应用落地贴近日常需求。</div>
+
+      <p>高水平的供需对接，<span class="highlight-purple">既要通过新供给刺激新需求，也需要以新需求引领新供给</span>。回溯往届世界机器人大会，具身智能还处于"科普期"，参展企业多以整机销售为主，宣传卖点多集中于硬件外观、展演效果。如今，<span class="highlight-blue">"方案订阅"模式</span>开始流行。比如本届大会的京东展区，"赛博训练营""实景产业园""未来生活家"等板块，就集中展示了具身智能的实景落地能力。</p>
+
+      <p>依托雄厚的制造根基与成熟的应用落地优势，针对买家生产场景提供个性化解决方案，正是<span class="highlight-blue">中国智造</span>的核心竞争力。企业既深耕硬件制造，又打磨智能算法，具身智能的商业模式正从一次性交易向迭代运维演进，这何尝不是<span class="highlight-blue">先进制造业和现代服务业深度融合、互促共进</span>的生动注脚？</p>
+
+      <div class="sub-thesis">【分论点二】全产业链协同发力——开放中谋合作，以协同聚合力，完善产业生态、夯实发展根基。</div>
+
+      <p>推动具身智能的发展行稳致远，离不开<span class="highlight-blue">全产业链协同发力</span>。<span class="highlight-green">"全球机器人应用探索计划"启动，面向全球每年遴选1000个应用场景，开展免费试用与二次开发</span>；中国电子学会世界模型专家委员会成立，为技术演进把脉定向；开放原子开源基金会发布人形机器人开源社区人才认证体系，汇聚全球开发者智慧……<span class="highlight-gold">开放中谋合作，以协同聚合力</span>，成为中国具身智能产业发展的鲜明特征。</p>
+
+      <p>从国家地方共建具身智能机器人创新中心搭建"慧思开物"开源生态，到算力企业筑牢智算底座，再到平台企业推进<span class="highlight-green">千万小时级数据采集计划</span>……展望未来，<span class="highlight-gold">唱好产学研用协同创新的"大合唱"</span>，不断完善由"大脑""小脑""本体""数据""算力"共同构成的<span class="highlight-blue">产业生态</span>，产业发展根基便会愈发坚实。</p>
+
+      <div class="sub-thesis">【分论点三】以应用为牵引——驱动产品迭代升级，推动供需双向奔赴，助推战略性新技术赋能千行百业。</div>
+
+      <p>当前，具身智能技术与真实世界适配能力尚有短板，应用场景还有待进一步拓展。从展台到车间，从试点到规模化，<span class="highlight-gold">凝聚众智众力</span>，以应用为牵引驱动产品迭代升级，推动供需双向奔赴，才能助推这一<span class="highlight-blue">战略性新技术</span>加快赋能千行百业，成为<span class="highlight-gold">创新中国的一张亮丽新名片</span>。</p>
+
+      <p class="byline">（作者为本报北京分社记者）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·务实硬道理</span>
+      <p><b>「发展具身智能，'真刀真枪'解决问题是硬道理。」</b>——把新技术发展落到「解决问题」上，写「新质生产力／求真务实」是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·供需对接</span>
+      <p><b>「推动供需精准对接，正是激发机器人现实生产力的关键一招。」</b>——「关键一招」句式自带力度，写「科技成果转化／有效供给」是标准论点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·供需辩证</span>
+      <p><b>「既要通过新供给刺激新需求，也需要以新需求引领新供给。」</b>——一句写透供给与需求的辩证关系，写「供需两端发力」是高分辩证段。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同合力</span>
+      <p><b>「开放中谋合作，以协同聚合力。」</b>——对仗工整、朗朗上口，写「产业链协同／开放创新」是点睛短句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同大合唱</span>
+      <p><b>「唱好产学研用协同创新的'大合唱'，不断完善产业生态，产业发展根基便会愈发坚实。」</b>——把协同创新写成「大合唱」，写「产学研融合／创新生态」是形象表达。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·双向奔赴</span>
+      <p><b>「以应用为牵引驱动产品迭代升级，推动供需双向奔赴。」</b>——「双向奔赴」是鲜活新表述，写「应用牵引／迭代升级」是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新名片</span>
+      <p><b>「成为创新中国的一张亮丽新名片。」</b>——结尾升华标准句，写「科技自立自强／创新中国」可直接引用。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·深度融合</span>
+      <p><b>「先进制造业和现代服务业深度融合、互促共进的生动注脚。」</b>——「生动注脚」句式适合做段末总结，写「两业融合／产业升级」是规范表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·跨越转化</span>
+      <p><b>「从'舞台上动起来''赛场上跑起来'到'家庭里用起来''工厂里干起来'的跨越。」</b>——四个「起来」铺排有画面感，写「科技成果从实验室走向生产线」是形象论据。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文框架</span>
+      <p>学本文「总论点（真刀真枪解决问题＋供需对接关键一招）—三维分论（供需对接／产业链协同／应用牵引）—赋能收束」结构，适用于「新质生产力／科技成果转化／人工智能+」类作文，分论点从市场机制到产业生态再到落地路径，稳妥不跑题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文「三维分论」骨架：①高水平供需对接，以新供给刺激新需求、以新需求引领新供给（对接）；②全产业链协同发力，开放中谋合作、以协同聚合力（筑基）；③以应用为牵引，驱动迭代升级、供需双向奔赴（落地）。三个分论点从「机制—生态—路径」展开，互不重叠、层层递进，可迁移到「数字经济／新兴产业」等话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把「激发机器人现实生产力」拆成可操作举措：支持企业针对生产场景提供个性化解决方案、推广「方案订阅」等新模式；搭建开源生态、筑牢智算底座、推进千万小时级数据采集计划；面向全球遴选应用场景、开展免费试用与二次开发；以应用为牵引驱动产品迭代升级，推动供需双向奔赴。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学「既要通过新供给刺激新需求，也需要以新需求引领新供给」「从『小批量试用』到『大规模落地』的成果转化跃迁」的辩证立论，把「供给与需求」「试用与落地」写成互为表里、缺一不可的论证，比直说「供需两端发力」更有层次。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由「供需对接—产业链协同—应用牵引」的逻辑链收束，落到「加快赋能千行百业，成为创新中国的一张亮丽新名片」，适合「新质生产力／创新驱动发展」主题，既回扣标题又给出正向预期。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「激发机器人的现实生产力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是高水平供需对接。既要通过新供给刺激新需求，也要以新需求引领新供给，让应用落地贴近日常需求。<br>二是全产业链协同发力。开放中谋合作，以协同聚合力，完善产业生态、夯实发展根基。<br>三是以应用为牵引。驱动产品迭代升级，推动供需双向奔赴，助推战略性新技术赋能千行百业。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「发展具身智能，"真刀真枪"解决问题是硬道理——推动供需精准对接，正是激发机器人现实生产力的关键一招，要以应用为牵引驱动迭代升级，助推这一战略性新技术加快赋能千行百业。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是高水平供需对接——既要通过新供给刺激新需求，也要以新需求引领新供给，让应用落地贴近日常需求。<br>二是全产业链协同发力——开放中谋合作，以协同聚合力，完善产业生态、夯实发展根基。<br>三是以应用为牵引——驱动产品迭代升级，推动供需双向奔赴，助推战略性新技术赋能千行百业。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：「发展具身智能，'真刀真枪'解决问题是硬道理。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「激发机器人的现实生产力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是推动供需精准对接，以新供给刺激新需求、以新需求引领新供给，支持企业针对生产场景提供个性化解决方案。<br>二是推动全产业链协同发力，搭建开源生态、筑牢智算底座、推进数据采集计划，唱好产学研用协同创新的「大合唱」。<br>三是以应用为牵引驱动产品迭代升级，从展台到车间、从试点到规模化，推动供需双向奔赴。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：「发展具身智能，'真刀真枪'解决问题是硬道理。」</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-14</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
