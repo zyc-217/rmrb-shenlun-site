@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以“规则之治”守护网络舆论场</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以“规则之治”守护网络舆论场</h1>
+    <div class="meta">人民日报·评论员观察 | 网络空间治理·清朗空间·法治思维·平台责任 | 2026年9月15日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：法治思维贯穿管网治网／本质透视·危害剖析·系统治理三维分论／以清晰边界守护尊严与安全感·文明之需</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">网络空间治理</span>
+      <span class="tag-item">清朗网络空间</span>
+      <span class="tag-item">网络谣言治理</span>
+      <span class="tag-item">法治思维</span>
+      <span class="tag-item">平台主体责任</span>
+      <span class="tag-item">自媒体规范</span>
+      <span class="tag-item">媒介素养</span>
+      <span class="tag-item">依法治国</span>
+      <span class="tag-item">网络综合治理体系</span>
+      <span class="tag-item">网络文明建设</span>
+      <span class="tag-item">数智时代治理</span>
+      <span class="tag-item">网络内容治理</span>
+      <span class="tag-item">诚信体系建设</span>
+      <span class="tag-item">法治护航</span>
+      <span class="tag-item">舆情引导</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配「网络空间治理」「清朗网络空间」「法治护航」「平台责任」等主题；本文「总论点（法治思维贯穿管网治网—多元共治优化生态）—三维分论（本质透视／危害剖析／系统治理）—文明之需收束」的论证链，是写「网络空间治理类」文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可提炼四条对策：<b>强化穿透式监管、压实平台责任，对虚构事实、恶意引流、操纵舆论等行为依法处置／推动平台建立更高效的内容审核、谣言标注和投诉响应机制，提高辟谣与纠偏效率／引导自媒体和网络大V自觉校准公共讨论基调，以理性客观对冲偏激情绪／提升全民媒介素养，倡导在情绪化叙事面前保持审慎、主动交叉验证信息</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">归纳概括</span><span class="text">可概括「遏制网络小作文乱象的治理着力点」：强化穿透式监管压实平台责任、健全内容审核与投诉响应机制、引导自媒体与大V理性发声、提升公众媒介素养，是写「网络治理举措概括」类题的现成模板。</span></div>
+        <div class="analysis-item"><span class="label">综合分析</span><span class="text">可分析「网络小作文何以乱象丛生」：本质是现实利益矛盾与个体情绪的网络投射，危害在侵蚀信任、消解公共理性，破题之道在以法治贯穿管网治网全过程，是分析「网络生态治理」类观点题的范本。</span></div>
+        <div class="analysis-item"><span class="label">大作文论证</span><span class="text">可提炼大作文论点：以「以规则之治守护网络舆论场」为主题，从本质透视、危害剖析、系统治理三个维度，论证数智时代如何用法治边界守护人的尊严与安全感。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（案例破题—本质立论—本质透视/危害剖析/系统治理三维分论—文明之需收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>「热点案例破题＋现象铺陈」</b>：首段以「被导师压榨」网帖实为论文代写引流、股市「小作文」由AI批量生成、女子谎报猥亵被立案三则近期案例切入，点出网络「小作文」频繁引发热议、干扰公共讨论秩序的现状（第一段—第二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>「本质剖析＋总纲立论」</b>：以「网络小作文本质上是现实利益矛盾与个体情绪在互联网空间的投射」立起分析支点，并自然过渡到总论点——遏制乱象绝不能仅靠道德呼吁，<b>必须将法治思维和法治方式贯穿于管网治网全过程</b>，为后文三个分论点预留「本质—危害—治理」的完整展开空间（第三至七段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>本质透视</b>：由「现实利益矛盾与个体情绪投射」领起，指出「小作文」裹挟强烈个人情绪、刻意铺陈曲折叙事、主观色彩鲜明，且文中事实细节往往难以求证，揭示其区别于普通谣言的「情绪化叙事」本质（第一分论组，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>危害剖析</b>：由「写手深谙传播规律、博眼球牟私利」立起，指出其「真假难辨、滋生戾气、侵蚀基本信任、占用注意力」的现实危害，进而点出「自带舆论审判基因、消解法治精神与公共理性」的深层伤害，把问题从「信息失真」上升到「信任与理性危机」（第二分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>系统治理</b>：以「绝不能仅靠道德呼吁」转段，落到「法治思维贯穿管网治网全过程」「互联网不是法外之地」的刚性立场，再从穿透式监管、压实平台责任，到平台审核标注机制，再到自媒体与大V自律、个人提升媒介素养，<b>以多元主体共治优化网络舆论生态</b>（第三分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>「由表及里、由危害到治理」</b>的递进结构：先以案例破题、以本质立论，再用「本质—危害—治理」三维度层层深入，结尾以「清晰边界守护尊严与安全感」「既是治理之策，更是文明之需」回扣升华，是申论「以法治思维写网络治理」的范本，分论点小标题可直接化用。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】遏制网络"小作文"乱象，<span class="highlight-gold">"绝不能仅靠道德呼吁"</span>——<span class="highlight-purple">必须将法治思维和法治方式贯穿于管网治网全过程，以"规则之治"不断优化网络舆论生态</span>，在数智时代以清晰边界守护人的尊严与安全感。</div>
+
+      <p>"被导师压榨延期毕业"网帖，实为论文代写的引流信息；一些混淆视听的股市"小作文"，竟由<span class="highlight-green">AI（人工智能）批量生成</span>；一女子发布视频谎称电梯内遭"猥亵殴打"，<span class="highlight-green">因涉嫌虚构事实扰乱公共秩序被立案调查</span>……</p>
+
+      <p>近期，一些网络"小作文"频繁引发热议。相关内容主打"控诉""爆料"，在社交平台扩散速度极快，有的甚至声量惊人，<span class="highlight-purple">干扰正常的公共讨论秩序</span>。</p>
+
+      <div class="sub-thesis">【分论点一】本质透视——网络"小作文"是现实利益矛盾与个体情绪的网络投射，裹挟情绪、主观鲜明、细节难求证。</div>
+
+      <p>网络"小作文"现象<span class="highlight-purple">本质上是现实利益矛盾与个体情绪在互联网空间的投射</span>。如果说谣言侧重猎奇或捏造事实，"小作文"往往裹挟强烈的个人情绪，刻意铺陈曲折的叙事，<span class="highlight-purple">主观色彩比较鲜明</span>。很多时候，文中事实细节也难以求证。</p>
+
+      <div class="sub-thesis">【分论点二】危害剖析——侵蚀基本信任、滋生网络戾气、占用公众注意力，自带"舆论审判"基因，消解法治精神与公共理性。</div>
+
+      <p>值得警惕的是，一些写手深谙网络传播规律，撰写"小作文"的出发点就是博眼球、牟取私利，因而<span class="highlight-purple">真相与理性自然被漠视</span>。这类"小作文"一旦成为网络焦点，不仅<span class="highlight-gold">真假难辨、滋生戾气</span>，侵蚀人与人之间的基本信任，也占用公众注意力资源，无益于构建良性舆论生态。</p>
+
+      <p>"小作文"往往还自带<span class="highlight-purple">"舆论审判"基因</span>。信息一经发布，伤害便已发生，被指控者的名誉可能在短时间内遭受严重损害，而维权和救济之路却艰难漫长，甚至无法彻底消除影响。如果任由这种精心编排的叙事影响舆论，不仅对当事人不公，也会<span class="highlight-purple">消解法治精神和公共理性</span>。</p>
+
+      <div class="sub-thesis">【分论点三】系统治理——将法治思维贯穿管网治网全过程，以多元主体共治优化网络舆论生态、守护人的尊严与安全感。</div>
+
+      <p>遏制"小作文"乱象，<span class="highlight-gold">绝不能仅靠道德呼吁</span>，必须将<span class="highlight-blue">法治思维和法治方式贯穿于管网治网全过程</span>。<span class="highlight-gold">互联网不是法外之地</span>，随着法律法规不断完善，网络内容发布者的法律责任更趋明晰。越来越多的案例证明，虚构事实、恶意引流、操纵舆论等行为，今后只会受到依法处置。</p>
+
+      <p>营造<span class="highlight-blue">清朗网络空间</span>，符合互联网用户的根本利益，也是社会共识。但这一目标无法自动实现，需要凝聚<span class="highlight-blue">多元主体的共治</span>智慧与力量。</p>
+
+      <p>从强化<span class="highlight-blue">穿透式监管、压实平台责任</span>，到互联网平台建立更高效的<span class="highlight-blue">内容审核、谣言标注和投诉响应机制</span>，再到自媒体和网络大V自觉校准公共讨论基调，以理性、客观的态度对冲偏激情绪，引导公众回归事实本身……共同将法治精神内化为行为准则，才能<span class="highlight-gold">以"规则之治"不断优化网络舆论生态</span>。</p>
+
+      <p>对个人而言，避免被"小作文"裹挟，关键在于提升<span class="highlight-blue">媒介素养</span>，学会在情绪化叙事面前保持审慎，<span class="highlight-purple">主动交叉验证信息</span>，不做盲信盲从者。在遇到问题时，更要懂得用法律武器保护自己，既不被"小作文"带节奏，也不在沉默中纵容恶行。</p>
+
+      <p>数智时代，尤须营造良好网络舆论环境，<span class="highlight-purple">以清晰边界守护人的尊严与安全感</span>。<span class="highlight-gold">这不仅是治理之策，更是文明之需</span>。</p>
+
+      <p class="byline">（人民日报2026年9月15日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·法外之地</span>
+      <p><b>「互联网不是法外之地。」</b>——写「网络空间法治／依法治网」是最高站位立论金句，必背。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·规则之治</span>
+      <p><b>「以'规则之治'不断优化网络舆论生态。」</b>——把法治落到「规则」维度，写「网络治理／制度护航」是点睛金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文明之需</span>
+      <p><b>「这不仅是治理之策，更是文明之需。」</b>——把网络治理从「手段」升维到「文明」，写「数字文明／治理高度」是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·不能仅靠道德</span>
+      <p><b>「遏制'小作文'乱象，绝不能仅靠道德呼吁。」</b>——写「治理须法治刚性」是犀利破题句，自带力度。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·真假难辨</span>
+      <p><b>「真假难辨、滋生戾气，侵蚀人与人之间的基本信任。」</b>——写「网络谣言危害」是标准论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·法治思维</span>
+      <p><b>「将法治思维和法治方式贯穿于管网治网全过程。」</b>——写「全面依法治网」是规范表述，可作总括词。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·平台责任</span>
+      <p><b>「强化穿透式监管、压实平台责任。」</b>——写「平台治理／属地责任」是政策金句，对仗工整。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·媒介素养</span>
+      <p><b>「提升媒介素养，学会在情绪化叙事面前保持审慎，主动交叉验证信息。」</b>——写「网民自律／信息甄别」是可行对策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文明根基</span>
+      <p><b>「以清晰边界守护人的尊严与安全感。」</b>——把「边界」与「尊严」并置，写「数字时代人的主体性」是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据·立案案例</span>
+      <p><b>「一女子发布视频谎称电梯内遭'猥亵殴打'，因涉嫌虚构事实扰乱公共秩序被立案调查。」</b>——写「网络造谣法律后果」是鲜活事实论据。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文框架</span>
+      <p>学本文「总论点（法治思维贯穿管网治网—多元共治优化生态）—三维分论（本质透视／危害剖析／系统治理）—文明之需收束」结构，适用于「清朗网络空间／平台责任／数字治理」类作文，分论点从“是什么—为什么—怎么办”切入，稳妥不跑题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文「三维度」骨架：①本质透视，点出利益矛盾与情绪投射（是什么）；②危害剖析，揭示侵蚀信任、消解公共理性（为什么）；③系统治理，法治贯穿＋多元共治（怎么办）。三个分论点层层递进，可迁移到「食品安全／生态环境／公共安全」等治理类话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“遏制网络乱象”拆成可操作举措：强化穿透式监管、压实平台责任，对虚构事实等行为依法处置；健全内容审核、谣言标注和投诉响应机制；引导自媒体与大V理性发声、对冲偏激情绪；提升全民媒介素养、倡导审慎交叉验证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学「既是治理之策，更是文明之需」「以清晰边界守护人的尊严与安全感」的辩证立论，把「治网」从「管理手段」写到「文明高度」，比直说「要加强监管」更有层次。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由「法治贯穿—多元共治—边界守护」的逻辑链收束，落到「以清晰边界守护人的尊严与安全感，既是治理之策，更是文明之需」，适合「网络空间治理／数字文明」主题，既回扣标题又给出正向预期。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「以“规则之治”守护网络舆论场」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是本质透视。网络"小作文"是现实利益矛盾与个体情绪的网络投射，裹挟情绪、主观鲜明、细节难求证。<br>二是危害剖析。侵蚀基本信任、滋生网络戾气、占用公众注意力，自带"舆论审判"基因，消解法治精神与公共理性。<br>三是系统治理。将法治思维贯穿管网治网全过程，以多元主体共治优化网络舆论生态、守护人的尊严与安全感。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「遏制网络"小作文"乱象，"绝不能仅靠道德呼吁"——必须将法治思维和法治方式贯穿于管网治网全过程，以"规则之治"不断优化网络舆论生态，在数智时代以清晰边界守护人的尊严与安全感。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是本质透视——网络"小作文"是现实利益矛盾与个体情绪的网络投射，裹挟情绪、主观鲜明、细节难求证。<br>二是危害剖析——侵蚀基本信任、滋生网络戾气、占用公众注意力，自带"舆论审判"基因，消解法治精神与公共理性。<br>三是系统治理——将法治思维贯穿管网治网全过程，以多元主体共治优化网络舆论生态、守护人的尊严与安全感。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：「互联网不是法外之地。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「以“规则之治”守护网络舆论场」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是强化穿透式监管、压实平台责任，对虚构事实、恶意引流、操纵舆论等行为依法处置。<br>二是推动平台建立更高效的内容审核、谣言标注和投诉响应机制，提高辟谣与纠偏效率。<br>三是引导自媒体和网络大V自觉校准公共讨论基调，以理性客观对冲偏激情绪。<br>四是提升全民媒介素养，倡导在情绪化叙事面前保持审慎、主动交叉验证信息。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：「互联网不是法外之地。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于以“规则之治”守护网络舆论场的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于以“规则之治”守护网络舆论场的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进以“规则之治”守护网络舆论场，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、本质透视——网络"小作文"是现实利益矛盾与个体情绪的网络投射，裹挟情绪、主观鲜明、细节难求证。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、危害剖析——侵蚀基本信任、滋生网络戾气、占用公众注意力，自带"舆论审判"基因，消解法治精神与公共理性。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、系统治理——将法治思维贯穿管网治网全过程，以多元主体共治优化网络舆论生态、守护人的尊严与安全感。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：「互联网不是法外之地。」</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「以“规则之治”守护网络舆论场」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：以“规则之治”守护网络舆论场<br><br>时代之问，呼唤破题之策。以“规则之治”守护网络舆论场，是发展所需，也是民心所向。可从三个维度展开：本质透视——网络"小作文"是现实利益、危害剖析——侵蚀基本信任、滋生网络戾、系统治理——将法治思维贯穿管网治网全。<br><br>分论点一：本质透视——网络"小作文"是现实利益矛盾与个体情绪的网络投射，裹挟情绪、主观鲜明、细节难求证。方向对了，路再远也能抵达。「互联网不是法外之地。」<br><br>分论点二：危害剖析——侵蚀基本信任、滋生网络戾气、占用公众注意力，自带"舆论审判"基因，消解法治精神与公共理性。方法对了，事再难也能办成。「以'规则之治'不断优化网络舆论生态。」<br><br>分论点三：系统治理——将法治思维贯穿管网治网全过程，以多元主体共治优化网络舆论生态、守护人的尊严与安全感。行百里者半九十。「这不仅是治理之策，更是文明之需。」保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。以“规则之治”守护网络舆论场是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-15</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

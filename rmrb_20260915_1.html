@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 文学，扎根群众才更有力量</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>文学，扎根群众才更有力量</h1>
+    <div class="meta">人民日报·人民时评 | 文艺为人民·新大众文艺·文化自信·文化赋能城市 | 2026年9月15日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：人民的需要是文艺根本价值／数智赋能新文艺·文化润城长远势能·扎根群众生命之源三维度／升华为生活方式·高品质生活赋能</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">文艺工作</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">新大众文艺</span>
+      <span class="tag-item">文学评奖转型</span>
+      <span class="tag-item">经典传承与创新</span>
+      <span class="tag-item">文化惠民</span>
+      <span class="tag-item">书香社会建设</span>
+      <span class="tag-item">网络文学与微短剧融合</span>
+      <span class="tag-item">精神文明建设</span>
+      <span class="tag-item">文化强国建设</span>
+      <span class="tag-item">文化赋能城市发展</span>
+      <span class="tag-item">文艺为人民</span>
+      <span class="tag-item">高品质文化生活</span>
+      <span class="tag-item">十五五文化规划</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配「文化自信」「文艺为人民」「全民阅读」「文化赋能城市」等主题；本文「总论点（人民的需要是文艺存在的根本价值所在—文学扎根群众才有力量）—三维分论（数智赋能新文艺／文化润城长远势能／扎根群众生命之源）—升华为生活方式收束」的论证链，是写「文化文艺类」文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可提炼四条对策：<b>倡导深读经典、拒绝标签化浅阅读的浮躁风气，开展阅读推广引导群众走近经典并涵泳咀嚼／强化经典阅读思辨训练，培养主动探索的思考习惯、避免思维惰性钝化／推动经典与现代传播良性结合，以优质内容对接碎片化场景而非被其取代／以读书修身、以经典润心，将经典内化为自身知识与智慧、涵养性情培厚修养</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">归纳概括</span><span class="text">可概括「推动文学扎根群众的关键路径」：借数智赋能激活新大众文艺、以文化润城拓展长远势能、让文学融入日常烟火扎根群众，是写「文化惠民举措概括」类题的现成模板。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为「关于深入开展全民阅读活动的倡议书」「致广大市民的阅读倡议书」等公文素材；文中<b>「以读书修身，以经典润心」</b><b>「让文学融入日常、助力美好生活」</b>等表述极适合写进公文与申论。</span></div>
+        <div class="analysis-item"><span class="label">大作文论证</span><span class="text">可提炼大作文论点：以「文学，扎根群众才更有力量」为主题，从数智赋能焕新文艺、文化润城积蓄势能、扎根烟火涵养生命三个维度，论证新时代文学如何贴近人民、服务人民。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（场景破题—总纲文艺为人民—数智赋能/文化润城/扎根群众三维分论—升华为生活方式收束）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>「场景切入＋时代命题抛出」</b>：以「遇见大先生」鲁迅文创市集、左联会址「火种之树」、北外滩「江畔炬火」等生活化场景起笔，引出「2026中国文学盛典·鲁迅文学周」收官，点出文学正在可感可及的生活现场与读者同频共振；随即以「今年是鲁迅诞辰145周年、逝世90周年」锚定时间坐标，自然抛出「新大众文艺兴起、文学奖不应止于一次评奖」的时代命题（第一段—第三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>「总论点一体两面」</b>：将全篇主旨凝为「文学的价值，在于人民的需要是文艺存在的根本价值所在——文学只有适应时代、扎根群众、融入城市烟火，才更有力量与生命力」，一句既点出「文艺为人民」的根本立场，又落到「扎根群众」的生动实践，为后文三个分论点预留「焕新—赋能—扎根」的完整展开空间（立论段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>数智赋能新文艺</b>：由「新大众文艺兴起，文学奖也不应止于一次评奖、一场仪式」领起，以网络社交平台、大语言模型筛选推荐能力不断验证做铺垫，落到<b>网络文学用户达5.5亿、累计作品超4400万部、改编微短剧超1.2万部</b>的硬数据，再以「外卖诗人」王计兵、「菜场作家」陈慧等草根创作者佐证，立起「文学在数智时代依然不可或缺」的正面判断（第一分论组，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>文化润城长远势能</b>：由「文化，蕴含着深层而持久的力量」立起，指出城市发展「拼GDP、拼产业」很重要，但长远看还要拼文化；引<b>「十五五」规划纲要「让人民享受更高品质的文化生活」</b>，落到文学在引领潮流、服务社会方面潜力与日俱增的判断，把文学意义从「作品」升维到「城市软实力」（第二分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>扎根群众生命之源</b>：以习近平总书记<b>「人民的需要是文艺存在的根本价值所在」</b>点题，指出文学评奖适应时代、成为融入日常的「触点」，市民偶遇「大先生」便能重温「为人生」的文学主张；由鲁迅「新的『为人生』，还是『为人生』」推向「文学，扎根群众才更有力量，融入城市烟火才更有生命力」的收束性判断（第三分论组）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>「场景破题＋数据支撑＋价值升华」</b>结构：先以生活场景破题，再用网络文学硬数据立柱，最后以总书记金句与鲁迅「为人生」主张升华；<b>「数智赋能—文化润城—扎根群众」三维度</b>层层递进，从现象到本质、从作品到人民，闭环完整，是申论「以人民为中心写文化议题」的范本，分论点小标题可直接化用。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】文学的价值，在于<span class="highlight-gold">"人民的需要是文艺存在的根本价值所在"</span>——<span class="highlight-purple">文学只有适应时代、扎根群众、融入城市烟火，才更有力量与生命力</span>，进而为繁荣新大众文艺助力、为高品质生活赋能。</div>
+
+      <p>在互联网和数字技术赋能下，大众与文艺的距离不是更远了，而是更近了。同时，有助于提升生活品质的文化活动不是太多了，而是远远不够。</p>
+
+      <p>今年是鲁迅先生诞辰145周年、逝世90周年。</p>
+
+      <p>在"遇见大先生"鲁迅文创市集上当小推介官，在左联会址纪念馆种下文学"火种之树"，在北外滩滨江海事塔旁的"江畔炬火"留下文学感悟……<span class="highlight-gold">"2026中国文学盛典·鲁迅文学周"</span>前不久在上海收官，一场场嵌入日常、蕴藏惊喜的"偶遇"，让读者在可感可及的生活现场与文学同频共振。</p>
+
+      <p>作为评奖后续，本届鲁迅文学奖通过配套活动由"夜"拓展为"周"，不仅时间上得到延伸，空间上也由剧院向展馆、书店、公园、社区拓展。</p>
+
+      <div class="sub-thesis">【分论点一】数智赋能新文艺——网络文学用户达5.5亿、改编微短剧超1.2万部，文学在数智时代依然不可或缺、生命力旺盛。</div>
+
+      <p>新大众文艺兴起，文学奖也不应止于一次评奖、一场仪式。<span class="highlight-blue">评奖的初衷，在于通过褒奖，引导阅读和创作风尚，为好作品链接读者与市场</span>。如今，这些功能已非文学评奖独有。方便快捷的网络社交平台，快速迭代的大语言模型，在筛选海量作品、给出精准推荐等方面，能力不断得到验证。</p>
+
+      <p>因应变化，必须寻找新的价值空间。文学或文艺，<span class="highlight-purple">不像粮、不是水，算不上生活刚需，但只要对精神生活有所追求，就不可或缺</span>。近期发布的《网络文学与微短剧融合发展研究报告》显示，<span class="highlight-green">国内网络文学用户规模达5.5亿，累计作品超4400万部；截至2025年底，网络文学累计改编短视频、微短剧作品数量已经超过1.2万部</span>。就像"外卖诗人"王计兵、"菜场作家"陈慧等草根创作者一样，今天，依然有许多人锲而不舍地把情感和想象力编织成故事、输出为文字，<span class="highlight-blue">获得精神上的满足与共鸣</span>。</p>
+
+      <div class="sub-thesis">【分论点二】文化润城长远势能——城市发展长远看还要拼文化，"十五五"提出让人民享受更高品质文化生活，文学引领潮流、服务社会的潜力与日俱增。</div>
+
+      <p>文化，蕴含着深层而持久的力量。观察如今的城市发展，拼地区生产总值增长、拼产业很重要，<span class="highlight-purple">从长远看还要拼文化</span>。<span class="highlight-blue">"十五五"规划纲要提出："让人民享受更高品质的文化生活。"</span>当审美越来越包容、需求越来越多元，<span class="highlight-blue">文学在引领潮流、服务社会方面的潜力也与日俱增</span>。</p>
+
+      <div class="sub-thesis">【分论点三】扎根群众生命之源——"人民的需要是文艺存在的根本价值所在"，文学只有融入日常烟火、扎根群众，才更有力量与生命力。</div>
+
+      <p>习近平总书记指出：<span class="highlight-gold">"人民的需要是文艺存在的根本价值所在。"</span>在互联网和数字技术赋能下，大众与文艺的距离不是更远了，而是更近了。同时，有助于提升生活品质的文化活动不是太多了，而是远远不够。当<span class="highlight-blue">文学评奖适应时代，成为一个个触点融入日常、助力美好生活</span>，鲁迅文学周让人们看到了新的可能。比如，市民在生活场景中偶遇"大先生"时，或许能不断重温以鲁迅为代表的前辈作家们<span class="highlight-gold">"为人生"</span>的文学主张，并从个体生命体验出发体悟新的意蕴。</p>
+
+      <p>新的<span class="highlight-gold">"为人生"</span>，还是"为人生"。鲁迅生前最后近10年，定居于上海，以《故事新编》《朝花夕拾》与数部杂文集等大量经典创作、出版和活动，将文学与社会实践推向顶峰。以前辈名家名字命名的文学奖，借用着先贤的历史信用，也承担着延续审美理想和精神品格的责任。这也带来启示，<span class="highlight-gold">文学，扎根群众才更有力量，融入城市烟火才更有生命力</span>。</p>
+
+      <p><span class="highlight-gold">"无穷的远方，无数的人们，都和我有关。"</span>1936年，鲁迅先生在一篇杂文中如此写道。在这个意义上，折桂鲁迅文学奖的获奖者值得关注，<span class="highlight-purple">如何让文学超越创作本身、升华为一种生活方式，进而为繁荣新大众文艺助力、为高品质生活赋能</span>，同样值得思索探求。</p>
+
+      <p class="byline">（人民日报2026年9月15日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文艺根本价值</span>
+      <p><b>「人民的需要是文艺存在的根本价值所在。」</b>——习近平总书记重要论述，写「文艺为人民／以人民为中心」是最高站位立论金句，必背。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·扎根群众</span>
+      <p><b>「文学，扎根群众才更有力量，融入城市烟火才更有生命力。」</b>——全文主旨句，写「文化文艺贴近人民」是点睛收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·无穷的远方</span>
+      <p><b>「无穷的远方，无数的人们，都和我有关。」</b>——鲁迅名句，写「文学联结个体与时代／文艺关怀社会」是权威情感金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·为人生</span>
+      <p><b>「新的'为人生'，还是'为人生'。」</b>——以鲁迅文学主张点题，写「文学的社会责任／为人生而艺术」是文脉金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·精神满足</span>
+      <p><b>「锲而不舍地把情感和想象力编织成故事、输出为文字，获得精神上的满足与共鸣。」</b>——写「草根创作／大众文艺生命力」是生动论据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文化力量</span>
+      <p><b>「文化，蕴含着深层而持久的力量。」</b>——写「文化软实力／长远势能」是规范判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·价值空间</span>
+      <p><b>「文学或文艺，不像粮、不是水，算不上生活刚需，但只要对精神生活有所追求，就不可或缺。」</b>——写「精神生活辩证关系」是犀利辩证段。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·升华为生活方式</span>
+      <p><b>「让文学超越创作本身、升华为一种生活方式，进而为繁荣新大众文艺助力、为高品质生活赋能。」</b>——写「文化赋能生活」是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">数据·网络文学</span>
+      <p><b>「国内网络文学用户规模达5.5亿，累计作品超4400万部；截至2025年底，网络文学累计改编短视频、微短剧作品数量已经超过1.2万部。」</b>——写「数智赋能新文艺／文化产业发展」是硬核数据论据。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文框架</span>
+      <p>学本文「总论点（人民的需要是文艺根本价值—扎根群众才有力量）—三维分论（数智赋能新文艺／文化润城长远势能／扎根群众生命之源）—升华为生活方式收束」结构，适用于「文化自信／文艺为人民／全民阅读」类作文，分论点从“焕新—赋能—扎根”切入，稳妥不跑题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文「三维度」骨架：①数智赋能新文艺，以5.5亿用户、1.2万部改编的硬数据立柱（焕新）；②文化润城长远势能，以十五五高品质文化生活立论（赋能）；③扎根群众生命之源，以总书记金句点题（扎根）。三个分论点从“现象—价值—人民”层层递进，可迁移到「公共文化／精神文明建设」等话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“推动文学扎根群众”拆成可操作举措：倡导深读拒绝浮躁、开展阅读推广引导涵泳咀嚼；强化思辨训练培养主动探索习惯、避免思维惰性；推动经典与现代传播良性结合、以优质内容对接碎片化场景；以读书修身、以经典润心，将经典内化为智慧涵养性情。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·数据论证</span>
+      <p>学「网络文学用户5.5亿、作品4400万部、改编微短剧1.2万部」的硬数据立柱法，把抽象「文化繁荣」写成可量化、可感知的论据，比空说「文艺兴盛」更有说服力，适合「产业发展／数实融合」类题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·结尾升华</span>
+      <p>由「扎根群众—融入烟火—升华为生活方式」的逻辑链收束，落到「为繁荣新大众文艺助力、为高品质生活赋能」，适合「文化文艺」主题，既回扣标题又给出正向预期。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「文学，扎根群众才更有力量」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是数智赋能新文艺。网络文学用户达5.5亿、改编微短剧超1.2万部，文学在数智时代依然不可或缺、生命力旺盛。<br>二是文化润城长远势能。城市发展长远看还要拼文化，"十五五"提出让人民享受更高品质文化生活，文学引领潮流、服务社会的潜力与日俱增。<br>三是扎根群众生命之源。"人民的需要是文艺存在的根本价值所在"，文学只有融入日常烟火、扎根群众，才更有力量与生命力。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「文学的价值，在于"人民的需要是文艺存在的根本价值所在"——文学只有适应时代、扎根群众、融入城市烟火，才更有力量与生命力，进而为繁荣新大众文艺助力、为高品质生活赋能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是数智赋能新文艺——网络文学用户达5.5亿、改编微短剧超1.2万部，文学在数智时代依然不可或缺、生命力旺盛。<br>二是文化润城长远势能——城市发展长远看还要拼文化，"十五五"提出让人民享受更高品质文化生活，文学引领潮流、服务社会的潜力与日俱增。<br>三是扎根群众生命之源——"人民的需要是文艺存在的根本价值所在"，文学只有融入日常烟火、扎根群众，才更有力量与生命力。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：「人民的需要是文艺存在的根本价值所在。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「文学，扎根群众才更有力量」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是倡导深读经典、拒绝标签化浅阅读的浮躁风气，开展阅读推广引导群众走近经典并涵泳咀嚼。<br>二是强化经典阅读思辨训练，培养主动探索的思考习惯、避免思维惰性钝化。<br>三是推动经典与现代传播良性结合，以优质内容对接碎片化场景而非被其取代。<br>四是以读书修身、以经典润心，将经典内化为自身知识与智慧、涵养性情培厚修养。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：「人民的需要是文艺存在的根本价值所在。」</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于文学，扎根群众才更有力量的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于文学，扎根群众才更有力量的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进文学，扎根群众才更有力量，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、数智赋能新文艺——网络文学用户达5.5亿、改编微短剧超1.2万部，文学在数智时代依然不可或缺、生命力旺盛。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、文化润城长远势能——城市发展长远看还要拼文化，"十五五"提出让人民享受更高品质文化生活，文学引领潮流、服务社会的潜力与日俱增。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、扎根群众生命之源——"人民的需要是文艺存在的根本价值所在"，文学只有融入日常烟火、扎根群众，才更有力量与生命力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：「人民的需要是文艺存在的根本价值所在。」</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「文学，扎根群众才更有力量」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：文学，扎根群众才更有力量<br><br>时代之问，呼唤破题之策。文学，扎根群众才更有力量，是发展所需，也是民心所向。可从三个维度展开：数智赋能新文艺、文化润城长远势能、扎根群众生命之源。<br><br>分论点一：数智赋能新文艺——网络文学用户达5.5亿、改编微短剧超1.2万部，文学在数智时代依然不可或缺、生命力旺盛。方向对了，路再远也能抵达。「人民的需要是文艺存在的根本价值所在。」<br><br>分论点二：文化润城长远势能——城市发展长远看还要拼文化，"十五五"提出让人民享受更高品质文化生活，文学引领潮流、服务社会的潜力与日俱增。方法对了，事再难也能办成。「文学，扎根群众才更有力量，融入城市烟火才更有生命力。」<br><br>分论点三：扎根群众生命之源——"人民的需要是文艺存在的根本价值所在"，文学只有融入日常烟火、扎根群众，才更有力量与生命力。行百里者半九十。「无穷的远方，无数的人们，都和我有关。」保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。文学，扎根群众才更有力量是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-15</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
