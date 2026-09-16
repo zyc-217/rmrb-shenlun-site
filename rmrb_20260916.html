@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 链式集聚育森林</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>链式集聚育森林</h1>
+    <div class="meta">人民日报·现场评论 | 新质生产力·产业链供应链·产业集群·营商环境·高质量发展 | 2026年9月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：链主带动协同创新／雨林生态产业融通／定力分寸感护航市场逻辑／围绕新质生产力布局产业链、提升产业链供应链韧性</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">产业链供应链韧性</span>
+      <span class="tag-item">产业集群</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">政府与市场关系</span>
+      <span class="tag-item">产学研融通创新</span>
+      <span class="tag-item">专精特新</span>
+      <span class="tag-item">绿色低碳循环</span>
+      <span class="tag-item">区域协调发展</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">实体经济</span>
+      <span class="tag-item">创新驱动</span>
+      <span class="tag-item">一张蓝图绘到底</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“新质生产力”“产业链供应链”“高质量发展”“产业集群”等主题；本文<b>“现象引入—链主带动协同创新／雨林生态产业融通／定力分寸感护航三层分论—升华点题”</b>的论证链，是写“产业升级／区域发展”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>强化链主企业引领带动，推动上下游协同创新、按图补链／推行“链长制”统筹土地能耗资金等要素、协调跨区审批堵点／搭建共性技术平台联合攻关关键材料、降低企业研发成本／优化营商环境，公共服务托底、市场逻辑当家，让企业敢跟技术极限较劲</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>当一棵大树愿意与其他树木共享阳光，上下游企业深耕同一片蓝海，新质生产力的活力便生生不息</b>”“<b>链主大树定标、产业灌木跟进、链条根系交错，整片雨林根深叶茂</b>”“<b>一张蓝图绘到底的定力比优惠政策更重要</b>”等多组生态隐喻与辩证，是写<b>系统观念／政府与市场关系／战略定力</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于培育先进制造业集群、提升产业链韧性的实施意见”“关于优化营商环境、护航企业发展的若干措施”等素材；文中“<b>围绕发展新质生产力布局产业链，提升产业链供应链韧性和安全水平</b>”“<b>公共服务托住底，市场逻辑当家</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（隐喻破题—链主带动／雨林融通／定力护航三层分论—升华合奏）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>隐喻破题＋场景引入</b>：以“大树共享阳光、上下游深耕同一片蓝海”的生态隐喻起笔，落点于“新质生产力的澎湃活力便生生不息”，再用宁德长盈旧厂房唤醒、半小时进宁德时代仓库的真实场景，两段之内完成“生态意象—产业现实”的过渡（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>“抢链主节拍”揭示协同创新本质</b>：由“边装修边进设备，就是抢链主节拍”切入，点出“抢的不仅是市场，更是协同创新的节奏”，把一座旧厂房的唤醒升维为整条产业链的唤醒，立起“链主大树滋养整片森林”的总意象。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>链主带动协同创新</b>：以宁德邦普电池闭环回收、上下游“半小时圈”配套、300多项零缺陷标准嵌进供应商车间为例，论证链主带动之下资源高效流转、交付周期大幅压缩（第四至五段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>雨林思维推动产业融通</b>：由“链主定标、灌木跟进、根系交错”引出整片“雨林”经得起风浪，再以厦门“芯高地”、莆田链长制、泉州具身智能、福州晶体出海多点开花，论证福建链式集聚擦亮高质量发展底色（第六至七段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>定力与分寸感护航政府市场关系</b>：以宁德新能源十余年一张蓝图绘到底、嘉元科技“路水电学校备好、剩下的自己干”的分寸感，落到“公共服务托底、市场逻辑当家”，并以“成长的烦恼”点出系统性问题要靠整链慢慢磨（第八至十一段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>典型案例＋硬数据＋生态隐喻</b>：7.7万平方米厂区年产值突破9亿元、300多项零缺陷标准、福州晶体国际市场占有率超70%、3000亿级集群、360名员工中347名本地招等构成事实支撑；‘链主大树／产业灌木／雨林／蓝海’构成贯穿全篇的生态隐喻系统，把抽象的产业集群讲成可感的生态叙事。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“隐喻立骨—三层分论—升华合奏”的递进结构</b>：以“大树—森林—雨林”的生态意象串起链主带动、产业融通、政府护航三个维度；<b>“链主出题、整链答题、雨林共生”</b>的收束金句呼应开篇，是申论“用小切口讲大主题、以隐喻贯通全篇”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”</span></p>
+
+      <p>福建福安畲开工业园区穆阳片区，宁德长盈新能源技术有限公司三期车间里，一块块电芯铝壳走下产线，半小时后就进到宁德时代仓库。这片<span class="highlight-green">7.7万平方米</span>的厂区，两年前还在闲置，如今年产值突破<span class="highlight-green">9亿元</span>。公司总经理叶端立说，“边装修边进设备，就是抢链主节拍”。</p>
+
+      <p>这个“抢”，抢的不仅是市场，更是<span class="highlight-purple">协同创新的节奏</span>。从唤醒一座旧厂房，到唤醒一条产业链，闽东山海间那棵<span class="highlight-purple">“链主大树”</span>，正以充沛养分滋养整片森林。</p>
+
+      <div class="thesis">【总论点】链式集聚“育森林”，本质是<span class="highlight-purple">以链主企业带动协同创新、以雨林生态推动产业融通、以政府定力与分寸感护航市场逻辑</span>，<span class="highlight-blue">围绕发展新质生产力布局产业链</span>，让产业链供应链<span class="highlight-gold">更具韧性与安全水平</span>，不断擦亮高质量发展的底色。</div>
+
+      <div class="sub-thesis">【分论点一】以“链主”带动协同创新，唤醒整条产业链——从唤醒一座旧厂房到唤醒一条产业链，链主大树以充沛养分滋养整片森林。</div>
+
+      <p>往福鼎龙安化工园区看，宁德邦普新材料产业园高效回收退役电池里的镍钴锰锂，再生正极材料直接“喂”给一墙之隔的福鼎时代；双岳工业园区里奥丰环保接着收电池边角料，废料变回原料，电池“废弃—回收—再生产”在山海间形成<span class="highlight-blue">闭环</span>。</p>
+
+      <p>再往福安走，正极在青美、铜箔在嘉元、结构件在长盈、粘结剂在源创，负极聚古田、电解液聚福鼎，采购半径缩成“半小时圈”。宁德时代把<span class="highlight-green">300多项“零缺陷”标准</span>嵌进供应商车间，推动<span class="highlight-green">交付周期大幅压缩</span>。</p>
+
+      <div class="sub-thesis">【分论点二】以“雨林”思维推动产业融通，集群崛起——资源汇聚、链条交错，产业“雨林”根深叶茂、经得起风浪，并在更大范围多点开花。</div>
+
+      <p><span class="highlight-blue">资源汇聚、产业融通</span>，产业链才能“生长”得更长、更壮。进一步看，“链主大树”定标，“产业灌木”跟进，“链条根系”交错，产业链的整片<span class="highlight-purple">“雨林”</span>就能根深蒂固，也能经得起风浪。</p>
+
+      <p>这片“雨林”不止长在闽东。向更大范围看，福建的<span class="highlight-blue">链式集聚</span>正在多点开花。厦门海沧士兰集华<span class="highlight-blue">12英寸模拟芯片</span>、士兰集宏8英寸碳化硅功率器件芯片两线齐发，龙头带出“四链融合”的“芯高地”；莆田以<span class="highlight-blue">“链长制”</span>推动高端装备产业集聚，东亚活塞环、恒而达模切工具、海安全钢巨胎从单点冠军迈向集群崛起；泉州深耕“实”字，具身智能服务机器人创新平台落地；福州闽都创新实验室“中国牌”晶体<span class="highlight-green">国际市场占有率超70%</span>，把“双核引领、一带聚合”的创新骨架慢慢撑实。一地长树、片片成林，产业协同正在不断擦亮<span class="highlight-blue">高质量发展</span>的底色。</p>
+
+      <div class="sub-thesis">【分论点三】以“定力”与“分寸感”护航，处理好政府和市场关系——一张蓝图绘到底的定力，加公共服务托底、市场逻辑当家的分寸感。</div>
+
+      <p>不久前，福建提出“<span class="highlight-blue">梯度化培育创新型企业群体，链条化推动企业主导的产学研融通创新</span>”。这与福建“链主辐射、按图补链”的实践同向。把视线进一步拓展，产业集群的发展密码也藏在“静水深流”的地方。在福安畲开工业园区，企业负责人聊得最多的，是“没换频道”。<span class="highlight-green">10余年</span>、几届班子，宁德新能源从零起步，长到<span class="highlight-green">3000亿级集群</span>。<span class="highlight-purple">产业航向没变过，一张蓝图绘到底的定力，比优惠政策更重要。</span></p>
+
+      <p>这种定力，也体现在政府出手的<span class="highlight-purple">“分寸感”</span>上。嘉元科技从广东梅州来，<span class="highlight-green">360名员工里347人</span>是本地招的，总经理潘文俊说：“不是政府催着跑，是路、水、电、学校都给你准备好了，剩下的自己干。”产线怎么排、工艺怎么选，从来没人指手画脚。<span class="highlight-gold">“公共服务托住底，市场逻辑当家”</span>，企业才敢跟铜箔再薄1微米“死磕”、跟焊接平面度小数点后几位较劲。</p>
+
+      <p>当然，产业发展难免会遇到<span class="highlight-purple">“成长的烦恼”</span>。锂镍钴外贸依存度高、中小供应商精益管理偏弱、绿色循环体系尚不健全……烦恼要解决，但单点突击解决不了系统性问题，要靠链主积极担当、配套厂敢投长线、全域一盘棋慢慢磨。</p>
+
+      <p><span class="highlight-blue">围绕发展新质生产力布局产业链</span>，<span class="highlight-blue">提升产业链供应链韧性和安全水平</span>，至关重要也机遇连连。闽东长盈机台转、邦普废料活、嘉元铜箔薄，鹭岛士兰晶圆亮，榕城晶体出海……这都是福建链式集聚拔节的声音，也是<span class="highlight-gold">“链主出题、整链答题、雨林共生”</span>的合奏。</p>
+
+      <p><span class="highlight-gold">当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片“蓝海”，新质生产力的澎湃活力，便会生生不息。</span></p>
+
+      <p class="byline">（人民日报2026年9月16日 第05版 · 现场评论）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开篇隐喻</span>
+      <p><b>“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”</b>——以生态意象破题，写“协同发展／产业集群／新质生产力”是最高维度的立论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总论点</span>
+      <p><b>“围绕发展新质生产力布局产业链，提升产业链供应链韧性和安全水平。”</b>——总书记部署原意，写“新质生产力／产业链韧性”是权威收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同节奏</span>
+      <p><b>“这个‘抢’，抢的不仅是市场，更是协同创新的节奏。”</b>——以“抢链主节拍”小切口揭示协同创新本质，写“产业链协同”是点睛句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·链主大树</span>
+      <p><b>“链主大树定标，产业灌木跟进，链条根系交错，整片雨林就能根深蒂固、经得起风浪。”</b>——生态隐喻统摄产业集群，写“产业生态／集群韧性”是范式句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·闭环</span>
+      <p><b>“电池‘废弃—回收—再生产’在山海间形成闭环。”</b>——写“绿色低碳循环／资源高效利用”是现成论据。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·四链融合</span>
+      <p><b>“龙头带出‘四链融合’的‘芯高地’。”</b>——写“创新链产业链资金链人才链融合／龙头引领”可作引述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·一张蓝图</span>
+      <p><b>“产业航向没变过，一张蓝图绘到底的定力，比优惠政策更重要。”</b>——以“定力vs优惠”辩证，写“战略定力／久久为功／正确政绩观”是最佳表态句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·分寸感</span>
+      <p><b>“公共服务托住底，市场逻辑当家。”</b>——八个字讲透政府与市场边界，写“营商环境／放管服改革”是精准的定语式金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·成长烦恼</span>
+      <p><b>“单点突击解决不了系统性问题，要靠链主积极担当、配套厂敢投长线、全域一盘棋慢慢磨。”</b>——以“系统观念”收束难题，写“统筹兼顾／系统治理”是逻辑枢纽句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·雨林共生</span>
+      <p><b>“链主出题、整链答题、雨林共生。”</b>——八字呼应开篇生态意象，写“产业链协同／新型举国体制优势”是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·高质量发展底色</span>
+      <p><b>“一地长树、片片成林，产业协同正在不断擦亮高质量发展的底色。”</b>——把集群现象落到“高质量发展”根基，写“区域协调发展”是落点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力与活力</span>
+      <p><b>“企业才敢跟铜箔再薄1微米‘死磕’、跟焊接平面度小数点后几位较劲。”</b>——以极致细节写市场主体的创新锐气，写“工匠精神／企业创新主体作用”极有画面感。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“隐喻破题＋场景引入”：先以“大树共享阳光、上下游深耕蓝海”的生态意象起笔，再以宁德旧厂房唤醒、半小时进仓的真实场景落点，比直说“产业集群很重要”更有画面感。适用于“新质生产力／产业链供应链”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三层分论”：①链主带动协同创新（唤醒旧厂房→唤醒整链）；②雨林生态产业融通（资源汇聚、多点开花）；③定力分寸感护航（一张蓝图＋公共服务托底）。三个分论点由“企业”到“生态”再到“政府”，层层抬升，可迁移到“产业升级／区域协调”等话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“育森林”拆成可操作举措：强化链主企业引领、绘制产业链图谱按图补链（协同创新）；推行链长制统筹要素、协调跨区审批（政府统筹）；搭建共性技术平台联合攻关（创新支撑）；优化营商环境、公共服务托底市场逻辑当家（营商环境）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·比喻论证</span>
+      <p>学本文“大树—灌木—雨林—蓝海”的生态隐喻系统：把一个抽象的产业命题（集群韧性）写成一套自洽的自然意象，首尾呼应、贯穿全篇，比平铺直叙更有感染力，可迁移到一切“系统／协同／生态”类话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·政府市场关系</span>
+      <p>学本文“定力＋分寸感”的辩证：先以“一张蓝图绘到底比优惠政策更重要”立战略定力，再以“路水电学校备好、剩下的自己干”的“分寸感”划清政府边界，把“有效市场＋有为政府”写成有温度、有细节的论证，比直说“既要市场又要政府”更有力。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「链式集聚育森林」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以“链主”带动协同创新，唤醒整条产业链。从唤醒一座旧厂房到唤醒一条产业链，链主大树以充沛养分滋养整片森林。<br>二是以“雨林”思维推动产业融通，集群崛起。资源汇聚、链条交错，产业“雨林”根深叶茂、经得起风浪，并在更大范围多点开花。<br>三是以“定力”与“分寸感”护航，处理好政府和市场关系。一张蓝图绘到底的定力，加公共服务托底、市场逻辑当家的分寸感。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「链式集聚“育森林”，本质是以链主企业带动协同创新、以雨林生态推动产业融通、以政府定力与分寸感护航市场逻辑，围绕发展新质生产力布局产业链，让产业链供应链更具韧性与安全水平，不断擦亮高质量发展的底色。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以“链主”带动协同创新，唤醒整条产业链——从唤醒一座旧厂房到唤醒一条产业链，链主大树以充沛养分滋养整片森林。<br>二是以“雨林”思维推动产业融通，集群崛起——资源汇聚、链条交错，产业“雨林”根深叶茂、经得起风浪，并在更大范围多点开花。<br>三是以“定力”与“分寸感”护航，处理好政府和市场关系——一张蓝图绘到底的定力，加公共服务托底、市场逻辑当家的分寸感。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「链式集聚育森林」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是强化链主企业引领带动，推动上下游协同创新、按图补链。<br>二是推行“链长制”统筹土地能耗资金等要素、协调跨区审批堵点。<br>三是搭建共性技术平台联合攻关关键材料、降低企业研发成本。<br>四是优化营商环境，公共服务托底、市场逻辑当家，让企业敢跟技术极限较劲。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于链式集聚育森林的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于链式集聚育森林的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进链式集聚育森林，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、以“链主”带动协同创新，唤醒整条产业链——从唤醒一座旧厂房到唤醒一条产业链，链主大树以充沛养分滋养整片森林。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以“雨林”思维推动产业融通，集群崛起——资源汇聚、链条交错，产业“雨林”根深叶茂、经得起风浪，并在更大范围多点开花。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以“定力”与“分寸感”护航，处理好政府和市场关系——一张蓝图绘到底的定力，加公共服务托底、市场逻辑当家的分寸感。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「链式集聚育森林」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：链式集聚育森林<br><br>时代之问，呼唤破题之策。链式集聚育森林，是发展所需，也是民心所向。可从三个维度展开：以“链主”带动协同创新，唤醒整条产业链、以“雨林”思维推动产业融通，集群崛起、以“定力”与“分寸感”护航，处理好政府和市场关系。<br><br>分论点一：以“链主”带动协同创新，唤醒整条产业链——从唤醒一座旧厂房到唤醒一条产业链，链主大树以充沛养分滋养整片森林。方向对了，路再远也能抵达。“当一棵大树愿意与其他树木共享阳光，当上下游企业愿意深耕同一片‘蓝海’，新质生产力的澎湃活力，便会生生不息。”<br><br>分论点二：以“雨林”思维推动产业融通，集群崛起——资源汇聚、链条交错，产业“雨林”根深叶茂、经得起风浪，并在更大范围多点开花。方法对了，事再难也能办成。“围绕发展新质生产力布局产业链，提升产业链供应链韧性和安全水平。”<br><br>分论点三：以“定力”与“分寸感”护航，处理好政府和市场关系——一张蓝图绘到底的定力，加公共服务托底、市场逻辑当家的分寸感。行百里者半九十。“这个‘抢’，抢的不仅是市场，更是协同创新的节奏。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。链式集聚育森林是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-16</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
