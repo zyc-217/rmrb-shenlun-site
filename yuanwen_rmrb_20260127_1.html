@@ -145,7 +145,7 @@
     .note-h .note-x { display:none; }
   }
   /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
-  .sheet { max-width:720px; margin:0 auto; padding:14px 10px 40px; }
+  .sheet { max-width:720px; margin:0 auto; padding:0; }
   .paper { position:relative; background-color:#f7f3e6;
            background-image:
              repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
@@ -161,7 +161,7 @@
      视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
   #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
         mix-blend-mode:multiply; }
-  #text { position:relative; z-index:1; }
+  #text { position:relative; z-index:1; padding:6px 20px 0; }
   /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
   .paper.pen #text { pointer-events:none; }
   /* 报头 */
