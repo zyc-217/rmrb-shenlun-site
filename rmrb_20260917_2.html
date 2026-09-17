@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 提升新就业群体获得感幸福感安全感</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>提升新就业群体获得感幸福感安全感</h1>
+    <div class="meta">人民日报·第15版 | 新就业群体·权益保障·关爱服务·基层治理·获得感幸福感安全感 | 2026年9月17日 | 第15版</div>
+    <div class="meta" style="margin-top:4px;">主题：织密权益保障安全网／打造关爱服务暖心港／凝聚社会治理新力量，让新就业群体从城市过客变为治理力量</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新就业群体</span>
+      <span class="tag-item">获得感幸福感安全感</span>
+      <span class="tag-item">权益保障</span>
+      <span class="tag-item">算法向善</span>
+      <span class="tag-item">社保兜底</span>
+      <span class="tag-item">职业伤害保障</span>
+      <span class="tag-item">关爱服务</span>
+      <span class="tag-item">友好场景</span>
+      <span class="tag-item">诉求表达</span>
+      <span class="tag-item">多元调解</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">双向奔赴</span>
+      <span class="tag-item">职业发展</span>
+      <span class="tag-item">灵活就业</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“民生保障／社会治理／新就业形态”等主题；本文<b>“政策立题（中央文件＋总书记关切）—三层分论（安全网／暖心港／新力量）—双声部升华”</b>的论证链，是写“新就业群体／城市治理／民生温度”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>织密权益保障安全网，落实休息报酬、算法向善、社保兜底、职业伤害保障／打造关爱服务暖心港，建驿站、推骑手公寓、深化暖蜂行动／畅通诉求表达渠道，用议事厅恳谈会＋多元调解化解纠纷／凝聚社会治理新力量，以随手拍、积分机制、职业发展促双向奔赴</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>算法不能只算效率、不算人性</b>”“<b>从城市过客变为城市治理力量</b>”“<b>既是美好生活的连接者，更是城市温度的传递者</b>”等多组辩证，是写<b>效率与温度／管理与服务／个体与城市</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于加强新就业群体服务管理的实施意见”“关于关爱新就业群体、提升城市温度的若干措施”等素材；文中“<b>既有管理，又有服务</b>”“<b>按日参保、按单计费、月度缴费、总参总保</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（政策立题—安全网／暖心港／新力量三层分论—双声部升华）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>定位立题＋顶层牵引</b>：以“新就业群体是社会主义劳动者的重要组成部分”破题，用总书记关切与“首个专门聚焦新就业群体服务管理的中央文件”落点，立起“提升三感”的总命题（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>由圆桌会四元主体共话引出总要求</b>：以研究院专家、街道干部、平台研究员、一线骑手同台，点出“管理服务要跟上、既有管理又有服务”的治理命题，把宏大主题落到具体人群（第四段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>织密权益保障“安全网”</b>：以休息报酬指引、算法向善“让时间”、社保兜底、职业伤害保障（累计参保3458.8万人）为四根支柱，论证劳动权益底线如何兜住（第五至十七段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>打造关爱服务“暖心港”</b>：由驿站／骑手公寓／暖蜂行动等友好场景，延伸到诉求表达（小哥议事厅、骑手恳谈会、一站式多元调解），把“关爱”从给物延伸到听声（第十八至三十段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>凝聚社会治理“新”力量</b>：以成都小牛哥、杭州爱心车队、大栅栏随手拍与积分机制为例，落到新就业群体从“城市过客”变为“治理力量”、职业发展有奔头（第三十一至四十一，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>数据＋案例＋双声部引语</b>：3458.8万人、25家平台、3000余家调解组织、千余名骑手、1000多条线索等构成事实支撑；总书记语录与一线骑手原声交织，是“政策高度＋生活温度”的范本。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“总—分—总”三段式（安全网／暖心港／新力量）</b>：以中央文件与总书记关切起笔，再以三层分论展开，首尾以“获得感幸福感安全感”与“城市温度的传递者”呼应；<b>“算法不能只算效率、不算人性”</b>的金句，是申论“用具体人群讲宏大治理”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>新就业群体是社会主义劳动者的重要组成部分，是经济社会发展不可或缺的重要力量。</p>
+
+      <p>习近平总书记十分关心新就业群体，指出<span class="highlight-gold">“在管理服务上要跟上，填补好这个空白。要既有管理，又有服务”</span><span class="highlight-gold">“同‘新就业形态’相配套的法律法规政策措施也不能姗姗来迟”</span>。</p>
+
+      <p>今年4月，我国<span class="highlight-blue">首个专门聚焦新就业群体服务管理的中央文件</span>公开发布，围绕加强思想政治引领、依法维护合法权益、加大关爱力度、促进社会融入等提出明确要求。为落实文件要求，各地各部门持续推进友好场景建设，加强新就业形态劳动纠纷调解，温暖城市“奔跑者”的就业路，进一步保障新就业群体劳动权益。</p>
+
+      <p>新华社9月16日推出第三十六期“中国经济圆桌会”大型全媒体访谈节目，邀请中国劳动和社会保障科学研究院研究员黄昆、北京市西城区大栅栏街道工委副书记汪晓俊、美团研究院高级研究员赵磊、京东全职骑手李岩，共话加强新就业群体服务管理。</p>
+
+      <div class="thesis">【总论点】提升新就业群体获得感幸福感安全感，本质是<span class="highlight-blue">织密权益保障安全网、打造关爱服务暖心港、凝聚社会治理新力量</span>，让新就业群体在<span class="highlight-gold">看得见与看不见的关怀</span>中安心奔跑、融入城市、反哺社会，实现<span class="highlight-purple">从“城市过客”到“治理力量”</span>的角色跃升。</div>
+
+      <div class="sub-thesis">【分论点一】织密权益保障“安全网”——以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。</div>
+
+      <p>网约配送员走街串巷配送商品，网约车司机日夜奔忙守护出行，网约家政服务人员登门入户打理万家……</p>
+
+      <p>“在经济发展、城市运行和民生服务一线，新就业群体已成为不可缺少的力量。”汪晓俊说，以大栅栏为例，地区有外卖骑手、快递员等新就业群体<span class="highlight-green">千余名</span>，日均快件流转<span class="highlight-green">近2万件</span>。</p>
+
+      <p>黄昆表示，我国新就业形态人员规模大、就业形态多样，持续提高这一群体的权益保障水平是普遍期待，也考验治理智慧。</p>
+
+      <p>近年来，有关部门和各地加快探索，努力为新就业群体织密权益保障“安全网”：印发<span class="highlight-blue">新就业形态劳动者休息和劳动报酬权益保障、劳动规则公示、权益维护服务等系列指引指南</span>，围绕网约车司机、货车司机等重点群体出台<span class="highlight-blue">行业用工规范</span>，出台<span class="highlight-blue">地方性法规保障劳动者权益</span>……</p>
+
+      <p>“这些为合理界定企业劳动保护责任，明确新就业形态劳动者基本劳动权益进行了重要探索。”黄昆说。</p>
+
+      <p>目前，新就业形态劳动者权益保障办法正在制定中。黄昆认为，这是进一步完善新就业形态劳动者权益保障制度的重要举措，有助于将有关政策要求更有效地落地实施。</p>
+
+      <p>优化调整算法规则，是加强新就业群体权益保障的题中应有之义。<span class="highlight-purple">“平台的核心能力是算法调度，但算法不能只算效率、不算人性。”</span>赵磊说，企业在系统里加入很多设计，用技术手段给外卖骑手“让时间”。例如，红灯等待时间不计入配送时效，缓解骑手时间焦虑；异常天气、异常路况下超时免罚；等等。<span class="highlight-gold">“骑手留得住、跑得安心，平台才能可持续发展。”</span></p>
+
+      <p>社保是劳动者权益的重要组成部分。去年以来，多家外卖平台探索为骑手上社保。</p>
+
+      <p>“我和京东直接签订劳动合同，企业为我们全职骑手全额缴纳五险一金，解决了我们奔波在外的后顾之忧。”李岩说。</p>
+
+      <p>赵磊介绍，美团面向所有骑手“先缴后补”提供补贴，无论全职还是兼职、专送还是众包，只要骑手以灵活就业身份缴纳了城镇职工养老保险且收入达标，平台就会按照当地养老保险缴费基数下限的一半给骑手发放补贴。去年11月，美团养老保险补贴已实现全国覆盖。</p>
+
+      <p>为给予新就业群体更多兜底保障，在工伤保险制度框架下，我国结合新就业形态特点，推出<span class="highlight-blue">“按日参保，按单计费，月度缴费，总参总保”</span>的职业伤害保障模式。今年7月1日起，职业伤害保障试点已向全国推开，试点平台企业增至<span class="highlight-green">25家</span>。在此基础上，各省份按照“成熟一批、纳入一批”原则，将注册地在本省份的出行、即时配送、同城货运三个试点行业的中小平台企业，于年内总体纳入试点范围。截至7月底，试点累计参保人数达到<span class="highlight-green">3458.8万人</span>。</p>
+
+      <p>黄昆建议，从加强协同治理、加大监管力度、优化参保缴费办法等方面入手，进一步保障新就业群体合法权益。</p>
+
+      <div class="sub-thesis">【分论点二】打造关爱服务“暖心港”——建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。</div>
+
+      <p>在大栅栏街道，<span class="highlight-green">2处</span>24小时城市驿站、<span class="highlight-green">16处</span>友好驿站、<span class="highlight-green">44个</span>“骑心协力一平米”服务点位，让新就业群体歇脚有去处；平价智能充电设施的增设、非机动车停车位的优化，助力解决充电和停车难题；老字号商户推出就餐等优惠，一日三餐有保障。</p>
+
+      <p>“我们建成新就业群体友好街区、主题党群服务中心，让新就业群体歇脚、吃饭、充电、饮水、如厕就近可及。”汪晓俊说。</p>
+
+      <p>为新就业群体营造和谐友好从业环境，暖“新”驿站在商圈、市场等地加快建设，为新就业群体提供“能量补给站”；“司机之家”覆盖面不断扩大，让更多司机能够及时吃上热饭、喝上热水、洗上热水澡；关爱快递员“暖蜂行动”深入推进，破解快递小哥进门、派件等实际问题。</p>
+
+      <p>加强对新就业群体关心关爱，企业也加快探索。</p>
+
+      <p>“我们打造骑手公寓解决大城市骑手租房贵、居住条件差的问题，推出骑手工作餐为骑手提供性价比高的餐食、降低他们的生活成本，同时尝试解决骑手子女放学后课业辅导等问题，让骑手可以安心跑单。”赵磊说，平台持续优化骑手工作环境，让劳动条件改善成为平台竞争力的一部分。</p>
+
+      <p>提高关爱服务水平，为路途添温度；畅通诉求表达渠道，让打拼更舒心。</p>
+
+      <p>我国加强新就业形态劳动纠纷一站式调解，持续探索劳动争议调解与人民调解、司法调解联动的多元调解工作机制，在全国建立<span class="highlight-green">3000余家</span>一站式调解组织，构建起覆盖全国的多元联合调解工作网络。</p>
+
+      <p>“我们用好‘小哥议事厅’，常态化收集诉求、协商解决难题，并为新就业群体提供法律咨询等服务。”汪晓俊说。</p>
+
+      <p>赵磊介绍，在有关部门指导和帮助下，美团积极探索适合新就业群体的协商协调机制，包括骑手社区、骑手恳谈会、产品体验官等，保障骑手发言权。以骑手恳谈会为例，骑手跑单中的急难愁盼，以及平台即将推出的影响骑手权益的产品和规则，都是恳谈会的议题。骑手代表和平台代表面对面，把问题掰开揉碎讲清楚，商量如何解决，从而使平台产品和规则更符合骑手需求和利益。</p>
+
+      <p>“未来，我们还会拓展协商恳谈的主体范围，请商家、物业等参与恳谈会。”赵磊说。</p>
+
+      <p>黄昆建议，进一步强化对企业的用工指导，畅通投诉举报渠道，引导劳动者依法理性维权，构建和谐稳定的劳动关系。</p>
+
+      <p><span class="highlight-gold">“从物质保障到精神关爱、文化滋养，近年来，我实实在在感受到，党和国家对我们新就业群体的关怀越来越细致、越来越温暖。这些关怀让我们更加热爱自己工作的地方，我们会把这份温暖与关怀转化为实际行动，不断传递出去。”</span>李岩说。</p>
+
+      <div class="sub-thesis">【分论点三】凝聚社会治理“新”力量——以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。</div>
+
+      <p>李岩的奋斗路上，不只有跑单。今年，他在路上多次帮扶摔倒群众，协助处置多起路面交通突发情况。</p>
+
+      <p>“我是骑手，也是志愿服务人员、食品安全社会监督员。”李岩说，骑手每天扎根在街巷，踏踏实实做好配送工作之外，也可以及时上报门店食品安全隐患、道路井盖破损等问题，主动参与基层治理，积极服务社会。</p>
+
+      <p>新就业群体是社会治理可以依靠的重要力量。四川成都，由快递员、外卖骑手等组成的“小牛哥·先锋车手”志愿服务队，累计上报基层社会治理线索<span class="highlight-green">1000多条</span>，认领“爱心跑腿”等志愿服务项目<span class="highlight-green">850余项</span>，帮扶特殊困难群体<span class="highlight-green">2000余人次</span>；浙江杭州，汇聚网约车司机等志愿者的黄飞华爱心车队，在送医助老、应急救援、社区便民、生态帮扶等公益服务上持续做精做细……</p>
+
+      <p><span class="highlight-purple">“新就业群体在岗位上扛起责任，在流动中彰显担当，正成为城市精细化治理的‘前哨’，也助力各项服务直达民生末梢。”</span>汪晓俊说。</p>
+
+      <p>凝聚和用好社会治理“新”力量，增强新就业群体在基层治理中的参与感和归属感，做好思想引导和凝聚服务工作至关重要。</p>
+
+      <p>汪晓俊介绍，大栅栏街道成立快递行业流动党员党支部，持续加强新就业群体思想政治引领；推行“随手拍、顺手公益”，引导新就业群体参与街巷巡查、隐患上报、秩序维护；升级“服务换服务”积分机制，新就业群体可用治理贡献兑换服务与激励。<span class="highlight-purple">越来越多外卖骑手、快递员从“城市过客”变为城市“治理力量”</span>，在服务社会中实现人生价值。</p>
+
+      <p>让新就业群体从业有奔头、发展更全面，离不开职业发展渠道的畅通、职业技能培训的加强。有关部门制定公布职业技能培训需求指导目录，加快探索新就业形态职业培训模式，完善职业技能等级认定和职称评审政策。一些地方也通过政企校合作模式，探索高水平技能骑手转岗与职业提升的新路径。</p>
+
+      <p>黄昆认为，促进每一位新就业形态劳动者全面发展，既是让他们在经济社会发展中发挥更大作用的重要基础，也是新就业形态政策的方向和目标之一。</p>
+
+      <p><span class="highlight-gold">“新就业群体不仅是美好生活的连接者，更是城市温度的传递者，未来在促消费、保民生、稳预期等方面将发挥更大作用。”</span>赵磊说。</p>
+
+      <p>李岩表示，将持续履职尽责、脚踏实地，带动更多同行主动担当，做好力所能及的事，助力基层治理、服务城市发展。</p>
+
+      <p class="byline">（新华社北京9月16日电  记者赵超、张晓洁、邹雨沁、戴锦镕）<br>——“中国经济圆桌会”聚焦加强新就业群体服务管理<br>提升新就业群体获得感幸福感安全感</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·标题总论</span>
+      <p><b>“提升新就业群体获得感幸福感安全感。”</b>——以“三感”破题，八字标题一语点破新就业群体工作的价值坐标，写“民生保障／城市治理”是极简而有力的总领句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记关切</span>
+      <p><b>“在管理服务上要跟上，填补好这个空白。要既有管理，又有服务。”</b>——总书记原话，写“新就业群体服务管理／放管服”是最高维度的立场句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·算法人性</span>
+      <p><b>“平台的核心能力是算法调度，但算法不能只算效率、不算人性。”</b>——以“效率vs人性”辩证点破算法治理真义，写“平台责任／科技向善”是最佳判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·可持续发展</span>
+      <p><b>“骑手留得住、跑得安心，平台才能可持续发展。”</b>——以骑手与平台命运共同体立论，写“劳资共赢／权益保障”是落地句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·职伤模式</span>
+      <p><b>“按日参保，按单计费，月度缴费，总参总保。”</b>——职业伤害保障模式的四组关键词，写“社保兜底／新业态保障”是现成制度表述。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·关爱温度</span>
+      <p><b>“从物质保障到精神关爱、文化滋养，党和国家对我们新就业群体的关怀越来越细致、越来越温暖。”</b>——骑手原声，写“以人民为中心／民生温度”是自带真情实感的素材。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·前哨</span>
+      <p><b>“新就业群体正成为城市精细化治理的‘前哨’，助力各项服务直达民生末梢。”</b>——以“前哨”喻治理触角，写“基层治理／多元共治”是范式句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·城市过客</span>
+      <p><b>“越来越多外卖骑手、快递员从‘城市过客’变为城市‘治理力量’。”</b>——以身份跃迁写双向奔赴，写“社会融入／治理共同体”是点题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·连接者与传递者</span>
+      <p><b>“新就业群体不仅是美好生活的连接者，更是城市温度的传递者。”</b>——以“连接者vs传递者”辩证收束，写“新就业群体价值／城市文明”是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·中央文件</span>
+      <p><b>“我国首个专门聚焦新就业群体服务管理的中央文件公开发布。”</b>——写“顶层设计／政策牵引”是权威论据。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学本文“顶引立题法”：先以总书记关切＋首个中央文件破题，再落到“提升三感”的总论点，比直说“要关爱骑手”更有政策高度。适用于“民生保障／新就业形态／城市治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三层分论”：①织密权益保障安全网（休息报酬／算法向善／社保兜底／职伤）；②打造关爱服务暖心港（驿站／公寓／暖蜂＋诉求渠道）；③凝聚社会治理新力量（随手拍／积分／职业发展）。三个分论点由“兜底线”到“给温度”再到“促融入”，层层抬升。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“提升三感”拆成可操作举措：系列指引指南兜底权益（立制度）；算法向善＋社保职伤托底（强保障）；驿站公寓暖蜂行动＋议事厅恳谈会（优服务）；随手拍积分机制＋职业发展（促融入）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·数据论证</span>
+      <p>学本文“硬数据立论”：用“3458.8万人参保、25家平台、3000余家调解组织、1000多条线索”等量化事实取代空泛表态，把“关怀”写进可核查的数字，比喊口号更有说服力，可迁移到一切“民生／治理”类文章。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·双声部引语</span>
+      <p>学本文“政策高度＋生活温度”双声部：总书记语录定调、一线骑手原声暖场，把宏大命题落到具体的人，比单引政策更有感染力，可迁移到“以人民为中心”类话题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「提升新就业群体获得感幸福感安全感」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是织密权益保障“安全网”。以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。<br>二是打造关爱服务“暖心港”。建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。<br>三是凝聚社会治理“新”力量。以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「提升新就业群体获得感幸福感安全感，本质是织密权益保障安全网、打造关爱服务暖心港、凝聚社会治理新力量，让新就业群体在看得见与看不见的关怀中安心奔跑、融入城市、反哺社会，实现从“城市过客”到“治理力量”的角色跃升。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是织密权益保障“安全网”——以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。<br>二是打造关爱服务“暖心港”——建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。<br>三是凝聚社会治理“新”力量——以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“提升新就业群体获得感幸福感安全感。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「提升新就业群体获得感幸福感安全感」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是织密权益保障安全网，落实休息报酬、算法向善、社保兜底、职业伤害保障。<br>二是打造关爱服务暖心港，建驿站、推骑手公寓、深化暖蜂行动。<br>三是畅通诉求表达渠道，用议事厅恳谈会＋多元调解化解纠纷。<br>四是凝聚社会治理新力量，以随手拍、积分机制、职业发展促双向奔赴。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“提升新就业群体获得感幸福感安全感。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于提升新就业群体获得感幸福感安全感的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于提升新就业群体获得感幸福感安全感的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进提升新就业群体获得感幸福感安全感，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、织密权益保障“安全网”——以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、打造关爱服务“暖心港”——建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、凝聚社会治理“新”力量——以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“提升新就业群体获得感幸福感安全感。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「提升新就业群体获得感幸福感安全感」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：提升新就业群体获得感幸福感安全感<br><br>时代之问，呼唤破题之策。提升新就业群体获得感幸福感安全感，是发展所需，也是民心所向。可从三个维度展开：织密权益保障“安全网”、打造关爱服务“暖心港”、凝聚社会治理“新”力量。<br><br>分论点一：织密权益保障“安全网”——以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。方向对了，路再远也能抵达。“提升新就业群体获得感幸福感安全感。”<br><br>分论点二：打造关爱服务“暖心港”——建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。方法对了，事再难也能办成。“在管理服务上要跟上，填补好这个空白。要既有管理，又有服务。”<br><br>分论点三：凝聚社会治理“新”力量——以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。行百里者半九十。“平台的核心能力是算法调度，但算法不能只算效率、不算人性。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。提升新就业群体获得感幸福感安全感是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-17</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8b0000">
+<meta name="robots" content="noindex">
+<title>原文自测 · 提升新就业群体获得感幸福感安全感</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; transition:transform .15s, color .15s; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .card { cursor:pointer; }
+  .card-actions { display:none; flex-basis:100%; gap:10px; margin-top:12px; }
+  .card.open { flex-wrap:wrap; box-shadow:0 2px 10px rgba(196,30,58,.18); }
+  .card.open .card-actions { display:flex; }
+  .card.open .arrow { transform:rotate(90deg); color:#c41e3a; }
+  .act { flex:1; text-align:center; padding:11px 0; border-radius:10px; font-size:14.5px; font-weight:600; text-decoration:none; }
+  .act-orig { background:#fff5f5; color:#c0392b; border:1px solid #ffcdd2; }
+  .act-read { background:#c41e3a; color:#fff; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+
+  /* ===== 原文自测页（报纸版面）===== */
+  .hdr { position:sticky; top:0; z-index:40; background:#efe9d8;
+         border-bottom:1px solid #d6cdb4; }
+  .topbar { display:flex; align-items:center; gap:7px; padding:9px 12px;
+            padding-top:calc(9px + env(safe-area-inset-top)); }
+  .tb-back { font-size:22px; color:#8b0000; text-decoration:none; padding:0 3px; line-height:1; }
+  .tb-title { flex:1; min-width:0; font-size:13px; color:#5c5340; font-weight:600;
+              white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tb-btn { flex:0 0 auto; padding:6px 11px; border-radius:9px; border:1px solid #c9bfa3;
+            background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tb-btn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .tb-link { flex:0 0 auto; padding:6px 10px; border-radius:9px; background:#f7f3e6;
+             border:1px solid #c9bfa3; color:#8b0000; font-size:12.5px; text-decoration:none; }
+  .palette { display:none; gap:9px; padding:8px 14px 10px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; }
+  .palette.show { display:flex; }
+  .pc { width:32px; height:32px; border-radius:50%; border:0; cursor:pointer;
+        box-shadow:0 0 0 1.5px #b9ae90; padding:0; }
+  .pc.on { box-shadow:0 0 0 2.5px #333; }
+  .pbtn { padding:6px 12px; border-radius:9px; border:1px solid #c9bfa3; background:#f7f3e6;
+          font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .phint { font-size:11.5px; color:#9a907a; margin-left:auto; }
+  .pgroup { display:flex; align-items:center; gap:9px; }
+  .pgroup + .pgroup { padding-left:10px; border-left:1px solid #e0d8c0; }
+  .pcsz { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .pcsz.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .pbtn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .textbar { display:flex; gap:8px; padding:7px 14px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; background:#fbf8ef; }
+  .tlabel { font-size:12px; color:#6b6152; font-weight:600; }
+  .tsep { width:1px; height:18px; background:#e0d8c0; margin:0 2px; }
+  .tsz, .tlh { min-width:34px; height:30px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+              background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tsz.on, .tlh.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .psty { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .psty.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .toolrow { display:flex; gap:8px; padding:7px 14px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; background:#fbf8ef; }
+  .legend { display:flex; gap:12px; flex-wrap:wrap; padding:5px 14px; background:#fbf8ef;
+            border-top:1px dashed #d6cdb4; font-size:11.5px; color:#6b6152; align-items:center; }
+  .lg { display:inline-flex; align-items:center; gap:5px; }
+  .lg i { width:13px; height:13px; border-radius:3px; box-shadow:0 0 0 1px #b9ae90; }
+  .lg-t { outline:none; min-width:22px; border-bottom:1px dotted #c9bfa3; }
+  .lg-t:focus { border-bottom-color:#8b0000; }
+  .note { position:absolute; width:152px; background:#fffec6; border:1px solid #e6d98a;
+          border-radius:7px; box-shadow:0 3px 10px rgba(90,74,40,.28); z-index:6;
+          font-size:13px; line-height:1.5; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .note-h { display:flex; justify-content:space-between; align-items:center; cursor:move;
+            background:#f3e27e; border-radius:6px 6px 0 0; padding:2px 7px; font-size:11px; color:#7a5b00;
+            user-select:none; }
+  .note-x { cursor:pointer; color:#b00000; font-weight:700; padding:0 2px; }
+  .note-b { padding:6px 8px; outline:none; min-height:42px; max-height:180px; overflow:auto; }
+  #text .ln.bm::before { content:"★"; position:absolute; left:-16px; top:0; color:#e53935;
+            font-size:13px; line-height:inherit; }
+  .paper.note-mode { cursor:crosshair; }
+  @media print{
+    .hdr,.orig-fab { display:none!important; }
+    body { background:#fff; }
+    .paper { box-shadow:none; overflow:visible; min-height:0; }
+    .note-h .note-x { display:none; }
+  }
+  /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
+  .sheet { max-width:720px; margin:0 auto; padding:0; }
+  .paper { position:relative; background-color:#f7f3e6;
+           background-image:
+             repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
+             repeating-linear-gradient(90deg, rgba(0,0,0,.010) 0 2px, transparent 2px 3px),
+             radial-gradient(ellipse at 50% 38%, rgba(255,255,255,.6) 0%, rgba(150,132,92,.20) 100%);
+           box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
+           padding:0 0 60px; min-height:75vh; overflow:hidden;
+           -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
+               -webkit-touch-callout:none; }
+  /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
+     用 multiply 混合模拟真实荧光笔：涂过的地方纸变彩色，而黑色墨字不受影响，
+     视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
+  #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
+        mix-blend-mode:multiply; }
+  #text { position:relative; z-index:1; padding:6px 20px 0; }
+  /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
+  .paper.pen #text { pointer-events:none; }
+  /* 报头 */
+  .masthead { position:relative; z-index:1; padding:16px 18px 6px; }
+  .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
+             font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
+             text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  .mh-rule { border-top:2px solid #181512; height:0; margin:9px 0 7px; }
+  .mh-meta { display:flex; justify-content:space-between; align-items:center;
+             font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
+             padding:2px 2px 0; }
+  .mh-meta i { font-style:normal; }
+  /* 文章标题区 */
+  .art-head { position:relative; z-index:1; padding:18px 22px 12px; text-align:center; }
+  .art-title { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:24px;
+               font-weight:700; line-height:1.5; color:#181512; letter-spacing:1px; }
+  .art-sub { font-family:"SimSun","Songti SC",serif; font-size:12px; color:#6b6152;
+             margin-top:7px; letter-spacing:2px; }
+  .art-rule { border-top:1px solid #b9ae90; margin:12px 22px 0; }
+  /* 正文：宋体、两端对齐、首行缩进 */
+  #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:var(--rmrb-fs,17.5px);
+              line-height:var(--rmrb-lh,2.08); color:#1c1915; text-align:justify;
+              margin:0 0 13px; text-indent:2em; letter-spacing:.3px; position:relative; }
+  .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
+             color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
+  /* 精读页悬浮入口 */
+  .orig-fab { position:fixed; right:14px; bottom:calc(18px + env(safe-area-inset-bottom));
+              z-index:999; background:#fff; border:1.5px solid #ffcdd2; color:#c0392b;
+              font-size:13px; font-weight:600; padding:10px 15px; border-radius:999px;
+              text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.16); }
+  .orig-fab:active { transform:scale(.95); }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="topbar">
+      <a class="tb-back" href="index.html">‹</a>
+      <span class="tb-title">提升新就业群体获得感幸福感安全感</span>
+      <button class="tb-btn" id="bPen">✏️ 勾画</button>
+      <a class="tb-link" href="rmrb_20260917_2.html">📖 精读</a>
+    </div>
+    <div class="palette" id="pal">
+      <div class="pgroup">
+        <button class="pc on" data-c="black" style="background:#000000" title="黑"></button>
+        <button class="pc" data-c="red" style="background:#ff0000" title="红"></button>
+        <button class="pc" data-c="blue" style="background:#0000ff" title="蓝"></button>
+        <button class="pc" data-c="green" style="background:#00ff00" title="绿"></button>
+        <button class="pc" data-c="gold" style="background:#ffd700" title="金"></button>
+      </div>
+      <div class="pgroup">
+        <button class="pcsz" data-w="2">细</button>
+        <button class="pcsz on" data-w="6">中</button>
+        <button class="pcsz" data-w="11">粗</button>
+      </div>
+      <div class="pgroup">
+        <button class="psty on" data-st="hl">荧光</button>
+        <button class="psty" data-st="ul">下划</button>
+        <button class="psty" data-st="wave">波浪</button>
+        <button class="pbtn" id="bPenMode" title="压感钢笔（Apple Pencil）">🖊 钢笔</button>
+      </div>
+      <div class="pgroup">
+        <button class="pbtn" id="bEra" title="橡皮擦：擦除勾画">🧽 橡皮</button>
+        <button class="pbtn" id="bUndo">↩ 撤销</button>
+        <button class="pbtn" id="bClr">🗑 清空</button>
+      </div>
+      <span class="phint">划过即上色 · 轻点整句 · 选粗细/橡皮</span>
+    </div>
+    <div class="textbar" id="textbar">
+      <span class="tlabel">字号</span>
+      <button class="tsz" data-fs="15">小</button>
+      <button class="tsz on" data-fs="17.5">中</button>
+      <button class="tsz" data-fs="20.5">大</button>
+      <button class="tsz" data-fs="24">特大</button>
+      <span class="tsep"></span>
+      <span class="tlabel">行距</span>
+      <button class="tlh" data-lh="1.6">紧</button>
+      <button class="tlh on" data-lh="2.08">适中</button>
+      <button class="tlh" data-lh="2.6">宽松</button>
+    </div>
+    <div class="toolrow">
+      <button class="tb-btn" id="bNote">📝 便利贴</button>
+      <button class="tb-btn" id="bMark">☆ 书签</button>
+      <button class="tb-btn" id="bExport">📤 导出</button>
+    </div>
+    <div class="legend" id="legend">
+      <span class="lg"><i style="background:#000000"></i><span class="lg-t" contenteditable="true" data-c="black">黑</span></span>
+      <span class="lg"><i style="background:#ff0000"></i><span class="lg-t" contenteditable="true" data-c="red">红</span></span>
+      <span class="lg"><i style="background:#0000ff"></i><span class="lg-t" contenteditable="true" data-c="blue">蓝</span></span>
+      <span class="lg"><i style="background:#00ff00"></i><span class="lg-t" contenteditable="true" data-c="green">绿</span></span>
+      <span class="lg"><i style="background:#ffd700"></i><span class="lg-t" contenteditable="true" data-c="gold">金</span></span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="paper" id="paper">
+      <canvas id="cv"></canvas>
+
+      <div class="masthead">
+        <div class="mh-name">人民日报</div>
+        <div class="mh-rule"></div>
+        <div class="mh-meta">
+          <i>2026年9月17日 星期四</i>
+          <i>第15版</i>
+        </div>
+      </div>
+
+      <div class="art-head">
+        <div class="art-title">提升新就业群体获得感幸福感安全感</div>
+        <div class="art-sub">第15版</div>
+        <div class="art-rule"></div>
+      </div>
+
+      <div id="text">
+      <p class="ln" data-i="0">新就业群体是社会主义劳动者的重要组成部分，是经济社会发展不可或缺的重要力量。</p>
+      <p class="ln" data-i="1">习近平总书记十分关心新就业群体，指出“在管理服务上要跟上，填补好这个空白。要既有管理，又有服务”“同‘新就业形态’相配套的法律法规政策措施也不能姗姗来迟”。</p>
+      <p class="ln" data-i="2">今年4月，我国首个专门聚焦新就业群体服务管理的中央文件公开发布，围绕加强思想政治引领、依法维护合法权益、加大关爱力度、促进社会融入等提出明确要求。为落实文件要求，各地各部门持续推进友好场景建设，加强新就业形态劳动纠纷调解，温暖城市“奔跑者”的就业路，进一步保障新就业群体劳动权益。</p>
+      <p class="ln" data-i="3">新华社9月16日推出第三十六期“中国经济圆桌会”大型全媒体访谈节目，邀请中国劳动和社会保障科学研究院研究员黄昆、北京市西城区大栅栏街道工委副书记汪晓俊、美团研究院高级研究员赵磊、京东全职骑手李岩，共话加强新就业群体服务管理。</p>
+      <p class="ln" data-i="4">织密权益保障“安全网”——以休息报酬、算法向善、社保兜底、职业伤害保障，兜住新就业群体劳动权益底线。</p>
+      <p class="ln" data-i="5">网约配送员走街串巷配送商品，网约车司机日夜奔忙守护出行，网约家政服务人员登门入户打理万家……</p>
+      <p class="ln" data-i="6">“在经济发展、城市运行和民生服务一线，新就业群体已成为不可缺少的力量。”汪晓俊说，以大栅栏为例，地区有外卖骑手、快递员等新就业群体千余名，日均快件流转近2万件。</p>
+      <p class="ln" data-i="7">黄昆表示，我国新就业形态人员规模大、就业形态多样，持续提高这一群体的权益保障水平是普遍期待，也考验治理智慧。</p>
+      <p class="ln" data-i="8">近年来，有关部门和各地加快探索，努力为新就业群体织密权益保障“安全网”：印发新就业形态劳动者休息和劳动报酬权益保障、劳动规则公示、权益维护服务等系列指引指南，围绕网约车司机、货车司机等重点群体出台行业用工规范，出台地方性法规保障劳动者权益……</p>
+      <p class="ln" data-i="9">“这些为合理界定企业劳动保护责任，明确新就业形态劳动者基本劳动权益进行了重要探索。”黄昆说。</p>
+      <p class="ln" data-i="10">目前，新就业形态劳动者权益保障办法正在制定中。黄昆认为，这是进一步完善新就业形态劳动者权益保障制度的重要举措，有助于将有关政策要求更有效地落地实施。</p>
+      <p class="ln" data-i="11">优化调整算法规则，是加强新就业群体权益保障的题中应有之义。“平台的核心能力是算法调度，但算法不能只算效率、不算人性。”赵磊说，企业在系统里加入很多设计，用技术手段给外卖骑手“让时间”。例如，红灯等待时间不计入配送时效，缓解骑手时间焦虑；异常天气、异常路况下超时免罚；等等。“骑手留得住、跑得安心，平台才能可持续发展。”</p>
+      <p class="ln" data-i="12">社保是劳动者权益的重要组成部分。去年以来，多家外卖平台探索为骑手上社保。</p>
+      <p class="ln" data-i="13">“我和京东直接签订劳动合同，企业为我们全职骑手全额缴纳五险一金，解决了我们奔波在外的后顾之忧。”李岩说。</p>
+      <p class="ln" data-i="14">赵磊介绍，美团面向所有骑手“先缴后补”提供补贴，无论全职还是兼职、专送还是众包，只要骑手以灵活就业身份缴纳了城镇职工养老保险且收入达标，平台就会按照当地养老保险缴费基数下限的一半给骑手发放补贴。去年11月，美团养老保险补贴已实现全国覆盖。</p>
+      <p class="ln" data-i="15">为给予新就业群体更多兜底保障，在工伤保险制度框架下，我国结合新就业形态特点，推出“按日参保，按单计费，月度缴费，总参总保”的职业伤害保障模式。今年7月1日起，职业伤害保障试点已向全国推开，试点平台企业增至25家。在此基础上，各省份按照“成熟一批、纳入一批”原则，将注册地在本省份的出行、即时配送、同城货运三个试点行业的中小平台企业，于年内总体纳入试点范围。截至7月底，试点累计参保人数达到3458.8万人。</p>
+      <p class="ln" data-i="16">黄昆建议，从加强协同治理、加大监管力度、优化参保缴费办法等方面入手，进一步保障新就业群体合法权益。</p>
+      <p class="ln" data-i="17">打造关爱服务“暖心港”——建驿站、推骑手公寓、深化暖蜂行动，并畅通诉求表达渠道，让关爱从“给物”延伸到“听声”。</p>
+      <p class="ln" data-i="18">在大栅栏街道，2处24小时城市驿站、16处友好驿站、44个“骑心协力一平米”服务点位，让新就业群体歇脚有去处；平价智能充电设施的增设、非机动车停车位的优化，助力解决充电和停车难题；老字号商户推出就餐等优惠，一日三餐有保障。</p>
+      <p class="ln" data-i="19">“我们建成新就业群体友好街区、主题党群服务中心，让新就业群体歇脚、吃饭、充电、饮水、如厕就近可及。”汪晓俊说。</p>
+      <p class="ln" data-i="20">为新就业群体营造和谐友好从业环境，暖“新”驿站在商圈、市场等地加快建设，为新就业群体提供“能量补给站”；“司机之家”覆盖面不断扩大，让更多司机能够及时吃上热饭、喝上热水、洗上热水澡；关爱快递员“暖蜂行动”深入推进，破解快递小哥进门、派件等实际问题。</p>
+      <p class="ln" data-i="21">加强对新就业群体关心关爱，企业也加快探索。</p>
+      <p class="ln" data-i="22">“我们打造骑手公寓解决大城市骑手租房贵、居住条件差的问题，推出骑手工作餐为骑手提供性价比高的餐食、降低他们的生活成本，同时尝试解决骑手子女放学后课业辅导等问题，让骑手可以安心跑单。”赵磊说，平台持续优化骑手工作环境，让劳动条件改善成为平台竞争力的一部分。</p>
+      <p class="ln" data-i="23">提高关爱服务水平，为路途添温度；畅通诉求表达渠道，让打拼更舒心。</p>
+      <p class="ln" data-i="24">我国加强新就业形态劳动纠纷一站式调解，持续探索劳动争议调解与人民调解、司法调解联动的多元调解工作机制，在全国建立3000余家一站式调解组织，构建起覆盖全国的多元联合调解工作网络。</p>
+      <p class="ln" data-i="25">“我们用好‘小哥议事厅’，常态化收集诉求、协商解决难题，并为新就业群体提供法律咨询等服务。”汪晓俊说。</p>
+      <p class="ln" data-i="26">赵磊介绍，在有关部门指导和帮助下，美团积极探索适合新就业群体的协商协调机制，包括骑手社区、骑手恳谈会、产品体验官等，保障骑手发言权。以骑手恳谈会为例，骑手跑单中的急难愁盼，以及平台即将推出的影响骑手权益的产品和规则，都是恳谈会的议题。骑手代表和平台代表面对面，把问题掰开揉碎讲清楚，商量如何解决，从而使平台产品和规则更符合骑手需求和利益。</p>
+      <p class="ln" data-i="27">“未来，我们还会拓展协商恳谈的主体范围，请商家、物业等参与恳谈会。”赵磊说。</p>
+      <p class="ln" data-i="28">黄昆建议，进一步强化对企业的用工指导，畅通投诉举报渠道，引导劳动者依法理性维权，构建和谐稳定的劳动关系。</p>
+      <p class="ln" data-i="29">“从物质保障到精神关爱、文化滋养，近年来，我实实在在感受到，党和国家对我们新就业群体的关怀越来越细致、越来越温暖。这些关怀让我们更加热爱自己工作的地方，我们会把这份温暖与关怀转化为实际行动，不断传递出去。”李岩说。</p>
+      <p class="ln" data-i="30">凝聚社会治理“新”力量——以随手拍、积分机制、职业发展促双向奔赴，让新就业群体从“城市过客”变为“治理力量”。</p>
+      <p class="ln" data-i="31">李岩的奋斗路上，不只有跑单。今年，他在路上多次帮扶摔倒群众，协助处置多起路面交通突发情况。</p>
+      <p class="ln" data-i="32">“我是骑手，也是志愿服务人员、食品安全社会监督员。”李岩说，骑手每天扎根在街巷，踏踏实实做好配送工作之外，也可以及时上报门店食品安全隐患、道路井盖破损等问题，主动参与基层治理，积极服务社会。</p>
+      <p class="ln" data-i="33">新就业群体是社会治理可以依靠的重要力量。四川成都，由快递员、外卖骑手等组成的“小牛哥·先锋车手”志愿服务队，累计上报基层社会治理线索1000多条，认领“爱心跑腿”等志愿服务项目850余项，帮扶特殊困难群体2000余人次；浙江杭州，汇聚网约车司机等志愿者的黄飞华爱心车队，在送医助老、应急救援、社区便民、生态帮扶等公益服务上持续做精做细……</p>
+      <p class="ln" data-i="34">“新就业群体在岗位上扛起责任，在流动中彰显担当，正成为城市精细化治理的‘前哨’，也助力各项服务直达民生末梢。”汪晓俊说。</p>
+      <p class="ln" data-i="35">凝聚和用好社会治理“新”力量，增强新就业群体在基层治理中的参与感和归属感，做好思想引导和凝聚服务工作至关重要。</p>
+      <p class="ln" data-i="36">汪晓俊介绍，大栅栏街道成立快递行业流动党员党支部，持续加强新就业群体思想政治引领；推行“随手拍、顺手公益”，引导新就业群体参与街巷巡查、隐患上报、秩序维护；升级“服务换服务”积分机制，新就业群体可用治理贡献兑换服务与激励。越来越多外卖骑手、快递员从“城市过客”变为城市“治理力量”，在服务社会中实现人生价值。</p>
+      <p class="ln" data-i="37">让新就业群体从业有奔头、发展更全面，离不开职业发展渠道的畅通、职业技能培训的加强。有关部门制定公布职业技能培训需求指导目录，加快探索新就业形态职业培训模式，完善职业技能等级认定和职称评审政策。一些地方也通过政企校合作模式，探索高水平技能骑手转岗与职业提升的新路径。</p>
+      <p class="ln" data-i="38">黄昆认为，促进每一位新就业形态劳动者全面发展，既是让他们在经济社会发展中发挥更大作用的重要基础，也是新就业形态政策的方向和目标之一。</p>
+      <p class="ln" data-i="39">“新就业群体不仅是美好生活的连接者，更是城市温度的传递者，未来在促消费、保民生、稳预期等方面将发挥更大作用。”赵磊说。</p>
+      <p class="ln" data-i="40">李岩表示，将持续履职尽责、脚踏实地，带动更多同行主动担当，做好力所能及的事，助力基层治理、服务城市发展。</p>
+      </div>
+      <div class="pen-tip">— 全文完 —</div>
+    </div>
+  </div>
+<script>
+const PAGE="rmrb_20260917_2.html", STORE='rmrb_read_v1';
+const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00',gold:'#ffd700'};
+let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[],notes:[],bookmarks:{}};
+let rec=db[PAGE];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
+const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const pal=document.getElementById('pal');
+let cur='black',pen=false,drawing=false,pts=[],ws=[],last=null;
+let curW=6,mode='pen',curStyle='hl',penMode=false,noteMode=false,markMode=false;
+
+function pr(){return paper.getBoundingClientRect()}
+function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
+function wOf(e){return curW}
+function widthOf(s){return (Array.isArray(s.w)?s.w[0]:s.w)||curW;}
+function drawWave(pts,r,w,col){
+  ctx.strokeStyle=col;ctx.globalAlpha=1;ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();
+  for(let i=0;i<pts.length-1;i++){
+    const a=pts[i],b=pts[i+1];
+    const ax=a[0]*r.width,ay=a[1]*r.height,bx=b[0]*r.width,by=b[1]*r.height;
+    const len=Math.hypot(bx-ax,by-ay); if(len<1)continue;
+    const nx=-(by-ay)/len, ny=(bx-ax)/len, seg=4;
+    ctx.moveTo(ax,ay);
+    for(let t=0;t<=len;t+=seg){const f=t/len;const px=ax+(bx-ax)*f,py=ay+(by-ay)*f;const off=Math.sin(t/5)*3;ctx.lineTo(px+nx*off,py+ny*off);}
+  }
+  ctx.stroke();
+}
+function redraw(){
+  const r=pr();ctx.clearRect(0,0,r.width,r.height);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;
+      ctx.lineWidth=widthOf(s);
+      ctx.beginPath();s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height; i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();
+      return;}
+    ctx.globalCompositeOperation='source-over';
+    const col=COL[s.c]||COL.black;
+    if(s.style==='wave'){ drawWave(s.p,r,widthOf(s),col); return; }
+    const a=(s.style==='ul')?1:0.5; ctx.globalAlpha=a; ctx.strokeStyle=col;
+    for(let i=1;i<s.p.length;i++){
+      const x0=s.p[i-1][0]*r.width,y0=s.p[i-1][1]*r.height,x1=s.p[i][0]*r.width,y1=s.p[i][1]*r.height;
+      ctx.lineWidth=Array.isArray(s.w)?s.w[i]:(s.w||curW);
+      ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();
+    }
+  });
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+}
+function fit(){
+  const r=pr(),d=window.devicePixelRatio||1;
+  cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);
+  cv.style.width=r.width+'px';cv.style.height=r.height+'px';
+  ctx.setTransform(d,0,0,d,0,0);redraw();
+}
+/* 笔画 bbox 反查被覆盖的句子。
+   关键：横划时 bbox 高度≈0，若按面积交集判定会恒为 0 而永不命中，
+   故细笔画改用「中心 y 是否落在该句行内」判定，粗涂改按交集比例判定。 */
+function hits(minx,miny,maxx,maxy){
+  const r=pr(),out=[];
+  const cy=(miny+maxy)/2;
+  const thin=(maxy-miny)*r.height<12;
+  document.querySelectorAll('.ln').forEach(function(el){
+    const q=el.getBoundingClientRect();
+    const y0=(q.top-r.top)/r.height,y1=(q.bottom-r.top)/r.height;
+    if(thin){ if(cy>=y0&&cy<=y1) out.push(el.dataset.i); }
+    else if(Math.min(maxy,y1)-Math.max(miny,y0) > (y1-y0)*0.25) out.push(el.dataset.i);
+  });
+  return out;
+}
+function bbox(ps){let a=1,b=0,c=1,d=0;
+  ps.forEach(function(p){a=Math.min(a,p[0]);b=Math.max(b,p[0]);c=Math.min(c,p[1]);d=Math.max(d,p[1])});
+  return [a,c,b,d]}
+function recompute(){
+  const m={};
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase)return;
+    const bb=bbox(s.p);hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){m[i]=s.c});
+  });
+  rec.marks=m;
+}
+/* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
+cv.addEventListener('pointerdown',function(e){
+  if(!pen)return;e.preventDefault();drawing=true;ws=[];
+  try{cv.setPointerCapture(e.pointerId)}catch(err){}
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];ws.push(curW);
+});
+cv.addEventListener('pointermove',function(e){
+  if(!drawing)return;e.preventDefault();
+  const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  let w=curW;
+  if(penMode&&e.pointerType==='pen') w=curW*(0.35+(e.pressure||0.5)*1.4);
+  ws.push(w);
+  if(mode==='erase'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=(curStyle==='ul'||curStyle==='wave')?1:0.5;}
+  ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;last=[x,y];pts.push(p);
+});
+function up(e){
+  if(!drawing)return;drawing=false;
+  if(!pts.length)return;
+  const r=pr(),bb=bbox(pts);
+  const moved=Math.max((bb[2]-bb[0])*r.width,(bb[3]-bb[1])*r.height);
+  if(moved<8){ /* 轻点 */
+    if(mode==='erase'){ /* 橡皮轻点：删掉覆盖该点的整条笔画 */
+      const x=pts[0][0],y=pts[0][1];
+      rec.strokes=rec.strokes.filter(function(s){
+        if(s.erase)return true;
+        return !s.p.some(function(pt){return Math.hypot(pt[0]-x,pt[1]-y)*r.width < (s.w||curW)/2+6});
+      });
+      save();redraw();return;
+    }
+    const cx=pts[0][0]*r.width+r.left, cy=pts[0][1]*r.height+r.top;
+    let target=null,best=1e12;
+    document.querySelectorAll('.ln').forEach(function(el){
+      const q=el.getBoundingClientRect();
+      if(cx>=q.left&&cx<=q.right&&cy>=q.top&&cy<=q.bottom){target=el;best=-1;return;}
+      const dx=Math.max(q.left-cx,0,cx-q.right), dy=Math.max(q.top-cy,0,cy-q.bottom);
+      const dist=dx*dx+dy*dy; if(dist<best){best=dist;target=el;}
+    });
+    if(target){const i=target.dataset.i,q=target.getBoundingClientRect(),yy=(q.top+q.height*0.6-r.top)/r.height;
+      if(rec.marks[i]===cur){delete rec.marks[i];
+        rec.strokes=(rec.strokes||[]).filter(function(s){
+          return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
+      }else{
+        rec.marks[i]=cur;
+        rec.strokes.push({c:cur,style:curStyle,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+      }
+      save();redraw();
+    }
+    return;
+  }
+  if(mode==='erase'){ rec.strokes.push({erase:true,w:curW,p:pts}); }
+  else{ const s={c:cur,style:curStyle,p:pts}; if(penMode&&pts.length>1)s.w=ws; else s.w=curW;
+        rec.strokes.push(s);
+        hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur}); }
+  save();redraw();
+}
+cv.addEventListener('pointerup',up);
+cv.addEventListener('pointercancel',up);
+
+const bPen=document.getElementById('bPen');
+bPen.onclick=function(){
+  pen=!pen;
+  if(pen){noteMode=false;markMode=false;
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');
+    document.getElementById('bMark').classList.remove('on');bMark.textContent='☆ 书签';}
+  paper.classList.toggle('pen',pen);
+  cv.style.pointerEvents=pen?'auto':'none';
+  bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
+  pal.classList.toggle('show',pen);
+};
+document.querySelectorAll('.pc').forEach(function(el){
+  el.onclick=function(){
+    cur=el.dataset.c;mode='pen';
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.toggle('on',x===el)});
+    document.getElementById('bEra').classList.remove('on');
+  };
+});
+const bEra=document.getElementById('bEra');
+bEra.onclick=function(){
+  if(mode==='erase'){mode='pen';bEra.classList.remove('on');}
+  else{mode='erase';bEra.classList.add('on');
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.remove('on')});}
+  pal.classList.add('show');
+};
+document.querySelectorAll('.pcsz').forEach(function(el){
+  el.onclick=function(){
+    curW=+el.dataset.w;
+    document.querySelectorAll('.pcsz').forEach(function(x){x.classList.toggle('on',x===el)});
+  };
+});
+/* 字号 / 行距 调整（全局记忆在 localStorage rmrb_text_v1） */
+const TXT=document.getElementById('text'),TPREF='rmrb_text_v1';
+let tp={fs:17.5,lh:2.08};
+try{const t=JSON.parse(localStorage.getItem(TPREF)||'{}'); if(t&&t.fs)tp.fs=t.fs; if(t&&t.lh)tp.lh=t.lh;}catch(e){}
+function applyText(){
+  TXT.style.setProperty('--rmrb-fs',tp.fs+'px');
+  TXT.style.setProperty('--rmrb-lh',tp.lh);
+  document.querySelectorAll('.tsz').forEach(function(x){x.classList.toggle('on',+x.dataset.fs===tp.fs)});
+  document.querySelectorAll('.tlh').forEach(function(x){x.classList.toggle('on',+x.dataset.lh===tp.lh)});
+  fit();
+}
+applyText();
+document.querySelectorAll('.tsz').forEach(function(el){
+  el.onclick=function(){tp.fs=+el.dataset.fs;localStorage.setItem(TPREF,JSON.stringify(tp));applyText();};
+});
+document.querySelectorAll('.tlh').forEach(function(el){
+  el.onclick=function(){tp.lh=+el.dataset.lh;localStorage.setItem(TPREF,JSON.stringify(tp));applyText();};
+});
+/* ===== 线型 / 压感钢笔 ===== */
+document.querySelectorAll('.psty').forEach(function(el){
+  el.onclick=function(){curStyle=el.dataset.st;
+    document.querySelectorAll('.psty').forEach(function(x){x.classList.toggle('on',x===el)});
+    pal.classList.add('show');};
+});
+const bPenMode=document.getElementById('bPenMode');
+bPenMode.onclick=function(){penMode=!penMode;bPenMode.classList.toggle('on',penMode);pal.classList.add('show');};
+
+/* ===== 颜色图例自定义（全局记忆 rmrb_legend_v1） ===== */
+const LEGP='rmrb_legend_v1';
+let legend={black:'黑',red:'红',blue:'蓝',green:'绿',gold:'金'};
+try{const l=JSON.parse(localStorage.getItem(LEGP)||'{}'); if(l)Object.assign(legend,l);}catch(e){}
+document.querySelectorAll('.lg-t').forEach(function(el){
+  el.textContent=legend[el.dataset.c]||el.dataset.c;
+  el.addEventListener('input',function(){legend[el.dataset.c]=el.textContent.trim();localStorage.setItem(LEGP,JSON.stringify(legend));});
+});
+
+/* ===== 便利贴批注 ===== */
+const bNote=document.getElementById('bNote');
+function noteAt(cx,cy){const r=pr();let x=(cx-r.left)/r.width,y=(cy-r.top)/r.height;
+  x=Math.max(0,Math.min(.82,x));y=Math.max(0,Math.min(.92,y));return [x,y];}
+function renderNote(n,idx){
+  const d=document.createElement('div');d.className='note';d.dataset.i=idx;
+  d.style.left=(n.x*100)+'%';d.style.top=(n.y*100)+'%';
+  d.innerHTML='<div class="note-h">📝<span class="note-x">×</span></div><div class="note-b" contenteditable="true"></div>';
+  d.querySelector('.note-b').textContent=n.text||'';
+  paper.appendChild(d);
+  d.querySelector('.note-b').addEventListener('input',function(){rec.notes[idx].text=this.textContent;save();});
+  d.querySelector('.note-x').addEventListener('click',function(e){e.stopPropagation();
+    rec.notes.splice(idx,1);d.remove();reindexNotes();save();});
+  const h=d.querySelector('.note-h');
+  h.addEventListener('pointerdown',function(e){
+    if(e.target.classList.contains('note-x'))return;
+    e.preventDefault();try{h.setPointerCapture(e.pointerId)}catch(err){}
+    const r=pr(),sx=e.clientX,sy=e.clientY,ox=parseFloat(d.style.left),oy=parseFloat(d.style.top);
+    function mv(ev){const dl=(ev.clientX-sx)/r.width*100,dt=(ev.clientY-sy)/r.height*100;
+      let nl=Math.max(0,Math.min(82,ox+dl)),nt=Math.max(0,Math.min(92,oy+dt));
+      d.style.left=nl+'%';d.style.top=nt+'%';rec.notes[idx].x=nl/100;rec.notes[idx].y=nt/100;}
+    function up(ev){h.removeEventListener('pointermove',mv);h.removeEventListener('pointerup',up);save();}
+    h.addEventListener('pointermove',mv);h.addEventListener('pointerup',up);
+  });
+}
+function reindexNotes(){(document.querySelectorAll('.note')).forEach(function(n){n.remove();});
+  (rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+function renderAllNotes(){(rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+renderAllNotes();
+bNote.onclick=function(){
+  noteMode=!noteMode;
+  if(noteMode){pen=false;markMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bMark').classList.remove('on');document.getElementById('bMark').textContent='☆ 书签';}
+  bNote.classList.toggle('on',noteMode);paper.classList.toggle('note-mode',noteMode);
+};
+paper.addEventListener('click',function(e){
+  if(!noteMode)return;
+  if(e.target.closest('.note'))return;
+  const p=noteAt(e.clientX,e.clientY);
+  if(!rec.notes)rec.notes=[];
+  rec.notes.push({x:p[0],y:p[1],text:''});
+  const idx=rec.notes.length-1;save();renderNote(rec.notes[idx],idx);
+  const nd=document.querySelector('.note[data-i="'+idx+'"] .note-b');if(nd)nd.focus();
+});
+
+/* ===== 书签收藏 ===== */
+const bMark=document.getElementById('bMark');
+function applyBookmarks(){document.querySelectorAll('.ln').forEach(function(el){el.classList.toggle('bm',!!(rec.bookmarks&&rec.bookmarks[el.dataset.i]));});}
+function countMarks(){return rec.bookmarks?Object.keys(rec.bookmarks).length:0;}
+applyBookmarks();
+bMark.onclick=function(){
+  markMode=!markMode;
+  if(markMode){pen=false;noteMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');}
+  bMark.classList.toggle('on',markMode);
+  bMark.textContent=markMode?'★ 书签中':'☆ 书签'+(countMarks()?('('+countMarks()+')'):'');
+};
+document.getElementById('text').addEventListener('click',function(e){
+  if(!markMode)return;
+  const el=e.target.closest('.ln');if(!el)return;
+  const i=el.dataset.i;
+  if(!rec.bookmarks)rec.bookmarks={};
+  if(rec.bookmarks[i])delete rec.bookmarks[i];else rec.bookmarks[i]=true;
+  el.classList.toggle('bm',!!rec.bookmarks[i]);save();
+  bMark.textContent='★ 书签'+(countMarks()?('('+countMarks()+')'):'');
+});
+if(countMarks())bMark.textContent='☆ 书签('+countMarks()+')';
+
+/* ===== 导出（打印为PDF，含批注） ===== */
+document.getElementById('bExport').onclick=function(){window.print();};
+document.getElementById('bUndo').onclick=function(){
+  rec.strokes.pop();recompute();save();redraw();
+};
+document.getElementById('bClr').onclick=function(){
+  if(!confirm('清空本篇全部勾画？'))return;
+  rec.strokes=[];rec.marks={};save();redraw();
+};
+if(window.ResizeObserver){new ResizeObserver(fit).observe(paper)}
+window.addEventListener('resize',fit);
+window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+fit();
+</script>
+</body>
+</html>
