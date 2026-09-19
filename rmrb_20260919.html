@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 让“干净口粮”成为AI的标配</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>让“干净口粮”成为AI的标配</h1>
+    <div class="meta">人民日报·人民时评 | AI治理·数据安全·清朗网络空间·科技向善·新质生产力·算法治理·人机协同·信息素养 | 2026年9月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：人工智能健康发展／源头治理／清朗网络生态／技术赋能与制度护航</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">人工智能治理</span>
+      <span class="tag-item">数据安全</span>
+      <span class="tag-item">清朗网络空间</span>
+      <span class="tag-item">科技向善</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">算法治理</span>
+      <span class="tag-item">人机协同</span>
+      <span class="tag-item">信息素养</span>
+      <span class="tag-item">源头治理</span>
+      <span class="tag-item">内容生态</span>
+      <span class="tag-item">制度创新</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">网络生态治理</span>
+      <span class="tag-item">求真务实</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“科技治理／网络生态／新质生产力健康发展”等主题；本文<b>“现象切入（数字泔水）—危害分层（影响面／持续性／风险）—总论点（全链条免疫系统）—三层治理（用AI治AI／语料库／算法优化）—人机协同升华”</b>的论证链，是写“科技向善／网络治理”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>以技术赋能，探索“用AI治理AI”路径、快速发现处置错误虚假信息／以基础固本，加快高质量语料库建设、为AI提供“干净口粮”／以机制优化，植入价值权重、对优质内容给予流量倾斜／以素养提升，拓展“一键识别”“一键举报”、形成制度与全民自查合力</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>AI前所未有地降低了内容生产的门槛，但这一进步不能以降低信息质量为代价</b>”“<b>快速生成的‘数字泔水’可能会对精心打磨的原创内容形成结构性挤压</b>”“<b>把价值权重植入算法底层，不断提升去芜存菁的能力</b>”等多组辩证，是写<b>破与立／技术与伦理／效率与质量</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推进人工智能内容治理的倡议书”“关于加快高质量语料库建设的若干措施”等素材；文中“<b>用AI治理AI</b>”“<b>高质量语料库</b>”“<b>AI生成合成内容必须添加标识</b>”“<b>一键识别、一键举报</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象切入—危害分层—总论点立骨—技术／基础／协同三层治理—升华合奏）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>以虚假“种草”笔记、短视频违规引流两个日常场景起笔</b>：点出AI低质内容（“数字泔水”）在网络空间蔓延，提出维护清朗生态的新考验（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>由“数字泔水”的危害分层提炼总论点</b>：从影响面（批量生成、结构性挤压原创）、持续性（进入训练语料、自我循环、纠正成本高）、风险（向医疗金融拓展、失真引发连锁）三层递进，落到“须从源头全链条压实责任、打造免疫系统”（第三至五段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>技术赋能——探索“用AI治理AI”路径</b>：依托人工智能在信息复核上的能力，快速发现处置错误虚假信息，筑牢信息真实的堤坝（第六段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>基础固本——加快高质量语料库建设</b>：为AI提供“干净口粮”，优化算法推荐机制，对优质内容给予合理流量倾斜、对存疑内容实施限制（第七段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>人机协同——提升全社会信息素养与核查效率</b>：以制度标识、技术赋能与全民自查合力，涵养求真的沃土（第八段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>生活现象＋失真实例＋政策术语</b>：虚假种草、违规引流构成具象起点；余华被误署名、胡成中《家徽》被归于其名下并进入中考题库被AI当“标准答案”构成事实冲击；“用AI治理AI”“高质量语料库”“AI生成内容必须添加标识”构成贯穿全篇的规范体系。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象切入—危害分层—总论点立骨—三层治理—人机协同升华”的递进结构</b>：以“拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土”收束，呼应开篇、升华主题，是申论“用日常现象讲系统治理、以三层对策贯通全篇”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>一份标榜亲测好评的消费攻略，实则是虚假的“种草”笔记；一段看似寻常的短视频，评论区内却暗藏违规引流的陷阱……随着AI（人工智能）的广泛应用，一些低质空洞、真假难辨的内容在网络空间蔓延，对维护<span class="highlight-blue">清朗网络生态</span>形成新的考验。</p>
+
+      <p>这类低营养、无价值的信息，被形象地称作<span class="highlight-gold">“数字泔水”</span>。在AI时代，这类信息不只会造成局部的信息污染，还会侵蚀<span class="highlight-purple">个人认知、内容生态乃至社会信任</span>。</p>
+
+      <p>从影响面看，AI工具不仅可以批量生成内容，还能自动发布，开展评论交互。用AI写作屡屡引发热议，反映出这一模式对内容生产的冲击——无需作者深度思考，运用AI抓取、拼凑，<span class="highlight-green">几分钟便可炮制一篇深谙平台算法、更易获得推荐的文章</span>。可见，在<span class="highlight-purple">流量逻辑的裹挟</span>下，快速生成的“数字泔水”可能会对<span class="highlight-purple">精心打磨的原创内容形成结构性挤压</span>。</p>
+
+      <p>从持续性看，这些劣质、虚假或错误的信息，不只占据当下受众的注意力，还会变成AI训练的语料，形成自我循环。前不久，作家余华因为被误署名上了热搜。湖北作家胡成中写的一篇散文《家徽》，几经传播被归于他的名下。尽管余华多次澄清，这个错误信息还是进入了<span class="highlight-green">一些地方的中考题库，被AI当成“标准答案”</span>。可见，<span class="highlight-purple">失真内容一旦被AI内化为“知识”，纠正它便要付出大得多的成本</span>。</p>
+
+      <p>当前，许多大模型生成的内容，往往是对网络公开信息的整合与再加工，<span class="highlight-blue">缺乏独立、经过严格验证的知识库</span>。随着人工智能的应用场景从信息检索、内容创作向<span class="highlight-blue">医疗诊断、金融决策</span>等领域持续拓展，信息不准或失真，已成为<span class="highlight-purple">可能引发连锁影响的风险</span>。</p>
+
+      <div class="thesis">【总论点】AI时代既要拥抱技术可能，更要坚守真实性底线——须从源头全链条压实责任、打造“免疫系统”，让<span class="highlight-purple">真实、客观、有价值的内容</span>始终<span class="highlight-blue">占据主流</span>。</div>
+
+      <div class="sub-thesis">【分论点一】技术赋能——探索“用AI治理AI”路径，快速发现处置错误虚假信息，筑牢信息真实的堤坝。</div>
+
+      <p>一方面，要依托人工智能在<span class="highlight-blue">信息复核</span>方面的能力，积极探索<span class="highlight-gold">“用AI治理AI”</span>的路径，快速发现并处置错误虚假信息，筑牢<span class="highlight-blue">信息真实的堤坝</span>。</p>
+
+      <div class="sub-thesis">【分论点二】基础固本——加快高质量语料库建设为AI提供“干净口粮”，优化算法推荐让优质内容获合理流量倾斜。</div>
+
+      <p>另一方面，要加快<span class="highlight-blue">高质量语料库建设</span>，为AI提供<span class="highlight-gold">“干净口粮”</span>，大力提升信息质量的水位。同时，优化<span class="highlight-blue">算法推荐机制</span>，对经过多重验证、有理有据的内容给予合理流量倾斜，对来源不明、真实性存疑的内容实施一定限制。<span class="highlight-purple">把价值权重植入算法底层，不断提升去芜存菁的能力</span>，方能让真实、客观、有价值的内容在数字洪流中始终占据主流。</p>
+
+      <div class="sub-thesis">【分论点三】人机协同——立足提升全社会信息素养与核查效率，以制度标识与技术赋能形成全民自查合力，涵养求真的沃土。</div>
+
+      <p>使<span class="highlight-blue">清朗网络空间</span>成为可感可及的常态，还要立足于<span class="highlight-purple">人机协同</span>，同步提升全社会的信息素养和核查效率。面对海量信息，要用好AI巡检、深度伪造检测、异常传播预警等技术工具，降低使用者的核查难度。当前，我国相关规章制度已经明确，<span class="highlight-blue">AI生成合成内容必须添加标识</span>。在此基础上，应进一步拓展技术赋能的通道，打造更多<span class="highlight-gold">“一键识别”“一键举报”</span>工具，形成<span class="highlight-purple">制度规范和全民自查的合力</span>。当人人都有审慎求证的意识、随手辨伪的能力，人工智能发展的活力便会建立在真实的底色之上。</p>
+
+      <p>与AI同行，拥抱的是技术的无限可能，更要坚守<span class="highlight-purple">真实性的底线</span>。AI前所未有地降低了内容生产的门槛，但<span class="highlight-purple">这一进步不能以降低信息质量为代价</span>。<span class="highlight-gold">拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土</span>，让有营养、高价值的信息成为标配，我们的网络家园将更具活力、更有秩序，未来的数字生活将更加丰富、更有内涵。</p>
+
+      <p class="byline">（人民日报2026年9月16日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数字泔水</span>
+      <p><b>“这类低营养、无价值的信息，被形象地称作‘数字泔水’。”</b>——以生活化比喻总括AI低质内容，写“信息污染／内容治理”是极简而有力的破题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·结构性挤压</span>
+      <p><b>“在流量逻辑的裹挟下，快速生成的‘数字泔水’可能会对精心打磨的原创内容形成结构性挤压。”</b>——以“流量vs原创”辩证，写“流量裹挟／原创困境”是警醒句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·纠正成本</span>
+      <p><b>“失真内容一旦被AI内化为‘知识’，纠正它便要付出大得多的成本。”</b>——以“治未病”视角写失真代价，是“源头治理／防微杜渐”的利器句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·免疫系统</span>
+      <p><b>“须从源头抓起，沿着内容生产、流转、应用的全链条压实责任，打造一套可靠高效、全天候守护的‘免疫系统’。”</b>——以“全链条／免疫系统”写治理方法论，是“系统治理／源头治理”的权威句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·干净口粮</span>
+      <p><b>“为AI提供‘干净口粮’，大力提升信息质量的水位。”</b>——以“口粮”意象写高质量语料库建设，是“基础固本／数据质量”的生动句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·去芜存菁</span>
+      <p><b>“把价值权重植入算法底层，不断提升去芜存菁的能力。”</b>——以“价值权重／去芜存菁”写算法向善，是“算法治理／价值导向”的规范句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·必须标识</span>
+      <p><b>“AI生成合成内容必须添加标识。”</b>——制度刚性要求，写“可追溯／制度护航”是政策落点句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·真实底色</span>
+      <p><b>“当人人都有审慎求证的意识、随手辨伪的能力，人工智能发展的活力便会建立在真实的底色之上。”</b>——以“全民参与”升华，写“信息素养／社会共治”是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·不能降质</span>
+      <p><b>“AI前所未有地降低了内容生产的门槛，但这一进步不能以降低信息质量为代价。”</b>——以“门槛与质量”辩证，写“技术与伦理／效率与真实”是核心立场句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·缰绳滤网</span>
+      <p><b>“拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土，让有营养、高价值的信息成为标配。”</b>——以“制度＋技术＋素养”三位一体收束全篇，写“科技向善”是诗意金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学“现象切入法”：先以虚假种草、违规引流两个日常场景并置，再点出“数字泔水”概念，比直说“AI治理很重要”更有冲击力。适用于“科技治理／网络生态”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用“技术—基础—协同”三层：①技术赋能（用AI治AI、快发现）；②基础固本（高质量语料库＋算法优化）；③人机协同（信息素养＋全民自查）。由手段到基础再到主体，层层抬升。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“AI内容治理”拆成可操作举措：以技术赋能，探索用AI治理AI路径（快发现）；以基础固本，加快语料库建设（供口粮）；以机制优化，植入价值权重、倾斜优质流量（正导向）；以素养提升，拓展一键识别举报（聚合力）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·比喻论证</span>
+      <p>学“数字泔水／干净口粮／免疫系统／滤网／缰绳”的具象比喻：把抽象的内容治理写成一套自洽的生活意象，首尾呼应、贯穿全篇，比平铺直叙更有感染力，可迁移到一切“系统治理／源头治理”类话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·辩证段落</span>
+      <p>学“门槛降低与质量不降”“流量裹挟与原创价值”“效率与真实”的辩证：先立“进步不能以质量为代价”的立场，再以效率与质量的反差作对照，把技术伦理写成有张力、有边界的论证，比直说“要治理”更有力。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「让干净口粮成为AI的标配」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是技术赋能。探索"用AI治理AI"路径，快速发现处置错误虚假信息，筑牢信息真实的堤坝。<br>二是基础固本。加快高质量语料库建设为AI提供"干净口粮"，优化算法推荐让优质内容获合理流量倾斜。<br>三是人机协同。立足提升全社会信息素养与核查效率，以制度标识与技术赋能形成全民自查合力，涵养求真的沃土。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「AI时代既要拥抱技术可能，更要坚守真实性底线——须从源头全链条压实责任、打造"免疫系统"，让真实、客观、有价值的内容始终占据主流。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是技术赋能——探索"用AI治理AI"路径，快速发现处置错误虚假信息，筑牢信息真实的堤坝。<br>二是基础固本——加快高质量语料库建设为AI提供"干净口粮"，优化算法推荐让优质内容获合理流量倾斜。<br>三是人机协同——立足提升全社会信息素养与核查效率，以制度标识与技术赋能形成全民自查合力，涵养求真的沃土。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土，让有营养、高价值的信息成为标配</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「让干净口粮成为AI的标配」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以技术赋能，探索"用AI治理AI"路径、快速发现处置错误虚假信息。<br>二是以基础固本，加快高质量语料库建设、为AI提供"干净口粮"。<br>三是以机制优化，植入价值权重、对优质内容给予流量倾斜。<br>四是以素养提升，拓展"一键识别""一键举报"、形成制度与全民自查合力。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土，让有营养、高价值的信息成为标配</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于让干净口粮成为AI的标配的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于让干净口粮成为AI的标配的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进让干净口粮成为AI的标配，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、技术赋能——探索"用AI治理AI"路径，快速发现处置错误虚假信息，筑牢信息真实的堤坝。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、基础固本——加快高质量语料库建设为AI提供"干净口粮"，优化算法推荐让优质内容获合理流量倾斜。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、人机协同——立足提升全社会信息素养与核查效率，以制度标识与技术赋能形成全民自查合力，涵养求真的沃土。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土，让有营养、高价值的信息成为标配</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「让干净口粮成为AI的标配」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：让干净口粮成为AI的标配<br><br>时代之问，呼唤破题之策。让干净口粮成为AI的标配，是发展所需，也是民心所向。可从三个维度展开：技术赋能——探索"用AI治理AI"路、基础固本——加快高质量语料库建设为A、人机协同——立足提升全社会信息素养与。<br><br>分论点一：技术赋能——探索"用AI治理AI"路径，快速发现处置错误虚假信息，筑牢信息真实的堤坝。方向对了，路再远也能抵达。拉紧制度的缰绳，升级技术的滤网，涵养求真的沃土，让有营养、高价值的信息成为标配<br><br>分论点二：基础固本——加快高质量语料库建设为AI提供"干净口粮"，优化算法推荐让优质内容获合理流量倾斜。方法对了，事再难也能办成。把价值权重植入算法底层，不断提升去芜存菁的能力<br><br>分论点三：人机协同——立足提升全社会信息素养与核查效率，以制度标识与技术赋能形成全民自查合力，涵养求真的沃土。行百里者半九十。当人人都有审慎求证的意识、随手辨伪的能力，人工智能发展的活力便会建立在真实的底色之上保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。让干净口粮成为AI的标配是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-19</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
