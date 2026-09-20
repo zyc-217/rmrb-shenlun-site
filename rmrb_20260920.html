@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 释放“海”的潜力  激发“江”的活力  做足“边”的文章</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>释放“海”的潜力  激发“江”的活力  做足“边”的文章</h1>
+    <div class="meta">人民日报·第04版 | 开放发展·向海图强·西部陆海新通道·区域协调发展·高质量发展 | 2026年9月20日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：把独特区位优势转化为开放发展优势／海·江·边三维开放／向海经济蓝色引擎／中国—东盟命运共同体</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">开放发展</span>
+      <span class="tag-item">向海图强</span>
+      <span class="tag-item">西部陆海新通道</span>
+      <span class="tag-item">区域协调发展</span>
+      <span class="tag-item">交通强国</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">新发展格局/双循环</span>
+      <span class="tag-item">产业链供应链韧性</span>
+      <span class="tag-item">海洋经济/蓝色引擎</span>
+      <span class="tag-item">中国—东盟命运共同体</span>
+      <span class="tag-item">基础设施互联互通</span>
+      <span class="tag-item">西部大开发</span>
+      <span class="tag-item">系统观念/统筹协调</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>开放发展／区域协调发展／交通强国／高质量发展</b>”等主题；本文<b>“总书记区位论断立论—总论点（向海图强、开放发展）—三维分论（海／江／边）—升华点题”</b>的论证链，是写“区位优势转化／开放型经济／交通强国”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>畅通通道，建强西部陆海新通道、推进江海联运与多式联运／壮大产业，沿通道布局临港产业集群、发展向海经济／深化合作，立足独特区位构建中国—东盟跨境产业链供应链／系统统筹，以‘海江边’三维协同把区位优势转化为开放胜势</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>临海而不通江达海</b>”“<b>开放末梢变为开放高地</b>”“<b>从通道经济迈向口岸经济</b>”“<b>从打基础、搭框架到全面提质增效</b>”等多组辩证，是写<b>短板与优势／基础与跃升／量变与质变</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于高标准高质量建设平陆运河、向海图强开放发展的意见”“关于共建西部陆海新通道的若干措施”等素材；文中“<b>向海经济日益成为高质量发展的‘蓝色引擎’</b>”“<b>主动作为、加快发展</b>”“<b>把独特区位优势转化为开放发展优势</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总书记区位论断—总论点—海／江／边三维分论—升华合奏）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>总书记区位论断引入</b>：以“广西发展的潜力在开放，后劲也在开放”“立足独特区位，释放‘海’的潜力、激发‘江’的活力、做足‘边’的文章”破题，把平陆运河通航置于“向海图强、开放发展”的宏大语境（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>由通航事实提炼总命题</b>：以“平陆运河近日全线通航”起笔，再用“三个‘这条运河是……’排比”点出其作为首条通江达海大运河、西部陆海新通道骨干工程、向海图强里程碑的三重意义，自然落到总论点（第四至九段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”</b>：以北部湾国际门户港、钦州自动化码头、6700多平方公里海域等硬资源，论证经略海洋、发展向海经济的潜力空间（第十段至“向海图强，就得通江达海”，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”</b>：以灵渠与平陆运河两座水运丰碑对照、西部陆海新通道上升国家战略、滇黔桂经平陆运河出海缩短560公里等，论证内河航运网对区域协调发展的牵引（中段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势</b>：以22个口岸全覆盖、连续17年东盟第一大贸易伙伴、南A中心“北上广研发+广西集成+东盟应用”等，论证面向东盟的开放前沿枢纽（后段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>总书记语录＋硬数据＋历史纵深＋典型个案</b>：总书记关于区位、海洋、西部开发的系列论述构成立场底色；145亿元/39.3%、3.6万亿元、1377亿→2687.8亿、缩短560公里/降18%—30%、5000PFLOPS等构成事实支撑；《建国方略》孙中山设想与灵渠千年水脉构成历史纵深；滇黔桂与南A中心构成鲜活个案。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“三维分论—古今对照—升华合奏”的递进结构</b>：以“海／江／边”三个并列维度展开，中间穿插灵渠与平陆运河的千年呼应，首尾以“向海图强、开放发展”“通江达海，驶向蔚蓝”点题；<b>“叶脉式向海布局”“蓝色引擎”“天上云河”</b>等意象，是申论“用具体工程讲抽象开放、以意象贯通全篇”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">“广西发展的潜力在开放，后劲也在开放”“要立足独特区位，释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”。</span>——习近平</p>
+
+      <p>历经<span class="highlight-green">4年建设</span>，平陆运河近日全线通航，不仅改变广西<span class="highlight-purple">“临海而不通江达海”</span>的历史，也改写中国水运网络格局。</p>
+
+      <p><span class="highlight-gold">“高标准、高质量建设平陆运河”</span>。习近平总书记亲自擘画，让100多年前<span class="highlight-blue">《建国方略》</span>中的设想变为现实。</p>
+
+      <p><span class="highlight-gold">这条运河，是新中国成立以来建设的首条通江达海的大运河；</span></p>
+
+      <p><span class="highlight-gold">这条运河，是西部陆海新通道骨干工程和加快建设交通强国的标志性工程；</span></p>
+
+      <p><span class="highlight-gold">这条运河，是广西“解放思想、创新求变，向海图强、开放发展”的里程碑。</span></p>
+
+      <div class="thesis">【总论点】平陆运河全线通航，是广西<span class="highlight-blue">“向海图强、开放发展”</span>的里程碑；<span class="highlight-purple">释放“海”的潜力、激发“江”的活力、做足“边”的文章</span>，把独特区位优势转化为<span class="highlight-blue">开放发展优势</span>，是一条贯通江海、连接内外的<span class="highlight-gold">新时代开放之路</span>。</div>
+
+      <div class="sub-thesis">【分论点一】释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。</div>
+
+      <p>释放“海”的潜力——</p>
+
+      <p><span class="highlight-gold">“通江达海、江海联运，这是广西未来发展的潜力所在”</span></p>
+
+      <p>一条运河，承载着向海图强的梦想。</p>
+
+      <p><span class="highlight-gold">“海洋孕育了生命、联通了世界、促进了发展”“推进中国式现代化，必须高效开发利用海洋”。“建设海洋强国”，习近平总书记“一直有这样一个信念”。</span></p>
+
+      <p>北部湾畔，钦州港域，货轮一字排开，班列往来穿梭。</p>
+
+      <p>全国首个<span class="highlight-blue">海铁联运自动化集装箱码头</span>坐落于此。凭栏望去，桥吊高耸，从四川、重庆等地远道而来的货物从这里“下车即上船”，运往世界各地。</p>
+
+      <p><span class="highlight-blue">“高水平打造北部湾国际门户港”</span>，目前，北部湾港已与<span class="highlight-green">上百个国家和地区的200多个港口</span>通航，成为连接中国西部与全球市场的重要枢纽。</p>
+
+      <p>从一港看一域，作为西部地区唯一的沿海省份，广西同样是<span class="highlight-blue">陆海交汇的门户</span>。</p>
+
+      <p><span class="highlight-green">6700多平方公里</span>管辖海域、<span class="highlight-green">1600多公里</span>海岸线、<span class="highlight-green">600多个</span>海岛、<span class="highlight-green">10多个</span>港湾……背靠大西南、面向东南亚，广西海陆资源<span class="highlight-blue">得天独厚</span>。</p>
+
+      <p><span class="highlight-gold">“通江达海、江海联运，这是广西未来发展的潜力所在。”</span>党的十八大以来，习近平总书记多次到广西考察，目光始终聚焦海洋，嘱托广西“写好海上丝绸之路新篇章”“大力发展<span class="highlight-blue">向海经济</span>”“<span class="highlight-gold">向海图强、开放发展</span>”。</p>
+
+      <p><span class="highlight-gold">向海图强，就得通江达海！</span></p>
+
+      <p>千里<span class="highlight-blue">西江</span>，黄金水道。然而，隔着数重大山，广西大部分河流无法就近向南入海，而是一路向东流向珠江入海。</p>
+
+      <p>百余年前，孙中山先生曾在<span class="highlight-blue">《建国方略》</span>中豪迈落笔：打通珠江、西江及北部湾，“凡在钦州以西之地，将择此港以出于海……其经济上受益为不小矣”。</p>
+
+      <p>斗转星移，构想在新时代落地。</p>
+
+      <p>崇山峻岭之间，两万多名建设者耕耘四载，<span class="highlight-blue">平陆运河全线贯通</span>，向海之路由此打通：泱泱西江水，从南宁平塘江口南下，沿钦江由北部湾奔腾入海。</p>
+
+      <p>一河贯通，八桂向海。</p>
+
+      <p>南宁六景工业园区内，项目连片铺展、工厂机械轰鸣。</p>
+
+      <p>“简直是踩着‘风火轮’落地的！”钦实集团广西云南区域总经理李则余说，“<span class="highlight-green">2月签约、5月批地、9月开工</span>，目前新能源船舶智造基地正加快施工，冲刺年内启动部分生产。”</p>
+
+      <p>河海贯通，产业闻“运”而来：今年前<span class="highlight-green">7月</span>，六景工业园区实现规上工业产值<span class="highlight-green">超145亿元</span>，同比<span class="highlight-green">增长39.3%</span>；新签约重大产业项目总投资<span class="highlight-green">超156亿元</span>。</p>
+
+      <p>从运河看广西，新的生机在孕育。</p>
+
+      <p>北部湾港口群，内河货船与远洋巨轮<span class="highlight-blue">江海交汇</span>。</p>
+
+      <p>“我们正紧锣密鼓进行适应性改造。”广西钦州保税港区宏港码头公司总经理宋海涛介绍，<span class="highlight-green">5个5000吨级</span>江海联运专用泊位已开工。未来，千吨级船舶与万吨级海轮将在此实现“船对船”快速中转。</p>
+
+      <p><span class="highlight-blue">“向海之路是一个国家发展的重要途径”</span>。沿着总书记指引的方向，广西经略海洋蹄疾步稳，推动<span class="highlight-blue">向海经济</span>日益成为<span class="highlight-blue">高质量发展</span>的<span class="highlight-gold">“蓝色引擎”</span>：“十四五”以来，西部陆海新通道沿线省份经广西进出口贸易额累计<span class="highlight-green">超3.6万亿元</span>，通道辐射带动作用进一步增强；<span class="highlight-green">2017年至2025年</span>，广西海洋生产总值从<span class="highlight-green">1377亿元增长到2687.8亿元</span>，占全区生产总值比重从<span class="highlight-green">7.7%上升到9%</span>。</p>
+
+      <p>“平陆运河是广西发展所系。”广西交通职业技术学院校长李文勇说，广西<span class="highlight-purple">“叶脉式”向海布局</span>中，运河恰似那根“叶柄”。</p>
+
+      <p>“经过多年发展，向海经济的硬件基础、产业支撑、开放体系等已日趋成熟，正<span class="highlight-purple">从打基础、搭框架的起步阶段，迈入全面提质增效的新阶段</span>。”广西壮族自治区有关负责同志说。</p>
+
+      <p>以运河为通道，实现江海联运，广西正一步步把<span class="highlight-blue">沿海优势转化为开放胜势</span>。</p>
+
+      <div class="sub-thesis">【分论点二】激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。</div>
+
+      <p>激发“江”的活力——</p>
+
+      <p><span class="highlight-gold">“要增强内外联动，构建更有活力的开放型经济体系”</span></p>
+
+      <p>一条运河，造就通江达海的格局。</p>
+
+      <p>当平陆运河上的汽笛声划破长空，北边的桂林兴安，<span class="highlight-blue">灵渠</span>悠悠，水流不息。徜徉其间，思接千载——</p>
+
+      <p>秦朝凿<span class="highlight-blue">灵渠</span>以通岭南，隋唐开大运河连接南北，明清束水攻沙、漕挽安流……水脉流淌、文脉赓续，<span class="highlight-purple">治水而盛</span>的智慧源远流长。</p>
+
+      <p><span class="highlight-purple">“治水即治国，治水之道是重要的治国之道”。</span></p>
+
+      <p>从2000多年前凿通<span class="highlight-blue">灵渠</span>，到新时代平陆运河通江达海，<span class="highlight-gold">两座水运丰碑，跨越时空、交相辉映</span>，激荡出开放发展强音。</p>
+
+      <p><span class="highlight-gold">“协调发展、开放发展家家都要抓”；</span></p>
+
+      <p><span class="highlight-gold">“要坚持以大开放促进大开发，提高西部地区对内对外开放水平”；</span></p>
+
+      <p><span class="highlight-gold">“融入共建‘一带一路’，高水平共建西部陆海新通道”；</span></p>
+
+      <p><span class="highlight-gold">“广西要持续扩大对内对外开放。要增强内外联动，构建更有活力的开放型经济体系”；</span></p>
+
+      <p>…………</p>
+
+      <p>新时代以来，习近平总书记高度重视<span class="highlight-blue">西部大开发</span>，引领推动<span class="highlight-blue">西部开放发展</span>形成新格局。</p>
+
+      <p><span class="highlight-green">2019年8月</span>，<span class="highlight-blue">西部陆海新通道</span>上升为<span class="highlight-blue">国家战略</span>，<span class="highlight-green">2022年10月</span>写入<span class="highlight-blue">党的二十大报告</span>。</p>
+
+      <p>覆盖国内<span class="highlight-green">18个省份</span>，通达<span class="highlight-green">127个国家和地区的584个港口</span>，西部陆海新通道集成多种物流组织模式、衔接西部腹地与沿海沿边口岸，成为我国西部地区货物出海出边的主通道。</p>
+
+      <p>促进<span class="highlight-blue">区域协调发展</span>，<span class="highlight-blue">内河航运网</span>至关重要。</p>
+
+      <p><span class="highlight-gold">“充分发挥内河航运作用，发展江海联运”“真正使黄金水道产生黄金效益”</span>。洞察国情水情，习近平总书记指明方向。</p>
+
+      <p>随着平陆运河的贯通，西部陆海新通道进入<span class="highlight-blue">“扩容提档升级”</span>新阶段。</p>
+
+      <p><span class="highlight-blue">西江</span>，上溯云贵，横贯两广，广西的“母亲河”，珠江水系主流。</p>
+
+      <p>沿平陆运河溯流而上，经西江、入右江，云南富宁港塔吊挥舞，施工正酣。</p>
+
+      <p>这里是“珠江上游第一港”。群山环抱的江畔，一句标语格外醒目：“云南从这里走向大海”。标语之下，富宁港一期<span class="highlight-green">3个千吨级货运泊位</span>建设正向收官冲刺，一条从云南直达<span class="highlight-blue">北部湾</span>的跨省份黄金水道呼之欲出。</p>
+
+      <p>贵州也在加速拥抱平陆运河。</p>
+
+      <p>黄百铁路加紧施工，黔桂铁路增建二线提速建设……未来，贵州货物可经黄百铁路南下百色，换船经右江进入平陆运河，从<span class="highlight-blue">北部湾港</span>出海，<span class="highlight-blue">铁公水多式联运体系</span>将有效打通开放发展堵点。</p>
+
+      <p>新通道，新动力。西南地区的货物经公路、铁路、水路接入西江水系后，经平陆运河出海，相比绕道珠三角，内河航程<span class="highlight-green">缩短560公里以上</span>，综合物流成本<span class="highlight-green">降低18%—30%</span>。从西南地区通往东盟国家，有了运距更短、更经济、更便捷的水运通道。</p>
+
+      <p><span class="highlight-purple">“对于西部地区而言，平陆运河的价值不只是实现单条线路的运输成本优化，更在于通过提升西部陆海新通道的容量、韧性与广度，让更多‘开放末梢’成为‘开放高地’。”</span>国家发展改革委综合运输研究所研究员李玉涛说。</p>
+
+      <p>江河所至，生机勃发。</p>
+
+      <p>运河连西江，北部湾畔，一批<span class="highlight-blue">临港产业集群</span>加快崛起——钦州建成西南地区首个<span class="highlight-green">千亿级专业化工园区</span>；防城港建成<span class="highlight-green">千万吨级先进钢铁制造基地</span>；北海建成<span class="highlight-green">光伏玻璃日产能超万吨、浆纸年产能超千万吨</span>的向海产业……以西部陆海新通道为主轴，以西江向海经济带和北部湾沿海经济带为两翼，广西发展活力涌动。</p>
+
+      <p>江河奔流，通达四方。</p>
+
+      <p>根据《国家综合立体交通网规划纲要》，<span class="highlight-green">2035年</span>我国将基本建成<span class="highlight-green">2.5万公里左右</span>“四纵四横两网”<span class="highlight-blue">国家高等级航道</span>。从一条河到一张网，以平陆运河通航为起点，一条串联陕西、湖北、湖南和广西多省份、绵延<span class="highlight-green">超3000公里</span>的<span class="highlight-blue">“汉湘桂通道”</span>在最南端落下一笔，中国水运网络“东西向强劲、南北向较弱”的格局将逐步改写。</p>
+
+      <div class="sub-thesis">【分论点三】做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。</div>
+
+      <p>做足“边”的文章——</p>
+
+      <p><span class="highlight-gold">“做活广西高质量发展这盘棋，棋眼就在扩大开放上”</span></p>
+
+      <p>一条运河，升华开放发展的境界。</p>
+
+      <p>清晨，广西崇左，宁明爱店口岸，满载越南腰果、热带水果的货车有序通关入境。</p>
+
+      <p>数十公里外，凭祥产业园区宁明片区，车间内一派繁忙。“早上从越南启运，下午就能运抵宁明厂区加工，几天就能销往全国各地。”广西宁明唯品源食品有限公司总经理何建清说。</p>
+
+      <p>从口岸通关、园区加工到港口出海，从“通道经济”迈向“口岸经济”，成为广西深耕边贸经济、扩大对外开放的生动缩影。</p>
+
+      <p>开放，中国式现代化的鲜明标识。如何“把独特区位优势更好转化为开放发展优势”？</p>
+
+      <p><span class="highlight-gold">“一湾相挽十一国，良性互动东中西”</span>，这是广西<span class="highlight-blue">独特区位优势</span>的生动写照。<span class="highlight-purple">开放睦“边”、产业兴“边”</span>，作为我国与东盟唯一海陆相连的区域，昔日的祖国西南边陲，正发展成为我国面向东盟开放合作的前沿枢纽。目前，广西对外开放口岸总数达<span class="highlight-green">22个</span>，边境<span class="highlight-green">3市8县</span>实现“口岸全覆盖”；依托产业协作园区、沿边临港产业园区等平台，与东盟构建跨区域跨境产业链供应链，<span class="highlight-green">近200家</span>龙头企业立足广西“闯东盟”。</p>
+
+      <p>基础设施联通，贸易投资畅通，开放合作走深走实。截至目前，中国<span class="highlight-green">连续17年</span>保持东盟第一大贸易伙伴地位，东盟<span class="highlight-green">连续6年</span>成为中国第一大贸易伙伴。</p>
+
+      <p>站上新起点，如何再上新台阶？</p>
+
+      <p><span class="highlight-gold">“做活广西高质量发展这盘棋，棋眼就在扩大开放上。”</span>习近平总书记深切勉励广西：“深化拓展与东盟国家的各领域合作，积极服务建设<span class="highlight-blue">中国—东盟命运共同体</span>，<span class="highlight-gold">主动作为、加快发展</span>”。</p>
+
+      <p><span class="highlight-gold">“主动作为、加快发展”</span>，合作将愈发深入。</p>
+
+      <p>广西南宁五象新区，苍翠绿意间，一片“数字生态丛林”蓬勃生长。这里是<span class="highlight-blue">中国—东盟人工智能创新合作中心</span>，一个更响亮的名字叫“南A中心”。</p>
+
+      <p>部署算力规模<span class="highlight-green">5000PFLOPS</span>（每秒千万亿次浮点运算），利用率<span class="highlight-green">高达75%</span>；累计签约国内外人工智能项目上百个，落地外资人工智能企业<span class="highlight-green">19家</span>……对齐、加速、集成，短短一年，算力澎湃，企业扎堆。</p>
+
+      <p>行走邕城，以南A中心为“出海口”，一条“<span class="highlight-blue">北上广研发+广西集成+东盟应用</span>”的“天上云河”正在形成。</p>
+
+      <p>“东盟是中国第一大贸易伙伴，正处于数字化转型关键阶段。”在广西社会科学院院长张洪石看来，地处中国14亿多人口和东盟7亿人口大市场的交汇点，广西开放发展机遇广阔。</p>
+
+      <p>前不久，“外国企业广西行”活动，吸引<span class="highlight-green">30多个国家和地区的141家</span>外资企业参加，促成现代金融、高端制造等<span class="highlight-green">36个</span>合作项目。</p>
+
+      <p><span class="highlight-gold">“主动作为、加快发展”</span>，来往将更加密切。</p>
+
+      <p><span class="highlight-purple">“重大国家工程的价值，最终都会体现在服务国家发展战略上。”</span>清华大学历史系教授倪玉平说，倘若灵渠解决的是“岭南如何纳入统一国家交通体系”，那么平陆运河回答的则是<span class="highlight-purple">“西部如何更加便捷融入全球经济体系”的时代命题</span>。</p>
+
+      <p>加快修编<span class="highlight-blue">平陆运河经济带</span>文化和旅游发展规划，谋划“灵渠—平陆运河—北部湾”水运文化旅游线路；今年10月桂林将举办世界运河大会，以灵渠与平陆运河为双主线，向世界展现运河文明的东方智慧……面对时代命题，广西持续探索、积极作答。</p>
+
+      <p><span class="highlight-gold">通江达海，驶向蔚蓝。</span></p>
+
+      <p>***  ***</p>
+
+      <p>今年是<span class="highlight-blue">中国共产党成立105周年</span>、“十五五”开局之年，也是红军长征胜利90周年。</p>
+
+      <p>5年前的4月，在广西考察的习近平总书记，来到位于桂林全州县才湾镇的红军长征湘江战役纪念园，缅怀革命先烈、赓续共产党人的精神血脉。</p>
+
+      <p><span class="highlight-gold">“横扫千军如卷席。”</span>习近平总书记坚定地说，“我们对实现下一个百年奋斗目标、实现中华民族伟大复兴就应该抱有这样的必胜信念。”</p>
+
+      <p>新征程是新的长征。</p>
+
+      <p>随着平陆运河的开通，广西发展打开新的篇章，八桂儿女开启新的征程。</p>
+
+      <p><span class="highlight-gold">向海图强、开放发展。</span></p>
+
+      <p class="byline">（人民日报2026年9月20日 第04版 · 本报记者祝佳祺、张云河报道）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·标题总论</span>
+      <p><b>“释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”</b>——以“海／江／边”三维度排比破题，既是文章骨架也是点睛总领，写“开放发展／区位优势”是极简而有力的框架句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记区位论</span>
+      <p><b>“广西发展的潜力在开放，后劲也在开放”“要立足独特区位，释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”。</b>——总书记对广西区位的精准论断，写“因地制宜／对外开放”是最高维度的立场句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·三条运河排比</span>
+      <p><b>“这条运河，是新中国成立以来建设的首条通江达海的大运河；是西部陆海新通道骨干工程和加快建设交通强国的标志性工程；是广西‘向海图强、开放发展’的里程碑。”</b>——以排比递进点题，写“重大工程意义”是最佳立论句式。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·通江达海</span>
+      <p><b>“通江达海、江海联运，这是广西未来发展的潜力所在。”</b>——总书记原话，写“海洋经济／通道经济”是权威收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·蓝色引擎</span>
+      <p><b>“推动向海经济日益成为高质量发展的‘蓝色引擎’。”</b>——以“蓝色引擎”喻开放新动能，写“新质生产力／高质量发展”是范式句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治水即治国</span>
+      <p><b>“治水即治国，治水之道是重要的治国之道。”</b>——以灵渠千年智慧升华，写“系统观念／历史思维”是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·两座丰碑</span>
+      <p><b>“从2000多年前凿通灵渠，到新时代平陆运河通江达海，两座水运丰碑，跨越时空、交相辉映。”</b>——以古今对照收束，写“历史纵深／传承创新”是意象句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放末梢高地</span>
+      <p><b>“让更多‘开放末梢’成为‘开放高地’。”</b>——以反差辩证立论，写“区域协调／短板变优势”是警醒句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·棋眼论</span>
+      <p><b>“做活广西高质量发展这盘棋，棋眼就在扩大开放上。”</b>——以“棋眼”喻开放的关键作用，写“以点带面／关键抓手”是比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主动作为</span>
+      <p><b>“主动作为、加快发展。”</b>——总书记对广西的勉励，写“担当作为／抢抓机遇”是表态句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·时代命题</span>
+      <p><b>“灵渠解决的是‘岭南如何纳入统一国家交通体系’，平陆运河回答的则是‘西部如何更加便捷融入全球经济体系’的时代命题。”</b>——以古今之问对照，写“战略意义／时代使命”是升华句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·驶向蔚蓝</span>
+      <p><b>“通江达海，驶向蔚蓝。”“向海图强、开放发展。”</b>——首尾点题收束，写“开放愿景”是诗意金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“三维分论”框架：以“海／江／边”三个并列维度展开开放发展，比单线铺陈更有层次；适用于“区域协调／交通强国／高水平开放”类作文，分论点易写满、易出彩。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文“三维递进”：①释放海的潜力（向海经济）；②激发江的活力（通道贯通、区域协调）；③做足边的文章（面向东盟、跨境合作）。三个分论点由“资源”到“通道”再到“合作”，层层抬升。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“向海图强”拆成可操作举措：畅通通道（建强西部陆海新通道、推进江海联运与多式联运）；壮大产业（沿通道布局临港产业集群、发展向海经济）；深化合作（构建中国—东盟跨境产业链供应链）；系统统筹（海江边三维协同）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·意象论证</span>
+      <p>学本文“蓝色引擎／叶脉式向海布局／天上云河／两座水运丰碑”的意象系统：把抽象的开放发展写成一套自洽的具象比喻，首尾呼应、贯穿全篇，比平铺直叙更有感染力，可迁移到一切“系统／协同／跃升”类话题。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·辩证段落</span>
+      <p>学本文“临海而不通江达海→通江达海”“开放末梢→开放高地”“通道经济→口岸经济”“打基础→全面提质增效”的辩证：先立“要把短板变优势”的立场，再以具体工程作对照，把开放发展写成有张力、有边界的论证，比直说“要开放”更有力。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「释放“海”的潜力  激发“江”的活力  做足“边”的文章」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是释放“海”的潜力。通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。<br>二是激发“江”的活力。贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。<br>三是做足“边”的文章。立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「平陆运河全线通航，是广西“向海图强、开放发展”的里程碑；释放“海”的潜力、激发“江”的活力、做足“边”的文章，把独特区位优势转化为开放发展优势，是一条贯通江海、连接内外的新时代开放之路。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。<br>二是激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。<br>三是做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「释放“海”的潜力  激发“江”的活力  做足“边”的文章」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是畅通通道，建强西部陆海新通道、推进江海联运与多式联运。<br>二是壮大产业，沿通道布局临港产业集群、发展向海经济。<br>三是深化合作，立足独特区位构建中国—东盟跨境产业链供应链。<br>四是系统统筹，以‘海江边’三维协同把区位优势转化为开放胜势。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于释放“海”的潜力  激发“江”的活力  做足“边”的文章的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于释放“海”的潜力  激发“江”的活力  做足“边”的文章的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进释放“海”的潜力  激发“江”的活力  做足“边”的文章，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「释放“海”的潜力  激发“江”的活力  做足“边”的文章」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：释放“海”的潜力  激发“江”的活力  做足“边”的文章<br><br>时代之问，呼唤破题之策。释放“海”的潜力  激发“江”的活力  做足“边”的文章，是发展所需，也是民心所向。可从三个维度展开：释放“海”的潜力、激发“江”的活力、做足“边”的文章。<br><br>分论点一：释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。方向对了，路再远也能抵达。“释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”<br><br>分论点二：激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。方法对了，事再难也能办成。“广西发展的潜力在开放，后劲也在开放”“要立足独特区位，释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”<br><br>分论点三：做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。行百里者半九十。“这条运河，是新中国成立以来建设的首条通江达海的大运河；是西部陆海新通道骨干工程和加快建设交通强国的标志性工程；是广西‘向海图强、开放发展’的里程碑。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。释放“海”的潜力  激发“江”的活力  做足“边”的文章是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报刊载原文整理（本报记者祝佳祺、张云河报道），仅供申论备考积累使用 · 2026-09-20</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

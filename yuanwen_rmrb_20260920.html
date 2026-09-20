@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8b0000">
+<meta name="robots" content="noindex">
+<title>原文自测 · 释放“海”的潜力  激发“江”的活力  做足“边”的文章</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; transition:transform .15s, color .15s; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .card { cursor:pointer; }
+  .card-actions { display:none; flex-basis:100%; gap:10px; margin-top:12px; }
+  .card.open { flex-wrap:wrap; box-shadow:0 2px 10px rgba(196,30,58,.18); }
+  .card.open .card-actions { display:flex; }
+  .card.open .arrow { transform:rotate(90deg); color:#c41e3a; }
+  .act { flex:1; text-align:center; padding:11px 0; border-radius:10px; font-size:14.5px; font-weight:600; text-decoration:none; }
+  .act-orig { background:#fff5f5; color:#c0392b; border:1px solid #ffcdd2; }
+  .act-read { background:#c41e3a; color:#fff; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+
+  /* ===== 原文自测页（报纸版面）===== */
+  .hdr { position:sticky; top:0; z-index:40; background:#efe9d8;
+         border-bottom:1px solid #d6cdb4; }
+  .topbar { display:flex; align-items:center; gap:7px; padding:9px 12px;
+            padding-top:calc(9px + env(safe-area-inset-top)); }
+  .tb-back { font-size:22px; color:#8b0000; text-decoration:none; padding:0 3px; line-height:1; }
+  .tb-title { flex:1; min-width:0; font-size:13px; color:#5c5340; font-weight:600;
+              white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tb-btn { flex:0 0 auto; padding:6px 11px; border-radius:9px; border:1px solid #c9bfa3;
+            background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tb-btn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .tb-link { flex:0 0 auto; padding:6px 10px; border-radius:9px; background:#f7f3e6;
+             border:1px solid #c9bfa3; color:#8b0000; font-size:12.5px; text-decoration:none; }
+  .palette { display:none; gap:9px; padding:8px 14px 10px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; }
+  .palette.show { display:flex; }
+  .pc { width:32px; height:32px; border-radius:50%; border:0; cursor:pointer;
+        box-shadow:0 0 0 1.5px #b9ae90; padding:0; }
+  .pc.on { box-shadow:0 0 0 2.5px #333; }
+  .pbtn { padding:6px 12px; border-radius:9px; border:1px solid #c9bfa3; background:#f7f3e6;
+          font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .phint { font-size:11.5px; color:#9a907a; margin-left:auto; }
+  .pgroup { display:flex; align-items:center; gap:9px; }
+  .pgroup + .pgroup { padding-left:10px; border-left:1px solid #e0d8c0; }
+  .pcsz { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .pcsz.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .pbtn.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .textbar { display:flex; gap:8px; padding:7px 14px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; background:#fbf8ef; }
+  .tlabel { font-size:12px; color:#6b6152; font-weight:600; }
+  .tsep { width:1px; height:18px; background:#e0d8c0; margin:0 2px; }
+  .tsz, .tlh { min-width:34px; height:30px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+              background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .tsz.on, .tlh.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .psty { min-width:34px; height:32px; padding:0 9px; border-radius:9px; border:1px solid #c9bfa3;
+          background:#f7f3e6; font-size:12.5px; color:#5c5340; cursor:pointer; }
+  .psty.on { background:#8b0000; color:#fff; border-color:#8b0000; }
+  .toolrow { display:flex; gap:8px; padding:7px 14px; align-items:center; flex-wrap:wrap;
+             border-top:1px dashed #d6cdb4; background:#fbf8ef; }
+  .legend { display:flex; gap:12px; flex-wrap:wrap; padding:5px 14px; background:#fbf8ef;
+            border-top:1px dashed #d6cdb4; font-size:11.5px; color:#6b6152; align-items:center; }
+  .lg { display:inline-flex; align-items:center; gap:5px; }
+  .lg i { width:13px; height:13px; border-radius:3px; box-shadow:0 0 0 1px #b9ae90; }
+  .lg-t { outline:none; min-width:22px; border-bottom:1px dotted #c9bfa3; }
+  .lg-t:focus { border-bottom-color:#8b0000; }
+  .note { position:absolute; width:152px; background:#fffec6; border:1px solid #e6d98a;
+          border-radius:7px; box-shadow:0 3px 10px rgba(90,74,40,.28); z-index:6;
+          font-size:13px; line-height:1.5; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .note-h { display:flex; justify-content:space-between; align-items:center; cursor:move;
+            background:#f3e27e; border-radius:6px 6px 0 0; padding:2px 7px; font-size:11px; color:#7a5b00;
+            user-select:none; }
+  .note-x { cursor:pointer; color:#b00000; font-weight:700; padding:0 2px; }
+  .note-b { padding:6px 8px; outline:none; min-height:42px; max-height:180px; overflow:auto; }
+  #text .ln.bm::before { content:"★"; position:absolute; left:-16px; top:0; color:#e53935;
+            font-size:13px; line-height:inherit; }
+  .paper.note-mode { cursor:crosshair; }
+  @media print{
+    .hdr,.orig-fab { display:none!important; }
+    body { background:#fff; }
+    .paper { box-shadow:none; overflow:visible; min-height:0; }
+    .note-h .note-x { display:none; }
+  }
+  /* 报纸纸张：米黄纸底 + 极淡纤维横纹 + 四周轻微压暗 */
+  .sheet { max-width:720px; margin:0 auto; padding:0; }
+  .paper { position:relative; background-color:#f7f3e6;
+           background-image:
+             repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 4px),
+             repeating-linear-gradient(90deg, rgba(0,0,0,.010) 0 2px, transparent 2px 3px),
+             radial-gradient(ellipse at 50% 38%, rgba(255,255,255,.6) 0%, rgba(150,132,92,.20) 100%);
+           box-shadow:0 2px 14px rgba(90,74,40,.20), 0 0 0 1px rgba(160,145,105,.35);
+           padding:0 0 60px; min-height:75vh; overflow:hidden;
+           -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .paper.pen { touch-action:none; -webkit-user-select:none; user-select:none;
+               -webkit-touch-callout:none; }
+  /* canvas 必须置顶层才能接收 Pointer 事件（置底会被 <p> 拦截）。
+     用 multiply 混合模拟真实荧光笔：涂过的地方纸变彩色，而黑色墨字不受影响，
+     视觉上就是「笔迹从字底下透出来」，不会糊住文字。 */
+  #cv { position:absolute; left:0; top:0; pointer-events:none; z-index:2;
+        mix-blend-mode:multiply; }
+  #text { position:relative; z-index:1; padding:6px 20px 0; }
+  /* 勾画模式下让文字层彻底让出事件，避免个别浏览器把事件路由给 <p> */
+  .paper.pen #text { pointer-events:none; }
+  /* 报头 */
+  .masthead { position:relative; z-index:1; padding:16px 18px 6px; }
+  .mh-name { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:36px;
+             font-weight:900; letter-spacing:8px; text-align:center; color:#181512;
+             text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  .mh-rule { border-top:2px solid #181512; height:0; margin:9px 0 7px; }
+  .mh-meta { display:flex; justify-content:space-between; align-items:center;
+             font-family:"SimSun","Songti SC",serif; font-size:11.5px; color:#3c352a;
+             padding:2px 2px 0; }
+  .mh-meta i { font-style:normal; }
+  /* 文章标题区 */
+  .art-head { position:relative; z-index:1; padding:18px 22px 12px; text-align:center; }
+  .art-title { font-family:"STZhongsong","SimSun","Songti SC",serif; font-size:24px;
+               font-weight:700; line-height:1.5; color:#181512; letter-spacing:1px; }
+  .art-sub { font-family:"SimSun","Songti SC",serif; font-size:12px; color:#6b6152;
+             margin-top:7px; letter-spacing:2px; }
+  .art-rule { border-top:1px solid #b9ae90; margin:12px 22px 0; }
+  /* 正文：宋体、两端对齐、首行缩进 */
+  #text .ln { font-family:"Songti SC","SimSun","STSong",serif; font-size:var(--rmrb-fs,17.5px);
+              line-height:var(--rmrb-lh,2.08); color:#1c1915; text-align:justify;
+              margin:0 0 13px; text-indent:2em; letter-spacing:.3px; position:relative; }
+  .pen-tip { position:relative; z-index:1; text-align:center; font-size:11.5px;
+             color:#a2977f; font-family:"SimSun",serif; padding:4px 0 2px; }
+  /* 精读页悬浮入口 */
+  .orig-fab { position:fixed; right:14px; bottom:calc(18px + env(safe-area-inset-bottom));
+              z-index:999; background:#fff; border:1.5px solid #ffcdd2; color:#c0392b;
+              font-size:13px; font-weight:600; padding:10px 15px; border-radius:999px;
+              text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.16); }
+  .orig-fab:active { transform:scale(.95); }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="topbar">
+      <a class="tb-back" href="index.html">‹</a>
+      <span class="tb-title">释放“海”的潜力  激发“江”的活力  做足“边”的文章</span>
+      <button class="tb-btn" id="bPen">✏️ 勾画</button>
+      <a class="tb-link" href="rmrb_20260920.html">📖 精读</a>
+    </div>
+    <div class="palette" id="pal">
+      <div class="pgroup">
+        <button class="pc on" data-c="black" style="background:#000000" title="黑"></button>
+        <button class="pc" data-c="red" style="background:#ff0000" title="红"></button>
+        <button class="pc" data-c="blue" style="background:#0000ff" title="蓝"></button>
+        <button class="pc" data-c="green" style="background:#00ff00" title="绿"></button>
+        <button class="pc" data-c="gold" style="background:#ffd700" title="金"></button>
+      </div>
+      <div class="pgroup">
+        <button class="pcsz" data-w="2">细</button>
+        <button class="pcsz on" data-w="6">中</button>
+        <button class="pcsz" data-w="11">粗</button>
+      </div>
+      <div class="pgroup">
+        <button class="psty on" data-st="hl">荧光</button>
+        <button class="psty" data-st="ul">下划</button>
+        <button class="psty" data-st="wave">波浪</button>
+        <button class="pbtn" id="bPenMode" title="压感钢笔（Apple Pencil）">🖊 钢笔</button>
+      </div>
+      <div class="pgroup">
+        <button class="pbtn" id="bEra" title="橡皮擦：擦除勾画">🧽 橡皮</button>
+        <button class="pbtn" id="bUndo">↩ 撤销</button>
+        <button class="pbtn" id="bClr">🗑 清空</button>
+      </div>
+      <span class="phint">划过即上色 · 轻点整句 · 选粗细/橡皮</span>
+    </div>
+    <div class="textbar" id="textbar">
+      <span class="tlabel">字号</span>
+      <button class="tsz" data-fs="15">小</button>
+      <button class="tsz on" data-fs="17.5">中</button>
+      <button class="tsz" data-fs="20.5">大</button>
+      <button class="tsz" data-fs="24">特大</button>
+      <span class="tsep"></span>
+      <span class="tlabel">行距</span>
+      <button class="tlh" data-lh="1.6">紧</button>
+      <button class="tlh on" data-lh="2.08">适中</button>
+      <button class="tlh" data-lh="2.6">宽松</button>
+    </div>
+    <div class="toolrow">
+      <button class="tb-btn" id="bNote">📝 便利贴</button>
+      <button class="tb-btn" id="bMark">☆ 书签</button>
+      <button class="tb-btn" id="bExport">📤 导出</button>
+    </div>
+    <div class="legend" id="legend">
+      <span class="lg"><i style="background:#000000"></i><span class="lg-t" contenteditable="true" data-c="black">黑</span></span>
+      <span class="lg"><i style="background:#ff0000"></i><span class="lg-t" contenteditable="true" data-c="red">红</span></span>
+      <span class="lg"><i style="background:#0000ff"></i><span class="lg-t" contenteditable="true" data-c="blue">蓝</span></span>
+      <span class="lg"><i style="background:#00ff00"></i><span class="lg-t" contenteditable="true" data-c="green">绿</span></span>
+      <span class="lg"><i style="background:#ffd700"></i><span class="lg-t" contenteditable="true" data-c="gold">金</span></span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="paper" id="paper">
+      <canvas id="cv"></canvas>
+
+      <div class="masthead">
+        <div class="mh-name">人民日报</div>
+        <div class="mh-rule"></div>
+        <div class="mh-meta">
+          <i>2026年9月20日 星期日</i>
+          <i>第04版</i>
+        </div>
+      </div>
+
+      <div class="art-head">
+        <div class="art-title">释放“海”的潜力  激发“江”的活力  做足“边”的文章</div>
+        <div class="art-sub">第04版</div>
+        <div class="art-rule"></div>
+      </div>
+
+      <div id="text">
+      <p class="ln" data-i="0">“广西发展的潜力在开放，后劲也在开放”“要立足独特区位，释放‘海’的潜力，激发‘江’的活力，做足‘边’的文章”。——习近平</p>
+      <p class="ln" data-i="1">历经4年建设，平陆运河近日全线通航，不仅改变广西“临海而不通江达海”的历史，也改写中国水运网络格局。</p>
+      <p class="ln" data-i="2">“高标准、高质量建设平陆运河”。习近平总书记亲自擘画，让100多年前《建国方略》中的设想变为现实。</p>
+      <p class="ln" data-i="3">这条运河，是新中国成立以来建设的首条通江达海的大运河；</p>
+      <p class="ln" data-i="4">这条运河，是西部陆海新通道骨干工程和加快建设交通强国的标志性工程；</p>
+      <p class="ln" data-i="5">这条运河，是广西“解放思想、创新求变，向海图强、开放发展”的里程碑。</p>
+      <p class="ln" data-i="6">释放“海”的潜力——通江达海、江海联运，把沿海优势转化为向海经济“蓝色引擎”，打开经略海洋的新空间。</p>
+      <p class="ln" data-i="7">释放“海”的潜力——</p>
+      <p class="ln" data-i="8">“通江达海、江海联运，这是广西未来发展的潜力所在”</p>
+      <p class="ln" data-i="9">一条运河，承载着向海图强的梦想。</p>
+      <p class="ln" data-i="10">“海洋孕育了生命、联通了世界、促进了发展”“推进中国式现代化，必须高效开发利用海洋”。“建设海洋强国”，习近平总书记“一直有这样一个信念”。</p>
+      <p class="ln" data-i="11">北部湾畔，钦州港域，货轮一字排开，班列往来穿梭。</p>
+      <p class="ln" data-i="12">全国首个海铁联运自动化集装箱码头坐落于此。凭栏望去，桥吊高耸，从四川、重庆等地远道而来的货物从这里“下车即上船”，运往世界各地。</p>
+      <p class="ln" data-i="13">“高水平打造北部湾国际门户港”，目前，北部湾港已与上百个国家和地区的200多个港口通航，成为连接中国西部与全球市场的重要枢纽。</p>
+      <p class="ln" data-i="14">从一港看一域，作为西部地区唯一的沿海省份，广西同样是陆海交汇的门户。</p>
+      <p class="ln" data-i="15">6700多平方公里管辖海域、1600多公里海岸线、600多个海岛、10多个港湾……背靠大西南、面向东南亚，广西海陆资源得天独厚。</p>
+      <p class="ln" data-i="16">“通江达海、江海联运，这是广西未来发展的潜力所在。”党的十八大以来，习近平总书记多次到广西考察，目光始终聚焦海洋，嘱托广西“写好海上丝绸之路新篇章”“大力发展向海经济”“向海图强、开放发展”。</p>
+      <p class="ln" data-i="17">向海图强，就得通江达海！</p>
+      <p class="ln" data-i="18">千里西江，黄金水道。然而，隔着数重大山，广西大部分河流无法就近向南入海，而是一路向东流向珠江入海。</p>
+      <p class="ln" data-i="19">百余年前，孙中山先生曾在《建国方略》中豪迈落笔：打通珠江、西江及北部湾，“凡在钦州以西之地，将择此港以出于海……其经济上受益为不小矣”。</p>
+      <p class="ln" data-i="20">斗转星移，构想在新时代落地。</p>
+      <p class="ln" data-i="21">崇山峻岭之间，两万多名建设者耕耘四载，平陆运河全线贯通，向海之路由此打通：泱泱西江水，从南宁平塘江口南下，沿钦江由北部湾奔腾入海。</p>
+      <p class="ln" data-i="22">一河贯通，八桂向海。</p>
+      <p class="ln" data-i="23">南宁六景工业园区内，项目连片铺展、工厂机械轰鸣。</p>
+      <p class="ln" data-i="24">“简直是踩着‘风火轮’落地的！”钦实集团广西云南区域总经理李则余说，“2月签约、5月批地、9月开工，目前新能源船舶智造基地正加快施工，冲刺年内启动部分生产。”</p>
+      <p class="ln" data-i="25">河海贯通，产业闻“运”而来：今年前7月，六景工业园区实现规上工业产值超145亿元，同比增长39.3%；新签约重大产业项目总投资超156亿元。</p>
+      <p class="ln" data-i="26">从运河看广西，新的生机在孕育。</p>
+      <p class="ln" data-i="27">北部湾港口群，内河货船与远洋巨轮江海交汇。</p>
+      <p class="ln" data-i="28">“我们正紧锣密鼓进行适应性改造。”广西钦州保税港区宏港码头公司总经理宋海涛介绍，5个5000吨级江海联运专用泊位已开工。未来，千吨级船舶与万吨级海轮将在此实现“船对船”快速中转。</p>
+      <p class="ln" data-i="29">“向海之路是一个国家发展的重要途径”。沿着总书记指引的方向，广西经略海洋蹄疾步稳，推动向海经济日益成为高质量发展的“蓝色引擎”：“十四五”以来，西部陆海新通道沿线省份经广西进出口贸易额累计超3.6万亿元，通道辐射带动作用进一步增强；2017年至2025年，广西海洋生产总值从1377亿元增长到2687.8亿元，占全区生产总值比重从7.7%上升到9%。</p>
+      <p class="ln" data-i="30">“平陆运河是广西发展所系。”广西交通职业技术学院校长李文勇说，广西“叶脉式”向海布局中，运河恰似那根“叶柄”。</p>
+      <p class="ln" data-i="31">“经过多年发展，向海经济的硬件基础、产业支撑、开放体系等已日趋成熟，正从打基础、搭框架的起步阶段，迈入全面提质增效的新阶段。”广西壮族自治区有关负责同志说。</p>
+      <p class="ln" data-i="32">以运河为通道，实现江海联运，广西正一步步把沿海优势转化为开放胜势。</p>
+      <p class="ln" data-i="33">激发“江”的活力——贯通西江、扩容西部陆海新通道，让“开放末梢”变“开放高地”，畅通内河航运网、促进区域协调发展。</p>
+      <p class="ln" data-i="34">激发“江”的活力——</p>
+      <p class="ln" data-i="35">“要增强内外联动，构建更有活力的开放型经济体系”</p>
+      <p class="ln" data-i="36">一条运河，造就通江达海的格局。</p>
+      <p class="ln" data-i="37">当平陆运河上的汽笛声划破长空，北边的桂林兴安，灵渠悠悠，水流不息。徜徉其间，思接千载——</p>
+      <p class="ln" data-i="38">秦朝凿灵渠以通岭南，隋唐开大运河连接南北，明清束水攻沙、漕挽安流……水脉流淌、文脉赓续，治水而盛的智慧源远流长。</p>
+      <p class="ln" data-i="39">“治水即治国，治水之道是重要的治国之道”。</p>
+      <p class="ln" data-i="40">从2000多年前凿通灵渠，到新时代平陆运河通江达海，两座水运丰碑，跨越时空、交相辉映，激荡出开放发展强音。</p>
+      <p class="ln" data-i="41">“协调发展、开放发展家家都要抓”；</p>
+      <p class="ln" data-i="42">“要坚持以大开放促进大开发，提高西部地区对内对外开放水平”；</p>
+      <p class="ln" data-i="43">“融入共建‘一带一路’，高水平共建西部陆海新通道”；</p>
+      <p class="ln" data-i="44">“广西要持续扩大对内对外开放。要增强内外联动，构建更有活力的开放型经济体系”；</p>
+      <p class="ln" data-i="45">…………</p>
+      <p class="ln" data-i="46">新时代以来，习近平总书记高度重视西部大开发，引领推动西部开放发展形成新格局。</p>
+      <p class="ln" data-i="47">2019年8月，西部陆海新通道上升为国家战略，2022年10月写入党的二十大报告。</p>
+      <p class="ln" data-i="48">覆盖国内18个省份，通达127个国家和地区的584个港口，西部陆海新通道集成多种物流组织模式、衔接西部腹地与沿海沿边口岸，成为我国西部地区货物出海出边的主通道。</p>
+      <p class="ln" data-i="49">促进区域协调发展，内河航运网至关重要。</p>
+      <p class="ln" data-i="50">“充分发挥内河航运作用，发展江海联运”“真正使黄金水道产生黄金效益”。洞察国情水情，习近平总书记指明方向。</p>
+      <p class="ln" data-i="51">随着平陆运河的贯通，西部陆海新通道进入“扩容提档升级”新阶段。</p>
+      <p class="ln" data-i="52">西江，上溯云贵，横贯两广，广西的“母亲河”，珠江水系主流。</p>
+      <p class="ln" data-i="53">沿平陆运河溯流而上，经西江、入右江，云南富宁港塔吊挥舞，施工正酣。</p>
+      <p class="ln" data-i="54">这里是“珠江上游第一港”。群山环抱的江畔，一句标语格外醒目：“云南从这里走向大海”。标语之下，富宁港一期3个千吨级货运泊位建设正向收官冲刺，一条从云南直达北部湾的跨省份黄金水道呼之欲出。</p>
+      <p class="ln" data-i="55">贵州也在加速拥抱平陆运河。</p>
+      <p class="ln" data-i="56">黄百铁路加紧施工，黔桂铁路增建二线提速建设……未来，贵州货物可经黄百铁路南下百色，换船经右江进入平陆运河，从北部湾港出海，铁公水多式联运体系将有效打通开放发展堵点。</p>
+      <p class="ln" data-i="57">新通道，新动力。西南地区的货物经公路、铁路、水路接入西江水系后，经平陆运河出海，相比绕道珠三角，内河航程缩短560公里以上，综合物流成本降低18%—30%。从西南地区通往东盟国家，有了运距更短、更经济、更便捷的水运通道。</p>
+      <p class="ln" data-i="58">“对于西部地区而言，平陆运河的价值不只是实现单条线路的运输成本优化，更在于通过提升西部陆海新通道的容量、韧性与广度，让更多‘开放末梢’成为‘开放高地’。”国家发展改革委综合运输研究所研究员李玉涛说。</p>
+      <p class="ln" data-i="59">江河所至，生机勃发。</p>
+      <p class="ln" data-i="60">运河连西江，北部湾畔，一批临港产业集群加快崛起——钦州建成西南地区首个千亿级专业化工园区；防城港建成千万吨级先进钢铁制造基地；北海建成光伏玻璃日产能超万吨、浆纸年产能超千万吨的向海产业……以西部陆海新通道为主轴，以西江向海经济带和北部湾沿海经济带为两翼，广西发展活力涌动。</p>
+      <p class="ln" data-i="61">江河奔流，通达四方。</p>
+      <p class="ln" data-i="62">根据《国家综合立体交通网规划纲要》，2035年我国将基本建成2.5万公里左右“四纵四横两网”国家高等级航道。从一条河到一张网，以平陆运河通航为起点，一条串联陕西、湖北、湖南和广西多省份、绵延超3000公里的“汉湘桂通道”在最南端落下一笔，中国水运网络“东西向强劲、南北向较弱”的格局将逐步改写。</p>
+      <p class="ln" data-i="63">做足“边”的文章——立足独特区位、深化与东盟合作，把区位优势转化为开放胜势，服务中国—东盟命运共同体。</p>
+      <p class="ln" data-i="64">做足“边”的文章——</p>
+      <p class="ln" data-i="65">“做活广西高质量发展这盘棋，棋眼就在扩大开放上”</p>
+      <p class="ln" data-i="66">一条运河，升华开放发展的境界。</p>
+      <p class="ln" data-i="67">清晨，广西崇左，宁明爱店口岸，满载越南腰果、热带水果的货车有序通关入境。</p>
+      <p class="ln" data-i="68">数十公里外，凭祥产业园区宁明片区，车间内一派繁忙。“早上从越南启运，下午就能运抵宁明厂区加工，几天就能销往全国各地。”广西宁明唯品源食品有限公司总经理何建清说。</p>
+      <p class="ln" data-i="69">从口岸通关、园区加工到港口出海，从“通道经济”迈向“口岸经济”，成为广西深耕边贸经济、扩大对外开放的生动缩影。</p>
+      <p class="ln" data-i="70">开放，中国式现代化的鲜明标识。如何“把独特区位优势更好转化为开放发展优势”？</p>
+      <p class="ln" data-i="71">“一湾相挽十一国，良性互动东中西”，这是广西独特区位优势的生动写照。开放睦“边”、产业兴“边”，作为我国与东盟唯一海陆相连的区域，昔日的祖国西南边陲，正发展成为我国面向东盟开放合作的前沿枢纽。目前，广西对外开放口岸总数达22个，边境3市8县实现“口岸全覆盖”；依托产业协作园区、沿边临港产业园区等平台，与东盟构建跨区域跨境产业链供应链，近200家龙头企业立足广西“闯东盟”。</p>
+      <p class="ln" data-i="72">基础设施联通，贸易投资畅通，开放合作走深走实。截至目前，中国连续17年保持东盟第一大贸易伙伴地位，东盟连续6年成为中国第一大贸易伙伴。</p>
+      <p class="ln" data-i="73">站上新起点，如何再上新台阶？</p>
+      <p class="ln" data-i="74">“做活广西高质量发展这盘棋，棋眼就在扩大开放上。”习近平总书记深切勉励广西：“深化拓展与东盟国家的各领域合作，积极服务建设中国—东盟命运共同体，主动作为、加快发展”。</p>
+      <p class="ln" data-i="75">“主动作为、加快发展”，合作将愈发深入。</p>
+      <p class="ln" data-i="76">广西南宁五象新区，苍翠绿意间，一片“数字生态丛林”蓬勃生长。这里是中国—东盟人工智能创新合作中心，一个更响亮的名字叫“南A中心”。</p>
+      <p class="ln" data-i="77">部署算力规模5000PFLOPS（每秒千万亿次浮点运算），利用率高达75%；累计签约国内外人工智能项目上百个，落地外资人工智能企业19家……对齐、加速、集成，短短一年，算力澎湃，企业扎堆。</p>
+      <p class="ln" data-i="78">行走邕城，以南A中心为“出海口”，一条“北上广研发+广西集成+东盟应用”的“天上云河”正在形成。</p>
+      <p class="ln" data-i="79">“东盟是中国第一大贸易伙伴，正处于数字化转型关键阶段。”在广西社会科学院院长张洪石看来，地处中国14亿多人口和东盟7亿人口大市场的交汇点，广西开放发展机遇广阔。</p>
+      <p class="ln" data-i="80">前不久，“外国企业广西行”活动，吸引30多个国家和地区的141家外资企业参加，促成现代金融、高端制造等36个合作项目。</p>
+      <p class="ln" data-i="81">“主动作为、加快发展”，来往将更加密切。</p>
+      <p class="ln" data-i="82">“重大国家工程的价值，最终都会体现在服务国家发展战略上。”清华大学历史系教授倪玉平说，倘若灵渠解决的是“岭南如何纳入统一国家交通体系”，那么平陆运河回答的则是“西部如何更加便捷融入全球经济体系”的时代命题。</p>
+      <p class="ln" data-i="83">加快修编平陆运河经济带文化和旅游发展规划，谋划“灵渠—平陆运河—北部湾”水运文化旅游线路；今年10月桂林将举办世界运河大会，以灵渠与平陆运河为双主线，向世界展现运河文明的东方智慧……面对时代命题，广西持续探索、积极作答。</p>
+      <p class="ln" data-i="84">通江达海，驶向蔚蓝。</p>
+      <p class="ln" data-i="85">***  ***</p>
+      <p class="ln" data-i="86">今年是中国共产党成立105周年、“十五五”开局之年，也是红军长征胜利90周年。</p>
+      <p class="ln" data-i="87">5年前的4月，在广西考察的习近平总书记，来到位于桂林全州县才湾镇的红军长征湘江战役纪念园，缅怀革命先烈、赓续共产党人的精神血脉。</p>
+      <p class="ln" data-i="88">“横扫千军如卷席。”习近平总书记坚定地说，“我们对实现下一个百年奋斗目标、实现中华民族伟大复兴就应该抱有这样的必胜信念。”</p>
+      <p class="ln" data-i="89">新征程是新的长征。</p>
+      <p class="ln" data-i="90">随着平陆运河的开通，广西发展打开新的篇章，八桂儿女开启新的征程。</p>
+      <p class="ln" data-i="91">向海图强、开放发展。</p>
+      </div>
+      <div class="pen-tip">— 全文完 —</div>
+    </div>
+  </div>
+<script>
+const PAGE="rmrb_20260920.html", STORE='rmrb_read_v1';
+const COL={black:'#000000',red:'#ff0000',blue:'#0000ff',green:'#00ff00',gold:'#ffd700'};
+let db={}; try{db=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}
+if(!db[PAGE]) db[PAGE]={marks:{},strokes:[],notes:[],bookmarks:{}};
+let rec=db[PAGE];
+function save(){try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){}}
+const paper=document.getElementById('paper'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const pal=document.getElementById('pal');
+let cur='black',pen=false,drawing=false,pts=[],ws=[],last=null;
+let curW=6,mode='pen',curStyle='hl',penMode=false,noteMode=false,markMode=false;
+
+function pr(){return paper.getBoundingClientRect()}
+function rp(e){const r=pr();return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]}
+function wOf(e){return curW}
+function widthOf(s){return (Array.isArray(s.w)?s.w[0]:s.w)||curW;}
+function drawWave(pts,r,w,col){
+  ctx.strokeStyle=col;ctx.globalAlpha=1;ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();
+  for(let i=0;i<pts.length-1;i++){
+    const a=pts[i],b=pts[i+1];
+    const ax=a[0]*r.width,ay=a[1]*r.height,bx=b[0]*r.width,by=b[1]*r.height;
+    const len=Math.hypot(bx-ax,by-ay); if(len<1)continue;
+    const nx=-(by-ay)/len, ny=(bx-ax)/len, seg=4;
+    ctx.moveTo(ax,ay);
+    for(let t=0;t<=len;t+=seg){const f=t/len;const px=ax+(bx-ax)*f,py=ay+(by-ay)*f;const off=Math.sin(t/5)*3;ctx.lineTo(px+nx*off,py+ny*off);}
+  }
+  ctx.stroke();
+}
+function redraw(){
+  const r=pr();ctx.clearRect(0,0,r.width,r.height);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;
+      ctx.lineWidth=widthOf(s);
+      ctx.beginPath();s.p.forEach(function(pt,i){const x=pt[0]*r.width,y=pt[1]*r.height; i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();
+      return;}
+    ctx.globalCompositeOperation='source-over';
+    const col=COL[s.c]||COL.black;
+    if(s.style==='wave'){ drawWave(s.p,r,widthOf(s),col); return; }
+    const a=(s.style==='ul')?1:0.5; ctx.globalAlpha=a; ctx.strokeStyle=col;
+    for(let i=1;i<s.p.length;i++){
+      const x0=s.p[i-1][0]*r.width,y0=s.p[i-1][1]*r.height,x1=s.p[i][0]*r.width,y1=s.p[i][1]*r.height;
+      ctx.lineWidth=Array.isArray(s.w)?s.w[i]:(s.w||curW);
+      ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();
+    }
+  });
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+}
+function fit(){
+  const r=pr(),d=window.devicePixelRatio||1;
+  cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);
+  cv.style.width=r.width+'px';cv.style.height=r.height+'px';
+  ctx.setTransform(d,0,0,d,0,0);redraw();
+}
+/* 笔画 bbox 反查被覆盖的句子。
+   关键：横划时 bbox 高度≈0，若按面积交集判定会恒为 0 而永不命中，
+   故细笔画改用「中心 y 是否落在该句行内」判定，粗涂改按交集比例判定。 */
+function hits(minx,miny,maxx,maxy){
+  const r=pr(),out=[];
+  const cy=(miny+maxy)/2;
+  const thin=(maxy-miny)*r.height<12;
+  document.querySelectorAll('.ln').forEach(function(el){
+    const q=el.getBoundingClientRect();
+    const y0=(q.top-r.top)/r.height,y1=(q.bottom-r.top)/r.height;
+    if(thin){ if(cy>=y0&&cy<=y1) out.push(el.dataset.i); }
+    else if(Math.min(maxy,y1)-Math.max(miny,y0) > (y1-y0)*0.25) out.push(el.dataset.i);
+  });
+  return out;
+}
+function bbox(ps){let a=1,b=0,c=1,d=0;
+  ps.forEach(function(p){a=Math.min(a,p[0]);b=Math.max(b,p[0]);c=Math.min(c,p[1]);d=Math.max(d,p[1])});
+  return [a,c,b,d]}
+function recompute(){
+  const m={};
+  (rec.strokes||[]).forEach(function(s){
+    if(s.erase)return;
+    const bb=bbox(s.p);hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){m[i]=s.c});
+  });
+  rec.marks=m;
+}
+/* ---- 自由勾画：Pencil / 手指 / 鼠标统一走 Pointer Events ---- */
+cv.addEventListener('pointerdown',function(e){
+  if(!pen)return;e.preventDefault();drawing=true;ws=[];
+  try{cv.setPointerCapture(e.pointerId)}catch(err){}
+  const p=rp(e),r=pr();pts=[p];last=[p[0]*r.width,p[1]*r.height];ws.push(curW);
+});
+cv.addEventListener('pointermove',function(e){
+  if(!drawing)return;e.preventDefault();
+  const p=rp(e),r=pr(),x=p[0]*r.width,y=p[1]*r.height;
+  let w=curW;
+  if(penMode&&e.pointerType==='pen') w=curW*(0.35+(e.pressure||0.5)*1.4);
+  ws.push(w);
+  if(mode==='erase'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='rgba(0,0,0,1)';ctx.globalAlpha=1;}
+  else{ctx.globalCompositeOperation='source-over';ctx.strokeStyle=COL[cur];ctx.globalAlpha=(curStyle==='ul'||curStyle==='wave')?1:0.5;}
+  ctx.lineWidth=w;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(last[0],last[1]);ctx.lineTo(x,y);ctx.stroke();
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;last=[x,y];pts.push(p);
+});
+function up(e){
+  if(!drawing)return;drawing=false;
+  if(!pts.length)return;
+  const r=pr(),bb=bbox(pts);
+  const moved=Math.max((bb[2]-bb[0])*r.width,(bb[3]-bb[1])*r.height);
+  if(moved<8){ /* 轻点 */
+    if(mode==='erase'){ /* 橡皮轻点：删掉覆盖该点的整条笔画 */
+      const x=pts[0][0],y=pts[0][1];
+      rec.strokes=rec.strokes.filter(function(s){
+        if(s.erase)return true;
+        return !s.p.some(function(pt){return Math.hypot(pt[0]-x,pt[1]-y)*r.width < (s.w||curW)/2+6});
+      });
+      save();redraw();return;
+    }
+    const cx=pts[0][0]*r.width+r.left, cy=pts[0][1]*r.height+r.top;
+    let target=null,best=1e12;
+    document.querySelectorAll('.ln').forEach(function(el){
+      const q=el.getBoundingClientRect();
+      if(cx>=q.left&&cx<=q.right&&cy>=q.top&&cy<=q.bottom){target=el;best=-1;return;}
+      const dx=Math.max(q.left-cx,0,cx-q.right), dy=Math.max(q.top-cy,0,cy-q.bottom);
+      const dist=dx*dx+dy*dy; if(dist<best){best=dist;target=el;}
+    });
+    if(target){const i=target.dataset.i,q=target.getBoundingClientRect(),yy=(q.top+q.height*0.6-r.top)/r.height;
+      if(rec.marks[i]===cur){delete rec.marks[i];
+        rec.strokes=(rec.strokes||[]).filter(function(s){
+          return !(s.p.length===2&&s.p[0][1]===yy&&s.c===cur)});
+      }else{
+        rec.marks[i]=cur;
+        rec.strokes.push({c:cur,style:curStyle,w:curW,p:[[(q.left-r.left)/r.width,yy],[(q.right-r.left)/r.width,yy]]});
+      }
+      save();redraw();
+    }
+    return;
+  }
+  if(mode==='erase'){ rec.strokes.push({erase:true,w:curW,p:pts}); }
+  else{ const s={c:cur,style:curStyle,p:pts}; if(penMode&&pts.length>1)s.w=ws; else s.w=curW;
+        rec.strokes.push(s);
+        hits(bb[0],bb[1],bb[2],bb[3]).forEach(function(i){rec.marks[i]=cur}); }
+  save();redraw();
+}
+cv.addEventListener('pointerup',up);
+cv.addEventListener('pointercancel',up);
+
+const bPen=document.getElementById('bPen');
+bPen.onclick=function(){
+  pen=!pen;
+  if(pen){noteMode=false;markMode=false;
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');
+    document.getElementById('bMark').classList.remove('on');bMark.textContent='☆ 书签';}
+  paper.classList.toggle('pen',pen);
+  cv.style.pointerEvents=pen?'auto':'none';
+  bPen.classList.toggle('on',pen);bPen.textContent=pen?'✏️ 勾画中':'✏️ 勾画';
+  pal.classList.toggle('show',pen);
+};
+document.querySelectorAll('.pc').forEach(function(el){
+  el.onclick=function(){
+    cur=el.dataset.c;mode='pen';
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.toggle('on',x===el)});
+    document.getElementById('bEra').classList.remove('on');
+  };
+});
+const bEra=document.getElementById('bEra');
+bEra.onclick=function(){
+  if(mode==='erase'){mode='pen';bEra.classList.remove('on');}
+  else{mode='erase';bEra.classList.add('on');
+    document.querySelectorAll('.pc').forEach(function(x){x.classList.remove('on')});}
+  pal.classList.add('show');
+};
+document.querySelectorAll('.pcsz').forEach(function(el){
+  el.onclick=function(){
+    curW=+el.dataset.w;
+    document.querySelectorAll('.pcsz').forEach(function(x){x.classList.toggle('on',x===el)});
+  };
+});
+/* 字号 / 行距 调整（全局记忆在 localStorage rmrb_text_v1） */
+const TXT=document.getElementById('text'),TPREF='rmrb_text_v1';
+let tp={fs:17.5,lh:2.08};
+try{const t=JSON.parse(localStorage.getItem(TPREF)||'{}'); if(t&&t.fs)tp.fs=t.fs; if(t&&t.lh)tp.lh=t.lh;}catch(e){}
+function applyText(){
+  TXT.style.setProperty('--rmrb-fs',tp.fs+'px');
+  TXT.style.setProperty('--rmrb-lh',tp.lh);
+  document.querySelectorAll('.tsz').forEach(function(x){x.classList.toggle('on',+x.dataset.fs===tp.fs)});
+  document.querySelectorAll('.tlh').forEach(function(x){x.classList.toggle('on',+x.dataset.lh===tp.lh)});
+  fit();
+}
+applyText();
+document.querySelectorAll('.tsz').forEach(function(el){
+  el.onclick=function(){tp.fs=+el.dataset.fs;localStorage.setItem(TPREF,JSON.stringify(tp));applyText();};
+});
+document.querySelectorAll('.tlh').forEach(function(el){
+  el.onclick=function(){tp.lh=+el.dataset.lh;localStorage.setItem(TPREF,JSON.stringify(tp));applyText();};
+});
+/* ===== 线型 / 压感钢笔 ===== */
+document.querySelectorAll('.psty').forEach(function(el){
+  el.onclick=function(){curStyle=el.dataset.st;
+    document.querySelectorAll('.psty').forEach(function(x){x.classList.toggle('on',x===el)});
+    pal.classList.add('show');};
+});
+const bPenMode=document.getElementById('bPenMode');
+bPenMode.onclick=function(){penMode=!penMode;bPenMode.classList.toggle('on',penMode);pal.classList.add('show');};
+
+/* ===== 颜色图例自定义（全局记忆 rmrb_legend_v1） ===== */
+const LEGP='rmrb_legend_v1';
+let legend={black:'黑',red:'红',blue:'蓝',green:'绿',gold:'金'};
+try{const l=JSON.parse(localStorage.getItem(LEGP)||'{}'); if(l)Object.assign(legend,l);}catch(e){}
+document.querySelectorAll('.lg-t').forEach(function(el){
+  el.textContent=legend[el.dataset.c]||el.dataset.c;
+  el.addEventListener('input',function(){legend[el.dataset.c]=el.textContent.trim();localStorage.setItem(LEGP,JSON.stringify(legend));});
+});
+
+/* ===== 便利贴批注 ===== */
+const bNote=document.getElementById('bNote');
+function noteAt(cx,cy){const r=pr();let x=(cx-r.left)/r.width,y=(cy-r.top)/r.height;
+  x=Math.max(0,Math.min(.82,x));y=Math.max(0,Math.min(.92,y));return [x,y];}
+function renderNote(n,idx){
+  const d=document.createElement('div');d.className='note';d.dataset.i=idx;
+  d.style.left=(n.x*100)+'%';d.style.top=(n.y*100)+'%';
+  d.innerHTML='<div class="note-h">📝<span class="note-x">×</span></div><div class="note-b" contenteditable="true"></div>';
+  d.querySelector('.note-b').textContent=n.text||'';
+  paper.appendChild(d);
+  d.querySelector('.note-b').addEventListener('input',function(){rec.notes[idx].text=this.textContent;save();});
+  d.querySelector('.note-x').addEventListener('click',function(e){e.stopPropagation();
+    rec.notes.splice(idx,1);d.remove();reindexNotes();save();});
+  const h=d.querySelector('.note-h');
+  h.addEventListener('pointerdown',function(e){
+    if(e.target.classList.contains('note-x'))return;
+    e.preventDefault();try{h.setPointerCapture(e.pointerId)}catch(err){}
+    const r=pr(),sx=e.clientX,sy=e.clientY,ox=parseFloat(d.style.left),oy=parseFloat(d.style.top);
+    function mv(ev){const dl=(ev.clientX-sx)/r.width*100,dt=(ev.clientY-sy)/r.height*100;
+      let nl=Math.max(0,Math.min(82,ox+dl)),nt=Math.max(0,Math.min(92,oy+dt));
+      d.style.left=nl+'%';d.style.top=nt+'%';rec.notes[idx].x=nl/100;rec.notes[idx].y=nt/100;}
+    function up(ev){h.removeEventListener('pointermove',mv);h.removeEventListener('pointerup',up);save();}
+    h.addEventListener('pointermove',mv);h.addEventListener('pointerup',up);
+  });
+}
+function reindexNotes(){(document.querySelectorAll('.note')).forEach(function(n){n.remove();});
+  (rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+function renderAllNotes(){(rec.notes||[]).forEach(function(n,i){renderNote(n,i);});}
+renderAllNotes();
+bNote.onclick=function(){
+  noteMode=!noteMode;
+  if(noteMode){pen=false;markMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bMark').classList.remove('on');document.getElementById('bMark').textContent='☆ 书签';}
+  bNote.classList.toggle('on',noteMode);paper.classList.toggle('note-mode',noteMode);
+};
+paper.addEventListener('click',function(e){
+  if(!noteMode)return;
+  if(e.target.closest('.note'))return;
+  const p=noteAt(e.clientX,e.clientY);
+  if(!rec.notes)rec.notes=[];
+  rec.notes.push({x:p[0],y:p[1],text:''});
+  const idx=rec.notes.length-1;save();renderNote(rec.notes[idx],idx);
+  const nd=document.querySelector('.note[data-i="'+idx+'"] .note-b');if(nd)nd.focus();
+});
+
+/* ===== 书签收藏 ===== */
+const bMark=document.getElementById('bMark');
+function applyBookmarks(){document.querySelectorAll('.ln').forEach(function(el){el.classList.toggle('bm',!!(rec.bookmarks&&rec.bookmarks[el.dataset.i]));});}
+function countMarks(){return rec.bookmarks?Object.keys(rec.bookmarks).length:0;}
+applyBookmarks();
+bMark.onclick=function(){
+  markMode=!markMode;
+  if(markMode){pen=false;noteMode=false;paper.classList.remove('pen');cv.style.pointerEvents='none';
+    document.getElementById('bPen').classList.remove('on');document.getElementById('bPen').textContent='✏️ 勾画';
+    document.getElementById('bNote').classList.remove('on');paper.classList.remove('note-mode');}
+  bMark.classList.toggle('on',markMode);
+  bMark.textContent=markMode?'★ 书签中':'☆ 书签'+(countMarks()?('('+countMarks()+')'):'');
+};
+document.getElementById('text').addEventListener('click',function(e){
+  if(!markMode)return;
+  const el=e.target.closest('.ln');if(!el)return;
+  const i=el.dataset.i;
+  if(!rec.bookmarks)rec.bookmarks={};
+  if(rec.bookmarks[i])delete rec.bookmarks[i];else rec.bookmarks[i]=true;
+  el.classList.toggle('bm',!!rec.bookmarks[i]);save();
+  bMark.textContent='★ 书签'+(countMarks()?('('+countMarks()+')'):'');
+});
+if(countMarks())bMark.textContent='☆ 书签('+countMarks()+')';
+
+/* ===== 导出（打印为PDF，含批注） ===== */
+document.getElementById('bExport').onclick=function(){window.print();};
+document.getElementById('bUndo').onclick=function(){
+  rec.strokes.pop();recompute();save();redraw();
+};
+document.getElementById('bClr').onclick=function(){
+  if(!confirm('清空本篇全部勾画？'))return;
+  rec.strokes=[];rec.marks={};save();redraw();
+};
+if(window.ResizeObserver){new ResizeObserver(fit).observe(paper)}
+window.addEventListener('resize',fit);
+window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+fit();
+</script>
+</body>
+</html>
