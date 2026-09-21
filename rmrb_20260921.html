@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 一个“齐”字，何以照见发展之路</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>一个“齐”字，何以照见发展之路</h1>
+    <div class="meta">人民日报·人民时评 | 高质量共建“一带一路”·人类命运共同体·共商共建共享·开放合作·互利共赢·文明互鉴·互联互通·新质生产力·全球治理 | 2026年9月21日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：高质量共建“一带一路”／和而不同、多元共生／携手并进、合作共赢</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高质量共建“一带一路”</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">共商共建共享</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">开放合作</span>
+      <span class="tag-item">文明互鉴</span>
+      <span class="tag-item">多元共生</span>
+      <span class="tag-item">互联互通</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">全球治理</span>
+      <span class="tag-item">发展中国家</span>
+      <span class="tag-item">务实合作</span>
+      <span class="tag-item">合作共赢</span>
+      <span class="tag-item">政策沟通</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“开放合作／人类命运共同体／全球治理”等主题；本文<b>“汉字起兴（‘齐’字当选年度汉字）—溯源释义（于参差之中求齐一）—总论点立骨（和而不同、多元共生）—三层分论（心齐／齐行／齐享）—总书记语录升华”</b>的论证链，是写“合作共赢／文明互鉴”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼四条对策：<b>以共识凝聚，办好对话平台、求同存异汇合力／以互联互通，加快陆海天网“四位一体”布局、推进标志性项目落地／以成果共享，延伸技术优势、助力伙伴国自主造血／以机制护航，坚持共商共建共享、完善多边合作平台</b>，层次分明、可迁移性强。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>于参差之中求齐一</b>”“<b>摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力</b>”“<b>从‘外部输血’向‘自主造血’转变</b>”等多组辩证，是写<b>同与异／破与立／授鱼与授渔</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于推进高质量共建‘一带一路’的倡议书”“关于深化国际互联互通合作的若干措施”等素材；文中“<b>共商共建共享</b>”“<b>陆海天网‘四位一体’互联互通</b>”“<b>新质生产力</b>”“<b>从‘外部输血’向‘自主造血’转变</b>”等表述极适合写进公文与申论。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（汉字起兴—溯源释义—总论点立骨—心齐／齐行／齐享三层分论—升华合奏）</h3>
+        <div class="analysis-item"><span class="label">引论</span><span class="text"><b>以“齐”字当选2026“一带一路”年度汉字这一文化现象起笔</b>：溯源甲骨文“于参差之中求齐一”，引出“和而不同、多元共生”的文明内涵，点出文章要旨（第一段，后接总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>由年度汉字的文化意涵提炼总论点</b>：高质量共建“一带一路”，要在和而不同、多元共生中携手并进，让共同发展的道路越走越宽广（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>心齐聚力——凝聚发展共识</b>：以年度汉字发布活动连续10年、第二届全球企业高质量共建“一带一路”峰会等为例，说明求同存异、共商共建共享、摒弃零和博弈，把各自优势汇聚成共同发展的强大合力（第二至四段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>齐行实干——推进务实合作</b>：以中吉乌铁路、中埃·泰达苏伊士经贸合作区等标志性项目与中欧班列、空中丝绸之路、丝路海运的通道数据，说明陆海天网“四位一体”互联互通加速完善（第五至七段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>齐享共赢——共享发展成果</b>：以智利智能预警、巴基斯坦光伏灌溉、马来西亚AI降本等民生案例，说明合作超越传统基建、迈向绿色数字新赛道，助力伙伴国从“外部输血”向“自主造血”转变（第八至十段，后接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">论据运用</span><span class="text"><b>汉字文化＋峰会实例＋项目数据＋总书记语录</b>：“齐”字溯源构成具象起点；10年平台、150多国30多国际组织、47亿美元、4000亿美元、12988列等构成事实冲击；“共商共建共享”“四位一体互联互通”“新质生产力”构成贯穿全篇的规范体系；总书记语录收束升华。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“汉字起兴—溯源释义—三层分论（心齐／齐行／齐享）—升华合奏”的递进结构</b>：以“齐心协力，同心打拼，必将铺就一条更宽广的共赢之路”收束，呼应开篇、升华主题，是申论“用文化意象讲系统合作、以三层逻辑贯通全篇”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>前不久，“齐”字当选2026“一带一路”年度汉字。为何是“齐”？“齐”字可溯源至商代甲骨文，《说文解字》释之为“禾麦吐穗上平也”，有<span class="highlight-purple">“于参差之中求齐一”</span>之义。一个汉字，传承中华文脉，映照<span class="highlight-blue">高质量共建“一带一路”</span>的时代内涵：<span class="highlight-gold">和而不同、多元共生，大家携手并进，让共同发展的道路越走越宽广</span>。</p>
+
+      <div class="thesis">【总论点】高质量共建“一带一路”，要在和而不同、多元共生中携手并进，把各自优势汇聚成共同发展的强大合力，让共同发展的道路越走越宽广。</div>
+
+      <div class="sub-thesis">【分论点一】心齐聚力——凝聚发展共识，坚持共商共建共享，摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力。</div>
+
+      <p>以“一带一路”年度汉字发布活动为例，连续举办<span class="highlight-green">10年</span>，征集各方意见，<span class="highlight-blue">求同存异、凝聚共识</span>，本身就是“齐”的鲜活例证。再如，最近在新加坡举行的第二届全球企业高质量共建“一带一路”峰会，由联合国全球契约组织“可持续基础设施建设助力‘一带一路’，加速实现可持续发展目标”行动平台等主办，达成多项成果。</p>
+
+      <p>一项由中国提出的倡议，何以在10多年间，成长为吸引<span class="highlight-green">150多个国家和30多个国际组织</span>加入的全球公共产品？答案很清晰，大家有共识，心齐。不同国情、不同文明、不同发展阶段的国家，<span class="highlight-purple">摒弃零和博弈的惯性思维</span>，坚持<span class="highlight-blue">共商共建共享</span>，<span class="highlight-purple">把各自优势汇聚成共同发展的强大合力</span>，正是“齐”字的现实注脚。</p>
+
+      <div class="sub-thesis">【分论点二】齐行实干——推进务实合作，加快陆、海、天、网“四位一体”互联互通，以一批标志性项目把蓝图化为现实。</div>
+
+      <p>中亚群山深处，中吉乌铁路建设稳步推进，这条起自中国新疆喀什、途经吉尔吉斯斯坦、终至乌兹别克斯坦的“交通大动脉”，承载着沿线人民的期盼，正以坚实步伐从蓝图化为现实。埃及红海之滨，中埃·泰达苏伊士经贸合作区内厂房林立，截至2026年6月底，合作区已吸引<span class="highlight-green">200余家企业入驻，累计吸引投资额逾47亿美元，直接创造就业岗位超1万个</span>。目前，我国已在“一带一路”共建国家设立境外企业<span class="highlight-green">2.2万家，直接投资存量超4000亿美元</span>。</p>
+
+      <p>近年来，<span class="highlight-blue">陆、海、天、网“四位一体”互联互通</span>布局加速完善。今年前7个月，中欧班列共开行<span class="highlight-green">12988列，同比增长17.6%</span>。上半年，“空中丝绸之路”航班量<span class="highlight-green">超19万架次</span>。“丝路海运”命名航线已达<span class="highlight-green">148条，通达48个国家和地区的150个港口</span>。沉甸甸的成果，得益于各国<span class="highlight-purple">相向而行、协同发力</span>。</p>
+
+      <div class="sub-thesis">【分论点三】齐享共赢——共享发展成果，迈向绿色、数字等新赛道，助力伙伴国从“外部输血”向“自主造血”转变。</div>
+
+      <p>智利电力公司用上了中国的智能预警系统，可对全国<span class="highlight-green">340多个市镇</span>的天气情况进行实时分析，帮助电网预判风险点；在巴基斯坦乡村，光伏板组装成太阳能发电和储能系统，不仅满足日常需求，还能用于灌溉；马来西亚的橡胶工厂借助中国的人工智能算法和工业机器人，<span class="highlight-green">生产成本降低30%</span>……</p>
+
+      <p>高质量共建“一带一路”，早已超越传统基建经贸合作，正向<span class="highlight-blue">绿色、数字等新赛道</span>阔步迈进。中国发展<span class="highlight-blue">新质生产力</span>所形成的技术、产业与模式优势，通过产能合作、技术转移、人才共育等多元路径，助力广大发展中国家抢抓新一轮科技革命和产业变革机遇，推动伙伴国实现<span class="highlight-purple">从“外部输血”向“自主造血”转变</span>。</p>
+
+      <p>习近平总书记强调，<span class="highlight-gold">“一带一路”是大家携手前进的阳光大道，不是某一方的私家小路，追求的是发展，崇尚的是共赢，传递的是希望</span>。当前，<span class="highlight-purple">世界经济碎片化加剧</span>，发展进程严重受阻，尤显“齐”的可贵。<span class="highlight-gold">齐心协力，同心打拼，必将铺就一条更宽广的共赢之路</span>。</p>
+
+      <p class="byline">（人民日报2026年9月21日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·于参差求齐一</span>
+      <p><b>“齐”字可溯源至商代甲骨文，有“于参差之中求齐一”之义。</b>——以汉字文化起兴，写“和而不同／多元共生”是极简而有力的破题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·和而不同</span>
+      <p><b>“和而不同、多元共生，大家携手并进，让共同发展的道路越走越宽广。”</b>——以总论点句式写开放合作，是“人类命运共同体／合作共赢”的权威句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·全球公共产品</span>
+      <p><b>“一项由中国提出的倡议……成长为吸引150多个国家和30多个国际组织加入的全球公共产品。”</b>——以“国际公共产品”定位写中国方案的世界意义，是“大国担当／全球治理”的有力句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共商共建共享</span>
+      <p><b>“摒弃零和博弈的惯性思维，坚持共商共建共享，把各自优势汇聚成共同发展的强大合力。”</b>——以“破零和、立共建”写合作方法论，是“共商共建共享”的规范句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·四位一体</span>
+      <p><b>“陆、海、天、网‘四位一体’互联互通布局加速完善。”</b>——以“四位一体”写通道体系，是“互联互通／基础设施联通”的精炼句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·自主造血</span>
+      <p><b>“推动伙伴国实现从‘外部输血’向‘自主造血’转变。”</b>——以“输血与造血”辩证写合作境界，是“授人以渔／可持续发展”的利器句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语录</span>
+      <p><b>“一带一路是大家携手前进的阳光大道，不是某一方的私家小路，追求的是发展，崇尚的是共赢，传递的是希望。”</b>——以“大路与小路”破立辩证写合作本质，是“人类命运共同体”的升华句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·齐心协力</span>
+      <p><b>“齐心协力，同心打拼，必将铺就一条更宽广的共赢之路。”</b>——以“齐心＋共赢”收束全篇，写“携手合作”是诗意金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·新质生产力</span>
+      <p><b>“中国发展新质生产力所形成的技术、产业与模式优势……助力广大发展中国家抢抓新一轮科技革命和产业变革机遇。”</b>——以“新质生产力”写中国禀赋的外溢，是“科技赋能／发展红利”的规范句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·相向而行</span>
+      <p><b>“沉甸甸的成果，得益于各国相向而行、协同发力。”</b>——以“相向而行”写多边合力，是“协同推进／命运与共”的收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文开头</span>
+      <p>学“文化意象起兴法”：先以“齐”字当选年度汉字这一文化现象破题，再溯源释义、引出总论点，比直说“合作很重要”更有文化厚度。适用于“开放合作／文明互鉴”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用“心齐—齐行—齐享”三层：①凝聚共识（共商共建共享）；②务实合作（互联互通、标志项目）；③成果共享（绿色数字、自主造血）。由理念到行动再到成效，层层抬升。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“高质量共建‘一带一路’”拆成可操作举措：以共识凝聚，办好对话平台、求同存异汇合力；以互联互通，加快四位一体布局、推进标志项目；以成果共享，延伸技术优势、助力自主造血；以机制护航，坚持共商共建共享、完善多边平台。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·数据论证</span>
+      <p>学“用硬数据撑硬道理”：10年平台、150多国30多国际组织、47亿美元、4000亿美元、12988列、19万架次、148条航线，把抽象合作写成可感的事实链，比空喊口号更有说服力，可迁移到一切“成效类”论述。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·辩证段落</span>
+      <p>学“于参差之中求齐一”“破零和、立共建”“从输血到造血”的辩证：先立“和而不同方能共生”的立场，再以同与异、破与立、授鱼与授渔的反差作对照，把国际合作写成有张力、有境界的论证，比直说“要合作”更有力。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「一个“齐”字，何以照见发展之路」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是心齐聚力——凝聚发展共识，坚持共商共建共享，摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力。<br>二是齐行实干——推进务实合作，加快陆海天网“四位一体”互联互通，以一批标志性项目把蓝图化为现实。<br>三是齐享共赢——共享发展成果，迈向绿色数字新赛道，助力伙伴国从“外部输血”向“自主造血”转变。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「高质量共建“一带一路”，要在和而不同、多元共生中携手并进，让共同发展的道路越走越宽广。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是心齐聚力——凝聚发展共识，坚持共商共建共享，摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力。<br>二是齐行实干——推进务实合作，加快陆海天网“四位一体”互联互通，以一批标志性项目把蓝图化为现实。<br>三是齐享共赢——共享发展成果，迈向绿色数字新赛道，助力伙伴国从“外部输血”向“自主造血”转变。<br>综上，唯有携手同心、相向而行，方能铺就更宽广的共赢之路。<br>可迁移金句：齐心协力，同心打拼，必将铺就一条更宽广的共赢之路</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「一个“齐”字，何以照见发展之路」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以共识凝聚为抓手，办好对话平台、求同存异，把各方优势汇成发展合力。<br>二是以互联互通为抓手，加快陆海天网“四位一体”布局，推进中吉乌铁路等标志性项目落地。<br>三是以成果共享为抓手，延伸技术优势、推动人才共育，助力伙伴国提升自主发展能力。<br>四是以机制护航为抓手，坚持共商共建共享、完善多边合作平台，让发展成果更公平惠及各方。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：齐心协力，同心打拼，必将铺就一条更宽广的共赢之路</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于一个“齐”字，何以照见发展之路的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于一个“齐”字，何以照见发展之路的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或社会各界合作伙伴）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进高质量共建“一带一路”，现就有关事项倡议如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、心齐聚力——凝聚发展共识，坚持共商共建共享，摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、齐行实干——推进务实合作，加快陆海天网“四位一体”互联互通，以一批标志性项目把蓝图化为现实。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、齐享共赢——共享发展成果，迈向绿色数字新赛道，助力伙伴国从“外部输血”向“自主造血”转变。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：齐心协力，同心打拼，必将铺就一条更宽广的共赢之路</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「一个“齐”字，何以照见发展之路」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：一个“齐”字，何以照见发展之路<br><br>时代之问，呼唤破题之策。一个“齐”字，何以照见发展之路，是时代之问，也是合作之要。可从三个维度展开：心齐聚力、齐行实干、齐享共赢。<br><br>分论点一：心齐聚力——凝聚发展共识，坚持共商共建共享，摒弃零和博弈的惯性思维，把各自优势汇聚成共同发展的强大合力。方向对了，路再远也能抵达。<br><br>分论点二：齐行实干——推进务实合作，加快陆海天网“四位一体”互联互通，以一批标志性项目把蓝图化为现实。方法对了，事再难也能办成。<br><br>分论点三：齐享共赢——共享发展成果，迈向绿色数字新赛道，助力伙伴国从“外部输血”向“自主造血”转变。行百里者半九十。<br><br>保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。一个“齐”字，何以照见发展之路是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-21</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
