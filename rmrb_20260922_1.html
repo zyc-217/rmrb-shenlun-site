@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 呵护运动热，激活消费力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>呵护运动热，激活消费力</h1>
+    <div class="meta">人民日报·人民时评 | 体育产业·体育消费·体育强国·健康中国·消费扩容提质 | 2026年9月22日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：扩大参与·消费延链·供给提质／把运动热转化为产业动能／服务人民促进人的全面发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">体育产业</span>\n      <span class="tag-item">体育消费</span>\n      <span class="tag-item">体育强国</span>\n      <span class="tag-item">健康中国</span>\n      <span class="tag-item">消费扩容提质</span>\n      <span class="tag-item">供给侧质量</span>\n      <span class="tag-item">公共服务供给</span>\n      <span class="tag-item">精细化管理</span>\n      <span class="tag-item">跨界融合</span>\n      <span class="tag-item">赛事经济</span>\n      <span class="tag-item">因地制宜</span>\n      <span class="tag-item">人的全面发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>体育强国／健康中国／消费提质升级／供给侧结构性改革</b>”等主题；本文<b>“现象引入—规划立论—三个分论（扩大参与／消费延链／供给提质）—升华人民立场”</b>的论证链，是写“把热潮变动能／从流量到留量”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼三条对策：<b>扩大参与，盘活边角地与存量设施、精细管理错峰开放，推动供给从“有得用”迈向“用得好”／消费延链，以跨界融合联通生活场景、按观众完整行程整合时空业态资源／供给提质，提升产品品质与运营能力，走差异化道路、因地制宜塑造特色</b>，层次分明、可迁移性强。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>‘有得用’迈向‘用得好’</b>”“<b>‘到场’不等于‘消费’</b>”“<b>简单叠加未必能产生乘数效应</b>”“<b>资源禀赋不同，产业路径不能千篇一律</b>”等多组辩证，是写<b>量与质／局部与整体／共性与个性</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于促进体育消费、推动体育产业高质量发展的实施意见”“关于推动全民健身与全民健康深度融合的行动方案”等素材；文中“<b>促进客流、信息流、消费流有效融通</b>”“<b>把赛事影响力转化为产业带动力</b>”等表述极适合写进公文与申论。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架（现象引入—规划立论—三方面着力—人民立场升华）</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>现象切入</b>：以夜间体育消费升温、场馆延时开放、市民夜舞等鲜活场景开篇，点出“体育产业迎来发展新机遇”（第一至二段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>规划目标提炼总命题</b>：引《体育强国建设“十五五”规划》7万亿元目标，以“扩大参与、消费延链、供给提质”三方面着力点亮出总论点（第三段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>扩大参与——盘活存量、精细管理，让“想运动”落于行动</b>：以成都立交桥下篮球公园、晋城学校操场错峰开放为例，论证从“有得用”迈向“用得好”、把体验变成习惯（第四段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>消费延链——跨界融合联通生活场景，让“到场”走向“消费”</b>：以安徽时尚体育文化周、江苏“苏超”主题线路为例，论证整合时间空间业态资源、促成收益分配长效机制（第五至六段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>供给提质——提升品质运营、差异化发展，让“一时热度”成为“长期增量”</b>：以崇礼冬奥场馆四季运营为例，论证因地制宜塑造特色、增强产业韧性（第七至八段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>价值收束</b>：落到“归根到底要服务人民、促进人的全面发展”，以“运动热激活消费力”回应标题，为体育强国、健康中国注入动能（第九段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“三方面着力—案例对举—辩证收束”的并列递进结构</b>：三个分论点各配“问题判断＋两地案例＋辩证小结”，<b>“慢功夫、巧功夫”“等雪来→全年运营”</b>等表达兼具口语温度与思辨深度，是申论“小切口写大产业”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">近期，夜间体育消费升温，既丰富了市民生活，也为城市经济添活力。</span></p>
+
+      <p>湖北武汉，晚上延时开放的体育场馆里，击球声此起彼伏；福建厦门，尊巴燃动夜活动上，<span class="highlight-green">600余名</span>市民伴随动感节拍起舞。场馆延时、活动走俏、赛事上新……随着人们参与体育运动时间越来越自由、场景越来越丰富，<span class="highlight-blue">体育产业</span>迎来发展新机遇。</p>
+
+      <div class="thesis">【总论点】体育日益融入休闲娱乐、社会交往，<span class="highlight-blue">消费空间</span>随之拓展；顺应潮流趋势，从<span class="highlight-blue">扩大参与、消费延链、供给提质</span>等方面着力，才能打开<span class="highlight-blue">体育产业</span>增长新空间，让运动热激活消费力，为<span class="highlight-blue">体育强国、健康中国</span>建设注入充沛动能。</div>
+
+      <p><span class="highlight-blue">《体育强国建设“十五五”规划》</span>明确提出，到<span class="highlight-green">2030年</span>体育产业总规模<span class="highlight-green">突破7万亿元</span>。如今，体育日益融入休闲娱乐、社会交往之中，消费空间随之拓展。顺应潮流趋势，从<span class="highlight-gold">扩大参与、消费延链、供给提质</span>等方面着力，才能打开体育产业增长新空间。</p>
+
+      <div class="sub-thesis">【分论点一】让“想运动”落于行动——盘活存量设施、实施精细管理，推动体育供给从“有得用”迈向“用得好”，以便捷运动空间培育运动习惯、催生消费需求。</div>
+
+      <p><span class="highlight-gold">让“想运动”落于行动，先要为群众提供便捷的运动空间。</span>四川成都双桥子立交桥下，闲置空间被改造成约<span class="highlight-green">1800平方米</span>的篮球公园。山西晋城推动<span class="highlight-green">69所</span>中小学操场错峰开放，增设市民锻炼专用通道、夜间照明和隔离设施，并购置公众责任险。盘活边角地、合理利用存量设施，离不开<span class="highlight-blue">精细管理</span>。持续推动体育供给<span class="highlight-purple">从“有得用”迈向“用得好”</span>，就能将一次次体验转化为运动习惯，进而催生培训、装备、赛事等需求。</p>
+
+      <div class="sub-thesis">【分论点二】让“到场”走向“消费”——以跨界融合联通生活场景，整合时间、空间和业态资源，把赛事影响力转化为产业带动力。</div>
+
+      <p><span class="highlight-gold">“到场”不等于“消费”，体育活动还需联通生活场景。</span><span class="highlight-green">2026年</span>安徽省时尚体育文化周在合肥举办，市民可观看匹克球、轮滑等比赛，参加平板支撑、花样跳绳等挑战，再逛逛汇集运动装备、文创、美食的市集。江苏围绕“苏超”整合景区、美食、非遗、文博等资源，打造<span class="highlight-green">100条</span>跨区域主题线路。或把观赛、体验、购物汇于一处，或让一张球票带动更多旅程，体育由此融入更长的消费链条。</p>
+
+      <p>跨界融合，实质是依托体育整合时间、空间和业态资源。赛事、商圈、景区各有运行规律，<span class="highlight-purple">简单叠加未必能产生乘数效应</span>。以观众的完整行程为线索，让赛程与交通、营业、游览时间衔接，让票务、住宿、餐饮、景点预约组合成便捷产品，有利于延长游客停留时间、降低交易成本。此外，还要形成合理的收益分配机制，促进主办方、平台和商户<span class="highlight-purple">从短期借势走向长期合作</span>。未来，促进<span class="highlight-blue">客流、信息流、消费流</span>有效融通，才能<span class="highlight-gold">把赛事影响力转化为产业带动力</span>。</p>
+
+      <div class="sub-thesis">【分论点三】让“一时热度”成为“长期增量”——提升产品品质和运营能力，走差异化发展道路、因地制宜塑造特色，增强产业发展韧性。</div>
+
+      <p>如何将一时的参与热度转化为长期的发展增量？需要提升产品品质和运营能力。比如，北京冬奥会后，河北崇礼没有守着场馆“等雪来”。冬季举办冰雪赛事，夏秋季发展山地自行车、徒步越野等项目，冬奥场馆实现全年运营。</p>
+
+      <p><span class="highlight-gold">发展体育产业，需要慢功夫、巧功夫。</span>有的地方冰雪资源丰富，可做长滑雪季，向山地户外、赛事培训等四季产品延伸；有的地方山清水秀，可发展骑行、徒步、水上运动；有的地方制造业基础扎实，可深耕运动装备……<span class="highlight-purple">各地资源禀赋不同，产业路径不能千篇一律</span>。走<span class="highlight-blue">差异化发展道路</span>，因地制宜塑造特色、建立竞争优势，才能不断增强产业发展韧性。</p>
+
+      <p>推动<span class="highlight-blue">体育产业高质量发展</span>，不断满足体育消费需求，<span class="highlight-gold">归根到底要服务人民、促进人的全面发展</span>。把握需求变化，提供更丰富的体育产品、更优质的运动体验，定能让运动热激活消费力，为<span class="highlight-blue">体育强国、健康中国</span>建设注入充沛动能。</p>
+
+      <p class="byline">（人民日报2026年9月22日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·标题总论</span>\n      <p><b>“呵护运动热，激活消费力。”</b>——标题即总论点，动宾对仗、八个字点透“需求侧热情与供给侧作为”的关系，写“消费升级／产业培育”是极简而有力的框架句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·三方面着力</span>\n      <p><b>“从扩大参与、消费延链、供给提质等方面着力，才能打开体育产业增长新空间。”</b>——三词并列破题，写“产业振兴／扩内需”是最佳立论句式。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·有得用到用得好</span>\n      <p><b>“持续推动体育供给从‘有得用’迈向‘用得好’。”</b>——以一字之差点出供给质量之变，写“公共服务提质／供给侧改革”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·到场不等于消费</span>\n      <p><b>“‘到场’不等于‘消费’，体育活动还需联通生活场景。”</b>——以判断句破除认识误区，写“流量变留量／消费链条”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·影响力变带动力</span>\n      <p><b>“促进客流、信息流、消费流有效融通，才能把赛事影响力转化为产业带动力。”</b>——三流融通收束，写“赛事经济／融合发展的深层逻辑”是高维句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·慢功夫巧功夫</span>\n      <p><b>“发展体育产业，需要慢功夫、巧功夫。”</b>——凝练定性，写“产业培育规律／久久为功”是点睛句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·千篇一律之戒</span>\n      <p><b>“各地资源禀赋不同，产业路径不能千篇一律。”</b>——直指同质化之弊，写“因地制宜／差异化竞争”是判断句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·人民立场收束</span>\n      <p><b>“推动体育产业高质量发展，归根到底要服务人民、促进人的全面发展。”</b>——落到价值原点，写“以人民为中心”类文章是万能升华句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·辩证组合拳</span>\n      <p><b>“赛事、商圈、景区各有运行规律，简单叠加未必能产生乘数效应。”</b>——以“乘数效应”作喻，写“系统协同而非机械拼接”是思辨句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“三方面着力”框架：扩大参与（需求侧入口）→消费延链（过程增值）→供给提质（长期支撑），由表及里、层层递进；适用于“消费升级／产业高质量发展／公共服务优化”类作文，分论点易写满、易出彩。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“让……如何……”句式设计分论点：①让“想运动”落于行动（便捷空间）；②让“到场”走向“消费”（场景联通）；③让“一时热度”成为“长期增量”（品质运营）。每个分论点都是“问题判断＋对策指向”，观点先行、对策可落地。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“激活体育消费”拆成可操作举措：盘活存量（边角地改造、学校场馆错峰开放、购置公众责任险）；延链融合（按观众完整行程组合票务住宿餐饮、建立收益分配机制）；提质增效（场馆四季运营、差异化定位、深耕特色项目）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·案例对举</span>\n      <p>学本文“两地一例”的案例节奏：每个分论点配两个具体城市案例＋一句辩证小结，既见面又见理；申论写作中“案例1＋案例2＋提炼规律”的三步法，比堆砌案例更有论证力。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·辩证段落</span>\n      <p>学本文“有得用→用得好”“到场→消费”“短期借势→长期合作”“千篇一律→因地制宜”的辩证：先立“要从量到质跃升”的立场，再以对照揭示转化路径，把产业话题写成有张力、有边界的论证。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「呵护运动热，激活消费力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是让“想运动”落于行动。盘活存量设施、实施精细管理，推动体育供给从“有得用”迈向“用得好”，以便捷运动空间培育运动习惯、催生消费需求。<br>二是让“到场”走向“消费”。以跨界融合联通生活场景，整合时间、空间和业态资源，把赛事影响力转化为产业带动力。<br>三是让“一时热度”成为“长期增量”。提升产品品质和运营能力，走差异化发展道路、因地制宜塑造特色，增强产业发展韧性。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「体育日益融入休闲娱乐、社会交往，消费空间随之拓展；顺应潮流趋势，从扩大参与、消费延链、供给提质等方面着力，才能打开体育产业增长新空间，让运动热激活消费力，为体育强国、健康中国建设注入充沛动能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是让“想运动”落于行动——盘活存量设施、实施精细管理，推动体育供给从“有得用”迈向“用得好”，以便捷运动空间培育运动习惯、催生消费需求。<br>二是让“到场”走向“消费”——以跨界融合联通生活场景，整合时间、空间和业态资源，把赛事影响力转化为产业带动力。<br>三是让“一时热度”成为“长期增量”——提升产品品质和运营能力，走差异化发展道路、因地制宜塑造特色，增强产业发展韧性。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“呵护运动热，激活消费力。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「呵护运动热，激活消费力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是扩大参与，盘活边角地与存量设施、精细管理错峰开放，推动供给从“有得用”迈向“用得好”。<br>二是消费延链，以跨界融合联通生活场景、按观众完整行程整合时空业态资源。<br>三是供给提质，提升产品品质与运营能力，走差异化道路、因地制宜塑造特色。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“呵护运动热，激活消费力。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于呵护运动热，激活消费力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于呵护运动热，激活消费力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进呵护运动热，激活消费力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、让“想运动”落于行动——盘活存量设施、实施精细管理，推动体育供给从“有得用”迈向“用得好”，以便捷运动空间培育运动习惯、催生消费需求。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、让“到场”走向“消费”——以跨界融合联通生活场景，整合时间、空间和业态资源，把赛事影响力转化为产业带动力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、让“一时热度”成为“长期增量”——提升产品品质和运营能力，走差异化发展道路、因地制宜塑造特色，增强产业发展韧性。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“呵护运动热，激活消费力。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「呵护运动热，激活消费力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：呵护运动热，激活消费力<br><br>时代之问，呼唤破题之策。呵护运动热，激活消费力，是发展所需，也是民心所向。可从三个维度展开：让“想运动”落于行动、让“到场”走向“消费”、让“一时热度”成为“长期增量”。<br><br>分论点一：让“想运动”落于行动——盘活存量设施、实施精细管理，推动体育供给从“有得用”迈向“用得好”，以便捷运动空间培育运动习惯、催生消费需求。方向对了，路再远也能抵达。“呵护运动热，激活消费力。”<br><br>分论点二：让“到场”走向“消费”——以跨界融合联通生活场景，整合时间、空间和业态资源，把赛事影响力转化为产业带动力。方法对了，事再难也能办成。“从扩大参与、消费延链、供给提质等方面着力，才能打开体育产业增长新空间。”<br><br>分论点三：让“一时热度”成为“长期增量”——提升产品品质和运营能力，走差异化发展道路、因地制宜塑造特色，增强产业发展韧性。行百里者半九十。“持续推动体育供给从‘有得用’迈向‘用得好’。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。呵护运动热，激活消费力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-22</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

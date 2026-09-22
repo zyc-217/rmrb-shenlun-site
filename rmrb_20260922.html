@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 一条高铁话长征</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>一条高铁话长征</h1>
+    <div class="meta">人民日报·评论员观察 | 长征精神·红色资源·中国道路·老区振兴·民族复兴 | 2026年9月22日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：从“绝境求生路”到“发展振兴路”／路上之变根子是中国道路／走好新的长征路</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">长征胜利90周年</span>\n      <span class="tag-item">长征精神</span>\n      <span class="tag-item">红色资源</span>\n      <span class="tag-item">红色基因传承</span>\n      <span class="tag-item">中国道路</span>\n      <span class="tag-item">道路自信</span>\n      <span class="tag-item">老区振兴</span>\n      <span class="tag-item">区域协调发展</span>\n      <span class="tag-item">交通强国</span>\n      <span class="tag-item">精神力量</span>\n      <span class="tag-item">接续奋斗</span>\n      <span class="tag-item">民族复兴</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>中国道路／道路自信／红色传承／老区振兴／精神力量</b>”等主题；本文<b>“今昔对比起笔—蝶变实证—归因道路—精神升华”</b>的论证链，是写“从哪里来·向何处去／巨变之因／接续奋斗”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“从‘绝境求生路’向‘发展振兴路’的历史转身”，表层是交通之变、老区之变，深层是中国道路的生机勃发——符合国情、顺应潮流、人民拥护的正确道路筑牢根本支撑；而走好新的长征路，仍须汲取长征精神、接续攻坚</b>，由表及里、由物及神。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>不同时空的两段路途天壤之别</b>”“<b>从‘无路可走’到‘路路畅通’</b>”“<b>今天要跨越的‘雪山’‘草地’早已换了形态</b>”“<b>历史初心与现实答卷的深情呼应</b>”等多组辩证，是写<b>变与不变／传承与发展／物质与精神</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于用好红色资源、推动革命老区振兴发展的意见”“关于传承弘扬长征精神走好新时代长征路的实施方案”等素材；文中“<b>红色资源浸润人心，红色基因代代相传</b>”“<b>以路网通山河、以产业兴热土、以实干创伟业</b>”等表述极适合写进公文与申论。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架（今昔对比—老区蝶变—归因道路—精神升华）</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>今昔对比破题</b>：瑞金—延安，昔日草鞋远征二万五千里、今朝高铁11小时32分通达，一张车票连接历史时空，点出“绝境求生路”向“发展振兴路”的历史转身（第一至四段，第四段前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>老区蝶变——朴素愿景开花结果，红色热土走向振兴</b>：瑞金精工智造、延安小苹果大产业，井冈山、西柏坡、大别山接续例证（第五至七段，第六段前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>蝶变之因在“路”——物理之变根子是中国道路的生机勃发</b>：从1933年修路计划到综合运输大通道密织山海，归因于符合国情、顺应潮流、人民拥护的正确道路（第八至九段，第八段前接分论点色块，第九段前接总论点深化句）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>走好新的长征路——汲取精神力量，接续攻坚</b>：今天跨越的“雪山”“草地”换成实验室失败、“卡脖子”难题与风险挑战；长征国家文化公园、大思政课让红色基因代代相传（第十至十一段，第十段前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>收束点题</b>：从“路在何方”到“路在脚下”，以“路网通山河、产业兴热土、实干创伟业”告慰先辈、传承精神（第十二至十三段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“一物贯穿（路）—今昔对照—由物及道、由道及神”的递进结构</b>：以“一条高铁”串起长征记忆与振兴图景，<b>“草鞋与车票”“雪山草地的形态之变”“路在何方→路在脚下”</b>等对照是申论“小切口讲大主题”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">我们扎根中国大地、立足国情实际，找到了一条符合中国国情、顺应时代潮流、得到人民群众拥护支持的正确道路，为老区振兴、民族复兴筑牢了根本支撑</span></p>
+
+      <p>从江西瑞金到陕西延安，<span class="highlight-purple">不同时空的两段路途天壤之别</span>。</p>
+
+      <p>昔日，中国工农红军肩扛使命、脚着草鞋，跋涉<span class="highlight-green">二万五千里</span>，以徒步远征闯出生路；今朝，高铁直通两地，<span class="highlight-green">1857公里、11小时32分</span>，平稳高效通达。</p>
+
+      <div class="thesis">【总论点】一张车票连接历史时空，从<span class="highlight-purple">“绝境求生路”向“发展振兴路”</span>的历史转身见证沧桑巨变；物理层面上路的巨变，根子是<span class="highlight-blue">中国道路的生机勃发</span>——我们扎根中国大地、立足国情实际，找到了一条<span class="highlight-blue">符合中国国情、顺应时代潮流、得到人民群众拥护支持的正确道路</span>，为<span class="highlight-blue">老区振兴、民族复兴</span>筑牢了根本支撑。</div>
+
+      <p>今年是<span class="highlight-blue">红军长征胜利90周年</span>。一张车票连接的，是两座城市，更是历史的时空。从<span class="highlight-purple">“绝境求生路”向“发展振兴路”</span>的历史转身，见证沧桑巨变。列车上，有红军后代带着草鞋和烈士证明书，替在长征途中牺牲的烈士去延安看一看；有感念长征精神的游客，特意踏上跨越千里的红色之旅……沿线群众的夙愿一朝得偿，出行更加便捷，先烈步步求索、心心念念的国泰民安，在新时代的实干奋斗中，变成烟火升腾的日常。</p>
+
+      <p>长征岁月里，瑞金与延安，都是点亮中国革命的<span class="highlight-gold">星火坐标</span>。曾经，红军爬雪山过草地、突破层层封锁，不惜以血肉之躯铺路，只为挽救山河破碎的中国，让人民群众过上独立自主的幸福生活。</p>
+
+      <div class="sub-thesis">【分论点一】老区蝶变，见证转身——当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。</div>
+
+      <p>如今，当年的朴素愿景，已在瑞金、延安的土地上开花结果。贫瘠闭塞的旧貌彻底褪去，瑞金的<span class="highlight-blue">精工智造、文创玩具、纺织服装</span>等特色产业稳步发展，民生福祉同步提质。小苹果长成大产业，生态环境变好了，果农变富了，延安变身<span class="highlight-blue">绿水青山、产业兴旺、百姓安居</span>的幸福家园。瑞金、延安的发展，是<span class="highlight-blue">红色热土走向振兴</span>的生动缩影。</p>
+
+      <p>这份蝶变，不止于一城一地。井冈山告别贫困，依托<span class="highlight-blue">红色文旅、绿色生态</span>实现发展振兴；西柏坡促进<span class="highlight-blue">红农文旅融合</span>发展，老区人民生活品质不断提高；大别山区三省七县（市、区）成立大别山红色旅游城市发展联盟，共绘发展新蓝图……那些曾为革命负重前行的土地，正向新而行。</p>
+
+      <div class="sub-thesis">【分论点二】蝶变之因在“路”——从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。</div>
+
+      <p>蝶变因何而来？路，或许正是答案。瑞金留存的一份<span class="highlight-green">1933年的修路计划</span>，寄托着革命先辈对<span class="highlight-gold">“路通人安”</span>的美好畅想。如今，包括瑞金、遵义、延安等红色地标在内，全国<span class="highlight-blue">综合运输大通道</span>密织城乡、通达山海，<span class="highlight-gold">人享其行、物畅其流</span>的美好愿景加快实现。</p>
+
+      <p><span class="highlight-purple">从“无路可走”到“路路畅通”</span>，物理层面上路的巨变，根子是<span class="highlight-blue">中国道路的生机勃发</span>——我们扎根中国大地、立足国情实际，找到了一条符合中国国情、顺应时代潮流、得到人民群众拥护支持的<span class="highlight-blue">正确道路</span>，为老区振兴、民族复兴筑牢了根本支撑。</p>
+
+      <div class="sub-thesis">【分论点三】路已通，征程未已——走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。</div>
+
+      <p>路已通，征程未已，今天我们要走的是<span class="highlight-blue">新的长征路</span>。习近平总书记深刻指出：“<span class="highlight-gold">每一代人有每一代人的长征路，每一代人都要走好自己的长征路。</span>”今时今日，需要跨越的“雪山”“草地”<span class="highlight-purple">早已换了形态</span>：是实验室里千百次的失败，是产业链上必须攻克的<span class="highlight-blue">“卡脖子”难题</span>，是<span class="highlight-blue">高质量发展</span>路上的各类风险挑战。</p>
+
+      <p>越是闯关夺隘，越需要汲取精神力量，<span class="highlight-blue">长征精神</span>是宝贵的精神财富。<span class="highlight-blue">长征国家文化公园</span>在长征沿线<span class="highlight-green">15个省份</span>铺开，“<span class="highlight-blue">行走的大思政课</span>”把课堂搬进旧址、把故事讲进人心，那些历史不再是静止的陈列，而是可感可知的精神坐标。<span class="highlight-blue">红色资源浸润人心，红色基因代代相传</span>，这是<span class="highlight-purple">历史初心与现实答卷的深情呼应</span>，为走好新的长征路注入不竭精神力量。</p>
+
+      <p>“<span class="highlight-gold">苦不苦，想想长征两万五</span>”。从<span class="highlight-purple">“路在何方”的叩问到“路在脚下”的笃定</span>，从“闯出一条生路”的绝境到“铺就万条坦途”的新篇，要达到理想的彼岸，从来没有平坦的大道可走，必须<span class="highlight-gold">风雨无阻向前进</span>。</p>
+
+      <p>新征程是新的长征，<span class="highlight-gold">以路网通山河、以产业兴热土、以实干创伟业</span>，在<span class="highlight-blue">民族复兴</span>的新征程上接续攻坚，这是我们给革命先辈最深情的告慰，也是对<span class="highlight-blue">长征精神</span>最好的传承。</p>
+
+      <p class="byline">（人民日报2026年9月22日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·标题总论</span>\n      <p><b>“一条高铁话长征。”</b>——以“一物贯穿”立题，七个字把交通成就与精神传承绾在一起，写“小切口讲大主题”是最佳标题范式。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·正确道路论</span>\n      <p><b>“我们扎根中国大地、立足国情实际，找到了一条符合中国国情、顺应时代潮流、得到人民群众拥护支持的正确道路，为老区振兴、民族复兴筑牢了根本支撑。”</b>——道路自信的完整表述，写“中国道路／制度优势”是权威定论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·每一代人的长征路</span>\n      <p><b>“每一代人有每一代人的长征路，每一代人都要走好自己的长征路。”</b>——总书记原话，写“接续奋斗／青年担当”是最高维度的立论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·草鞋与车票</span>\n      <p><b>“昔日，中国工农红军肩扛使命、脚着草鞋，跋涉二万五千里，以徒步远征闯出生路；今朝，高铁直通两地，1857公里、11小时32分，平稳高效通达。”</b>——今昔对照的典范句式，写“沧桑巨变／时代之变”是画面感极强的开篇。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·路通人安</span>\n      <p><b>“路通人安”“人享其行、物畅其流”。</b>——交通强国愿景的凝练表达，写“民生实事／基础设施”是点睛句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·雪山草地换形态</span>\n      <p><b>“今时今日，需要跨越的‘雪山’‘草地’早已换了形态：是实验室里千百次的失败，是产业链上必须攻克的‘卡脖子’难题，是高质量发展路上的各类风险挑战。”</b>——以旧喻新，写“风险挑战／攻坚克难”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·路在脚下</span>\n      <p><b>“从‘路在何方’的叩问到‘路在脚下’的笃定。”</b>——化用歌词收束，写“实干笃行／坚定信心”是哲理句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·三个以</span>\n      <p><b>“以路网通山河、以产业兴热土、以实干创伟业。”</b>——排比递进收束，写“振兴路径／奋斗姿态”是气势句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·苦不苦</span>\n      <p><b>“苦不苦，想想长征两万五。”</b>——民谚入文，写“艰苦奋斗／攻坚克难”是接地气的过渡句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·深情呼应</span>\n      <p><b>“这是历史初心与现实答卷的深情呼应，为走好新的长征路注入不竭精神力量。”</b>——历史与现实绾合，写“传承与弘扬”是升华句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“一物贯穿”框架：全文只写“路”一个意象，却串起历史（长征）、现实（高铁）、道理（中国道路）、精神（新的长征路）四层；适用于“成就类／传承类”作文，一线串珠、形散神聚。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·今昔对照</span>\n      <p>套用本文“昔日……今朝……”句式起笔：草鞋与车票、二万五千里与11小时32分；申论开头用一组硬对照（数字+意象），比空喊“发生了翻天覆地的变化”有力十倍。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·归因升华</span>\n      <p>学本文“由物及道”的归因链：先摆蝶变事实（产业、生态、民生），再一句收拢——“物理之变，根子是道路之变”；写“成就归因／制度优势”类综合分析题，即可按“现象—表层原因—深层原因”三步展开。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·精神落点</span>\n      <p>学本文“由道及神”的升华：道路之变之后不停步，继续推进到“精神何以传承”（国家文化公园、大思政课、红色基因）；作文结尾由“物质成就”升到“精神力量”，立意立刻高一个层次。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·辩证段落</span>\n      <p>学本文“雪山草地换了形态”的辩证：承认挑战仍在、但形态已变，既承接历史又直面现实；写“危与机／变与不变”类作文，可用“旧喻新指”法——把老概念映射到新场景，思辨性与画面感兼得。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「一条高铁话长征」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是老区蝶变，见证转身。当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。<br>二是蝶变之因在“路”。从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。<br>三是路已通，征程未已。走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「一张车票连接历史时空，从“绝境求生路”向“发展振兴路”的历史转身见证沧桑巨变；物理层面上路的巨变，根子是中国道路的生机勃发——我们扎根中国大地、立足国情实际，找到了一条符合中国国情、顺应时代潮流、得到人民群众拥护支持的正确道路，为老区振兴、民族复兴筑牢了根本支撑。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是老区蝶变，见证转身——当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。<br>二是蝶变之因在“路”——从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。<br>三是路已通，征程未已——走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“一条高铁话长征。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「一条高铁话长征」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是围绕老区蝶变，见证转身抓落实。当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。<br>二是围绕蝶变之因在“路”抓落实。从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。<br>三是围绕路已通，征程未已抓落实。走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“一条高铁话长征。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于一条高铁话长征的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于一条高铁话长征的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进一条高铁话长征，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、老区蝶变，见证转身——当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、蝶变之因在“路”——从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、路已通，征程未已——走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“一条高铁话长征。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「一条高铁话长征」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：一条高铁话长征<br><br>时代之问，呼唤破题之策。一条高铁话长征，是发展所需，也是民心所向。可从三个维度展开：老区蝶变，见证转身、蝶变之因在“路”、路已通，征程未已。<br><br>分论点一：老区蝶变，见证转身——当年的朴素愿景开花结果，红色热土从贫瘠闭塞走向产业兴旺、百姓安居，走向振兴。方向对了，路再远也能抵达。“一条高铁话长征。”<br><br>分论点二：蝶变之因在“路”——从“无路可走”到“路路畅通”，路上之变根子是中国道路的生机勃发，筑牢老区振兴、民族复兴的根本支撑。方法对了，事再难也能办成。“我们扎根中国大地、立足国情实际，找到了一条符合中国国情、顺应时代潮流、得到人民群众拥护支持的正确道路，为老区振兴、民族复兴筑牢了根本支撑。”<br><br>分论点三：路已通，征程未已——走好新的长征路，须汲取长征精神力量，跨越新时代的“雪山”“草地”，接续攻坚。行百里者半九十。“每一代人有每一代人的长征路，每一代人都要走好自己的长征路。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。一条高铁话长征是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-22</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
