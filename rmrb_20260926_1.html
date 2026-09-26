@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 跟着场景走  服务更适配</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>跟着场景走  服务更适配</h1>
+    <div class="meta">人民日报·人民时评 | 公共服务·以人民为中心·精细治理·场景化服务·民生福祉 | 2026年9月17日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：把服务嵌入具体场景／供需精准对接／服务跟着人走／与美好生活向往同频共振</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">公共服务</span>\n      <span class="tag-item">以人民为中心</span>\n      <span class="tag-item">精细治理</span>\n      <span class="tag-item">精准施策</span>\n      <span class="tag-item">供需对接</span>\n      <span class="tag-item">场景化服务</span>\n      <span class="tag-item">民生福祉</span>\n      <span class="tag-item">急难愁盼</span>\n      <span class="tag-item">治理精度</span>\n      <span class="tag-item">适老化</span>\n      <span class="tag-item">动态调整</span>\n      <span class="tag-item">制度善意</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>以人民为中心／公共服务优化／精细治理／民生答卷</b>”等主题；本文<b>“现象切入—案例递进—方法论提炼—价值升华”</b>的论证链，是写“小切口写大民生／治理精度”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“跟着场景走、服务更适配”</b>——表层是服务形式与设施的创新，深层是<b>治理精度体现在具体场景、供需精准对接、制度善意落地</b>；公共服务没有统一模板，唯有读懂群众心声才能同频共振。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>纸面流程与办事场景</b>”“<b>设施建了与用起来方不方便</b>”“<b>服务触达人与适配具体处境</b>”等多组辩证，是写<b>形式与实效／供给与需求／共性与个性</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">可迁移为“关于提升公共服务精准化水平的指导意见”“关于优化政务服务的实施方案”等素材；文中“<b>把公共服务嵌入具体场景</b>”“<b>以制度善意回应群众期盼</b>”等表述极适合写进公文与申论。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架（现象切入—案例递进—方法论提炼—价值升华）</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以日常体验破题</b>：用“公共服务是否优质，最直观的尺度就是普通人的日常体验”立论，以南京“空调马甲”“清凉大巴”的鲜活案例开篇（第一至三段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：公共服务没有统一模板，但优质服务的尺度清晰——嵌入具体场景、随场景而变、应需求而动，以制度善意回应期盼（第四段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>场景检验——服务好不好，场景里见分晓</b>：把纸面流程放到具体办事场景中检验，才能看清短板、校准供给（第五段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>供需对接——场景刻画群众真实状态</b>：让政策的温暖、制度的善意从具体生活场景中自然生长（第六至七段，前接分论点色块，含重庆铜梁敬老院案例）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>应需而变——服务跟着人走、向前一步</b>：随场景动态调整、想深一层，把好事办到群众心坎上（第八至九段，前接分论点色块，含天津、山东案例）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>价值收束</b>：民生关怀永无止境，用心用情倾听呼声、从日常烟火找准坐标，公共服务始终与人民对美好生活的向往同频共振（第十段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“由小见大＋案例链式推进＋辩证收束”的结构</b>：从一件马甲、一本台账、一个网点写起，<b>“场景”“同频共振”“向前一步”</b>等词贯穿，是申论“小切口写大民生”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>能否提供优质的公共服务，是衡量宜居程度和文明程度的一个重要指标。公共服务是否优质，最直观的尺度就是普通人的日常体验。</p>
+
+      <p>回首今年夏天，多地持续高温，给户外工作者带来挑战。江苏南京为环卫工人配发装有小型风扇的“空调马甲”，并把流动的“清凉大巴”开到作业点附近，受到好评。</p>
+
+      <p>对户外劳动者的关怀，此前已有不少方式，如发放高温补贴，送绿豆汤、防暑药品等。“空调马甲”“清凉大巴”的创新之处在于，它不只提供一些防暑降温的服务与关怀，更把保障的落点，<span class="highlight-blue">精准投向了挥汗坚守的街角</span>，让劳动者弯腰时能吹着清凉的风、口渴时有触手可及的水、疲惫时有随时可歇的座。</p>
+
+      <div class="thesis">【总论点】能否提供优质的公共服务，是衡量宜居程度和文明程度的重要指标；<span class="highlight-blue">公共服务没有统一模板，但优质服务的尺度清晰</span>——把服务嵌入<span class="highlight-blue">具体场景</span>、随场景而变、应需求而动，<span class="highlight-blue">以制度善意回应群众期盼</span>，才能让公共服务始终与<span class="highlight-gold">人民对美好生活的向往同频共振</span>。</div>
+
+      <div class="sub-thesis">【分论点一】服务好不好，场景里见分晓——把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。</div>
+
+      <p>很多时候，服务好不好，放到具体场景里一检验，就会一清二楚。一些服务，<span class="highlight-purple">从纸面规定看符合流程、没什么问题；从办事场景看，往往就能发现短板、不贴合之处</span>。</p>
+
+      <p>换言之，<span class="highlight-blue">治理的精度往往体现在具体的场景里</span>。设施建了，机制立了，服务有了，<span class="highlight-purple">还要看运转起来顺不顺畅、用起来方不方便</span>。</p>
+
+      <div class="sub-thesis">【分论点二】场景的价值在于供需对接具体化——精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。</div>
+
+      <p><span class="highlight-blue">场景的价值在于把供需对接具体化</span>。每一个场景，都刻画了某一时刻、某种环境下的群众真实办事状态。把公共服务嵌入具体场景中的过程，其实也是<span class="highlight-blue">动态精准对接差异化需求</span>的过程。</p>
+
+      <p>重庆铜梁区庆隆镇敬老院，食堂台账整齐有序，后厨明亮整洁，意见箱旁的公示栏上清晰地记录着每日菜谱和账目明细。每个环节都“晒”在阳光下，<span class="highlight-green">连留样都要精确到125克、冷藏48小时</span>，收到意见就马上改。吃得安全、吃得健康的需求，落实到了每一位老人的一餐一饭里。<span class="highlight-gold">政策的温暖、制度的善意，正是从这样具体的生活场景中生长出来</span>。</p>
+
+      <div class="sub-thesis">【分论点三】服务跟着人走、应需而变——随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。</div>
+
+      <p>同一件事，随着年龄的变化、身份的切换、技术的迭代、社会的变迁，人们的需求都会有所不同。<span class="highlight-purple">随场景而变、应需求而动、求最优之解</span>，这正是推动公共服务随人走的内在要求。服务找人，不只是让公共资源和服务触达具体的人，还要让供给<span class="highlight-blue">更加适配群众的具体处境、现实痛点和潜在需求</span>。</p>
+
+      <p>近年来，从车道到集市再到政务服务窗口，越来越多“潮汐式”的公共设施和服务应运而生。基于场景变化，作出动态调整，才能回应好群众的急难愁盼，把好事实事办到群众心坎上。</p>
+
+      <p>在具体场景中，不仅能看到群众当下的需求和情绪，还能触摸到悄然发生的新变化。及时感知新情况，校准服务方式，就能找到治理升级的突破口。</p>
+
+      <p>天津顺应年轻人“工作日忙、喜欢顺便”的生活节奏，把婚姻登记搬进银行网点；山东等地主动为临近退休年龄的参保人员提供预先指导、提前受理等服务，提前一步为老年人解决退休手续繁杂、办事窗口拥堵的烦恼。<span class="highlight-gold">紧扣现实场景、读懂群众心声，向前一步、想深一层</span>，才能更好满足群众的潜在需求、维护群众的长远利益。</p>
+
+      <p><span class="highlight-gold">公共服务没有统一模板，民生关怀永无止境。</span>在资源更加充足、技术不断进步的新征程上，用心用情倾听群众的呼声，读懂时代的脚步声，从日常烟火中找准坐标，<span class="highlight-blue">以制度善意回应期盼</span>，公共服务不仅可以跟着人口变化和需求走，而且将始终与<span class="highlight-gold">人民对美好生活的向往同频共振</span>。</p>
+
+      <p class="byline">（人民日报2026年9月17日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·标题总论</span>\n      <p><b>“跟着场景走  服务更适配。”</b>——标题即总论点，八个字点透“需求导向／精准供给”的关系，写“公共服务优化／以人民为中心”是极简而有力的框架句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·日常体验尺度</span>\n      <p><b>“公共服务是否优质，最直观的尺度就是普通人的日常体验。”</b>——以“日常体验”破题，写“民生评判标准／群众视角”是最佳立论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·场景检验</span>\n      <p><b>“很多时候，服务好不好，放到具体场景里一检验，就会一清二楚。”</b>——以判断句点出方法论，写“调研／实效导向”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·治理精度</span>\n      <p><b>“治理的精度往往体现在具体的场景里。”</b>——凝练定性，写“精细治理／绣花功夫”是点睛句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·供需对接</span>\n      <p><b>“把公共服务嵌入具体场景中的过程，其实也是动态精准对接差异化需求的过程。”</b>——揭示场景之治的深层逻辑，写“供需匹配／精准施策”是高维句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·制度善意</span>\n      <p><b>“政策的温暖、制度的善意，正是从这样具体的生活场景中生长出来。”</b>——由个案升到制度，写“制度温度／民生情怀”是升华句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·服务找人</span>\n      <p><b>“服务找人，不只是让公共资源和服务触达具体的人，还要让供给更加适配群众的具体处境、现实痛点和潜在需求。”</b>——递进定义“服务找人”，写“主动作为／精准服务”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·向前一步</span>\n      <p><b>“紧扣现实场景、读懂群众心声，向前一步、想深一层，才能更好满足群众的潜在需求、维护群众的长远利益。”</b>——以行动要求收束方法论，写“主动治理／靠前服务”是行动句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·同频共振</span>\n      <p><b>“公共服务……将始终与人民对美好生活的向往同频共振。”</b>——落到价值原点，写“以人民为中心”类文章是万能升华句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“小切口写大民生”框架：从一件马甲、一本台账、一个银行网点写起，再提炼“场景—供需—应变”的治理逻辑；适用于“民生服务／基层治理”类作文，由近及远、由小见大。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“场景”主线：分论点一写“场景检验”（发现问题）、分论点二写“场景对接”（精准供给）、分论点三写“场景应变”（动态调整），一个意象贯串到底，结构清晰不散。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“提升公共服务精准化”拆成可操作举措：嵌入场景检验（把纸面流程放到办事场景看短板）；刻画真实需求（精准对接差异化需求）；动态调整供给（潮汐式设施、向前一步想深一层）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·案例对举</span>\n      <p>学本文“多场景印证”的节奏：南京清凉、重庆敬老院、天津婚姻登记、山东退休指导，四个场景各证一层，既见共性又显层次；申论写作“案例＋点题”比堆砌更有力。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·辩证段落</span>\n      <p>学本文“纸面与场景”“建了与用好”“触达人与适配处境”的辩证：先立“要重实效、看使用”的立场，再以对照揭示治理精度，把民生话题写成有张力、有边界的论证。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「跟着场景走  服务更适配」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是服务好不好，场景里见分晓。把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。<br>二是场景的价值在于供需对接具体化。精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。<br>三是服务跟着人走、应需而变。随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「能否提供优质的公共服务，是衡量宜居程度和文明程度的重要指标；公共服务没有统一模板，但优质服务的尺度清晰——把服务嵌入具体场景、随场景而变、应需求而动，以制度善意回应群众期盼，才能让公共服务始终与人民对美好生活的向往同频共振。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是服务好不好，场景里见分晓——把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。<br>二是场景的价值在于供需对接具体化——精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。<br>三是服务跟着人走、应需而变——随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“跟着场景走 服务更适配。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「跟着场景走  服务更适配」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是围绕服务好不好，场景里见分晓抓落实。把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。<br>二是围绕场景的价值在于供需对接具体化抓落实。精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。<br>三是围绕服务跟着人走、应需而变抓落实。随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“跟着场景走 服务更适配。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于跟着场景走  服务更适配的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于跟着场景走  服务更适配的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进跟着场景走  服务更适配，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、服务好不好，场景里见分晓——把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、场景的价值在于供需对接具体化——精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、服务跟着人走、应需而变——随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“跟着场景走 服务更适配。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「跟着场景走  服务更适配」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：跟着场景走  服务更适配<br><br>时代之问，呼唤破题之策。跟着场景走  服务更适配，是发展所需，也是民心所向。可从三个维度展开：服务好不好，场景里见分晓、场景的价值在于供需对接具体化、服务跟着人走、应需而变。<br><br>分论点一：服务好不好，场景里见分晓——把纸面流程放到具体办事场景中检验，才能看清短板、校准供给，让服务真正贴合群众需要。方向对了，路再远也能抵达。“跟着场景走 服务更适配。”<br><br>分论点二：场景的价值在于供需对接具体化——精准刻画群众真实办事状态，让政策的温暖、制度的善意从具体生活场景中自然生长出来。方法对了，事再难也能办成。“公共服务是否优质，最直观的尺度就是普通人的日常体验。”<br><br>分论点三：服务跟着人走、应需而变——随场景动态调整、向前一步想深一层，把好事办到群众心坎上，维护群众长远利益。行百里者半九十。“很多时候，服务好不好，放到具体场景里一检验，就会一清二楚。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。跟着场景走  服务更适配是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-09-26</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
