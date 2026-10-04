@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#c41e3a">
+<meta name="robots" content="noindex">
+<title>2026年10月 · 人民日报评论精读</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f3f4f6; color:#222; line-height:1.6; padding-bottom:env(safe-area-inset-bottom); }
+  .header { background:linear-gradient(135deg,#c41e3a,#8b0000); color:#fff; padding:28px 22px 22px; }
+  .header h1 { font-size:21px; font-weight:700; }
+  .header p { font-size:13px; opacity:.9; margin-top:6px; }
+  .back { display:inline-flex; align-items:center; gap:6px; color:#fff; opacity:.85; font-size:13px;
+          text-decoration:none; margin-bottom:10px; }
+  .back::before { content:"‹"; font-size:18px; }
+  .wrap { max-width:640px; margin:0 auto; padding:16px 14px 40px; }
+  .tip { background:#fff8e1; border:1px solid #ffcc80; border-radius:12px; padding:12px 14px;
+         font-size:12.5px; color:#7a5b00; margin:4px 0 12px; line-height:1.7; }
+  .tip b { color:#c0392b; }
+  .searchbar { position:sticky; top:0; z-index:20; background:#f3f4f6; padding:10px 14px 4px;
+               border-bottom:1px solid #eee; }
+  .searchbar input { width:100%; padding:11px 14px; border:1.5px solid #ffcdd2; border-radius:12px;
+                     font-size:14px; background:#fff; outline:none; }
+  .searchbar input:focus { border-color:#c41e3a; }
+  .flabel { font-size:12.5px; color:#666; font-weight:700; padding:12px 16px 4px; }
+  .filters { display:flex; gap:8px; overflow-x:auto; padding:4px 14px 2px; scrollbar-width:none; }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid #ffd0d0;
+          color:#c0392b; font-size:13px; cursor:pointer; white-space:nowrap; transition:all .1s; }
+  .chip.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+  .chip.all { background:#fff5f5; }
+  .chip.type { background:#eafaf1; border-color:#a8e6c1; color:#1a7a45; }
+  .chip.type.active { background:#1a7a45; color:#fff; border-color:#1a7a45; }
+  .count { padding:6px 16px 8px; font-size:12px; color:#999; }
+  .count b { color:#8b0000; }
+  .card { position:relative; display:flex; align-items:center; gap:14px; background:#fff; border-radius:14px;
+          padding:14px 16px; margin-bottom:12px; text-decoration:none; color:inherit;
+          box-shadow:0 1px 6px rgba(0,0,0,.06); transition:transform .08s; }
+  .card:active { transform:scale(.98); }
+  .date { flex:0 0 56px; text-align:center; background:#fff5f5; border:1px solid #ffcdd2;
+          border-radius:10px; padding:8px 4px; }
+  .date .d { display:block; font-size:22px; font-weight:800; color:#8b0000; line-height:1; }
+  .date .md { display:block; font-size:11px; color:#c0392b; margin-top:3px; }
+  .body { flex:1; min-width:0; padding-right:6px; }
+  .title { font-size:15.5px; font-weight:600; color:#1a1a1a; line-height:1.4;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .sub { font-size:12px; color:#888; margin-top:5px; }
+  .tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:6px; }
+  .ct { font-size:11px; color:#c0392b; background:#fff0f0; border:1px solid #ffd9d9;
+        border-radius:6px; padding:1px 7px; }
+  .arrow { flex:0 0 auto; font-size:24px; color:#ccc; transition:transform .15s, color .15s; }
+  .mark { position:absolute; top:7px; right:12px; display:flex; gap:7px; z-index:6; }
+  .mark span { font-size:15px; cursor:pointer; user-select:none; line-height:1; }
+  .mark .pn { font-size:12px; opacity:.55; }
+  .mark .star.on { color:#f5a623; }
+  .mark .st.todo { color:#c0392b; }
+  .mark .st.done { color:#1a9e4f; }
+  .card { cursor:pointer; }
+  .card-actions { display:none; flex-basis:100%; gap:10px; margin-top:12px; }
+  .card.open { flex-wrap:wrap; box-shadow:0 2px 10px rgba(196,30,58,.18); }
+  .card.open .card-actions { display:flex; }
+  .card.open .arrow { transform:rotate(90deg); color:#c41e3a; }
+  .act { flex:1; text-align:center; padding:11px 0; border-radius:10px; font-size:14.5px; font-weight:600; text-decoration:none; }
+  .act-orig { background:#fff5f5; color:#c0392b; border:1px solid #ffcdd2; }
+  .act-read { background:#c41e3a; color:#fff; }
+  .footer { text-align:center; font-size:12px; color:#aaa; padding:10px 0 4px; }
+  /* 月份卡片 */
+  .month-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding:4px 2px 12px; }
+  .month-card { display:flex; flex-direction:column; justify-content:center; align-items:center;
+                gap:6px; background:#fff; border-radius:16px; padding:22px 10px; text-decoration:none;
+                color:inherit; box-shadow:0 1px 6px rgba(0,0,0,.06); border:1px solid #e5e7eb;
+                transition:transform .08s, border-color .1s; }
+  .month-card:active { transform:scale(.96); }
+  .month-card .month-title { font-size:17px; font-weight:700; color:#1a1a1a; }
+  .month-card .month-count { font-size:13px; color:#666; background:#f3f4f6; border-radius:999px;
+                              padding:3px 12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:10px 16px 14px;
+               font-size:13px; color:#666; }
+  .total-bar b { color:#8b0000; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <a class="back" href="index.html">返回月份目录</a>
+    <h1>📰 2026年10月 · 共 2 篇</h1>
+    <p>每日一篇 · 申论考点拆解 · 金句素材积累</p>
+  </div>
+  <div class="wrap">
+    <div class="tip">📱 <b>备考：</b>每篇右上角 ☆收藏、○→📝待背→✅已背（本地保存不丢）。<b>点击文章卡片</b> → 弹出「📄 原文」「📖 精读」两个按钮，按需跳转。进入精读后，第⑤「题型真题」参考答案默认隐藏，先自己写再看。需跨月搜索请返回首页检索栏。</div>
+      <div class="card" data-key="rmrb_20261004_1.html" data-date="20261004" data-title="从司空见惯处寻求突破" data-tags="产业升级 就业优先 服务为民" data-themes="党的建设 民生保障 经济发展" data-types="大作文论证 对策建议 归纳概括 综合分析" data-search="从司空见惯处寻求突破 人民日报·人民时评 | 治理创新·以人民为中心·打破惯性思维·看见被忽略的需求·治理温度 | 2026年9月28日 | 第05版 “打破‘向来如此’的思维定式，跳出固有工作套路，看见那些被推远的问题，接住那些被忽略的需求，往往能从常见场景中找到创新突破。” ——标题即总论点，点透“破惯性、见需求”的治理逻辑，写“治理创新／主动作为”是极简而有力的框架句。 “优化治理的发力点从哪儿找？有时就在一些司空见惯的现象里。” ——以设问立论，写“治理在细节／民生视角”是最佳开篇句。 “跳出了‘一禁了之’的惯性思维，投入不算高昂，机制也不复杂，既能守住安全底线，也满足了孩子们夏日亲水的心愿。” ——以对比点出方法论，写“堵疏结合／服务导向”是点睛句。 “浙江衢州看到了这个服务盲点……首批62个服务点位，覆盖6个县（市、区），这些新就业形态劳动者可根据工作动线就近用餐，不绕路、不误工。” ——用数据与细节讲透精准，写“公共服务下沉／新就业形态关怀”是说服句。 “对司空见惯的问题保持敏锐，是一种可贵的治理主动性。好的治理，从来不是用条条框框把人管住、把问题盖住，而是想方设法拓宽化解矛盾的路径。” ——揭示治理本质，写“主动治理／拓宽路径”是警醒句。 “这种看上去可以将就的司空见惯，恰恰值得被重新审视——普遍的痛点堵点所在，往往是破题开局之机。” ——以反转点破，写“于痛点找突破口”是洞察句。 “在看似‘理不清’的模糊地带，其实可以梳理出一项项可操作、可追溯、可问责的要求，开辟出解决问题的新空间。” ——落到制度维度，写“清单化管理／厘清模糊地带”是范式句。 “治理的温度，在于拉近政策与人心之间的距离……在现有条件下尽力创造新的可能。” ——以价值定性，写“以人民为中心”是升华句。 “不把司空见惯当成理所当然，不回避那些长期难解的问题……正是社会治理朴素而厚重的价值底色。” ——对仗收束点题，写“为民情怀／治理初心”是收束句。学本文“现象破题—正反案例—哲理升华”框架：先用“一禁了之”的反面现象引出问题，再以鹰潭、衢州、江苏三案例由小见大，最后落到“治理温度／价值底色”的升华。适用于“治理创新／民生导向”类作文。 套用本文“思维破冰—需求看见—制度填空”三分：分论点一写跳出惯性思维（鹰潭），分论点二写看见被忽略的需求（衢州），分论点三写在模糊地带建制度（江苏），由个案到制度、由被动到主动。 把“提升治理精准化”拆成可操作举措：破除惯性思维（不用“一禁了之”代替治理）；下沉服务场景（在群众窗口期、高频区设点）；厘清模糊地带（以清单化、可追溯压实责任，杜绝“新官不理旧账”）。 学本文“一反一正”的节奏：先写“禁止玩水”的惯性做法，再写“露天泳池”的巧解，反差立现；衢州、江苏两案例再各证一层，案例链清晰、说服力强。 学本文“管住与服务”“将就与审视”“模糊与清晰”的辩证：先立“好的治理是创造可行选择”的立场，再以对照揭示路径，把治理话题写成有温度、有边界的论证。适配“ 以人民为中心／基层治理创新／民生答卷／主动作为 ”等主题；本文 “现象破题—正反案例—哲理升华” 的论证链，是写“小切口写大治理”类文章的高分框架。 可直接提炼观点内涵： “从司空见惯处寻求突破” ——表层是几个治理小案例，深层是打破“向来如此”的思维定式、看见被忽略的需求、在模糊地带建制度，方能让治理与人心同频。 “ 管住与服务 ”“ 将就与审视 ”“ 模糊与清晰 ”等多组辩证，是写 堵与疏／被动与主动／形式与实效 类作文的现成素材。 可迁移为“关于提升基层治理精准化水平的指导意见”等素材；文中“ 跳出惯性思维 ”“ 下沉服务场景 ”“ 厘清模糊地带、可追溯可问责 ”等表述极适合写进对策与公文。 以“一禁了之”的惯性现象破题 ：用“暑期玩水只能禁止”引出治理中最常见的思维定式，设问“发力点从哪儿找”（第一至三段）。 点亮总论点 ：打破“向来如此”的思维定式、接住被忽略的需求，在常见场景中找到创新突破，是治理智慧也是价值底色（第四段前接总论点色块，呼应首段）。 跳出“一禁了之”惯性思维——以鹰潭豪岭村“渠旁建露天泳池、抽渠水灌田”巧解玩水难题为例 ：投入不高、机制不复杂，把“管住人”变“服务人”（第五至六段，前接分论点色块）。 看见被忽略的需求——以衢州“一点钟食堂”为例 ：在外卖员能坐下来的窗口期、高频活动区错峰供餐，首批62个点位覆盖6个县市区，把服务盲点变治理亮点（第七至八段，前接分论点色块）。 在模糊地带开辟新空间——以江苏干部离任交接清单为例 ：把“新官不理旧账”等理不清地带梳理成可操作可追溯可问责要求，用制度善意拉近距离（第九至十一段，前接分论点色块）。 价值收束 ：治理的温度在于拉近政策与人心距离，不把司空见惯当理所当然，为每个人的奔跑加油、生活添彩，正是社会治理朴素厚重的价值底色（第十一段）。 全文采用 “一反一正＋案例链＋辩证收束”结构 ：先写“禁止玩水”反面，再写巧解正面，衢州、江苏案例层层递进，“管住与服务”“模糊与清晰”对照贯穿，是申论“小切口写大治理”的范本。 给定资料介绍了「从司空见惯处寻求突破」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字） 给定资料中强调「优化治理的发力点，往往就在司空见惯的现象里；打破“向来如此”的思维定式、跳出固有工作套路，看见被推远的问题、接住被忽略的需求，在常见场景中找到创新突破，正是因时而变、因势而新的治理智慧，也是社会治理朴素而厚重的价值底色。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字） 针对「从司空见惯处寻求突破」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字） 假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从司空见惯处寻求突破的倡议书》（要求：格式规范、内容完整，不超过400字） 请结合给定资料，以「从司空见惯处寻求突破」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）" role="button" tabindex="0">
+        <span class="mark"><span class="star" title="收藏">☆</span><span class="st" title="背诵状态">○</span></span>
+        <div class="date"><span class="d">4</span><span class="md">10月 · 2026</span></div>
+        <div class="body">
+          <div class="title">从司空见惯处寻求突破</div>
+          <div class="sub">人民日报·人民时评 | 治理创新·以人民为中心·打破惯性思维·看见被忽略的需求·治理温度 | 2026年9月28日 | 第05版</div>
+          <div class="tags"><span class="ct">#产业升级</span><span class="ct">#就业优先</span><span class="ct">#服务为民</span></div>
+        </div>
+        <div class="arrow">›</div>
+        <div class="card-actions">
+          <a class="act act-orig" href="yuanwen_rmrb_20261004_1.html">📄 原文</a>
+          <a class="act act-read" href="rmrb_20261004_1.html">📖 精读</a>
+        </div>
+      </div>
+      <div class="card" data-key="rmrb_20261004.html" data-date="20261004" data-title="以数智化开拓无限可能" data-tags="产业升级 创新驱动 高质量发展" data-themes="经济发展" data-types="对策建议 归纳概括 综合分析" data-search="以数智化开拓无限可能 人民日报·评论员观察 | 数智化转型·实体经济·新质生产力·传统产业焕新·高质量发展 | 2026年9月28日 | 第05版 “转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。” ——标题即总论点，二十字点透“守正创新／老树新枝”的关系，写“传统产业焕新／数智化转型”是极简而有力的框架句。 “数智技术不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具。” ——以“不是……而是”定调，写“技术赋能要务实”是最佳立论句，破“为转型而转型”的形式主义。 “究竟怎么用、如何转？关键是要立足实际、注重实效。” ——以设问收束方法论，写“因地制宜／务实导向”是点睛句。 “按照‘小快轻准’思路，企业没搞大拆大建，而是加装智能模块和5G管理平台，将原有设备升级。总投入600多万元，助力运营成本节约30%、年产值突破2亿元。” ——用数据与对比讲透路径，写“小微企业数智化／降本增效”是说服句。 “等不得，也急不得，是谋发展、促改革的方法论，也是转型升级的辩证法。” ——以张弛之辩点破节奏，写“稳中求进／尊重规律”是警醒句。 “是技术赋能，更是思维革新……主动创新、积极求变，传统产业也能开出新花，冷门赛道也能成为热点。” ——递进升华，写“守正创新／开辟新赛道”是范式句。 “中国经济正是在新与旧、快与慢、大与小、增量与存量的良性互动中，实现厚积薄发、行稳致远。” ——四组辩证收束，写“系统观念／统筹兼顾”是高维句。 “既在高科技、前沿产业领域不断取得新突破，又以新技术、新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑、协同并进。” ——以“顶天立地”喻发展，写“增量与存量平衡”是结构句。 “中国这么大，我们必须搞实体经济，一个方面一个领域都不能少。” ——总书记原话，写“实体经济为本／统筹兼顾”是权威定论句。 “当以人工智能为代表的新一轮科技革命和产业变革与全球最大最完备产业体系深度交融，一个开拓进取、日新又新的中国，定将绘就更壮美的发展图景。” ——落到未来视野，写“高质量发展／科技自立自强”是意境句。学本文“现象切入—问题揭示—路径示范—哲理升华”框架：先用出版物、宠物用品等日常现象点出“传统变新潮”，再揭示“转不起不会转转不好”的普遍难题，后以江西京东“小快轻准”、藏族编织／曹县汉服为路径示范，最后落到“新与旧良性互动”的辩证。适用于“数智化转型／传统产业焕新”类作文。 套用本文“工具论—路径论—系统论”三分：分论点一写“立足实际、小快轻准”（怎么办），分论点二写“思维革新、主动求变”（怎么想），分论点三写“增量与存量平衡、实体经济为本”（怎么统），由具体到系统、由术及道。 把“推进数智化转型”拆成可操作举措：摸清家底、量力而行（不搞大拆大建，按“小快轻准”升级原有设备）；场景驱动、务实管用（以实际业务需求定技术路线，避免赶风口）；系统观念、久久为功（在培育新产业同时改造提升传统产业，顾好“牛身子”）。 学本文“等不得也急不得”“新与旧、快与慢、大与小、增量与存量”“向上攀登与向下扎根”的辩证：先立“转型升级要实事求是、尊重规律”的立场，再以对照揭示节奏，把发展话题写成有张力、有边界的论证。 “转变思路、向新而行，传统的也可能变成新潮的”可作任何“守正创新／老树新枝”类文章的开篇或收束；“中国这么大，我们必须搞实体经济，一个方面一个领域都不能少”可作“实体经济为本／统筹兼顾”类论证的权威定论。适配“ 数智化转型／传统产业焕新／新质生产力／高质量发展／实体经济为本 ”等主题；本文 “现象切入—问题揭示—路径示范—哲理升华” 的论证链，是写“老树发新枝／守正创新”类文章的高分框架。 可直接提炼观点内涵： “以数智化开拓无限可能” ——表层是传统产业、小众赛道借数智技术打开新空间，深层是数智技术只是工具、关键要 立足实际、注重实效、在增量与存量间把握平衡 ；唯有思维革新与系统观念并举，方能向新而行。 “ 等不得也急不得 ”“ 新与旧、快与慢、大与小、增量与存量 ”“ 向上攀登与向下扎根 ”等多组辩证，是写 快与慢／点与面／新与旧 类作文的现成素材。 可迁移为“关于推进传统产业数智化转型的指导意见”等素材；文中“ 立足实际、注重实效 ”“ 小快轻准 ”“ 不搞大拆大建、不盲目赶风口 ”“ 在培育新产业同时改造提升传统产业 ”等表述极适合写进对策与公文。 以日常现象破题 ：先用纸质出版物变数字资产、中国造宠物用品成质价比代名词等鲜活案例，点出“传统产业、小众赛道在数智技术支撑下打开发展新空间”（第一至四段）。 点亮总论点 ：数智化转型是必答题，但技术只是工具，关键要立足实际、注重实效，在增量与存量间把握平衡，以数智化开拓无限可能（第五至七段，前接总论点色块）。 路径要“小快轻准”——以江西京东实业“不加装大拆大建、按小快轻准升级旧设备”为例 ：总投入600多万、成本降30%、年产值破2亿，以“等不得也急不得”的辩证法破解“转不起不会转转不好”（第八至九段，前接分论点色块）。 更是思维革新——以藏族编织、曹县汉服借数智与IP授权升级为时尚单品、数字藏品、机器人服饰为例 ：主动创新、积极求变，传统产业也能开出新花、冷门赛道也能成为热点（第十至十一段，前接分论点色块）。 在增量与存量间把握平衡——以“新与旧、快与慢、大与小、增量与存量”辩证统摄 ：既攀登高科技前沿、又扎根传统产业，向上攀登与向下扎根协同并进（第十二至十四段，前接分论点色块，含总书记金句）。 总书记金句收束点题 ：实体经济“一个方面一个领域都不能少”，在牵住“牛鼻子”同时顾好“牛身子”，以人工智能与完备产业体系交融绘就更壮美图景（第十三至十四段）。 全文采用 “问题—路径—辩证”的递进结构 ：先揭“转不起不会转转不好”三难，再以“小快轻准”破题、以思维革新拓界、以系统平衡收束，“等不得也急不得”“老树发新枝”等意象首尾呼应，是申论“小切口讲大道理”的范本。 给定资料介绍了「以数智化开拓无限可能」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字） 给定资料中强调「数智化转型是必答题，但数智技术不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具；关键在于立足实际、注重实效，找到适合自身的发展路径，让传统产业的“老树”发“新枝”、小众赛道站上大舞台，在新与旧、大与小、增量与存量的良性互动中转变思路、向新而行，以数智化开拓无限可能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字） 针对「以数智化开拓无限可能」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字） 假如你是相关单位工作人员，请根据给定资料，撰写一份《关于以数智化开拓无限可能的倡议书》（要求：格式规范、内容完整，不超过400字） 请结合给定资料，以「以数智化开拓无限可能」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）" role="button" tabindex="0">
+        <span class="mark"><span class="star" title="收藏">☆</span><span class="st" title="背诵状态">○</span></span>
+        <div class="date"><span class="d">4</span><span class="md">10月 · 2026</span></div>
+        <div class="body">
+          <div class="title">以数智化开拓无限可能</div>
+          <div class="sub">人民日报·评论员观察 | 数智化转型·实体经济·新质生产力·传统产业焕新·高质量发展 | 2026年9月28日 | 第05版</div>
+          <div class="tags"><span class="ct">#产业升级</span><span class="ct">#创新驱动</span><span class="ct">#高质量发展</span></div>
+        </div>
+        <div class="arrow">›</div>
+        <div class="card-actions">
+          <a class="act act-orig" href="yuanwen_rmrb_20261004.html">📄 原文</a>
+          <a class="act act-read" href="rmrb_20261004.html">📖 精读</a>
+        </div>
+      </div>
+    <div class="footer">共 2 篇 · <a href="index.html" style="color:#aaa;">回月份目录</a></div>
+  </div>
+<script>
+const SUBTAG_TO_THEME={'产业兴旺':'乡村振兴','人才支撑':'乡村振兴','文化振兴':'乡村振兴','生态宜居':'乡村振兴','组织振兴':'乡村振兴','高质量发展':'经济发展','创新驱动':'经济发展','产业升级':'经济发展','新型消费':'经济发展','城乡经济':'经济发展','区域协调':'经济发展','党建引领':'党的建设','实干担当':'党的建设','清正廉洁':'党的建设','服务为民':'党的建设','干部建设':'党的建设','基层治理':'社会治理','数字治理':'社会治理','风险防控':'社会治理','多元共治':'社会治理','公共安全':'社会治理','网络治理':'社会治理','乡村治理':'社会治理','自主自强':'科技创新','数字赋能':'科技创新','人才驱动':'科技创新','成果转化':'科技创新','创新生态':'科技创新','科技向善':'科技创新','教育均衡':'民生保障','健康中国':'民生保障','一老一小':'民生保障','社会保障':'民生保障','就业优先':'民生保障','共同富裕':'民生保障','文化自信':'文化建设','传承创新':'文化建设','公共文化':'文化建设','文化产业':'文化建设','精神文明':'文化建设','历史街区':'文化建设','绿色发展':'生态环保','生态修复':'生态环保','制度保障':'生态环保','价值转化':'生态环保','污染防治':'生态环保','空气政府':'放管服','地方改革创新':'放管服','体制机制改革':'放管服','基层干部':'干部队伍','干部作风':'干部队伍','干部能力':'干部队伍','政绩观':'干部队伍','城市更新':'城市发展','城市群建设':'城市发展','智慧城市':'城市发展','全龄友好城市':'城市发展','15分钟便民生活圈':'城市发展','科技赋能执法':'行政执法','新兴领域执法':'行政执法','执法队伍建设':'行政执法','创新服务方式':'行政执法'};
+const cards=[...document.querySelectorAll('.card')];
+const count=document.getElementById('count');
+const STORE='rmrb_study_v1';
+function loadStudy(){try{return JSON.parse(localStorage.getItem(STORE))||{}}catch(e){return{}}}
+function saveStudy(o){localStorage.setItem(STORE,JSON.stringify(o))}
+let study=loadStudy();
+function renderMark(c){
+  const s=study[c.dataset.key]||{};
+  const star=c.querySelector('.star'), st=c.querySelector('.st');
+  star.textContent=s.fav?'★':'☆'; star.classList.toggle('on',!!s.fav);
+  st.textContent= s.status==='done'?'✅': s.status==='todo'?'📝':'○';
+  st.className='st'+(s.status?(' '+s.status):'');
+}
+function cycleStatus(key){
+  const s=study[key]||{};
+  if(!s.status) s.status='todo';
+  else if(s.status==='todo') s.status='done';
+  else delete s.status;
+  if(Object.keys(s).length) study[key]=s; else delete study[key];
+  saveStudy(study);
+  const c=cards.find(x=>x.dataset.key===key); if(c) renderMark(c);
+  updateStats();
+}
+function toggleFav(key){
+  const s=study[key]||{};
+  if(s.fav){ delete s.fav; } else { s.fav=true; }
+  if(Object.keys(s).length) study[key]=s; else delete study[key];
+  saveStudy(study);
+  const c=cards.find(x=>x.dataset.key===key); if(c) renderMark(c);
+  updateStats();
+}
+cards.forEach(c=>{
+  renderMark(c);
+  c.querySelector('.star').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleFav(c.dataset.key);});
+  c.querySelector('.st').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();cycleStatus(c.dataset.key);});
+  const toggleCard=function(e){
+    if(e.target.closest('.act')||e.target.closest('.mark')) return;
+    cards.forEach(x=>{ if(x!==c) x.classList.remove('open'); });
+    c.classList.toggle('open');
+  };
+  c.addEventListener('click',toggleCard);
+  c.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleCard(e); }
+  });
+});
+function updateStats(){
+  let done=0,todo=0,fav=0;
+  cards.forEach(c=>{const s=study[c.dataset.key]||{}; if(s.status==='done')done++; else if(s.status==='todo')todo++; if(s.fav)fav++;});
+  if(count){ count.dataset.done=done; count.dataset.todo=todo; count.dataset.fav=fav; }
+}
+updateStats();
+</script>
+</body>
+</html>

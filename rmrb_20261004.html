@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以数智化开拓无限可能</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以数智化开拓无限可能</h1>
+    <div class="meta">人民日报·评论员观察 | 数智化转型·实体经济·新质生产力·传统产业焕新·高质量发展 | 2026年9月28日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：立足实际注重实效／小快轻准／思维革新／增量与存量平衡／实体经济为本</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">数智化转型</span>\n      <span class="tag-item">实体经济</span>\n      <span class="tag-item">新质生产力</span>\n      <span class="tag-item">传统产业焕新</span>\n      <span class="tag-item">因地制宜</span>\n      <span class="tag-item">高质量发展</span>\n      <span class="tag-item">系统观念</span>\n      <span class="tag-item">科技创新</span>\n      <span class="tag-item">小微企业</span>\n      <span class="tag-item">数智技术赋能</span>\n      <span class="tag-item">思维革新</span>\n      <span class="tag-item">统筹增量与存量</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>数智化转型／传统产业焕新／新质生产力／高质量发展／实体经济为本</b>”等主题；本文<b>“现象切入—问题揭示—路径示范—哲理升华”</b>的论证链，是写“老树发新枝／守正创新”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“以数智化开拓无限可能”</b>——表层是传统产业、小众赛道借数智技术打开新空间，深层是数智技术只是工具、关键要<b>立足实际、注重实效、在增量与存量间把握平衡</b>；唯有思维革新与系统观念并举，方能向新而行。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>等不得也急不得</b>”“<b>新与旧、快与慢、大与小、增量与存量</b>”“<b>向上攀登与向下扎根</b>”等多组辩证，是写<b>快与慢／点与面／新与旧</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于推进传统产业数智化转型的指导意见”等素材；文中“<b>立足实际、注重实效</b>”“<b>小快轻准</b>”“<b>不搞大拆大建、不盲目赶风口</b>”“<b>在培育新产业同时改造提升传统产业</b>”等表述极适合写进对策与公文。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架（现象切入—问题揭示—路径示范—哲理升华）</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以日常现象破题</b>：先用纸质出版物变数字资产、中国造宠物用品成质价比代名词等鲜活案例，点出“传统产业、小众赛道在数智技术支撑下打开发展新空间”（第一至四段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：数智化转型是必答题，但技术只是工具，关键要立足实际、注重实效，在增量与存量间把握平衡，以数智化开拓无限可能（第五至七段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>路径要“小快轻准”——以江西京东实业“不加装大拆大建、按小快轻准升级旧设备”为例</b>：总投入600多万、成本降30%、年产值破2亿，以“等不得也急不得”的辩证法破解“转不起不会转转不好”（第八至九段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>更是思维革新——以藏族编织、曹县汉服借数智与IP授权升级为时尚单品、数字藏品、机器人服饰为例</b>：主动创新、积极求变，传统产业也能开出新花、冷门赛道也能成为热点（第十至十一段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>在增量与存量间把握平衡——以“新与旧、快与慢、大与小、增量与存量”辩证统摄</b>：既攀登高科技前沿、又扎根传统产业，向上攀登与向下扎根协同并进（第十二至十四段，前接分论点色块，含总书记金句）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>总书记金句收束点题</b>：实体经济“一个方面一个领域都不能少”，在牵住“牛鼻子”同时顾好“牛身子”，以人工智能与完备产业体系交融绘就更壮美图景（第十三至十四段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“问题—路径—辩证”的递进结构</b>：先揭“转不起不会转转不好”三难，再以“小快轻准”破题、以思维革新拓界、以系统平衡收束，“等不得也急不得”“老树发新枝”等意象首尾呼应，是申论“小切口讲大道理”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-gold">转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。</span></p>
+
+      <p>依托数字技术，存放于库房、陈列于书架的纸质出版物成为数字资产，单一图书产品转化为丰富的知识服务，“出版大脑”还能显著提升出版效率。</p>
+
+      <p>把智能作为卖点，宠物烘干机、自动喂食器等中国造宠物用品满足多样化需求，广受海外消费者青睐，成为质价比的代名词。</p>
+
+      <p>传统产业、小众赛道，如今在数智技术支撑下，得以打开发展新空间。</p>
+
+      <div class="thesis">【总论点】数智化转型是必答题，但数智技术<span class="highlight-blue">不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具</span>；关键在于<span class="highlight-blue">立足实际、注重实效</span>，找到<span class="highlight-blue">适合自身的发展路径</span>，让传统产业的“老树”发“新枝”、小众赛道站上大舞台，在<span class="highlight-purple">新与旧、大与小、增量与存量</span>的良性互动中<span class="highlight-gold">转变思路、向新而行</span>，以数智化开拓无限可能。</div>
+
+      <p><span class="highlight-blue">“十五五”规划纲要提出“全方位推进数智技术赋能”</span>。顺应趋势推进数智化转型，已成共识。然而，与自带“数智基因”的新兴产业不同，一些传统产业、小微企业囿于技术、人才、资金等，面临<span class="highlight-purple">“转不起、不会转、转不好”</span>的难题。</p>
+
+      <p>比如，有的企业把数智化简单理解为上系统、上设备，重建设轻运营；有的企业盲目赶风口、追热点，脱离业务实际；有的企业谋求一步到位，反而超出承受能力、加重经营负担。</p>
+
+      <p>数智化转型是必答题。应当看到，数智技术<span class="highlight-blue">不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具</span>。究竟怎么用、如何转？关键是要<span class="highlight-blue">立足实际、注重实效</span>。</p>
+
+      <div class="sub-thesis">【分论点一】路径要“小快轻准”——不搞大拆大建、不盲目赶风口，立足自身实际加装智能模块、升级原有设备，以“等不得也急不得”的辩证法破解“转不起、不会转、转不好”难题。</div>
+
+      <p>数智化转型之要，在于找寻到适合自身的发展路径。深耕纺织染整的江西京东实业有限公司，一度犯难：182台老旧染色机换新，成本得<span class="highlight-green">6000万元</span>，公司年产值才<span class="highlight-green">1.5亿元</span>，划不划得来？最终，按照“小快轻准”思路，企业没搞大拆大建，而是加装智能模块和5G管理平台，将原有设备升级。总投入<span class="highlight-green">600多万元</span>，助力运营成本节约<span class="highlight-green">30%</span>、年产值突破<span class="highlight-green">2亿元</span>。</p>
+
+      <p><span class="highlight-purple">“等不得，也急不得”</span>，是谋发展、促改革的方法论，也是转型升级的辩证法。越是迫在眉睫、重要紧要的工作，越要实事求是、尊重规律，稳扎稳打、务求实效。</p>
+
+      <div class="sub-thesis">【分论点二】更是思维革新——把数智技术变为创意与价值的放大器，让藏族编织、曹县汉服等传统工艺与冷门赛道主动求变、抢占价值高地，传统产业也能开出新花。</div>
+
+      <p><span class="highlight-gold">是技术赋能，更是思维革新。</span>藏族编织、挑花刺绣，依托数字技术、IP授权，从小小工艺品、摆件，升级为时尚单品上的精美纹样、广受欢迎的数字藏品。山东曹县的汉服企业，抓住具身智能的发展机遇，探索机器人服饰新赛道。主动创新、积极求变，抢占价值高地、挖掘市场空间，<span class="highlight-gold">传统产业也能开出新花，冷门赛道也能成为热点</span>。</p>
+
+      <p>数智技术的颠覆性不仅在于技术本身，更在于创造了无限可能。<span class="highlight-gold">转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。</span></p>
+
+      <div class="sub-thesis">【分论点三】在增量与存量间把握平衡——以新技术新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑，夯实实体经济这个“牛身子”，走好走稳高质量发展之路。</div>
+
+      <p>往更深层次看，中国经济<span class="highlight-purple">正是在新与旧、快与慢、大与小、增量与存量的良性互动中</span>，实现厚积薄发、行稳致远。<span class="highlight-blue">既在高科技、前沿产业领域不断取得新突破，又以新技术、新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑、协同并进</span>。</p>
+
+      <p>习近平总书记强调：<span class="highlight-gold">“中国这么大，我们必须搞实体经济，一个方面一个领域都不能少。”</span>作为超大规模经济体，中国不可能靠个别产业的快速提升而实现全局飞跃，必须在创造增量与优化存量之间把握平衡，在培育新产业的同时改造提升传统产业，<span class="highlight-blue">在牵住“牛鼻子”的同时顾好“牛身子”</span>。</p>
+
+      <p><span class="highlight-gold">放眼未来，当以人工智能为代表的新一轮科技革命和产业变革与全球最大最完备产业体系深度交融，一个开拓进取、日新又新的中国，定将绘就更壮美的发展图景。</span></p>
+
+      <p class="byline">（人民日报2026年9月28日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·标题总论</span>\n      <p><b>“转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。”</b>——标题即总论点，二十字点透“守正创新／老树新枝”的关系，写“传统产业焕新／数智化转型”是极简而有力的框架句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·工具论</span>\n      <p><b>“数智技术不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具。”</b>——以“不是……而是”定调，写“技术赋能要务实”是最佳立论句，破“为转型而转型”的形式主义。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·立足实效</span>\n      <p><b>“究竟怎么用、如何转？关键是要立足实际、注重实效。”</b>——以设问收束方法论，写“因地制宜／务实导向”是点睛句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·小快轻准</span>\n      <p><b>“按照‘小快轻准’思路，企业没搞大拆大建，而是加装智能模块和5G管理平台，将原有设备升级。总投入600多万元，助力运营成本节约30%、年产值突破2亿元。”</b>——用数据与对比讲透路径，写“小微企业数智化／降本增效”是说服句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·等不得急不得</span>\n      <p><b>“等不得，也急不得，是谋发展、促改革的方法论，也是转型升级的辩证法。”</b>——以张弛之辩点破节奏，写“稳中求进／尊重规律”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·思维革新</span>\n      <p><b>“是技术赋能，更是思维革新……主动创新、积极求变，传统产业也能开出新花，冷门赛道也能成为热点。”</b>——递进升华，写“守正创新／开辟新赛道”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·辩证互动</span>\n      <p><b>“中国经济正是在新与旧、快与慢、大与小、增量与存量的良性互动中，实现厚积薄发、行稳致远。”</b>——四组辩证收束，写“系统观念／统筹兼顾”是高维句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·顶天立地</span>\n      <p><b>“既在高科技、前沿产业领域不断取得新突破，又以新技术、新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑、协同并进。”</b>——以“顶天立地”喻发展，写“增量与存量平衡”是结构句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·总书记</span>\n      <p><b>“中国这么大，我们必须搞实体经济，一个方面一个领域都不能少。”</b>——总书记原话，写“实体经济为本／统筹兼顾”是权威定论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·收束</span>\n      <p><b>“当以人工智能为代表的新一轮科技革命和产业变革与全球最大最完备产业体系深度交融，一个开拓进取、日新又新的中国，定将绘就更壮美的发展图景。”</b>——落到未来视野，写“高质量发展／科技自立自强”是意境句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“现象切入—问题揭示—路径示范—哲理升华”框架：先用出版物、宠物用品等日常现象点出“传统变新潮”，再揭示“转不起不会转转不好”的普遍难题，后以江西京东“小快轻准”、藏族编织／曹县汉服为路径示范，最后落到“新与旧良性互动”的辩证。适用于“数智化转型／传统产业焕新”类作文。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“工具论—路径论—系统论”三分：分论点一写“立足实际、小快轻准”（怎么办），分论点二写“思维革新、主动求变”（怎么想），分论点三写“增量与存量平衡、实体经济为本”（怎么统），由具体到系统、由术及道。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“推进数智化转型”拆成可操作举措：摸清家底、量力而行（不搞大拆大建，按“小快轻准”升级原有设备）；场景驱动、务实管用（以实际业务需求定技术路线，避免赶风口）；系统观念、久久为功（在培育新产业同时改造提升传统产业，顾好“牛身子”）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·辩证段落</span>\n      <p>学本文“等不得也急不得”“新与旧、快与慢、大与小、增量与存量”“向上攀登与向下扎根”的辩证：先立“转型升级要实事求是、尊重规律”的立场，再以对照揭示节奏，把发展话题写成有张力、有边界的论证。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·金句迁移</span>\n      <p>“转变思路、向新而行，传统的也可能变成新潮的”可作任何“守正创新／老树新枝”类文章的开篇或收束；“中国这么大，我们必须搞实体经济，一个方面一个领域都不能少”可作“实体经济为本／统筹兼顾”类论证的权威定论。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「以数智化开拓无限可能」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是路径要“小快轻准”。不搞大拆大建、不盲目赶风口，立足自身实际加装智能模块、升级原有设备，以“等不得也急不得”的辩证法破解“转不起、不会转、转不好”难题。<br>二是更是思维革新。把数智技术变为创意与价值的放大器，让藏族编织、曹县汉服等传统工艺与冷门赛道主动求变、抢占价值高地，传统产业也能开出新花。<br>三是在增量与存量间把握平衡。以新技术新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑，夯实实体经济这个“牛身子”，走好走稳高质量发展之路。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「数智化转型是必答题，但数智技术不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具；关键在于立足实际、注重实效，找到适合自身的发展路径，让传统产业的“老树”发“新枝”、小众赛道站上大舞台，在新与旧、大与小、增量与存量的良性互动中转变思路、向新而行，以数智化开拓无限可能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是路径要“小快轻准”——不搞大拆大建、不盲目赶风口，立足自身实际加装智能模块、升级原有设备，以“等不得也急不得”的辩证法破解“转不起、不会转、转不好”难题。<br>二是更是思维革新——把数智技术变为创意与价值的放大器，让藏族编织、曹县汉服等传统工艺与冷门赛道主动求变、抢占价值高地，传统产业也能开出新花。<br>三是在增量与存量间把握平衡——以新技术新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑，夯实实体经济这个“牛身子”，走好走稳高质量发展之路。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「以数智化开拓无限可能」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是可迁移为“关于推进传统产业数智化转型的指导意见”等素材。<br>二是文中“立足实际、注重实效”“小快轻准”“不搞大拆大建、不盲目赶风口”“在培育新产业同时改造提升传统产业”等表述极适合写进对策与公文。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于以数智化开拓无限可能的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于以数智化开拓无限可能的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进以数智化开拓无限可能，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、路径要“小快轻准”——不搞大拆大建、不盲目赶风口，立足自身实际加装智能模块、升级原有设备，以“等不得也急不得”的辩证法破解“转不起、不会转、转不好”难题。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、更是思维革新——把数智技术变为创意与价值的放大器，让藏族编织、曹县汉服等传统工艺与冷门赛道主动求变、抢占价值高地，传统产业也能开出新花。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、在增量与存量间把握平衡——以新技术新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑，夯实实体经济这个“牛身子”，走好走稳高质量发展之路。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「以数智化开拓无限可能」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：以数智化开拓无限可能<br><br>时代之问，呼唤破题之策。以数智化开拓无限可能，是发展所需，也是民心所向。可从三个维度展开：路径要“小快轻准”、更是思维革新、在增量与存量间把握平衡。<br><br>分论点一：路径要“小快轻准”——不搞大拆大建、不盲目赶风口，立足自身实际加装智能模块、升级原有设备，以“等不得也急不得”的辩证法破解“转不起、不会转、转不好”难题。方向对了，路再远也能抵达。“转变思路、向新而行，传统的也可能变成新潮的，曾经小众的也有机会站上大舞台。”<br><br>分论点二：更是思维革新——把数智技术变为创意与价值的放大器，让藏族编织、曹县汉服等传统工艺与冷门赛道主动求变、抢占价值高地，传统产业也能开出新花。方法对了，事再难也能办成。“数智技术不是装点门面的噱头、包治百病的灵药，而是解决实际问题的工具。”<br><br>分论点三：在增量与存量间把握平衡——以新技术新动能带动传统产业迭代、小微企业焕新，向上攀登与向下扎根相互支撑，夯实实体经济这个“牛身子”，走好走稳高质量发展之路。行百里者半九十。“究竟怎么用、如何转？关键是要立足实际、注重实效。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。以数智化开拓无限可能是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-04</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
