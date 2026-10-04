@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 放大“仁”的半径</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>放大“仁”的半径</h1>
+    <div class="meta">人民日报·人民时评 | 仁爱·家国情怀·社会治理·以人民为中心·守望相助·人类命运共同体 | 2026年9月30日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：仁爱·家国情怀·社会治理·以人民为中心·守望相助·人类命运共同体</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">仁爱</span>\n      <span class="tag-item">家国情怀</span>\n      <span class="tag-item">社会治理</span>\n      <span class="tag-item">以人民为中心</span>\n      <span class="tag-item">守望相助</span>\n      <span class="tag-item">人类命运共同体</span>\n      <span class="tag-item">文化自信</span>\n      <span class="tag-item">文明实践</span>\n      <span class="tag-item">善意</span>\n      <span class="tag-item">价值引领</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>仁爱精神／家国情怀／社会治理／以人民为中心／文明新风</b>”等主题；本文<b>“小事切入—哲理升维—天下情怀”</b>的写法，是写“小善与大爱”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“放大‘仁’的半径”</b>——仁心以个体为原点扩张，在集体同频共振中加速放大；今日中国更把“仁”的半径拉长，以全人类共同价值为全球挑战贡献中国方案。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>仁者爱人，在人与人的关系中实现</b>”“<b>家是最小国，国是千万家</b>”“<b>仁心有半径，从个体到集体到国家</b>”等辩证，是写<b>个人与集体／小家与大国</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于涵养仁爱精神、提升社会治理温度的对策建议”等素材；文中“<b>推己及人、换位体察</b>”“<b>把仁心内化于心、外化于行、落于点滴</b>”等表述极适合写进对策与公文。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以暖闻破题</b>：西藏五金店24小时敞开、云南游客“找手机”、贵州路人抢收稻谷，几则短视频温暖人心（第一至四段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大，最终弥漫于广阔社会生活（第五段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>仁心有半径——设身处地、换位体察，把别人的难处当成自己的难处</b>（第六至七段，前接分论点色块，含“恻隐之心”金句）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>丹心系家国——从平凡瞬间感受与他人、与国家的共鸣，急难险重总是家国同心</b>（第八至九段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>把“仁”的半径拉得更长——构建人类命运共同体、高质量共建“一带一路”，是“仁”在当代的世界表达</b>（第十至十二段，前接分论点色块，含国际民调数据）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>收束于本色</b>：今日之中国已非昨日，但本色依然，放大“仁”的半径定将激发风雨无阻共创美好生活的澎湃动能（第十三段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“具象—抽象—宏大”的升华结构</b>：从三则短视频的具象善意，到“仁者爱人”的抽象哲理，再到人类命运共同体的宏大表达，是申论“小切口见大情怀”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>近期，几则短视频被热转，温暖人心也引人思考。</p>
+
+      <p>西藏吉隆，一家五金店老板<span class='highlight-gold'>24小时敞开店门免费供应物资</span>，为救援人员提供住宿。一句“任何一个中国人都会这么做”，折射危难面前守望相助的朴素情感。</p>
+
+      <p>云南香格里拉，中国小伙捡到手机高喊“谁的手机”，上百游客“开团秒跟”，法国游客上前凑热闹发现竟是自己的。一呼百应“找手机”，为“中国式安全感”写下生动注脚。</p>
+
+      <p>贵州榕江，两名路人躲雨时发现院坝里晾晒的稻谷正被雨淋，而屋主不在，便主动帮忙抢收、盖好。被监控记录下来的这一幕，以“路过的善意”标注乡土情。</p>
+
+      <p>丹心寸意，皆为有情。<span class='highlight-purple'>无论是关键时刻伸出援手，还是日常生活的平凡之举、顺手而为，从中都能看到推己及人、崇善重义的仁爱之心。</span></p>
+
+      <div class="thesis">【总论点】“仁者爱人”。推己及人、崇善重义的<span class='highlight-gold'>仁爱之心</span>，以个体为原点扩张，在集体同频共振中加速放大，最终弥漫于广阔社会生活；今日中国更把“仁”的半径拉得更长，以<span class='highlight-blue'>全人类共同价值</span>为应对全球挑战贡献中国智慧。</div>
+
+      <div class="sub-thesis">【分论点一】仁心有半径——以个体为原点扩张；“恻隐之心，仁之端也”，落实到日常就是设身处地、换位体察，把别人的难处当成自己的难处。</div>
+
+      <p>“仁者爱人”，在人与人的关系中实现。“仁”从何起？正所谓<span class='highlight-gold'>“恻隐之心，仁之端也”</span>，落实到日常，就是设身处地、换位体察，想人之所想，急人之所急。五金店老板想的是救援人员夜里无处安歇，游客想的是手机失主心急如焚，路人想的是粮食一旦被淋湿心血白费……<span class='highlight-purple'>这都是“把别人的难处当成自己的难处”。</span></p>
+
+      <p>换个视角看，<span class='highlight-blue'>仁心也是有半径的：以个体为原点扩张，在集体的同频共振中加速放大，最终弥漫于广阔社会生活。</span></p>
+
+      <div class="sub-thesis">【分论点二】丹心从来系家国——从一个个平凡瞬间，感受与他人、与国家的强烈共鸣，激发仁心与善行；每一次急难险重，中国人总是家国同心、携手奋进。</div>
+
+      <p>丹心从来系家国。从一个个平凡瞬间，人们能感受到自己与他人、个人与国家之间强烈的共鸣，激发仁心与善行。西藏吉隆口岸，救援队伍持续奋战抢险一线；驰援广西，青年志愿者闻“汛”而动、逆行奔赴……<span class='highlight-blue'>每一次急难险重，中国人总是家国同心、携手奋进。</span></p>
+
+      <p>更多的“仁”，藏于日复一日的细节。上海“小杨师傅”利用业余时间免费帮邻居小修小补，一干就是<span class='highlight-green'>30多年</span>；山东平度90后小伙任秉凯不求回报，坚持为医院病患家属免费派送爱心晚餐……<span class='highlight-gold'>仁义善行不只是特殊时刻的闪光，更是无声的坚守、文明的底色。</span></p>
+
+      <div class="sub-thesis">【分论点三】把“仁”的半径拉得更长——构建人类命运共同体、高质量共建“一带一路”、践行四大全球倡议，是“仁”在当代的世界表达。</div>
+
+      <p>仁义善行并非个体独白，一经点燃，便会引发集体应答。<span class='highlight-blue'>“天下之本在国，国之本在家，家之本在身”</span>，在中国人眼里，家是最小国，国是千万家。中华优秀传统文化赓续传承、润物无声，“常怀仁心”早已刻进民族血脉。浓郁的家国情怀、深厚的家国责任、强烈的家国担当，源流绵绵不断，激励着全体人民在新征程上，书写家的团结、国的凝聚，百折不挠向前进。</p>
+
+      <p>打开视野看，<span class='highlight-gold'>今天的中国正把“仁”的半径拉得更长</span>。构建人类命运共同体，高质量共建“一带一路”，提出并践行四大全球倡议……“以人民之心为心、以天下之利为利”，坚守全人类共同价值，为应对全球共同挑战贡献中国智慧、中国方案，这是“仁”在当代的世界表达。</p>
+
+      <p>国际民调显示，<span class='highlight-green'>中国全球信任度持续攀升</span>，是“值得信赖的国家”“可靠的伙伴”；免签政策持续扩容，如今每<span class='highlight-green'>10名</span>入境的外国人里，就有<span class='highlight-green'>7名</span>是免签而来；从“看见中国”到“体验中国”，“Chinamaxxing”（极致中国化）火爆海外社交媒体。<span class='highlight-blue'>中国这颗仁心正不断“扩圈”，影响日深。</span></p>
+
+      <p>今日之中国已非昨日，但本色依然。<span class='highlight-gold'>放大“仁”的半径，把家国情怀内化于心、外化于行，落于点滴行动，定将激发风雨无阻共创美好生活的澎湃动能。</span></p>
+
+      <p class="byline">（人民日报2026年9月30日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·总论</span>\n      <p><b>“推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大。”</b>——标题即总论点，写“仁爱的扩散”是意象句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·暖闻</span>\n      <p><b>“一句‘任何一个中国人都会这么做’，折射危难面前守望相助的朴素情感。”</b>——以群众语言写善意，写“中国式温情”是共情句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·恻隐</span>\n      <p><b>“恻隐之心，仁之端也……设身处地、换位体察，想人之所想，急人之所急。”</b>——引孟子原典，写“同理心／民本”是权威句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·半径</span>\n      <p><b>“仁心也是有半径的：以个体为原点扩张，在集体的同频共振中加速放大。”</b>——以“半径”喻仁爱扩散，写“个人与集体”是妙喻句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·家国同心</span>\n      <p><b>“每一次急难险重，中国人总是家国同心、携手奋进。”</b>——写“家国一体／众志成城”是凝聚句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·30年</span>\n      <p><b>“上海‘小杨师傅’利用业余时间免费帮邻居小修小补，一干就是30多年。”</b>——以时长见证坚守，写“平凡善举／文明底色”是暖心句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·天下之本</span>\n      <p><b>“天下之本在国，国之本在家，家之本在身……家是最小国，国是千万家。”</b>——引《孟子》贯通家国，写“家国情怀”是经典句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·世界表达</span>\n      <p><b>“构建人类命运共同体……‘以人民之心为心、以天下之利为利’，是‘仁’在当代的世界表达。”</b>——由内圣通外王，写“人类命运共同体”是升华句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·数据实证</span>\n      <p><b>“每10名入境的外国人里，就有7名是免签而来；中国全球信任度持续攀升。”</b>——用民调与免签数据证“仁心扩圈”，写“软实力／可信中国”是说服句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·收束</span>\n      <p><b>“放大‘仁’的半径，把家国情怀内化于心、外化于行，落于点滴行动，定将激发风雨无阻共创美好生活的澎湃动能。”</b>——回扣标题收束，写“知行合一／积善成德”是意境句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“具象—抽象—宏大”框架：从三则短视频的具象善意起笔，过渡到“仁者爱人”的抽象哲理，再升维至人类命运共同体的宏大表达。适用于“仁爱／家国情怀”类作文。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“个体论—家国论—世界论”三分：分论点一写“仁心有半径、推己及人”（个体），分论点二写“丹心系家国、家国同心”（国家），分论点三写“把仁的半径拉得更长”（世界）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“涵养仁爱精神、提升治理温度”拆成：倡导推己及人、换位体察（个人）；以家国情怀凝聚社会共识（社会）；以全人类共同价值参与全球治理（国际）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·由小见大</span>\n      <p>学本文“小事见大情怀”：用五金店、找手机、抢收稻谷三则微故事承载“仁爱”主旨，把宏大价值写得可感可触。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·金句迁移</span>\n      <p>“仁心也是有半径的：以个体为原点扩张”可作“个人与集体／小我与大我”类文章分论点；“家是最小国，国是千万家”可作“家国情怀”类论证权威定论。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「放大“仁”的半径」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是仁心有半径。以个体为原点扩张；“恻隐之心，仁之端也”，落实到日常就是设身处地、换位体察，把别人的难处当成自己的难处。<br>二是丹心从来系家国。从一个个平凡瞬间，感受与他人、与国家的强烈共鸣，激发仁心与善行；每一次急难险重，中国人总是家国同心、携手奋进。<br>三是把“仁”的半径拉得更长。构建人类命运共同体、高质量共建“一带一路”、践行四大全球倡议，是“仁”在当代的世界表达。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「“仁者爱人”。推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大，最终弥漫于广阔社会生活；今日中国更把“仁”的半径拉得更长，以全人类共同价值为应对全球挑战贡献中国智慧。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是仁心有半径——以个体为原点扩张；“恻隐之心，仁之端也”，落实到日常就是设身处地、换位体察，把别人的难处当成自己的难处。<br>二是丹心从来系家国——从一个个平凡瞬间，感受与他人、与国家的强烈共鸣，激发仁心与善行；每一次急难险重，中国人总是家国同心、携手奋进。<br>三是把“仁”的半径拉得更长——构建人类命运共同体、高质量共建“一带一路”、践行四大全球倡议，是“仁”在当代的世界表达。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「放大“仁”的半径」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是可迁移为“关于涵养仁爱精神、提升社会治理温度的对策建议”等素材。<br>二是文中“推己及人、换位体察”“把仁心内化于心、外化于行、落于点滴”等表述极适合写进对策与公文。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于放大“仁”的半径的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于放大“仁”的半径的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进放大“仁”的半径，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、仁心有半径——以个体为原点扩张；“恻隐之心，仁之端也”，落实到日常就是设身处地、换位体察，把别人的难处当成自己的难处。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、丹心从来系家国——从一个个平凡瞬间，感受与他人、与国家的强烈共鸣，激发仁心与善行；每一次急难险重，中国人总是家国同心、携手奋进。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、把“仁”的半径拉得更长——构建人类命运共同体、高质量共建“一带一路”、践行四大全球倡议，是“仁”在当代的世界表达。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「放大“仁”的半径」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：放大“仁”的半径<br><br>时代之问，呼唤破题之策。放大“仁”的半径，是发展所需，也是民心所向。可从三个维度展开：仁心有半径——以个体为原点扩张；“恻、丹心从来系家国、把“仁”的半径拉得更长。<br><br>分论点一：仁心有半径——以个体为原点扩张；“恻隐之心，仁之端也”，落实到日常就是设身处地、换位体察，把别人的难处当成自己的难处。方向对了，路再远也能抵达。“推己及人、崇善重义的仁爱之心，以个体为原点扩张，在集体同频共振中加速放大。”<br><br>分论点二：丹心从来系家国——从一个个平凡瞬间，感受与他人、与国家的强烈共鸣，激发仁心与善行；每一次急难险重，中国人总是家国同心、携手奋进。方法对了，事再难也能办成。“一句‘任何一个中国人都会这么做’，折射危难面前守望相助的朴素情感。”<br><br>分论点三：把“仁”的半径拉得更长——构建人类命运共同体、高质量共建“一带一路”、践行四大全球倡议，是“仁”在当代的世界表达。行百里者半九十。“恻隐之心，仁之端也……设身处地、换位体察，想人之所想，急人之所急。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。放大“仁”的半径是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026年9月30日</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

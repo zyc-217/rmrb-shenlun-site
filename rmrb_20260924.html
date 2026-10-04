@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从能源转型看“人类命运共同体”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从能源转型看“人类命运共同体”</h1>
+    <div class="meta">人民日报·连线评论员 | 能源转型·人类命运共同体·全球治理·清洁能源·系统思维·大国担当 | 2026年9月30日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：能源转型·人类命运共同体·全球治理·清洁能源·系统思维·大国担当</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">能源转型</span>\n      <span class="tag-item">人类命运共同体</span>\n      <span class="tag-item">全球治理</span>\n      <span class="tag-item">清洁能源</span>\n      <span class="tag-item">系统思维</span>\n      <span class="tag-item">新质生产力</span>\n      <span class="tag-item">能源安全</span>\n      <span class="tag-item">互利共赢</span>\n      <span class="tag-item">零和博弈</span>\n      <span class="tag-item">大国担当</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>人类命运共同体／全球气候治理／清洁能源合作／大国担当</b>”等主题；本文以<b>“连线评论员”对话体</b>展开，是写“小切口讲大道理／以个案证理念”类文章的好范本。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“从能源转型看人类命运共同体”</b>——表层是中国以“缓冲器/稳定器”作用保障全球能源安全，深层是<span class='highlight-blue'>系统思维与互利共赢的治理逻辑</span>，为全球治理贡献中国方案。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>油气工业是寻宝游戏，电力工业是交响乐团</b>”“<b>从零和博弈走向开放合作共享</b>”等比喻，是写<b>项目思维与系统思维／独赢与共赢</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于推动全球清洁能源合作的对策建议”等素材；文中“<b>自主可控的石油工业体系</b>”“<b>新型储能解决随机性间歇性</b>”“<b>授之以渔、普惠合作</b>”等表述极适合写进对策与公文。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以热点破题</b>：借外媒“中国凭借战略储备和能源转型充当全球油价缓冲器”的感慨切入，引出“人类命运共同体在危机中具象化”（对话开场）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：从能源转型的“缓冲器/稳定器”作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作——中国以自身实践为人类命运共同体写下注脚（对话中段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>中国是全球能源的“稳定器”与“缓冲器”</b>：需求端减进口、供给端强支撑，以完备产业体系为全球产业链托底（前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>能源转型彰显系统思维与互利共赢</b>：从“寻宝游戏”到“交响乐团”，清洁能源开发更需开放、合作、共享、连接（前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>技术赋能筑牢能源安全底气</b>：新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为核心生产要素（前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>收束于普惠合作</b>：中国秉持开放包容、互利共赢，推动各国走出零和博弈怪圈，为人类命运共同体作出示范（对话收尾）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“设问—对话—提炼”的访谈结构</b>：以记者提问牵引、专家作答支撑，再凝练为“稳定器—系统思维—技术赋能”三层论点，是申论“借权威之口讲清道理”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>对话人：</p>
+      <p>彭　飞　本报评论员</p>
+      <p>陆如泉　中国石油集团经济技术研究院执行董事、院长</p>
+
+      <p>彭飞：不久前，多家外媒报道，在美以伊冲突造成国际原油供给紧张背景下，中国凭借战略储备和能源转型，不仅保障了自身能源安全，更通过主动削减原油进口，充当了全球油价“缓冲器”。有外媒甚至感慨“中国拯救了世界”。您怎么看？</p>
+
+      <p>陆如泉：其实，中国的“拯救”，不仅表现在需求端减少原油进口，也在供给端发挥了<span class='highlight-blue'>稳定器、压舱石</span>的作用。一方面，以光伏、电动汽车为代表的中国绿色能源产品行销海外，助力当地缓解能源压力。另一方面，中国炼化产业凭借完备工业体系和全链条配套能力，及时“减油增化”，迅速承接外溢需求。数据显示，2026年上半年，我国基本有机化学品出口同比增长<span class='highlight-green'>25.1%</span>，初级形状塑料出口增长<span class='highlight-green'>35%</span>。中国石油前4个月化工产品出口<span class='highlight-green'>21.8万吨</span>，增幅超过<span class='highlight-green'>130%</span>。</p>
+
+      <p>习近平主席强调：<span class='highlight-gold'>“中国古人讲‘同舟共济’，现在国际社会则需要‘同球共济’。”</span>作为拥有14亿多人口的大国，中国在风雨中自己能稳住，还能助力全球稳链。“人类命运共同体”这一理念，在危机面前更加具象化。</p>
+
+      <div class="thesis">【总论点】从能源转型的“缓冲器”“稳定器”作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作——中国以自身能源转型的坚实实践，为构建人类命运共同体写下生动而具体的注脚。</div>
+
+      <div class="sub-thesis">【分论点一】中国是全球能源的“稳定器”与“缓冲器”——需求端主动减进口、供给端强支撑，以完备产业体系为全球产业链托底，让“人类命运共同体”在危机中具象化。</div>
+
+      <p>彭飞：“十五五”规划纲要提出“推动煤炭和石油消费达峰”。随着清洁能源消费比重升高，石油在未来中国能源和经济发展格局中将扮演怎样的角色？</p>
+
+      <p>陆如泉：达峰是目标，比重下降是趋势，但这不意味着化石能源不重要了。从兜底保障看，石油作为燃料，短期内在航空、海运等领域仍难被替代，在应急、救援等领域仍占主导地位。而且，大部分数据中心和关键公共基础设施等的备用电源都是柴油发电机。<span class='highlight-blue'>化石能源稳定、易储存、效率高，是抵御风险的可靠保障。</span>从产业支撑看，石油正从“燃料”向“原料”加速转变，通过各领域“电代油”，有利于把省下来的油更多转化为高附加值工业材料。从能源安全看，<span class='highlight-blue'>石油的自主可控能力关乎国家战略主动</span>，我国已建成强大完备的石油工业体系，这样的优势不能丢。</p>
+
+      <div class="sub-thesis">【分论点二】能源转型彰显系统思维与互利共赢——从“寻宝游戏”到“交响乐团”，清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。</div>
+
+      <p>彭飞：油气的资源稀缺性和不可再生性，使其成为国际博弈的焦点。清洁能源的开发利用程度提高，将如何影响未来地缘政治格局与国际关系？</p>
+
+      <p>陆如泉：相较于地理分布高度集中的油气资源，水电、风电、光伏等清洁能源地理分布呈现<span class='highlight-purple'>“去中心化”特征</span>，恰好可破解油气资源的不均衡与枯竭“魔咒”。今年以来的冲突让更多国家认识到，发展清洁能源不仅是应对气候变化的重要抓手，也是保障国家能源安全的重要路径。<span class='highlight-gold'>中国在这条道路上作出示范，让各国看到发展清洁能源可行、可靠、可复制。</span></p>
+
+      <p>往更深层次看，不同能源的不同特点，深刻影响着人们的思维方式与行动逻辑。行业里有个比喻：<span class='highlight-purple'>油气工业是“寻宝游戏”，宝藏大小决定一切；而转化清洁能源的电力工业是“交响乐团”，整个乐团密切配合才能奏出动人乐章。</span>这意味着油气资源开发更多遵循项目思维，易催生国家间贸易，也可能导致抢占与控制；而清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。</p>
+
+      <p>中国在清洁能源开发利用方面有技术沉淀、系统优势，更重要的是<span class='highlight-blue'>始终秉持开放包容、互利共赢理念，授之以鱼更授之以渔</span>，将以更加普惠的全球能源合作推动各国走出零和博弈、你输我赢的怪圈。</p>
+
+      <div class="sub-thesis">【分论点三】技术赋能筑牢能源安全底气——新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为能源领域的核心生产要素。</div>
+
+      <p>彭飞：新型储能、人工智能等技术的快速进步，将对我国开发利用能源产生怎样的影响？</p>
+
+      <p>陆如泉：这两项技术都具有颠覆性。<span class='highlight-blue'>新型储能一旦成熟，将解决清洁能源发电随机性、间歇性、波动性与电力系统“实时平衡”要求之间的矛盾</span>，形成“电力油田”，让清洁能源利用不再靠天吃饭。</p>
+
+      <p>人工智能的影响更广泛、更深远，不仅能在新型电力系统中发挥关键作用，也将充分应用于油气和煤炭的勘探、开发和生产。<span class='highlight-blue'>通过打造“智能油田”“数字矿山”等实现降本增效，数据和算法正成为能源领域的核心生产要素。</span></p>
+
+      <p>能源转型中，我国在技术、场景、产业体系等方面，都有<span class='highlight-gold'>无可比拟的优势</span>。这是保障我国能源安全的信心所在，也是我国经济始终保持强大韧性的底气所在。</p>
+
+      <p class="byline">（人民日报2026年9月30日 第05版 · 连线评论员）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·总论</span>\n      <p><b>“从能源转型的‘缓冲器’‘稳定器’作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作——中国以自身能源转型的坚实实践，为构建人类命运共同体写下生动而具体的注脚。”</b>——标题即总论点，写“小切口证大理念”是巧思句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·同球共济</span>\n      <p><b>“中国古人讲‘同舟共济’，现在国际社会则需要‘同球共济’。”</b>——总书记原话，以一字之易点破全球处境，写“人类命运共同体”是权威定论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·具象化</span>\n      <p><b>“作为拥有14亿多人口的大国，中国在风雨中自己能稳住，还能助力全球稳链。‘人类命运共同体’这一理念，在危机面前更加具象化。”</b>——把抽象理念落到具体行动，写“大国担当”是升华句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·数据实证</span>\n      <p><b>“2026年上半年，我国基本有机化学品出口同比增长25.1%，初级形状塑料出口增长35%。”</b>——用出口数据证支撑力，写“用数据说话”是说服句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·兜底保障</span>\n      <p><b>“化石能源稳定、易储存、效率高，是抵御风险的可靠保障。”</b>——辩证看待新旧能源，写“统筹传统与新兴”是理性句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·自主可控</span>\n      <p><b>“石油的自主可控能力关乎国家战略主动……我国已建成强大完备的石油工业体系，这样的优势不能丢。”</b>——点明能源安全要义，写“把饭碗端在自己手里”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·去中心化</span>\n      <p><b>“清洁能源地理分布呈现‘去中心化’特征，恰好可破解油气资源的不均衡与枯竭‘魔咒’。”</b>——以结构特征讲治理逻辑，写“分布公平／普惠”是分析句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·寻宝与乐团</span>\n      <p><b>“油气工业是‘寻宝游戏’……电力工业是‘交响乐团’，整个乐团密切配合才能奏出动人乐章。”</b>——比喻精妙，写“项目思维与系统思维／独赢与共赢”是意象句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·授渔</span>\n      <p><b>“始终秉持开放包容、互利共赢理念，授之以鱼更授之以渔。”</b>——以古语新用讲国际合作，写“真实亲诚／互利共赢”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·底气</span>\n      <p><b>“我国在技术、场景、产业体系等方面，都有无可比拟的优势。这是保障我国能源安全的信心所在。”</b>——落到自信收束，写“科技自立自强”是意境句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“热点切入—对话展开—三层提炼”框架：借外媒“缓冲器”感慨切入，以记者提问、专家作答展开，再凝练为“稳定器—系统思维—技术赋能”三层论点。适用于“人类命运共同体／全球治理”类作文。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“作用论—思维论—技术论”三分：分论点一写“中国是全球能源稳定器与缓冲器”（贡献），分论点二写“系统思维与互利共赢的治理逻辑”（理念），分论点三写“技术赋能筑牢安全底气”（路径），由贡献到理念到路径。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“推动全球清洁能源合作”拆成：做强自主完备产业体系（托底）；以新型储能、人工智能破解波动（技术）；秉持开放包容、授渔式合作（理念）；推动去中心化、普惠共享（治理）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·比喻论证</span>\n      <p>学本文“寻宝游戏 vs 交响乐团”的比喻：用形象对照揭示“项目思维—系统思维”“独赢—共赢”的差异，把抽象治理逻辑写成可感知的论证。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·金句迁移</span>\n      <p>“同舟共济—同球共济”可作“人类命运共同体”类文章点睛；“中国在风雨中自己能稳住，还能助力全球稳链”可作“大国担当／稳中求进”类论证收束。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从能源转型看“人类命运共同体”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是中国是全球能源的“稳定器”与“缓冲器”。需求端主动减进口、供给端强支撑，以完备产业体系为全球产业链托底，让“人类命运共同体”在危机中具象化。<br>二是能源转型彰显系统思维与互利共赢。从“寻宝游戏”到“交响乐团”，清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。<br>三是技术赋能筑牢能源安全底气。新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为能源领域的核心生产要素。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「从能源转型的“缓冲器”“稳定器”作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作——中国以自身能源转型的坚实实践，为构建人类命运共同体写下生动而具体的注脚。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是中国是全球能源的“稳定器”与“缓冲器”——需求端主动减进口、供给端强支撑，以完备产业体系为全球产业链托底，让“人类命运共同体”在危机中具象化。<br>二是能源转型彰显系统思维与互利共赢——从“寻宝游戏”到“交响乐团”，清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。<br>三是技术赋能筑牢能源安全底气——新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为能源领域的核心生产要素。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“从能源转型的‘缓冲器’‘稳定器’作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从能源转型看“人类命运共同体”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是可迁移为“关于推动全球清洁能源合作的对策建议”等素材。<br>二是文中“自主可控的石油工业体系”“新型储能解决随机性间歇性”“授之以渔、普惠合作”等表述极适合写进对策与公文。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“从能源转型的‘缓冲器’‘稳定器’作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从能源转型看“人类命运共同体”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从能源转型看“人类命运共同体”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从能源转型看“人类命运共同体”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、中国是全球能源的“稳定器”与“缓冲器”——需求端主动减进口、供给端强支撑，以完备产业体系为全球产业链托底，让“人类命运共同体”在危机中具象化。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、能源转型彰显系统思维与互利共赢——从“寻宝游戏”到“交响乐团”，清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、技术赋能筑牢能源安全底气——新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为能源领域的核心生产要素。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“从能源转型的‘缓冲器’‘稳定器’作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从能源转型看“人类命运共同体”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从能源转型看“人类命运共同体”<br><br>时代之问，呼唤破题之策。从能源转型看“人类命运共同体”，是发展所需，也是民心所向。可从三个维度展开：中国是全球能源的“稳定器”与“缓冲器”、能源转型彰显系统思维与互利共赢、技术赋能筑牢能源安全底气。<br><br>分论点一：中国是全球能源的“稳定器”与“缓冲器”——需求端主动减进口、供给端强支撑，以完备产业体系为全球产业链托底，让“人类命运共同体”在危机中具象化。方向对了，路再远也能抵达。“从能源转型的‘缓冲器’‘稳定器’作用，到系统思维与互利共赢的治理逻辑，再到技术赋能与全球合作<br><br>分论点二：能源转型彰显系统思维与互利共赢——从“寻宝游戏”到“交响乐团”，清洁能源开发更多遵循系统思维，更需要开放、合作、共享、连接。方法对了，事再难也能办成。“中国古人讲‘同舟共济’，现在国际社会则需要‘同球共济’。”<br><br>分论点三：技术赋能筑牢能源安全底气——新型储能、人工智能让清洁能源“不靠天吃饭”，数据和算法成为能源领域的核心生产要素。行百里者半九十。“作为拥有14亿多人口的大国，中国在风雨中自己能稳住，还能助力全球稳链。‘人类命运共同体’这一理念，在危机面前更加具象化。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从能源转型看“人类命运共同体”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报刊载原文整理（人民日报·连线评论员·第05版《从能源转型看“人类命运共同体”》），仅供申论备考积累使用 · 2026年9月30日</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

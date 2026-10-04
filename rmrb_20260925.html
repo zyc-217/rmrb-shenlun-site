@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 顺时有便利  逆境能兜底</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>顺时有便利  逆境能兜底</h1>
+    <div class="meta">人民日报·纵横 | 营商环境·制度优势·政务服务·企业服务·链式护航·获得感 | 2026年9月29日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：营商环境·制度优势·政务服务·企业服务·链式护航·获得感</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">营商环境</span>\n      <span class="tag-item">制度优势</span>\n      <span class="tag-item">政务服务</span>\n      <span class="tag-item">企业服务</span>\n      <span class="tag-item">链式护航</span>\n      <span class="tag-item">可预期</span>\n      <span class="tag-item">应急管理</span>\n      <span class="tag-item">产业生态</span>\n      <span class="tag-item">获得感</span>\n      <span class="tag-item">治理体系</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>营商环境／政务服务／制度优势转化为治理效能／企业获得感</b>”等主题；本文<b>“个案切入—制度透视—价值升华”</b>的写法，是写“小故事讲大道理”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“顺时有便利，逆境能兜底”</b>——评估营商环境，看的不止审批提速几天，更在风险袭来时能否及时聚合资源、帮企业渡过难关。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>平时不显山不露水，急时立刻发挥作用</b>”“<b>从点状纾困走向链式护航</b>”等辩证，是写<b>常态与应急／显绩与潜绩</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于优化营商环境、强化企业服务的指导意见”等素材；文中“<b>诉求提出—响应—协调—反馈闭环</b>”“<b>成体系、下沉到生产一线的服务网络</b>”等表述极适合写进对策与公文。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以个案破题</b>：吉林辽源一项目断供半小时内货源摸排到位、特种焊条当日进场，被企业称为“精准的急救”（第一段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：评估营商环境，看的不止审批提速几天，更在“顺时有便利，逆境能兜底”——把制度优势转化为企业实实在在的获得感（第二至四段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>价值在制度——可预期、可复制、可追溯的标准动作</b>：省市县三级分级包保、闭环机制多年运转不辍，平时无感、急时聚合（第五至六段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>成色在“兜底”——统筹常态与应急的链式护航</b>：从设备协调到原料保供再到要素保障，从“点状纾困”走向“链式护航”（第七段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>落点在学习“帮得快、帮到底”——把制度优势转化为获得感</b>：不能光讲理念、不能只铺摊子，要让项目“遇到问题有人帮”（第八段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>收束于信心</b>：焊花重新闪烁，亮起的不只是一条管道，更是对一个地方的投资信心（第九段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象—追问—制度—价值”的递进结构</b>：先讲“快”的表象，再追问“为什么能这么快”，继而揭示制度机理，最后落到营商环境成色，是申论“由事及理”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……发生在吉林辽源天楹风光储氢氨醇一体化项目上的这一幕，被企业负责人称之为“<span class='highlight-gold'>精准的急救</span>”。</p>
+
+      <div class="thesis">【总论点】评估营商环境，看的不止是审批提速几天、材料精简多少，更在“<span class='highlight-gold'>顺时有便利，逆境能兜底</span>”——平时不显山不露水、急时即刻聚合资源，把<span class='highlight-blue'>制度优势转化为企业实实在在的获得感</span>，营商环境才算真正立住。</div>
+
+      <p>一个“急”字，体现了企业的焦灼；快速反应，折射出治理的效能。但比“快”更值得深思的是：<span class='highlight-purple'>为什么能这么快？</span></p>
+
+      <p>答案在制度。吉林省工业和信息化厅建立的<span class='highlight-blue'>企业诉求提出、响应、协调办理、反馈闭环机制</span>，省市县三级分级全覆盖包保服务，多年运转不辍。这套机制平时不显山不露水，企业几乎感觉不到它的存在；可一旦断供这类小概率风险袭来，它便立刻发挥作用，把分散的资源快速聚合起来。</p>
+
+      <div class="sub-thesis">【分论点一】制度的价值在“可预期、可复制、可追溯”——闭环机制与三级包保平时无感、急时聚合，把分散资源快速组织起来，这是营商环境最坚实的底座。</div>
+
+      <p>由此想到一个常被忽略的问题：评估营商环境，更多是看审批提速了几天、材料精简了多少。这些固然重要，但真正彰显一个地方营商环境成色的，是<span class='highlight-gold'>“顺时有便利，逆境能兜底”</span>。顺风顺水时，政策好不好，企业的感受是温和的；可当一根特种焊条卡住<span class="highlight-green">2000多人</span>的施工节奏时，能不能及时提供帮助，企业的感受更加直接而深刻。</p>
+
+      <div class="sub-thesis">【分论点二】营商环境的成色在“兜底”——统筹兼顾常态和应急，从设备协调到原料保供再到要素保障，为企业服务正从“点状纾困”走向“链式护航”。</div>
+
+      <p>制度的价值恰恰在此：形成一套<span class='highlight-blue'>可预期、可复制、可追溯的标准动作</span>。一个健康的经济生态，要统筹兼顾常态和应急。从设备协调，到原料保供，再到要素保障，为企业服务正在从“点状纾困”走向“链式护航”。<span class='highlight-purple'>若无一套成体系、下沉到生产一线的服务网络，某个环节“掉链子”，就可能导致整条产业链的生产节奏被打乱。</span></p>
+
+      <div class="sub-thesis">【分论点三】落点在把制度优势转化为获得感——不能光讲理念，也不能只想着铺摊子，更要让每一个项目“遇到问题有人帮”，而且“帮得快、帮到底”。</div>
+
+      <p>从这个意义上说，半小时解决断供危机，是一次实战检验，更是一次无声提醒。推动产业发展，不能光讲理念，也不能只想着铺摊子，更重要的是<span class='highlight-blue'>让每一个落地生根的项目“遇到问题有人帮”，而且“帮得快、帮到底”</span>。把制度优势转化为企业实实在在的获得感，营商环境才算真正立住了。焊花重新闪烁的那一刻，亮起来的不仅是一条管道，更是对一个地方的投资信心。</p>
+
+      <p class="byline">（摘编自《吉林日报》，原题为《半小时“急救”背后的制度“托底”》；刊于人民日报2026年9月29日 第05版 · 纵横）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·个案</span>\n      <p><b>“傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……被企业负责人称之为‘精准的急救’。”</b>——以紧凑时间线讲故事，写“营商环境／政务服务”是极佳引例。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·总论</span>\n      <p><b>“评估营商环境，看的不止是审批提速几天、材料精简多少，更在‘顺时有便利，逆境能兜底’。”</b>——一句话立骨，写“营商环境成色”是框架句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·追问</span>\n      <p><b>“比‘快’更值得深思的是：为什么能这么快？”</b>——以追问引向制度，写“由事及理”是过渡句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·答案在制度</span>\n      <p><b>“答案在制度……这套机制平时不显山不露水，企业几乎感觉不到它的存在；可一旦风险袭来，它便立刻发挥作用。”</b>——讲透“显绩与潜绩”，写“制度建设／久久为功”是理性句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·闭环</span>\n      <p><b>“企业诉求提出、响应、协调办理、反馈闭环机制，省市县三级分级全覆盖包保服务，多年运转不辍。”</b>——以机制名称讲方法，写“闭环管理／包保服务”是实操句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·成色</span>\n      <p><b>“当一根特种焊条卡住2000多人的施工节奏时，能不能及时提供帮助，企业的感受更加直接而深刻。”</b>——以反差凸显“兜底”价值，写“以人民为中心／企业感受”是共情句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·链式护航</span>\n      <p><b>“为企业服务正在从‘点状纾困’走向‘链式护航’。”</b>——四字对仗点睛，写“系统服务／全链条保障”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·掉链子</span>\n      <p><b>“若无一套成体系、下沉到生产一线的服务网络，某个环节‘掉链子’，就可能导致整条产业链的生产节奏被打乱。”</b>——以“掉链子”俗语讲系统风险，写“统筹兼顾／体系思维”是警醒句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·帮得快帮到底</span>\n      <p><b>“让每一个落地生根的项目‘遇到问题有人帮’，而且‘帮得快、帮到底’。”</b>——口语化金句，写“主动服务／有呼必应”是暖心句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·信心</span>\n      <p><b>“焊花重新闪烁的那一刻，亮起来的不仅是一条管道，更是对一个地方的投资信心。”</b>——由实入虚收束，写“营商环境就是生产力”是意境句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“现象—追问—制度—价值”框架：先讲“半小时急救”的快，再以“为什么能这么快”追问，继而揭示闭环机制，最后落到营商环境成色与信心。适用于“优化营商环境”类作文。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“底座论—兜底论—获得感论”三分：分论点一写“可预期可复制可追溯的制度底座”（是什么），分论点二写“统筹常态与应急的链式护航”（怎么兜），分论点三写“帮得快帮到底的获得感”（落到哪）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“优化营商环境”拆成：建闭环（诉求—响应—协调—反馈）；强包保（省市县三级分级全覆盖）；重下沉（服务网络到生产一线）；促链条（从点状纾困到链式护航）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·由事及理</span>\n      <p>学本文“个案→追问→机理”的升维：不堆砌事例，而是借“为什么能这么快”把个案引向制度分析，把故事写成有纵深的论证。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·金句迁移</span>\n      <p>“顺时有便利，逆境能兜底”可作“制度韧性／应急治理”类文章标题或分论点；“为企业服务从点状纾困走向链式护航”可作“系统服务”类论证框架。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「顺时有便利  逆境能兜底」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是制度的价值在“可预期、可复制、可追溯”。闭环机制与三级包保平时无感、急时聚合，把分散资源快速组织起来，这是营商环境最坚实的底座。<br>二是营商环境的成色在“兜底”。统筹兼顾常态和应急，从设备协调到原料保供再到要素保障，为企业服务正从“点状纾困”走向“链式护航”。<br>三是落点在把制度优势转化为获得感。不能光讲理念，也不能只想着铺摊子，更要让每一个项目“遇到问题有人帮”，而且“帮得快、帮到底”。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「评估营商环境，看的不止是审批提速几天、材料精简多少，更在“顺时有便利，逆境能兜底”——平时不显山不露水、急时即刻聚合资源，把制度优势转化为企业实实在在的获得感，营商环境才算真正立住。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是制度的价值在“可预期、可复制、可追溯”——闭环机制与三级包保平时无感、急时聚合，把分散资源快速组织起来，这是营商环境最坚实的底座。<br>二是营商环境的成色在“兜底”——统筹兼顾常态和应急，从设备协调到原料保供再到要素保障，为企业服务正从“点状纾困”走向“链式护航”。<br>三是落点在把制度优势转化为获得感——不能光讲理念，也不能只想着铺摊子，更要让每一个项目“遇到问题有人帮”，而且“帮得快、帮到底”。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……被企业负责人称之为‘精准的急救’。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「顺时有便利  逆境能兜底」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是可迁移为“关于优化营商环境、强化企业服务的指导意见”等素材。<br>二是文中“诉求提出—响应—协调—反馈闭环”“成体系、下沉到生产一线的服务网络”等表述极适合写进对策与公文。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……被企业负责人称之为‘精准的急救’。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于顺时有便利  逆境能兜底的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于顺时有便利  逆境能兜底的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进顺时有便利  逆境能兜底，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、制度的价值在“可预期、可复制、可追溯”——闭环机制与三级包保平时无感、急时聚合，把分散资源快速组织起来，这是营商环境最坚实的底座。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、营商环境的成色在“兜底”——统筹兼顾常态和应急，从设备协调到原料保供再到要素保障，为企业服务正从“点状纾困”走向“链式护航”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、落点在把制度优势转化为获得感——不能光讲理念，也不能只想着铺摊子，更要让每一个项目“遇到问题有人帮”，而且“帮得快、帮到底”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……被企业负责人称之为‘精准的急救’。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「顺时有便利  逆境能兜底」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：顺时有便利  逆境能兜底<br><br>时代之问，呼唤破题之策。顺时有便利  逆境能兜底，是发展所需，也是民心所向。可从三个维度展开：制度的价值在“可预期、可复制、可追溯”、营商环境的成色在“兜底”、落点在把制度优势转化为获得感。<br><br>分论点一：制度的价值在“可预期、可复制、可追溯”——闭环机制与三级包保平时无感、急时聚合，把分散资源快速组织起来，这是营商环境最坚实的底座。方向对了，路再远也能抵达。“傍晚接到断供电话，半小时后货源摸排到位，当日特种焊条进场、施工重启……被企业负责人称之为‘精准的急救’。”<br><br>分论点二：营商环境的成色在“兜底”——统筹兼顾常态和应急，从设备协调到原料保供再到要素保障，为企业服务正从“点状纾困”走向“链式护航”。方法对了，事再难也能办成。“评估营商环境，看的不止是审批提速几天、材料精简多少，更在‘顺时有便利，逆境能兜底’。”<br><br>分论点三：落点在把制度优势转化为获得感——不能光讲理念，也不能只想着铺摊子，更要让每一个项目“遇到问题有人帮”，而且“帮得快、帮到底”。行百里者半九十。“比‘快’更值得深思的是：为什么能这么快？”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。顺时有便利  逆境能兜底是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报刊载原文整理（人民日报·纵横·第05版《顺时有便利  逆境能兜底》），仅供申论备考积累使用 · 2026年9月29日</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

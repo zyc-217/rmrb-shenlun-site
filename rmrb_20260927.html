@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 重新出发的勇毅从何来</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>重新出发的勇毅从何来</h1>
+    <div class="meta">人民日报·现场评论 | 长征精神·乡村振兴·新质生产力·因地制宜·奋斗·赓续红色血脉 | 2026年9月29日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：长征精神·乡村振兴·新质生产力·因地制宜·奋斗·赓续红色血脉</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">长征精神</span>\n      <span class="tag-item">乡村振兴</span>\n      <span class="tag-item">新质生产力</span>\n      <span class="tag-item">因地制宜</span>\n      <span class="tag-item">奋斗</span>\n      <span class="tag-item">红色基因</span>\n      <span class="tag-item">高质量发展</span>\n      <span class="tag-item">实干</span>\n      <span class="tag-item">攻坚克难</span>\n      <span class="tag-item">赓续血脉</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">\n      <h3>🎯 高频命题角度提示</h3>\n        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>弘扬长征精神／赓续红色血脉／乡村振兴／新质生产力／艰苦奋斗</b>”等主题；本文<b>“今昔对照—场景铺陈—精神提炼”</b>的写法，是写“红色资源赋能发展”类文章的高分框架。</span></div>\n        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“走好新的长征路，敢于重新出发，向新而行”</b>——立足自身条件因地制宜、于薄弱处无中生有、瞄准前沿打攻坚战也打持久战，正是对奋斗风骨的继承传扬。</span></div>\n        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>一切从实际出发，立足自身条件，顺势而为</b>”“<b>无中生有、有中创优</b>”“<b>每一次抵达都是新的出发</b>”等辩证，是写<b>继承与创新／起点与终点</b>类作文的现成素材。</span></div>\n        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于弘扬长征精神、推进乡村全面振兴的对策建议”等素材；文中“<b>看清‘自己有什么’再精准定位</b>”“<b>不盲从跟风、不简单复刻</b>”“<b>既打攻坚战也打持久战</b>”等表述极适合写进对策与公文。</span></div>\n    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">\n      <h3>🧩 文章骨架</h3>\n        <div class="analysis-item"><span class="label">引入</span><span class="text"><b>以场景破题</b>：于都河畔情景剧《告别》再现送红军出征，渡口两岸高楼林立、天堑变通途，硝烟散尽换了人间（第一至四段）。</span></div>\n        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：走好新的长征路，敢于重新出发、向新而行；立足自身条件因地制宜、于薄弱处无中生有、瞄准前沿既打攻坚战也打持久战（第五段，前接总论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>一切从实际出发，立足自身条件、顺势而为</b>：赣州农业由零散粗放向集群集约转型，“山上有果、林下有油、田里有菜”（第六至九段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>不畏艰难险阻，于空白处起高楼、从薄弱处求突破</b>：南康从一把刨刀起家成“家具之都”，建起低空经济产业园（第十至十二段，前接分论点色块）。</span></div>\n        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>敢于重新出发、向新而行</b>：赣州经开区“土生土长”的智能选矿机、5G工厂崛起“科技高地”，赓续长征精神再启新程（第十三至十五段，前接分论点色块，含总书记金句）。</span></div>\n        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>收束于新长征</b>：90多年后赣南赓续红色血脉再启新程，每一次抵达都是新的出发（第十六段）。</span></div>\n        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“今昔对照—点面结合”的记叙结构</b>：以于都河今昔之变起笔，再用农业、家具、科技三个剖面层层递进，是申论“用故事讲精神”的范本。</span></div>\n    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>今年是红军长征胜利90周年。铭记那场“无与伦比的史诗般远征”，更要“齐心协力走好新的长征路，开创更加光明的未来”。本版今起推出系列评论，走长征路，感今昔变，为弘扬伟大长征精神、奋进新征程凝心聚力。</p>
+
+      <p>——编　者</p>
+
+      <p>“红旗飘，军号响，子弟兵，别故乡……”江西于都县于都河畔，情景剧《告别》缓缓启幕，再现当年苏区群众送红军将士出征的场景。</p>
+
+      <p>站在渡口眺望，于都河两岸高楼林立，天堑变通途——红军大桥、长征大桥、集结大桥、渡江大桥、胜利大桥依次横跨河面，桥名连起来正是“红军长征集结渡江胜利”。</p>
+
+      <p>硝烟散尽，换了人间。赣南革命老区传承红色基因，<span class='highlight-blue'>以实干奋斗厚植高质量发展底气</span>。</p>
+
+      <div class="thesis">【总论点】走好新的长征路，<span class='highlight-gold'>敢于重新出发，向新而行</span>。从赣南革命老区看，立足自身条件<span class='highlight-blue'>因地制宜谋发展</span>、于薄弱处<span class='highlight-gold'>无中生有、有中创优</span>、瞄准前沿<span class='highlight-blue'>既打攻坚战也打持久战</span>，正是对红军闯关夺隘奋斗风骨的继承传扬。</div>
+
+      <div class="sub-thesis">【分论点一】一切从实际出发，立足自身条件、顺势而为——看清“自己有什么”再精准定位，不盲从跟风、不简单复刻，因地制宜谋发展。</div>
+
+      <p>一切从实际出发，立足自身条件，顺势而为。</p>
+
+      <p>于都县车溪乡现代农业产业园，1700多亩连片富硒蔬果大棚绵延铺开，棚内新定植的西红柿幼苗错落成行。产业园负责人段长福笑着说：“3个月后，预计产出西红柿<span class='highlight-green'>3000吨</span>，直销大湾区！”行走赣南大地，座座蔬果大棚如同绿色银行，稳稳托举群众幸福。</p>
+
+      <p>海拔<span class='highlight-green'>500米</span>以上种茶叶，<span class='highlight-green'>300米</span>至<span class='highlight-green'>500米</span>种油茶，<span class='highlight-green'>300米</span>以下种脐橙，平地发展大棚蔬果……立足“八山半水一分田”，正视“杂、小、散”，赣州农业产业由零散粗放向集群集约转型，形成“山上有果、林下有油、田里有菜”的特色农业发展格局。</p>
+
+      <p>当年，红军转战赣南，立足战地实情研判局势、谋划行军作战。如今，这片红色故土推进乡村全面振兴，同样<span class='highlight-blue'>不盲从跟风、不简单复刻，看清“自己有什么”再精准定位，因地制宜谋发展</span>。</p>
+
+      <div class="sub-thesis">【分论点二】不畏艰难险阻，于空白处起高楼、从薄弱处求突破——不坐等天时，在重重封锁中蹚出道路，无中生有、有中创优，正是对奋斗风骨的继承。</div>
+
+      <p>不畏艰难险阻，于空白处起高楼，从薄弱处求突破。</p>
+
+      <p>走进赣州南康区数字化家具生产车间，机械臂灵活伸屈、精准落位，一块块木材经精切、打磨、拼装，变成一件件精致家具。从一把刨刀起家，南康敢闯敢拼，发展为家具企业超<span class='highlight-green'>7000家</span>、营收突破<span class='highlight-green'>2900亿元</span>的“家具之都”。</p>
+
+      <p>南康区低空经济产业园，产业新赛道拔节生长：风洞实验室内，无人机呼啸腾空；标准化厂房里，各类飞行器整齐列阵……一个没有任何航空工业基础的内陆县区，建起拥有全国最大连片飞行空域的专业园区，汇聚<span class='highlight-green'>30多家</span>上下游企业。</p>
+
+      <p>回望峥嵘岁月，红军四渡赤水、巧渡金沙江、爬雪山过草地，从来都不是坐等天时，而是在重重封锁中蹚出一条道路。<span class='highlight-gold'>征途跨越山海，精神一脉相承，南康人说“等条件都成熟了再干，那就什么也干不成”。跳出资源桎梏、主动破局，无中生有、有中创优，正是对红军闯关夺隘奋斗风骨的继承传扬。</span></p>
+
+      <div class="sub-thesis">【分论点三】走好新的长征路，敢于重新出发、向新而行——瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。</div>
+
+      <p>走好新的长征路，敢于重新出发，向新而行。</p>
+
+      <p>赣州经开区，好朋友科技公司厂房里的“天元”智能选矿机，探测器飞速扫描，每秒精准识别、处理约<span class='highlight-green'>1万颗</span>矿石。“完全‘土生土长’，自主可控！”公司董事长何鹏宇说，这款选矿机远销全球<span class='highlight-green'>30多个</span>国家和地区。</p>
+
+      <p>附近的富尔特电子，5G全连接工厂高效运转，高性能永磁材料成为新能源汽车核心配件；冠英科技的智算大脑数据奔流，服务全国<span class='highlight-green'>5000余家</span>企业……曾经的“工业洼地”，正崛起“科技高地”。</p>
+
+      <p>习近平总书记强调：<span class='highlight-gold'>“一代人有一代人的长征，一代人有一代人的担当。”</span>新长征路上，<span class="highlight-purple">每一次抵达都是新的出发</span>。瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。截至<span class='highlight-green'>2025年底</span>，赣州高新技术企业达<span class='highlight-green'>1280家</span>，累计培育独角兽、瞪羚等高成长性科技企业<span class='highlight-green'>165家</span>。</p>
+
+      <p>夜幕降临，于都河畔华灯初上，中央红军长征出发纪念碑巍然屹立。当年，红军从这里出发，走向新生。<span class='highlight-gold'>90多年后，赣南革命老区赓续长征精神，传承红色血脉，再启新程。</span></p>
+
+      <p class="byline">（人民日报2026年9月29日 第05版 · 现场评论）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">\n      <span class="tag-shenlun">金句·总论</span>\n      <p><b>“走好新的长征路，敢于重新出发，向新而行。”</b>——标题即总论点，写“长征精神／接续奋斗”是凝练句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·实干</span>\n      <p><b>“硝烟散尽，换了人间。赣南革命老区传承红色基因，以实干奋斗厚植高质量发展底气。”</b>——今昔对照收束，写“红色基因赋能发展”是意境句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·因地制宜</span>\n      <p><b>“不盲从跟风、不简单复刻，看清‘自己有什么’再精准定位，因地制宜谋发展。”</b>——讲透方法论，写“因地制宜／精准施策”是范式句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·特色格局</span>\n      <p><b>“形成‘山上有果、林下有油、田里有菜’的特色农业发展格局。”</b>——四字排比，写“特色农业／立体发展”是画面句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·无中生有</span>\n      <p><b>“等条件都成熟了再干，那就什么也干不成。跳出资源桎梏、主动破局，无中生有、有中创优。”</b>——以群众语言讲破局，写“攻坚克难／敢闯敢拼”是锐利句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·家具之都</span>\n      <p><b>“从一把刨刀起家……发展为家具企业超7000家、营收突破2900亿元的‘家具之都’。”</b>——以数据讲逆袭，写“产业从小到大”是说服句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·工业洼地</span>\n      <p><b>“曾经的‘工业洼地’，正崛起‘科技高地’。”</b>——对比凝练，写“转型升级／换道超车”是意象句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·总书记</span>\n      <p><b>“一代人有一代人的长征，一代人有一代人的担当。”</b>——总书记原话，写“青年担当／接续奋斗”是权威定论句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·数据与硬骨头</span>\n      <p><b>“瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。”</b>——以“攻坚战—持久战”喻发展，写“系统推进”是结构句。</p>\n    </div>\n    <div class="material-card">\n      <span class="tag-shenlun">金句·再启新程</span>\n      <p><b>“90多年后，赣南革命老区赓续长征精神，传承红色血脉，再启新程。”</b>——回扣开篇收束，写“不忘初心／赓续血脉”是余韵句。</p>\n    </div>\n
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">\n      <span class="tag-mig">迁移一·议论文结构</span>\n      <p>学本文“今昔对照—点面结合”框架：以于都河今昔之变起笔，再用农业、家具、科技三个剖面层层递进，由场景到精神。适用于“弘扬长征精神／乡村振兴”类作文。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移二·分论点设计</span>\n      <p>套用本文“实际出发—攻坚克难—向新而行”三分：分论点一写“因地制宜、看清自己有什么”（定位），分论点二写“无中生有、有中创优”（突破），分论点三写“向新而行、打攻坚战也打持久战”（跃升）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移三·对策题</span>\n      <p>把“推进乡村全面振兴”拆成：摸清家底、精准定位（不盲从跟风）；无中生有、延链补链（于薄弱处突破）；向新而行、布局新兴（打攻坚战也打持久战）。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移四·今昔对照</span>\n      <p>学本文“桥名连起来正是‘红军长征集结渡江胜利’”“工业洼地崛起科技高地”的今昔对照：用具体物象承载精神变迁，把宏大主题写得可感可触。</p>\n    </div>\n    <div class="migration-card">\n      <span class="tag-mig">迁移五·金句迁移</span>\n      <p>“敢于重新出发，向新而行”可作“守正创新／接续奋斗”类文章分论点；“一代人有一代人的长征，一代人有一代人的担当”可作“青年使命”类论证权威定论。</p>\n    </div>\n
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「重新出发的勇毅从何来」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一切从实际出发，立足自身条件、顺势而为。看清“自己有什么”再精准定位，不盲从跟风、不简单复刻，因地制宜谋发展。<br>二是不畏艰难险阻，于空白处起高楼、从薄弱处求突破。不坐等天时，在重重封锁中蹚出道路，无中生有、有中创优，正是对奋斗风骨的继承。<br>三是走好新的长征路，敢于重新出发、向新而行。瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「走好新的长征路，敢于重新出发，向新而行。从赣南革命老区看，立足自身条件因地制宜谋发展、于薄弱处无中生有、有中创优、瞄准前沿既打攻坚战也打持久战，正是对红军闯关夺隘奋斗风骨的继承传扬。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一切从实际出发，立足自身条件、顺势而为——看清“自己有什么”再精准定位，不盲从跟风、不简单复刻，因地制宜谋发展。<br>二是不畏艰难险阻，于空白处起高楼、从薄弱处求突破——不坐等天时，在重重封锁中蹚出道路，无中生有、有中创优，正是对奋斗风骨的继承。<br>三是走好新的长征路，敢于重新出发、向新而行——瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“走好新的长征路，敢于重新出发，向新而行。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「重新出发的勇毅从何来」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是可迁移为“关于弘扬长征精神、推进乡村全面振兴的对策建议”等素材。<br>二是文中“看清‘自己有什么’再精准定位”“不盲从跟风、不简单复刻”“既打攻坚战也打持久战”等表述极适合写进对策与公文。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“走好新的长征路，敢于重新出发，向新而行。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于重新出发的勇毅从何来的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于重新出发的勇毅从何来的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进重新出发的勇毅从何来，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、一切从实际出发，立足自身条件、顺势而为——看清“自己有什么”再精准定位，不盲从跟风、不简单复刻，因地制宜谋发展。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、不畏艰难险阻，于空白处起高楼、从薄弱处求突破——不坐等天时，在重重封锁中蹚出道路，无中生有、有中创优，正是对奋斗风骨的继承。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、走好新的长征路，敢于重新出发、向新而行——瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“走好新的长征路，敢于重新出发，向新而行。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「重新出发的勇毅从何来」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：重新出发的勇毅从何来<br><br>时代之问，呼唤破题之策。重新出发的勇毅从何来，是发展所需，也是民心所向。可从三个维度展开：一切从实际出发，立足自身条件、顺势而为、不畏艰难险阻，于空白处起高楼、从薄弱处求突破、走好新的长征路，敢于重新出发、向新而行。<br><br>分论点一：一切从实际出发，立足自身条件、顺势而为——看清“自己有什么”再精准定位，不盲从跟风、不简单复刻，因地制宜谋发展。方向对了，路再远也能抵达。“走好新的长征路，敢于重新出发，向新而行。”<br><br>分论点二：不畏艰难险阻，于空白处起高楼、从薄弱处求突破——不坐等天时，在重重封锁中蹚出道路，无中生有、有中创优，正是对奋斗风骨的继承。方法对了，事再难也能办成。“硝烟散尽，换了人间。赣南革命老区传承红色基因，以实干奋斗厚植高质量发展底气。”<br><br>分论点三：走好新的长征路，敢于重新出发、向新而行——瞄准前沿科技、布局新兴产业，既打攻坚战、敢啃硬骨头，也打持久战、蓄积发展后劲。行百里者半九十。“不盲从跟风、不简单复刻，看清‘自己有什么’再精准定位，因地制宜谋发展。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。重新出发的勇毅从何来是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报刊载原文整理（人民日报·现场评论·第05版《重新出发的勇毅从何来》），仅供申论备考积累使用 · 2026年9月29日</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
