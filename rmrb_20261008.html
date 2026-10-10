@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 中国市场的稀缺性从何来</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>中国市场的稀缺性从何来</h1>
+    <div class="meta">人民日报·评论员观察 | 超大规模市场·制度优势·有效市场有为政府·稳中求进 | 2026年10月8日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：超大规模市场／制度优势／有效市场与有为政府／稳中求进／新质生产力／道路自信</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">制度优势</span>
+      <span class="tag-item">有效市场与有为政府</span>
+      <span class="tag-item">稳中求进</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">宏观调控</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">战略定力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">道路自信</span>
+      <span class="tag-item">确定性</span>
+      <span class="tag-item">新发展格局</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>超大规模市场／制度优势／有效市场与有为政府／稳中求进／新质生产力／高质量发展</b>”等主题；本文<b>“设问破题—对比剖析—案例佐证—升华号召”</b>的论证链，是写“中国经济行稳致远”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>中国市场的“稀缺性”</b>——表层是超大规模市场与稳定预期，深层是<b>有效市场与有为政府相结合的显著制度优势</b>，内核是<b>深沉的战略定力与积极的历史主动</b>；唯有把制度优势、市场活力与战略定力统一起来，方能赢得确定性。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>稳与进</b>”“<b>放得活与管得好</b>”“<b>战略稳定与战术灵活</b>”等多组辩证，是写<b>活力与秩序／当下与长远／政府与市场</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于持续优化营商环境、激发市场活力的倡议书”等公文素材。对策要点：<b>坚持有效市场与有为政府相结合、破除体制机制障碍</b>／<b>推动传统产业转型升级、新兴产业蓄势壮大</b>／<b>保持战略定力、以历史主动夯实稳中求进根基</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（设问破题—对比剖析—案例佐证—升华号召）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“<b>当今世界，最稀缺的资源是市场</b>”破题，点出中国是“稀缺中的稀缺”，顺势设问“稀缺性从何来”，引出从一个“稳”字剖析（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：中国市场的稀缺性，源于高水平动态平衡、制度优势与战略定力的统一（总论点色块，前接引入）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>稀缺性源于“稳”——确定性是最稀缺的资源</b>——以中外对比（通胀）、今昔对比（供电）讲百姓“无感”之稳，凸显“风景独好”的确定性（第四至七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>稀缺性源于制度优势——有效市场与有为政府相结合</b>——以重庆大渡口“十里钢城”转型、钱江摩托等案例，讲市场政府同向发力、活力秩序统筹（第八至十二段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>稀缺性源于战略定力与道路自信</b>——以安徽合肥“产投而非风投”讲政绩观，把战略稳定与战术灵活统一于中国式现代化（第十三至十六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到行稳致远</b>：夯实稳的基础、积蓄进的动能，葆有稳中求进心态，中国号巨轮定能破浪稳行（第十六段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“设问破题—双维对比—案例佐证—升华号召”</b>结构：以设问立骨，用中外/今昔对比显“稳”，再以地方实践案例证“制”，是申论“由现象到本质”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>中国经济之“稳”，不是静态的，而是一种前进势态中的高水平动态平衡。这份“稳”的背后，是<span class="highlight-purple">深沉的战略定力和积极的历史主动</span>。</p>
+
+      <p>当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是“<span class="highlight-purple">稀缺中的稀缺</span>”。</p>
+
+      <p>这份稀缺性从何来？不妨从一个“稳”字来剖析。</p>
+
+      <div class="thesis">【总论点】中国市场的稀缺性，说到底源于一种<b class="highlight-purple">前进势态中的高水平动态平衡</b>——既靠<b class="highlight-blue">超大规模市场的硬实力</b>与<b class="highlight-blue">有效市场、有为政府相结合的显著制度优势</b>，更靠<b class="highlight-purple">深沉的战略定力与积极的历史主动</b>，三者统一于中国经济的行稳致远。</div>
+
+      <div class="sub-thesis">【分论点一】稀缺性源于“稳”——确定性是最稀缺的资源：在中外对比、今昔对照中，中国以“无感”的安稳，成就了一种稀缺的确定性。</div>
+
+      <p>经济运行的“稳”，恰恰表现为百姓的“无感”，两个对比，比较直观。</p>
+
+      <p>一是中外对比。在主要发达经济体通胀水平明显上升，甚至一些国家通胀“高烧”仍在升温，导致民众生活必需品开支压力倍增时，我们则享有“水果自由”“流量自由”。从指标也可见一斑：<span class="highlight-green">8月，居民消费价格指数同比上涨0.8%</span>。温和的数据映照百姓生活的安稳。</p>
+
+      <p>二是今昔对比。曾经最怕到了夏季停电、停产，现在拉闸限电几乎不见。<span class="highlight-green">8月，全社会用电量再破万亿千瓦时，负荷创历史新高</span>，但城市运行有序、万家灯火如常。这背后是一整套<span class="highlight-blue">新型能源体系</span>的默默运转。从特高压工程到城乡配电网、微电网，从火电到风电、水电、光伏，立体化的供电网络托举起经济社会运行的平稳。</p>
+
+      <p>这种“稳”，置于当今世界更显可贵。放眼全球，主要经济体复苏乏力，国际地缘政治冲突态势持续，全球能源价格波动，而中国的“<span class="highlight-purple">风景独好</span>”就成了一种稀缺的确定性。<span class="highlight-green">国际货币基金组织7月报告将今年世界经济增长预期下调0.1个百分点，却将中国经济增长预期上调0.2个百分点</span>。“一降一升”背后，正是对这种稀缺性的信心，亦是“加码投资中国”的动因所在。</p>
+
+      <div class="sub-thesis">【分论点二】稀缺性源于制度优势——有效市场与有为政府相结合：以重庆大渡口“十里钢城”转型为样本，看市场政府同向发力、活力秩序统筹。</div>
+
+      <p>“稳”从何而来？<span class="highlight-blue">制度优势是压舱石</span>。</p>
+
+      <p>不妨看一个案例：重庆大渡口区曾是赫赫有名的“十里钢城”，重钢搬迁后，怎么“注入”新的产业？当地立足先天优势，科学布局摩托车产业。</p>
+
+      <p>市场和政府同向发力。钱江摩托，智能制造厂房从竣工到入驻，“即签即驻”；秋田齿轮，<span class="highlight-green">全球每生产5辆摩托车，就有1辆装配它的产品</span>；利德工业，<span class="highlight-green">摩托车离合器国内市场占有率近五成</span>……科学的产业规划、精准的政策支持、持续的服务迭代，让“<span class="highlight-blue">15分钟产业生态圈</span>”成形起势。</p>
+
+      <p>活力与秩序兼顾统筹。当<span class="highlight-green">350多家企业</span>同台竞技，如何活而不乱？产业链咬合，差异化竞争，既细分赛道，又延链强链，让制造与消费、工业与文旅加速融合。<span class="highlight-green">今年1至8月，重庆大渡口区高端摩托车产业规上工业产值同比增长27%</span>，造摩托、玩摩托、看摩托成了城市名片，真正实现了“<span class="highlight-purple">放得活</span>”又“<span class="highlight-purple">管得好</span>”。</p>
+
+      <p>“<span class="highlight-blue">坚持有效市场和有为政府相结合</span>”，既是社会主义市场经济体制的显著优势，也是“十五五”时期经济社会发展必须遵循的重要原则。持续提升<span class="highlight-blue">宏观经济治理能力</span>，推动<span class="highlight-blue">传统产业转型升级、新兴产业蓄势壮大、未来产业前瞻布局</span>，中国市场的确定性、稀缺性还将更加突出。</p>
+
+      <div class="sub-thesis">【分论点三】稀缺性源于战略定力与道路自信——以安徽合肥“产投而非风投”的清醒，讲共产党人政绩观，把战略稳定与战术灵活统一于中国式现代化。</div>
+
+      <p>中国经济之“稳”，不是静态的，而是一种前进势态中的高水平动态平衡。这份“稳”的背后，是深沉的战略定力和积极的历史主动。</p>
+
+      <p>“<span class="highlight-gold">不是‘风投’是‘产投’，不是‘赌博’是‘拼搏’</span>。”面对舆论的赞誉，安徽合肥的干部头脑清醒。高回报率的产业投资只是“面子”，因地制宜、科学决策、长期主义等底层方法论才是“里子”。</p>
+
+      <p>不为风口脑热，专注一个赛道创新；不因风浪自薄，锚定<span class="highlight-blue">新质生产力</span>的发展目标；不一味追逐显绩，更要深耕潜绩……这种<span class="highlight-purple">兼顾战略稳定与战术灵活的从容心态</span>，体现了共产党人的政绩观、发展观。它厚植于与时俱进的治理体系，投射于亿万经营主体的砥砺奋进，也潜移默化为人们对中国式现代化的稳定预期。这份<span class="highlight-gold">道路自信，正是中国经济行稳致远的底气</span>。</p>
+
+      <p>态势向好，说明战略正确。继续坚定信心，夯实稳的基础，积蓄进的动能，葆有<span class="highlight-purple">稳中求进</span>的心态，一步一个脚印走下去，<span class="highlight-gold">中国号巨轮定能破浪稳行</span>。</p>
+
+      <p class="byline">（人民日报2026年10月8日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>“当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是‘稀缺中的稀缺’”</b>——写“市场活力／营商环境”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“风景独好”就成了一种稀缺的确定性</b>——写“中国经济的韧性与确定性”是对比句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>“坚持有效市场和有为政府相结合”</b>——总书记重要论述，写“政府与市场关系／制度优势”是权威定论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法论</span>
+      <p><b>“不是‘风投’是‘产投’，不是‘赌博’是‘拼搏’”</b>——写“科学决策／长期主义／正确政绩观”是警醒句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力</span>
+      <p><b>“这份道路自信，正是中国经济行稳致远的底气”</b>——写“战略定力／道路自信”是标题级句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·号召</span>
+      <p><b>“中国号巨轮定能破浪稳行”</b>——写“奋进新征程／行稳致远”是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·哲理</span>
+      <p><b>“放得活”又“管得好”</b>——写“活力与秩序／放管结合”是鲜活句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证2</span>
+      <p><b>“兼顾战略稳定与战术灵活的从容心态”</b>——写“稳与进／定力与魄力”是判断句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“设问破题—双维对比—案例佐证—升华号召”框架：以“稀缺性从何来”设问立骨，用中外/今昔对比显“稳”，再以地方实践案例证“制”，适用于“中国经济行稳致远”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“稳——确定性最稀缺”（对比），分论点二写“制度优势——有效市场与有为政府”（案例），分论点三写“战略定力与道路自信”（升华），由现象到本质层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“激发市场活力”拆成可操作举措：坚持有效市场与有为政府结合、破除体制机制障碍；推动传统产业转型升级、新兴产业蓄势壮大；保持战略定力、以历史主动夯实稳中求进根基。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“稳与进”“放得活与管得好”“战略稳定与战术灵活”的辩证：先立“活力与秩序统一”立场，再以对比揭示尺度，把市场话题写成有张力、有边界的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“有效市场和有为政府相结合”可作“制度优势”类论证的权威定论；“不是风投是产投”可作“科学决策／长期主义”类文章的警醒或分论点；“中国号巨轮定能破浪稳行”可作任何“奋进新征程”类文章的开篇或结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「中国市场的稀缺性从何来」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是稀缺性源于“稳”。确定性是最稀缺的资源：在中外对比、今昔对照中，中国以“无感”的安稳，成就了一种稀缺的确定性。<br>二是稀缺性源于制度优势。有效市场与有为政府相结合：以重庆大渡口“十里钢城”转型为样本，看市场政府同向发力、活力秩序统筹。<br>三是稀缺性源于战略定力与道路自信。以安徽合肥“产投而非风投”的清醒，讲共产党人政绩观，把战略稳定与战术灵活统一于中国式现代化。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「中国市场的稀缺性，说到底源于一种前进势态中的高水平动态平衡——既靠超大规模市场的硬实力与有效市场、有为政府相结合的显著制度优势，更靠深沉的战略定力与积极的历史主动，三者统一于中国经济的行稳致远。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是稀缺性源于“稳”——确定性是最稀缺的资源：在中外对比、今昔对照中，中国以“无感”的安稳，成就了一种稀缺的确定性。<br>二是稀缺性源于制度优势——有效市场与有为政府相结合：以重庆大渡口“十里钢城”转型为样本，看市场政府同向发力、活力秩序统筹。<br>三是稀缺性源于战略定力与道路自信——以安徽合肥“产投而非风投”的清醒，讲共产党人政绩观，把战略稳定与战术灵活统一于中国式现代化。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是‘稀缺中的稀缺’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「中国市场的稀缺性从何来」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持有效市场与有为政府相结合、破除体制机制障碍。<br>二是推动传统产业转型升级、新兴产业蓄势壮大。<br>三是保持战略定力、以历史主动夯实稳中求进根基。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是‘稀缺中的稀缺’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于中国市场的稀缺性从何来的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于中国市场的稀缺性从何来的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进中国市场的稀缺性从何来，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、稀缺性源于“稳”——确定性是最稀缺的资源：在中外对比、今昔对照中，中国以“无感”的安稳，成就了一种稀缺的确定性。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、稀缺性源于制度优势——有效市场与有为政府相结合：以重庆大渡口“十里钢城”转型为样本，看市场政府同向发力、活力秩序统筹。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、稀缺性源于战略定力与道路自信——以安徽合肥“产投而非风投”的清醒，讲共产党人政绩观，把战略稳定与战术灵活统一于中国式现代化。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是‘稀缺中的稀缺’”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「中国市场的稀缺性从何来」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：中国市场的稀缺性从何来<br><br>时代之问，呼唤破题之策。中国市场的稀缺性从何来，是发展所需，也是民心所向。可从三个维度展开：稀缺性源于“稳”、稀缺性源于制度优势、稀缺性源于战略定力与道路自信。<br><br>分论点一：稀缺性源于“稳”——确定性是最稀缺的资源：在中外对比、今昔对照中，中国以“无感”的安稳，成就了一种稀缺的确定性。方向对了，路再远也能抵达。“当今世界，最稀缺的资源是市场。中国市场又常被投资者认为是‘稀缺中的稀缺’”<br><br>分论点二：稀缺性源于制度优势——有效市场与有为政府相结合：以重庆大渡口“十里钢城”转型为样本，看市场政府同向发力、活力秩序统筹。方法对了，事再难也能办成。“风景独好”就成了一种稀缺的确定性<br><br>分论点三：稀缺性源于战略定力与道路自信——以安徽合肥“产投而非风投”的清醒，讲共产党人政绩观，把战略稳定与战术灵活统一于中国式现代化。行百里者半九十。“坚持有效市场和有为政府相结合”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。中国市场的稀缺性从何来是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-08</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

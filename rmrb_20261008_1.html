@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 可敬的中国  灿烂的明天</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>可敬的中国  灿烂的明天</h1>
+    <div class="meta">人民日报·人民时评 | 可信可爱可敬中国形象·赋能型大国·文化自信·人类命运共同体 | 2026年10月8日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：可信可爱可敬中国形象／赋能型大国／文化自信／人类命运共同体／价值塑造／理念引领</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">可信可爱可敬中国形象</span>
+      <span class="tag-item">赋能型大国</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">价值塑造</span>
+      <span class="tag-item">文明互鉴</span>
+      <span class="tag-item">开放包容</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">全球治理</span>
+      <span class="tag-item">正外部性</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>文化自信／人类命运共同体／文明交流互鉴／大国担当</b>”等主题；本文<b>“现象切入—三组‘从X到Y’递进—总书记论断收束”</b>的论证链，是写“中国形象／国际传播”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“可敬的中国”</b>——表层是赛事主场、品牌出海的“含中量”，深层是<b>中国从商品生产者到发展赋能者、从风貌展示者到价值塑造者、从规则参与者到理念引领者</b>的角色跃迁；唯有以自身发展惠及各方，方能赢得敬重。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>从商品生产者到发展赋能者</b>”“<b>从风貌展示者到价值塑造者</b>”“<b>从规则参与者到理念引领者</b>”三组辩证，是写<b>量变到质变／跟跑到领跑／形式到内核</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于讲好中国故事、展现可敬中国形象的倡议书”等公文素材。对策要点：<b>推动文明交流互鉴、增进价值理念相通</b>／<b>参与全球治理、贡献中国智慧方案</b>／<b>以自身发展惠及世界、凝聚同行力量</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象切入—三组'从X到Y'递进—领袖论断收束）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以亚运会主火炬、开闭幕式、全球主转播“全权由中国完成”的现象切入，点出“含‘中’量很高”，引出中国全球角色转变（第一至六段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：展现可信、可爱、可敬的中国形象，百年间中国完成从落后追赶到前沿引领的历史性转变（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>从“商品生产者”到“发展赋能者”</b>——中国发展具有显著正外部性，是互利共赢的赋能型大国（第七至十段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>从“风貌展示者”到“价值塑造者”</b>——中华文化传播从浅层风貌升华为价值理念相融、直抵人心相通（第十一至十四段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>从“规则参与者”到“理念引领者”</b>——以“奥运三问—入世—提出全球人工智能治理体系”三个时间切片，讲主动建构、前沿引领（第十五至二十一段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“可敬”的内涵</b>：以自身发展惠及各方、以真诚坦荡维护公义、以包容互鉴促进融通，赢得国际社会敬重（第二十一至二十二段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象切入—三组‘从X到Y’递进—领袖论断收束”</b>结构：用赛事细节破题，再以三组并列递进展开，是申论“由具体到抽象”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>中华文明具有很强的感染力、塑造力。今天，中华文化的传播不再只是浅层的风貌展示，更是<span class="highlight-blue">价值理念的相融、直抵人心的相通</span>。</p>
+
+      <p>2026年爱知—名古屋亚运会上，几个细节令人印象深刻。</p>
+
+      <p>熊熊燃烧的主火炬塔，从设计研发、精工制作到落地组装，由中国企业完成；开闭幕式舞台搭建、数字内容制作、特效呈现等核心工程，由中国团队打造；甚至本届赛事的全球主转播工作也全权由中国的媒体机构负责，<span class="highlight-green">打破了历届赛事由东道主承接主转播的惯例</span>。</p>
+
+      <p>不由想起今年举行的2026美加墨世界杯，中国供应商、中国品牌、中国裁判也是焦点。</p>
+
+      <p>网友们总结了个共同特点，“<span class="highlight-gold">含‘中’量很高</span>”。</p>
+
+      <p>从昔日刘长春“单刀赴会”，到北京奥运会开幕式上2008人击缶惊艳世界，再到如今各类赛事不同程度刻入中国印记……国际性大赛是竞技舞台，更是一面镜子，映照中国全球角色的深刻转变。</p>
+
+      <div class="thesis">【总论点】展现<b class="highlight-gold">可信、可爱、可敬的中国形象</b>——百年间中国从“<span class="highlight-purple">商品生产者</span>”到“<span class="highlight-purple">发展赋能者</span>”、从“<span class="highlight-purple">风貌展示者</span>”到“<span class="highlight-purple">价值塑造者</span>”、从“<span class="highlight-purple">规则参与者</span>”到“<span class="highlight-purple">理念引领者</span>”，完成了从落后追赶到前沿引领的历史性转变，以自身发展惠及各方、以包容互鉴凝聚同行力量。</div>
+
+      <div class="sub-thesis">【分论点一】从“商品生产者”到“发展赋能者”——中国的发展具有显著正外部性，不是单向扶助，而是互利共赢的赋能型大国。</div>
+
+      <p>过去很长一段时间，世界认识中国，更多是认识“中国制造”。中国向世界各地输出大量商品，主要以生产者身份参与全球分工。如今，中国的角色更多元、影响更深远。</p>
+
+      <p>跨国车企把研发中心设在中国，打磨新车型、新技术，反哺全球市场。<span class="highlight-green">最不发达国家在中国市场找到机遇，给优质特色农产品打开销路</span>。每当全球产业链供应链受到冲击，中国强大产业体系总能发挥<span class="highlight-blue">稳定器、压舱石</span>作用。</p>
+
+      <p>中国的发展具有显著的<span class="highlight-blue">正外部性</span>。“赋能型大国”的“赋能”，<span class="highlight-purple">不是单向扶助，而是真正的互利共赢；不是基于利益计算，而是源于共生共进的胸怀与担当</span>。</p>
+
+      <div class="sub-thesis">【分论点二】从“风貌展示者”到“价值塑造者”——中华文化传播从浅层风貌展示，升华为价值理念相融、直抵人心相通。</div>
+
+      <p>曾经，中华文化在海外，更多被视作一种文化符号，喜欢其形式和外在的人多，关注其内涵与深意的人少。如今，许多外国人练习武术，不仅是因为养生、有趣，更因为赞赏<span class="highlight-blue">以武止戈</span>的文化理念；外网中“成为中国人”话题之所以出圈，在于中式生活的观念、意趣、审美引发共鸣……</p>
+
+      <p>更值得关注的是，“中国式安全感”“菜篮子工程”等当代中国的文化与社会现象在海外收获点赞。这本质上是<span class="highlight-purple">治理思维、价值追求得到更多认同</span>。</p>
+
+      <p>中华文明具有很强的感染力、塑造力。今天，中华文化的传播不再只是浅层的风貌展示，更是<span class="highlight-blue">价值理念的相融、直抵人心的相通</span>。</p>
+
+      <div class="sub-thesis">【分论点三】从“规则参与者”到“理念引领者”——百年间中国从落后追赶、主动融入，走向积极建构、前沿引领。</div>
+
+      <p>中国走向世界，经历过一个姿态的转变，从3个时间切片可以看得清楚。</p>
+
+      <p>上世纪初的“奥运三问”，饱含一个落后国家的无奈与辛酸。</p>
+
+      <p>本世纪初，成功加入世贸组织的中国开启“接轨之旅”。</p>
+
+      <p>2026年，习近平主席站在推动构建<span class="highlight-blue">人类命运共同体</span>的高度，提出携手构建公正合理的<span class="highlight-blue">全球人工智能治理体系</span>，引发热烈反响。外媒感慨，“<span class="highlight-gold">中国正定义未来</span>”。</p>
+
+      <p>百年间，中国面向世界，完成了从落后追赶、主动融入到积极建构、前沿引领的历史性转变。“洞察时代大势，把握历史主动”，党团结带领亿万人民既发展自身、也造福全球。</p>
+
+      <p>习近平总书记强调：“<span class="highlight-gold">展现可信、可爱、可敬的中国形象</span>。”什么是“可敬”？不是让人敬畏、惧怕，而是让人产生发自内心的尊重、敬佩、认同。一个大国，唯有<span class="highlight-purple">以自身发展惠及各方、以真诚坦荡维护公义、以包容互鉴促进融通</span>，才能赢得国际社会的敬重与支持，才能为伟大的事业凝聚更多同行力量。</p>
+
+      <p>时光不言，以实干为尺。中华民族壮丽的未来，人类社会灿烂的明天，等待我们携手去创造。</p>
+
+      <p class="byline">（人民日报2026年10月8日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立论</span>
+      <p><b>“展现可信、可爱、可敬的中国形象”</b>——总书记重要论述，写“中国形象／国际传播”是权威定论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·现象</span>
+      <p><b>“含‘中’量很高”</b>——以网言网语概括中国全球影响力跃升，写“中国名片／品牌出海”是鲜活句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“从‘商品生产者’到‘发展赋能者’／从‘风貌展示者’到‘价值塑造者’／从‘规则参与者’到‘理念引领者’”</b>——写“跟跑到领跑／形式到内核”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·胸怀</span>
+      <p><b>“不是单向扶助，而是真正的互利共赢；不是基于利益计算，而是源于共生共进的胸怀与担当”</b>——写“人类命运共同体／大国担当”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·引领</span>
+      <p><b>“中国正定义未来”</b>——外媒评价，写“前沿引领／中国智慧”是标题级句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·认同</span>
+      <p><b>“治理思维、价值追求得到更多认同”</b>——写“文化自信／价值塑造”是升华句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·内涵</span>
+      <p><b>“以自身发展惠及各方、以真诚坦荡维护公义、以包容互鉴促进融通”</b>——写“可敬中国”是内涵界定句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·号召</span>
+      <p><b>“时光不言，以实干为尺”</b>——写“实干兴邦／接续奋斗”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象切入—三组‘从X到Y’递进—领袖论断收束”框架：以亚运赛事细节破题，用三组并列递进展开，以总书记“可敬中国”论断收束，适用于“文化自信／国际传播”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“赋能型大国·互利共赢”（经济），分论点二写“价值塑造·文明互鉴”（文化），分论点三写“理念引领·全球治理”（政治），由实到虚、由近及远。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“讲好中国故事”拆成可操作举措：推动文明交流互鉴、增进价值理念相通；参与全球治理、贡献中国智慧方案；以自身发展惠及世界、凝聚同行力量。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文三组“从X到Y”的辩证：先立“量变到质变／跟跑到领跑”立场，再以时间切片揭示跃迁，把中国话题写成有历史纵深、有时代张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“从商品生产者到发展赋能者”可作“高水平对外开放”类论证的框架句；“中国正定义未来”可作“科技自立／前沿引领”类文章的分论点或结尾；“展现可信可爱可敬的中国形象”可作“文化自信”类文章的开篇或标题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「可敬的中国  灿烂的明天」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从“商品生产者”到“发展赋能者”。中国的发展具有显著正外部性，不是单向扶助，而是互利共赢的赋能型大国。<br>二是从“风貌展示者”到“价值塑造者”。中华文化传播从浅层风貌展示，升华为价值理念相融、直抵人心相通。<br>三是从“规则参与者”到“理念引领者”。百年间中国从落后追赶、主动融入，走向积极建构、前沿引领。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「展现可信、可爱、可敬的中国形象——百年间中国从“商品生产者”到“发展赋能者”、从“风貌展示者”到“价值塑造者”、从“规则参与者”到“理念引领者”，完成了从落后追赶到前沿引领的历史性转变，以自身发展惠及各方、以包容互鉴凝聚同行力量。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从“商品生产者”到“发展赋能者”——中国的发展具有显著正外部性，不是单向扶助，而是互利共赢的赋能型大国。<br>二是从“风貌展示者”到“价值塑造者”——中华文化传播从浅层风貌展示，升华为价值理念相融、直抵人心相通。<br>三是从“规则参与者”到“理念引领者”——百年间中国从落后追赶、主动融入，走向积极建构、前沿引领。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“展现可信、可爱、可敬的中国形象”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「可敬的中国  灿烂的明天」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是推动文明交流互鉴、增进价值理念相通。<br>二是参与全球治理、贡献中国智慧方案。<br>三是以自身发展惠及世界、凝聚同行力量。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“展现可信、可爱、可敬的中国形象”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于可敬的中国  灿烂的明天的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于可敬的中国  灿烂的明天的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进可敬的中国  灿烂的明天，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从“商品生产者”到“发展赋能者”——中国的发展具有显著正外部性，不是单向扶助，而是互利共赢的赋能型大国。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、从“风貌展示者”到“价值塑造者”——中华文化传播从浅层风貌展示，升华为价值理念相融、直抵人心相通。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、从“规则参与者”到“理念引领者”——百年间中国从落后追赶、主动融入，走向积极建构、前沿引领。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“展现可信、可爱、可敬的中国形象”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「可敬的中国  灿烂的明天」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：可敬的中国  灿烂的明天<br><br>时代之问，呼唤破题之策。可敬的中国  灿烂的明天，是发展所需，也是民心所向。可从三个维度展开：从“商品生产者”到“发展赋能者”、从“风貌展示者”到“价值塑造者”、从“规则参与者”到“理念引领者”。<br><br>分论点一：从“商品生产者”到“发展赋能者”——中国的发展具有显著正外部性，不是单向扶助，而是互利共赢的赋能型大国。方向对了，路再远也能抵达。“展现可信、可爱、可敬的中国形象”<br><br>分论点二：从“风貌展示者”到“价值塑造者”——中华文化传播从浅层风貌展示，升华为价值理念相融、直抵人心相通。方法对了，事再难也能办成。“含‘中’量很高”<br><br>分论点三：从“规则参与者”到“理念引领者”——百年间中国从落后追赶、主动融入，走向积极建构、前沿引领。行百里者半九十。“从‘商品生产者’到‘发展赋能者’／从‘风貌展示者’到‘价值塑造者’／从‘规则参与者’到‘理念引领者’”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。可敬的中国  灿烂的明天是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-08</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

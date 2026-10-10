@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "向东看"  看什么</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"向东看"  看什么</h1>
+    <div class="meta">人民日报·评论员观察 | 高水平开放·科创考察热·产业韧性·新质生产力·营商环境 | 2026年10月9日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：高水平对外开放／科创考察热／产业韧性／新质生产力／一流营商环境／协同发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">科创考察热</span>
+      <span class="tag-item">产业韧性</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">一流营商环境</span>
+      <span class="tag-item">协同发展</span>
+      <span class="tag-item">创新实力</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">制度型开放</span>
+      <span class="tag-item">双循环</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>高水平对外开放／科创竞争力／营商环境／新质生产力／协同发展</b>”等主题；本文<b>“现象破题—三层递进（产业—创新—制度）—升华号召”</b>的论证链，是写“中国创新吸引力”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>持续升温的“向东看”</b>——表层是海外科创考察热，深层是<b>中国以产业韧性、创新实力、一流营商环境</b>铸就的发展确定性，赢得全球信任；唯有把实力与制度统一起来，方能对冲不确定性。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>由表及里、层层溯源</b>”“<b>从量的积累到质的飞跃、从单点突破到系统跃升</b>”等多组辩证，是写<b>表象与本质／积累与飞跃／自立与开放</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于持续优化营商环境的倡议书／公开信”等公文素材。对策要点：<b>夯实产业韧性、建强完备工业体系与供应链配套</b>／<b>激发创新活力、加快新质生产力形成</b>／<b>优化市场化法治化国际化一流营商环境、集聚全球资源</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象破题—三层递进—升华号召）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以深圳欧洲企业家“几乎每天收到来访请求”的视角切入，点出“中国科创考察热”，引出“向东看”是全球对华认知的深层迭代（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：“向东看”超越简单经贸往来，是世界重新认识中国、携手发展共赢的生动注脚（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>从经贸合作到协同创新——认知迭代有硬核实力支撑</b>——以产业韧性对冲全球不确定性，佛山“海创·机器人产城”为证（第五至六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>发展底气源于创新实力</b>——创新活力迸发、新质生产力加速形成，构成长期吸引力关键内核（第七至九段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>更需优质环境保驾护航</b>——开放制度赋能，持续优化市场化法治化国际化一流营商环境（第十至十一段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“中国好，世界会更好”</b>：以钉钉子精神夯实基础、以海纳百川气度拓展合作，实现双赢（第十二段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象破题—三层递进—升华号召”</b>结构：以考察热破题，再从“产业—创新—制度”三层由实到虚递进，是申论“由表及里”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>持续升温的“向东看”，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚。</p>
+
+      <p>如何判断一个地方有没有吸引力？一名在广东深圳生活11年的欧洲企业家，从自身经历给出了这样的观察视角：如今几乎每天都会收到外国初创企业创始人的来访请求。看深圳，看深圳的科创企业，足见“中国科创考察热”之一斑。</p>
+
+      <p>这个热，可并非头脑一热，而是投资者信任中国、看好中国的体现。络绎不绝的海外科创考察团、常态化的跨国合作洽谈，持续升温的“向东看”，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚。</p>
+
+      <p>今天，越来越多海外创业者、科研人员、投资机构跨越山海来华，重在学创新机制、产业逻辑、发展路径。纵观中外经贸合作的历程，“向东看”是全球对华认知的一次深层迭代、全方位升级。</p>
+
+      <div class="thesis">【总论点】持续升温的“向东看”，已超越简单的经贸往来，而是<b class="highlight-purple">世界重新认识中国、携手发展共赢的生动注脚</b>——其根基在<span class="highlight-blue">产业韧性</span>、关键在内<span class="highlight-blue">创新实力</span>、保障在<span class="highlight-blue">一流营商环境</span>，三者共同铸就中国以发展确定性对冲全球不确定性的长期吸引力。</div>
+
+      <div class="sub-thesis">【分论点一】从经贸合作到协同创新——认知迭代的背后，有硬核的综合实力支撑：中国以发展确定性对冲全球不确定性，产业韧性是根基。</div>
+
+      <p>从经贸合作到协同创新，认知迭代的背后，有硬核的综合实力支撑。深挖这场“科创考察热”，其根基首在产业韧性，中国以发展确定性对冲全球不确定性。</p>
+
+      <p>不同于有的国家产业空心化、发展波动大的困境，中国始终坚持稳中求进，依托<span class="highlight-blue">完备的工业体系、完善的基础设施、超大规模市场优势</span>，构筑起抗风险、稳发展的屏障。在广东佛山的“海创·机器人产城”，<span class="highlight-green">90%以上的供应链配套产品可以在园区里找到</span>，上午更改的设计，当天就能做验证。产业聚合、串链成圈，再加上政策具有连续性、市场充满包容性，让海内外投资者敢于长期布局、安心深耕。</p>
+
+      <div class="sub-thesis">【分论点二】发展底气源于创新实力——中国创新活力迸发、新质生产力加速形成，构成长期吸引力的关键内核。</div>
+
+      <p>如果说产业韧性在筑底，那么中国创新活力迸发、<span class="highlight-blue">新质生产力</span>加速形成，则构成了长期吸引力的关键内核。</p>
+
+      <p>发展底气，源于创新实力。从基础研究到应用落地，中国科创赛道多点开花。戈壁滩上的风与光，被锻造成算力资产，内蒙古乌兰察布、甘肃庆阳等地正成为算力之城；安徽合肥，“人造太阳”核聚变装置、“祖冲之三号”量子计算原型机不断创造世界纪录，进一步培育前沿科技领域的领先优势。<span class="highlight-green">世界知识产权组织前不久发布的报告显示，在世界百强创新集群中，中国拥有25个，连续四年排名第一</span>。</p>
+
+      <p>中国越创新，世界越受益。有国际人士坦言，“中国在全球创新生态系统中的角色日益重要”；也有人称赞中国开发者，“每天都在挑战创新极限”。<span class="highlight-purple">从量的积累到质的飞跃、从单点突破到系统跃升</span>，中国科创的蓬勃生命力、跨越式发展证明：<span class="highlight-gold">创新不问出处，实干成就先锋</span>。</p>
+
+      <div class="sub-thesis">【分论点三】有了产业根基与创新动能，更需优质环境保驾护航——开放制度赋能，持续优化市场化、法治化、国际化一流营商环境。</div>
+
+      <p>有了产业根基与创新动能，更需优质环境保驾护航。<span class="highlight-blue">开放制度赋能，持续优化市场化、法治化、国际化一流营商环境</span>，是中国集聚全球资源、凝聚发展合力的坚实保障。</p>
+
+      <p>环境之优，藏在精准的服务升级与务实的政策落地中。比如，各地持续完善入境签证、停留居留、融入服务等方面的政策支持，让海外人才来了能扎根、扎根能发展、发展能壮大。从产业政策的精准赋能到政务服务的高效便捷，从知识产权的严格保护到创新氛围的开放多元，中国用一系列实打实的改革举措，显著增强环境的包容力、制度的支撑力，从而不断提高发展的吸引力。</p>
+
+      <p><span class="highlight-purple">由表及里、层层溯源</span>，可进一步读懂“科创考察热”，表面是络绎不绝的参访人员，进而是持续升温的合作机遇，深层是全球市场对中国实力、创新、制度的信任。这是在全球产业变革、科技迭代背景下，市场做出的理性判断。面向未来，继续以<span class="highlight-blue">钉钉子精神</span>夯实发展基础，以攀登者的姿态奔赴创新高地，以海纳百川的气度拓展国际合作，必能在“向东看”的热潮中，实现“<span class="highlight-gold">中国好，世界会更好</span>”的双赢。</p>
+
+      <p class="byline">（人民日报2026年10月9日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立论</span>
+      <p><b>“持续升温的‘向东看’，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚”</b>——写“高水平对外开放／中国吸引力”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“从量的积累到质的飞跃、从单点突破到系统跃升”</b>——写“积累与飞跃／自立自强”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·精神</span>
+      <p><b>“创新不问出处，实干成就先锋”</b>——写“创新生态／实干导向”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·哲理</span>
+      <p><b>“由表及里、层层溯源”</b>——写“表象与本质／调查研究”是方法论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·号召</span>
+      <p><b>“中国好，世界会更好”</b>——写“人类命运共同体／互利共赢”是标题级句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·韧性</span>
+      <p><b>“中国以发展确定性对冲全球不确定性”</b>——写“战略定力／风险防控”是对比句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>“持续优化市场化、法治化、国际化一流营商环境”</b>——写“营商环境”是规范表述句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法</span>
+      <p><b>“以钉钉子精神夯实发展基础，以攀登者的姿态奔赴创新高地，以海纳百川的气度拓展国际合作”</b>——写“久久为功／开放包容”是排比句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象破题—三层递进（产业—创新—制度）—升华号召”框架：以“科创考察热”破题，再从产业韧性、创新实力、营商环境三层由实到虚递进，适用于“中国创新吸引力”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“产业韧性·确定性对冲不确定性”，分论点二写“创新实力·新质生产力”，分论点三写“制度护航·一流营商环境”，由硬实力到软环境层层深入。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“优化营商环境”拆成可操作举措：夯实产业韧性、建强完备工业体系与供应链配套；激发创新活力、加快新质生产力形成；优化市场化法治化国际化一流营商环境、集聚全球资源。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“由表及里、层层溯源”“从量的积累到质的飞跃”的辩证：先立“表象—本质”立场，再以递进揭示深度，把开放话题写成有层次、有纵深的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“中国以发展确定性对冲全球不确定性”可作“战略定力／风险防控”类论证的定论；“中国好，世界会更好”可作“人类命运共同体”类文章的开篇或结尾；“创新不问出处，实干成就先锋”可作“自主创新／实干导向”类分论点。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「向东看  看什么」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从经贸合作到协同创新。认知迭代的背后，有硬核的综合实力支撑：中国以发展确定性对冲全球不确定性，产业韧性是根基。<br>二是发展底气源于创新实力。中国创新活力迸发、新质生产力加速形成，构成长期吸引力的关键内核。<br>三是有了产业根基与创新动能，更需优质环境保驾护航。开放制度赋能，持续优化市场化、法治化、国际化一流营商环境。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「持续升温的“向东看”，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚——其根基在产业韧性、关键在内创新实力、保障在一流营商环境，三者共同铸就中国以发展确定性对冲全球不确定性的长期吸引力。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从经贸合作到协同创新——认知迭代的背后，有硬核的综合实力支撑：中国以发展确定性对冲全球不确定性，产业韧性是根基。<br>二是发展底气源于创新实力——中国创新活力迸发、新质生产力加速形成，构成长期吸引力的关键内核。<br>三是有了产业根基与创新动能，更需优质环境保驾护航——开放制度赋能，持续优化市场化、法治化、国际化一流营商环境。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“持续升温的‘向东看’，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「向东看  看什么」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是夯实产业韧性、建强完备工业体系与供应链配套。<br>二是激发创新活力、加快新质生产力形成。<br>三是优化市场化法治化国际化一流营商环境、集聚全球资源。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“持续升温的‘向东看’，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于向东看  看什么的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于向东看  看什么的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进向东看  看什么，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从经贸合作到协同创新——认知迭代的背后，有硬核的综合实力支撑：中国以发展确定性对冲全球不确定性，产业韧性是根基。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、发展底气源于创新实力——中国创新活力迸发、新质生产力加速形成，构成长期吸引力的关键内核。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、有了产业根基与创新动能，更需优质环境保驾护航——开放制度赋能，持续优化市场化、法治化、国际化一流营商环境。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“持续升温的‘向东看’，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「向东看  看什么」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：向东看  看什么<br><br>时代之问，呼唤破题之策。向东看  看什么，是发展所需，也是民心所向。可从三个维度展开：从经贸合作到协同创新、发展底气源于创新实力、有了产业根基与创新动能，更需优质环境保驾护航。<br><br>分论点一：从经贸合作到协同创新——认知迭代的背后，有硬核的综合实力支撑：中国以发展确定性对冲全球不确定性，产业韧性是根基。方向对了，路再远也能抵达。“持续升温的‘向东看’，已超越简单的经贸往来，而是世界重新认识中国、携手发展共赢的生动注脚”<br><br>分论点二：发展底气源于创新实力——中国创新活力迸发、新质生产力加速形成，构成长期吸引力的关键内核。方法对了，事再难也能办成。“从量的积累到质的飞跃、从单点突破到系统跃升”<br><br>分论点三：有了产业根基与创新动能，更需优质环境保驾护航——开放制度赋能，持续优化市场化、法治化、国际化一流营商环境。行百里者半九十。“创新不问出处，实干成就先锋”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。向东看  看什么是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-09</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

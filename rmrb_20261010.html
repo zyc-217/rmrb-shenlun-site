@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "攻坚战"与"持久战"</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"攻坚战"与"持久战"</h1>
+    <div class="meta">人民日报·人民论坛 | 系统观念·辩证思维·正确政绩观·久久为功·钉钉子精神 | 2026年10月8日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：系统观念／辩证思维／正确政绩观／久久为功／钉钉子精神／攻坚与持久／作风建设（原文刊发：2026年10月8日）</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">辩证思维</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">久久为功</span>
+      <span class="tag-item">钉钉子精神</span>
+      <span class="tag-item">攻坚与持久</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">区分轻重缓急</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">实干担当</span>
+      <span class="tag-item">战略定力</span>
+      <span class="tag-item">稳中求进</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>系统观念／辩证思维／正确政绩观／久久为功／实干担当</b>”等主题；本文<b>“由事破题—立论—正反警示—辩证升华”</b>的论证链，是写“工作方法／政绩观”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“既打攻坚战也打持久战”</b>——表层是工作节奏的拿捏，深层是<b>区分轻重缓急、在关键处集中攻坚、于长周期巩固成果</b>的方法论自觉；唯有把魄力与定力统一起来，方能经得起检验。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>攻坚战与持久战一体两面、相辅相成</b>”“<b>种树与养树</b>”“<b>魄力与定力</b>”等多组辩证，是写<b>快与慢／破与立／当下与长远</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于以正确政绩观推动重难点工作的倡议书”等公文素材。对策要点：<b>区分轻重缓急、该攻坚时拿出攻坚锐气</b>／<b>建章立制、把攻坚成效沉淀为持久成果</b>／<b>保持定力、在常和长严和实上绵绵用力</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（由事破题—立论—正反警示—辩证升华）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以街道办朋友谈老旧小区加装电梯的感慨破题：“跑断腿、磨破嘴”，点出“一老一小等不起”、运营维护是更长期考验（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：没有攻坚的锐气办不成事，没有持久的韧劲办不好事；掌握既打攻坚战也打持久战的辩证法（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>两种倾向值得警惕</b>——把攻坚战打成“突击战”（急躁冒进）、把持久战拖成“消耗战”（虚耗空转）（第四至六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>攻坚战与持久战一体两面、相辅相成</b>——攻坚重在打开局面，持久重在巩固完善，如种树与养树（第七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>辩证关系体现于重大工作</b>——建设全国统一大市场须拆“篱笆”与立“规矩”并举，作风建设须集中攻坚与“永远在路上”并重（第八至十一段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到正确政绩观</b>：上海旧改几十年久久为功，攻下一个“点”更要守住一个“面”，既要有钉钉子精神也要有“钉到位”的本领（第九至十一段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“由事破题—正反警示—辩证升华”</b>结构：以加装电梯小事切入，先立辩证法，再以两种反面倾向警示，最后落到重大工作与政绩观，是申论“由小见大”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>一位在街道办工作的朋友，谈及他负责的老旧小区加装电梯项目时，十分感慨：“跑断腿、磨破嘴，设计方案推倒重来了<span class="highlight-green">四五回</span>。可这事不抓紧不行，楼里‘一老一小’等不起。”“装电梯只是个开始，往后怎么管、怎么维护，才是更长期的考验。”</p>
+
+      <p>加装电梯，挑战不小：既要啃下利益协调、资金筹措等“硬骨头”，也要下足运营维护、矛盾调解、机制完善等“日常功夫”。从中能得出这样一个启示：<span class="highlight-gold">没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好</span>。</p>
+
+      <div class="thesis">【总论点】没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好——推进任何工作都要<span class="highlight-blue">区分轻重缓急</span>，掌握<b class="highlight-purple">既打攻坚战也打持久战的辩证法</b>：在关键处集中攻坚打开局面，于长周期久久为功巩固成果。</div>
+
+      <p>“当前反映最为集中、最为迫切、需要打攻坚战的，就抓紧改；需要久久为功、打持久战的，就徐图之。”<span class="highlight-blue">习近平总书记的重要论述</span>，指明了干事创业的重要方法。我们推进任何工作，都要<span class="highlight-blue">区分轻重缓急</span>，努力掌握既打攻坚战也打持久战的辩证法。</p>
+
+      <div class="sub-thesis">【分论点一】现实中两种倾向值得警惕——把攻坚战打成“突击战”、把持久战拖成“消耗战”，犯了急躁冒进与虚耗空转两病。</div>
+
+      <p>现实中，两种倾向值得警惕。</p>
+
+      <p>一种是把攻坚战打成“突击战”。有的地方整治黑臭水体、清淤截污时一拥而上，虽取得了短期成果，但后续管网维护、雨污分流等长效机制却跟不上，污染问题反弹回潮。攻坚成效未能沉淀为持久成果，反而透支了群众信任。这就犯了“<span class="highlight-purple">急躁冒进病</span>”。</p>
+
+      <p>另一种是把持久战拖成“消耗战”。有的干部把“久久为功”挂在嘴边，遇事议而不决、决而不行，该拍板时犹豫，该进取时畏难，把“徐图之”当成了“慢慢来”的挡箭牌。这就导致<span class="highlight-purple">虚耗空转</span>。</p>
+
+      <div class="sub-thesis">【分论点二】攻坚战与持久战不是非此即彼，而是一体两面、相辅相成——攻坚重在关键处集中打开局面，持久重在长周期巩固完善。</div>
+
+      <p>攻坚战与持久战，不是<span class="highlight-purple">非此即彼</span>的选择题，而是<span class="highlight-purple">一体两面、相辅相成</span>。攻坚战，重在关键处集中力量打开局面；持久战，重在长周期中巩固成果、完善制度。这就像<span class="highlight-purple">种树与养树</span>：攻坚是挖坑栽苗，要的是一鼓作气的力度；持久是浇水施肥，要的是日积月累的耐心。苗栽不好，根扎不稳；水肥不足，树长不壮。</p>
+
+      <div class="sub-thesis">【分论点三】这样的辩证关系，在许多重大工作中体现得尤为明显——拆“篱笆”与立“规矩”并举，集中攻坚与“永远在路上”并重。</div>
+
+      <p>这样的辩证关系，在当前许多重大工作中体现得尤为明显。建设<span class="highlight-blue">全国统一大市场</span>，打破地方保护和市场分割，需要雷厉风行拆“篱笆”，完善<span class="highlight-blue">产权保护、公平竞争</span>等市场基础制度，需要持之以恒立“规矩”。党的作风就是党的形象，关系人心向背，对群众反映强烈的突出问题必须集中攻坚、露头就打，同时也要保持<span class="highlight-blue">永远在路上的清醒坚定</span>，在常和长、严和实、深和细上绵绵用力。</p>
+
+      <p>“上海推进旧房改造几十年，一任接着一任，久久为功。这就是<span class="highlight-blue">正确政绩观</span>。”从上世纪90年代开始，上海先后推动完成危棚简屋改造、动迁征收、成片旧改等工作，解决大规模“拎马桶”难题；再往后，持续迎难而上，完成了最后<span class="highlight-green">1.4万户</span>零星点位的改造工作。</p>
+
+      <p>做其他工作，何尝不是如此：攻下一个“点”，还要守住一个“面”，打赢一场“战役”，更要赢得整场“战争”。看准了目标就坚持不懈推进，该攻坚时就拿出攻坚的锐气，该持久时就磨砺持久的韧劲。<span class="highlight-gold">既要有钉钉子精神，也要有“钉到位”的本领</span>。唯其如此，才能逢山开路、遇水架桥，让工作经得起检验。</p>
+
+      <p><span class="highlight-gold">攻坚战考验魄力，持久战考验定力</span>。真正的本事，是在<span class="highlight-purple">魄力中保持定力、在定力中不失魄力</span>，既敢于迎难而上，也善于久久为功。</p>
+
+      <p class="byline">（人民日报2026年10月8日 第04版 · 人民论坛）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立论</span>
+      <p><b>“没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好”</b>——写“工作方法／实干担当”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“攻坚战与持久战，不是非此即彼的选择题，而是一体两面、相辅相成”</b>——写“辩证思维／系统观念”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·比喻</span>
+      <p><b>“这就像种树与养树：攻坚是挖坑栽苗……持久是浇水施肥”</b>——写“快与慢／破与立”是鲜活句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·本领</span>
+      <p><b>“既要有钉钉子精神，也要有‘钉到位’的本领”</b>——写“久久为功／执行落实”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·魄力</span>
+      <p><b>“攻坚战考验魄力，持久战考验定力”</b>——写“魄力与定力统一”是标题级句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政绩观</span>
+      <p><b>“上海推进旧房改造几十年……这就是正确政绩观”</b>——写“正确政绩观／久久为功”是例证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·警示</span>
+      <p><b>“把‘徐图之’当成了‘慢慢来’的挡箭牌”</b>——写“形式主义／不作为”是警醒句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·哲思</span>
+      <p><b>“在魄力中保持定力、在定力中不失魄力”</b>——写“战略定力／担当作为”是升华句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“由事破题—立论—正反警示—辩证升华”框架：以加装电梯小事切入，先立辩证法，再以两种反面倾向警示，最后落到重大工作与政绩观，适用于“工作方法／政绩观”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“警惕两种倾向”（突击战/消耗战），分论点二写“一体两面、相辅相成”（种树养树喻），分论点三写“重大工作中的辩证”（拆篱笆与立规矩），由破到立、由小到大。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“重难点工作推进”拆成可操作举措：区分轻重缓急、该攻坚时拿出攻坚锐气；建章立制、把攻坚成效沉淀为持久成果；保持定力、在常和长严和实上绵绵用力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“非此即彼→一体两面”“种树与养树”“魄力与定力”的辩证：先立“两点论与重点论统一”立场，再以正反对照揭示尺度，把方法论话题写成有张力、有边界的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“既打攻坚战也打持久战的辩证法”可作“系统观念”类论证的框架句；“既要有钉钉子精神，也要有‘钉到位’的本领”可作“落实闭环”类文章的分论点或结尾；“攻坚战考验魄力，持久战考验定力”可作“担当作为”类文章的标题或收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「攻坚战与持久战」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是现实中两种倾向值得警惕。把攻坚战打成“突击战”、把持久战拖成“消耗战”，犯了急躁冒进与虚耗空转两病。<br>二是攻坚战与持久战不是非此即彼，而是一体两面、相辅相成。攻坚重在关键处集中打开局面，持久重在长周期巩固完善。<br>三是这样的辩证关系，在许多重大工作中体现得尤为明显。拆“篱笆”与立“规矩”并举，集中攻坚与“永远在路上”并重。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好——推进任何工作都要区分轻重缓急，掌握既打攻坚战也打持久战的辩证法：在关键处集中攻坚打开局面，于长周期久久为功巩固成果。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是现实中两种倾向值得警惕——把攻坚战打成“突击战”、把持久战拖成“消耗战”，犯了急躁冒进与虚耗空转两病。<br>二是攻坚战与持久战不是非此即彼，而是一体两面、相辅相成——攻坚重在关键处集中打开局面，持久重在长周期巩固完善。<br>三是这样的辩证关系，在许多重大工作中体现得尤为明显——拆“篱笆”与立“规矩”并举，集中攻坚与“永远在路上”并重。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「攻坚战与持久战」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是区分轻重缓急、该攻坚时拿出攻坚锐气。<br>二是建章立制、把攻坚成效沉淀为持久成果。<br>三是保持定力、在常和长严和实上绵绵用力。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于攻坚战与持久战的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于攻坚战与持久战的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进攻坚战与持久战，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、现实中两种倾向值得警惕——把攻坚战打成“突击战”、把持久战拖成“消耗战”，犯了急躁冒进与虚耗空转两病。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、攻坚战与持久战不是非此即彼，而是一体两面、相辅相成——攻坚重在关键处集中打开局面，持久重在长周期巩固完善。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、这样的辩证关系，在许多重大工作中体现得尤为明显——拆“篱笆”与立“规矩”并举，集中攻坚与“永远在路上”并重。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「攻坚战与持久战」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：攻坚战与持久战<br><br>时代之问，呼唤破题之策。攻坚战与持久战，是发展所需，也是民心所向。可从三个维度展开：现实中两种倾向值得警惕、攻坚战与持久战不是非此即彼，而是一体两面、相辅相成、这样的辩证关系，在许多重大工作中体现得尤为明显。<br><br>分论点一：现实中两种倾向值得警惕——把攻坚战打成“突击战”、把持久战拖成“消耗战”，犯了急躁冒进与虚耗空转两病。方向对了，路再远也能抵达。“没有攻坚的锐气，事情办不成；没有持久的韧劲，事情办不好”<br><br>分论点二：攻坚战与持久战不是非此即彼，而是一体两面、相辅相成——攻坚重在关键处集中打开局面，持久重在长周期巩固完善。方法对了，事再难也能办成。“攻坚战与持久战，不是非此即彼的选择题，而是一体两面、相辅相成”<br><br>分论点三：这样的辩证关系，在许多重大工作中体现得尤为明显——拆“篱笆”与立“规矩”并举，集中攻坚与“永远在路上”并重。行百里者半九十。“这就像种树与养树：攻坚是挖坑栽苗……持久是浇水施肥”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。攻坚战与持久战是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-10</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
