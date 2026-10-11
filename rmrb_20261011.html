@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "执行党的决定"就是党员义务</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"执行党的决定"就是党员义务</h1>
+    <div class="meta">人民日报·人民论坛 | 党性修养·对党忠诚·党员义务·政治基因·担当作为·新长征 | 2026年9月16日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：党性修养／对党忠诚／党员义务／政治基因／担当作为／初心使命／组织纪律（原文刊发：2026年9月16日）</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">党性修养</span>
+      <span class="tag-item">对党忠诚</span>
+      <span class="tag-item">党员义务</span>
+      <span class="tag-item">政治基因</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">初心使命</span>
+      <span class="tag-item">组织纪律</span>
+      <span class="tag-item">大公无私</span>
+      <span class="tag-item">新长征</span>
+      <span class="tag-item">政治底色</span>
+      <span class="tag-item">习近平党建思想</span>
+      <span class="tag-item">公务员职业道德</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>党性修养／对党忠诚／党员义务／担当作为</b>”等主题；本文<b>“历史例证—现实要求—党性升华”</b>的论证链，是写“政治素养／公务员职业道德”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“执行党的决定”既是组织纪律更是党员义务</b>——表层是令行禁止，深层是把对党忠诚内化为<span class="highlight-blue">政治基因</span>、将党性修养外化为雷厉风行的行动；唯有讲价钱不打折扣，方能凝聚一往无前的力量。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>雷厉风行与矢志不渝</b>”“<b>紧迫感与大无畏感与踏实感</b>”“<b>道不变志不改的定力</b>”等多组辩证，是写“快与恒／知与行／忠诚与担当”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于党员干部强化党性修养、坚决执行党的决定的倡议书”等公文素材。对策要点：把执行党的决定作为检验党性修养的标尺／履行义务不讲价钱不打折扣、雷厉风行求真务实／保持道不变志不改的定力、在关键处豁得出来顶得上去。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（历史例证—现实要求—党性升华）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以长征途中朱德同志面对逼迫坚定表态“我是共产党员，我的义务是执行党的决定”破题，点出“执行党的决定”的主题（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：对共产党员来说，坚决贯彻落实党的决定、完成任务，是组织纪律更是党员义务，须用一辈子去践行（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>从党史读懂“执行党的决定”的必然性</b>——谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”（第四至九段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>置身民族复兴关键一程，越要不折不扣执行党的决定</b>——要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感（第十至十三段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>义务的成效取决于党性</b>——把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实（第十四至十七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“新长征”</b>：目标在前怎能退却、路径明确岂容“变通”，保持“必胜”决心、落实“必做”行动，我们干则必成（第十六段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“历史例证—现实要求—党性升华”</b>结构：以党史人物切入立论，再以当下“三感”与党性修养递进，是申论“由史及今、由例到理”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>长征途中，红一、红四方面军在四川懋功会师。中共中央根据当时形势，召开多次会议，通过决议坚决北上。</p>
+
+      <p>当时，党内存在反对声音。面对逼迫，朱德同志坚定表态：<span class="highlight-gold">“我是共产党员，我的义务是执行党的决定。”</span></p>
+
+      <div class="thesis">【总论点】对共产党员来说，坚决贯彻落实党组织作出的决定、交给的任务，这是<span class="highlight-blue">组织纪律</span>；“执行党的决定”，这一<span class="highlight-blue">入党宣誓时作出的郑重承诺</span>，尤须用一辈子去践行——把对党忠诚内化为<b class="highlight-purple">政治基因</b>，将党员义务外化为雷厉风行、不打折扣的行动。</div>
+
+      <div class="sub-thesis">【分论点一】从党史读懂“执行党的决定”的必然性——谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”。</div>
+
+      <p>为落实县委“绿化全海岛”的号召，谷文昌带领群众与风沙搏斗，仅用<span class="highlight-green">3年，400多座山头、3万多亩沙滩</span>全部“披绿”。“荒岛变绿洲”的奇迹，源自履行义务雷厉风行。</p>
+
+      <p>“党叫我干什么，我就干什么”。从湖南到鞍钢当工人，再到弓长岭焦化厂，雷锋甘当<span class="highlight-gold">“螺丝钉”</span>，干一行爱一行、专一行精一行，不遗余力、勤勤恳恳。“螺丝钉”永不生锈，体现履行义务不折不扣。</p>
+
+      <p>“永跟党走，听党的话”。在枪林弹雨中无畏冲锋，在贫苦深山里兢兢业业，时代在变、岗位在变，张富清数十载始终坚守信念。一句“听党指示”，彰显履行义务矢志不渝。</p>
+
+      <p>从党史中理解“执行党的决定”，读出毅然决然，更读懂我们党成功的必然。</p>
+
+      <p>党为何历经百年依旧风华正茂？听党话、跟党走，无数党员干部以血肉之躯，演绎着<span class="highlight-gold">“对党忠诚”的政治基因</span>，以始终鲜明的政治底色，确保党“永不变色”。</p>
+
+      <p>党如何能继续书写奇迹、创造辉煌？无数党员真心信仰党、真正拥护党，将“执行党的决定”作为钢铁般的纪律、无论如何都必须落实的准则，大公无私、不惧牺牲，凝聚起众志成城、一往无前的雄浑力量。</p>
+
+      <div class="sub-thesis">【分论点二】置身民族复兴关键一程，越要不折不扣“执行党的决定”——要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感。</div>
+
+      <p>当前，置身民族复兴的关键一程，我们党肩负的使命任务崇高而重大。越是风高浪急，越要不折不扣“执行党的决定”，更加深刻领悟这份义务的广度与分量。</p>
+
+      <p>无论是应对灾害，还是保障民生，从<span class="highlight-blue">“宁可十防九空”</span>到城市治理下足<span class="highlight-blue">“绣花功”</span>……时刻将责任牢记在心，<span class="highlight-blue">“时时放心不下”</span>，又怎会在岗不在位、在位不在状态？执行党的决定有紧迫感，亿万人民才能有安全感。</p>
+
+      <p>统筹发展和安全，<span class="highlight-blue">因地制宜发展新质生产力</span>，书写“绿色奇迹”，细数使命任务，哪一项不需要动真碰硬？义不逃责、事不避难，豁得出来、顶得上去，敢啃最难啃的骨头，强大战斗力正在于此。执行党的决定，就要有大无畏感。</p>
+
+      <p>党的决策部署高瞻远瞩，党员干部贯彻落实也要善于“长跑”，保持<span class="highlight-purple">道不变、志不改的定力</span>，一步一步坚定走。执行党的决定，少不了始终“做老实人”的踏实感。</p>
+
+      <div class="sub-thesis">【分论点三】义务的成效取决于党性——把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实。</div>
+
+      <p>义务履行的成效，取决于党性。党性坚强，才能<span class="highlight-purple">是非分明、旗帜鲜明</span>，才会排除万难、善作善成，做到心如磐石、忠贞不渝。</p>
+
+      <p>深入学习贯彻<span class="highlight-blue">习近平党建思想</span>，一个重要方面在于毫不松懈加强<span class="highlight-blue">党性修养</span>，不断将党性内化于心、外化于行。党员干部要修好党性修养这门“心学”，把坚决执行党的决定作为检验党性修养的标尺，反复度量自身的思想、言行，履行义务不讲价钱、不打折扣，执行起来雷厉风行、求真务实。</p>
+
+      <p><span class="highlight-gold">“新征程是新的长征，必须时刻准备进行具有许多新的历史特点的伟大斗争。”</span>前进路上，仍有险滩、激流。目标在前，怎能退却？路径明确，岂容“变通”？夺取新的伟大胜利，关键就在于广大党员干部执行的质效。保持“必胜”决心，落实“必做”行动，我们干则必成。</p>
+
+      <p class="byline">（人民日报2026年9月16日 第04版 · 人民论坛）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立论</span>
+      <p><b>“我是共产党员，我的义务是执行党的决定”</b>（朱德）——写“对党忠诚／党员义务”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·典范</span>
+      <p><b>“荒岛变绿洲”的奇迹，源自履行义务雷厉风行</b>（谷文昌）——写“令行禁止／实干担当”是例证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·比喻</span>
+      <p><b>“党叫我干什么，我就干什么”“甘当螺丝钉”</b>（雷锋）——写“干一行爱一行”是鲜活句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·坚守</span>
+      <p><b>“永跟党走，听党的话”“彰显履行义务矢志不渝”</b>（张富清）——写“矢志不渝／不忘初心”是坚守句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政治基因</span>
+      <p><b>“听党话、跟党走……演绎着‘对党忠诚’的政治基因”</b>——写“政治底色／永不变色”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·紧迫感</span>
+      <p><b>“时时放心不下”“执行党的决定有紧迫感，亿万人民才能有安全感”</b>——写“责任在肩／民生为本”是警醒句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力</span>
+      <p><b>“保持道不变、志不改的定力”“执行党的决定，少不了始终‘做老实人’的踏实感”</b>——写“战略定力／久久为功”是升华句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·新长征</span>
+      <p><b>“新征程是新的长征，必须时刻准备进行具有许多新的历史特点的伟大斗争”</b>——写“接续奋斗／敢于斗争”是标题级句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“历史例证—现实要求—党性升华”框架：以朱德表态破题立论，再用谷文昌／雷锋／张富清三例佐证，落到当下“三感”与党性修养，适用于“政治素养／公务员职业道德”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“从党史读懂必然”（政治基因／永不变色），分论点二写“关键一程的三感”（紧迫感／大无畏感／踏实感），分论点三写“党性修养是标尺”（内化于心／外化于行），由史及今、由例到理。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“强化党性修养、坚决执行党的决定”拆成可操作举措：把执行党的决定作为检验党性修养的标尺；履行义务不讲价钱不打折扣、雷厉风行求真务实；保持道不变志不改的定力、在关键处豁得出来顶得上去。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“雷厉风行与矢志不渝”“紧迫感与大无畏感与踏实感”“道不变与志不改”的辩证：先立“忠诚与担当统一”立场，再以正反尺度揭示边界，把党性话题写成有张力、有分量的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“执行党的决定就是党员义务”可作“政治素养”类论证的框架句；“时时放心不下”可作“民生责任”类文章的分论点或标题；“新征程是新的长征”可作“接续奋斗”类文章的开头或收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「执行党的决定就是党员义务」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从党史读懂“执行党的决定”的必然性。谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”。<br>二是置身民族复兴关键一程，越要不折不扣“执行党的决定”。要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感。<br>三是义务的成效取决于党性。把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「对共产党员来说，坚决贯彻落实党组织作出的决定、交给的任务，这是组织纪律；“执行党的决定”，这一入党宣誓时作出的郑重承诺，尤须用一辈子去践行——把对党忠诚内化为政治基因，将党员义务外化为雷厉风行、不打折扣的行动。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从党史读懂“执行党的决定”的必然性——谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”。<br>二是置身民族复兴关键一程，越要不折不扣“执行党的决定”——要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感。<br>三是义务的成效取决于党性——把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“我是共产党员，我的义务是执行党的决定”（朱德）</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「执行党的决定就是党员义务」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把执行党的决定作为检验党性修养的标尺。<br>二是履行义务不讲价钱不打折扣、雷厉风行求真务实。<br>三是保持道不变志不改的定力、在关键处豁得出来顶得上去。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“我是共产党员，我的义务是执行党的决定”（朱德）</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于执行党的决定就是党员义务的决定》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于执行党的决定就是党员义务的决定</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进执行党的决定就是党员义务，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从党史读懂“执行党的决定”的必然性——谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、置身民族复兴关键一程，越要不折不扣“执行党的决定”——要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、义务的成效取决于党性——把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“我是共产党员，我的义务是执行党的决定”（朱德）</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「执行党的决定就是党员义务」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：执行党的决定就是党员义务<br><br>时代之问，呼唤破题之策。执行党的决定就是党员义务，是发展所需，也是民心所向。可从三个维度展开：从党史读懂“执行党的决定”的必然性、置身民族复兴关键一程，越要不折不扣“执行党的决定”、义务的成效取决于党性。<br><br>分论点一：从党史读懂“执行党的决定”的必然性——谷文昌雷厉风行、雷锋不折不扣、张富清矢志不渝，无数党员干部以血肉之躯演绎“对党忠诚”的政治基因，确保党“永不变色”。方向对了，路再远也能抵达。“我是共产党员，我的义务是执行党的决定”（朱德）<br><br>分论点二：置身民族复兴关键一程，越要不折不扣“执行党的决定”——要有“时时放心不下”的紧迫感、敢啃硬骨头的大无畏感、道不变志不改的踏实感。方法对了，事再难也能办成。“荒岛变绿洲”的奇迹，源自履行义务雷厉风行（谷文昌）<br><br>分论点三：义务的成效取决于党性——把坚决执行党的决定作为检验党性修养的标尺，修好党性这门“心学”，履行义务雷厉风行、求真务实。行百里者半九十。“党叫我干什么，我就干什么”“甘当螺丝钉”（雷锋）保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。执行党的决定就是党员义务是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-11</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
