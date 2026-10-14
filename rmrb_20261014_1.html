@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 以投资优化支撑产业升级</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>以投资优化支撑产业升级</h1>
+    <div class="meta">人民日报·人民时评 | 有效投资·新质生产力·现代化产业体系·高质量发展 | 2026年10月14日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：有效投资／新质生产力／现代化产业体系／新基建与人工智能／投资于人／系统观念</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">有效投资</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">新基建</span>
+      <span class="tag-item">人工智能</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">宏观调控</span>
+      <span class="tag-item">积极财政政策</span>
+      <span class="tag-item">民间资本</span>
+      <span class="tag-item">投资于人</span>
+      <span class="tag-item">全要素生产率</span>
+      <span class="tag-item">系统观念</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>有效投资／新质生产力／现代化产业体系／高质量发展／系统观念</b>”等主题；本文<b>“数据切入—三层论证—升华号召”</b>的论证链，是写“中国经济行稳致远”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“以投资优化支撑产业升级”</b>——表层是扩大投资规模，深层是把资源投向补短板、增后劲的关键领域，以<b>有效投资服务新质生产力</b>；唯有统筹总量与结构、当期与长远，方能透过总量看结构优化、透过增速回落看动能转换。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>总量与结构</b>”“<b>短期波动与长期趋势</b>”“<b>物的支撑与人的素质</b>”等多组辩证，是写<b>速度与质量／政府与市场／当下与长远</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于优化投资结构、更好支撑产业升级的倡议书”等公文素材。对策要点：<b>推进新基建与人工智能投资、建好“六张网”战略底座</b>／<b>打通储蓄向有效投资转化渠道、向民间资本开放</b>／<b>推动投资于物与投资于人紧密结合、释放协同效应</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（数据切入—三层论证—升华号召）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以浙江特高压、南京Pre6G、阳江海底算力等“六张网”建设现象切入，点出各地踊跃推进、以拓展有效投资夯实发展基座（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：坚持质量第一、效益优先，把资源投向补短板增后劲的关键领域，让投资服务新质生产力（总论点色块，前接立论）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>当前投资回落是传统向新型投资模式转换的体现，是结构性调整而非有效投资空间收窄</b>——透过总量看结构优化、透过增速回落看动能转换（第三至四段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“六张网”等新基建与人工智能投资是补短板、育动能的战略底座</b>——精准补短板、乘数效应高，构筑新质生产力战略底座（第五段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人结合</b>——让物的支撑与人的素质提升协同释放“1+1＞2”效应（第六至七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到从“有没有”向“好不好”跃升</b>：有“六张网”万亿势能、新基建广阔空间、物人协同效应，投资潜力充分释放，既惠及当下更支撑长远（第八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“数据切入—三层论证—升华号召”</b>结构：用细分行业增速数据立论，再以“看结构—筑底座—畅资金”三层递进，是申论“用数据说话”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>把资源投向补短板、增后劲的关键领域，让投资更好服务新质生产力发展和现代化产业体系建设，<span class="highlight-gold">把投资成效最终体现到就业扩大、收入增长、生活改善上</span>。</p>
+
+      <p>浙江开工建设<span class="highlight-green">1000千伏特高压交流环网工程</span>；江苏南京投入运行国内首个Pre6G试验网；广东阳江将算力中心“潜入”海底，依托海上风电实现绿电直供……今年以来，各地踊跃推进“六张网”建设，以拓展有效投资夯实发展基座。</p>
+
+      <p><span class="highlight-purple">投资是当下的需求，也是未来的供给</span>。如何看待当前的投资形势、预判未来的投资走势？这需要用<span class="highlight-blue">系统思维</span>把握投资运行的阶段性特征与结构性变化，把握短期波动与长期趋势的辩证关系，把握有效投资空间与资金供给基础的支撑条件。唯有如此，才能不被短期的数据起伏所干扰，<span class="highlight-purple">透过总量变化看到结构优化，透过增速回落看到动能转换</span>，从而得出客观理性的判断。</p>
+
+      <div class="thesis">【总论点】今天谈投资，要坚持<span class="highlight-blue">质量第一、效益优先</span>，把资源投向<span class="highlight-blue">补短板、增后劲的关键领域</span>，让投资更好服务<span class="highlight-blue">新质生产力发展</span>和现代化产业体系建设，把投资成效最终体现到就业扩大、收入增长、生活改善上。</div>
+
+      <div class="sub-thesis">【分论点一】当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄——透过总量看结构优化、透过增速回落看动能转换。</div>
+
+      <p>从中长期视角看，我国有效投资空间仍然巨大，新增长点正在加速形成。从细分行业看，今年1至8月，<span class="highlight-green">集成电路制造业投资增长12.0%，锂离子电池制造业投资增长20.6%，电子电路制造业投资增长58.8%</span>。</p>
+
+      <p>这些数据表明，投资并未全面收缩，而是在经历从传统领域向新兴领域的重心转移、从规模扩张向效能提升的深刻转换。在这一过程中，<span class="highlight-blue">新基建与人工智能投资</span>尤为关键。算力、数据、模型、应用等环节相互牵引，既能够创造当期需求，又提升长期供给效率，是促进新一轮有效投资的重要引擎。</p>
+
+      <div class="sub-thesis">【分论点二】“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建——将在补短板的同时构筑起发展新质生产力的战略底座。</div>
+
+      <p>“六张网”建设，正是新基建与人工智能投资空间的具体承载，今年其与相关重点领域投资规模预计将<span class="highlight-green">超过7万亿元</span>。让老旧管网跟上城市发展，让传统电网适配新能源大规模并网，让算力支撑数字经济发展。“六张网”深度融合数字化、智能化、绿色化，乘数效应远高于传统基建，将在补短板的同时构筑起发展新质生产力的<span class="highlight-blue">战略底座</span>。</p>
+
+      <div class="sub-thesis">【分论点三】投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合——让物的支撑与人的素质提升协同释放“1+1＞2”的投资效果。</div>
+
+      <p>新基建与人工智能投资，不仅有空间，更有基础。这个基础，就是高储蓄、低利率以及<span class="highlight-blue">积极财政政策</span>带来的资金空间。我国储蓄率仍处高位，为长期投资提供稳定充裕的资金来源；利率处于较低水平，有利于降低资金成本。资金总量不缺，关键在于打通储蓄向有效投资转化的渠道，把资金引导到新基建、人工智能、先进制造、绿色转型等“刀刃”上。同时，相关领域需更好向民间资本开放，让社会资本愿投、能投、敢投。</p>
+
+      <p><span class="highlight-purple">投资于物和投资于人紧密结合</span>，也将打开新的投资增长空间。教育、医疗、养老、技能培训等领域，既是民生所盼，也是发展所系。近年来，我国<span class="highlight-green">财政性教育经费占国内生产总值比例连续保持在4%以上</span>，银发经济规模持续扩大。人力资本提升可以直接作用于<span class="highlight-blue">全要素生产率</span>，能够从供给和需求两侧同步释放活力。物的支撑为人的发展提供载体，而人的素质提升则让物的效能充分释放，<span class="highlight-purple">两者协同，才能形成“1+1＞2”的投资效果</span>。</p>
+
+      <p>今天我们谈投资，要坚持质量第一、效益优先，把资源投向补短板、增后劲的关键领域，让投资更好服务新质生产力发展和现代化产业体系建设，把投资成效最终体现到就业扩大、收入增长、生活改善上。当前投资领域的调整，正是<span class="highlight-purple">从“有没有”向“好不好”、从“大不大”向“强不强”跃升</span>的必经阶段。有“六张网”建设的万亿级投资势能，有新基建与人工智能投资的广阔空间，有投资于物和投资于人紧密结合的协同效应，我国投资的巨大潜力将充分释放，<span class="highlight-gold">既惠及当下增长，更支撑长远发展</span>。</p>
+
+      <p class="byline">（人民日报2026年10月14日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>“投资是当下的需求，也是未来的供给”</b>——写“投资的双重属性／当前与长远”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·判断</span>
+      <p><b>“透过总量变化看到结构优化，透过增速回落看到动能转换”</b>——写“系统思维看投资”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·底座</span>
+      <p><b>“六张网建设……将在补短板的同时构筑起发展新质生产力的战略底座”</b>——写“新基建投资”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·资金</span>
+      <p><b>“资金总量不缺，关键在于打通储蓄向有效投资转化的渠道”</b>——写“投融资体制改革”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同</span>
+      <p><b>“投资于物和投资于人紧密结合……两者协同，才能形成‘1+1＞2’的投资效果”</b>——写“物的支撑与人的素质”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·跃升</span>
+      <p><b>“当前投资领域的调整，正是从‘有没有’向‘好不好’、从‘大不大’向‘强不强’跃升的必经阶段”</b>——写“高质量发展”是金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·价值</span>
+      <p><b>“把投资成效最终体现到就业扩大、收入增长、生活改善上”</b>——写“投资的民生导向”是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·潜力</span>
+      <p><b>“我国投资的巨大潜力将充分释放，既惠及当下增长，更支撑长远发展”</b>——写“中国经济发展韧性”是标题级句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“数据切入—三层论证—升华号召”框架：用细分行业增速数据立论，再用“看结构—筑底座—畅资金”三层递进，适用于“中国经济行稳致远”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“看结构优化·动能转换”（数据），分论点二写“筑战略底座·育新动能”（六张网），分论点三写“畅资金活水·投资于人”（渠道＋人），由现象到本质层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“优化投资结构”拆成可操作举措：推进新基建与人工智能投资、建好六张网；打通转化渠道、向民间资本开放；推动投资于物与投资于人结合、释放协同效应。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“总量与结构”“短期与长期”“物的支撑与人的素质”的辩证：先立“速度与质量统一”立场，再以数据揭示尺度，把经济话题写成有张力、有分量的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“透过总量变化看到结构优化”可作“系统观念”类论证的框架句；“从‘有没有’向‘好不好’跃升”可作“高质量发展”类文章的分论点或标题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「以投资优化支撑产业升级」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄。透过总量看结构优化、透过增速回落看动能转换。<br>二是“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建。将在补短板的同时构筑起发展新质生产力的战略底座。<br>三是投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合。让物的支撑与人的素质提升协同释放“1+1＞2”的投资效果。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「今天谈投资，要坚持质量第一、效益优先，把资源投向补短板、增后劲的关键领域，让投资更好服务新质生产力发展和现代化产业体系建设，把投资成效最终体现到就业扩大、收入增长、生活改善上。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄——透过总量看结构优化、透过增速回落看动能转换。<br>二是“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建——将在补短板的同时构筑起发展新质生产力的战略底座。<br>三是投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合——让物的支撑与人的素质提升协同释放“1+1＞2”的投资效果。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“投资是当下的需求，也是未来的供给”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「以投资优化支撑产业升级」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是推进新基建与人工智能投资、建好“六张网”战略底座。<br>二是打通储蓄向有效投资转化渠道、向民间资本开放。<br>三是推动投资于物与投资于人紧密结合、释放协同效应。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“投资是当下的需求，也是未来的供给”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于以投资优化支撑产业升级的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于以投资优化支撑产业升级的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进以投资优化支撑产业升级，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄——透过总量看结构优化、透过增速回落看动能转换。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建——将在补短板的同时构筑起发展新质生产力的战略底座。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合——让物的支撑与人的素质提升协同释放“1+1＞2”的投资效果。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“投资是当下的需求，也是未来的供给”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「以投资优化支撑产业升级」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：以投资优化支撑产业升级<br><br>时代之问，呼唤破题之策。以投资优化支撑产业升级，是发展所需，也是民心所向。可从三个维度展开：当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄、“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建、投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合。<br><br>分论点一：当前投资有所回落，是传统投资模式向新型投资模式转换的体现，是结构性调整与政策有序衔接的产物，而非潜在有效投资空间的收窄——透过总量看结构优化、透过增速回落看动能转换。方向对了，路再远也能抵达。“投资是当下的需求，也是未来的供给”<br><br>分论点二：“六张网”建设正是新基建与人工智能投资空间的具体承载，重在精准补短板、乘数效应远高于传统基建——将在补短板的同时构筑起发展新质生产力的战略底座。方法对了，事再难也能办成。“透过总量变化看到结构优化，透过增速回落看到动能转换”<br><br>分论点三：投资优化既要打通资金转化渠道、向民间资本开放，也要推动投资于物与投资于人紧密结合——让物的支撑与人的素质提升协同释放“1+1＞2”的投资效果。行百里者半九十。“六张网建设……将在补短板的同时构筑起发展新质生产力的战略底座”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。以投资优化支撑产业升级是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-14</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
