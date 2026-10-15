@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 极端低价不通吃</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>极端低价不通吃</h1>
+    <div class="meta">人民日报·人民时评 | 医保集采·反内卷·公平竞争·健康中国 | 2026年10月15日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：医保集采／反内卷／公平竞争／价格治理／三医协同／健康中国</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">医保集采</span>
+      <span class="tag-item">医药体制改革</span>
+      <span class="tag-item">反内卷</span>
+      <span class="tag-item">公平竞争</span>
+      <span class="tag-item">价格治理</span>
+      <span class="tag-item">健康中国</span>
+      <span class="tag-item">民生保障</span>
+      <span class="tag-item">三医协同</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">战略购买</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">有效市场</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>民生保障／医保改革／公平竞争／高质量发展／健康中国</b>”等主题；本文<b>“事实切入—辨识问题—规则破题—框架升华”</b>的论证链，是写“民生领域深化改革”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“极端低价不通吃”</b>——表层是集采不再“唯低价”，深层是让价格竞争回归理性、推动集采从<b>价格导向转向价值导向</b>；“不是给竞争设限，而是让竞争更有章法”，揭示了规范市场秩序与鼓励充分竞争相统一的治理智慧。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>低价与优质</b>”“<b>竞争与秩序</b>”“<b>价格与价值</b>”“<b>惩治与保护</b>”等多组辩证，是写<b>有效市场与有为政府／公平与效率／规范与发展</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于治理低价无序竞争、维护公平竞争秩序的倡议书”等公文素材。对策要点：<b>设置“双标准差”等价格锚点，精准识别极端低价、让其无利可图</b>／<b>建立报价合理性声明与不带量机制，把极端低价与约定采购量拆开、防止“竞价误伤”</b>／<b>完善“不带量复活”等弹性规则，为临床必需与主流产品保留使用选择和合理利润空间</b>／<b>把集采嵌入“三医”协同治理框架，推动从价格导向转向价值导向、实现多方共赢</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（事实切入—辨识问题—规则破题—框架升华）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以药品和医用耗材集采“低价不通吃”的政策动向切入：高值耗材集采设“双标准差”价格锚点、药品集采要求申报“报价合理性声明”，释放“畸高价要出局，畸低价不带量”的治理信号（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法；不只是惩罚极端低价，还要防止“竞价误伤”（总论点色块，前接新闻事实）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点</b>——以医用耗材内镜止血夹报价为例，辨清“畸低价”的真面目，“反内卷”才能有的放矢（第四段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制</b>——让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法（第五至六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架</b>——支付端管“花多少”、采购端管“买多贵”、医疗端管“怎么用”，三者联动，让医保基金每一分钱都花在能真正改善健康的地方（第七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到健康中国建设的系统性</b>：推动集采从价格导向到价值导向、从分散治理到全国协同、从成本竞争到创新竞争的深刻转型，实现“患者得实惠、医保提效率、企业促转型”的共赢（第八段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“事实切入—辨识问题—规则破题—框架升华”</b>结构：用两项集采政策事实立论，再以“辨危害—改规则—强协同”三层递进，是申论<b>“以小切口见大治理”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-purple">让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法；不只是惩罚极端低价，还要防止“竞价误伤”</span></p>
+
+      <p>近期，药品和医用耗材集采<span class="highlight-blue">“低价不通吃”</span>引发关注。9月份，第七批国家组织高值医用耗材集中带量采购，设置<span class="highlight-blue">“双标准差”价格锚点</span>，在规则设计上进一步突出“反内卷”，释放出<span class="highlight-gold">“畸高价要出局，畸低价不带量”</span>的信号。</p>
+
+      <p>此前，第十二批国家组织药品集采在上海开标，同样明确<span class="highlight-blue">“反内卷”</span>导向，要求报出极端低价的企业提供<span class="highlight-blue">“报价合理性声明”</span>，同时不分配采购量，也不占用入围名额。</p>
+
+      <div class="thesis">【总论点】让价格竞争回归理性，<span class="highlight-blue">不是给竞争设限，而是让竞争更有章法</span>；不只是惩治极端低价，还要防止“竞价误伤”——推动集采从<span class="highlight-blue">价格导向</span>转向<span class="highlight-blue">价值导向</span>，在保障民生、促进创新、规范市场之间找到更优平衡，实现<span class="highlight-gold">“患者得实惠、医保提效率、企业促转型”</span>的共赢。</div>
+
+      <div class="sub-thesis">【分论点一】极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点——辨清“畸低价”的真面目，“反内卷”才能有的放矢。</div>
+
+      <p>何谓极端低价？以内镜止血夹的报价为例，有企业在开标现场报出<span class="highlight-green">7.4元</span>的价格，而该产品一般报价至少<span class="highlight-green">在20元</span>，企业实际出货价大多在<span class="highlight-green">26—30元区间</span>。极端低价显著低于常规水平甚至生产成本，既扰乱良性竞价秩序，也变相导致企业拼价格、<span class="highlight-purple">“向下卷”</span>，是集采“反内卷”的治理重点所在。</p>
+
+      <div class="sub-thesis">【分论点二】在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制——让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法。</div>
+
+      <p>医保集采不再“唯低价”，更加注重形成合理的竞价规则，能够让“卷价格”无机可乘。第十二批药品集采中，在规则上明确当最低报价比<span class="highlight-green">“入围均价下浮两个标准差”</span>还低时，虽然会接受其中选，但不再给予“量”的保证。换言之，在规则上将极端低价与带量拆开，让“赔本赚吆喝”的极端低价无利可图。可见，医保集采正在走出<span class="highlight-blue">“价格主导”</span>阶段，推动企业转向<span class="highlight-blue">“拼质量、拼效率、拼保供”</span>。</p>
+
+      <p>让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法；不只是惩罚极端低价，还要防止“竞价误伤”。本次耗材集采新增了<span class="highlight-blue">“不带量复活”机制</span>，临床需求量大的产品，即使未按正常竞价直接中选，接受不高于<span class="highlight-green">熔断价格1.5倍</span>的条件后，仍有机会获得中选资格，只是不获得约定采购量。这样既保留了医生对主流产品的使用选择，也为医药企业留下了合理利润空间。</p>
+
+      <div class="sub-thesis">【分论点三】集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架——支付端、采购端、医疗端三者联动，让医保基金每一分钱都花在能真正改善健康的地方。</div>
+
+      <p>作为<span class="highlight-blue">医保战略购买</span>的重要工具，集采不再仅仅承担“价格发现”功能，而是日益成为推进医保改革的重要支点。<span class="highlight-blue">《全民医疗保障“十五五”规划》</span>明确，促进公立医院改革、医保支付、药耗集采等重点改革协同。这意味着集采不再孤立地追求降价，而是嵌入<span class="highlight-blue">“三医”协同</span>的治理框架中：支付端管住“花多少”，采购端（集采）管住“买多贵”，医疗端管住“怎么用”。三者联动，才能让医保基金每一分钱都花在能真正改善健康的地方，让<span class="highlight-gold">“以健康为中心”</span>落到实处。</p>
+
+      <p>健康中国建设是一项系统性工程。推动集采完成<span class="highlight-purple">从价格导向到价值导向、从分散治理到全国协同、从成本竞争到创新竞争</span>的深刻转型，在保障民生、促进创新、规范市场之间找到更优平衡，有利于实现<span class="highlight-gold">“患者得实惠、医保提效率、企业促转型”</span>的共赢，为健康中国建设贡献更大力量。</p>
+
+      <p class="byline">（人民日报2026年10月15日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>“让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法”</b>——写“规范与发展统一”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·信号</span>
+      <p><b>“畸高价要出局，畸低价不带量”</b>——写“集采规则之变”是概括句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·危害</span>
+      <p><b>“极端低价显著低于常规水平甚至生产成本，既扰乱良性竞价秩序，也变相导致企业拼价格、‘向下卷’”</b>——写“反内卷”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·拆开</span>
+      <p><b>“在规则上将极端低价与带量拆开，让‘赔本赚吆喝’的极端低价无利可图”</b>——写“价格治理”是方法论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转向</span>
+      <p><b>“医保集采正在走出‘价格主导’阶段，推动企业转向‘拼质量、拼效率、拼保供’”</b>——写“高质量发展”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·误伤</span>
+      <p><b>“不只是惩罚极端低价，还要防止‘竞价误伤’”</b>——写“辩证施策”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同</span>
+      <p><b>“支付端管住‘花多少’，采购端管住‘买多贵’，医疗端管住‘怎么用’”</b>——写“‘三医’协同”是对仗句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共赢</span>
+      <p><b>“实现‘患者得实惠、医保提效率、企业促转型’的共赢”</b>——写“民生与改革”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“事实切入—辨识问题—规则破题—框架升华”框架：用两项集采政策事实立论，再以“辨危害—改规则—强协同”三层递进，适用于“民生领域深化改革”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“辨清问题·反对向下卷”（极端低价与7.4元案例），分论点二写“规则再造·竞争有章法”（双标准差／不带量复活），分论点三写“系统协同·以健康为中心”（支付端—采购端—医疗端），由现象到机制层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“治理低价无序竞争”拆成可操作举措：设价格锚点精准识别极端低价；以报价合理性声明与不带量机制防“竞价误伤”；设“不带量复活”等弹性规则保留选择与利润空间；嵌入“三医”协同推动价值导向。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“低价与优质”“竞争与秩序”“惩治与保护”的辩证：先立“规范与竞争相统一”立场，再以“不是……而是……”句式揭示边界，把经济民生话题写成有张力、有分量的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“不是给竞争设限，而是让竞争更有章法”可作“公平竞争”类论证的框架句；“从价格导向到价值导向”可作“高质量发展”类文章的分论点或标题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「极端低价不通吃」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点。辨清“畸低价”的真面目，“反内卷”才能有的放矢。<br>二是在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制。让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法。<br>三是集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架。支付端、采购端、医疗端三者联动，让医保基金每一分钱都花在能真正改善健康的地方。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法；不只是惩治极端低价，还要防止“竞价误伤”——推动集采从价格导向转向价值导向，在保障民生、促进创新、规范市场之间找到更优平衡，实现“患者得实惠、医保提效率、企业促转型”的共赢。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点——辨清“畸低价”的真面目，“反内卷”才能有的放矢。<br>二是在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制——让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法。<br>三是集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架——支付端、采购端、医疗端三者联动，让医保基金每一分钱都花在能真正改善健康的地方。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「极端低价不通吃」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是设置“双标准差”等价格锚点，精准识别极端低价、让其无利可图。<br>二是建立报价合理性声明与不带量机制，把极端低价与约定采购量拆开、防止“竞价误伤”。<br>三是完善“不带量复活”等弹性规则，为临床必需与主流产品保留使用选择和合理利润空间。<br>四是把集采嵌入“三医”协同治理框架，推动从价格导向转向价值导向、实现多方共赢。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于极端低价不通吃的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于极端低价不通吃的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进极端低价不通吃，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点——辨清“畸低价”的真面目，“反内卷”才能有的放矢。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制——让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架——支付端、采购端、医疗端三者联动，让医保基金每一分钱都花在能真正改善健康的地方。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「极端低价不通吃」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：极端低价不通吃<br><br>时代之问，呼唤破题之策。极端低价不通吃，是发展所需，也是民心所向。可从三个维度展开：极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点、在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制、集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架。<br><br>分论点一：极端低价显著低于常规水平甚至生产成本，是扰乱良性竞价秩序、变相逼企业“向下卷”的治理重点——辨清“畸低价”的真面目，“反内卷”才能有的放矢。方向对了，路再远也能抵达。“让价格竞争回归理性，不是给竞争设限，而是让竞争更有章法”<br><br>分论点二：在规则设计上把极端低价与约定采购量拆开，并增设“不带量复活”机制——让“赔本赚吆喝”无利可图，同时为临床主流产品留下使用选择与合理利润空间，使竞争更有章法。方法对了，事再难也能办成。“畸高价要出局，畸低价不带量”<br><br>分论点三：集采日益成为推进医保改革的重要支点，嵌入“三医”协同治理框架——支付端、采购端、医疗端三者联动，让医保基金每一分钱都花在能真正改善健康的地方。行百里者半九十。“极端低价显著低于常规水平甚至生产成本，既扰乱良性竞价秩序，也变相导致企业拼价格、‘向下卷’”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。极端低价不通吃是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-15</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
