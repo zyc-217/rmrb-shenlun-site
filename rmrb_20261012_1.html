@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 向新发展也是包容性发展</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>向新发展也是包容性发展</h1>
+    <div class="meta">人民日报·人民时评 | 新质生产力／高质量发展／包容性发展／数字经济／传统产业转型／超大规模市场 | 2026年10月12日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——正确认识中国经济的阶段特征与长远趋势① ｜ 主题：新质生产力／高质量发展／包容性发展／数字经济／传统产业转型／超大规模市场</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">包容性发展</span>
+      <span class="tag-item">数字经济</span>
+      <span class="tag-item">传统产业转型</span>
+      <span class="tag-item">人工智能</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">有效市场有为政府</span>
+      <span class="tag-item">新旧动能转换</span>
+      <span class="tag-item">产业升级</span>
+      <span class="tag-item">民生红利</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>新质生产力／高质量发展／数字经济／产业升级</b>”等主题；本文“以个案见大势”的写法，是写“经济发展”类文章的高分素材。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>向新发展也是包容性发展</b>——新质生产力成长不仅做强产业，更让普通家庭、中小企业、传统产业共享升级红利。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>新与旧</b>”“<b>增量与存量</b>”“<b>效率与公平</b>”等多组辩证，是写“新旧动能转换”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于推动数字经济普惠发展的建议”等公文素材。对策要点：<b>加快人工智能与千行百业深度融合</b>／<b>坚持有效市场和有为政府相结合、防止两极分化</b>／<b>推动传统产业数字化改造升级</b>／<b>消除新旧动能接续转换的卡点堵点</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（正确认识中国经济的阶段特征与长远趋势①）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以8月国民经济数据公布与系列评论开篇，用“朱雀二号”“小米自研芯片”等案例，写出“中国智造”的亮丽名片。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：向新发展也是包容性发展——新质生产力成长让产业升级红利惠及普通家庭、中小企业与传统产业。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">看老百姓烟火日常——新技术“飞入寻常百姓家”，降低创业门槛、丰富生活、提供更多机会。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">看中小企业——既是数字化转型的受益者，也是弄潮儿，人机协同效率更高。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">看传统产业——插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“持续培育新质生产力”：在数智转型中实现价值提升，让发展红利惠及更多人。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“数据引题—分层论证—规律收束”结构：以宏观数据立论，用“百姓—企业—产业”三层展开，是申论“由点到面”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>前不久，8月份国民经济数据公布，我国经济总体平稳、稳中有进。其中，个别经济指标出现短期波动，引发关注。即日起，本版推出系列评论，与广大干部群众一道正确认识中国经济的发展态势。</p>
+<p>——编  者</p>
+<p>金秋时节，朱雀二号改进型火箭“一箭十星”，卫星互联网星座加速组网；小米自研芯片搭档长鑫自研内存，协同创新实现“1+1&gt;2”……“中国智造”已成为中国式现代化的又一亮丽名片，彰显“<span class="highlight-gold">制造强国建设迈出坚实步伐</span>”。</p>
+<p>创新活力奔涌，与宏观数据相互印证。国家统计局公布数据显示，8月份规上高技术制造业增加值同比增长<span class="highlight-green">16.7%</span>，比规上工业增加值高出<span class="highlight-green">11.5个百分点</span>。<span class="highlight-blue">新质生产力</span>加快成长，创新驱动主引擎作用不断增强，推动我国经济向新向优发展。</p>
+<div class="thesis">【总论点】向新发展也是<span class="highlight-gold">包容性发展</span>——<span class="highlight-blue">新质生产力</span>加快成长，不仅做强产业，更让普通家庭、中小企业与传统产业共享升级红利，在超越分化中实现红利普惠。</div>
+<p>向新发展，传统产业、中小企业与普通家庭分享到产业升级的红利了吗？</p>
+<p>看老百姓烟火日常，人工智能不只是抽象的算法，更带来实实在在的改变。身处职场，人工智能可承担查阅资料、整理纪要等繁琐任务；来到医院，“人工智能陪诊师”让就医流程更顺畅；走进社区，智能政务一体机7×24小时在线……</p>
+<div class="sub-thesis">【分论点一】看老百姓烟火日常——新技术“飞入寻常百姓家”，带来实实在在的改变，降低创业门槛、丰富生活、提供更多机会。</div>
+<p>新技术“<span class="highlight-gold">飞入寻常百姓家</span>”，不仅带来便利、丰富生活，还降低创业门槛，为普通人提供更多机会。依托人工智能赋能，“一人公司”等新模式兴起，创意想法变为创业现实有了更有力的支撑。</p>
+<p>数字化转型，中小企业既是受益者，也是弄潮儿。同一个服装工厂，以往靠薄利多销赚钱，现在依靠智能生产接住个性化订单；同一条生产线，以往只能依靠老师傅经验，现在人工智能实时调整工艺参数，人机协同效率更高……</p>
+<div class="sub-thesis">【分论点二】看中小企业——既是数字化转型的受益者，也是弄潮儿，人机协同让生产效率更高、机遇更多。</div>
+<p>将人工智能融入研发、生产、质检、管理等各个环节，让生产流程更顺畅、资源利用更高效、供需更匹配，企业将拥有更好的发展机遇。</p>
+<p>数字赋能也为传统产业改造升级提供了新的可能。一家老牌钢铁厂，曾经高炉林立、灰尘漫天，现在用上低碳冶炼工艺、瞄准特种钢研发，从给房地产做建筑钢筋，转而为新能源汽车、海上风电、储能设备供应特种钢。产业还是那个产业，但内核焕然一新，价值也今非昔比。</p>
+<div class="sub-thesis">【分论点三】看传统产业——插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠、在结构优化中重塑优势。</div>
+<p>农业从“靠天吃饭”到“数据种田”，电力从“被动响应”到“智能调控”，制造从“机器轰鸣”到“数智重构”……传统不代表落后，插上数字化翅膀，传统产业一样能生出新枝。</p>
+<p>新旧动能转换，是在开辟增量的同时不断盘活存量。因此，不能把新旧动能接续转换过程中出现的短期阵痛，理解为趋势性问题，更不能夸大阵痛而无视转型升级的整体成效。</p>
+<p>更应看到，我国拥有完整产业体系和<span class="highlight-blue">超大规模市场</span>，坚持<span class="highlight-blue">有效市场和有为政府</span>相结合，具有防止两极分化、实现协调发展的强大治理能力。从长远来看，只要持续推进经济转型升级，消除新旧动能接续转换的卡点堵点，促进新技术赋能千行百业，就能推动区域、城乡之间实现更加均衡、更加包容的发展。</p>
+<p>从经济增长规律来看，持续培育<span class="highlight-blue">新质生产力</span>，推动产业结构和发展方式转型升级，才能为经济长远发展持续注入动力。<span class="highlight-purple">在超越分化中实现红利普惠</span>，<span class="highlight-purple">在数智转型中实现价值提升</span>，在结构优化中实现优势重塑，中国经济转型升级必将步伐更稳健、动力更充沛，并让发展红利惠及更多人。</p>
+<p>——正确认识中国经济的阶段特征与长远趋势①</p>
+<p>向新发展也是包容性发展（人民时评）</p>
+<p class="byline">（人民日报2026年10月12日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·名片</span>
+      <p><b>“中国智造”已成为中国式现代化的又一亮丽名片</b>——写“制造强国”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·红利</span>
+      <p><b>“向新发展，传统产业、中小企业与普通家庭分享到产业升级的红利了吗？”</b>——写“包容性发展”是设问句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·普惠</span>
+      <p><b>“在超越分化中实现红利普惠，在数智转型中实现价值提升，在结构优化中实现优势重塑”</b>——写“高质量发展”是对仗句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·动能</span>
+      <p><b>“新旧动能转换，是在开辟增量的同时不断盘活存量”</b>——写“新旧动能”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治理</span>
+      <p><b>“坚持有效市场和有为政府相结合，具有防止两极分化、实现协调发展的强大治理能力”</b>——写“制度优势”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·前景</span>
+      <p><b>“中国经济转型升级必将步伐更稳健、动力更充沛，并让发展红利惠及更多人”</b>——写“发展远景”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“数据引题—分层论证—规律收束”框架：以8月宏观数据立论，用“百姓—企业—产业”三层展开，适用于“经济高质量发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“技术惠民·降低门槛”（人工智能陪诊、智能政务），分论点二写“企业转型·人机协同”（服装工厂个性化订单），分论点三写“产业焕新·存量盘活”（老牌钢企转特种钢），由微观到中观层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“推动数字经济普惠发展”拆成举措：加快人工智能与千行百业融合；坚持有效市场有为政府结合；推动传统产业数字化改造；消除新旧动能卡点堵点。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“新与旧”“增量与存量”“效率与公平”的辩证：先立“新旧接续而非对立”立场，再以案例互证，把经济话题写成有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“在超越分化中实现红利普惠”可作“共同富裕”类文章的分论点；“坚持有效市场和有为政府相结合”可作“政府与市场关系”类文章的结构句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「向新发展也是包容性发展」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是看老百姓烟火日常。新技术“飞入寻常百姓家”，带来实实在在的改变，降低创业门槛、丰富生活、提供更多机会。<br>二是看中小企业。既是数字化转型的受益者，也是弄潮儿，人机协同让生产效率更高、机遇更多。<br>三是看传统产业。插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠、在结构优化中重塑优势。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「向新发展也是包容性发展——新质生产力加快成长，不仅做强产业，更让普通家庭、中小企业与传统产业共享升级红利，在超越分化中实现红利普惠。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是看老百姓烟火日常——新技术“飞入寻常百姓家”，带来实实在在的改变，降低创业门槛、丰富生活、提供更多机会。<br>二是看中小企业——既是数字化转型的受益者，也是弄潮儿，人机协同让生产效率更高、机遇更多。<br>三是看传统产业——插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠、在结构优化中重塑优势。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“中国智造”已成为中国式现代化的又一亮丽名片</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「向新发展也是包容性发展」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是加快人工智能与千行百业深度融合。<br>二是坚持有效市场和有为政府相结合、防止两极分化。<br>三是推动传统产业数字化改造升级。<br>四是消除新旧动能接续转换的卡点堵点。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“中国智造”已成为中国式现代化的又一亮丽名片</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于向新发展也是包容性发展的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于向新发展也是包容性发展的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进向新发展也是包容性发展，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、看老百姓烟火日常——新技术“飞入寻常百姓家”，带来实实在在的改变，降低创业门槛、丰富生活、提供更多机会。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、看中小企业——既是数字化转型的受益者，也是弄潮儿，人机协同让生产效率更高、机遇更多。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、看传统产业——插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠、在结构优化中重塑优势。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“中国智造”已成为中国式现代化的又一亮丽名片</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「向新发展也是包容性发展」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：向新发展也是包容性发展<br><br>时代之问，呼唤破题之策。向新发展也是包容性发展，是发展所需，也是民心所向。可从三个维度展开：看老百姓烟火日常、看中小企业——既是数字化转型的受益者、看传统产业——插上数字化翅膀一样能生。<br><br>分论点一：看老百姓烟火日常——新技术“飞入寻常百姓家”，带来实实在在的改变，降低创业门槛、丰富生活、提供更多机会。方向对了，路再远也能抵达。“中国智造”已成为中国式现代化的又一亮丽名片<br><br>分论点二：看中小企业——既是数字化转型的受益者，也是弄潮儿，人机协同让生产效率更高、机遇更多。方法对了，事再难也能办成。“向新发展，传统产业、中小企业与普通家庭分享到产业升级的红利了吗？”<br><br>分论点三：看传统产业——插上数字化翅膀一样能生出新枝，在超越分化中实现红利普惠、在结构优化中重塑优势。行百里者半九十。“在超越分化中实现红利普惠，在数智转型中实现价值提升，在结构优化中实现优势重塑”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。向新发展也是包容性发展是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-12</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

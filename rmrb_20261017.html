@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 用好“踱方步”的工作方法</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>用好“踱方步”的工作方法</h1>
+    <div class="meta">人民日报·纵横 | 调查研究／科学工作方法／基层减负／正确政绩观／谋定后动／作风建设 | 2026年9月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——调查研究与科学工作方法 ｜ 主题：调查研究／科学工作方法／基层减负／正确政绩观／谋定后动／作风建设</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">调查研究</span>
+      <span class="tag-item">科学工作方法</span>
+      <span class="tag-item">基层减负</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">谋定后动</span>
+      <span class="tag-item">形式主义整治</span>
+      <span class="tag-item">创造性落实</span>
+      <span class="tag-item">实干担当</span>
+      <span class="tag-item">久久为功</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">钉钉子精神</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>调查研究／科学工作方法／基层减负／正确政绩观</b>”等主题；本文“以小见大”的写法，是写“干部作风”类文章的高分素材。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“踱方步”是科学的工作方法、管用的实践哲学</b>——既要从大处着眼、也要从细处入手，在静心思考中吃透精神、找准方向。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>大与小</b>”“<b>思与行</b>”“<b>减负与担当</b>”等多组辩证，是写“工作方法”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于为基层减负、改进工作方法的建议”等公文素材。对策要点：<b>留足静心思考、调查研究的时间</b>／<b>把政策措施从“纸上”落到“地上”</b>／<b>整治形式主义为基层减负、让干部轻装上阵</b>／<b>树牢正确政绩观、以实干出政绩</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（调查研究与科学工作方法）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“一次深思熟虑胜过百次草率行动”破题，点出“踱方步”是科学的工作方法、管用的实践哲学。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：“踱方步”是学习思考、发现问题、掂量轻重缓急的过程，是谋定而后动的慎思明辨。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">“踱方步”既要从大处着眼、也要从细处入手，从千头万绪中理出头绪、对标全局。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">“踱方步”是静心学习、用心思考的状态——可走到群众中、先进地区、专家面前虚心求教。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">必须给基层干部留些“踱方步”的时间——整治形式主义为基层减负，让干部轻装上阵、实干担当。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到正确政绩观：基层干部在静心思考中砥砺初心、增强信心，以实干出政绩。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“破题立论—三层释法—升华收束”结构：以俗语破题，用“大处与细处—静心状态—基层减负”三层，是申论“议工作方法”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>一次深思熟虑，胜过百次草率行动。只有把问题想清楚，才能把事情干明白。“踱方步”，是学习思考、消化吸收的过程，是发现问题、分析问题的过程，是掂量轻重缓急、避免忙中出错的过程。它是科学的工作方法、管用的实践哲学。</p>
+<div class="thesis">【总论点】<span class="highlight-gold">“踱方步”是科学的工作方法、管用的实践哲学</span>——既是学习思考、发现问题的过程，也是<span class="highlight-blue">谋定而后动</span>的慎思明辨，关键在于从大处着眼、从细处入手。</div>
+<p>“踱方步”，既要<span class="highlight-purple">从大处着眼，也要从细处入手</span>，从千头万绪中理出头绪。对基层干部而言，沉下心来“踱方步”，有利于吃透党中央精神，把一域工作放到全局中对标定位，把上级方针政策与自身实际紧密结合起来，让政策措施从“纸上”切实落到“地上”。</p>
+<div class="sub-thesis">【分论点一】“踱方步”既要从大处着眼，也要从细处入手——从千头万绪中理出头绪，把一域工作放到全局中对标定位。</div>
+<p>“踱方步”，并不是不紧不慢闲走几步，而是指一种静心学习、用心思考的状态。“踱方步”，可以是“踱”到群众中征求意见建议、“踱”到先进地区深入调研，也可以是“踱”到专家学者面前虚心求教……它是<span class="highlight-purple">持续长跑中的充电蓄力</span>，是<span class="highlight-gold">谋定而后动</span>的<span class="highlight-gold">慎思明辨</span>。</p>
+<div class="sub-thesis">【分论点二】“踱方步”是一种静心学习、用心思考的状态——走到群众中、先进地区、专家面前虚心求教，是持续长跑中的充电蓄力。</div>
+<p>抓基层、强基础、固根本，<span class="highlight-blue">创造性落实党中央决策部署</span>，必须给基层干部留些“踱方步”的时间。驰而不息<span class="highlight-green">整治形式主义为<span class="highlight-blue">基层减负</span></span>，才能让基层干部轻装上阵、实干担当。</p>
+<div class="sub-thesis">【分论点三】必须给基层干部留些“踱方步”的时间——驰而不息整治形式主义为基层减负，让干部轻装上阵、实干担当。</div>
+<p>基层干部在静心学习、用心思考中砥砺初心、增强信心，树牢<span class="highlight-blue">正确政绩观</span>，定能以更饱满的状态、更昂扬的姿态为人民出政绩、以实干出政绩。</p>
+<p>（摘编自《新疆日报》，原题为《请给基层干部留些“踱方步”的时间》）</p>
+<p>用好“踱方步”的工作方法（纵横）</p>
+<p class="byline">（人民日报2026年9月16日 第05版 · 纵横，摘编自《新疆日报》）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法</span>
+      <p><b>“一次深思熟虑，胜过百次草率行动”</b>——写“科学工作方法”是破题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·过程</span>
+      <p><b>“踱方步，是学习思考、消化吸收的过程，是发现问题、分析问题的过程，是掂量轻重缓急、避免忙中出错的过程”</b>——写“工作方法”是定义句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·状态</span>
+      <p><b>“踱方步，是持续长跑中的充电蓄力，是谋定而后动的慎思明辨”</b>——写“静心思考”是金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·全局</span>
+      <p><b>“把一域工作放到全局中对标定位，把上级方针政策与自身实际紧密结合起来”</b>——写“大局意识”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·落地</span>
+      <p><b>“让政策措施从‘纸上’切实落到‘地上’”</b>——写“创造性落实”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政绩</span>
+      <p><b>“以更饱满的状态、更昂扬的姿态为人民出政绩、以实干出政绩”</b>——写“正确政绩观”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“破题立论—三层释法—升华收束”框架：以俗语破题，用“大处与细处—静心状态—基层减负”三层，适用于“干部工作方法”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“大处着眼·细处入手”（对标全局），分论点二写“静心思考·虚心求教”（走到群众与专家），分论点三写“减负赋能·轻装上阵”（整治形式主义），由方法到保障层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“改进工作方法为基层减负”拆成举措：留足思考调研时间；推动政策从纸上到地上；整治形式主义减负；树牢正确政绩观以实干出政绩。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“大与小”“思与行”“减负与担当”的辩证：先立“谋定后动”立场，再以方法互证，把工作方法话题写成有厚度的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“一次深思熟虑胜过百次草率行动”可作“科学决策”类文章的分论点；“让政策从纸上落到地上”可作“抓落实”类文章的收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「用好“踱方步”的工作方法」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“踱方步”既要从大处着眼，也要从细处入手。从千头万绪中理出头绪，把一域工作放到全局中对标定位。<br>二是“踱方步”是一种静心学习、用心思考的状态。走到群众中、先进地区、专家面前虚心求教，是持续长跑中的充电蓄力。<br>三是必须给基层干部留些“踱方步”的时间。驰而不息整治形式主义为基层减负，让干部轻装上阵、实干担当。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「“踱方步”是科学的工作方法、管用的实践哲学——既是学习思考、发现问题的过程，也是谋定而后动的慎思明辨，关键在于从大处着眼、从细处入手。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“踱方步”既要从大处着眼，也要从细处入手——从千头万绪中理出头绪，把一域工作放到全局中对标定位。<br>二是“踱方步”是一种静心学习、用心思考的状态——走到群众中、先进地区、专家面前虚心求教，是持续长跑中的充电蓄力。<br>三是必须给基层干部留些“踱方步”的时间——驰而不息整治形式主义为基层减负，让干部轻装上阵、实干担当。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“一次深思熟虑，胜过百次草率行动”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「用好“踱方步”的工作方法」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是留足静心思考、调查研究的时间。<br>二是把政策措施从“纸上”落到“地上”。<br>三是整治形式主义为基层减负、让干部轻装上阵。<br>四是树牢正确政绩观、以实干出政绩。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“一次深思熟虑，胜过百次草率行动”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于用好“踱方步”的工作方法的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于用好“踱方步”的工作方法的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进用好“踱方步”的工作方法，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、“踱方步”既要从大处着眼，也要从细处入手——从千头万绪中理出头绪，把一域工作放到全局中对标定位。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、“踱方步”是一种静心学习、用心思考的状态——走到群众中、先进地区、专家面前虚心求教，是持续长跑中的充电蓄力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、必须给基层干部留些“踱方步”的时间——驰而不息整治形式主义为基层减负，让干部轻装上阵、实干担当。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“一次深思熟虑，胜过百次草率行动”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「用好“踱方步”的工作方法」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：用好“踱方步”的工作方法<br><br>时代之问，呼唤破题之策。用好“踱方步”的工作方法，是发展所需，也是民心所向。可从三个维度展开：“踱方步”既要从大处着眼，也要从细处入手、“踱方步”是一种静心学习、用心思考的状态、必须给基层干部留些“踱方步”的时间。<br><br>分论点一：“踱方步”既要从大处着眼，也要从细处入手——从千头万绪中理出头绪，把一域工作放到全局中对标定位。方向对了，路再远也能抵达。“一次深思熟虑，胜过百次草率行动”<br><br>分论点二：“踱方步”是一种静心学习、用心思考的状态——走到群众中、先进地区、专家面前虚心求教，是持续长跑中的充电蓄力。方法对了，事再难也能办成。“踱方步，是学习思考、消化吸收的过程，是发现问题、分析问题的过程，是掂量轻重缓急、避免忙中出错的过程”<br><br>分论点三：必须给基层干部留些“踱方步”的时间——驰而不息整治形式主义为基层减负，让干部轻装上阵、实干担当。行百里者半九十。“踱方步，是持续长跑中的充电蓄力，是谋定而后动的慎思明辨”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。用好“踱方步”的工作方法是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-17</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

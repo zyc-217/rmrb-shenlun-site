@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从外资流向看中国市场新引力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从外资流向看中国市场新引力</h1>
+    <div class="meta">人民日报·人民时评 | 高水平对外开放／吸引外资／营商环境／制度型开放／新质生产力／确定性 | 2026年10月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——正确认识中国经济的阶段特征与长远趋势④ ｜ 主题：高水平对外开放／吸引外资／营商环境／制度型开放／新质生产力／确定性</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">吸引外资</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">制度型开放</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">创新生态</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">国际合作</span>
+      <span class="tag-item">投资中国</span>
+      <span class="tag-item">确定性</span>
+      <span class="tag-item">新发展格局</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>高水平对外开放／吸引外资／营商环境／制度型开放</b>”等主题；本文“以数据证趋势”的写法，是写“开放发展”类文章的高分素材。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>中国市场的新引力，藏在前沿技术应用场景、创新生态升级、绿色发展机遇与确定性营商环境之中</b>。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>量与质</b>”“<b>制造与创造</b>”“<b>短期波动与长期趋势</b>”等多组辩证，是写“开放合作”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于更大力度吸引外资的建议”等公文素材。对策要点：<b>扩大市场准入、提升投资便利度</b>／<b>塑造稳定透明可预期的营商环境</b>／<b>完善制度型开放、稳定长期预期</b>／<b>以新引力集聚全球创新要素</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（正确认识中国经济的阶段特征与长远趋势④）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以新一批重大外资项目密集投产开篇，点出“新技术、新生态、绿发展、制度型开放共同塑造新引力”。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：判断市场成色不能只看一时增减，更要看预期、看趋势——外资仍深度参与、长期看好。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">追加投资最有说服力——近4800家外资企业追加投资，中国市场具有长期吸引力。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">外资没有“走”而是换了“赛道”——高技术产业占比升至41.7%，投资结构优化。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">新引力藏在确定性里——稳定透明可预期的营商环境是外资深耕的信心之源。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到长远战略：吸引外资、开放创新、合作共赢，相信中国就是相信明天。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“现象引题—数据证趋势—三层析引力—战略收束”结构，是申论“用数据说话”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>新技术加快落地，创新生态不断完善，绿色发展释放机遇，<span class="highlight-blue">制度型开放</span>稳定预期，正在共同塑造中国经济的新引力</p>
+<div class="thesis">【总论点】判断市场成色，<span class="highlight-purple">不能只看一时的数量增减，更要看预期、看趋势</span>——<span class="highlight-blue">新技术、新生态、绿发展、制度型开放</span>共同塑造中国经济的新引力，外资深耕中国仍是现实选择。</div>
+<p>近期，新一批重大外资项目密集投产。广东佛山，德国企业赛威投资超百亿元的华南智能制造基地开始运营；江苏昆山，美国汽车零部件供应商天纳克的全球创新中心启用。外资加速投向新产业、新赛道，彰显中国仍是全球投资热土。</p>
+<p>今年前8个月，全国实际使用外资金额同比有所下降，有人质疑，中国市场是否已经失去了吸引力？判断市场成色，<span class="highlight-purple">不能只看一时的数量增减，更要看预期、看趋势</span>。循着长期视角观察，能够更好读懂外资仍然看好中国的逻辑。</p>
+<p>追加投资最有说服力。今年上半年，近<span class="highlight-green">4800家</span>外资企业追加对华投资。华南美国商会此前调查显示，<span class="highlight-green">75%</span>的受访企业计划年内对华再投资。这说明中国市场具有长期吸引力，深耕中国仍是众多外资企业的现实选择。“美国企业并非正在撤离中国，反而正在深度参与。”华南美国商会会长哈利·赛亚丁的这句话，是对外资撤离论的否定。深度参与的背后，是外资企业对中国市场发展前景的长期看好。</p>
+<div class="sub-thesis">【分论点一】追加投资最有说服力——近4800家外资企业追加对华投资，说明中国市场具有长期吸引力、深耕中国仍是现实选择。</div>
+<p>外资并没有“走”，而是换了“赛道”。今年前8个月，高技术产业实际使用外资占全国实际使用外资比重升至<span class="highlight-green">41.7%</span>，其中研发与设计服务、科技成果转化服务实际使用外资分别增长<span class="highlight-green">74%</span>和<span class="highlight-green">64.2%</span>，投资结构进一步优化。在全球跨境投资整体低迷的背景下，实际使用外资有波动并不奇怪，投资转型更值得关注。新技术加快落地，创新生态不断完善，绿色发展释放机遇，<span class="highlight-blue">制度型开放</span>稳定预期，正在共同塑造中国经济的新引力。</p>
+<div class="sub-thesis">【分论点二】外资并没有“走”，而是换了“赛道”——高技术产业实际使用外资占比升至41.7%，投资结构进一步优化。</div>
+<p>新引力，藏在前沿技术的应用场景里。超大规模市场和丰富应用场景，为科技创新提供了从概念验证到商业化落地的完整链条。技术有场景可用、产品有市场可试、模式有空间可拓，中国经济持续转型升级、加快新旧动能转换，在人工智能、先进制造等新赛道孕育长期的结构性机会。</p>
+<p>新引力，藏在创新生态的持续升级中。阿斯利康全球战略研发中心项目落地北京，施耐德电气在上海揭牌热管理解决方案创新实验室……越来越多跨国企业把中国作为研发创新、制造升级和全球布局的重要支点，在中国锻造实力，向全球输出创新。这都表明，中国正<span class="highlight-purple">从制造基地走向创新策源地</span>。</p>
+<p>新引力，藏在绿色发展的长期机遇中。巴斯夫（广东）一体化基地总投资约<span class="highlight-green">87亿欧元</span>，通过长期绿电直购协议和海上风电投资，实现100%可再生能源供电。跨国企业看重中国市场的，已不只是劳动力等传统要素成本，更是绿电、算力等新型生产要素供给。</p>
+<p>实际上，中国市场的最大吸引力就藏在确定性里。今年以来，《利用外资固稳促优行动方案》等政策接续落地，不断扩大市场准入、提升外商投资便利度。稳定、透明、可预期的<span class="highlight-blue">营商环境</span>，正是外资长期深耕中国的信心之源。</p>
+<div class="sub-thesis">【分论点三】新引力藏在确定性里——稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源。</div>
+<p>吸引外资、开放创新、合作共赢，这是中国的长远战略。外资深耕中国市场的实际行动正在不断印证：<span class="highlight-gold">相信中国，就是相信明天</span>；<span class="highlight-gold">投资中国，就是投资未来</span>。</p>
+<p>——正确认识中国经济的阶段特征与长远趋势④</p>
+<p>从外资流向看中国市场新引力（人民时评）</p>
+<p class="byline">（人民日报2026年10月16日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·引力</span>
+      <p><b>“新技术加快落地，创新生态不断完善，绿色发展释放机遇，制度型开放稳定预期，正在共同塑造中国经济的新引力”</b>——写“市场引力”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·判断</span>
+      <p><b>“判断市场成色，不能只看一时的数量增减，更要看预期、看趋势”</b>——写“辩证看形势”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·参与</span>
+      <p><b>“美国企业并非正在撤离中国，反而正在深度参与”</b>——写“外资事实”是反驳句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·策源</span>
+      <p><b>“中国正从制造基地走向创新策源地”</b>——写“开放升级”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·信心</span>
+      <p><b>“稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源”</b>——写“营商环境”是金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·未来</span>
+      <p><b>“相信中国，就是相信明天；投资中国，就是投资未来”</b>——写“开放前景”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象引题—数据证趋势—三层析引力—战略收束”框架：以外资项目投产破题，用“信心—结构—确定性”三层，适用于“开放发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“追加投资·长期看好”（4800家、75%），分论点二写“换道升级·结构优化”（高技术41.7%），分论点三写“确定性·营商环境”（行动方案），由现象到本质层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“更大力度吸引外资”拆成举措：扩大市场准入；塑造稳定透明可预期营商环境；完善制度型开放；以新引力集聚全球创新要素。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“量与质”“制造与创造”“短期与长期”的辩证：先立“短期波动不改长期向好”立场，再以数据互证，把开放话题写成有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“相信中国就是相信明天”可作“开放自信”类文章的收束句；“不能只看一时增减，更要看预期趋势”可作“辩证看形势”的分论点。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从外资流向看中国市场新引力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是追加投资最有说服力。近4800家外资企业追加对华投资，说明中国市场具有长期吸引力、深耕中国仍是现实选择。<br>二是外资并没有“走”，而是换了“赛道”。高技术产业实际使用外资占比升至41.7%，投资结构进一步优化。<br>三是新引力藏在确定性里。稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「判断市场成色，不能只看一时的数量增减，更要看预期、看趋势——新技术、新生态、绿发展、制度型开放共同塑造中国经济的新引力，外资深耕中国仍是现实选择。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是追加投资最有说服力——近4800家外资企业追加对华投资，说明中国市场具有长期吸引力、深耕中国仍是现实选择。<br>二是外资并没有“走”，而是换了“赛道”——高技术产业实际使用外资占比升至41.7%，投资结构进一步优化。<br>三是新引力藏在确定性里——稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“新技术加快落地，创新生态不断完善，绿色发展释放机遇，制度型开放稳定预期，正在共同塑造中国经济的新引力”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从外资流向看中国市场新引力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是扩大市场准入、提升投资便利度。<br>二是塑造稳定透明可预期的营商环境。<br>三是完善制度型开放、稳定长期预期。<br>四是以新引力集聚全球创新要素。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“新技术加快落地，创新生态不断完善，绿色发展释放机遇，制度型开放稳定预期，正在共同塑造中国经济的新引力”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从外资流向看中国市场新引力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从外资流向看中国市场新引力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从外资流向看中国市场新引力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、追加投资最有说服力——近4800家外资企业追加对华投资，说明中国市场具有长期吸引力、深耕中国仍是现实选择。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、外资并没有“走”，而是换了“赛道”——高技术产业实际使用外资占比升至41.7%，投资结构进一步优化。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、新引力藏在确定性里——稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“新技术加快落地，创新生态不断完善，绿色发展释放机遇，制度型开放稳定预期，正在共同塑造中国经济的新引力”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从外资流向看中国市场新引力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从外资流向看中国市场新引力<br><br>时代之问，呼唤破题之策。从外资流向看中国市场新引力，是发展所需，也是民心所向。可从三个维度展开：追加投资最有说服力、外资并没有“走”，而是换了“赛道”、新引力藏在确定性里。<br><br>分论点一：追加投资最有说服力——近4800家外资企业追加对华投资，说明中国市场具有长期吸引力、深耕中国仍是现实选择。方向对了，路再远也能抵达。“新技术加快落地，创新生态不断完善，绿色发展释放机遇，制度型开放稳定预期，正在共同塑造中国经济的新引力”<br><br>分论点二：外资并没有“走”，而是换了“赛道”——高技术产业实际使用外资占比升至41.7%，投资结构进一步优化。方法对了，事再难也能办成。“判断市场成色，不能只看一时的数量增减，更要看预期、看趋势”<br><br>分论点三：新引力藏在确定性里——稳定、透明、可预期的营商环境，正是外资长期深耕中国的信心之源。行百里者半九十。“美国企业并非正在撤离中国，反而正在深度参与”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从外资流向看中国市场新引力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-16</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

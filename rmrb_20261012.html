@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从三星堆感悟中华民族的创造力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从三星堆感悟中华民族的创造力</h1>
+    <div class="meta">人民日报·人民观点 | 文化自信／中华优秀传统文化／中华民族创造力／创造性转化创新性发展／新质生产力／文明交流互鉴 | 2026年10月12日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——感悟中华民族的创造力 ｜ 主题：文化自信／中华优秀传统文化／中华民族创造力／创造性转化创新性发展／新质生产力／文明交流互鉴</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">中华优秀传统文化</span>
+      <span class="tag-item">中华民族创造力</span>
+      <span class="tag-item">创造性转化创新性发展</span>
+      <span class="tag-item">文化传承发展</span>
+      <span class="tag-item">文化主体性</span>
+      <span class="tag-item">中华文明突出特性</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">融合赋能</span>
+      <span class="tag-item">中华民族现代文明</span>
+      <span class="tag-item">守正创新</span>
+      <span class="tag-item">文明交流互鉴</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>文化自信／文化传承发展／创造性转化创新性发展／中华民族现代文明</b>”等主题；本文“维度切入—史论结合—辩证升华”的论证链，是写“文化强国建设”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：中华文化的创造力<b>“源自血脉基因、思想激发、融合赋能”</b>——从历史根脉、思想引领、实践融合三个维度，揭示中华民族守正不守旧、尊古不复古的进取精神。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>根与魂</b>”“<b>古与今</b>”“<b>守正与创新</b>”“<b>民族与世界</b>”等多组辩证，是写“传承与发展／传统与现代化”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于推进文化强国建设的倡议书”等公文素材。对策要点：<b>坚持守正创新、推动中华优秀传统文化创造性转化创新性发展</b>／<b>以新质生产力赋能文化创新创造、壮大“新大众文艺”</b>／<b>深化文明交流互鉴、高扬文化主体性</b>／<b>把文化软实力转化为现实生产力、惠民利民</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（感悟中华民族的创造力）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以学习《习近平文化文选》座谈会与三星堆“火锅”热搜、中子实验室、文创村超等现象破题，写出“古老文化基因遇上当代创造活力”的生动缩影。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：从“中华民族的根和魂”之问，到“三个维度”的深刻感悟，中华文化的创造力源自血脉基因、思想激发、融合赋能。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">从历史长河看，创造力源自血脉基因——“苟日新，日日新”的精神从未断流，已内化为中国人最活跃的基因。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">从发展之路看，创造力源自思想激发——循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">从实践足迹看，创造力源自融合赋能——保护与发展、文化与科技、一域与全局相融合，将创造资源化为创新优势。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“奋进十五五”：依靠创造力、激发创造力、融出创造力，便没有什么“闯不过”“干不成”。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“现象切入—维度展开—辩证升华”结构：以文旅文创见闻破题，用“历史—发展—实践”三层递进，是申论“由具体到抽象”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>（一）</p>
+<p>“推动高质量发展，文化是重要支点”“战胜前进道路上各种风险挑战，文化是重要力量源泉”。</p>
+<p>10月9日，学习《习近平文化文选》第一卷、第二卷座谈会在京召开。研读《习近平文化文选》，要切实把学习成效转化为加快推进文化强国建设的实际行动。</p>
+<p>9月底，“三星堆文物怎么还有火锅”登上热搜。三星堆火锅产业大会在四川广汉举行，这份“热辣滚烫”仍在创新发展。</p>
+<p>前不久，全国首家“中子文化遗产保护实验室”成立。有中子技术助力，包括三星堆在内的更多古老创造将被更好“解码”。</p>
+<p>放宽视野，文创变身新年货，“村超”带动一域火，文化“新三样”出海圈粉……当古老的文化基因遇上当代的创造活力，中国正把传统做成最潮的爆款。</p>
+<p>新思想引领中华文化在新时代展现万千气象，可以从血脉基因、思想激发、融合赋能三个维度，深刻感悟中华民族的创造力。</p>
+<div class="thesis">【总论点】从“中华民族的根和魂”之问，到“<span class="highlight-blue">创造性转化、创新性发展</span>”的生动实践，中华文化的创造力，<span class="highlight-blue">源自血脉基因、思想激发、融合赋能</span>；其伟力迸发于文化创新创造，彰显于<span class="highlight-gold">古为今用、守正创新</span>，必将铸就中华民族现代文明新的辉煌。</div>
+<p>（二）</p>
+<p>从历史长河看，创造力源自血脉基因。</p>
+<div class="sub-thesis">【分论点一】从历史长河看，创造力源自血脉基因——“苟日新，日日新”的精神从未断流，已内化为中国人最古老却又最活跃的基因。</div>
+<p>何以中国？</p>
+<p>“<span class="highlight-blue">中华文明</span>以独树一帜的创新创造、一脉相承的坚持坚守，树立起一座座文明高峰。”</p>
+<p>跨过千年光阴，“苟日新，日日新，又日新”的精神从未断流。顽强的生命力、巨大的创造力，已内化为中国人最古老却又最活跃的基因。</p>
+<p>从两棵“树”、两种“月”、两条“河”，更能理解这种一脉相承、不断超越。</p>
+<p>青铜树与智慧树。在四川绵阳市博物馆内，国家一级文物汉代青铜摇钱树上，枝叶精美无比，瑞兽栩栩如生。不远处的中华科学家公园，树状的“智慧之城”雕塑矗立，纪念科学家的攻坚创造。从打造精美明器到铸造大国重器，超越小家小我，为民族命运“铸剑”，今日的创造力更具时代厚度。</p>
+<p>望月与揽月。“欲上青天揽明月”，是古人的浪漫想象。嫦娥六号采回人类首批月背月壤、赠予联合国相关样品，是今人的笃行致远。从“把酒问月”到“九天揽月”，志不曾改、积力之所举，今日的创造力标注精神刻度。</p>
+<p>古老的渠与新生的河。八桂大地，灵渠凿通两江、川流不息，平陆运河通江达海、连接东盟。把“望洋兴叹”变为“向海图强”，从“立足一地”到“造福四方”，今日的创造力彰显胸怀广度。</p>
+<p>创造力的跃迁，照见一个文明的自强不息，<span class="highlight-purple">根植于一脉相承的创新特质</span>。</p>
+<p>“<span class="highlight-blue">中华文明</span>的创新性，从根本上决定了中华民族<span class="highlight-purple">守正不守旧、尊古不复古</span>的进取精神，决定了中华民族不惧新挑战、勇于接受新事物的无畏品格。”</p>
+<p>创造力的跃迁，折射一个民族的沧桑巨变，彰显再创辉煌的磅礴力量。</p>
+<p>“中国式现代化赋予<span class="highlight-blue">中华文明</span>以现代力量，中华文明赋予中国式现代化以深厚底蕴。”</p>
+<p>人形机器人在工厂上岗，人工智能与半导体从被“卡脖子”到实现突破，创新药数量和质量稳步提升……以历史视野观之，中国创新“井喷”来自中华民族创造力的“泉眼”。</p>
+<p>“只有立足波澜壮阔的中华<span class="highlight-blue">五千多年文明史</span>，才能真正理解中国道路的历史必然、文化内涵与独特优势。”</p>
+<p>高扬中华民族的<span class="highlight-blue">文化主体性</span>，让一切文明的精华造福当今、造福人类，<span class="highlight-blue">中华文明</span>“满天星斗”正闪耀于人类文明的璀璨星空。</p>
+<p>（三）</p>
+<p>从发展之路看，创造力源自思想激发。</p>
+<div class="sub-thesis">【分论点二】从发展之路看，创造力源自思想激发——循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。</div>
+<p>近代之后，由于西方列强入侵和封建统治腐败，国家蒙辱、人民蒙难、文明蒙尘，我们这一文明古国一度沦为现代化的“后进生”。</p>
+<p>“我们要后来居上，把‘失去的二百年’找回来”，习近平总书记的铿锵话语，道出亿万中华儿女的自强心声。</p>
+<p>找准支点，撬动板结的土壤，创造力一旦被唤醒，便势不可挡。</p>
+<p>逐日之旅，照见创造力的聚变。</p>
+<p>三星堆遗址出土青铜太阳形器，专家认为这体现了古蜀人对太阳的崇拜、对能量的渴望。</p>
+<p>同在四川，新一代“人造太阳”中国环流三号，去年3月首次突破“<span class="highlight-green">双亿度</span>”，前不久又跨入工程化新阶段，人类的“终极能源”渐行渐近。</p>
+<p>从崇拜太阳到打造“太阳”，我们的“太阳”何以燃烧？</p>
+<p>循思想找方向，“自主创新是我们攀登世界科技高峰的必由之路”。</p>
+<p>将可控核聚变作为未来能源技术纳入能源创新发展重点方向，摒弃“等、靠、要”，全链条自主攻坚，“跟跑”逐步变成“领跑”。</p>
+<p>向改革要活力，“健全<span class="highlight-blue">新型举国体制</span>，提升国家创新体系整体效能”。</p>
+<p>有为政府调动有效市场，完整创新生态激活多元主体，促进资源资金充分利用，四链不断深度融合，“无人区”蹚出“中国路”。</p>
+<p>思想破冰、机制破壁、技术破圈，活力奔涌的中国创新，为百姓向往发光发热、为世人照亮未来走向。</p>
+<p>从太阳形器到环流三号，折射旧邦新命的接续追寻，更映照新时代党的创新理论的真理力量与实践伟力。</p>
+<p>“‘<span class="highlight-blue">第二个结合</span>’是又一次的思想解放”，打开创新创造的广阔空间。</p>
+<p>各地“村超”如火如荼，非遗热、文博热带火一场场双向奔赴……<span class="highlight-gold">创造性转化、创新性发展</span>，文化创造生机勃勃，成果光彩熠熠。</p>
+<p>“加快建设以实体经济为支撑的现代化产业体系”，夯实创新创造的产业根基。</p>
+<p>“链主制”“赛马制”“揭榜挂帅”深入实施，“破四唯”与“立新标”协同推进……因地制宜发展<span class="highlight-blue">新质生产力</span>，新动能对规上工业增长的贡献保持高位，我们牢牢掌握发展主动权。</p>
+<p>一个民族从历史中走来，靠的是创造，向未来走去，依然要靠创造。</p>
+<p>“时间不等人！历史不等人！”以思想之光引领兴邦之任，在新的历史起点上担负起新的历史使命，古老文明再焕新彩。</p>
+<p>（四）</p>
+<p>从实践足迹看，创造力源自融合赋能。</p>
+<div class="sub-thesis">【分论点三】从实践足迹看，创造力源自融合赋能——保护与发展融合、文化与科技融合、一域与全局融合，将创造资源化为创新优势。</div>
+<p>一切划时代的理论，都是满足时代需要的产物。真正的创新创造，从来不是坐在象牙塔内的空想。</p>
+<p>紧跟时代步伐，顺应实践发展，实现融合的“化学反应”，才能将相互嵌套的“问号”变为“叹号”。</p>
+<p>再过几天，第四届良渚论坛将在浙江杭州举行。从一处古迹到一张名片，良渚的“融合账”里蕴藏激活创造力的方法。</p>
+<p>保护融合发展，算好“民生账”。创新“区内保护、区外反哺”模式，良渚遗址保护区内多个村庄在区外建“飞地”、增岗增收。5000年前的文明融入5000年后的生活，“在保护中发展、在发展中保护”，唤醒文化生命力。</p>
+<p>文化融合科技，算全“产业账”。依托文化根基，聚集文化企业，良渚新城构建“数字+技术+内容”融合生态，2025年其所在的杭州余杭区规上文化企业营收超<span class="highlight-green">7400亿元</span>。5000年后的科技激活5000年前的文明，让文化遗产“活起来”，激发文化供给力。</p>
+<p>一域融合全局，算久“合作账”。从融入共建“一带一路”、加强文明交流互鉴，到“持续办好良渚论坛”写入“十五五”规划纲要，良渚论坛不断结出硕果。5000年前的文明赋能5000年后的方案，和衷共济、和合共生，提升文化影响力。</p>
+<p>将文化软实力转化为现实生产力，良渚的“融合账”，揭示将创造资源化为创新优势的制胜之道。</p>
+<p>在实践中落脚、于融合处落笔，火花碰撞时，创造力便喷薄而出。</p>
+<p>面向国家重大需求，谋划我国科技战略，深地塔科1井在地下万米发现油气，“能源饭碗”再添保障；“北脑一号”等创新成果陆续走向临床，前沿技术为民造福……科技供给与现实需求相融合，国家富强底气十足。</p>
+<p>人工智能渗透领航工厂<span class="highlight-green">70%以上</span>的业务场景；<span class="highlight-green">全球首款</span>实体瘤CAR—T疗法、全球首款侵入式脑机接口医疗器械等一批“全球首个”创新成果集中获批上市……扎实推动科技创新和产业创新深度融合，<span class="highlight-blue">新质生产力</span>加速迸发。</p>
+<p>“两个大局”深度互动，民族复兴进入关键时期，我们所经历的非常宏大而独特的实践创新，就是挺立涛头的成功密码。</p>
+<p>奋进“十五五”，更多“雪山”“草地”仍待穿越。依靠创造力、激发创造力、融出创造力，便没有什么“闯不过”“干不成”。</p>
+<p>今日之中国，创造推动发展。未来之中国，创造铸就辉煌。</p>
+<p>（执笔：崔妍）</p>
+<p>从三星堆感悟中华民族的创造力（人民观点）</p>
+<p class="byline">（人民日报2026年10月12日 第05版 · 人民观点）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·根魂</span>
+      <p><b>“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”</b>——写“文化传承／文化自信”是权威定论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·支点</span>
+      <p><b>“推动高质量发展，文化是重要支点”“战胜前进道路上各种风险挑战，文化是重要力量源泉”</b>——写“文化作用”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新</span>
+      <p><b>“中华文明的创新性，从根本上决定了中华民族守正不守旧、尊古不复古的进取精神”</b>——写“创新特质”是金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·现代</span>
+      <p><b>“中国式现代化赋予中华文明以现代力量，中华文明赋予中国式现代化以深厚底蕴”</b>——写“两结合”是对仗句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·历史</span>
+      <p><b>“只有立足波澜壮阔的中华五千多年文明史，才能真正理解中国道路的历史必然”</b>——写“历史自信”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·使命</span>
+      <p><b>“高扬中华民族的文化主体性，让一切文明的精华造福当今、造福人类”</b>——写“文化主体性”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象切入—维度展开—辩证升华”框架：以三星堆文创、良渚论坛等见闻破题，用“历史—发展—实践”三层递进，适用于“文化强国建设”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“血脉基因·守正不守旧”（青铜树与智慧树、望月与揽月），分论点二写“思想激发·改革破壁”（人造太阳、新型举国体制），分论点三写“融合赋能·惠民利民”（良渚融合账），由历史到现实层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“推进文化强国建设”拆成可操作举措：坚持创造性转化创新性发展；以新质生产力赋能文化创新、壮大新大众文艺；深化文明交流互鉴、高扬文化主体性；把文化软实力转化为现实生产力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“根与魂”“古与今”“守正与创新”的辩证：先立“守正不守旧、尊古不复古”立场，再以历史与现实互证，把文化话题写成有厚度、有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“古为今用、守正创新”可作“文化传承”类文章的分论点；“高扬文化主体性，让文明精华造福人类”可作“文明互鉴”类文章的结构句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从三星堆感悟中华民族的创造力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从历史长河看，创造力源自血脉基因。“苟日新，日日新”的精神从未断流，已内化为中国人最古老却又最活跃的基因。<br>二是从发展之路看，创造力源自思想激发。循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。<br>三是从实践足迹看，创造力源自融合赋能。保护与发展融合、文化与科技融合、一域与全局融合，将创造资源化为创新优势。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「从“中华民族的根和魂”之问，到“创造性转化、创新性发展”的生动实践，中华文化的创造力，源自血脉基因、思想激发、融合赋能；其伟力迸发于文化创新创造，彰显于古为今用、守正创新，必将铸就中华民族现代文明新的辉煌。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从历史长河看，创造力源自血脉基因——“苟日新，日日新”的精神从未断流，已内化为中国人最古老却又最活跃的基因。<br>二是从发展之路看，创造力源自思想激发——循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。<br>三是从实践足迹看，创造力源自融合赋能——保护与发展融合、文化与科技融合、一域与全局融合，将创造资源化为创新优势。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从三星堆感悟中华民族的创造力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持守正创新、推动中华优秀传统文化创造性转化创新性发展。<br>二是以新质生产力赋能文化创新创造、壮大“新大众文艺”。<br>三是深化文明交流互鉴、高扬文化主体性。<br>四是把文化软实力转化为现实生产力、惠民利民。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从三星堆感悟中华民族的创造力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从三星堆感悟中华民族的创造力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从三星堆感悟中华民族的创造力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从历史长河看，创造力源自血脉基因——“苟日新，日日新”的精神从未断流，已内化为中国人最古老却又最活跃的基因。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、从发展之路看，创造力源自思想激发——循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、从实践足迹看，创造力源自融合赋能——保护与发展融合、文化与科技融合、一域与全局融合，将创造资源化为创新优势。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从三星堆感悟中华民族的创造力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从三星堆感悟中华民族的创造力<br><br>时代之问，呼唤破题之策。从三星堆感悟中华民族的创造力，是发展所需，也是民心所向。可从三个维度展开：从历史长河看，创造力源自血脉基因、从发展之路看，创造力源自思想激发、从实践足迹看，创造力源自融合赋能。<br><br>分论点一：从历史长河看，创造力源自血脉基因——“苟日新，日日新”的精神从未断流，已内化为中国人最古老却又最活跃的基因。方向对了，路再远也能抵达。“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”<br><br>分论点二：从发展之路看，创造力源自思想激发——循思想找方向、向改革要活力，创新创造一旦被唤醒便势不可挡。方法对了，事再难也能办成。“推动高质量发展，文化是重要支点”“战胜前进道路上各种风险挑战，文化是重要力量源泉”<br><br>分论点三：从实践足迹看，创造力源自融合赋能——保护与发展融合、文化与科技融合、一域与全局融合，将创造资源化为创新优势。行百里者半九十。“中华文明的创新性，从根本上决定了中华民族守正不守旧、尊古不复古的进取精神”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从三星堆感悟中华民族的创造力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-12</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

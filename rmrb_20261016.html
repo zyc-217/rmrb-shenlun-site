@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 把握“生活褶皱”里的内需潜力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>把握“生活褶皱”里的内需潜力</h1>
+    <div class="meta">人民日报·评论员观察 | 扩大内需／供给侧结构性改革／供需适配／国内大循环／有效需求／有为政府 | 2026年10月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——畅通国内大循环·深挖内需潜力 ｜ 主题：扩大内需／供给侧结构性改革／供需适配／国内大循环／有效需求／有为政府</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">扩大内需</span>
+      <span class="tag-item">供给侧结构性改革</span>
+      <span class="tag-item">供需适配</span>
+      <span class="tag-item">国内大循环</span>
+      <span class="tag-item">有效需求</span>
+      <span class="tag-item">有为政府</span>
+      <span class="tag-item">有效投资</span>
+      <span class="tag-item">消费短板</span>
+      <span class="tag-item">供需同频共振</span>
+      <span class="tag-item">畅通经济循环</span>
+      <span class="tag-item">民生导向</span>
+      <span class="tag-item">改革抓手</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>扩大内需／供给侧结构性改革／畅通国内大循环</b>”等主题；本文“小切口见大逻辑”的写法，是写“深挖内需”类文章的高分素材。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>破解有效需求不足，关键在于推动供给体系灵活适应需求结构变化</b>——打通适配、把握有效、用好改革三个枢纽。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>供给与需求</b>”“<b>政府与 market</b>”“<b>投资与消费</b>”等多组辩证，是写“畅通循环”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于挖掘内需潜力的建议”等公文素材。对策要点：<b>打通供需适配枢纽、破除信息壁垒</b>／<b>以有效需求指引投资方向、用有效投资扩大优质供给</b>／<b>用好改革抓手、破除市场壁垒促进要素流动</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（畅通国内大循环·深挖内需潜力）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以家庭出游“双卧”需求催生酒店改造破题，引出“痛点即商机、解决即价值”的洞见。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：破解有效需求不足，重要抓手是推动供给体系灵活适应需求结构变化，促成供需同频共振。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">打通“适配”枢纽——需求牵引供给、供给创造需求，对接分层化个性化需求。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">把握“有效”关键——以有效需求指引投资、用有效投资扩大优质供给，避免无效产能。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">用好“改革”抓手——政策、消费、供给同向互促，破除壁垒、补上消费短板。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到总书记论断：让每个微小需求被看见、每个“生活褶皱”被抚平，中国经济大海更辽阔澎湃。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“现象切入—三枢纽展开—论断收束”结构：以生活痛点破题，用“适配—有效—改革”三层，是申论“小切口大主题”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>从生产线的调整改造，到服务业的扩能提质，供给侧往前走一步，主动贴近消费者需求，着力解决群众生活中的痛点，促成的便是供需两端的<span class="highlight-gold">同频共振、良性循环</span></p>
+<p>笔者携家人出游，在网络平台以“两间独立卧室”搜索家庭房，好不容易才找到一个合适的酒店。入住后发现，这家酒店并不是一开始就设计了双卧，而是合理改造相邻客房，满足了家庭出游需求。</p>
+<p>办法找找总会有，潜力挖挖不难寻。酒店在空间上突破传统约束，在服务上增强差异化，可以更好把握多娃出行、全家游等商机。<span class="highlight-purple">需求向上生长，生活向美而行</span>，产品和服务供给也应该应需而进、迎难而上，为消费者提供更优解决方案。</p>
+<p>许多人都曾为零食受潮、拖动椅子声刺耳或眼镜总是下滑烦恼，而这些看似微不足道的问题，催生了迷你封口机、椅子防滑脚垫和眼镜防滑套等产品。它们以质优价廉的供给满足需求，甚至<span class="highlight-green">在海外市场创造出高销售额</span>。痛点即商机，解决即价值，“<span class="highlight-gold">生活褶皱</span>”里蕴藏发展新机遇。当货不对板转为物超所值，当无可奈何转为满心欢喜，内需市场的潜力就能得到更充分释放。</p>
+<div class="thesis">【总论点】破解“<span class="highlight-blue">有效需求不足，国内大循环存在卡点堵点</span>”的问题，重要抓手在于<span class="highlight-blue">推动供给体系灵活适应需求结构的变化</span>，促成供需两端的<span class="highlight-gold">同频共振、良性循环</span>。</div>
+<p>以更大视角观之，破解“<span class="highlight-blue">有效需求</span>不足，<span class="highlight-blue">国内大循环</span>存在卡点堵点”的问题，一个重要抓手在于，推动供给体系灵活适应需求结构的变化。从生产线的调整改造，到服务业的扩能提质，供给侧往前走一步，主动贴近消费者需求，着力解决群众生活中的痛点，促成的便是供需两端的<span class="highlight-gold">同频共振、良性循环</span>。</p>
+<p>打通“适配”这个枢纽。在北京，去社区食堂吃饭的人越来越多，老年人去了有软烂适口的饭菜，上班族去了有错峰美食，儿童青少年去了有营养餐，谁去都能买到实惠套餐。实现需求牵引供给、供给创造需求的高水平动态平衡，并不是简单把新的商品服务摆到消费者面前就可以，而是要打通供需之间的信息壁垒，改变结构性错配，对接好消费者分层化、个性化的需求。</p>
+<div class="sub-thesis">【分论点一】打通“适配”枢纽——实现需求牵引供给、供给创造需求的高水平动态平衡，对接好消费者分层化、个性化需求。</div>
+<p>把握“有效”这个关键。复制仿古街区、堆砌仿古建筑，却不关心游客真正需要什么，到头来客流枯竭，徒增土地和资金浪费。陕西西安大唐不夜城、河南开封万岁山武侠城、河北唐山河头老街等景区，转变“重建设、轻运营”惯性思维，靠着沉浸式游玩体验圈粉无数。以<span class="highlight-blue">有效需求</span>指引投资方向，方能避免投资变成无效产能；用有效投资扩大优质供给，能支撑和创造新的有效需求。“有效”源自市场机制的高效运行，有赖<span class="highlight-blue">有为政府</span>的保驾护航。“有效”的投入越多，经济循环越畅。</p>
+<div class="sub-thesis">【分论点二】把握“有效”关键——以有效需求指引投资方向，用有效投资扩大优质供给，避免投资变成无效产能。</div>
+<p>用好“改革”这个抓手。比如，改革助力京津冀三地住院就医“免备案”，不仅河北群众可以更便捷地到北京寻求治疗之策，北京的老年人也可以更方便地选择张家口、承德、保定等地的生态康养项目。政策导向、消费取向、供给方向同向互促，才能有效破除市场壁垒，促进要素自由流动，加快补上消费短板，稳住内需这个拉动经济增长的主动力。</p>
+<div class="sub-thesis">【分论点三】用好“改革”抓手——政策导向、消费取向、供给方向同向互促，破除市场壁垒、补上消费短板。</div>
+<p>习近平总书记强调：“各地区各部门要正确处理消费和投资、需求和供给的关系，坚持惠民生和促消费、投资于物和投资于人紧密结合，找准政策发力点，努力提高国民经济循环质量和效率。”让每一个微小需求都被看见，每一个“<span class="highlight-gold">生活褶皱</span>”都被抚平，中国经济这片大海定将更加辽阔也更为澎湃。</p>
+<p>把握“<span class="highlight-gold">生活褶皱</span>”里的内需潜力（评论员观察）</p>
+<p class="byline">（人民日报2026年10月16日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·商机</span>
+      <p><b>“痛点即商机，解决即价值，‘生活褶皱’里蕴藏发展新机遇”</b>——写“内需潜力”是破题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·同频</span>
+      <p><b>“供给侧往前走一步，主动贴近消费者需求……促成的便是供需两端的同频共振、良性循环”</b>——写“供需关系”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·有效</span>
+      <p><b>“以有效需求指引投资方向，方能避免投资变成无效产能”</b>——写“有效投资”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·适配</span>
+      <p><b>“需求向上生长，生活向美而行，产品和服务供给也应该应需而进”</b>——写“供给适应需求”是结构句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·循环</span>
+      <p><b>“让每一个微小需求都被看见，每一个‘生活褶皱’都被抚平，中国经济这片大海定将更加辽阔也更为澎湃”</b>——写“畅通循环”是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·改革</span>
+      <p><b>“用好‘改革’这个抓手……才能有效破除市场壁垒，促进要素自由流动”</b>——写“改革促内需”是金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象切入—三枢纽展开—论断收束”框架：以酒店改造、迷你封口机等破题，用“适配—有效—改革”三层，适用于“深挖内需”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“打通适配·对接个性需求”（社区食堂），分论点二写“把握有效·避免无效产能”（大唐不夜城），分论点三写“用好改革·破除壁垒”（京津冀免备案），由微观到中观层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“挖掘内需潜力”拆成举措：打通供需适配枢纽；以有效需求指引投资、用有效投资扩供给；用好改革抓手破除壁垒、补消费短板。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“供给与需求”“政府与市場”“投资与消费”的辩证：先立“供需动态平衡”立场，再以案例互证，把内需话题写成有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“痛点即商机，解决即价值”可作“改革创新”类文章的分论点；“让每个微小需求被看见”可作“民生导向”类文章的收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「把握“生活褶皱”里的内需潜力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是打通“适配”枢纽。实现需求牵引供给、供给创造需求的高水平动态平衡，对接好消费者分层化、个性化需求。<br>二是把握“有效”关键。以有效需求指引投资方向，用有效投资扩大优质供给，避免投资变成无效产能。<br>三是用好“改革”抓手。政策导向、消费取向、供给方向同向互促，破除市场壁垒、补上消费短板。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「破解“有效需求不足，国内大循环存在卡点堵点”的问题，重要抓手在于推动供给体系灵活适应需求结构的变化，促成供需两端的同频共振、良性循环。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是打通“适配”枢纽——实现需求牵引供给、供给创造需求的高水平动态平衡，对接好消费者分层化、个性化需求。<br>二是把握“有效”关键——以有效需求指引投资方向，用有效投资扩大优质供给，避免投资变成无效产能。<br>三是用好“改革”抓手——政策导向、消费取向、供给方向同向互促，破除市场壁垒、补上消费短板。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“痛点即商机，解决即价值，‘生活褶皱’里蕴藏发展新机遇”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「把握“生活褶皱”里的内需潜力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是打通供需适配枢纽、破除信息壁垒。<br>二是以有效需求指引投资方向、用有效投资扩大优质供给。<br>三是用好改革抓手、破除市场壁垒促进要素流动。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“痛点即商机，解决即价值，‘生活褶皱’里蕴藏发展新机遇”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于把握“生活褶皱”里的内需潜力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于把握“生活褶皱”里的内需潜力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进把握“生活褶皱”里的内需潜力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、打通“适配”枢纽——实现需求牵引供给、供给创造需求的高水平动态平衡，对接好消费者分层化、个性化需求。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、把握“有效”关键——以有效需求指引投资方向，用有效投资扩大优质供给，避免投资变成无效产能。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、用好“改革”抓手——政策导向、消费取向、供给方向同向互促，破除市场壁垒、补上消费短板。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“痛点即商机，解决即价值，‘生活褶皱’里蕴藏发展新机遇”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「把握“生活褶皱”里的内需潜力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：把握“生活褶皱”里的内需潜力<br><br>时代之问，呼唤破题之策。把握“生活褶皱”里的内需潜力，是发展所需，也是民心所向。可从三个维度展开：打通“适配”枢纽、把握“有效”关键、用好“改革”抓手。<br><br>分论点一：打通“适配”枢纽——实现需求牵引供给、供给创造需求的高水平动态平衡，对接好消费者分层化、个性化需求。方向对了，路再远也能抵达。“痛点即商机，解决即价值，‘生活褶皱’里蕴藏发展新机遇”<br><br>分论点二：把握“有效”关键——以有效需求指引投资方向，用有效投资扩大优质供给，避免投资变成无效产能。方法对了，事再难也能办成。“供给侧往前走一步，主动贴近消费者需求……促成的便是供需两端的同频共振、良性循环”<br><br>分论点三：用好“改革”抓手——政策导向、消费取向、供给方向同向互促，破除市场壁垒、补上消费短板。行百里者半九十。“以有效需求指引投资方向，方能避免投资变成无效产能”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。把握“生活褶皱”里的内需潜力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-16</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

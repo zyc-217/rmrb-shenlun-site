@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 在升级中扩容，在转型中提质</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>在升级中扩容，在转型中提质</h1>
+    <div class="meta">人民日报·人民时评 | 扩大内需／消费扩容提质／服务消费／新型消费／城乡居民增收／新发展格局 | 2026年10月13日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——正确认识中国经济的阶段特征与长远趋势② ｜ 主题：扩大内需／消费扩容提质／服务消费／新型消费／城乡居民增收／新发展格局</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">扩大内需</span>
+      <span class="tag-item">消费扩容提质</span>
+      <span class="tag-item">服务消费</span>
+      <span class="tag-item">新型消费</span>
+      <span class="tag-item">城乡居民增收</span>
+      <span class="tag-item">消费结构升级</span>
+      <span class="tag-item">供给侧结构性改革</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">投资于人</span>
+      <span class="tag-item">内需根基</span>
+      <span class="tag-item">新发展格局</span>
+      <span class="tag-item">政策协同</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>扩大内需／消费扩容提质／新发展格局</b>”等主题；本文“规模—结构—趋势”三维分析法，是写“提振消费”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>中国消费正处于从生存型向发展型、品质型升级的关键阶段</b>——既要化解动能转换压力，更要看到结构优化释放的潜力。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>规模与结构</b>”“<b>当前与长远</b>”“<b>供给与需求</b>”等多组辩证，是写“扩大内需”类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于提振消费扩大内需的建议”等公文素材。对策要点：<b>增加居民收入让居民能消费</b>／<b>稳定消费预期让居民敢消费</b>／<b>加大政策支持让居民愿消费</b>／<b>供需适配、优化供给结构</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（正确认识中国经济的阶段特征与长远趋势②）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以国庆假期文旅消费窗口破题，提出“中国消费增长慢下来了吗”之问。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text">点亮总论点：全面客观辩证认识中国市场——消费处于升级关键阶段，结构优化正释放潜力。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text">从规模看，增量规模仍可观，市场韧性较强（前8月社零近33万亿元）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text">从结构看，服务消费和品质消费占比提升，新消费业态蓬勃兴起。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text">从趋势看，消费增长点不断涌现，智能家居等潜力巨大。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“扩大内需重在扩大消费”：推动规模扩张与结构升级统一，把发展成果转化为群众获得感。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“设问引题—三维分析—对策收束”结构：以“规模—结构—趋势”拆解，是申论“多维分析”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+<p>====================================</p>
+<p>国庆假期，成为观察文旅消费的重要窗口。去历史名城触摸千年文脉，沿红色旅游路线追寻先辈足迹……7天假期，人们在旅行中感受“<span class="highlight-gold">诗和远方</span>”，汇聚成<span class="highlight-gold">热气腾腾的消费图景</span>。</p>
+<p>今年以来，我国消费呈现规模扩张放缓的特征。中国消费增长“慢”下来了吗？还有挖潜空间吗？</p>
+<p>全面、客观、辩证地认识中国市场，必须注意到，今天中国消费正处于从生存型向发展型、品质型升级的关键阶段，消费结构在加快重塑，服务消费快速扩张、新型消费蓬勃兴起。在这个过程中，<span class="highlight-purple">既要化解动能转换带来的压力，更要看到结构优化释放的潜力</span>。</p>
+<div class="thesis">【总论点】全面、客观、辩证地认识中国市场：我国消费正处于<span class="highlight-blue">从生存型向发展型、品质型升级</span>的关键阶段，既要化解动能转换压力，更要看到<span class="highlight-gold">结构优化释放的潜力</span>。</div>
+<p>从规模看，消费扩张速度有所放缓，但增量规模仍然可观。今年前8个月消费增速低于去年同期，既有消费品以旧换新政策边际效应递减的因素，也有国际能源市场波动等因素，这更多是短期影响。更要看到，今年前8个月，社会消费品零售总额接近<span class="highlight-green">33万亿元</span>，比上年同期增加<span class="highlight-green">3600多亿元</span>，消费市场规模仍在稳步扩大，市场韧性仍然较强。</p>
+<div class="sub-thesis">【分论点一】从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强。</div>
+<p>从结构看，消费结构加快升级，服务消费和品质消费占比提升。近年来，我国消费市场呈现商品消费品质化、消费结构服务化、消费方式网络化等新趋势。服务消费异军突起，成为消费结构升级的生动体现。前8个月服务零售额同比增长<span class="highlight-green">4.9%</span>，快于全部市场销售增长，服务消费比重持续提升。同时，直播电商、即时零售等加快兴起，成为创新消费业态模式、激活消费潜能的重要力量。</p>
+<div class="sub-thesis">【分论点二】从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起。</div>
+<p>从趋势看，消费增长点不断涌现，促进消费的潜力巨大。以人工智能领域为例，当下，智能穿戴、智能网联汽车等持续受到消费者欢迎；今年我国智能家居市场规模预计将突破<span class="highlight-green">8000亿元</span>，出货量有望超过3亿台。</p>
+<div class="sub-thesis">【分论点三】从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。</div>
+<p>也要看到，当前提振消费仍面临诸多挑战。消费是收入和财富的函数，消费增长还受社会预期影响。提振消费，需从提高居民收入、加大政策支持、营造良好环境等多维度协同发力。</p>
+<p>增加居民收入，让居民能消费。加快制定实施城乡居民增收计划，在促进低收入群体增收、增加居民财产性收入、完善薪酬和社保制度等方面推出一批务实举措，有助于提升居民消费能力。</p>
+<p>稳定消费预期，让居民敢消费。优化财政支出结构，提高公共服务支出占财政支出的比重，实现投资于物和投资于人紧密结合，可以减轻居民在教育、医疗、养老等方面的后顾之忧。</p>
+<p>加大政策支持力度，让居民愿消费。要用好用足<span class="highlight-green">1000亿元</span>财政金融协同促内需专项资金，落实好个人消费贷款和服务业经营主体贷款贴息政策，以良好消费环境更好满足人民对美好生活的向往。</p>
+<p><span class="highlight-blue">扩大内需</span>重在扩大消费。推动消费在规模扩张的同时实现结构升级，既能为稳定宏观经济大盘筑牢内需根基，又能把经济发展的成果转化为老百姓实实在在的获得感、幸福感、安全感。</p>
+<p>——正确认识中国经济的阶段特征与长远趋势②</p>
+<p>在升级中扩容，在转型中提质（人民时评）</p>
+<p class="byline">（人民日报2026年10月13日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·窗口</span>
+      <p><b>“国庆假期，成为观察文旅消费的重要窗口”</b>——写“消费观察”是破题句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·升级</span>
+      <p><b>“中国消费正处于从生存型向发展型、品质型升级的关键阶段”</b>——写“消费升级”是定论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·潜力</span>
+      <p><b>“既要化解动能转换带来的压力，更要看到结构优化释放的潜力”</b>——写“辩证看消费”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·品质</span>
+      <p><b>“商品消费品质化、消费结构服务化、消费方式网络化”</b>——写“消费新趋势”是排比句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·内需</span>
+      <p><b>“扩大内需重在扩大消费”</b>——写“内需战略”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·获得感</span>
+      <p><b>“把经济发展的成果转化为老百姓实实在在的获得感、幸福感、安全感”</b>——写“发展目的”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“设问引题—三维分析—对策收束”框架：以“消费慢了吗”设问，用“规模—结构—趋势”拆解，适用于“提振消费”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“规模可观·韧性较强”（33万亿元增量），分论点二写“结构升级·服务崛起”（服务零售4.9%），分论点三写“趋势向好·潜力巨大”（智能家居8000亿元），由量到质层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“提振消费扩大内需”拆成举措：增加居民收入让能消费；稳定预期让敢消费；加大政策支持让愿消费；供需适配优化供给。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“规模与结构”“当前与长远”“供给与需求”的辩证：先立“短期波动不改长期向好”立场，再以数据互证，把消费话题写成有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“既要化解压力，更要看到潜力”可作“辩证看形势”类文章的分论点；“把成果转化为群众获得感”可作收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「在升级中扩容，在转型中提质」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强。<br>二是从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起。<br>三是从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「全面、客观、辩证地认识中国市场：我国消费正处于从生存型向发展型、品质型升级的关键阶段，既要化解动能转换压力，更要看到结构优化释放的潜力。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强。<br>二是从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起。<br>三是从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“国庆假期，成为观察文旅消费的重要窗口”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「在升级中扩容，在转型中提质」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是增加居民收入让居民能消费。<br>二是稳定消费预期让居民敢消费。<br>三是加大政策支持让居民愿消费。<br>四是供需适配、优化供给结构。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“国庆假期，成为观察文旅消费的重要窗口”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于在升级中扩容，在转型中提质的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于在升级中扩容，在转型中提质的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进在升级中扩容，在转型中提质，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“国庆假期，成为观察文旅消费的重要窗口”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「在升级中扩容，在转型中提质」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：在升级中扩容，在转型中提质<br><br>时代之问，呼唤破题之策。在升级中扩容，在转型中提质，是发展所需，也是民心所向。可从三个维度展开：从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强、从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起、从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。<br><br>分论点一：从规模看，消费扩张速度有所放缓，但增量规模仍然可观，市场韧性较强。方向对了，路再远也能抵达。“国庆假期，成为观察文旅消费的重要窗口”<br><br>分论点二：从结构看，消费结构加快升级，服务消费和品质消费占比提升，新型消费蓬勃兴起。方法对了，事再难也能办成。“中国消费正处于从生存型向发展型、品质型升级的关键阶段”<br><br>分论点三：从趋势看，消费增长点不断涌现，以人工智能等领域为代表，促进消费的潜力巨大。行百里者半九十。“既要化解动能转换带来的压力，更要看到结构优化释放的潜力”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。在升级中扩容，在转型中提质是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-13</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
