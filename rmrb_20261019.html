@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 千年文脉何以新</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>千年文脉何以新</h1>
+    <div class="meta">人民日报·评论员观察 | 文化传承创新·第二个结合·文化主体性·文明交流互鉴 | 2026年10月19日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——赓续文脉启新程② ｜ 主题：文化传承创新／第二个结合／文化主体性／新大众文艺／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">文化传承创新</span>
+      <span class="tag-item">第二个结合</span>
+      <span class="tag-item">中华优秀传统文化</span>
+      <span class="tag-item">文化主体性</span>
+      <span class="tag-item">创造性转化创新性发展</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">文明交流互鉴</span>
+      <span class="tag-item">新大众文艺</span>
+      <span class="tag-item">科技赋能文化</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">新的文化使命</span>
+      <span class="tag-item">人类命运共同体</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>文化传承创新／文化自信／第二个结合／文化强国建设／文明交流互鉴</b>”等主题；本文<b>“场景切入—史论结合—三维延展—使命收束”</b>的论证链，是写“文化守正创新”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“千年文脉何以新”</b>——表层是追问传统文化为何能在当代焕发活力，深层是揭示<b>关键在于“第二个结合”</b>激活中华优秀传统文化创造性转化、创新性发展，让马克思主义科学精神与中华文明探索基因彼此照亮、互相成就。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>传统与现代</b>”“<b>科技与文化</b>”“<b>殿堂与日常</b>”“<b>守正与创新</b>”等多组辩证，是写<b>传承与发展／民族与世界／古与今</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于推动中华优秀传统文化创造性转化、创新性发展的倡议书”等公文素材。对策要点：<b>坚持“第二个结合”，推动中华优秀传统文化创造性转化、创新性发展</b>／<b>以数字技术赋能文物保护与展示，让历史“可感可及”、文化在数字时代焕新</b>／<b>壮大“新大众文艺”，支持国产游戏、夜游市集等形态，让文化融入城市烟火与日常</b>／<b>高扬文化主体性、秉持开放包容，以文明交流互鉴为世界贡献文明力量</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（场景切入—史论结合—多维延展—使命收束）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以《文化遗产保护传承“十五五”规划》印发引出贾湖骨笛、东汉织锦“望四海贵富寿为国庆”两个文化场景，以“约8000年前的骨笛为何能吹响今天曲调”设问破题（第一至六段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：文脉赓续绵延、文化亘古亘新，中华优秀传统文化以鲜活姿态融入当代生活、显示别样生机，关键在于“第二个结合”（总论点色块，前接两场景与设问）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>传统与现代的双向奔赴</b>——平陆运河承载千年治水经验又以智慧调度书写新篇，中国航天以“嫦娥”“天问”“羲和”命名折射两种基因彼此照亮（第七至十一段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>科技与文化的深度融合</b>——数字敦煌、数字故宫、数字中轴让文物古建从静态符号变为可感知、可探索的鲜活场景（第十二至十三段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“殿堂”与日常的同频共振</b>——国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮街巷，新大众文艺融入城市烟火（第十四至十六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>立己达人、赋能全球</b>——文化赋能高质量发展在“形”更在“魂”，巩固文化主体性；中国网文、接诉即办智慧、全球文明倡议走向世界，贡献文明力量（第十七至二十五段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“创造人类文明新形态”的使命收束</b>：“对历史最好的继承就是创造新的历史”，深学细悟习近平文化思想，让中华文脉在守正创新中绽放新彩（第二十四至二十五段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“场景切入—史论结合—多维延展—使命收束”</b>结构：以两个文化见闻破题、以领袖论断立论，再用“传统—科技—日常—世界”四层递进，是申论<b>“由具体到抽象、由现象到使命”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>文化亘古亘新。中华优秀传统文化以鲜活姿态融入当代生活，显示出别样生机与活力，<span class="highlight-blue">关键在于“第二个结合”</span>。</p>
+
+      <p><span class="highlight-purple">“结合”不是“拼盘”，不是简单的“物理反应”，而是深刻的“化学反应”</span>。</p>
+
+      <p>前不久，《文化遗产保护传承“十五五”规划》印发，由此联想到两个文化场景。</p>
+
+      <p>中国考古博物馆“文明起源”展厅，吹管乐器贾湖骨笛旁时常围满观众。观众借助多媒体互动装置，聆听骨笛复制件吹奏的《梁祝》等乐曲，有种“跨越时空的感觉”。</p>
+
+      <p>新疆维吾尔自治区博物馆，一件东汉织锦上记载着“望四海贵富寿为国庆”的吉祥语。这里的“国庆”，传达着人们对<span class="highlight-gold">国运昌隆</span>的美好祝愿。</p>
+
+      <p>一支约<span class="highlight-green">8000年前</span>的骨笛，为什么能吹响今天的曲调？一件汉锦，何以跨越时空，在近<span class="highlight-green">2000年</span>后仍能引发共鸣？</p>
+
+      <div class="thesis">【总论点】文脉赓续绵延，文化亘古亘新——中华优秀传统文化以鲜活姿态融入当代生活、显示别样生机与活力，<span class="highlight-blue">关键在于“第二个结合”</span>；以“结合”激活<span class="highlight-blue">创造性转化、创新性发展</span>的“一池春水”，让中华文化在<span class="highlight-purple">守正创新</span>中生生不息、绽放新彩，成就中国式现代化的万千气象。</div>
+
+      <p>习近平总书记深刻指出：<span class="highlight-gold">“‘第二个结合’是又一次的思想解放，让我们能够在更广阔的文化空间中，充分运用中华优秀传统文化的宝贵资源，探索面向未来的理论和制度创新。”</span></p>
+
+      <p>深入学习《习近平文化文选》第一卷、第二卷，更加自觉把握“第二个结合”的内涵，倍感推动文化繁荣、建设文化强国的责任与使命。</p>
+
+      <div class="sub-thesis">【分论点一】传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇——马克思主义科学精神与中华文明探索基因彼此照亮，让传统在当代“活”起来。</div>
+
+      <p>这是<span class="highlight-purple">传统与现代的双向奔赴</span>：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践，书写通江达海、润泽民生的新篇。</p>
+
+      <p>看中国航天的命名。“嫦娥”揽月，“天问”探火，“羲和”逐日，“北斗”导航，“朱雀”腾飞……这些名字，折射出<span class="highlight-blue">马克思主义科学精神</span>与<span class="highlight-blue">中华文明探索基因</span>彼此照亮。</p>
+
+      <div class="sub-thesis">【分论点二】科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景——技术赋能让历史“可触可感”。</div>
+
+      <p>这是<span class="highlight-purple">科技与文化的深度融合</span>：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景。</p>
+
+      <div class="sub-thesis">【分论点三】“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌——高雅艺术融入城市烟火，文化滋养触手可及。</div>
+
+      <p>这是<span class="highlight-purple">“殿堂”与日常的同频共振</span>：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌，高雅艺术融入城市烟火。</p>
+
+      <p>汲古润今、革故鼎新，让传统文化“活”起来，“两个结合”激活中华优秀传统文化<span class="highlight-blue">创造性转化和创新性发展</span>的“一池春水”。</p>
+
+      <p><span class="highlight-purple">“结合”不是“拼盘”，不是简单的“物理反应”，而是深刻的“化学反应”</span>。</p>
+
+      <p>再看一座城市的发展。宝武新钢集团自主研发出<span class="highlight-green">0.08毫米“手撕钢”</span>，赣锋锂业成长为全球最大的金属锂生产商……《天工开物》中“穷究物理、经世致用”的实学精神，成为江西新余创新突围的文化密码。</p>
+
+      <p><span class="highlight-purple">文化赋能高质量发展，在“形”更在“魂”</span>。</p>
+
+      <p>“结合”巩固了<span class="highlight-blue">文化主体性</span>，让中华文化“立起来”，造就一个有机统一的新的文化生命体，成就<span class="highlight-blue">中国式现代化</span>的万千气象。</p>
+
+      <div class="sub-thesis">【分论点四】立己达人、赋能全球：文化赋能高质量发展在“形”更在“魂”，巩固文化主体性；中国网文、接诉即办智慧、全球文明倡议走向世界，给世界带来发展启示、贡献文明力量。</div>
+
+      <p>中国人民的文化创新创造，亦是奉献给世界的宝贵财富。千年文脉的丰厚滋养，给世界带来发展启示。</p>
+
+      <p><span class="highlight-green">2025年，中国网文海外市场活跃用户近2亿人，覆盖200多个国家和地区</span>。源自东方的文化魅力，正转化为遍及世界的广泛影响。</p>
+
+      <p>北京市接诉即办改革开展7年来，<span class="highlight-green">12345热线累计受理市民、企业诉求约2亿件，解决率、满意率均超97%</span>。“民惟邦本”的中国治理，为全球破解“大城市病”提供新思路。</p>
+
+      <p><span class="highlight-blue">中国式现代化</span>拓展发展中国家走向现代化的途径，<span class="highlight-blue">全球文明倡议</span>为推动构建<span class="highlight-blue">人类命运共同体</span>贡献文明力量……</p>
+
+      <p><span class="highlight-blue">“两个结合”</span>，推动中华文化“走出去”，<span class="highlight-gold">立己达人、赋能全球</span>。</p>
+
+      <p><span class="highlight-gold">“对历史最好的继承就是创造新的历史，对人类文明最大的礼敬就是创造人类文明新形态。”</span></p>
+
+      <p>深学细悟<span class="highlight-blue">习近平文化思想</span>，让中华文脉在守正创新中生生不息、在时代浪潮中绽放新彩，更绚烂的文化华章正待我们书写。</p>
+
+      <p class="byline">（人民日报2026年10月19日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定调</span>
+      <p><b>“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”</b>——写“文化传承／第二个结合”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思想解放</span>
+      <p><b>“‘第二个结合’是又一次的思想解放，让我们能够在更广阔的文化空间中，充分运用中华优秀传统文化的宝贵资源，探索面向未来的理论和制度创新”</b>（习近平总书记）——写“第二个结合”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“结合不是‘拼盘’，不是简单的‘物理反应’，而是深刻的‘化学反应’”</b>——写“守正与创新统一”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·赋能</span>
+      <p><b>“文化赋能高质量发展，在‘形’更在‘魂’”</b>——写“文化经济融合”是方法论句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主体性</span>
+      <p><b>“结合巩固了文化主体性，让中华文化‘立起来’，成就中国式现代化的万千气象”</b>——写“文化主体性／中国式现代化”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·出海</span>
+      <p><b>“2025年，中国网文海外市场活跃用户近2亿人，覆盖200多个国家和地区”</b>——写“文化出海／文明影响”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·治理</span>
+      <p><b>“12345热线累计受理市民、企业诉求约2亿件，解决率、满意率均超97%”</b>——写“中国治理智慧”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“对历史最好的继承就是创造新的历史，对人类文明最大的礼敬就是创造人类文明新形态”</b>——写“新的文化使命／文明新形态”是收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“场景切入—史论结合—多维延展—使命收束”框架：以贾湖骨笛、东汉织锦两个文化见闻破题，用“传统—科技—日常—世界”四层递进，以“创造人类文明新形态”收束，适用于“文化守正创新”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文四组：分论点一写“传统与现代双向奔赴”（平陆运河／航天命名），分论点二写“科技与文化深度融合”（数字敦煌／故宫／中轴），分论点三写“殿堂与日常同频共振”（游戏／夜游／新大众文艺），分论点四写“立己达人、赋能全球”（网文出海／接诉即办／文明倡议），由古到今、由国内到世界层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“推动中华优秀传统文化创造性转化、创新性发展”拆成可操作举措：坚持“第二个结合”；以数字技术赋能文物保护展示；壮大新大众文艺、让文化融入日常；高扬文化主体性、秉持开放包容、深化文明交流互鉴。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“传统与现代”“科技与文化”“殿堂与日常”“守正与创新”的辩证：先立“古为今用、融通古今”立场，再以“不是拼盘，而是化学反应”揭示结合机理，把文化话题写成有厚度、有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“结合不是‘拼盘’，而是深刻的‘化学反应’”可作“守正创新”类论证的框架句；“文化赋能高质量发展，在‘形’更在‘魂’”可作“文化经济融合”类文章的分论点；“对历史最好的继承就是创造新的历史”可作收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「千年文脉何以新」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇。马克思主义科学精神与中华文明探索基因彼此照亮，让传统在当代“活”起来。<br>二是科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景。技术赋能让历史“可触可感”。<br>三是“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌。高雅艺术融入城市烟火，文化滋养触手可及。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「文脉赓续绵延，文化亘古亘新——中华优秀传统文化以鲜活姿态融入当代生活、显示别样生机与活力，关键在于“第二个结合”；以“结合”激活创造性转化、创新性发展的“一池春水”，让中华文化在守正创新中生生不息、绽放新彩，成就中国式现代化的万千气象。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇——马克思主义科学精神与中华文明探索基因彼此照亮，让传统在当代“活”起来。<br>二是科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景——技术赋能让历史“可触可感”。<br>三是“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌——高雅艺术融入城市烟火，文化滋养触手可及。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「千年文脉何以新」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持“第二个结合”，推动中华优秀传统文化创造性转化、创新性发展。<br>二是以数字技术赋能文物保护与展示，让历史“可感可及”、文化在数字时代焕新。<br>三是壮大“新大众文艺”，支持国产游戏、夜游市集等形态，让文化融入城市烟火与日常。<br>四是高扬文化主体性、秉持开放包容，以文明交流互鉴为世界贡献文明力量。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于千年文脉何以新的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于千年文脉何以新的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进千年文脉何以新，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇——马克思主义科学精神与中华文明探索基因彼此照亮，让传统在当代“活”起来。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景——技术赋能让历史“可触可感”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌——高雅艺术融入城市烟火，文化滋养触手可及。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「千年文脉何以新」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：千年文脉何以新<br><br>时代之问，呼唤破题之策。千年文脉何以新，是发展所需，也是民心所向。可从三个维度展开：传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇、科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景、“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌。<br><br>分论点一：传统与现代的双向奔赴：平陆运河承载千年治水经验，又以江河海一体化智慧调度系统、全流程数字化建设运营实践书写通江达海新篇——马克思主义科学精神与中华文明探索基因彼此照亮，让传统在当代“活”起来。方向对了，路再远也能抵达。“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”<br><br>分论点二：科技与文化的深度融合：数字敦煌、数字故宫、数字中轴，数字技术让文物古建不再是静态的历史符号，而成为可被感知、被探索的鲜活场景——技术赋能让历史“可触可感”。方法对了，事再难也能办成。“‘第二个结合’是又一次的思想解放，让我们能够在更广阔的文化空间中，充分运用中华优秀传统文化的宝贵资源，探索面向未来的理论和制度创新”（习近平总书记）<br><br>分论点三：“殿堂”与日常的同频共振：国产游戏以中国神话叙事惊艳全球，唐风夜游、宋韵市集点亮城市街巷，新大众文艺浪潮奔涌——高雅艺术融入城市烟火，文化滋养触手可及。行百里者半九十。“结合不是‘拼盘’，不是简单的‘物理反应’，而是深刻的‘化学反应’”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。千年文脉何以新是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-19</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

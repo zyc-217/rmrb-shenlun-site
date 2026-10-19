@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 当好自己健康的“主理人”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>当好自己健康的“主理人”</h1>
+    <div class="meta">人民日报·人民时评 | 健康中国·科学体重管理·科学素养·理性消费·心理健康 | 2026年10月19日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：健康中国／科学体重管理／科学素养／理性消费／心理健康／多元悦纳</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">健康中国</span>
+      <span class="tag-item">科学体重管理</span>
+      <span class="tag-item">科学素养</span>
+      <span class="tag-item">健康生活方式</span>
+      <span class="tag-item">理性消费</span>
+      <span class="tag-item">心理健康</span>
+      <span class="tag-item">消费权益保护</span>
+      <span class="tag-item">系统思维</span>
+      <span class="tag-item">治已病防未病</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">公共服务</span>
+      <span class="tag-item">全民健身</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>健康中国／全民健身／科学素养／理性消费／公共服务</b>”等主题；本文<b>“现象切入—误区辨析—多维对策—理念升华”</b>的论证链，是写“个人健康与社会支持协同”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“每个人都是自己健康的‘主理人’”</b>——表层是倡导个人科学管理体重，深层是揭示健康管理需个人理性与社会支持协同，反对极端节食、盲信“减肥神药”等认知误区与营销陷阱。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>个人与社会</b>”“<b>短期与长期</b>”“<b>治已病与防未病</b>”“<b>单一审美与多元差异</b>”等多组辩证，是写<b>自律与他律／现象与本质／快与慢</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于引导科学体重管理、守护全民健康的倡议书”等公文素材。对策要点：<b>提升科学素养，明辨营销陷阱、拒绝极端节食与“减肥神药”盲从</b>／<b>坚持系统思维，践行长期健康生活方式、以整体平衡取代短期冲刺</b>／<b>强化政府引导，完善政策保障与知识普及、查处虚假广告与“三无”产品，既“治已病”也“防未病”</b>／<b>涵养理性心态，悦纳多元差异、以从容平和守护心理健康</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象切入—误区辨析—多维对策—理念升华）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以两则减肥新闻破题：国内部分减肥训练营“急速暴瘦”宣传致学员受伤，国外数十名患者起诉“减肥神药”引发视力损伤，引出体重管理的认知误区（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">误区</span><span class="text">辨析三类健康误区：“少吃就能瘦”极端节食透支身体、“瘦成一道闪电”短期突击“亮红灯”、“减肥针”“减肥药”轮番上阵隐患重重（第四段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>保持清醒判断，以科学素养看穿营销陷阱、避开认知误区</b>——健康生活的基石在于保持理性，用科学方法掌握自身健康主动权（第五至六段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>体察身体反馈，以系统思维把握整体平衡</b>——体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式（第七段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基</b>——有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”（第八段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>尊重规律、理性悦纳，以从容平和心态涵养整体健康</b>——健康认知重在因人而异、具体分析，从容平和、理性悦纳是心理健康要义（第九段，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“人人都是健康主理人”的微观根基</b>：人人拥有科学健康素养、人人践行科学生活方式，就能筑牢全民健康根基、营造积极向上阳光自信的社会氛围（第十段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象切入—误区辨析—多维对策—理念升华”</b>结构：用两则新闻立论，再以“个人理性—系统思维—政府协同—心态悦纳”四层递进，是申论<b>“以小切口见大民生”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>近期，两则关于减肥的新闻引发关注。</p>
+
+      <p>一则来自国内，部分减肥训练营以“急速暴瘦”“不瘦退款”等夸张宣传招揽学员，靠过度节食、超负荷训练等方式快速减重，多次曝出学员受伤和健康问题。</p>
+
+      <p>另一则来自国外，数十名美国患者集体起诉某医药公司，指控其旗下“减肥神药”引发严重视力损伤。</p>
+
+      <p>管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区，比如以为“少吃就能瘦下来”，采取极端节食方式，反会透支身体；追求“瘦成一道闪电”，短期内高强度突击节食，导致身体“亮红灯”；盲信盲从、不结合实际，“减肥针”“减肥药”轮番上阵，结果隐患重重。</p>
+
+      <div class="sub-thesis">【分论点一】保持清醒判断，以科学素养看穿营销陷阱、避开认知误区——健康生活的基石在于保持理性，用科学方法掌握自身健康主动权。</div>
+
+      <p><span class="highlight-gold">保持清醒判断，才能看穿营销陷阱；具备科学素养，才能避开认知误区</span>。健康生活的基石正在于保持理性，用科学方法掌握自身健康主动权。</p>
+
+      <p>当下，短视频流量造势、网络审美裹挟，催生诸如“7天暴瘦10斤”“零成本无痛躺瘦”之类的营销话术，容易放大体重焦虑、身材自卑。今年6月至8月，<span class="highlight-green">某平台清理处置人工智能技术制作发布的虚假内容近12万条</span>，医疗、医美等领域成“重灾区”。事实反复提醒消费者，越是信息纷繁，越需要增强定力，用一双慧眼守好自身健康与权益。</p>
+
+      <div class="sub-thesis">【分论点二】体察身体反馈，以系统思维把握整体平衡——体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式。</div>
+
+      <p>人体本就是动态系统，体察身体的任何反馈，都需要运用系统思维，在整体上把握平衡、加强协同。<span class="highlight-purple">体重管理，绝非一项靠短期冲刺取胜的“掉秤工程”</span>。单凭体重秤上的数字变化，无法准确定义健康状况。真正的健康，是长期践行健康的生活方式，从而达成身心状态和各项指标的持续优化。</p>
+
+      <div class="sub-thesis">【分论点三】追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基——有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”。</div>
+
+      <p>追求健康，并不仅仅是个人的事。发布《中国居民膳食指南》《中国人群身体活动指南》，提供权威热量、饮食结构、运动建议等；推进<span class="highlight-blue">合理膳食行动、全民健身行动</span>，面向社区、学校、企事业单位宣传肥胖危害、体重管理知识；查处减肥药、瘦身产品、医美减重等领域的虚假广告、“三无”产品……有关部门通过政策引导、知识普及、医疗保障等方式，创造更容易科学管理体重的社会条件。既“<span class="highlight-blue">治已病</span>”，也“<span class="highlight-blue">防未病</span>”，在<span class="highlight-blue">健康中国战略</span>统筹下，以健康为中心的理念正助力越来越多人远离疾病、享受幸福。</p>
+
+      <div class="sub-thesis">【分论点四】尊重规律、理性悦纳，以从容平和心态涵养整体健康——健康认知重在因人而异、具体分析，从容平和、理性悦纳是心理健康要义。</div>
+
+      <p>保健的过程，也是认识自身的过程，蕴含尊重规律、理性求真的科学精神。体重焦虑的产生，往往源于人们常用单一固化的审美对标他人、苛责自己，却忽视了人与人之间体质、体态的天然差异。<span class="highlight-purple">健康认知重在因人而异、具体分析</span>，将多元生活和身材差异视为正常，而不是将“大家都这样”“从来都如此”视为绝对正确。这种<span class="highlight-purple">从容平和、理性悦纳</span>的心态，是保持心理健康的要义，更是整体健康不可或缺的组成部分。</p>
+
+      <div class="thesis">【总论点】<span class="highlight-gold">每个人都是自己健康的“主理人”</span>。人人拥有科学健康素养、人人践行科学生活方式，就能筑牢全民健康的微观根基，营造积极向上、阳光自信的社会氛围——以理性与科学守护健康主动权，是健康中国建设的坚实底座。</div>
+
+      <p class="byline">（人民日报2026年10月19日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定调</span>
+      <p><b>“管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区”</b>——写“理性看待健康热潮”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主理人</span>
+      <p><b>“保持清醒判断，才能看穿营销陷阱；具备科学素养，才能避开认知误区”</b>——写“科学素养守护健康主动权”是金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据</span>
+      <p><b>“某平台清理处置人工智能生成发布的虚假内容近12万条，医疗、医美等领域成‘重灾区’”</b>——写“理性辨识虚假信息”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“体重管理，绝非一项靠短期冲刺取胜的‘掉秤工程’”</b>——写“系统思维／长期主义”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策</span>
+      <p><b>“有关部门通过政策引导、知识普及、医疗保障……既‘治已病’，也‘防未病’”</b>——写“政府社会协同”是政策句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·心态</span>
+      <p><b>“健康认知重在因人而异、具体分析……从容平和、理性悦纳的心态，是保持心理健康的要义”</b>——写“多元悦纳／心理健康”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“每个人都是自己健康的‘主理人’……营造积极向上、阳光自信的社会氛围”</b>——写“全民健康微观根基”是收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象切入—误区辨析—多维对策—理念升华”框架：用两则减肥新闻破题，再以“个人理性—系统思维—政府协同—心态悦纳”四层递进，适用于“健康中国／民生治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文四组：分论点一写“明辨陷阱·科学素养”（营销话术／虚假科普），分论点二写“系统思维·长期主义”（掉秤工程／整体平衡），分论点三写“政府协同·治已病防未病”（膳食指南／全民健身／查处虚假广告），分论点四写“理性悦纳·心理健康”（因人而异／从容平和）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“引导科学体重管理、守护全民健康”拆成可操作举措：提升科学素养、明辨营销陷阱；坚持系统思维、践行长期健康生活方式；强化政府引导、完善政策保障与知识普及、查处虚假广告；涵养理性心态、悦纳多元差异。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“个人与社会”“短期与长期”“治已病与防未病”“单一审美与多元差异”的辩证：先立“理性与科学相统一”立场，再以“不是……而是……”句式揭示边界，把健康民生话题写成有张力、有分量的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“保持清醒判断，才能看穿营销陷阱；具备科学素养，才能避开认知误区”可作“理性消费”类论证的框架句；“体重管理绝非短期冲刺的‘掉秤工程’”可作“长期主义”类文章的分论点；“每个人都是自己健康的主理人”可作“健康中国”类作文的收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「当好自己健康的“主理人”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是保持清醒判断，以科学素养看穿营销陷阱、避开认知误区。健康生活的基石在于保持理性，用科学方法掌握自身健康主动权。<br>二是体察身体反馈，以系统思维把握整体平衡。体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式。<br>三是追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基。有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「每个人都是自己健康的“主理人”。人人拥有科学健康素养、人人践行科学生活方式，就能筑牢全民健康的微观根基，营造积极向上、阳光自信的社会氛围——以理性与科学守护健康主动权，是健康中国建设的坚实底座。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是保持清醒判断，以科学素养看穿营销陷阱、避开认知误区——健康生活的基石在于保持理性，用科学方法掌握自身健康主动权。<br>二是体察身体反馈，以系统思维把握整体平衡——体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式。<br>三是追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基——有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「当好自己健康的“主理人”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是提升科学素养，明辨营销陷阱、拒绝极端节食与“减肥神药”盲从。<br>二是坚持系统思维，践行长期健康生活方式、以整体平衡取代短期冲刺。<br>三是强化政府引导，完善政策保障与知识普及、查处虚假广告与“三无”产品，既“治已病”也“防未病”。<br>四是涵养理性心态，悦纳多元差异、以从容平和守护心理健康。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于当好自己健康的“主理人”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于当好自己健康的“主理人”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进当好自己健康的“主理人”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、保持清醒判断，以科学素养看穿营销陷阱、避开认知误区——健康生活的基石在于保持理性，用科学方法掌握自身健康主动权。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、体察身体反馈，以系统思维把握整体平衡——体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基——有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「当好自己健康的“主理人”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：当好自己健康的“主理人”<br><br>时代之问，呼唤破题之策。当好自己健康的“主理人”，是发展所需，也是民心所向。可从三个维度展开：保持清醒判断，以科学素养看穿营销陷阱、避开认知误区、体察身体反馈，以系统思维把握整体平衡、追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基。<br><br>分论点一：保持清醒判断，以科学素养看穿营销陷阱、避开认知误区——健康生活的基石在于保持理性，用科学方法掌握自身健康主动权。方向对了，路再远也能抵达。“管理体重，原本是健康意识提升的积极表现，但现实中不少人存有健康误区”<br><br>分论点二：体察身体反馈，以系统思维把握整体平衡——体重管理绝非短期冲刺的“掉秤工程”，真正的健康是长期践行健康生活方式。方法对了，事再难也能办成。“保持清醒判断，才能看穿营销陷阱；具备科学素养，才能避开认知误区”<br><br>分论点三：追求健康不止是个人之事，以政策引导与多方协同筑牢全民健康根基——有关部门通过政策引导、知识普及、医疗保障，既“治已病”也“防未病”。行百里者半九十。“某平台清理处置人工智能生成发布的虚假内容近12万条，医疗、医美等领域成‘重灾区’”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。当好自己健康的“主理人”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-19</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
