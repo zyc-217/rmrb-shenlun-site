@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 无名与有名</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>无名与有名</h1>
+    <div class="meta">人民日报·评论员观察 | 长征精神·红色基因·正确政绩观·平凡英雄·新时代长征路 | 2026年10月20日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：长征精神／红色基因／无名与有名／平凡英雄／正确政绩观／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">长征精神</span>
+      <span class="tag-item">红色基因</span>
+      <span class="tag-item">正确政绩观</span>
+      <span class="tag-item">平凡英雄</span>
+      <span class="tag-item">无私奉献</span>
+      <span class="tag-item">新时代长征路</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">家国情怀</span>
+      <span class="tag-item">青年担当</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">实干精神</span>
+      <span class="tag-item">民族复兴</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>长征精神／红色基因／正确政绩观／平凡英雄／新时代奋斗</b>”等主题；本文<b>“具象引入—辩证立论—多维延展—使命收束”</b>的论证链，是写“小我与大我／无名与有名”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“读懂无名与有名的辩证”</b>——表层是回望长征路上无名英烈，深层是揭示<b>甘于小我无名、聚力成就大我有名，舍弃一己虚名、奋力铸就家国盛名</b>，把个人理想融入复兴伟业方能造就厚重人生。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>无名与有名</b>”“<b>小我与大我</b>”“<b>虚名与实绩</b>”“<b>历史与当下</b>”等多组辩证，是写<b>个人与集体／平凡与伟大／名与实</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于传承红色基因、树立正确政绩观的倡议书”等公文素材。对策要点：<b>赓续优良传统、传承红色基因，以长征精神砥砺忠诚坚守、无私奉献的品格</b>／<b>树立正确政绩观，摒弃重虚名轻实干、热衷“造势出名”之风，校正不屑默默深耕的做法</b>／<b>把个人理想融入复兴伟业，引导青年在创新事业与基层一线建功立业</b>／<b>健全崇尚实干、关爱平凡英雄的导向机制，让无名者的坚守被看见、被铭记</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（具象引入—辩证立论—多维延展—使命收束）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以江西瑞金革命烈士陵园“不像名字的名字”（刘腊梨脑、刘早狗子、吴细豆子）破题，点出连大名都没有的孩子却扛起了山河的重量（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：平凡岗位可建不凡之功，无名坚守可成不朽之名；读懂无名与有名的辩证，把个人理想融入复兴伟业（总论点色块，前接立论铺陈）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>何谓无名</b>——姓名不载史册、事迹鲜为人知，真正的无名不是平庸无闻，而是为大义隐身、为家国埋名（湘江血战、雪山草地等长征牺牲，前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>何谓有名</b>——精神永续、山河铭记、时代传承，个人名号会湮灭而精神丰碑长存，凡为人民赴死者人民永记其名（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>无名与有名熔铸于伟大长征精神</b>——永葆精神生命力在于可穿越时空、可映照当下、可指引未来；新时代长征路仍须忠诚坚守、无私奉献（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论四</span><span class="text"><b>读懂辩证方能树立正确政绩观</b>——新时代的无名是坚守初心的无我境界，新时代的有名是创造业绩的功成有我，当摒弃重虚名轻实干（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“争做推进中国式现代化的开拓者、奉献者”</b>：习近平总书记语录收束，让无名的选择激荡时代回响、照亮新的长征路。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“具象引入—辩证立论—多维延展—使命收束”</b>结构：以稚气乳名破题、以辩证立论，再用“无名—有名—精神—政绩观”四层递进，是申论<b>“以小见大、由情入理”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>平凡岗位可建不凡之功，无名坚守可成不朽之名。</p>
+
+      <p>刘腊梨脑、刘早狗子、吴细豆子……江西瑞金革命烈士陵园，一个个“不像名字的名字”静静镌刻在墙壁之上。这些稚气的名字，属于<span class="highlight-green">长征路上年少殉国的红军烈士</span>。按当地旧俗，没成年的孩子，不起大名。这群连大名都没有的孩子，却扛起了山河的重量。</p>
+
+      <p>乳名质朴，信仰如山；生命平凡，气节如钢。回望长征路，牺牲者万千。一部长征史诗，犹如普通群众、红军将士以血肉铺就的精神之途。读懂长征，最动人的底色，便是以无名之身躯，筑有名之山河。</p>
+
+      <div class="thesis">【总论点】平凡岗位可建不凡之功，无名坚守可成不朽之名。读懂无名与有名的辩证——<span class="highlight-purple">甘于小我无名、聚力成就大我有名，舍弃一己虚名、奋力铸就家国盛名</span>；把个人理想融入<span class="highlight-blue">复兴伟业</span>，定能造就厚重且珍贵的人生。</div>
+
+      <div class="sub-thesis">【分论点一】何谓无名？姓名不载史册、事迹鲜为人知——真正的无名不是平庸无闻，而是为大义隐身、为家国埋名，于平凡渺小中纯粹赤诚、坚定如磐。</div>
+
+      <p>何谓无名？姓名不载史册，事迹鲜为人知。长征之途漫漫，处处有牺牲。</p>
+
+      <p><span class="highlight-gold">“三年不饮湘江水，十年不食湘江鱼”</span>，成为老百姓对英烈朴素又深切的缅怀。湘江血战惊天地，年轻战士前仆后继、浴血突围，将生命永远留在了江河两岸。</p>
+
+      <p>过雪山草地，单衣草鞋的战士逆风前行，<span class="highlight-green">“管做饭的饿死了，管衣服的冻死了，有力气的累死了”</span>。长征路上铸丰碑，漫天风雪见证红军的信仰与本色。</p>
+
+      <p>多少年少战士、工农子弟、担架卫士，来不及留下只言片语，便用血肉之躯撕开封锁线、铺就前行路。平凡到渺小、普通到无名，却<span class="highlight-purple">纯粹到赤诚、坚定如磐石。真正的无名，不是平庸无闻，而是为大义隐身、为家国埋名</span>。</p>
+
+      <div class="sub-thesis">【分论点二】何谓有名？精神永续、山河铭记、时代传承——个人名号会湮灭，精神丰碑却长存；凡为人民赴死者人民永记其名，凡为家国奉献者时代不负其功。</div>
+
+      <p>何谓有名？精神永续、山河铭记、时代传承。<span class="highlight-purple">个人名号会湮灭，精神丰碑将长存</span>。</p>
+
+      <p>九十载风雨流转，昔日硝烟散尽，今日山河锦绣。我们脚下的热土，是无名英雄誓死守护的疆土；我们拥有的安宁，也是革命先烈以命换来的曙光。</p>
+
+      <p>凡为人民赴死者，人民永记其名；凡为家国奉献者，时代不负其功。这便是无名与有名的“辩证”：<span class="highlight-purple">甘于小我无名，聚力成就大我有名；舍弃一己虚名，奋力铸就家国盛名</span>。</p>
+
+      <div class="sub-thesis">【分论点三】无名与有名熔铸于伟大长征精神——永葆精神生命力，在于其可穿越时空、可映照当下、可指引未来；新时代的长征路仍需忠诚坚守、无私奉献。</div>
+
+      <p>无名与有名，熔铸于<span class="highlight-blue">伟大长征精神</span>。永葆精神的生命力，在于其可穿越时空、可映照当下、可指引未来。</p>
+
+      <p>今天的我们，正奋进于<span class="highlight-blue">新时代的长征路</span>。聚力科技攻关、创新基层社会治理、发展<span class="highlight-blue">新质生产力</span>……闯过前路上的“娄山关”“腊子口”，依旧需要忠诚坚守、无私奉献。</p>
+
+      <p>时代更迭，英雄底色从未改变。今日中国，有千千万万平凡英雄正接续奋斗。</p>
+
+      <p><span class="highlight-blue">高质量发展</span>呼唤“十年磨一剑”的执着，<span class="highlight-blue">科技自立自强</span>需要“甘坐冷板凳”的定力，乡村全面振兴亟待“俯首甘为孺子牛”的深耕……把伟大事业推向前进，需要更多接棒奋进的实干者。他们或许不再跋涉于雪山草地，却会扎根于戈壁及实验室、穿梭于田埂与直播间、坚守于边境和巡护线；他们未必留名于史册，但必将镌刻于苍茫巨变的发展年轮中。</p>
+
+      <div class="sub-thesis">【分论点四】读懂辩证方能树立正确政绩观——新时代的无名是坚守初心的无我境界，新时代的有名是创造业绩的功成有我，当摒弃重虚名轻实干、校正热衷“造势出名”之风。</div>
+
+      <p>从这个意义上说，<span class="highlight-purple">新时代的无名，是坚守初心的无我境界；新时代的有名，是创造业绩的功成有我</span>。</p>
+
+      <p>进一步读懂无名与有名的“辩证”，方能更好树立<span class="highlight-blue">正确政绩观</span>。常思长征路上的“乳名英烈”，重虚名、轻实干的想法应被摒弃，热衷于“造势出名”、不屑于默默深耕的做法该被校正。</p>
+
+      <p>不同时期、各行各业的先辈用实践告诉我们：平凡岗位可建不凡之功，无名坚守可成不朽之名。抛却私心杂念、褪去浮华虚名，把青春活力注入创新事业，把个人理想融入<span class="highlight-blue">复兴伟业</span>，定能造就厚重且珍贵的人生。</p>
+
+      <p>习近平总书记指出：<span class="highlight-gold">“许许多多无怨无悔、倾情奉献的无名英雄，他们以普通人的平凡书写了不平凡的人生。”</span>人民不会忘记无名者，历史终将铭记真英雄。</p>
+
+      <p>齐心协力向前走，当赓续优良传统、传承<span class="highlight-blue">红色基因</span>，笃行实干、敢作善为，争做推进<span class="highlight-blue">中国式现代化</span>的开拓者、奉献者。瞩望未来，我们这一代人的使命，就是要让无名的选择激荡时代的回响，让无声的奔赴引燃精神的火炬，进而照亮新的长征路。</p>
+
+      <p class="byline">（人民日报2026年10月20日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定调</span>
+      <p><b>“平凡岗位可建不凡之功，无名坚守可成不朽之名”</b>——写“平凡英雄／实干奉献”是定调句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·民谣</span>
+      <p><b>“三年不饮湘江水，十年不食湘江鱼”</b>——写“缅怀英烈／长征牺牲”是民谣金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“甘于小我无名，聚力成就大我有名；舍弃一己虚名，奋力铸就家国盛名”</b>——写“无名与有名辩证”是核心句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·境界</span>
+      <p><b>“新时代的无名，是坚守初心的无我境界；新时代的有名，是创造业绩的功成有我”</b>——写“小我与大我统一”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·领袖</span>
+      <p><b>“许许多多无怨无悔、倾情奉献的无名英雄，他们以普通人的平凡书写了不平凡的人生”</b>（习近平总书记）——写“平凡英雄”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·使命</span>
+      <p><b>“让无名的选择激荡时代的回响，让无声的奔赴引燃精神的火炬，进而照亮新的长征路”</b>——写“传承红色基因／接力奋斗”是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·史实</span>
+      <p><b>“长征路上年少殉国的红军烈士”“管做饭的饿死了，管衣服的冻死了，有力气的累死了”</b>——写“长征牺牲／信仰本色”是史实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·号召</span>
+      <p><b>“把青春活力注入创新事业，把个人理想融入复兴伟业，定能造就厚重且珍贵的人生”</b>——写“青年担当／家国情怀”是号召句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“具象引入—辩证立论—多维延展—使命收束”框架：以瑞金烈士陵园乳名破题，用“无名—有名—精神—政绩观”四层递进，以习近平总书记语录与接力号召收束，适用于“平凡与伟大／小我与大我”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文四组：分论点一写“何谓无名”（长征牺牲／为大义隐身），分论点二写“何谓有名”（精神永续／人民永记），分论点三写“熔铸长征精神”（映照当下／指引未来），分论点四写“树立正确政绩观”（无我境界／功成有我），由史到今、由情入理层层递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“传承红色基因、树立正确政绩观”拆成可操作举措：赓续传统、传承红色基因；树立正确政绩观、摒弃重虚名轻实干；把个人理想融入复兴伟业、引导青年建功立业；健全崇尚实干、关爱平凡英雄的导向机制。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“无名与有名”的辩证：先立“甘于小我无名、聚力成就大我有名”的立场，再以“不是……而是……”句式揭示边界，把名实之辨写成有厚度、有张力的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“甘于小我无名，聚力成就大我有名”可作“个人与集体”类论证的框架句；“新时代的无名是坚守初心的无我境界”可作“正确政绩观”类文章的分论点；“让无名的选择激荡时代的回响”可作收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「无名与有名」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是何谓无名？姓名不载史册、事迹鲜为人知。真正的无名不是平庸无闻，而是为大义隐身、为家国埋名，于平凡渺小中纯粹赤诚、坚定如磐。<br>二是何谓有名？精神永续、山河铭记、时代传承。个人名号会湮灭，精神丰碑却长存；凡为人民赴死者人民永记其名，凡为家国奉献者时代不负其功。<br>三是无名与有名熔铸于伟大长征精神。永葆精神生命力，在于其可穿越时空、可映照当下、可指引未来；新时代的长征路仍需忠诚坚守、无私奉献。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「平凡岗位可建不凡之功，无名坚守可成不朽之名。读懂无名与有名的辩证——甘于小我无名、聚力成就大我有名，舍弃一己虚名、奋力铸就家国盛名；把个人理想融入复兴伟业，定能造就厚重且珍贵的人生。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是何谓无名？姓名不载史册、事迹鲜为人知——真正的无名不是平庸无闻，而是为大义隐身、为家国埋名，于平凡渺小中纯粹赤诚、坚定如磐。<br>二是何谓有名？精神永续、山河铭记、时代传承——个人名号会湮灭，精神丰碑却长存；凡为人民赴死者人民永记其名，凡为家国奉献者时代不负其功。<br>三是无名与有名熔铸于伟大长征精神——永葆精神生命力，在于其可穿越时空、可映照当下、可指引未来；新时代的长征路仍需忠诚坚守、无私奉献。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“平凡岗位可建不凡之功，无名坚守可成不朽之名”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「无名与有名」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是赓续优良传统、传承红色基因，以长征精神砥砺忠诚坚守、无私奉献的品格。<br>二是树立正确政绩观，摒弃重虚名轻实干、热衷“造势出名”之风，校正不屑默默深耕的做法。<br>三是把个人理想融入复兴伟业，引导青年在创新事业与基层一线建功立业。<br>四是健全崇尚实干、关爱平凡英雄的导向机制，让无名者的坚守被看见、被铭记。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“平凡岗位可建不凡之功，无名坚守可成不朽之名”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于无名与有名的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于无名与有名的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进无名与有名，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、何谓无名？姓名不载史册、事迹鲜为人知——真正的无名不是平庸无闻，而是为大义隐身、为家国埋名，于平凡渺小中纯粹赤诚、坚定如磐。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、何谓有名？精神永续、山河铭记、时代传承——个人名号会湮灭，精神丰碑却长存；凡为人民赴死者人民永记其名，凡为家国奉献者时代不负其功。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、无名与有名熔铸于伟大长征精神——永葆精神生命力，在于其可穿越时空、可映照当下、可指引未来；新时代的长征路仍需忠诚坚守、无私奉献。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“平凡岗位可建不凡之功，无名坚守可成不朽之名”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「无名与有名」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：无名与有名<br><br>时代之问，呼唤破题之策。无名与有名，是发展所需，也是民心所向。可从三个维度展开：何谓无名？姓名不载史册、事迹鲜为人知、何谓有名？精神永续、山河铭记、时代传承、无名与有名熔铸于伟大长征精神。<br><br>分论点一：何谓无名？姓名不载史册、事迹鲜为人知——真正的无名不是平庸无闻，而是为大义隐身、为家国埋名，于平凡渺小中纯粹赤诚、坚定如磐。方向对了，路再远也能抵达。“平凡岗位可建不凡之功，无名坚守可成不朽之名”<br><br>分论点二：何谓有名？精神永续、山河铭记、时代传承——个人名号会湮灭，精神丰碑却长存；凡为人民赴死者人民永记其名，凡为家国奉献者时代不负其功。方法对了，事再难也能办成。“三年不饮湘江水，十年不食湘江鱼”<br><br>分论点三：无名与有名熔铸于伟大长征精神——永葆精神生命力，在于其可穿越时空、可映照当下、可指引未来；新时代的长征路仍需忠诚坚守、无私奉献。行百里者半九十。“甘于小我无名，聚力成就大我有名；舍弃一己虚名，奋力铸就家国盛名”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。无名与有名是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-20</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
