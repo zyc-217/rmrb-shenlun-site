@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申论素材 - 习近平讲话文章用典主题汇编</title>
+<style>
+  :root {
+    --fenbi-primary: #00C1CE;
+    --fenbi-primary-dark: #00A8B5;
+    --fenbi-primary-light: #E6F8F9;
+    --fenbi-text: #333333;
+    --fenbi-text-sub: #666666;
+    --fenbi-text-hint: #999999;
+    --fenbi-bg: #F5F7FA;
+    --fenbi-card-bg: #ffffff;
+
+    --bg: var(--fenbi-bg);
+    --card-bg: var(--fenbi-card-bg);
+    --card-radius: 14px;
+    --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+
+    --header-bg: linear-gradient(135deg, #00C1CE 0%, #00A8B5 50%, #008B96 100%);
+    --header-text: #ffffff; --header-sub: rgba(255,255,255,0.9);
+
+    --section-title: var(--fenbi-text);
+    --divider: #ECECEC;
+
+    --color-policy: #E8553E;
+    --color-classic: #D4A017;
+    --color-parallel: #8B7355;
+    --color-case: #27AE60;
+    --color-tip: #00A8B5;
+
+    --quote-bg: #FAFCFC;
+    --quote-text: var(--fenbi-text);
+    --source-text: var(--fenbi-text-hint);
+    --usage-bg: #F5F7FA;
+    --usage-text: var(--fenbi-text-sub);
+
+    --badge-bg: var(--fenbi-primary-light); --badge-text: #008B96;
+    --tag-bg: #F0F7F7; --tag-text: #008B96;
+
+    --takeaway-bg: linear-gradient(135deg, #F0F9F9 0%, #E6F8F9 100%);
+    --takeaway-text: var(--fenbi-text);
+    --case-quote-bg: #FFFCF0;
+    --case-quote-border: #D4A017;
+    --case-quote-text: #8A6D00;
+
+    --tip-bg: #F0FAFB;
+    --tip-border: var(--fenbi-primary);
+    --tip-text: var(--fenbi-text);
+
+    --footer-text: var(--fenbi-text-hint);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fenbi-primary: #00C1CE;
+      --fenbi-primary-dark: #00A8B5;
+      --fenbi-primary-light: #0A3A3E;
+      --fenbi-text: #E0E0E0;
+      --fenbi-text-sub: #B0B0B0;
+      --fenbi-text-hint: #888888;
+      --fenbi-bg: #1A1A1A;
+      --fenbi-card-bg: #1E1E1E;
+
+      --bg: var(--fenbi-bg);
+      --card-bg: var(--fenbi-card-bg);
+      --card-shadow: 0 2px 16px rgba(0,0,0,0.2);
+      --header-bg: linear-gradient(135deg, #006B70 0%, #005A5E 50%, #004A4E 100%);
+      --header-text: #E0E0E0; --header-sub: rgba(255,255,255,0.75);
+      --section-title: var(--fenbi-text);
+      --divider: #2A2A2A;
+      --color-policy: #FF6B5A;
+      --color-classic: #F0C040;
+      --color-parallel: #A89880;
+      --color-case: #2ECC71;
+      --color-tip: #00D5DE;
+      --quote-bg: #1E2525;
+      --quote-text: #DDD;
+      --source-text: #888;
+      --usage-bg: #1E2828;
+      --usage-text: #A0B0B0;
+      --badge-bg: #0A2A2C; --badge-text: #00D5DE;
+      --tag-bg: #0A2A2C; --tag-text: #00D5DE;
+      --takeaway-bg: linear-gradient(135deg, #0A2A2C 0%, #0E3032 100%);
+      --takeaway-text: #C0D0D0;
+      --case-quote-bg: #2A2820;
+      --case-quote-border: #D4A017;
+      --case-quote-text: #D4B860;
+      --tip-bg: #0A2A2C;
+      --tip-border: #00D5DE;
+      --tip-text: #C0D8D8;
+      --footer-text: #777;
+    }
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.8; color:var(--quote-text);
+    padding:20px;
+    display:flex; justify-content:center;
+  }
+  .card {
+    width:100%; max-width:640px;
+    background:var(--card-bg);
+    border-radius:var(--card-radius);
+    overflow:hidden;
+    box-shadow:var(--card-shadow);
+  }
+  .header {
+    background:var(--header-bg);
+    padding:28px 24px 24px;
+    text-align:center;
+  }
+  .header .title {
+    font-size:22px; font-weight:700; color:var(--header-text);
+    letter-spacing:3px; margin-bottom:6px;
+  }
+  .header .subtitle { font-size:13px; color:var(--header-sub); line-height:1.6; }
+  .header .badge {
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    padding:3px 14px; border-radius:20px;
+    font-size:12px; color:var(--header-sub);
+    margin-top:12px;
+  }
+  .body { padding:24px; }
+  .section { margin-bottom:30px; }
+  .section-title {
+    display:flex; align-items:center; gap:8px;
+    font-size:16px; font-weight:700; color:var(--section-title);
+    margin-bottom:16px; padding-bottom:10px;
+    border-bottom:2px solid var(--divider);
+  }
+  .section-title .icon { font-size:20px; }
+  .section-title .cnt { font-size:12px; color:#fff; background:var(--fenbi-primary); border-radius:10px; padding:1px 10px; font-weight:600; }
+
+  .quote-card {
+    background:var(--card-bg);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-bottom:12px;
+    box-shadow:0 1px 6px rgba(0,0,0,0.05);
+    border-left:4px solid var(--color-policy);
+  }
+  .quote-card:last-child { margin-bottom:0; }
+  .quote-card .tag {
+    display:inline-block;
+    font-size:11px; padding:2px 10px;
+    border-radius:4px; margin-bottom:8px;
+    font-weight:600;
+  }
+  .quote-card .tag.policy { background:#FDEDEA; color:var(--color-policy); }
+  .quote-card .tag.classic-tag { background:#FEF6E0; color:var(--color-classic); }
+  .quote-card .quote-text {
+    font-size:15px; line-height:1.9;
+    color:var(--quote-text); font-weight:500;
+  }
+  .quote-card .quote-source {
+    font-size:12px; color:var(--source-text);
+    margin-top:6px;
+  }
+  .quote-card .usage-tip {
+    margin-top:10px; padding:8px 12px;
+    background:var(--usage-bg); border-radius:6px;
+    font-size:12px; color:var(--usage-text); line-height:1.7;
+  }
+  .usage-tip strong { color:var(--color-policy); }
+
+  .tip-card {
+    background:var(--tip-bg);
+    border-radius:8px;
+    padding:14px 18px;
+    margin-bottom:10px;
+    border-left:3px solid var(--tip-border);
+    font-size:13px; line-height:1.8;
+    color:var(--tip-text);
+  }
+  .tip-card:last-child { margin-bottom:0; }
+  .tip-card strong { color:var(--tip-border); }
+
+  .foot { text-align:center; color:var(--footer-text); font-size:12px; padding:20px 0 8px; line-height:1.8; }
+</style>
+</head>
+<body>
+
+<div style="max-width:640px;margin:0 auto 14px;">
+    <a href="index.html" style="display:block;text-align:center;background:#00A8B5;color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:10px 0;border-radius:10px;">‹ 返回精读站首页</a>
+  </div>
+  <div class="card">
+
+  <div class="header">
+    <div class="title">素材专栏 · 习近平用典汇编</div>
+    <div class="subtitle">整理自总书记历年讲话、文章中引用的经典名句，按主题分类——每条含：原句 / 出处典籍 / 讲话文章及时间 / 释义 / 现实意义<br>依据：《习近平用典》第一辑·第二辑（人民日报出版社）、人民网·中国共产党新闻网等权威公开报道</div>
+    <div class="badge">共 13 大主题 · 49 条典故 · 申论大作文素材库</div>
+  </div>
+
+  <div class="body">
+
+  <!-- ============ 一、敬民 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🤝</span>一、敬民 · 民本思想 <span class="cnt">7条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「民惟邦本，本固邦宁。」</div>
+      <div class="quote-source">—— 典籍：《尚书·五子之歌》｜《在中央政法工作会议上的讲话》（2014年1月7日）、在英国议会发表讲话（2015年10月20日）、在二十国集团工商峰会开幕式上的主旨演讲（2016年9月3日）等多场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>人民是国家的根本，根本稳固了国家才能安宁。<br><strong>现实意义：</strong>以人民为中心发展思想的古典表达，谈民生保障、社会稳定、"人民至上"类题目均可作总起句或落点句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「治国有常，而利民为本。」</div>
+      <div class="quote-source">—— 典籍：《淮南子·氾论训》｜《在省部级主要领导干部学习贯彻党的十八届五中全会精神专题研讨班上的讲话》（2016年1月18日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>治理国家有常法，让人民受益是根本。<br><strong>现实意义：</strong>论证一切政策落脚点在"利民"——民生改革、惠民政策、共同富裕类题目的分论点支撑。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「圣人无常心，以百姓心为心。」</div>
+      <div class="quote-source">—— 典籍：《老子》第四十九章｜《主仆关系不容颠倒》（《之江新语》，2007年2月5日）、在庆祝中华人民共和国成立65周年招待会上的讲话（2014年9月30日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>执政者没有一己私心，要把百姓的意愿作为自己的意愿。<br><strong>现实意义：</strong>谈干群关系、政绩观、群众路线——"政声人去后，民意闲谈中"，干部要问需于民、问计于民。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「德莫高于爱民，行莫贱于害民。」</div>
+      <div class="quote-source">—— 典籍：《晏子春秋·内篇问下》｜《主仆关系不容颠倒》（《之江新语》，2007年2月5日）</div>
+      <div class="usage-tip"><strong>释义：</strong>最高尚的品德是爱护百姓，最卑劣的行为是坑害百姓。<br><strong>现实意义：</strong>常与上句连用，谈干部作风、为官之道，论证"主仆关系不容颠倒"。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「足寒伤心，民寒伤国。」</div>
+      <div class="quote-source">—— 典籍：东汉·荀悦《申鉴》｜在减贫与发展高层论坛上的主旨演讲（2015年10月16日）</div>
+      <div class="usage-tip"><strong>释义：</strong>脚受寒会伤及心脏，百姓困顿会伤及国家。<br><strong>现实意义：</strong>脱贫攻坚、共同富裕类题目的点睛句——贫困不是小事，直接关系国家根基。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「善为国者，遇民如父母之爱子，兄之爱弟，闻其饥寒为之哀，见其劳苦为之悲。」</div>
+      <div class="quote-source">—— 典籍：西汉·刘向《说苑》｜在减贫与发展高层论坛上的主旨演讲（2015年10月16日）</div>
+      <div class="usage-tip"><strong>释义：</strong>善于治国的人对待百姓如父母爱子、兄长爱弟，听闻其饥寒便哀伤，见其劳苦便悲痛。<br><strong>现实意义：</strong>刻画扶贫干部、基层干部应有的情感底色，让民生论述有温度。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">敬民</span>
+      <div class="quote-text">「些小吾曹州县吏，一枝一叶总关情。」</div>
+      <div class="quote-source">—— 典籍：清·郑燮（郑板桥）《潍县署中画竹呈年伯包大中丞括》｜在河南省兰考县委常委扩大会议上的讲话（2014年3月18日）等场合多次引用</div>
+      <div class="usage-tip"><strong>释义：</strong>虽是小小州县官，百姓的每一件小事都牵动着感情。<br><strong>现实意义：</strong>"民生无小事"的诗意表达——基层治理、作风建设类题目开篇即可引用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 二、为政 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏛️</span>二、为政 · 治国理政 <span class="cnt">4条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">为政</span>
+      <div class="quote-text">「政之所兴在顺民心，政之所废在逆民心。」</div>
+      <div class="quote-source">—— 典籍：《管子·牧民》｜在纪念毛泽东同志诞辰120周年座谈会上的讲话（2013年12月26日）</div>
+      <div class="usage-tip"><strong>释义：</strong>政事兴旺因为顺应民心，政事衰废因为违逆民心。<br><strong>现实意义：</strong>民心是最大的政治——谈执政根基、政绩观、民心工程类题目的核心论据。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">为政</span>
+      <div class="quote-text">「治国犹如栽树，本根不摇则枝叶茂荣。」</div>
+      <div class="quote-source">—— 典籍：《贞观政要·政体》｜在中共中央政治局第十八次集体学习时的讲话（2014年10月13日，主题：我国历史上的国家治理）</div>
+      <div class="usage-tip"><strong>释义：</strong>治国像种树，根本不动摇，枝叶才能繁茂。<br><strong>现实意义：</strong>论证抓根本、固根基的重要性——党的领导、制度根基、基础工作类题目适用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">为政</span>
+      <div class="quote-text">「以天下之目视，则无不见也；以天下之耳听，则无不闻也；以天下之心虑，则无不知也。」</div>
+      <div class="quote-source">—— 典籍：《管子·九守》｜在庆祝中国人民政治协商会议成立65周年大会上的讲话（2014年9月21日）</div>
+      <div class="usage-tip"><strong>释义：</strong>用天下人的眼睛去看，没有看不见的；用天下人的耳朵去听，没有听不到的；用天下人的心思去想，没有不知道的。<br><strong>现实意义：</strong>开门问策、集思广益——谈科学决策、全过程人民民主、问计于民的绝佳引子。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">为政</span>
+      <div class="quote-text">「治大国若烹小鲜。」</div>
+      <div class="quote-source">—— 典籍：《老子》第六十章｜接受金砖国家媒体联合采访时的讲话（2013年3月19日）</div>
+      <div class="usage-tip"><strong>释义：</strong>治理大国如同烹煎小鱼，不能频繁翻动，要把握好度、不折腾。<br><strong>现实意义：</strong>谈治理的分寸感与定力——政策保持连续性稳定性、不搞"翻烧饼"式折腾。</div>
+    </div>
+  </div>
+
+  <!-- ============ 三、居安思危 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚠️</span>三、居安思危 · 防范风险 <span class="cnt">6条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「备豫不虞，为国常道。」</div>
+      <div class="quote-source">—— 典籍：唐·吴兢《贞观政要·直谏》｜在学习贯彻党的十九大精神研讨班开班式上的讲话（2018年1月5日）</div>
+      <div class="usage-tip"><strong>释义：</strong>提前防范意料不到的事，是治理国家的基本原则。<br><strong>现实意义：</strong>忧患意识类题目的"总起句"——越是形势好，越要有如履薄冰的谨慎。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「图之于未萌，虑之于未有。」</div>
+      <div class="quote-source">—— 典籍：《旧唐书·柳亨传》所附《柳泽传》｜在党的十八届五中全会第二次全体会议上的讲话（2015年10月29日）</div>
+      <div class="usage-tip"><strong>释义：</strong>在祸患尚未萌发时就预先提防，在灾祸没有到来时未雨绸缪。<br><strong>现实意义：</strong>底线思维、防范化解重大风险——应急管理、安全生产、金融风险类题目通用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「明者防祸于未萌，智者图患于将来。」</div>
+      <div class="quote-source">—— 典籍：西晋·陈寿《三国志·吴书》裴松之注引《吴书》｜在省部级主要领导干部学习贯彻党的十八届五中全会精神专题研讨班上的讲话（2016年1月18日）</div>
+      <div class="usage-tip"><strong>释义：</strong>明智的人在灾祸未萌发时就加以防范，聪明的人对将来的祸患预先估量。<br><strong>现实意义：</strong>"防"与"图"一静一动，可拆开支撑"事前防范"与"长远谋划"两个分论点。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「安而不忘危，存而不忘亡，治而不忘乱。」</div>
+      <div class="quote-source">—— 典籍：《周易·系辞下》｜在中共中央政治局第十四次集体学习时的讲话（2014年4月25日，主题：切实维护国家安全）</div>
+      <div class="usage-tip"><strong>释义：</strong>安定时不忘记危险，存续时不忘记败亡，大治时不忘记动乱。<br><strong>现实意义：</strong>总体国家安全观的文化根基——国家安全、社会治理类题目开篇即可用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「于安思危，于治忧乱。」</div>
+      <div class="quote-source">—— 典籍：清·魏源《默觚·学篇》｜在中共中央政治局第六次集体学习时的讲话（2018年6月29日，主题：加强党的政治建设）</div>
+      <div class="usage-tip"><strong>释义：</strong>在平安时想到危难，在稳定时忧虑动乱。<br><strong>现实意义：</strong>四字短句，节奏好、易化用——谈政治安全、意识形态风险的点睛之笔。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">风险</span>
+      <div class="quote-text">「聪者听于无声，明者见于未形。」</div>
+      <div class="quote-source">—— 典籍：西汉·司马迁《史记·淮南衡山列传》｜在网络安全和信息化工作座谈会上的讲话（2016年4月19日）</div>
+      <div class="usage-tip"><strong>释义：</strong>聪慧的人在无声处听有声，明智的人在无形处见有形。<br><strong>现实意义：</strong>见微知著、防患未然——网络安全、风险预警、基层矛盾排查类题目适用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 四、改革创新 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🚀</span>四、改革创新 <span class="cnt">6条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「苟日新，日日新，又日新。」</div>
+      <div class="quote-source">—— 典籍：《礼记·大学》（商汤《盘铭》）｜在中国科学院第十七次院士大会、中国工程院第十二次院士大会上的讲话（2014年6月9日）等多场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>如果能每天除旧更新，就要天天更新，不间断地更新又更新。<br><strong>现实意义：</strong>"创新"一词即源于此——科技创新、自我革新、与时俱进类题目的定场句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「周虽旧邦，其命维新。」</div>
+      <div class="quote-source">—— 典籍：《诗经·大雅·文王》｜在中国科学院第十七次院士大会、中国工程院第十二次院士大会上的讲话（2014年6月9日）、在庆祝改革开放40周年大会上的讲话（2018年12月18日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>周虽然是古老的邦国，但它的使命在于革新。<br><strong>现实意义：</strong>把改革开放、民族复兴讲成中华文明的"革新基因"，站位高、底蕴足。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「穷则变，变则通，通则久。」</div>
+      <div class="quote-source">—— 典籍：《周易·系辞下》｜在纪念中国人民抗日战争暨世界反法西斯战争胜利69周年座谈会上的讲话（2014年9月3日）、在两院院士大会上的讲话（2018年5月28日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>事物到了穷尽之地就应当变化，变化才能通达，通达才能长久。<br><strong>现实意义：</strong>全面深化改革的哲学依据——谈改革必要性、破除体制机制障碍的首选引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「苟利于民，不必法古；苟周于事，不必循俗。」</div>
+      <div class="quote-source">—— 典籍：春秋·文子《文子·上义》｜在博鰲亚洲论坛2018年年会开幕式上的主旨演讲（2018年4月10日）</div>
+      <div class="usage-tip"><strong>释义：</strong>只要对人民有利，就不必效法古制；只要符合实际，就不必遵循旧俗。<br><strong>现实意义：</strong>改革要以人民利益和实际问题为标尺——破除形式主义、守旧思维类论述的点睛句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「芳林新叶催陈叶，流水前波让后波。」</div>
+      <div class="quote-source">—— 典籍：唐·刘禹锡《乐天见示伤微之、敦诗、晦叔三君子，皆有深分，因成是诗以寄》｜在2018年春节团拜会上的讲话（2018年2月14日）</div>
+      <div class="usage-tip"><strong>释义：</strong>春天新叶催换老叶，激流中前浪让位后浪。<br><strong>现实意义：</strong>新旧动能转换、青年成长、事业接续奋斗——诗意地讲"新陈代谢"规律。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">创新</span>
+      <div class="quote-text">「行之力则知愈进，知之深则行愈达。」</div>
+      <div class="quote-source">—— 典籍：南宋·张栻《南轩先生论语解》｜在庆祝改革开放40周年大会上的讲话（2018年12月18日）</div>
+      <div class="usage-tip"><strong>释义：</strong>实践越深入，认识越精进；认识越深刻，实践越通达。<br><strong>现实意义：</strong>知行合一的当代表达——理论联系实际、试点推广、在干中学类论述适用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 五、法治 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚖️</span>五、法治建设 <span class="cnt">3条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">法治</span>
+      <div class="quote-text">「国无常强，无常弱。奉法者强则国强，奉法者弱则国弱。」</div>
+      <div class="quote-source">—— 典籍：《韩非子·有度》｜在新疆考察工作结束时的讲话（2014年4月）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>国家不会长久强盛也不会长久衰弱，执法者坚定奉行法治国家就强。<br><strong>现实意义：</strong>全面依法治国的核心古典论据——法治政府、严格执法类题目首选。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">法治</span>
+      <div class="quote-text">「立善法于天下，则天下治；立善法于一国，则一国治。」</div>
+      <div class="quote-source">—— 典籍：北宋·王安石《周公》｜在省部级主要领导干部学习贯彻十八届三中全会精神全面深化改革专题研讨班上的讲话（2014年2月17日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>为天下立良法，天下就得到治理；为一国立良法，一国就得到治理。<br><strong>现实意义：</strong>良法是善治的前提——科学立法、制度建设类论述的支撑句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">法治</span>
+      <div class="quote-text">「法立，有犯而必施；令出，唯行而不返。」</div>
+      <div class="quote-source">—— 典籍：北宋·王安石《周公》｜在庆祝全国人民代表大会成立60周年大会上的讲话（2014年9月5日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>法律制定了，有人违犯就必须惩处；政令发出了，就必须坚决执行而不回头。<br><strong>现实意义：</strong>法律的生命力在于执行——严格执法、有法必依、制度刚性类论述适用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 六、廉政 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🧹</span>六、廉政建设 <span class="cnt">3条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">廉政</span>
+      <div class="quote-text">「一丝一粒，我之名节；一厘一毫，民之脂膏。」</div>
+      <div class="quote-source">—— 典籍：清·张伯行《禁止馈送檄》｜在河南省兰考县委常委扩大会议上的讲话（2014年3月18日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>一丝一粒都关系我的名节，一厘一毫都是百姓的血汗。<br><strong>现实意义：</strong>把"小事小节"提到名节高度——作风建设、慎微慎初类论述的形象化表达。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">廉政</span>
+      <div class="quote-text">「善禁者，先禁其身而后人；不善禁者，先禁人而后身。」</div>
+      <div class="quote-source">—— 典籍：东汉·荀悦《申鉴·政体》｜在十八届中央纪律检查委员会第二次全体会议上的讲话（2013年1月22日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>善于禁止别人做某事的人，先禁止自己再做别人；不善于禁止的人，先要求别人再要求自己。<br><strong>现实意义：</strong>打铁必须自身硬——领导干部以身作则、以上率下的古典依据。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">廉政</span>
+      <div class="quote-text">「公生明，廉生威。」</div>
+      <div class="quote-source">—— 典籍：语本《荀子·不苟》，明代官箴刻石联语｜在中央政法工作会议上的讲话（2014年1月7日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>公正产生严明，廉洁产生威信。<br><strong>现实意义：</strong>六个字讲透执政法宝——司法公正、干部威信、营商环境（公正）类题目皆可收束用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 七、修身立德 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🌱</span>七、修身立德 <span class="cnt">5条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">修身</span>
+      <div class="quote-text">「吾日三省吾身。」</div>
+      <div class="quote-source">—— 典籍：《论语·学而》｜在河南省兰考县委常委扩大会议上的讲话（2014年3月18日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>我每天多次反省自己。<br><strong>现实意义：</strong>自我批评、反躬自省——作风建设、个人成长类论述的起手式。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">修身</span>
+      <div class="quote-text">「见贤思齐焉，见不贤而内自省也。」</div>
+      <div class="quote-source">—— 典籍：《论语·里仁》｜在全国组织工作会议上的讲话（2013年6月28日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>见到贤能的人就想着向他看齐，见到不贤的人就反省自身有没有同样的毛病。<br><strong>现实意义：</strong>榜样的力量与反面镜鉴——学先进、树典型类论述的标准引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">修身</span>
+      <div class="quote-text">「与人不求备，检身若不及。」</div>
+      <div class="quote-source">—— 典籍：《尚书·伊训》｜在全国组织工作会议上的讲话（2013年6月28日）</div>
+      <div class="usage-tip"><strong>释义：</strong>对别人不求全责备，检查自己总感到不足。<br><strong>现实意义：</strong>严于律己、宽以待人——干部修养、团结协作类论述适用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">修身</span>
+      <div class="quote-text">「从善如登，从恶如崩。」</div>
+      <div class="quote-source">—— 典籍：《国语·周语下》｜在同各界优秀青年代表座谈时的讲话（2013年5月4日）</div>
+      <div class="usage-tip"><strong>释义：</strong>学好如登山般艰难，学坏如山崩般容易。<br><strong>现实意义：</strong>修身贵在坚持、守住底线——青年成长、价值观养成类题目的警句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">修身</span>
+      <div class="quote-text">「见善则迁，有过则改。」</div>
+      <div class="quote-source">—— 典籍：《周易·益卦》｜在北京大学师生座谈会上的讲话（2014年5月4日）</div>
+      <div class="usage-tip"><strong>释义：</strong>见到美好的就效仿学习，有了错误就改正。<br><strong>现实意义：</strong>知错即改、向善而行——道德实践、纠错机制类论述的点睛句。</div>
+    </div>
+  </div>
+
+  <!-- ============ 八、理想信念 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🔥</span>八、理想信念 <span class="cnt">3条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">信念</span>
+      <div class="quote-text">「位卑未敢忘忧国。」</div>
+      <div class="quote-source">—— 典籍：南宋·陆游《病起书怀》｜在中央党校建校80周年庆祝大会暨2013年春季学期开学典礼上的讲话（2013年3月1日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>虽然地位卑微，仍不敢忘记忧虑国事。<br><strong>现实意义：</strong>普通人的家国情怀——平凡岗位作贡献、青年担当类题目最贴身的引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">信念</span>
+      <div class="quote-text">「石可破也，而不可夺坚；丹可磨也，而不可夺赤。」</div>
+      <div class="quote-source">—— 典籍：《吕氏春秋·诚廉》｜在纪念红军长征胜利80周年大会上的讲话（2016年10月21日）</div>
+      <div class="usage-tip"><strong>释义：</strong>石头可以被打碎，但夺不走它的坚硬；朱砂可以被磨损，但夺不走它的赤红。<br><strong>现实意义：</strong>理想信念的坚不可摧——革命精神、信仰坚守类论述的形象化表达。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">信念</span>
+      <div class="quote-text">「千磨万击还坚劲，任尔东西南北风。」</div>
+      <div class="quote-source">—— 典籍：清·郑燮《竹石》｜在北京大学师生座谈会上的讲话（2014年5月4日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>历经千万次磨难打击仍然坚韧挺拔，任凭各方风雨侵袭。<br><strong>现实意义：</strong>定力与韧性——面对风险挑战不动摇、青年砥砺成长类论述的收束句。</div>
+    </div>
+  </div>
+
+  <!-- ============ 九、笃行实干 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🛠️</span>九、笃行实干 <span class="cnt">3条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">实干</span>
+      <div class="quote-text">「功崇惟志，业广惟勤。」</div>
+      <div class="quote-source">—— 典籍：《尚书·周书》｜在第十二届全国人民代表大会第一次会议闭幕会上的讲话（2013年3月17日）</div>
+      <div class="usage-tip"><strong>释义：</strong>功高由于有志，业广由于勤勉。<br><strong>现实意义：</strong>立志与勤奋是成事两翼——奋斗、劳动、青年成长类题目的开篇引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">实干</span>
+      <div class="quote-text">「九层之台，起于累土。」</div>
+      <div class="quote-source">—— 典籍：《老子》第六十四章｜二〇一八年新年贺词（2017年12月31日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>九层高台从一筐土累积而起。<br><strong>现实意义：</strong>把蓝图变为现实要一步一个脚印——脚踏实地、积微成著、反对空谈类论述适用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">实干</span>
+      <div class="quote-text">「大道至简，实干为要。」</div>
+      <div class="quote-source">—— 语本《老子》"大道至简"思想｜在世界经济论坛2017年年会开幕式上的主旨演讲（2017年1月17日）</div>
+      <div class="usage-tip"><strong>释义：</strong>最高深的道理往往极简，关键在扎实去做。<br><strong>现实意义：</strong>短促有力，谈落实、执行力、作风建设——放段首段尾均可。</div>
+    </div>
+  </div>
+
+  <!-- ============ 十、劝学 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📚</span>十、劝学治学 <span class="cnt">2条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">劝学</span>
+      <div class="quote-text">「学如弓弩，才如箭镞。」</div>
+      <div class="quote-source">—— 典籍：清·袁枚《续诗品·尚识》｜在欧美同学会成立100周年庆祝大会上的讲话（2013年10月21日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>学问像弓弩，才能像箭头——依靠学识的"弓"才能把才能的"箭"射远。<br><strong>现实意义：</strong>学习是才能的底座——谈本领恐慌、终身学习、青年增才干的必用句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">劝学</span>
+      <div class="quote-text">「学者非必为仕，而仕者必为学。」</div>
+      <div class="quote-source">—— 典籍：《荀子·大略》｜在中央党校建校80周年庆祝大会暨2013年春季学期开学典礼上的讲话（2013年3月1日）</div>
+      <div class="usage-tip"><strong>释义：</strong>读书的人不一定做官，但做官的人必须不断学习。<br><strong>现实意义：</strong>官员更需学习——学习型政党、干部能力建设、克服本领恐慌类论述专用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 十一、任贤 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎯</span>十一、任贤 · 人才 <span class="cnt">3条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">人才</span>
+      <div class="quote-text">「宰相必起于州部，猛将必发于卒伍。」</div>
+      <div class="quote-source">—— 典籍：《韩非子·显学》｜在全国组织工作会议上的讲话（2013年6月28日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>宰相一定从基层州部崛起，猛将一定从士兵队伍中选拔。<br><strong>现实意义：</strong>干部要在基层墩苗历练——基层导向、人才成长规律、青年下沉基层类论述的核心引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">人才</span>
+      <div class="quote-text">「为政之要，惟在得人。」</div>
+      <div class="quote-source">—— 典籍：唐·吴兢《贞观政要》｜在中共中央政治局第十次集体学习时的讲话（2018年11月26日，主题：中国历史上的吏治）</div>
+      <div class="usage-tip"><strong>释义：</strong>治理国家的关键，在于得到人才。<br><strong>现实意义：</strong>人才是第一资源——人才强国、招才引智、干部选拔类题目的总起句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">人才</span>
+      <div class="quote-text">「盖有非常之功，必待非常之人。」</div>
+      <div class="quote-source">—— 典籍：《汉书·武帝纪》（汉武帝《求茂才异等诏》）｜在中国科学院第十七次院士大会、中国工程院第十二次院士大会上的讲话（2014年6月9日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>要建立不寻常的功业，必须依靠不寻常的人才。<br><strong>现实意义：</strong>伟大事业呼唤顶尖人才——科技创新、卡脖子攻关、引才聚才类论述的点睛句。</div>
+    </div>
+  </div>
+
+  <!-- ============ 十二、生态文明 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🌿</span>十二、生态文明 <span class="cnt">2条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">生态</span>
+      <div class="quote-text">「取之有度，用之有节，则常足。」</div>
+      <div class="quote-source">—— 典籍：《资治通鉴》卷二百三十四｜在2019年中国北京世界园艺博览会开幕式上的讲话（2019年4月28日）</div>
+      <div class="usage-tip"><strong>释义：</strong>索取有限度、使用有节制，就能常保富足。<br><strong>现实意义：</strong>人与自然的相处之道——绿色发展、资源节约、低碳生活类题目的核心引用。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">生态</span>
+      <div class="quote-text">「万物各得其和以生，各得其养以成。」</div>
+      <div class="quote-source">—— 典籍：《荀子·天论》｜在全国生态环境保护大会上的讲话（2018年5月18日）</div>
+      <div class="usage-tip"><strong>释义：</strong>万物各自凭借自然的和谐而生存，各自得到自然的滋养而成长。<br><strong>现实意义：</strong>生态系统的整体观、人与自然生命共同体——生物多样性、山水林田湖草沙一体化保护类论述适用。</div>
+    </div>
+  </div>
+
+  <!-- ============ 十三、天下 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🌏</span>十三、天下 · 外交 <span class="cnt">2条</span></div>
+
+    <div class="quote-card">
+      <span class="tag policy">天下</span>
+      <div class="quote-text">「万物并育而不相害，道并行而不相悖。」</div>
+      <div class="quote-source">—— 典籍：《礼记·中庸》｜在中国共产党与世界政党高层对话会上的主旨讲话（2017年12月1日）等场合引用</div>
+      <div class="usage-tip"><strong>释义：</strong>万物共同生长而互不妨害，各种道理并行不悖。<br><strong>现实意义：</strong>文明交流互鉴、多样性共存——人类命运共同体、全球治理类题目的定调句。</div>
+    </div>
+
+    <div class="quote-card">
+      <span class="tag policy">天下</span>
+      <div class="quote-text">「立天下之正位，行天下之大道。」</div>
+      <div class="quote-source">—— 典籍：《孟子·滕文公下》｜在阿拉伯国家联盟总部的演讲（2016年1月21日）</div>
+      <div class="usage-tip"><strong>释义：</strong>站在天下最公正的位置，走天下最光明的道路。<br><strong>现实意义：</strong>中国外交的君子之道——大国外交、国际公义类论述的收束句。</div>
+    </div>
+  </div>
+
+  <!-- ============ 使用技巧 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💡</span>使用技巧</div>
+    <div class="tip-card"><strong>1. 一段一典，引完即接现实。</strong>每个分论点只用一句典故，紧跟着接一个现实论据（政策、数据、案例），"典—事—理"三步走，切忌连堆三句古文显得掉书袋。</div>
+    <div class="tip-card"><strong>2. 按题目主题"对号入座"。</strong>民本题用"民惟邦本"，改革题用"穷则变"，风险题用"备豫不虞"，人才题用"为政之要，惟在得人"——用错典比不用典更伤分，考前按本页主题分类各记熟一两条即可覆盖大多数立意。</div>
+    <div class="tip-card"><strong>3. 政策金句与古文典故搭配用。</strong>古文放分论点开头增底蕴，紧跟一句总书记讲话原文（如"备豫不虞，为国常道"）提升站位，一古一今互相印证，论证最稳。</div>
+    <div class="tip-card"><strong>4. 化用比照抄更显功力。</strong>考场紧张记不全原文时，可用"古人讲""正如先贤所言"引半句＋自己转述半句，但典籍出处不能张冠李戴——拿不准出处的宁可不用。</div>
+  </div>
+
+  </div>
+
+  <div class="foot">📚 素材专栏 · 第 1 期 · 习近平讲话文章用典主题汇编<br>依据《习近平用典》（人民日报出版社）等权威公开资料整理，仅供申论备考积累使用<br><a href="index.html" style="color:#7ab8bd;">‹ 返回精读站首页</a></div>
+</div>
+
+</body>
+</html>
