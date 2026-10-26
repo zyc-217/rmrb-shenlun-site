@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 锻造“实现愿景的非凡能力”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>锻造“实现愿景的非凡能力”</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·党建引领·制度优势·新型举国体制·高质量发展 | 2026年10月26日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——党和人民赢得了强党强国的历史主动① ｜ 主题：全面从严治党／党建引领／党的领导力／制度优势／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">党建引领</span>
+      <span class="tag-item">党的领导力</span>
+      <span class="tag-item">组织力</span>
+      <span class="tag-item">执行力</span>
+      <span class="tag-item">新型举国体制</span>
+      <span class="tag-item">制度优势</span>
+      <span class="tag-item">新能源产业</span>
+      <span class="tag-item">战略判断</span>
+      <span class="tag-item">政治监督</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／党建引领／制度优势／新型举国体制／高质量发展</b>”等主题；本文<b>“设问破题—领袖定调—三维展开—使命收束”</b>的论证链，是写“党的领导是最大优势”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“实现愿景的非凡能力何以锻造”</b>——表层是谈新能源产业从“三头在外”到“4个第一”的逆袭，深层是揭示这种能力源自全面从严治党：以战略判断力把方向、以组织力聚资源、以执行力抓落实，把党的领导优势转化为发展胜势。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>三头在外与4个第一</b>”“<b>正风肃纪与锻造领导力</b>”“<b>胸有宏图与踏石留印</b>”“<b>蓝图与现实</b>”等多组辩证，是写<b>破与立／知与行／制与治</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于持之以恒推进全面从严治党、锻造坚强领导力的倡议书”等公文素材。对策要点：<b>强化战略判断，从国家发展和安全战略高度审时度势，为高质量发展绘蓝图、明方向</b>／<b>健全组织体系，发挥“总揽全局、协调各方”领导核心作用，以新型举国体制凝聚资源力量</b>／<b>锤炼高效执行，完善重大决策落实机制、强化政治监督，以钉钉子精神推动部署落地见效</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（设问破题—领袖定调—三维展开—使命收束）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以假期出行新能源景象与“三头在外”到“4个第一”的逆袭破题，借外国专家感叹引出“实现愿景的非凡能力”，设问“何以锻造”（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">引习近平总书记语录界定关键在党——“管党治党越有效，经济社会发展的保障就越有力”；点明全面从严治党使党的政治领导力、思想引领力、群众组织力、社会号召力显著增强（第五至六段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：锻造“实现愿景的非凡能力”，根本在持之以恒推进全面从严治党，以战略判断力、组织力、执行力把党的领导优势转化为发展胜势（总论点色块，前接定调铺陈）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“非凡能力”首先体现在“把方向、谋大局、作决策”的战略判断力</b>——以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“非凡能力”体现在党“总揽全局、协调各方”的强大组织力</b>——以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“非凡能力”还体现在“看准了就抓紧干”的高效执行力</b>——以务实担当、善作善成，把宏伟蓝图一步步变成美好现实（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“把党建设得更加坚强有力”</b>：全面从严治党不止于正风肃纪，更重塑精气神、锻造领导力，支撑办成许多大事，党和人民赢得强党强国的历史主动。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“设问破题—领袖定调—三维展开—使命收束”</b>结构：以逆袭现象破题，用“战略判断—组织统领—高效执行”三层递进，是申论<b>“以事证理、由点到面”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>假期出行，一路新景：车行山间，山坡上成片的光伏板映入眼帘；逛车市，新能源品牌车型琳琅满目……桩桩件件，折射一个国家的能源之变。今天，我国新能源产业在规模、利用、产业链、成本竞争力上夺得<span class="highlight-green">4个“全球第一”</span>。</p>
+
+      <p>时针回拨10余年，这一切还难以想象。彼时，我国新能源产业技术、设备、市场“三头在外”，处处受制于人。<span class="highlight-purple">从“三头在外”到“4个第一”</span>，靠什么逆袭？</p>
+
+      <p><span class="highlight-gold">“中国共产党拥有实现愿景的非凡能力。”</span>肯尼亚国际问题专家斯蒂芬·恩代格瓦如此感叹。</p>
+
+      <p>“实现愿景的非凡能力”，何以锻造？答案就藏在新时代全面从严治党的实践里。</p>
+
+      <p>办好中国的事情，关键在党。习近平总书记强调：<span class="highlight-gold">“管党治党越有效，经济社会发展的保障就越有力。”</span></p>
+
+      <p>新时代以来，驰而不息推进<span class="highlight-blue">全面从严治党</span>，党的<span class="highlight-blue">政治领导力、思想引领力、群众组织力、社会号召力</span>显著增强。我国新能源产业的跃升，正是观察这种“非凡能力”的生动样本。</p>
+
+      <div class="thesis">【总论点】锻造“实现愿景的非凡能力”，根本在持之以恒推进<span class="highlight-blue">全面从严治党</span>。以“把方向、谋大局、作决策”的战略判断力、“总揽全局、协调各方”的组织力、“看准了就抓紧干”的执行力，我们党把各方面资源汇集起来、力量凝聚起来，<span class="highlight-purple">把党的领导优势转化为发展胜势</span>。</div>
+
+      <div class="sub-thesis">【分论点一】“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力——以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图。</div>
+
+      <p>“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力。</p>
+
+      <p>“我们率先开发风电、光伏，走的路现在看是有前瞻性的”。前瞻性布局背后，是<span class="highlight-blue">“从国家发展和安全的战略高度，审时度势，借势而为”</span>。</p>
+
+      <p>创造性提出<span class="highlight-blue">“四个革命、一个合作”能源安全新战略</span>；作出“发展新能源汽车是我国从汽车大国迈向汽车强国的必由之路”的战略判断；强调“加快新型能源体系建设，推动新增用电主要由新能源发电满足”……</p>
+
+      <p>沿着习近平总书记指引的方向，我们深入推进能源革命，一张蓝图绘到底、一步一步向前进。今天，中国在新能源赛道一马当先，正是源于党中央在重大关头、重要时刻展现的强大判断力、决策力。</p>
+
+      <div class="sub-thesis">【分论点二】“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力——以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势。</div>
+
+      <p>“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力。</p>
+
+      <p>茫茫戈壁，光伏板铺展成蓝色海洋；输电线纵横千里，奔涌绿色动能。壮阔图景背后，是一套高度复杂的系统在高效运转。</p>
+
+      <p>全国统一电力市场建设，需要打破深层次利益藩篱；特高压、储能等关键核心技术攻关，需要<span class="highlight-blue">新型举国体制</span>协同发力；<span class="highlight-green">“沙戈荒”大型风电光伏基地建设</span>，需要跨区域、跨部门的统筹调度……加快构建新型能源体系，<span class="highlight-blue">“中国之制”彰显显著优势</span>。</p>
+
+      <p>从加强党对能源工作的全面领导，到建立健全跨部门跨区域重大项目协调推进机制；从健全<span class="highlight-blue">新型举国体制</span>，到深化能源重点领域和关键环节改革……党充分发挥<span class="highlight-blue">“总揽全局、协调各方”</span>的领导核心作用，把各方面资源汇集起来、力量凝聚起来，我们的制度优势加快转化为发展胜势。</p>
+
+      <div class="sub-thesis">【分论点三】“非凡能力”，还体现在“看准了就抓紧干”的高效执行力——以务实担当、善作善成，把宏伟蓝图一步步变成美好现实。</div>
+
+      <p>“非凡能力”，还体现在“看准了就抓紧干”的高效执行力。</p>
+
+      <p>从完善推动党中央重大决策落实机制，强化<span class="highlight-blue">政治监督</span>，“确保令行禁止”；到深化整治重点领域腐败，清除妨碍战略落地的“中梗阻”；再到持续整治形式主义、官僚主义，推动党员干部以<span class="highlight-blue">钉钉子精神</span>抓落实……</p>
+
+      <p>我们党通过全面从严治党，锤炼了务实担当、善作善成的执行力。从一个个五年规划落地实施，到一项项部署开花结果，<span class="highlight-purple">胸有宏图、踏石留印</span>，党带领人民将宏伟蓝图一步步变成美好现实，书写了绿色转型的精彩答卷。</p>
+
+      <p><span class="highlight-purple">10余年砥砺淬炼，全面从严治党不止于正风肃纪、激浊扬清，更重塑了党的精气神、锻造了坚强的领导力。</span>这种领导力，支撑我们在脱贫攻坚中决战决胜，在科技攻关中突破围堵，在改革深水中蹚出新路，在风雨来袭时稳住大局，办成了许多过去想办而没有办成的大事，党和人民赢得了强党强国的历史主动。</p>
+
+      <p>新征程上，持之以恒推进全面从严治党，把党建设得更加坚强有力，<span class="highlight-gold">14亿多人民在党的旗帜下团结成“一块坚硬的钢铁”</span>，必将不断夺取新的更大胜利。</p>
+
+      <p class="byline">（人民日报2026年10月26日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·外国专家</span>
+      <p><b>“中国共产党拥有实现愿景的非凡能力”</b>（肯尼亚国际问题专家斯蒂芬·恩代格瓦）——写“党的领导能力”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·领袖定调</span>
+      <p><b>“管党治党越有效，经济社会发展的保障就越有力”</b>（习近平总书记）——写“党建与发展关系”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·团结</span>
+      <p><b>“14亿多人民在党的旗帜下团结成‘一块坚硬的钢铁’”</b>——写“团结奋斗”是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·逆袭</span>
+      <p><b>“从‘三头在外’到‘4个第一’，靠什么逆袭？”</b>——写“破局之道”是设问句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·淬炼</span>
+      <p><b>“全面从严治党不止于正风肃纪、激浊扬清，更重塑了党的精气神、锻造了坚强的领导力”</b>——写“党建深层价值”是辩证递进句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·知行</span>
+      <p><b>“胸有宏图、踏石留印，党带领人民将宏伟蓝图一步步变成美好现实”</b>——写“知行合一抓落实”是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·产业</span>
+      <p><b>“我国新能源产业在规模、利用、产业链、成本竞争力上夺得4个‘全球第一’”</b>——写“新能源跃升”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>“加快构建新型能源体系，‘中国之制’彰显显著优势”</b>——写“制度优势”是判断句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“设问破题—领袖定调—三维展开—使命收束”框架：以“三头在外”到“4个第一”的逆袭破题，用“战略判断—组织统领—高效执行”三层递进，以“团结成一块坚硬的钢铁”号召收束，适用于“党的领导是最大优势”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“把方向、谋大局、作决策的战略判断力”（前瞻布局／能源安全新战略／一张蓝图绘到底），分论点二写“总揽全局、协调各方的组织力”（统一电力市场／举国体制／跨区域统筹），分论点三写“看准了就抓紧干的执行力”（政治监督／清除中梗阻／钉钉子精神）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“持之以恒推进全面从严治党、锻造坚强领导力”拆成可操作举措：强化战略判断、从国家发展和安全战略高度审时度势；健全组织体系、以新型举国体制凝聚资源力量；锤炼高效执行、完善决策落实机制、强化政治监督、以钉钉子精神抓落实。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“三头在外与4个第一”“正风肃纪与锻造领导力”的辩证：先立“实现愿景的非凡能力源自全面从严治党”的立场，再以“不止于……更……”句式揭示深度，把党建话题写成有厚度、有力量的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“实现愿景的非凡能力”可作“党的领导”类文章的标题句；“把党的领导优势转化为发展胜势”可作分论点；“14亿多人民团结成一块坚硬的钢铁”可作收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「锻造“实现愿景的非凡能力”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力。以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图。<br>二是“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力。以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势。<br>三是“非凡能力”，还体现在“看准了就抓紧干”的高效执行力。以务实担当、善作善成，把宏伟蓝图一步步变成美好现实。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「锻造“实现愿景的非凡能力”，根本在持之以恒推进全面从严治党。以“把方向、谋大局、作决策”的战略判断力、“总揽全局、协调各方”的组织力、“看准了就抓紧干”的执行力，我们党把各方面资源汇集起来、力量凝聚起来，把党的领导优势转化为发展胜势。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力——以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图。<br>二是“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力——以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势。<br>三是“非凡能力”，还体现在“看准了就抓紧干”的高效执行力——以务实担当、善作善成，把宏伟蓝图一步步变成美好现实。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“中国共产党拥有实现愿景的非凡能力”（肯尼亚国际问题专家斯蒂芬·恩代格瓦）</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「锻造“实现愿景的非凡能力”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是强化战略判断，从国家发展和安全战略高度审时度势，为高质量发展绘蓝图、明方向。<br>二是健全组织体系，发挥“总揽全局、协调各方”领导核心作用，以新型举国体制凝聚资源力量。<br>三是锤炼高效执行，完善重大决策落实机制、强化政治监督，以钉钉子精神推动部署落地见效。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“中国共产党拥有实现愿景的非凡能力”（肯尼亚国际问题专家斯蒂芬·恩代格瓦）</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于锻造“实现愿景的非凡能力”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于锻造“实现愿景的非凡能力”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进锻造“实现愿景的非凡能力”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力——以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力——以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、“非凡能力”，还体现在“看准了就抓紧干”的高效执行力——以务实担当、善作善成，把宏伟蓝图一步步变成美好现实。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“中国共产党拥有实现愿景的非凡能力”（肯尼亚国际问题专家斯蒂芬·恩代格瓦）</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「锻造“实现愿景的非凡能力”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：锻造“实现愿景的非凡能力”<br><br>时代之问，呼唤破题之策。锻造“实现愿景的非凡能力”，是发展所需，也是民心所向。可从三个维度展开：“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力、“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力、“非凡能力”，还体现在“看准了就抓紧干”的高效执行力。<br><br>分论点一：“非凡能力”，首先体现在“把方向、谋大局、作决策”的战略判断力——以前瞻布局和强大判断力，为新能源革命指明方向、绘就蓝图。方向对了，路再远也能抵达。“中国共产党拥有实现愿景的非凡能力”（肯尼亚国际问题专家斯蒂芬·恩代格瓦）<br><br>分论点二：“非凡能力”，体现在党“总揽全局、协调各方”的强大组织力——以新型举国体制和跨部门统筹，把各方面资源力量凝聚为发展胜势。方法对了，事再难也能办成。“管党治党越有效，经济社会发展的保障就越有力”（习近平总书记）<br><br>分论点三：“非凡能力”，还体现在“看准了就抓紧干”的高效执行力——以务实担当、善作善成，把宏伟蓝图一步步变成美好现实。行百里者半九十。“14亿多人民在党的旗帜下团结成‘一块坚硬的钢铁’”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。锻造“实现愿景的非凡能力”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-26</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

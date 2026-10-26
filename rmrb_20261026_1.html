@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 促每笔账款按约兑现</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>促每笔账款按约兑现</h1>
+    <div class="meta">人民日报·人民时评 | 清欠账款·契约精神·营商环境·民营经济·法治保障 | 2026年10月26日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：清欠账款／契约精神／营商环境／多元解纷／源头预防／经济循环</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">清欠账款</span>
+      <span class="tag-item">契约精神</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">民营经济</span>
+      <span class="tag-item">中小企业</span>
+      <span class="tag-item">多元解纷</span>
+      <span class="tag-item">源头预防</span>
+      <span class="tag-item">法治保障</span>
+      <span class="tag-item">信用约束</span>
+      <span class="tag-item">经济循环</span>
+      <span class="tag-item">反不正当竞争</span>
+      <span class="tag-item">高质量发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>清欠账款／契约精神／营商环境／法治保障／经济循环</b>”等主题；本文<b>“现象破题—案例引路—三策展开—辩证收束”</b>的论证链，是写“守信固本、标本兼治”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“让每一笔企业账款按约兑现的意义”</b>——表层是谈治理拖欠、维护企业权益，深层是揭示须统筹源头预防与存量化解，以法治引领、以综治为抓手，为经济循环“活血化瘀”。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>时差与流失</b>”“<b>守约与违约</b>”“<b>止血与固本</b>”“<b>源头与存量</b>”等多组辩证，是写<b>标与本／破与立／法与治</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于治理拖欠企业账款、优化营商环境的对策建议”等。对策要点：<b>健全多元解纷机制，推广“法院+商会”模式，以“先解冻+分期付”倒逼诚信履约</b>／<b>强化源头法治保障，落实《保障中小企业款项支付条例》，以刚性准则校正不合理风险分担</b>／<b>推动标本兼治，改善融资服务、加强信用约束、将清欠成效纳入国企负责人绩效考核</b>／<b>提升弱势方议价维权能力，依法规制大型企业滥用优势地位拖欠账款</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（现象破题—案例引路—三策展开—辩证收束）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“账款拖欠=契约精神慢性流失”破题，点明产业链任一环卡壳都会阻滞流动性，让每笔账款按约兑现意义重大（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">案例</span><span class="text">引最高法、全国工商联第二批民营经济纠纷化解典型案例（10个案例），呈现实务化解思路（第三段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：治理拖欠不能止于“追讨”技术操作，须统筹源头预防与存量化解，以法治引领、以综治为抓手维护企业权益（总论点色块，前接案例铺陈）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“法院+商会”的多元解纷机制，给出务实答案</b>——以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>源头清欠的关键，在于提升弱势方的议价和维权能力</b>——以反不正当竞争法、支付条例把债权保障上升为刚性法治准则（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>清欠不能只是集中攻坚，还要走向标本兼治</b>——改善融资、信用约束、畅通解纷渠道，国企带头作表率（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“事后清欠是止血，源头守约才是固本”</b>：以法治综治为经济循环活血化瘀，增强中小企业拥抱未来的信心。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“现象破题—案例引路—三策展开—辩证收束”</b>结构：以拖欠现象破题，用“多元解纷—源头预防—标本兼治”三层递进，是申论<b>“以案说法、由事及理”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>账款拖欠，看似是资金往来出现“时差”，实则是<span class="highlight-purple">契约精神的慢性流失</span>。产业链上，任何一环出现资金卡壳，都可能导致全产业链流动性阻滞。让每一笔企业账款按约兑现，具有重要意义。</p>
+
+      <p>不久前，聚焦解决拖欠企业账款问题，最高人民法院、全国工商联联合发布第二批民营经济领域纠纷多元化解典型案例。从上游欠款层层传导，到付款条件引发争议，再到债权追索受阻，<span class="highlight-green">10个案例</span>给出可参考的化解思路。</p>
+
+      <p>守约得到鼓励，违约受到惩戒，交易各方才更有动力自觉履约。<span class="highlight-purple">现实中，合同约定的付款履行一再延宕，原因往往较为复杂。如果不能破除其中的共性梗阻，便容易出现“赢了官司却拿不到钱”的困局。</span>因此，治理拖欠，不能止于“追讨”的技术操作，还必须直面更根本的命题：如何统筹源头预防与存量化解，让企业权益得到有效维护。</p>
+
+      <div class="thesis">【总论点】让每一笔企业账款按约兑现，不能止于“追讨”的技术操作，而须<span class="highlight-blue">统筹源头预防与存量化解</span>，以<span class="highlight-blue">法治为引领</span>、以综治为抓手，把债权保障上升为刚性准则，切实维护企业合法权益。</div>
+
+      <div class="sub-thesis">【分论点一】“法院+商会”的多元解纷机制，给出了务实答案——以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约。</div>
+
+      <p>“法院+商会”的多元解纷机制，给出了务实答案。在某混凝土公司与某设计工程公司买卖合同纠纷调解案中，法院没有对拖欠企业资金“一冻了之”，而是以“先解冻+分期付”的思路，<span class="highlight-green">15天内促成双方和解</span>——既给困境企业留出喘息空间，又以严格的违约条款倒逼诚信履约。<span class="highlight-green">违约金减免52万余元</span>，以暂时让利换取履约恢复。司法机关划清合理的风险边界，商会组织快速厘清债务成因和责任比例，为调解提供现实依据，推动企业的合法债权真正兑现。</p>
+
+      <div class="sub-thesis">【分论点二】源头清欠的关键，在于提升弱势方的议价和维权能力——以反不正当竞争法、支付条例把债权保障上升为刚性法治准则。</div>
+
+      <p>也要看到，处于市场优势地位的企业，往往拥有更大议价空间，可以通过延长付款期限、附加回款条件等方式，将资金占用成本转移给交易相对方。中小企业为争取订单、维系合作，可能接受不尽合理的付款安排，自身融资能力却难以承受长期垫资的负担。</p>
+
+      <p>源头清欠的关键，在于提升弱势方的议价和维权能力。<span class="highlight-blue">反不正当竞争法</span>明确：“大型企业等经营者不得滥用自身资金、技术、交易渠道、行业影响力等方面的优势地位，要求中小企业接受明显不合理的付款期限、方式、条件和违约责任等交易条件，拖欠中小企业的货物、工程、服务等账款。”修订后的<span class="highlight-blue">《保障中小企业款项支付条例》</span>，对机关、事业单位和大型企业向中小企业支付款项的期限、方式及逾期责任作出具体规定。以明确的权利义务校正不合理的风险分担，把债权保障上升为刚性法治准则，有助于从根本上规范付款行为。</p>
+
+      <div class="sub-thesis">【分论点三】清欠不能只是集中攻坚，还要走向标本兼治——改善融资服务、加强信用约束、畅通解纷渠道，各级政府和国企带头作表率。</div>
+
+      <p>清欠不能只是集中攻坚，还要走向标本兼治。比如，改善融资服务可以缓解资金周转困难，规范行业管理、加强信用约束有利于纠正不合理账期，畅通纠纷化解渠道则能推动存量欠款依法清偿。目前，<span class="highlight-green">北京、湖南等多地</span>已将清欠成效纳入了国企负责人绩效考核。各级政府和国有企业，理应在清欠上带好头、作表率，助力构建良好<span class="highlight-blue">营商环境</span>。</p>
+
+      <p><span class="highlight-gold">事后清欠是“止血”，源头守约才是“固本”。</span>以法治为引领，以综治为抓手，持续化解账款拖欠问题，有益于为经济循环“活血化瘀”，也将增强中小企业拥抱未来的信心。</p>
+
+      <p class="byline">（人民日报2026年10月26日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·固本</span>
+      <p><b>“事后清欠是‘止血’，源头守约才是‘固本’”</b>——写“标本兼治”是辩证收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·法治</span>
+      <p><b>“以法治为引领，以综治为抓手，持续化解账款拖欠问题，有益于为经济循环‘活血化瘀’”</b>——写“法治综治”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·流失</span>
+      <p><b>“账款拖欠，看似是资金往来出现‘时差’，实则是契约精神的慢性流失”</b>——写“守信之重”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·履约</span>
+      <p><b>“守约得到鼓励，违约受到惩戒，交易各方才更有动力自觉履约”</b>——写“激励相容”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度·条例</span>
+      <p><b>“修订后的《保障中小企业款项支付条例》，对支付款项的期限、方式及逾期责任作出具体规定”</b>——写“源头预防”是制度论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·案例</span>
+      <p><b>“最高人民法院、全国工商联联合发布第二批民营经济领域纠纷多元化解典型案例，10个案例给出可参考的化解思路”</b>——写“多元解纷”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·调解</span>
+      <p><b>“以‘先解冻+分期付’的思路，15天内促成双方和解，违约金减免52万余元”</b>——写“务实解纷”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·考核</span>
+      <p><b>“北京、湖南等多地已将清欠成效纳入了国企负责人绩效考核”</b>——写“硬化约束”是数据论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“现象破题—案例引路—三策展开—辩证收束”框架：以“时差与流失”破题，用“多元解纷—源头预防—标本兼治”三层递进，以“止血与固本”辩证收束，适用于“守信固本、优化营商环境”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“法院+商会的多元解纷机制”（先解冻／分期付／违约条款倒逼），分论点二写“提升弱势方议价维权能力”（反不正当竞争法／支付条例／刚性准则），分论点三写“走向标本兼治”（融资服务／信用约束／国企表率）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“治理拖欠企业账款、优化营商环境”拆成可操作举措：健全多元解纷机制、推广法院+商会模式；强化源头法治保障、落实支付条例；推动标本兼治、改善融资与信用约束、将清欠纳入国企考核；提升弱势方维权能力、规制滥用优势地位。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“时差与流失”“止血与固本”的辩证：先立“治理拖欠须标本兼治”的立场，再以“事后……源头才是……”句式揭示深度，把营商环境话题写成有定力、有分寸的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“事后清欠是止血，源头守约才是固本”可作“标本兼治”类文章的标题句；“以法治为引领，以综治为抓手”可作分论点；“为经济循环活血化瘀”可作收束句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「促每笔账款按约兑现」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“法院+商会”的多元解纷机制，给出了务实答案。以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约。<br>二是源头清欠的关键，在于提升弱势方的议价和维权能力。以反不正当竞争法、支付条例把债权保障上升为刚性法治准则。<br>三是清欠不能只是集中攻坚，还要走向标本兼治。改善融资服务、加强信用约束、畅通解纷渠道，各级政府和国企带头作表率。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「让每一笔企业账款按约兑现，不能止于“追讨”的技术操作，而须统筹源头预防与存量化解，以法治为引领、以综治为抓手，把债权保障上升为刚性准则，切实维护企业合法权益。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“法院+商会”的多元解纷机制，给出了务实答案——以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约。<br>二是源头清欠的关键，在于提升弱势方的议价和维权能力——以反不正当竞争法、支付条例把债权保障上升为刚性法治准则。<br>三是清欠不能只是集中攻坚，还要走向标本兼治——改善融资服务、加强信用约束、畅通解纷渠道，各级政府和国企带头作表率。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“事后清欠是‘止血’，源头守约才是‘固本’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「促每笔账款按约兑现」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是健全多元解纷机制，推广“法院+商会”模式，以“先解冻+分期付”倒逼诚信履约。<br>二是强化源头法治保障，落实《保障中小企业款项支付条例》，以刚性准则校正不合理风险分担。<br>三是推动标本兼治，改善融资服务、加强信用约束、将清欠成效纳入国企负责人绩效考核。<br>四是提升弱势方议价维权能力，依法规制大型企业滥用优势地位拖欠账款。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“事后清欠是‘止血’，源头守约才是‘固本’”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于促每笔账款按约兑现的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于促每笔账款按约兑现的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进促每笔账款按约兑现，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、“法院+商会”的多元解纷机制，给出了务实答案——以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、源头清欠的关键，在于提升弱势方的议价和维权能力——以反不正当竞争法、支付条例把债权保障上升为刚性法治准则。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、清欠不能只是集中攻坚，还要走向标本兼治——改善融资服务、加强信用约束、畅通解纷渠道，各级政府和国企带头作表率。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“事后清欠是‘止血’，源头守约才是‘固本’”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「促每笔账款按约兑现」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：促每笔账款按约兑现<br><br>时代之问，呼唤破题之策。促每笔账款按约兑现，是发展所需，也是民心所向。可从三个维度展开：“法院+商会”的多元解纷机制，给出了务实答案、源头清欠的关键，在于提升弱势方的议价和维权能力、清欠不能只是集中攻坚，还要走向标本兼治。<br><br>分论点一：“法院+商会”的多元解纷机制，给出了务实答案——以“先解冻+分期付”留喘息空间，以严格违约条款倒逼诚信履约。方向对了，路再远也能抵达。“事后清欠是‘止血’，源头守约才是‘固本’”<br><br>分论点二：源头清欠的关键，在于提升弱势方的议价和维权能力——以反不正当竞争法、支付条例把债权保障上升为刚性法治准则。方法对了，事再难也能办成。“以法治为引领，以综治为抓手，持续化解账款拖欠问题，有益于为经济循环‘活血化瘀’”<br><br>分论点三：清欠不能只是集中攻坚，还要走向标本兼治——改善融资服务、加强信用约束、畅通解纷渠道，各级政府和国企带头作表率。行百里者半九十。“账款拖欠，看似是资金往来出现‘时差’，实则是契约精神的慢性流失”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。促每笔账款按约兑现是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-26</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
