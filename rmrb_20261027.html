@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 一江碧水悟思想</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>一江碧水悟思想</h1>
+    <div class="meta">人民日报·评论员观察 | 理论武装·思想引领力·习近平生态文明思想·全面从严治党·强党强国 | 2026年10月27日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——党和人民赢得了强党强国的历史主动② ｜ 主题：理论武装／思想伟力／习近平生态文明思想／绿水青山就是金山银山／强党强国</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">理论武装</span>
+      <span class="tag-item">思想引领力</span>
+      <span class="tag-item">习近平生态文明思想</span>
+      <span class="tag-item">绿水青山就是金山银山</span>
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">思想建党制度治党</span>
+      <span class="tag-item">党政同责</span>
+      <span class="tag-item">河湖长制</span>
+      <span class="tag-item">中央环保督察</span>
+      <span class="tag-item">强党强国</span>
+      <span class="tag-item">历史主动</span>
+      <span class="tag-item">第二个结合</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>理论武装／思想伟力／生态文明／全面从严治党／强党强国</b>”等主题；本文<b>“由水及理、以小见大”</b>的论证链，是写“思想是力量、理论是武器”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“一江碧水之变何以发生”</b>——表层是河湖治理成效，深层是揭示思想伟力、理论武装是赢得强党强国历史主动的根本。</span></div>
+        <div class="analysis-item"><span class="label">哲理思辨</span><span class="text">“<b>水至柔与撼山岳</b>”“<b>靠湖吃湖与生态优先</b>”“<b>思想无形与实干有形</b>”等多组辩证，是写<b>柔与刚／知与行／形与神</b>类作文的现成素材。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于加强党的思想建设、以理论武装凝心铸魂的对策建议”等。对策要点：<b>强化理论武装，坚持用党的创新理论凝心铸魂，筑牢信仰之基、补足精神之钙、把稳思想之舵</b>／<b>坚持思想建党与制度治党同向发力，健全党政同责、一岗双责、河湖长制、环保督察等制度体系</b>／<b>抓住“关键少数”，以钉钉子精神推动决策部署落地见效</b>。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（由水及理、以小见大——思想指引→制度保障→强党强国）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以南方小城一溪碧水与全国水质数据破题，引出“水环境之变可感可知、有目共睹”（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">点明思想是行动的先导，新时代以来总书记亲自谋划、亲自部署、亲自推动加强党的思想建设（第五至六段）。</span></div>
+        <div class="analysis-item"><span class="label">立论</span><span class="text"><b>点亮总论点</b>：一江碧水之变正是思想伟力的生动体现，坚持用党的创新理论凝心铸魂，为赢得强党强国历史主动提供“营养剂”“金钥匙”（总论点色块，前接定调铺陈）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“思想是行动的先导”</b>——习近平生态文明思想深入人心，绿色低碳发展渐成自觉，江河命运随之转向（前接分论点色块，含洱海、一湖两海案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“坚持思想建党和制度治党同向发力”</b>——从党政同责、河湖长制到中央环保督察，党的领导如臂使指、成就江河安澜（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“注重强健自身，始终充满生机活力”</b>是党的优秀特质——理论武装提供“营养剂”“金钥匙”，党和人民赢得强党强国历史主动（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text"><b>落到“让理论的伟力化为实干的动力”</b>：持之以恒推进全面从严治党，抓好思想教育这个根本，道路越走越宽广。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用<b>“由水及理、以小见大”</b>结构：以一溪碧水破题，用“思想指引—制度保障—强党强国”三层递进，是申论<b>“由事及理、情理交融”</b>的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>坚持把加强理论武装摆在管党治党的突出位置，党的<span class="highlight-blue">思想引领力</span>不断增强，为改造主客观世界提供了“营养剂”“金钥匙”。</p>
+
+      <p>前段时间，在南方小城漫步，撞见一溪碧水。蹲下去洗把手，清冽从指缝钻出，倦意顿时散了大半。</p>
+
+      <p>长江水清岸绿、黄河含沙量减少，<span class="highlight-green">2025年全国地表水Ⅰ—Ⅲ类水质断面比例达到91.4%</span>，为有监测记录以来最好水平；<span class="highlight-green">较大面积农村黑臭水体治理率达到98%以上</span>……从身边的小溪小流，到奔腾不息的大江大河，水环境之变，可感可知，有目共睹。</p>
+
+      <p><span class="highlight-gold">问渠那得清如许？为有源头活水来。</span></p>
+
+      <div class="thesis">【总论点】一江碧水之变，正是<span class="highlight-purple">思想伟力</span>的生动体现。新时代以来，坚持用党的创新理论凝心铸魂，党的<span class="highlight-blue">思想引领力</span>不断增强，为改造主客观世界、赢得<span class="highlight-blue">强党强国</span>的历史主动提供了“营养剂”“金钥匙”。</div>
+
+      <div class="sub-thesis">【分论点一】思想是行动的先导——<span class="highlight-blue">习近平生态文明思想</span>深入人心，绿色低碳发展渐成自觉，“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。</div>
+
+      <p>思想是行动的先导。新时代以来，着眼于不断增强党的政治领导力、思想引领力、群众组织力、社会号召力，习近平总书记亲自谋划、亲自部署、亲自推动加强党的思想建设。</p>
+
+      <p>坚持用党的创新理论凝心铸魂，广大党员、干部在学思践悟中筑牢信仰之基、补足精神之钙、把稳思想之舵，全党思想上更加统一、政治上更加团结、行动上更加一致。</p>
+
+      <p>河湖新生，正是思想伟力的生动体现。近年来，<span class="highlight-blue">习近平生态文明思想</span>深入人心，绿色低碳发展渐成自觉。在“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。</p>
+
+      <p>不妨以两个例子观之。</p>
+
+      <p>云南大理，因流域内污水无序排放，洱海这颗“高原明珠”一度蒙尘。</p>
+
+      <p>2015年1月，习近平总书记在云南考察时，听取洱海保护情况介绍，强调“经济要发展，但不能以破坏生态环境为代价”。</p>
+
+      <p>思想指引方向，校正发展航向。<span class="highlight-green">2000多家餐饮和民宿客栈关停整改、1806户居民生态搬迁、5743公里污水收集管网建成投用</span>……“人退湖进”中，洱海重焕新彩，<span class="highlight-green">27条入湖河流水质优良率达100%</span>。</p>
+
+      <p>内蒙古呼伦湖、乌梁素海、岱海，被称为“一湖两海”，曾因湖面萎缩、水质恶化，沦为“生态伤疤”。</p>
+
+      <p>近日，在内蒙古乌兰察布考察时，习近平总书记来到位于察哈尔右翼前旗的黄旗海边。展板上，一组对比图，定格下“一湖两海”治理前后的“旧貌”和“新颜”。</p>
+
+      <p>总书记指出：“我对内蒙古的几个重要湖泊治理都提出过要求。内蒙古有这些湖很难得，要把它们真正作为宝贵资源，好好加以保护。”</p>
+
+      <p>党的十八大以来，总书记曾多次提及“一湖两海”污染防治问题，强调“要对症下药，分别制定治理方案，既急不得，也慢不得，要按规律办事”。</p>
+
+      <p>深悟“<span class="highlight-blue">绿水青山就是金山银山</span>”的理念，践行“<span class="highlight-blue">统筹山水林田湖草沙系统治理</span>”的思路，当地转变观念，“一湖一策”精准施治。</p>
+
+      <p>从“靠湖吃湖”到生态优先，从“就湖论湖”到全流域治理，从“九龙治水”到协调统一……经过多年综合治理，曾经濒临干涸的河湖重现鱼儿畅游，曾经污染严重的“酱油湖”再现碧波荡漾。<span class="highlight-purple">生态之美厚植绿色根基，做强生态旅游、发展绿色能源</span>，今天，河湖之畔，高质量发展与高水平保护协同共进。</p>
+
+      <div class="sub-thesis">【分论点二】坚持<span class="highlight-blue">思想建党和制度治党同向发力</span>，更为“河湖新生”提供坚强保障——既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。</div>
+
+      <p>坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障。从建立环境保护“<span class="highlight-blue">党政同责</span>”和“<span class="highlight-blue">一岗双责</span>”制度，到实施<span class="highlight-blue">河湖长制</span>，再到建立<span class="highlight-blue">中央生态环境保护督察</span>制度……既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。</p>
+
+      <div class="sub-thesis">【分论点三】“注重强健自身，始终充满生机活力”是党的优秀特质——持之以恒推进<span class="highlight-blue">全面从严治党</span>，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广。</div>
+
+      <p>又何止一泓碧水。“注重强健自身，始终充满生机活力”，是我们党的优秀特质。新时代以来，坚持把加强理论武装摆在管党治党的突出位置，党的思想引领力不断增强，为改造主客观世界提供了“营养剂”“金钥匙”，<span class="highlight-purple">党和国家事业取得历史性成就、发生历史性变革，党和人民赢得强党强国的历史主动</span>。</p>
+
+      <p>持之以恒纠“四风”树新风，筑牢拒腐防变思想防线；“<span class="highlight-blue">第二个结合</span>”带来又一次思想解放，“人文经济学”在实践中破题……</p>
+
+      <p><span class="highlight-gold">水至柔，而润物无声，滴穿顽石；思想无形，却春风化雨，撼动山岳。</span>持之以恒推进<span class="highlight-blue">全面从严治党</span>，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广，我们的事业必将越来越兴旺。</p>
+
+      <p class="byline">（人民日报2026年10月27日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·古诗</span>
+      <p><b>“问渠那得清如许？为有源头活水来”</b>——写“思想源泉／源头活水”是比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·领袖定调</span>
+      <p><b>“经济要发展，但不能以破坏生态环境为代价”</b>（习近平总书记）——写“发展与保护”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·转变</span>
+      <p><b>“从‘靠湖吃湖’到生态优先，从‘就湖论湖’到全流域治理，从‘九龙治水’到协调统一”</b>——写“系统治理”是排比递进句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>“从建立环境保护‘党政同责’和‘一岗双责’制度，到实施河湖长制，再到建立中央生态环境保护督察制度”</b>——写“制度治党／生态文明制度”是制度论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·哲理</span>
+      <p><b>“水至柔，而润物无声，滴穿顽石；思想无形，却春风化雨，撼动山岳”</b>——写“思想力量”是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·强党</span>
+      <p><b>“注重强健自身，始终充满生机活力，是我们党的优秀特质”</b>——写“党的自我革命”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·金钥匙</span>
+      <p><b>“坚持把加强理论武装摆在管党治党的突出位置……为改造主客观世界提供了‘营养剂’‘金钥匙’”</b>——写“理论武装”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·水质</span>
+      <p><b>“2025年全国地表水Ⅰ—Ⅲ类水质断面比例达到91.4%，为有监测记录以来最好水平”</b>——写“生态文明成效”是数据论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学本文“由水及理、以小见大”框架：以一溪碧水、一湖新颜破题，用“思想指引—制度保障—强党强国”三层递进，适用于“思想伟力／理论武装”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用本文三组：分论点一写“思想是行动的先导”（生态文明思想／根本转变／江河转向），分论点二写“思想建党与制度治党同向发力”（党政同责／河湖长制／环保督察），分论点三写“注重强健自身”（理论武装／营养剂金钥匙／历史主动）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“加强党的思想建设、以理论武装赢得历史主动”拆成举措：强化理论武装、用党的创新理论凝心铸魂；坚持思想建党与制度治党同向发力、健全党政同责等制度；抓住“关键少数”、以钉钉子精神推动部署落地。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学本文“靠湖吃湖与生态优先”“九龙治水与协调统一”的辩证：先立“系统观念、整体保护”立场，再以“从…到…”句式揭示转变，把生态治理写成有厚度论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“思想的伟力，化作实干的动力”可作“知行合一”类分论点；“水至柔而润物无声”可作“柔中带刚”类文章引言；“营养剂、金钥匙”可作“理论武装”类标题句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「一江碧水悟思想」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是思想是行动的先导。习近平生态文明思想深入人心，绿色低碳发展渐成自觉，“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。<br>二是坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障。既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。<br>三是“注重强健自身，始终充满生机活力”是党的优秀特质。持之以恒推进全面从严治党，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「一江碧水之变，正是思想伟力的生动体现。新时代以来，坚持用党的创新理论凝心铸魂，党的思想引领力不断增强，为改造主客观世界、赢得强党强国的历史主动提供了“营养剂”“金钥匙”。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是思想是行动的先导——习近平生态文明思想深入人心，绿色低碳发展渐成自觉，“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。<br>二是坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障——既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。<br>三是“注重强健自身，始终充满生机活力”是党的优秀特质——持之以恒推进全面从严治党，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“问渠那得清如许？为有源头活水来”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「一江碧水悟思想」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是强化理论武装，坚持用党的创新理论凝心铸魂，筑牢信仰之基、补足精神之钙、把稳思想之舵。<br>二是坚持思想建党与制度治党同向发力，健全党政同责、一岗双责、河湖长制、环保督察等制度体系。<br>三是抓住“关键少数”，以钉钉子精神推动决策部署落地见效。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“问渠那得清如许？为有源头活水来”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于一江碧水悟思想的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于一江碧水悟思想的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进一江碧水悟思想，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、思想是行动的先导——习近平生态文明思想深入人心，绿色低碳发展渐成自觉，“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障——既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、“注重强健自身，始终充满生机活力”是党的优秀特质——持之以恒推进全面从严治党，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“问渠那得清如许？为有源头活水来”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「一江碧水悟思想」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：一江碧水悟思想<br><br>时代之问，呼唤破题之策。一江碧水悟思想，是发展所需，也是民心所向。可从三个维度展开：思想是行动的先导、坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障、“注重强健自身，始终充满生机活力”是党的优秀特质。<br><br>分论点一：思想是行动的先导——习近平生态文明思想深入人心，绿色低碳发展渐成自觉，“思想认识和具体行动上来一个根本转变”，江河的命运随之转向。方向对了，路再远也能抵达。“问渠那得清如许？为有源头活水来”<br><br>分论点二：坚持思想建党和制度治党同向发力，更为“河湖新生”提供坚强保障——既从思想教育上严起来，又从制度上严起来，党的领导如臂使指、党员干部担当作为，成就江河安澜、海晏河清。方法对了，事再难也能办成。“经济要发展，但不能以破坏生态环境为代价”（习近平总书记）<br><br>分论点三：“注重强健自身，始终充满生机活力”是党的优秀特质——持之以恒推进全面从严治党，抓好思想教育这个根本，让理论的伟力化为实干的动力，我们的道路定会越走越宽广。行百里者半九十。“从‘靠湖吃湖’到生态优先，从‘就湖论湖’到全流域治理，从‘九龙治水’到协调统一”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。一江碧水悟思想是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-27</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
