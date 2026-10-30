@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大作文36天 · 每日一篇真文精读课表</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#f4f6f9; color:#2c3e50; padding-bottom:70px; }
+  .hero { background:linear-gradient(135deg,#b71c1c,#d32f2f); color:#fff; padding:56px 16px 16px; }
+  .hero h1 { font-size:19px; margin-bottom:4px; }
+  .hero .sub { font-size:12.5px; opacity:.92; line-height:1.6; }
+  .count { display:flex; gap:10px; margin-top:12px; }
+  .count .box { background:rgba(255,255,255,.15); border-radius:10px; padding:8px 12px; text-align:center; flex:1; }
+  .count .num { font-size:22px; font-weight:700; }
+  .count .lbl { font-size:11px; opacity:.85; }
+  .prog-wrap { background:#fff; margin:12px 12px 0; border-radius:12px; padding:12px 14px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  .prog-head { display:flex; justify-content:space-between; font-size:12.5px; color:#666; margin-bottom:6px; }
+  .prog-bar { height:10px; background:#eceff1; border-radius:6px; overflow:hidden; }
+  .prog-fill { height:100%; background:linear-gradient(90deg,#43a047,#66bb6a); border-radius:6px; transition:width .4s; }
+  .formula { background:#fff8e1; border-left:4px solid #fbc02d; margin:12px 12px 0; border-radius:0 10px 10px 0; padding:11px 13px; font-size:12.5px; line-height:1.8; color:#5d4037; }
+  .formula b { color:#b71c1c; }
+  .week-head { margin:18px 12px 8px; }
+  .week-head h2 { font-size:15.5px; color:#b71c1c; padding-left:8px; border-left:4px solid #b71c1c; }
+  .week-head p { font-size:12px; color:#78909c; margin:4px 0 0 12px; line-height:1.6; }
+  .day { background:#fff; margin:10px 12px; border-radius:12px; padding:13px 14px; box-shadow:0 1px 4px rgba(0,0,0,.06); border:1px solid #eceff1; }
+  .day.today { border:2px solid #d32f2f; }
+  .day.done { opacity:.62; }
+  .day-top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .d-date { font-weight:700; font-size:14.5px; color:#37474f; }
+  .d-wd { font-size:11.5px; color:#90a4ae; }
+  .d-type { font-size:10.5px; padding:2px 8px; border-radius:10px; color:#fff; }
+  .t-zuowen { background:#d32f2f; } .t-qing { background:#7e57c2; } .t-chang { background:#546e7a; }
+  .t-shou { background:#e65100; }
+  .d-title { margin-top:7px; font-size:14.5px; font-weight:600; color:#263238; line-height:1.5; }
+  .d-quote { margin-top:5px; font-size:12.5px; color:#6d4c41; background:#efebe9; border-radius:6px; padding:6px 9px; line-height:1.6; }
+  .d-tags { margin-top:7px; display:flex; flex-wrap:wrap; gap:5px; }
+  .d-tags span { background:#e8f5e9; color:#2e7d32; font-size:10.5px; padding:2px 8px; border-radius:10px; }
+  .drill { margin-top:9px; background:#f0f7ff; border-left:3px solid #4a90e2; border-radius:0 8px 8px 0; padding:9px 11px; }
+  .drill b { font-size:12.5px; color:#1565c0; }
+  .drill p { font-size:12.5px; color:#455a64; line-height:1.7; margin-top:3px; }
+  .btns { margin-top:10px; display:flex; gap:8px; }
+  .btn-open { flex:1; text-align:center; background:#d32f2f; color:#fff; text-decoration:none; font-size:13px; padding:9px 0; border-radius:8px; font-weight:600; }
+  .btn-done { flex:1; text-align:center; background:#eceff1; color:#546e7a; border:none; font-size:13px; padding:9px 0; border-radius:8px; cursor:pointer; font-weight:600; }
+  .day.done .btn-done { background:#c8e6c9; color:#2e7d32; }
+  .day.done .d-title { text-decoration:line-through; }
+  .bottom-tip { text-align:center; font-size:11px; color:#b0bec5; margin-top:20px; padding:0 20px; line-height:1.7; }
+  nav { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:1px solid #e0e0e0; display:flex; }
+  nav a { flex:1; text-align:center; padding:11px 0; font-size:12.5px; color:#546e7a; text-decoration:none; font-weight:600; }
+</style>
+</head>
+<body>
+<a href="index.html" title="‹ 返回精读站首页" style="position:fixed;top:10px;left:10px;z-index:99;width:34px;height:34px;line-height:34px;text-align:center;background:rgba(196,30,58,.88);color:#fff;border-radius:50%;font-size:20px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.25);">‹</a>
+<div class="hero">
+  <h1>大作文36天 · 每日一篇真文精读</h1>
+  <div class="sub">教材：你精读站的35篇人民日报评论（全是真文，点开即读全文+五板块解析）<br>目标：12月5日笔试前，立意会挂靠、文风像材料、论证有链条</div>
+  <div class="count">
+    <div class="box"><div class="num" id="cd">--</div><div class="lbl">距笔试天数</div></div>
+    <div class="box"><div class="num" id="prog">0/35</div><div class="lbl">已完成</div></div>
+    <div class="box"><div class="num" id="zuowen">0/5</div><div class="lbl">实写作文</div></div>
+  </div>
+</div>
+
+<div class="prog-wrap">
+  <div class="prog-head"><span>总进度</span><span id="progPct">0%</span></div>
+  <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+</div>
+
+<div class="formula">
+  <b>每日固定流程（45分钟，作文日100分钟）：</b>① 打开当日文章读全文（20min）→ ② 完成当日专项（下方蓝色框，15-20min）→ ③ 摘3句金句+5个规范词进自己的库（5min）。周六加70分钟实写作文；周日是模考日，只做15分钟轻量任务。
+</div>
+
+<div id="content"></div>
+
+<div class="bottom-tip">进度打卡保存在本机浏览器 · 文章链接指向本地精读站（automation 项目 site 目录）<br>若链接打不开，说明精读页被移动了，找我重新对路径</div>
+
+<nav><a href="#top" onclick="window.scrollTo(0,0)">顶部</a><a href="#" onclick="toggleOnly();return false;">只看未完成</a></nav>
+
+<script>
+const DAYS = [{"date": "10-31", "week": "w1", "type": "作文日", "extra": "摸底大作文：民生治理类（70分钟限时，只定基准不评对错）", "title": "民生账本里的政绩观（评论员观察）", "file": "rmrb_20260408.html", "tags": ["民生", "政绩观", "系统性", "协同性", "久久为功", "以人民为中心", "高质量发展", "城乡融合"], "quote": "为民造福是最大政绩", "drill_name": "实写作文日", "drill": "摸底大作文：民生治理类（70分钟限时，只定基准不评对错）"}, {"date": "11-01", "week": "w1", "type": "轻量日", "extra": "模考日：只做15分钟——把这篇的金句默写2遍+记5个规范词", "title": "\"颗粒度\"更细，幸福度更高（人民时评）", "file": "rmrb_20260114.html", "tags": ["民生改善", "以人民为中心", "精细化治理", "绣花功夫", "新就业群体", "适老化改造", "养老服务", "就近就业"], "quote": "民生无小事，枝叶总关情", "drill_name": "模考日轻量", "drill": "模考日：只做15分钟——把这篇的金句默写2遍+记5个规范词"}, {"date": "11-02", "week": "w1", "type": "常规日", "extra": null, "title": "“响应度”更高，解民忧更及时（人民时评）", "file": "rmrb_20260122.html", "tags": ["基层治理", "民生保障", "响应度", "主动作为", "数字赋能", "马上就办", "作风建设", "预见性治理"], "quote": "数字时代保障和改善民生必须兼具速度与温度，\"响应度\"是一个重要维度", "drill_name": "立意拆解日", "drill": "读完全文后，用一句话写下：本文的总论点是什么、挂靠到了哪个中央精神/大主题。再反推：如果考题是\"××\"，这个挂靠能不能迁移？写50字。"}, {"date": "11-03", "week": "w1", "type": "常规日", "extra": null, "title": "一根热线，串起治理新路", "file": "rmrb_20261029_1.html", "tags": ["城市治理", "12345热线", "接诉即办", "人民城市", "精细治理", "数智赋能", "韧性安全", "基层治理"], "quote": "“连老外都知道：拨打12345，接诉即办！”", "drill_name": "标题仿写日", "drill": "把本文标题抄下来，分析它的句式结构（对仗？化用？数字对比？），然后换三个不同主题（民生/经济/文化）各仿写1个同款标题，写进标题库。"}, {"date": "11-04", "week": "w1", "type": "常规日", "extra": null, "title": "从“完整社区”建设看长远眼光（评论员观察）", "file": "rmrb_20260202.html", "tags": ["完整社区", "城市更新", "基层治理", "长远眼光", "历史耐心", "因地制宜", "民生实事", "长效机制"], "quote": "一张蓝图绘到底、一锤接着一锤敲，才能让发展成果经得起时间的检验、群众的检验", "drill_name": "段旨句日", "drill": "抄下全文每个分论点的首句（段旨句），观察它们的句式是否工整统一。然后给\"基层治理\"这个主题自拟3个段旨句，句式模仿本文。"}, {"date": "11-05", "week": "w1", "type": "常规日", "extra": null, "title": "城市治理要接得住群众参与", "file": "rmrb_20260818.html", "tags": ["城市治理", "群众参与", "共建共治共享", "基层治理现代化", "以人民为中心", "全过程人民民主", "数字赋能治理", "12345热线·接诉即办"], "quote": "", "drill_name": "论证链仿写日", "drill": "选文中最强的一个论证段，拆出它的链条：观点句→理论/政策依据→事例→回扣句。然后换一个主题，按同样的链条仿写一段150字。"}, {"date": "11-06", "week": "w1", "type": "常规日", "extra": null, "title": "以制度刚性护航基层治理（人民时评）", "file": "rmrb_20260608_1.html", "tags": ["基层治理", "基层减负", "权责清单", "活力秩序"], "quote": "以清单的制度刚性，进一步为基层减负松绑、赋能增效", "drill_name": "弹药收纳日", "drill": "从\"金句素材\"板块摘3句金句、从考点标签记10个规范词进自己的库；合上页面，用3分钟口头复述全文的论证逻辑链——复述不出来就重读。"}, {"date": "11-07", "week": "w2", "type": "作文日", "extra": "大作文实写：高质量发展/新质生产力（70分钟，用本周积累的规范词和标题）", "title": "中国经济何以向新而行（人民时评）", "file": "rmrb_20260129_1.html", "tags": ["中国经济", "新质生产力", "科技创新", "改革开放", "高质量发展", "高水平开放", "双循环", "制度优势"], "quote": "发展如同跑马拉松，谁看得远、耐得住、干得实，谁就拥有持续向前的澎湃动能", "drill_name": "实写作文日", "drill": "大作文实写：高质量发展/新质生产力（70分钟，用本周积累的规范词和标题）"}, {"date": "11-08", "week": "w2", "type": "轻量日", "extra": "模考日：15分钟金句默写+规范词", "title": "\"新益求新\"话创新", "file": "rmrb_20260825_1.html", "tags": ["新质生产力", "科技创新", "因地制宜", "错位发展", "新旧动能转换", "绿色转型", "算力经济", "科技与产业创新融合"], "quote": "", "drill_name": "模考日轻量", "drill": "模考日：15分钟金句默写+规范词"}, {"date": "11-09", "week": "w2", "type": "常规日", "extra": null, "title": "锻造科技创新的“体系化能力”（人民时评）", "file": "rmrb_20260422.html", "tags": ["科技创新", "新质生产力", "开放合作", "体系化能力"], "quote": "自主创新是开放环境下的创新，绝不能关起门来搞，而是要聚四海之气、借八方之力", "drill_name": "立意拆解日", "drill": "读完全文后，用一句话写下：本文的总论点是什么、挂靠到了哪个中央精神/大主题。再反推：如果考题是\"××\"，这个挂靠能不能迁移？写50字。"}, {"date": "11-10", "week": "w2", "type": "常规日", "extra": null, "title": "以“有解思维”激发创新活力（评论员观察）", "file": "rmrb_20260227.html", "tags": ["营商环境", "有解思维", "包容审慎", "主动服务", "放管服", "有为政府", "有效市场", "新业态"], "quote": "企业发展不可能永远固守“舒适圈”", "drill_name": "标题仿写日", "drill": "把本文标题抄下来，分析它的句式结构（对仗？化用？数字对比？），然后换三个不同主题（民生/经济/文化）各仿写1个同款标题，写进标题库。"}, {"date": "11-11", "week": "w2", "type": "常规日", "extra": null, "title": "没有“深蹲”，就没有“起跳”（人民时评）", "file": "rmrb_20260618_1.html", "tags": ["科技创新", "产业创新", "融合发展", "新质生产力", "北斗"], "quote": "没有科技创新\"深蹲\"，就没有产业创新\"起跳\"", "drill_name": "段旨句日", "drill": "抄下全文每个分论点的首句（段旨句），观察它们的句式是否工整统一。然后给\"基层治理\"这个主题自拟3个段旨句，句式模仿本文。"}, {"date": "11-12", "week": "w2", "type": "常规日", "extra": null, "title": "从“在中国生产”到“在中国创造”（人民时评）", "file": "rmrb_20260518_1.html", "tags": ["外商投资", "科技创新", "新质生产力", "创新生态"], "quote": "越来越多跨国公司在华\"制造基地\"正升级为\"创新策源地\"，外资在华研发中心正从本地化适配升级为全球创新支点", "drill_name": "论证链仿写日", "drill": "选文中最强的一个论证段，拆出它的链条：观点句→理论/政策依据→事例→回扣句。然后换一个主题，按同样的链条仿写一段150字。"}, {"date": "11-13", "week": "w2", "type": "常规日", "extra": null, "title": "用有效投资打开发展新维度（评论员观察）", "file": "rmrb_20260420.html", "tags": ["扩大有效投资", "高质量发展", "新质生产力", "新赛道", "投资于人"], "quote": "投资是当期的需求，也是未来的供给", "drill_name": "弹药收纳日", "drill": "从\"金句素材\"板块摘3句金句、从考点标签记10个规范词进自己的库；合上页面，用3分钟口头复述全文的论证逻辑链——复述不出来就重读。"}, {"date": "11-14", "week": "w3", "type": "作文日", "extra": "大作文实写：文化自信/文化传承创新（70分钟）", "title": "立足生活激发文化之力（评论员观察）", "file": "rmrb_20260126.html", "tags": ["文化赋能", "文化自信", "文化+", "文创产业", "乡风文明", "创造性转化", "以文化人", "高质量发展"], "quote": "以文化人、以文育人，涵养昂扬奋发的精神气质，没有什么难关不能攻克，没有什么梦想不能实现", "drill_name": "实写作文日", "drill": "大作文实写：文化自信/文化传承创新（70分钟）"}, {"date": "11-15", "week": "w3", "type": "轻量日", "extra": "模考日：15分钟金句默写+规范词", "title": "唤醒文化里深藏的共鸣（评论员观察）", "file": "rmrb_20260611.html", "tags": ["文化创新", "文艺创作", "文化自信", "人民性"], "quote": "创新创造是再表达的过程，只有用观众喜闻乐见的语言，才能让观众愿意听、听得进", "drill_name": "模考日轻量", "drill": "模考日：15分钟金句默写+规范词"}, {"date": "11-16", "week": "w3", "type": "常规日", "extra": null, "title": "千年文脉何以新", "file": "rmrb_20261019.html", "tags": ["文化传承创新", "第二个结合", "中华优秀传统文化", "文化主体性", "创造性转化创新性发展", "文化自信", "文明交流互鉴", "新大众文艺"], "quote": "“文化亘古亘新……中华优秀传统文化以鲜活姿态融入当代生活，显示别样生机与活力，关键在于‘第二个结合’”", "drill_name": "立意拆解日", "drill": "读完全文后，用一句话写下：本文的总论点是什么、挂靠到了哪个中央精神/大主题。再反推：如果考题是\"××\"，这个挂靠能不能迁移？写50字。"}, {"date": "11-17", "week": "w3", "type": "常规日", "extra": null, "title": "一抹青绿何以\"出圈\"", "file": "rmrb_20260827.html", "tags": ["高质量发展", "因地制宜", "特色产业", "生态产品价值实现", "绿水青山就是金山银山", "有效市场与有为政府", "新质生产力", "乡村振兴"], "quote": "", "drill_name": "标题仿写日", "drill": "把本文标题抄下来，分析它的句式结构（对仗？化用？数字对比？），然后换三个不同主题（民生/经济/文化）各仿写1个同款标题，写进标题库。"}, {"date": "11-18", "week": "w3", "type": "常规日", "extra": null, "title": "从三星堆感悟中华民族的创造力", "file": "rmrb_20261012.html", "tags": ["文化自信", "中华优秀传统文化", "中华民族创造力", "创造性转化创新性发展", "文化传承发展", "文化主体性", "中华文明突出特性", "新质生产力"], "quote": "“中华民族在几千年历史中创造和延续的中华优秀传统文化，是中华民族的根和魂”", "drill_name": "段旨句日", "drill": "抄下全文每个分论点的首句（段旨句），观察它们的句式是否工整统一。然后给\"基层治理\"这个主题自拟3个段旨句，句式模仿本文。"}, {"date": "11-19", "week": "w3", "type": "常规日", "extra": null, "title": "文化根魂何以铸", "file": "rmrb_20261015.html", "tags": ["文化自信", "中华优秀传统文化", "文化强国建设", "党的文化领导权", "意识形态工作", "文化主体性", "文明交流互鉴", "创造性转化创新性发展"], "quote": "“这样的场景，正是‘以文化滋养精神家园’的生动缩影”（国庆文旅见闻）", "drill_name": "论证链仿写日", "drill": "选文中最强的一个论证段，拆出它的链条：观点句→理论/政策依据→事例→回扣句。然后换一个主题，按同样的链条仿写一段150字。"}, {"date": "11-20", "week": "w3", "type": "常规日", "extra": null, "title": "培厚中国创新的文化优势（评论员观察）", "file": "rmrb_20260604.html", "tags": ["创新文化", "新质生产力", "社会共识", "系统思维"], "quote": "人们敢于从新变化中寻找新机遇，也乐于为新技术、新产品、新体验买单，这样的氛围成为牵引创新的文化力量", "drill_name": "弹药收纳日", "drill": "从\"金句素材\"板块摘3句金句、从考点标签记10个规范词进自己的库；合上页面，用3分钟口头复述全文的论证逻辑链——复述不出来就重读。"}, {"date": "11-21", "week": "w4", "type": "作文日", "extra": "大作文实写：生态文明/绿色发展（70分钟）", "title": "为子孙积累更多生态资产（人民时评）", "file": "rmrb_20260113_1.html", "tags": ["乡村生态治理", "生态资产", "千万工程", "绿色发展", "乡村振兴", "生态文明", "因地制宜", "系统治理"], "quote": "治污不是乡村全面振兴的负担，而是为农业农村积累宝贵的生态资产", "drill_name": "实写作文日", "drill": "大作文实写：生态文明/绿色发展（70分钟）"}, {"date": "11-22", "week": "w4", "type": "轻量日", "extra": "模考日：15分钟金句默写+规范词", "title": "跑出绿色转型“加速度”（人民时评）", "file": "rmrb_20260203.html", "tags": ["绿色转型", "新质生产力", "高质量发展", "生态文明", "绿色发展", "能源革命", "产业升级", "双碳"], "quote": "\"我们不是继承了父辈的地球，而是借用了儿孙的地球。\"", "drill_name": "模考日轻量", "drill": "模考日：15分钟金句默写+规范词"}, {"date": "11-23", "week": "w4", "type": "常规日", "extra": null, "title": "让绿色能源深度增值", "file": "rmrb_20261024.html", "tags": ["绿色能源", "绿色算力", "新质生产力", "因地制宜", "产业链延伸", "产教融合", "高质量发展", "数字经济"], "quote": "“要积极延伸产业链，推动数字经济与实体经济深度融合，不断把算力优势转化为发展优势”（习近平总书记）", "drill_name": "立意拆解日", "drill": "读完全文后，用一句话写下：本文的总论点是什么、挂靠到了哪个中央精神/大主题。再反推：如果考题是\"××\"，这个挂靠能不能迁移？写50字。"}, {"date": "11-24", "week": "w4", "type": "常规日", "extra": null, "title": "珍视寻常生灵的生态价值（人民时评）", "file": "rmrb_20260408_1.html", "tags": ["生物多样性", "生态保护", "三有动物", "法治", "系统思维", "生态价值", "人与自然", "全链条治理"], "quote": "生物多样性使地球充满生机，是人类生存和发展的基础", "drill_name": "标题仿写日", "drill": "把本文标题抄下来，分析它的句式结构（对仗？化用？数字对比？），然后换三个不同主题（民生/经济/文化）各仿写1个同款标题，写进标题库。"}, {"date": "11-25", "week": "w4", "type": "常规日", "extra": null, "title": "以法治之力让彩礼归“礼”（人民时评）", "file": "rmrb_20260202_1.html", "tags": ["高价彩礼", "法治治理", "移风易俗", "基层治理", "婚姻家庭", "公序良俗", "司法裁判", "乡风文明"], "quote": "让婚姻始于爱，让彩礼归于\"礼\"", "drill_name": "段旨句日", "drill": "抄下全文每个分论点的首句（段旨句），观察它们的句式是否工整统一。然后给\"基层治理\"这个主题自拟3个段旨句，句式模仿本文。"}, {"date": "11-26", "week": "w4", "type": "常规日", "extra": null, "title": "破“内卷”需用好法治之钥（人民时评）", "file": "rmrb_20260225.html", "tags": ["法治", "反内卷", "公平竞争", "知识产权保护", "全国统一大市场", "营商环境", "新质生产力", "执法司法"], "quote": "法治既是抵御不正当竞争的“防火墙”，也是企业安心发展的“定心丸”", "drill_name": "论证链仿写日", "drill": "选文中最强的一个论证段，拆出它的链条：观点句→理论/政策依据→事例→回扣句。然后换一个主题，按同样的链条仿写一段150字。"}, {"date": "11-27", "week": "w4", "type": "常规日", "extra": null, "title": "以高水平法治护航美丽中国建设", "file": "rmrb_20260815.html", "tags": ["生态文明", "美丽中国", "全面依法治国", "生态环境法典", "习近平生态文明思想", "习近平法治思想", "人与自然和谐共生", "良法善治"], "quote": "", "drill_name": "弹药收纳日", "drill": "从\"金句素材\"板块摘3句金句、从考点标签记10个规范词进自己的库；合上页面，用3分钟口头复述全文的论证逻辑链——复述不出来就重读。"}, {"date": "11-28", "week": "w5", "type": "作文日", "extra": "大作文实写：作风与担当（70分钟，考前三篇里最重要的一篇）", "title": "\"三张桌子\"看作风", "file": "rmrb_20261029.html", "tags": ["作风建设", "党风政风", "全面从严治党", "党群关系", "中央八项规定", "纠治四风", "基层减负", "为民造福"], "quote": "“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”", "drill_name": "实写作文日", "drill": "大作文实写：作风与担当（70分钟，考前三篇里最重要的一篇）"}, {"date": "11-29", "week": "w5", "type": "轻量日", "extra": "模考日：15分钟金句默写+规范词", "title": "破立并举抓减负（人民时评）", "file": "rmrb_20260212.html", "tags": ["基层减负", "形式主义", "破立辩证", "系统思维", "精准思维", "数字政府", "作风建设", "基层治理"], "quote": "“该立的积极主动立起来，该破的在立的基础上及时破”", "drill_name": "模考日轻量", "drill": "模考日：15分钟金句默写+规范词"}, {"date": "11-30", "week": "w5", "type": "常规日", "extra": null, "title": "练好\"钉钉子\"的功夫", "file": "rmrb_20260817.html", "tags": ["基层治理", "抓落实·钉钉子精神", "正确政绩观", "精准思维", "久久为功（长期主义）", "以人民为中心", "担当作为", "整治形式主义"], "quote": "", "drill_name": "立意拆解日", "drill": "读完全文后，用一句话写下：本文的总论点是什么、挂靠到了哪个中央精神/大主题。再反推：如果考题是\"××\"，这个挂靠能不能迁移？写50字。"}, {"date": "12-01", "week": "w5", "type": "常规日", "extra": null, "title": "心中有数、手中有策、行动有力", "file": "rmrb_20260819.html", "tags": ["基层工作方法", "以人民为中心", "对上负责与对下负责", "调查研究·问需于民", "精准施策", "因地制宜", "久久为功·长期主义", "正确政绩观"], "quote": "", "drill_name": "标题仿写日", "drill": "把本文标题抄下来，分析它的句式结构（对仗？化用？数字对比？），然后换三个不同主题（民生/经济/文化）各仿写1个同款标题，写进标题库。"}, {"date": "12-02", "week": "w5", "type": "常规日", "extra": null, "title": "\"攻坚战\"与\"持久战\"", "file": "rmrb_20261010.html", "tags": ["系统观念", "辩证思维", "正确政绩观", "久久为功", "钉钉子精神", "攻坚与持久", "作风建设", "区分轻重缓急"], "quote": "", "drill_name": "段旨句日", "drill": "抄下全文每个分论点的首句（段旨句），观察它们的句式是否工整统一。然后给\"基层治理\"这个主题自拟3个段旨句，句式模仿本文。"}, {"date": "12-03", "week": "w5", "type": "常规日", "extra": null, "title": "用好“踱方步”的工作方法", "file": "rmrb_20261017.html", "tags": ["调查研究", "科学工作方法", "基层减负", "正确政绩观", "谋定后动", "形式主义整治", "创造性落实", "实干担当"], "quote": "", "drill_name": "论证链仿写日", "drill": "选文中最强的一个论证段，拆出它的链条：观点句→理论/政策依据→事例→回扣句。然后换一个主题，按同样的链条仿写一段150字。"}, {"date": "12-04", "week": "w5", "type": "收官日", "extra": "最后一天：通读自己35天的笔记，把武器库（标题库/开头结尾/规范词总库/金句库）背一遍，早睡", "title": "从“干中学”到“事上练”", "file": "rmrb_20261007.html", "tags": ["实践实干", "知行合一", "干部成长", "青年干部", "基层历练", "担当作为", "实事求是", "调查研究"], "quote": "“坚持在干中学、学中干”“刀要在石上磨、人要在事上练”", "drill_name": "考前收官", "drill": "最后一天：通读自己35天的笔记，把武器库（标题库/开头结尾/规范词总库/金句库）背一遍，早睡"}];
+const WEEKS = {"w1": "<h2>第一周 · 基层治理与民生（10-31 ~ 11-06）</h2><p>这一周只练一个本事：把民生小事挂到“以人民为中心”上。周六十点前写完摸底作文。</p>", "w2": "<h2>第二周 · 改革发展与新质生产力（11-07 ~ 11-13）</h2><p>考大作文最热的主题域。每天学的规范词当天段落里必须用上。</p>", "w3": "<h2>第三周 · 文化自信（11-14 ~ 11-20）</h2><p>文化题的论述几乎全部能从“创造性转化、创新性发展”展开——这一周把这句话用熟。</p>", "w4": "<h2>第四周 · 生态文明与法治（11-21 ~ 11-27）</h2><p>生态题挂“两山理念”，法治题挂“全面依法治国”——挂靠动作到这周要形成条件反射。</p>", "w5": "<h2>第五周 · 作风实干与收官（11-28 ~ 12-04）</h2><p>作风担当是申论压轴题常客。周末那篇作文按全真流程走：审题10分钟+写作70分钟。</p>"};
+const ORDER = ['w1','w2','w3','w4','w5'];
+function key(d){ return 'dz36_' + d.date; }
+function isDone(d){ return localStorage.getItem(key(d)) === '1'; }
+function wdName(date){
+  const map = {'10-31':'周六','11-01':'周日','11-02':'周一','11-03':'周二','11-04':'周三','11-05':'周四','11-06':'周五','11-07':'周六','11-08':'周日','11-09':'周一','11-10':'周二','11-11':'周三','11-12':'周四','11-13':'周五','11-14':'周六','11-15':'周日','11-16':'周一','11-17':'周二','11-18':'周三','11-19':'周四','11-20':'周五','11-21':'周六','11-22':'周日','11-23':'周一','11-24':'周二','11-25':'周三','11-26':'周四','11-27':'周五','11-28':'周六','11-29':'周日','11-30':'周一','12-01':'周二','12-02':'周三','12-03':'周四','12-04':'周五'};
+  return map[date] || '';
+}
+function todayMD(){
+  const n = new Date();
+  return String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+}
+function typeCls(t){ return t==='作文日' ? 't-zuowen' : t==='轻量日' ? 't-qing' : t==='收官日' ? 't-shou' : 't-chang'; }
+function render(){
+  const tm = todayMD();
+  let html = '', lastWeek = '';
+  for (const d of DAYS){
+    if (d.week !== lastWeek){
+      lastWeek = d.week;
+      const w = WEEKS[d.week];
+      html += '<div class="week-head"><h2>' + w + '</h2></div>';
+      // week intro: use ORDER mapping for description
+    }
+    const done = isDone(d);
+    const isToday = d.date === tm;
+    html += '<div class="day' + (done?' done':'') + (isToday?' today':'') + '" data-date="' + d.date + '">'
+      + '<div class="day-top"><span class="d-date">' + d.date + '</span><span class="d-wd">' + wdName(d.date) + (isToday?' · 今天':'') + '</span>'
+      + '<span class="d-type ' + typeCls(d.type) + '">' + d.type + '</span></div>'
+      + '<div class="d-title">《' + d.title + '》</div>'
+      + (d.quote ? '<div class="d-quote">点睛：' + d.quote + '</div>' : '')
+      + (d.tags.length ? '<div class="d-tags">' + d.tags.map(x=>'<span>'+x+'</span>').join('') + '</div>' : '')
+      + '<div class="drill"><b>' + d.drill_name + '</b><p>' + d.drill + '</p></div>'
+      + '<div class="btns"><a class="btn-open" href="' + d.file + '" target="_blank">打开精读全文</a>'
+      + '<button class="btn-done" onclick="toggle(this)">' + (done?'已完成 ✓':'完成打卡') + '</button></div></div>';
+  }
+  document.getElementById('content').innerHTML = html;
+}
+function toggle(btn){
+  const day = btn.closest('.day');
+  const date = day.getAttribute('data-date');
+  const d = DAYS.find(x=>x.date===date);
+  if (isDone(d)){ localStorage.removeItem(key(d)); } else { localStorage.setItem(key(d),'1'); }
+  render(); stats();
+}
+let onlyMode = false;
+function toggleOnly(){
+  onlyMode = !onlyMode;
+  document.querySelectorAll('.day').forEach(el=>{
+    if (onlyMode && el.classList.contains('done')) el.style.display='none';
+    else el.style.display='';
+  });
+}
+function stats(){
+  const total = DAYS.length;
+  const done = DAYS.filter(isDone).length;
+  const zwDone = DAYS.filter(d=>isDone(d) && d.type==='作文日').length;
+  const zwAll = DAYS.filter(d=>d.type==='作文日').length;
+  document.getElementById('prog').textContent = done + '/' + total;
+  document.getElementById('zuowen').textContent = zwDone + '/' + zwAll;
+  const pct = Math.round(done/total*100);
+  document.getElementById('progPct').textContent = pct + '%';
+  document.getElementById('progFill').style.width = pct + '%';
+  // 倒计时到 12-05
+  const exam = new Date(new Date().getFullYear(), 11, 5);
+  const now = new Date();
+  let cd = Math.ceil((exam - now) / 86400000);
+  if (now > new Date(now.getFullYear(), 11, 5, 23, 59)) cd = 0;
+  document.getElementById('cd').textContent = cd;
+}
+render(); stats();
+</script>
+</body>
+</html>
