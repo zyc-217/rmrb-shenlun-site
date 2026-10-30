@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 从广交会看中国气派</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从广交会看中国气派</h1>
+    <div class="meta">人民日报·人民观点 | 中国式现代化·高质量发展·新质生产力·扩大高水平对外开放·人民城市·文化自信 | 2026年10月30日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——从广交会观察中国式现代化的根骨、初心与气度 ｜ 主题：中国式现代化／立己达人／文明交流互鉴</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">现代化产业体系</span>
+      <span class="tag-item">实体经济</span>
+      <span class="tag-item">扩大高水平对外开放</span>
+      <span class="tag-item">人民城市</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">文明交流互鉴</span>
+      <span class="tag-item">立己达人</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">会展经济</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配"<b>中国式现代化／高质量发展／文化自信</b>"等主题；本文"一扇窗见大主题"的并列式框架，是写"中国式现代化"类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>"中国式现代化是产业、城市、文明三重维度的有机统一"</b>——表层是广交会展窗，深层是揭示以科技创新筑产业根骨、以人民城市守初心、以文化自信养文明的中国式现代化路径。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为"关于扩大高水平对外开放、办好国家级会展的建议"等。对策要点：以科技创新驱动现代化产业体系建设、筑牢实体经济根骨／以会展经济激活城市高质量发展、提升全球资源配置能力／以文化自信推动文明交流互鉴、贡献和合共生中国智慧／持续推进普惠包容的经济全球化、为世界发展注入新动力。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书）可作"关于办好博览会、扩大高水平对外开放的倡议书"等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（一扇窗小切口见大主题——产业之变→城市之兴→文明之光三段并列）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以习近平总书记第140届广交会贺信与"70年、140届从未间断"的传奇破题，引出"一扇窗"之喻（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出总论点：中国式现代化是产业、城市、文明三重维度的有机统一，立己达人彰显中国气派（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>"产业之变——以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球"</b>（前接分论点色块，含宁海手电筒→佛山影柔台灯、64%应用新技术等案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>"城市之兴——坚持人民城市为人民，以会展经济激活城市高质量发展，便民惠民利民"</b>（前接分论点色块，含琶洲迭代、深圳文博会、青岛上合、北京服贸会、上海进博会）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>"文明之光——以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态"</b>（前接分论点色块，含人工智能诊脉仪、消费券、Chinamaxxing、会展矩阵）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到"三重维度统一，中国式现代化康庄大道越走越宽广，中华民族伟大复兴势不可挡"。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用"一扇窗"小切口见大主题结构：以广交会这扇窗，用"产业之变—城市之兴—文明之光"三段并列，是申论"由小切口见大主题"的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>前不久，习近平总书记向第140届中国进出口商品交易会（广交会）致贺信，指出广交会<span class="highlight-blue">"已成为中国扩大高水平对外开放、推动建设开放型世界经济的有效平台"</span>，宣示中国将继续<span class="highlight-gold">"推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力"</span>。</p>
+
+      <p>广交会，<span class="highlight-green">70年，140届，从未间断</span>。在世界会展史上，这是一个传奇；在中国式现代化进程中，这是一扇窗。</p>
+
+      <p>透过这扇窗，观察产业之变、城市之兴、文明之光，我们更能理解中国式现代化的<span class="highlight-purple">根骨、初心与气度</span>，读懂何为世界情怀与中国气派。</p>
+
+      <div class="thesis">【总论点】中国式现代化是<span class="highlight-purple">产业、城市、文明三重维度</span>的有机统一，以<span class="highlight-blue">科技创新驱动现代化产业体系</span>筑牢根骨，以<span class="highlight-gold">人民城市为人民</span>彰显初心，以<span class="highlight-green">文化自信涵养文明力量</span>，在<span class="highlight-purple">立己达人、和合共生</span>中展现中国气派与世界情怀。</div>
+
+      <div class="sub-thesis">【分论点一】产业之变——以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球，在立己达人中造福世界。</div>
+
+      <p>产业是经济根骨，<span class="highlight-blue">现代化产业体系</span>是现代化国家的物质技术基础。</p>
+
+      <p>习近平总书记指出：<span class="highlight-blue">"必须把发展经济的着力点放在实体经济上，为实现第二个百年奋斗目标提供坚强物质支撑。"</span></p>
+
+      <p><span class="highlight-purple">一盏灯，见根骨。</span></p>
+
+      <p><span class="highlight-green">2000年，浙江宁海西店镇的50家手电筒企业挤进第八十八届广交会</span>。没固定展位，就流动展示；营销费不足，几家凑钱印宣传册。"第一桶金"，靠的是低价。</p>
+
+      <p>20多年后，佛山照明与清华大学联手打造的"见光不见灯"的影柔低位台灯，拿下广交会设计创新奖<span class="highlight-green">至尊金奖</span>。</p>
+
+      <p>灯之变，折射产业之变。</p>
+
+      <p>一盏灯背后，有芯片、光学、算法、制造、运维；</p>
+
+      <p>一台新能源车背后，有电池、电机、软件、港口、金融；</p>
+
+      <p>一张订单背后，有供应链、物流、标准、服务……</p>
+
+      <p>如今的展台，展示的已不只是一种产品，而是<span class="highlight-blue">全产业链的供给能力</span>，是中国现代化产业体系的创新活力。</p>
+
+      <p>本届广交会，<span class="highlight-green">64%的参展企业应用工业互联网、人工智能等新技术；新产品、绿色产品占比双双创下历史新高</span>。</p>
+
+      <p><span class="highlight-gold">"实体经济不能丢，实体经济里边的传统产业不能丢，要通过科技创新实现转型升级。"</span></p>
+
+      <p>从农特产品到"老三样"，再到"新三样"，从纸质目录到"看样成交"，再到"全链条解决方案"——一部广交会史，就是一部中国制造的进化史。</p>
+
+      <p><span class="highlight-gold">以"创牌"超越"代工"，以"价值创新"代替"低价竞争"</span>，产业能级跃升的密码，就藏在<span class="highlight-blue">"推动科技创新和产业创新深度融合"</span>的脚步里。</p>
+
+      <p>这种向新而行，造福世界，赋能全球。</p>
+
+      <p>"还好有中国"，这是许多客商的心声；<span class="highlight-gold">"与中国同行就是与机遇同行"</span>，这是更多投资者的共识。</p>
+
+      <p><span class="highlight-blue">"'十五五'时期要把发展新质生产力摆在更加突出的战略位置。"</span></p>
+
+      <p>积极推动前沿技术突破和未来产业发展，着力打造新兴支柱产业，持续推动传统产业改造升级，高质量发展潜力巨大、活力十足。</p>
+
+      <p>以创新之脉，壮产业之骨，中国式现代化<span class="highlight-purple">立己达人</span>。</p>
+
+      <div class="sub-thesis">【分论点二】城市之兴——坚持人民城市为人民，以会展经济激活城市高质量发展，把最好的资源留给人民，便民惠民利民。</div>
+
+      <p>城市是现代化的载体，人民幸福生活的重要空间。</p>
+
+      <p><span class="highlight-blue">"走出一条中国特色城市现代化新路子"</span>，习近平总书记对人民城市建设念兹在兹。</p>
+
+      <p><span class="highlight-purple">中国式现代化，民生为大。</span>把让人民宜居安居放在首位，把最好的资源留给人民，这是做好城市工作的价值标尺。</p>
+
+      <p>广交会迭代升级，<span class="highlight-purple">丈量初心</span>。</p>
+
+      <p>搬到侨光路，"涉外服务"增加"新饭碗"；迁至起义路，海珠广场成为商贸核心，"羊城八景"添新韵；转移流花路，郊区荒地崛起宾馆、剧院、火车站；落址琶洲，城市重心跨江东拓，新增长极聚势而成，村民市民共享红利。</p>
+
+      <p>新时代，广交会扎根琶洲，成色常新。海天联运打通物流，无感通关便利客商，滨江绿带提升环境，低碳展会、数智赋能彰显创新活力……<span class="highlight-blue">全球最大会展综合体，展现高水平对外开放的新姿态</span>。</p>
+
+      <p><span class="highlight-purple">搬的是展馆，旺的是产业，靓的是城市，暖的是人心。</span></p>
+
+      <p>如今，广交会不仅是"交易撮合场"，更是"湾区会客厅"。以全国统一大市场为依托，广州<span class="highlight-blue">"对全球高端生产要素的配置能力"</span>不断增强，连续多年获评"最具幸福感城市"。</p>
+
+      <p><span class="highlight-gold">"办好一次会，搞活一座城"</span>，这是中国共产党人的治理智慧。</p>
+
+      <p>广东深圳以文博会为媒，激活文化产业，联动文旅消费，"展中景"融入"日常景"。</p>
+
+      <p>上合峰会落子山东青岛，亮化海岸线，完善公园绿道，丰富赛事场景，峰会福利化作生活品质。</p>
+
+      <p>会展经济，增值的是产业，更是城市。</p>
+
+      <p><span class="highlight-blue">"着力建设富有活力的创新城市"</span>，这是推动城市高质量发展的必由之路。</p>
+
+      <p>北京以服贸会为桥梁，加快形成人工智能、科幻文创等新质生产力，会址首钢园实现产业焕新，变身"城市秀场"。</p>
+
+      <p>上海以进博会为舞台，做强首发经济，集聚创新资源，国际参展商变对华投资商，打开高水平开放新空间。</p>
+
+      <p>中国城市，有活力、有温度、有国际范。</p>
+
+      <p><span class="highlight-blue">"把实现人民群众对美好生活向往作为城市工作的出发点和落脚点，努力建设现代化人民城市，扎实推进全体人民共同富裕，促进人的全面发展。"</span></p>
+
+      <p>奋进新征程，焕新的是宜居宜业宜游的城市面貌，不变的是便民惠民利民的初心使命。</p>
+
+      <p><span class="highlight-gold">"人民城市人民建、人民城市为人民"</span>，映照中国式现代化最鲜明的价值底色，汇聚前进路上战胜各种风险挑战的澎湃力量。</p>
+
+      <div class="sub-thesis">【分论点三】文明之光——以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态，在和合共生中贡献中国智慧。</div>
+
+      <p>中国式现代化，不仅是物质的丰裕，更是文化的丰盈。</p>
+
+      <p>习近平总书记指出：<span class="highlight-blue">"应对共同挑战、迈向美好未来，既需要经济科技力量，也需要文化文明力量。"</span></p>
+
+      <p>一张广交会参展证，也是一张文化邀请函。</p>
+
+      <p>展会内，苏州知行机器人，"触觉感知数据采集手"制作漆扇，上演充满东方意趣的"水墨秀"；佛山复星禅城医院的<span class="highlight-blue">人工智能诊脉仪</span>惊艳外商，展示中医的魅力……将文化故事融入产品设计，以科技创新激活文化生命，新产品赢得青睐。</p>
+
+      <p>展会外，广州投放<span class="highlight-green">2000万元餐饮消费券</span>，举办广交会美食嘉年华，打造"广交会号"游船，定制境外采购商专属免费一日游服务……做生意，先交朋友；来参展，也是体验生活。</p>
+
+      <p>文化的力量静水流深。</p>
+
+      <p>佛山鱼灯化作台灯、挂件、玩偶，非遗出海；潮汕嵌瓷纹样融入新潮箱包，国风设计吸引全球目光。中国风、中国味，在商品交易中润物无声。</p>
+
+      <p>从"中国游"到"中国购"，再到"Chinamaxxing"（极致中国化）在海外社交平台出圈，中国网文、网剧、网游持续提升文化软实力。</p>
+
+      <p><span class="highlight-gold">"文化自信是一个国家、一个民族发展中最基本、最深沉、最持久的力量。"</span></p>
+
+      <p><span class="highlight-purple">中国打动世界的，已不仅仅是商品与服务，更是鲜活可亲的文化，以及文化背后的文明理念。</span></p>
+
+      <p>进博会、广交会、服贸会、消博会、链博会……面对动荡不安的国际局势与艰难复苏的世界经济，中国国家级"会展矩阵"传递的，正是<span class="highlight-blue">和合共生、同舟共济、互利共赢</span>的价值追求。</p>
+
+      <p><span class="highlight-gold">"来参会就像回到家一样""中国是一个贸易的安全港"</span>——外商的感慨，是对中国机遇的肯定，更是对中国智慧的认同。</p>
+
+      <p>从推动落实四大全球倡议，到提出<span class="highlight-blue">人工智能开源普惠倡议</span>；从携手共建经贸合作平台，到与全球南方国家分享发展经验，中国贡献世界的，不仅是确定性稳定性，更是对"何为美好生活""如何开辟人类未来"的深刻思考。</p>
+
+      <p><span class="highlight-purple">今日之中国，创造了人类文明新形态，不仅是中国之中国，也是世界之中国。</span></p>
+
+      <p>有现代化产业体系提供动力源，有现代化城市作为增长极，有文化文明力量守护根与魂，<span class="highlight-blue">中国式现代化康庄大道越走越宽广</span>，<span class="highlight-gold">中华民族伟大复兴势不可挡</span>。</p>
+
+      <p>（执笔：彭飞、李拯）</p>
+
+      <p class="byline">（人民日报2026年10月30日 第05版 · 人民观点）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放</span>
+      <p><b>'推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力'</b>——写'扩大高水平对外开放'是论断句（总书记贺信）。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·产业</span>
+      <p><b>'实体经济不能丢，实体经济里边的传统产业不能丢，要通过科技创新实现转型升级'</b>——写'实体经济／传统产业改造升级'是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创牌</span>
+      <p><b>'以创牌超越代工，以价值创新代替低价竞争'</b>——写'产业能级跃升／高质量发展'是对比句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立己达人</span>
+      <p><b>'以创新之脉，壮产业之骨，中国式现代化立己达人'</b>——写'新质生产力／人类命运共同体'是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·会展</span>
+      <p><b>'办好一次会，搞活一座城'</b>——写'会展经济／城市高质量发展'是治理智慧句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·人民城市</span>
+      <p><b>'人民城市人民建、人民城市为人民'</b>——写'以人民为中心／人民城市'是价值底色句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文化</span>
+      <p><b>'文化自信是一个国家、一个民族发展中最基本、最深沉、最持久的力量'</b>——写'文化自信'是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·文明</span>
+      <p><b>'不仅是中国之中国，也是世界之中国'</b>——写'文明交流互鉴／人类命运共同体'是辩证句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学'一扇窗'小切口见大主题：以广交会这扇窗，引出产业之变、城市之兴、文明之光三段并列，适用于'中国式现代化'类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组并列：分论一写产业（科技创新／现代化产业体系／立己达人）；分论二写城市（人民城市／会展经济／城市高质量发展）；分论三写文明（文化自信／文明交流互鉴／人类文明新形态）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把'扩大高水平对外开放'拆成举措：以科技创新驱动现代化产业体系、以会展经济激活城市高质量发展、以文化自信推动文明交流互鉴、持续推进普惠包容的经济全球化。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学'搬的是展馆，旺的是产业，靓的是城市，暖的是人心''不仅是中国之中国，也是世界之中国'的辩证：把宏大主题写成'局部与整体''中国与世界'的辩证统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>'人民城市人民建、人民城市为人民'可作'以人民为中心'类分论点／结尾；'办好一次会，搞活一座城'可作'城市治理／会展经济'类引言；'不仅是中国之中国，也是世界之中国'可作'人类命运共同体'类收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从广交会看中国气派」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是产业之变。以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球，在立己达人中造福世界。<br>二是城市之兴。坚持人民城市为人民，以会展经济激活城市高质量发展，把最好的资源留给人民，便民惠民利民。<br>三是文明之光。以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态，在和合共生中贡献中国智慧。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「中国式现代化是产业、城市、文明三重维度的有机统一，以科技创新驱动现代化产业体系筑牢根骨，以人民城市为人民彰显初心，以文化自信涵养文明力量，在立己达人、和合共生中展现中国气派与世界情怀。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是产业之变——以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球，在立己达人中造福世界。<br>二是城市之兴——坚持人民城市为人民，以会展经济激活城市高质量发展，把最好的资源留给人民，便民惠民利民。<br>三是文明之光——以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态，在和合共生中贡献中国智慧。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：'推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力'</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从广交会看中国气派」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以科技创新驱动现代化产业体系建设、筑牢实体经济根骨。<br>二是以会展经济激活城市高质量发展、提升全球资源配置能力。<br>三是以文化自信推动文明交流互鉴、贡献和合共生中国智慧。<br>四是持续推进普惠包容的经济全球化、为世界发展注入新动力。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：'推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力'</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从广交会看中国气派的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从广交会看中国气派的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从广交会看中国气派，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、产业之变——以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球，在立己达人中造福世界。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、城市之兴——坚持人民城市为人民，以会展经济激活城市高质量发展，把最好的资源留给人民，便民惠民利民。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、文明之光——以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态，在和合共生中贡献中国智慧。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：'推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力'</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从广交会看中国气派」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从广交会看中国气派<br><br>时代之问，呼唤破题之策。从广交会看中国气派，是发展所需，也是民心所向。可从三个维度展开：产业之变——以科技创新驱动现代化产业、城市之兴——坚持人民城市为人民，以会、文明之光——以文化自信涵养文明力量，。<br><br>分论点一：产业之变——以科技创新驱动现代化产业体系，筑牢实体经济根骨，向新向绿赋能全球，在立己达人中造福世界。方向对了，路再远也能抵达。'推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力'<br><br>分论点二：城市之兴——坚持人民城市为人民，以会展经济激活城市高质量发展，把最好的资源留给人民，便民惠民利民。方法对了，事再难也能办成。'实体经济不能丢，实体经济里边的传统产业不能丢，要通过科技创新实现转型升级'<br><br>分论点三：文明之光——以文化自信涵养文明力量，推动文明交流互鉴，创造人类文明新形态，在和合共生中贡献中国智慧。行百里者半九十。'以创牌超越代工，以价值创新代替低价竞争'保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从广交会看中国气派是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-30</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
