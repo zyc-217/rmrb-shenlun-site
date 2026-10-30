@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 思路有多宽，出路就有多广</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>思路有多宽，出路就有多广</h1>
+    <div class="meta">人民日报·人民时评 | 新质生产力·因地制宜·错位发展·协同合作·高质量发展 | 2026年10月28日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——找准发展新质生产力的着力点① ｜ 主题：新质生产力／因地制宜／错位发展／协同合作</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">错位发展</span>
+      <span class="tag-item">协同合作</span>
+      <span class="tag-item">产业集群</span>
+      <span class="tag-item">绿电算力</span>
+      <span class="tag-item">产业补位</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">避免内卷</span>
+      <span class="tag-item">量体裁衣</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>新质生产力／因地制宜／错位发展／协同合作</b>”等主题；本文“设问破题、分论点递进”的论证链，是写“高质量发展”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“思路决定出路”</b>——表层是各地错位发展、特色突围，深层是揭示因地制宜、避免内卷是发展新质生产力的根本方法。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可提炼“三地发展新质生产力的做法”：淮南错位发展汽车零部件、丹棱在产业走廊中找准补位、深哈园区推动跨区域协同，概括其经验成效。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于因地制宜发展新质生产力的对策建议”等。对策要点：<b>加强分类指导和重点领域统筹，避免一哄而上、跟风冒进</b>／<b>立足全局所需、结合一域所能，实现量体裁衣、错位发展</b>／<b>推动跨区域协同联动、集群发力，取彼之长、补己之短</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（提纲）可作“关于因地制宜发展新质生产力的调研报告提纲”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（设问破题—分论点递进——定位→特色→合作）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以《关于发展新质生产力的意见》与淮南错位发展案例破题，引出“如何走出同质化竞争窠臼”之问（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">点明“思路决定出路”，亮出总论点：没有标准答案，关键在因地制宜的智慧（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“在把握一域与全局中找准定位”</b>——不靠复制粘贴，立足全局所需结合一域所能，量体裁衣（前接分论点色块，含丹棱产业补位）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“在统筹长板与短板中找到特色”</b>——扬长避短，后发地区与传统产业也能发掘独特路径（前接分论点色块，含绿电算力、高原农业）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“在兼顾竞争与合作中找到机遇”</b>——协同联动、集群发力，取彼之长补己之短（前接分论点色块，含深哈产业园）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“思路有多宽，出路就有多广”：破除惯性思维、在大局中找准定位，打开发展新天地。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“设问破题—分论点递进”结构：以一地问切入，用“定位—特色—合作”三层递进，是申论“由点到面”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>前不久，中共中央、国务院印发<span class="highlight-blue">《关于发展新质生产力的意见》，提出19条重大发展改革任务</span>。本版今起推出系列评论，与广大读者共同思考，如何找准发展新质生产力的着力点。</p>
+
+      <p>发展新质生产力，如何走出同质化竞争的窠臼，打造自己的独特竞争力？</p>
+
+      <p>安徽淮南的发展，为我们提供了一个观察视角。当合肥在新能源汽车整车制造领域构筑起产业优势，淮南没有选择“内卷”，而是错位发展，聚焦零部件和专用车制造等领域。<span class="highlight-green">2023—2025年，淮南汽车产业规上产值年均增长率达67.5%</span>。</p>
+
+      <p><span class="highlight-gold">思路决定出路。</span>新质生产力的发展赛道足够宽，容得下各地共同前行，<span class="highlight-purple">关键是要有打破惯性思维的勇气和因地制宜的智慧</span>。</p>
+
+      <div class="thesis">【总论点】发展新质生产力，没有标准答案、固定模式，<span class="highlight-purple">关键是要有打破惯性思维的勇气和因地制宜的智慧</span>——思路决定出路，思路有多宽，出路就有多广。</div>
+
+      <p>前不久，习近平总书记在内蒙古乌兰察布考察时指出：“最担心的还是无序发展，一哄而起，最后一哄而散，那样更挫伤积极性。还有就是‘内卷’问题，盲目竞争，不顾自身条件地发展。”</p>
+
+      <p>中共中央、国务院印发的《关于发展新质生产力的意见》明确要求：<span class="highlight-blue">“坚持因地制宜，加强分类指导和重点领域统筹”</span>。</p>
+
+      <p>培育新质生产力，没有标准答案、固定模式。避免一哄而上、跟风冒进，关键在思路。<span class="highlight-gold">有了好思路，才会有好出路。</span></p>
+
+      <div class="sub-thesis">【分论点一】在把握一域与全局中找准定位——不靠“复制粘贴”的照搬照抄，而是立足全局所需、结合一域所能，实现“量体裁衣”。</div>
+
+      <p>在把握一域与全局中找准定位。新质生产力的培育，不能靠“复制粘贴”的照搬照抄，而是需要立足全局所需、结合一域所能，实现“量体裁衣”。西南小城四川丹棱在光伏赛道上加速迈进。“跳出丹棱看丹棱”，当地站在“成眉乐宜光伏产业走廊”视角，思考产业链还有哪些成本痛点、缺失环节，找到了“产业补位者”的精准定位。<span class="highlight-green">2025年1至11月，丹棱新能源新材料规上企业23家，实现产值33.8亿元</span>。</p>
+
+      <p>“内卷”没有出路，与其盲目跟风，不如精准谋划、精准施策、精准发力。打破“捡到篮里都是菜”的思维，善于在大局中找准定位，方能构筑起产业发展优势。</p>
+
+      <div class="sub-thesis">【分论点二】在统筹长板与短板中找到特色——扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径。</div>
+
+      <p>在统筹长板与短板中找到特色。或许有人认为，发展新质生产力是科技资源富集地区的事，与其他地区没有关系。事实上，先发地区有先发的优势，后发地区一样能闯出一片新天地，关键是找到特色。身处内陆，怎样发展新质生产力？戈壁滩上，一座座数据中心拔地而起，西北多地依托风光资源优势，发展<span class="highlight-blue">“绿电+算力”</span>新业态，让“瓦特”变“比特”。传统农业，如何向“新”而行？在云南高原特色农业的实践中，<span class="highlight-blue">数据和算法成了新农资</span>。一颗樱桃番茄的成长，需要多少水分、多少光照、多少肥料，通过大数据和人工智能技术都能实现数字化精准管理。</p>
+
+      <p>特色就是潜力、竞争力。看到自己和别人的长板在哪里、短板在何处，<span class="highlight-purple">扬长避短</span>，后发地区、传统产业同样可以发掘人无我有的独特发展路径。</p>
+
+      <div class="sub-thesis">【分论点三】在兼顾竞争与合作中找到机遇——协同联动、集群发力，取彼之长、补己之短，打开发展新天地。</div>
+
+      <p>在兼顾竞争与合作中找到机遇。一地发展新质生产力，从来不意味着单打独斗，协同联动、集群发力反而能收获“1+1＞2”的效果。黑龙江哈尔滨和广东深圳，两座城市跨越2800公里的创新牵手，联动激活了科技“富矿”。作为牵手的载体，位于哈尔滨的深哈产业园，将深圳成熟的产业逻辑与先进服务理念进行系统性移植，深度激活哈尔滨工业大学、哈尔滨工程大学等高校的科技资源，让创新活力持续迸发。<span class="highlight-green">截至2025年底，深哈产业园已投入运营的项目一期企业入驻率超90%，累计营收超170亿元</span>。</p>
+
+      <p><span class="highlight-purple">他山之石，可以攻玉。</span>他者既可以是一地的竞争者，也可以成为发展的合作者。跳出常规视角，以协同思维看待一地与他者的关系，找到合作的生长点，取彼之长，补己之短，就能打开发展新天地。</p>
+
+      <p>发展新质生产力，没有统一标准答案，没有放之四海皆准的模式。<span class="highlight-gold">思路有多宽，出路就有多广。</span></p>
+
+      <p>——找准发展新质生产力的着力点①</p>
+
+      <p class="byline">（人民日报2026年10月28日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思路</span>
+      <p><b>“思路决定出路。新质生产力的发展赛道足够宽，容得下各地共同前行”</b>——写“解放思想／因地制宜”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>“培育新质生产力，没有标准答案、固定模式。避免一哄而上、跟风冒进，关键在思路。有了好思路，才会有好出路”</b>——写“因地制宜”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“内卷没有出路，与其盲目跟风，不如精准谋划、精准施策、精准发力”</b>——写“错位发展”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定位</span>
+      <p><b>“不能靠‘复制粘贴’的照搬照抄，而是需要立足全局所需、结合一域所能，实现‘量体裁衣’”</b>——写“因地制宜”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·特色</span>
+      <p><b>“特色就是潜力、竞争力。扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径”</b>——写“特色发展”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·合作</span>
+      <p><b>“他山之石，可以攻玉。他者既可以是一地的竞争者，也可以成为发展的合作者”</b>——写“开放合作”是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记</span>
+      <p><b>“最担心的还是无序发展，一哄而起，最后一哄而散，那样更挫伤积极性。还有就是‘内卷’问题，盲目竞争，不顾自身条件地发展”</b>——写“防止内卷”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“发展新质生产力，没有统一标准答案，没有放之四海皆准的模式。思路有多宽，出路就有多广”</b>——写“因地制宜”是收束句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“设问破题—分论点递进”框架：以淮南错位发展破题，用“找准定位—发掘特色—协同合作”三层递进，适用于“因地制宜／新质生产力”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写“在把握一域与全局中找准定位”（立足全局所需结合一域所能）；分论点二写“在统筹长板与短板中找到特色”（扬长避短发掘独特路径）；分论点三写“在兼顾竞争与合作中找到机遇”（协同联动集群发力）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“因地制宜发展新质生产力”拆成举措：加强分类指导和重点领域统筹，避免一哄而上；立足全局所需结合一域所能，实现量体裁衣、错位发展；推动跨区域协同联动、集群发力，取彼之长补己之短。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“内卷没有出路，与其盲目跟风，不如精准谋划”的辩证：先立“因地制宜、错位发展”立场，再以“从…到…”句式揭示转变，把产业发展写成有厚度论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“思路有多宽，出路就有多广”可作“解放思想”类分论点；“他山之石，可以攻玉”可作“开放合作”类引言；“量体裁衣”可作“因地制宜”类标题句。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「思路有多宽，出路就有多广」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是在把握一域与全局中找准定位。不靠“复制粘贴”的照搬照抄，而是立足全局所需、结合一域所能，实现“量体裁衣”。<br>二是在统筹长板与短板中找到特色。扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径。<br>三是在兼顾竞争与合作中找到机遇。协同联动、集群发力，取彼之长、补己之短，打开发展新天地。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「发展新质生产力，没有标准答案、固定模式，关键是要有打破惯性思维的勇气和因地制宜的智慧——思路决定出路，思路有多宽，出路就有多广。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是在把握一域与全局中找准定位——不靠“复制粘贴”的照搬照抄，而是立足全局所需、结合一域所能，实现“量体裁衣”。<br>二是在统筹长板与短板中找到特色——扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径。<br>三是在兼顾竞争与合作中找到机遇——协同联动、集群发力，取彼之长、补己之短，打开发展新天地。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“思路决定出路。新质生产力的发展赛道足够宽，容得下各地共同前行”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「思路有多宽，出路就有多广」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是加强分类指导和重点领域统筹，避免一哄而上、跟风冒进。<br>二是立足全局所需、结合一域所能，实现量体裁衣、错位发展。<br>三是推动跨区域协同联动、集群发力，取彼之长、补己之短。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“思路决定出路。新质生产力的发展赛道足够宽，容得下各地共同前行”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于思路有多宽，出路就有多广的决定》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于思路有多宽，出路就有多广的决定</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进思路有多宽，出路就有多广，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、在把握一域与全局中找准定位——不靠“复制粘贴”的照搬照抄，而是立足全局所需、结合一域所能，实现“量体裁衣”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、在统筹长板与短板中找到特色——扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、在兼顾竞争与合作中找到机遇——协同联动、集群发力，取彼之长、补己之短，打开发展新天地。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“思路决定出路。新质生产力的发展赛道足够宽，容得下各地共同前行”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「思路有多宽，出路就有多广」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：思路有多宽，出路就有多广<br><br>时代之问，呼唤破题之策。思路有多宽，出路就有多广，是发展所需，也是民心所向。可从三个维度展开：在把握一域与全局中找准定位、在统筹长板与短板中找到特色、在兼顾竞争与合作中找到机遇。<br><br>分论点一：在把握一域与全局中找准定位——不靠“复制粘贴”的照搬照抄，而是立足全局所需、结合一域所能，实现“量体裁衣”。方向对了，路再远也能抵达。“思路决定出路。新质生产力的发展赛道足够宽，容得下各地共同前行”<br><br>分论点二：在统筹长板与短板中找到特色——扬长避短，后发地区、传统产业同样可以发掘人无我有的独特发展路径。方法对了，事再难也能办成。“培育新质生产力，没有标准答案、固定模式。避免一哄而上、跟风冒进，关键在思路。有了好思路，才会有好出路”<br><br>分论点三：在兼顾竞争与合作中找到机遇——协同联动、集群发力，取彼之长、补己之短，打开发展新天地。行百里者半九十。“内卷没有出路，与其盲目跟风，不如精准谋划、精准施策、精准发力”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。思路有多宽，出路就有多广是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-28</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

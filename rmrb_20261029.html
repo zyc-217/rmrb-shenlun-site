@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | "三张桌子"看作风</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"三张桌子"看作风</h1>
+    <div class="meta">人民日报·评论员观察 | 作风建设·党风政风·全面从严治党·党群关系·中央八项规定·基层减负 | 2026年10月29日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——党和人民赢得了强党强国的历史主动④ ｜ 主题：作风建设／全面从严治党／党群关系／强党强国</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">党风政风</span>
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">党群关系</span>
+      <span class="tag-item">中央八项规定</span>
+      <span class="tag-item">纠治四风</span>
+      <span class="tag-item">基层减负</span>
+      <span class="tag-item">为民造福</span>
+      <span class="tag-item">强党强国</span>
+      <span class="tag-item">历史主动</span>
+      <span class="tag-item">血肉联系</span>
+      <span class="tag-item">数字赋能</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>作风建设／以人民为中心／全面从严治党／强党强国</b>”等主题；本文“以小见大、由事及理”的论证链，是写“作风之变”类文章的高分框架。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“作风问题核心是党同人民群众的关系问题”</b>——表层是三张桌子的作风之变，深层是揭示百年大党以常抓不懈的自我革命赢得群众信任拥护的根本逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于持续深化作风建设、走好新时代群众路线的对策建议”等。对策要点：<b>以钉钉子精神纠治‘四风’、深化落实中央八项规定精神</b>／<b>整治形式主义为基层减负、明确权责清单强化数字赋能</b>／<b>推动干部走出机关、把惠民实事办到群众心坎上</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书）可作“关于持续深化作风建设、走好群众路线的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（以小见大、由事及理——餐桌见作风→会场搬现场→办公减负担）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“党的作风正，人民心气顺”的论断与平价月饼数据破题，引出作风“无形有迹”之问（第一至五段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出总论点：作风问题核心是党群关系问题，须推进作风建设常态化长效化（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“一张餐桌，察民风、知政风、见作风”</b>——涤荡舌尖歪风、管住干部之嘴，以清风正气赢得群众的心（前接分论点色块，含郴州、石嘴山案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“一张会议桌，从会场搬到现场”</b>——严控文山会海、在“第一现场”摸民情谋发展，做实服务之“效”（前接分论点色块，含独山院坝会）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“一张办公桌，减的是负担、增的是实绩”</b>——明确权责清单、强化数字赋能，让基层干部轻装上阵、惠民实事办到心坎（前接分论点色块，含红河案例）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“三张桌子照见百年大党赢得群众信任拥护的笃实行动”：以常抓不懈的自我革命，使党和人民同甘共苦、事业蓬勃发展。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用“以小见大、由事及理”结构：以餐桌、会议桌、办公桌三张桌子破题，用“餐桌见作风—会场搬现场—办公减负担”三层递进，是申论“由小切口见大主题”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展。</p>
+
+      <p>作风无形，但有迹可循。</p>
+
+      <p>数据显示，今年中秋节，<span class="highlight-green">68元至200元的平价月饼占比超六成</span>。近年来，从月饼不再机巧翻新，到天价烟酒没了市场，再到大闸蟹价格更加亲民……<span class="highlight-gold">"社交货币"悄然回归"食品本位"</span>，为新时代党的作风建设成效写下生动注脚。</p>
+
+      <p>"求治之道，莫先于正风俗。"党的作风和形象关系党的创造力、凝聚力、战斗力，决定党和国家事业成败。<span class="highlight-blue">习近平党建思想鲜明提出"坚持推进作风建设常态化长效化"</span>，指明了保持<span class="highlight-purple">党同人民群众血肉联系</span>的有效途径。</p>
+
+      <p>新时代以来，我们党纵深推进全面从严治党，把作风建设作为管党治党重要突破口，<span class="highlight-blue">从制定和落实中央八项规定开局破题，以钉钉子精神纠治"四风"</span>。从一系列党内集中教育"加油""补钙"，到深入推进风腐同查同治；从强化监督执纪，到<span class="highlight-blue">持续整治形式主义为基层减负</span>……我们坚持<span class="highlight-purple">破立并举、步步深入</span>，推动党风政风焕然一新，为党和国家事业发展凝聚起强大正能量。</p>
+
+      <p>餐桌、会议桌、办公桌，党员干部身边寻常的三张桌子，是观察党风政风的窗口。</p>
+
+      <div class="thesis">【总论点】作风问题核心是<span class="highlight-purple">党同人民群众的关系问题</span>，必须坚持推进<span class="highlight-blue">作风建设常态化长效化</span>，以<span class="highlight-gold">中央八项规定破题、以钉钉子精神纠治"四风"</span>，让百年大党以常抓不懈的自我革命赢得群众信任拥护，使<span class="highlight-green">党和人民同甘共苦、事业蓬勃发展</span>。</div>
+
+      <div class="sub-thesis">【分论点一】一张餐桌，察民风、知政风、见作风——涤荡"舌尖上的歪风"，管住"领导干部的嘴"，以清风正气赢得无数人民群众的心。</div>
+
+      <p>一张餐桌，察民风、知政风、见作风。</p>
+
+      <p>过去啥样？有基层干部表示："一听有接待，心里就发怵。"</p>
+
+      <p>涤荡"舌尖上的歪风"，整治"餐桌上的乱象"，<span class="highlight-purple">"我们管住了一些领导干部的嘴，赢得了无数人民群众的心"</span>。</p>
+
+      <p>如今，清风徐来，正气充盈。湖南郴州，干部下乡不再凭公函凑"饭局"，食堂扫码付费、自行打饭。宁夏石嘴山，电子公函带着"时间戳"，<span class="highlight-green">谁批的、谁吃的、花多少一目了然</span>。</p>
+
+      <p>变化不止于此。笔者在农村蹲点调研时发现，村干部张罗孝善大食堂，和老人们边吃边聊。<span class="highlight-green">一顿饭的工夫，谁有急难愁盼、谁有奇思妙想</span>，聊得开、说得透，其乐融融。</p>
+
+      <p>公职人员从推杯换盏中脱身，把节省下来的精力用来问冷暖、干实事，<span class="highlight-gold">跟群众之间情更亲、心更近</span>。</p>
+
+      <div class="sub-thesis">【分论点二】一张会议桌，从会场搬到现场——严控"文山会海"、把会议桌搬到项目工地田间地头，在"第一现场"摸民情、谋发展，做实服务之"效"。</div>
+
+      <p>一张会议桌，从会场搬到现场。</p>
+
+      <p>贵州独山县阳地村塘董组，一场院坝会气氛火热。没有主席台，没有红头文件，村民们围坐一起畅所欲言。</p>
+
+      <p>将会议桌搬到项目工地、田间地头、百姓家中，在<span class="highlight-blue">"第一现场"摸民情、谋发展</span>……<span class="highlight-gold">能在现场就不在会场</span>，日益成为党员干部的思想自觉和行动自觉。</p>
+
+      <p>整治"文山会海"，<span class="highlight-blue">严把"议题入口关"，严守"时长硬约束"，严控"参会精准度"，严抓"会后落实效"</span>……管住会议的"形"，做实服务的"效"。</p>
+
+      <div class="sub-thesis">【分论点三】一张办公桌，减的是负担、增的是实绩——明确"权责清单"、强化数字赋能，让基层干部轻装上阵、把惠民实事办到群众心坎上。</div>
+
+      <p>一张办公桌，减的是负担，增的是实绩。</p>
+
+      <p>填表报数，曾是基层干部办公桌上的一大痛点。有基层工作人员反映：<span class="highlight-green">"填一个表，要给19个村的村干部打电话"</span>。</p>
+
+      <p>明确<span class="highlight-blue">"权责清单"</span>，避免"小马拉大车"；强化<span class="highlight-blue">数字赋能</span>，有效降低基层数据重复采、难共享等问题……如今，基层干部<span class="highlight-gold">轻装上阵、善作善成</span>。</p>
+
+      <p>减负，是为了赋能。当一天骑手、跟一天网约车……云南红河组织<span class="highlight-green">600多名干部走出机关</span>，体验新就业群体工作状况，推动"暖蜂驿站"等惠民举措落地。</p>
+
+      <p><span class="highlight-gold">"看群众需要什么，而不是干部自己凭空想"</span>，如今摆在干部案头的，正是惠民生、暖民心、顺民意的实事。</p>
+
+      <p>三张桌子，照见的是新时代党员干部干事创业、担当作为、为民造福的精神面貌，见证的是一个百年大党以常抓不懈的作风建设赢得群众信任拥护的笃实行动。</p>
+
+      <p>新时代以来，从乡村振兴的广阔田野，到改革攻坚的火热实践，正是因为有人民群众的广泛参与、积极响应，我们办成一件件大事要事、攻克一个个难关险隘。实践充分证明，<span class="highlight-gold">党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展</span>。</p>
+
+      <p>新征程上，持之以恒加强党的作风建设，<span class="highlight-blue">"以好的作风振奋精神、激发斗志、树立形象、赢得民心"</span>，我们定能无往而不胜。</p>
+
+      <p>（本系列评论到此结束）</p>
+
+      <p>——党和人民赢得了强党强国的历史主动④</p>
+
+      <p class="byline">（人民日报2026年10月29日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”</b>——写“作风建设”是总领判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·赢得心</span>
+      <p><b>“我们管住了一些领导干部的嘴，赢得了无数人民群众的心”</b>——写“作风建设成效”是比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·现场</span>
+      <p><b>“能在现场就不在会场，日益成为党员干部的思想自觉和行动自觉”</b>——写“调查研究／实干”是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·论断</span>
+      <p><b>“坚持推进作风建设常态化长效化”</b>——写“作风建设”是论断句（习近平党建思想）。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>“从制定和落实中央八项规定开局破题，以钉钉子精神纠治'四风'”</b>——写“正风肃纪”是举措句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据</span>
+      <p><b>“填一个表，要给19个村的村干部打电话”</b>——写“基层减负痛点”是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“减负，是为了赋能”</b>——写“基层减负”是辩证句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·民心</span>
+      <p><b>“看群众需要什么，而不是干部自己凭空想”</b>——写“以人民为中心”是哲理句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“以小见大、由事及理”框架：以餐桌、会议桌、办公桌三张桌子破题，用“餐桌见作风—会场搬现场—办公减负担”三层递进，适用于“作风建设／以人民为中心”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写“餐桌察作风”（清风正气／赢得民心）；分论点二写“会议桌搬现场”（文山会海／第一现场／做实效）；分论点三写“办公桌减负担增实绩”（权责清单／数字赋能／惠民实事）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“深化作风建设”拆成举措：以钉钉子精神纠治四风、深化落实中央八项规定精神；整治形式主义为基层减负、明确权责清单强化数字赋能；推动干部走出机关、把惠民实事办到群众心坎上。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“减负是为了赋能”“管住嘴赢得心”的辩证：把作风建设写成“破与立”“减与增”的辩证统一，避免空泛表态。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“党的作风正，人民心气顺”可作“作风建设”类分论点／结尾；“能在现场就不在会场”可作“调查研究／实干”类引言；“看群众需要什么而不是凭空想”可作“以人民为中心”类收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「三张桌子看作风」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一张餐桌，察民风、知政风、见作风。涤荡"舌尖上的歪风"，管住"领导干部的嘴"，以清风正气赢得无数人民群众的心。<br>二是一张会议桌，从会场搬到现场。严控"文山会海"、把会议桌搬到项目工地田间地头，在"第一现场"摸民情、谋发展，做实服务之"效"。<br>三是一张办公桌，减的是负担、增的是实绩。明确"权责清单"、强化数字赋能，让基层干部轻装上阵、把惠民实事办到群众心坎上。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「作风问题核心是党同人民群众的关系问题，必须坚持推进作风建设常态化长效化，以中央八项规定破题、以钉钉子精神纠治"四风"，让百年大党以常抓不懈的自我革命赢得群众信任拥护，使党和人民同甘共苦、事业蓬勃发展。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一张餐桌，察民风、知政风、见作风——涤荡"舌尖上的歪风"，管住"领导干部的嘴"，以清风正气赢得无数人民群众的心。<br>二是一张会议桌，从会场搬到现场——严控"文山会海"、把会议桌搬到项目工地田间地头，在"第一现场"摸民情、谋发展，做实服务之"效"。<br>三是一张办公桌，减的是负担、增的是实绩——明确"权责清单"、强化数字赋能，让基层干部轻装上阵、把惠民实事办到群众心坎上。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「三张桌子看作风」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以钉钉子精神纠治‘四风’、深化落实中央八项规定精神。<br>二是整治形式主义为基层减负、明确权责清单强化数字赋能。<br>三是推动干部走出机关、把惠民实事办到群众心坎上。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于三张桌子看作风的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于三张桌子看作风的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进三张桌子看作风，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、一张餐桌，察民风、知政风、见作风——涤荡"舌尖上的歪风"，管住"领导干部的嘴"，以清风正气赢得无数人民群众的心。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、一张会议桌，从会场搬到现场——严控"文山会海"、把会议桌搬到项目工地田间地头，在"第一现场"摸民情、谋发展，做实服务之"效"。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、一张办公桌，减的是负担、增的是实绩——明确"权责清单"、强化数字赋能，让基层干部轻装上阵、把惠民实事办到群众心坎上。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「三张桌子看作风」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：三张桌子看作风<br><br>时代之问，呼唤破题之策。三张桌子看作风，是发展所需，也是民心所向。可从三个维度展开：一张餐桌，察民风、知政风、见作风、一张会议桌，从会场搬到现场、一张办公桌，减的是负担、增的是实绩。<br><br>分论点一：一张餐桌，察民风、知政风、见作风——涤荡"舌尖上的歪风"，管住"领导干部的嘴"，以清风正气赢得无数人民群众的心。方向对了，路再远也能抵达。“党的作风正，人民心气顺，党和人民就能同甘共苦，我们的事业就会蓬勃发展”<br><br>分论点二：一张会议桌，从会场搬到现场——严控"文山会海"、把会议桌搬到项目工地田间地头，在"第一现场"摸民情、谋发展，做实服务之"效"。方法对了，事再难也能办成。“我们管住了一些领导干部的嘴，赢得了无数人民群众的心”<br><br>分论点三：一张办公桌，减的是负担、增的是实绩——明确"权责清单"、强化数字赋能，让基层干部轻装上阵、把惠民实事办到群众心坎上。行百里者半九十。“能在现场就不在会场，日益成为党员干部的思想自觉和行动自觉”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。三张桌子看作风是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-29</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
