@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 抓到点子上  干在关键处</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>抓到点子上  干在关键处</h1>
+    <div class="meta">人民日报·大家谈 | 基层治理·调查研究·系统观念·统筹兼顾·精准施策·群众路线 | 2026年10月30日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——把复杂工作干到位的科学方法论 ｜ 主题：基层治理／调查研究／系统观念／循序渐进</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">调查研究</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">统筹兼顾</span>
+      <span class="tag-item">精准施策</span>
+      <span class="tag-item">循序渐进</span>
+      <span class="tag-item">靶向施策</span>
+      <span class="tag-item">群众路线</span>
+      <span class="tag-item">问题导向</span>
+      <span class="tag-item">实事求是</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">民生满意度</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配"<b>基层治理／调查研究／系统观念</b>"等主题；本文以"跑遍跑深跑透—十指弹琴—剥笋"三个并列隐喻展开，是写"基层治理如何提质增效"类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>"基层治理要抓到点子上、干在关键处，贵在调查研究摸清实情、系统观念统筹全局、循序渐进精准施策"</b>——表层是三则基层故事，深层是揭示把复杂工作干到位的科学方法论。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为"关于提升基层治理精细化水平的建议"等。对策要点：以调查研究摸清实情，跑遍跑深跑透从群众中找办法／以系统观念统筹全局，分清主次缓急协同推进／以循序渐进精准施策，由表及里靶向破解难题。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（建议书）可作"关于提升基层工作质效、把工作干到位的建议书"等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列隐喻：跑遍跑深跑透→十指弹琴→剥笋）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以"越是复杂的工作越要抓到点子上"破题，编者引出本期大家谈三篇来稿，共同思考如何把基层工作干到位（第一、二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出总论点：基层工作纷繁复杂，贵在抓到点子上、干在关键处——以调查研究摸清实情、以系统观念统筹全局、以循序渐进精准施策（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>"调查研究要跑遍、跑深、跑透——脚下有泥、心里有数，从实处从群众中找办法"</b>（前接分论点色块，含安化县城市更新、加装电梯危房改造等案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>"学会十指弹琴——以系统观念统筹兼顾，分清主次、辨明缓急"</b>（前接分论点色块，含拜城县人居环境提升、便民小菜园等案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>"从剥笋中悟治理——循序渐进、由表及里，靶向施策破解难题"</b>（前接分论点色块，含冬笋层层剥开、邻里争执土地纠纷由表及里等论述）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到"跑勤跑透跑出治理加速度、忙到点子上干出高效率"。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文采用"总—分"三并列隐喻结构：以"跑遍跑深跑透""十指弹琴""剥笋"三个生活化比喻，把抽象治理方法论写得可感可学，是申论"喻理于例"的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>基层工作纷繁复杂、具体多样。习近平总书记强调，<span class="highlight-blue">"越是复杂的工作越要抓到点子上"</span>。本期大家谈，我们选刊3篇来稿，与广大读者一起思考，如何更好把工作干到位。</p>
+
+      <p>——编  者</p>
+
+      <div class="thesis">【总论点】基层工作纷繁复杂、具体多样，越是复杂的工作越要<span class="highlight-purple">抓到点子上、干在关键处</span>：以<span class="highlight-blue">调查研究</span>摸清实情、跑遍跑深跑透，以<span class="highlight-blue">系统观念</span>统筹全局、协同推进，以<span class="highlight-purple">循序渐进</span>精准施策、由表及里，方能把工作干到位、见真章。</div>
+
+      <div class="sub-thesis">【分论点一】调查研究要"跑遍、跑深、跑透"——脚下有泥、心里有数，从实处从群众中找办法。</div>
+
+      <p>跑遍、跑深、跑透</p>
+
+      <p>湖南安化县  夏明炜</p>
+
+      <p>城市更新，难题不少，比如，<span class="highlight-green">小区房屋失修失管、居民自建房私搭乱建</span>等。下"笨功夫"，跑街巷、进楼房、查问题、听建议，系统研判后形成清单台账，既可为后续工作奠定基础，也有利于提升干部能力。</p>
+
+      <p>习近平同志在浙江工作时指出，<span class="highlight-blue">"基层跑遍、跑深、跑透了，我们的本领就会大起来"</span>。<span class="highlight-gold">脚下有泥，心里才有数，遇事才有办法。</span></p>
+
+      <p>跑遍，要下苦功夫，也要有好眼力。这意味着不仅要看"高楼大厦"，也要看"背阴胡同"。<span class="highlight-green">老旧小区加装电梯、危房改造、街巷提质</span>……多层次、多方位、多渠道了解实际，才能尽可能把问题情况搞准。</p>
+
+      <p>跑深，考验干群关系。楼房只爬一层，了解不到多数居民的想法；意见只听表面，就找不到问题症结。跑深，就必须杜绝形式主义，力戒走马观花，<span class="highlight-gold">"身入"实际、"心至"群众</span>，把问题捋清、把情况了解深。</p>
+
+      <p>跑透，强调效果，检验担当。基层各类矛盾成因各异、背景复杂，有的还牵涉多方利益。破解难题，就要<span class="highlight-blue">深挖矛盾根源、解剖问题症结，从党的创新理论里找"钥匙"，从各地实际出发研究施策</span>。</p>
+
+      <p>基层工作见真章。跑勤跑透，就能跑出<span class="highlight-purple">治理加速度、民生满意度</span>。</p>
+
+      <div class="sub-thesis">【分论点二】学会"十指弹琴"——以系统观念统筹兼顾，分清主次、辨明缓急。</div>
+
+      <p>学会"十指弹琴"</p>
+
+      <p>新疆拜城县  骆  静</p>
+
+      <p>下村走访，听村党支部书记谈起人居环境提升。一开始，清杂物、拆违建进展很快，可村民意见很大。原来，群众家门口的小菜畦、巷口纳凉用的旧石桌一并被清理了。后来，村干部转变思路，一边规整公共空间，一边给农户划定<span class="highlight-green">便民小菜园，并借着清理沟渠的契机疏通排水管网，还在闲置角落增设休闲座椅</span>。他总结：<span class="highlight-gold">"抓工作不能片面，而要学会'十指弹琴'。"</span></p>
+
+      <p><span class="highlight-blue">"十指弹琴"里有系统观念。</span>基层工作点多线长、环环相扣，倘若孤立看问题，只盯着一件事用力气，难免<span class="highlight-gold">"按下葫芦浮起瓢"</span>。<span class="highlight-purple">抓整治不能只重面子轻里子，上项目不能只看增速忽略民生，办好事不能只顾速度不问需求。</span>把各项工作放到全局中谋划，<span class="highlight-blue">统筹兼顾、协同推进</span>，才能避免留下后遗症。</p>
+
+      <p>弹琴有轻重缓急，干事也要讲主次先后。基层工作，常常急事难事交织叠加，如果眉毛胡子一把抓，表面看忙得脚不沾地，实际上只会<span class="highlight-purple">事倍功半</span>。要想干出实效，还得分清主次、辨明缓急。</p>
+
+      <p>学会"十指弹琴"，<span class="highlight-gold">忙才能忙到点子上，干才能干出高效率。</span></p>
+
+      <div class="sub-thesis">【分论点三】从"剥笋"中悟治理——循序渐进、由表及里，靶向施策破解难题。</div>
+
+      <p>从"剥笋"中悟治理</p>
+
+      <p>四川资中县  文国云</p>
+
+      <p>近期，冬笋上市。想吃到这口鲜，可得费一番功夫。笋芯被壳层层包裹，如果用蛮劲，容易破坏品相、造成浪费。<span class="highlight-purple">由外及内、层层剥开</span>，才能品尝到美味。由此想到，做好基层治理工作，也需<span class="highlight-blue">剥笋般的耐心和细致</span>。</p>
+
+      <p><span class="highlight-blue">层层剥笋，是审慎求真的态度，也是循序渐进的方法。</span>基层治理，容易出现两种偏差：一种是<span class="highlight-purple">对矛盾问题消极应对，让小问题拖成大难题、小纠纷累积成大矛盾</span>；另一种是急于求成，只求快速了结，不求治理成效，如此便容易留下隐患。<span class="highlight-gold">步子稳、方法实，小步快走、聚沙成塔</span>，才能不断提升治理效能。</p>
+
+      <p>解决问题，不能停留在表面，而要像剥笋一样<span class="highlight-purple">由表及里、层层深入</span>。邻里争执，背后的成因是什么？土地纠纷，来龙去脉是怎样的？<span class="highlight-blue">透过现象看本质，厘清症结、找准关键、靶向施策</span>，问题才会迎刃而解。</p>
+
+      <p>抓到点子上  干在关键处（大家谈·认识基层  深入基层  服务基层⑪）</p>
+
+      <p class="byline">（人民日报2026年10月30日 第05版 · 大家谈）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·调查研究</span>
+      <p><b>'脚下有泥，心里才有数，遇事才有办法。'</b>——写'深入基层／调查研究／实事求是'是收束句（习近平同志在浙江工作时指出）。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·群众路线</span>
+      <p><b>'身入实际、心至群众。'</b>——写'群众路线／以人民为中心／真抓实干'是对仗句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·统筹</span>
+      <p><b>'按下葫芦浮起瓢。'</b>——写'系统观念／统筹兼顾／避免顾此失彼'是比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·精准</span>
+      <p><b>'抓工作不能片面，而要学会十指弹琴。'</b>——写'系统思维／统筹全局'是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·效率</span>
+      <p><b>'忙才能忙到点子上，干才能干出高效率。'</b>——写'精准施策／提质增效'是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法</span>
+      <p><b>'步子稳、方法实，小步快走、聚沙成塔。'</b>——写'循序渐进／久久为功'是对仗句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·靶向</span>
+      <p><b>'透过现象看本质，厘清症结、找准关键、靶向施策。'</b>——写'精准施策／问题导向'是方法句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总括</span>
+      <p><b>'越是复杂的工作越要抓到点子上。'</b>——写'系统观念／科学方法论／实事求是'是习近平总书记强调的论断句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学'总—分'三并列隐喻：以'跑遍跑深跑透''十指弹琴''剥笋'三个生活化比喻，把'基层治理方法论'写成可感可学的并列三段，适用于'基层治理／工作方法'类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组并列：分论一写调查研究（跑遍跑深跑透／从群众中找办法）；分论二写系统观念（十指弹琴／统筹兼顾）；分论三写循序渐进（剥笋／由表及里／靶向施策）。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把'提升基层治理精细化水平'拆成举措：以调查研究摸清实情、以系统观念统筹全局、以循序渐进精准施策，每条对应一个生活化抓手。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学'只重面子轻里子，只看增速忽略民生，只顾速度不问需求''小问题拖成大难题、小纠纷累积成大矛盾'的辩证：把治理偏差写成'片面与统筹''速成与长效'的对照。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>'脚下有泥，心里才有数'可作'调查研究'类分论点／结尾；'忙才能忙到点子上'可作'精准施策／提质增效'类收束；'小步快走、聚沙成塔'可作'循序渐进／久久为功'类引言。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「抓到点子上  干在关键处」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是调查研究要"跑遍、跑深、跑透"。脚下有泥、心里有数，从实处从群众中找办法。<br>二是学会"十指弹琴"。以系统观念统筹兼顾，分清主次、辨明缓急。<br>三是从"剥笋"中悟治理。循序渐进、由表及里，靶向施策破解难题。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「基层工作纷繁复杂、具体多样，越是复杂的工作越要抓到点子上、干在关键处：以调查研究摸清实情、跑遍跑深跑透，以系统观念统筹全局、协同推进，以循序渐进精准施策、由表及里，方能把工作干到位、见真章。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是调查研究要"跑遍、跑深、跑透"——脚下有泥、心里有数，从实处从群众中找办法。<br>二是学会"十指弹琴"——以系统观念统筹兼顾，分清主次、辨明缓急。<br>三是从"剥笋"中悟治理——循序渐进、由表及里，靶向施策破解难题。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：'脚下有泥，心里才有数，遇事才有办法。'</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「抓到点子上  干在关键处」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以调查研究摸清实情，跑遍跑深跑透从群众中找办法。<br>二是以系统观念统筹全局，分清主次缓急协同推进。<br>三是以循序渐进精准施策，由表及里靶向破解难题。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：'脚下有泥，心里才有数，遇事才有办法。'</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于抓到点子上  干在关键处的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于抓到点子上  干在关键处的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进抓到点子上  干在关键处，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、调查研究要"跑遍、跑深、跑透"——脚下有泥、心里有数，从实处从群众中找办法。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、学会"十指弹琴"——以系统观念统筹兼顾，分清主次、辨明缓急。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、从"剥笋"中悟治理——循序渐进、由表及里，靶向施策破解难题。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：'脚下有泥，心里才有数，遇事才有办法。'</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「抓到点子上  干在关键处」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：抓到点子上  干在关键处<br><br>时代之问，呼唤破题之策。抓到点子上  干在关键处，是发展所需，也是民心所向。可从三个维度展开：调查研究要"跑遍、跑深、跑透"、学会"十指弹琴"、从"剥笋"中悟治理。<br><br>分论点一：调查研究要"跑遍、跑深、跑透"——脚下有泥、心里有数，从实处从群众中找办法。方向对了，路再远也能抵达。'脚下有泥，心里才有数，遇事才有办法。'<br><br>分论点二：学会"十指弹琴"——以系统观念统筹兼顾，分清主次、辨明缓急。方法对了，事再难也能办成。'身入实际、心至群众。'<br><br>分论点三：从"剥笋"中悟治理——循序渐进、由表及里，靶向施策破解难题。行百里者半九十。'按下葫芦浮起瓢。'保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。抓到点子上  干在关键处是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-10-31</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
