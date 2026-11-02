@@ -111,7 +111,7 @@ function render(){
       + (d.quote ? '<div class="d-quote">点睛：' + d.quote + '</div>' : '')
       + (d.tags.length ? '<div class="d-tags">' + d.tags.map(x=>'<span>'+x+'</span>').join('') + '</div>' : '')
       + '<div class="drill"><b>' + d.drill_name + '</b><p>' + d.drill + '</p></div>'
-      + '<div class="btns"><a class="btn-open" href="../../../automation-2026-07-31-07-29-23/site/' + d.file + '" target="_blank">打开精读全文</a>'
+      + '<div class="btns"><a class="btn-open" href="' + d.file + '" target="_blank">打开精读全文</a>'
       + '<button class="btn-done" onclick="toggle(this)">' + (done?'已完成 ✓':'完成打卡') + '</button></div></div>';
   }
   document.getElementById('content').innerHTML = html;
