@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民日报评论精读 | 统筹兼顾“从0到1”与“从1到N”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>统筹兼顾“从0到1”与“从1到N”</h1>
+    <div class="meta">人民日报·人民时评 | 新质生产力·科技创新·产业创新·科技成果转化·场景牵引·有效市场与有为政府 | 2026年11月2日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">副题：——找准发展新质生产力的着力点② ｜ 主题：新质生产力／科技创新与产业创新深度融合／有效市场与有为政府</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">科技创新</span>
+      <span class="tag-item">产业创新</span>
+      <span class="tag-item">科技成果转化</span>
+      <span class="tag-item">场景牵引</span>
+      <span class="tag-item">有效市场与有为政府</span>
+      <span class="tag-item">体制机制改革</span>
+      <span class="tag-item">高水平科技自立自强</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">双链融合</span>
+      <span class="tag-item">新型基础设施</span>
+      <span class="tag-item">营商环境</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配"<b>新质生产力／科技创新与产业创新深度融合／有效市场与有为政府</b>"等主题；本文以'科技成果转化难'切入，论证'从0到1'与'从1到N'统筹兼顾，是写'新质生产力'类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>"统筹兼顾'从0到1'的原始创新与'从1到N'的产业放大，推动科技创新和产业创新深度融合、双向赋能，是加快形成新质生产力的关键着力点"</b>——表层是成果转化之困，深层是揭示创新链产业链融合的辩证。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为"关于推动科技创新与产业创新深度融合的建议"等。对策要点：破除体制机制障碍，激发科研主动性／布局概念验证中试平台，打通转化堵点／以场景清单牵引，推动成果应用落地。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书）可作"关于推动科技创新与产业创新深度融合的倡议书"等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（问题—分析—对策递进：成果之困→体制之障→场景之引→两手之力）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以'从1到N反哺0到1、深度融合双向赋能'破题，点明总论点（第一、二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：统筹'从0到1'原始创新与'从1到N'产业放大，推动科技创新和产业创新深度融合，是形成新质生产力的关键着力点（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>'破除体制机制障碍，打通科技成果转化通道——让科技创新与产业创新双向奔赴、深度融合'</b>（前接分论点色块，含示范区改革案例、总书记论述、论文与产业化率差距、意见部署）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>'从“技术供给”转向“场景牵引”是关键——以真实场景为科技成果找“用武之地”'</b>（前接分论点色块，含安徽芜湖两张清单、江苏昆山场景办）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>'坚持有效市场和有为政府相结合——两手发力激活全社会创新活力'</b>（前接分论点色块，含盐穴储氢反哺、创新循环、DeepSeek与东数西算、星火燎原收束）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到'从全球科技参与者向开拓者、引领者加速转变''更大的蓝海还在前方'，把新质生产力写成接力跑。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文'问题—分析—对策'结构：以成果转化难切入，由供给端改革到场景牵引再到市场政府协同，层层递进，是申论'小切口大主题'范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>“从1到N”的产业创新，也能反哺“从0到1”的科技创新。<span class="highlight-blue">科技创新和产业创新深度融合</span>完全能够实现<span class="highlight-purple">双向赋能</span>。</p>
+
+      <div class="thesis">【总论点】统筹兼顾“从0到1”的原始创新与“从1到N”的产业放大，推动<span class="highlight-blue">科技创新和产业创新深度融合</span>、<span class="highlight-purple">双向赋能</span>，是加快形成<span class="highlight-blue">新质生产力</span>的关键着力点。</div>
+
+      <div class="sub-thesis">【分论点一】破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”——让“从0到1”的科技创新与“从1到N”的产业创新双向奔赴、深度融合。</div>
+
+      <p>翻开<span class="highlight-green">2025年国家自主创新示范区改革典型案例名单</span>，能发现一个鲜明特点：入选的案例，许多直指<span class="highlight-blue">科技成果转化难</span>这一痛点。</p>
+
+      <p>有的以“赋权+约定收益+容错免责”模式激发科研人员主动性，有的推行“拨投结合”模式破解“不敢投”困局，有的通过“双聘互认”机制破除人才引进与流动的壁垒难题……坚持问题导向，锐意创新、大胆探索，点燃<span class="highlight-blue">新质生产力</span>发展的强劲引擎。</p>
+
+      <p>习近平总书记反复强调“<span class="highlight-blue">强化科技创新和产业创新深度融合</span>”，并深刻指出：<span class="highlight-gold">“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”</span></p>
+
+      <p>这背后，有着深远考量。<span class="highlight-green">《2025年中国科技论文统计报告》显示，我国热点论文数量世界占比首次过半，达53.2%，居全球首位；与此同时，截至2025年底，高校、科研机构发明专利产业化率分别只有10.1%和17.2%。</span>大量成果仍停留在论文层面。</p>
+
+      <p><span class="highlight-blue">科学技术是第一生产力</span>，但技术不会自动“长成”生产力。从原理探索到市场开拓，中间横亘着概念验证、中试试验、成本优化、场景适配等一道道关卡。正因此，<span class="highlight-blue">中共中央、国务院印发的《关于发展新质生产力的意见》</span>，把“<span class="highlight-blue">加速科技成果向现实生产力转化</span>”摆在重要位置，不仅指明方向，还明确具体的实现路径，比如“布局建设<span class="highlight-blue">概念验证、中试验证平台</span>”“探索建立科技项目全过程评价机制”等。</p>
+
+      <div class="sub-thesis">【分论点二】从“技术供给”转向“场景牵引”是关键——以真实应用场景为科技成果找“用武之地”，让创新链与产业链无缝对接。</div>
+
+      <p>“深度融合”，从“技术供给”转向“场景牵引”是关键。</p>
+
+      <p><span class="highlight-green">安徽芜湖拿出场景机会清单、场景能力清单“两张清单”</span>，牵起供需两端，让超<span class="highlight-green">110项</span>新产品新技术在真实场景中找到“用武之地”。</p>
+
+      <p><span class="highlight-green">江苏昆山挂牌全国首个县域“场景办”</span>，不审批、不发文、不撒补贴，专司“为产品找应用、为场景找技术”，挂牌以来已帮助多家生产企业对接上<span class="highlight-blue">人工智能</span>合作伙伴。</p>
+
+      <p>着力破除制约高质量发展的<span class="highlight-purple">思想观念束缚、体制机制障碍</span>，让<span class="highlight-blue">创新链和产业链无缝对接</span>，才能激活<span class="highlight-blue">新质生产力</span>发展的“<span class="highlight-gold">一池春水</span>”。</p>
+
+      <div class="sub-thesis">【分论点三】坚持有效市场和有为政府相结合——让“无形之手”与“有形之手”同向发力，激活全社会创新创造活力。</div>
+
+      <p>“从1到N”的产业创新，也能反哺“从0到1”的科技创新。<span class="highlight-blue">科技创新和产业创新深度融合</span>完全能够实现<span class="highlight-purple">双向赋能</span>。</p>
+
+      <p>今年4月，<span class="highlight-green">我国首个百万方级盐穴储氢示范项目在河南平顶山正式投产运行</span>。相关技术的突破，验证层状盐岩储氢的长期密封性与工程可行性，补齐氢能大规模、低成本储存关键短板；而当氢能“制—储—输—用”迈入产业化新阶段，规模化应用中沉淀的工艺、积累的数据，又将夯实氢能领域原始创新的根基。</p>
+
+      <p><span class="highlight-purple">“创新—应用—迭代—反馈—再创新”</span>的循环越顺畅，越能加速科技成果向现实生产力转化，越有利于加快实现<span class="highlight-blue">高水平科技自立自强</span>。</p>
+
+      <p>创新，既需要市场机制推动，也需要政策引导。近日，<span class="highlight-green">DeepSeek（深度求索）发布大模型V4.1 Flash新版本，多场景Token（词元）消耗降低超五成</span>。回看中国大模型发展之路，企业你追我赶，迭代升级；政府实施“<span class="highlight-blue">东数西算</span>”工程，建设<span class="highlight-blue">全国一体化算力网</span>，做好新基建。正是<span class="highlight-purple">无形之手和有形之手同向发力</span>，让中国大模型持续惊艳世界。</p>
+
+      <p>坚持<span class="highlight-blue">有效市场和有为政府相结合</span>，强化市场在研发攻关方向、技术路线选择上的牵引作用，发挥政府创新组织者和生态营造者作用，就能更好激发全社会创新创造活力。</p>
+
+      <p>如果说<span class="highlight-purple">“从0到1”是“星火”，那么“从1到N”便是“燎原”</span>。建设科技强国，<span class="highlight-gold">“从全球科技参与者、贡献者向开拓者、引领者加速转变”</span>，我们迈出了一大步；在此基础上，推动科技创新和产业创新深度融合，更大的蓝海还在前方。</p>
+
+      <p>——找准发展新质生产力的着力点②</p>
+
+      <p>统筹兼顾“从0到1”与“从1到N”（人民时评）</p>
+
+      <p class="byline">（人民日报2026年11月2日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·领导论述</span>
+      <p><b>“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”</b>——写‘科技创新／成果转化’是权威论断。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证比喻</span>
+      <p><b>“如果说‘从0到1’是‘星火’，那么‘从1到N’便是‘燎原’。”</b>——写‘创新积累／由小到大’是比喻句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·循环方法论</span>
+      <p><b>“创新—应用—迭代—反馈—再创新”的循环越顺畅，越能加速科技成果向现实生产力转化。</b>——写‘创新生态／良性循环’是方法句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·改革论断</span>
+      <p><b>“让创新链和产业链无缝对接，才能激活新质生产力发展的‘一池春水’。”</b>——写‘体制机制改革／打通堵点’是收束句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·使命号召</span>
+      <p><b>“建设科技强国，‘从全球科技参与者、贡献者向开拓者、引领者加速转变’。”</b>——写‘科技自立自强／强国建设’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·市场政府</span>
+      <p><b>“坚持有效市场和有为政府相结合，强化市场在研发攻关方向、技术路线选择上的牵引作用。”</b>——写‘政府与市场关系／两手发力’是方法论。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·场景牵引</span>
+      <p><b>“从‘技术供给’转向‘场景牵引’是关键。”</b>——写‘需求导向／应用落地’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·双向赋能</span>
+      <p><b>“‘从1到N’的产业创新，也能反哺‘从0到1’的科技创新。”</b>——写‘产业与科技互促／双向赋能’是辩证句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘问题—分析—对策’递进：以‘科技成果转化难’现象切入，分三层（打通转化通道／场景牵引／市场政府协同），适用于‘新质生产力／科技创新’类大作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三维度：分论一写破除体制机制障碍、畅通转化；分论二写场景牵引、应用落地；分论三写有效市场与有为政府结合。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘推动科技创新产业创新深度融合’拆举措：赋权+容错激发科研主动性／布局概念验证中试平台／建场景清单的场景办。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘从0到1是星火、从1到N是燎原’‘从技术供给转向场景牵引’的对照，把创新写成‘原始突破与产业放大互促’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘如果说从0到1是星火，那么从1到N便是燎原’可作大作文开头或结尾；‘激活新质生产力发展的一池春水’可作分论点收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「统筹兼顾“从0到1”与“从1到N”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”。让“从0到1”的科技创新与“从1到N”的产业创新双向奔赴、深度融合。<br>二是从“技术供给”转向“场景牵引”是关键。以真实应用场景为科技成果找“用武之地”，让创新链与产业链无缝对接。<br>三是坚持有效市场和有为政府相结合。让“无形之手”与“有形之手”同向发力，激活全社会创新创造活力。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「统筹兼顾“从0到1”的原始创新与“从1到N”的产业放大，推动科技创新和产业创新深度融合、双向赋能，是加快形成新质生产力的关键着力点。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”——让“从0到1”的科技创新与“从1到N”的产业创新双向奔赴、深度融合。<br>二是从“技术供给”转向“场景牵引”是关键——以真实应用场景为科技成果找“用武之地”，让创新链与产业链无缝对接。<br>三是坚持有效市场和有为政府相结合——让“无形之手”与“有形之手”同向发力，激活全社会创新创造活力。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「统筹兼顾“从0到1”与“从1到N”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是破除体制机制障碍，激发科研主动性。<br>二是布局概念验证中试平台，打通转化堵点。<br>三是以场景清单牵引，推动成果应用落地。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于统筹兼顾“从0到1”与“从1到N”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于统筹兼顾“从0到1”与“从1到N”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进统筹兼顾“从0到1”与“从1到N”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”——让“从0到1”的科技创新与“从1到N”的产业创新双向奔赴、深度融合。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、从“技术供给”转向“场景牵引”是关键——以真实应用场景为科技成果找“用武之地”，让创新链与产业链无缝对接。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、坚持有效市场和有为政府相结合——让“无形之手”与“有形之手”同向发力，激活全社会创新创造活力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「统筹兼顾“从0到1”与“从1到N”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：统筹兼顾“从0到1”与“从1到N”<br><br>时代之问，呼唤破题之策。统筹兼顾“从0到1”与“从1到N”，是发展所需，也是民心所向。可从三个维度展开：破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”、从“技术供给”转向“场景牵引”是关键、坚持有效市场和有为政府相结合。<br><br>分论点一：破除体制机制障碍，打通科技成果转化的“最初一公里”与“最后一公里”——让“从0到1”的科技创新与“从1到N”的产业创新双向奔赴、深度融合。方向对了，路再远也能抵达。“原创性技术要从‘0’到‘1’，从实验实现转化，而不是停留在论文阶段。以后还要把‘1’拉长、推进。”<br><br>分论点二：从“技术供给”转向“场景牵引”是关键——以真实应用场景为科技成果找“用武之地”，让创新链与产业链无缝对接。方法对了，事再难也能办成。“如果说‘从0到1’是‘星火’，那么‘从1到N’便是‘燎原’。”<br><br>分论点三：坚持有效市场和有为政府相结合——让“无形之手”与“有形之手”同向发力，激活全社会创新创造活力。行百里者半九十。“创新—应用—迭代—反馈—再创新”的循环越顺畅，越能加速科技成果向现实生产力转化保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。统筹兼顾“从0到1”与“从1到N”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-02</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
