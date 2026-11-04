@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 绿水青山也是安全靠山</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>绿水青山也是安全靠山</h1>
+    <div class="meta">人民日报·评论员观察 | 生态安全·防灾减灾·人与自然和谐共生·绿水青山就是金山银山·统筹发展和安全·生态文明 | 2026年11月4日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：生态安全／防灾减灾／人与自然和谐共生／统筹发展和安全／高品质生态环境支撑高质量发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">生态安全</span>
+      <span class="tag-item">防灾减灾</span>
+      <span class="tag-item">人与自然和谐共生</span>
+      <span class="tag-item">绿水青山就是金山银山</span>
+      <span class="tag-item">统筹发展和安全</span>
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">高品质生态环境</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">生态修复</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">天人合一</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>生态安全／防灾减灾／人与自然和谐共生／统筹发展和安全</b>”等主题；本文以‘映秀新生—风车田—绿水青山安全靠山’为线，用‘制度确定性／生态持续性／人的主动性’三重要素递进，是写‘安全与发展’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“绿水青山不仅是金山银山，也是安全靠山”</b>——表层是谈生态修复，深层是揭示须以制度、生态、人的三重韧性筑牢防灾减灾坚固屏障。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地统筹生态保护和防灾减灾的主要做法与成效”，从制度托底、生态修复、绿色发展三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步统筹生态保护和防灾减灾、提升安全韧性的对策建议”等。对策要点：<b>健全防灾减灾制度体系，以制度托举筑牢抗御自然灾害坚固屏障</b>／<b>推进生态修复治理，因地制宜涵养水土、调节气候、防御灾害</b>／<b>激发绿色发展内生动力，以奋斗韧性把生态优势转化为发展优势</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书）可作“关于携手守护绿水青山、筑牢安全防线的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：制度确定性／生态持续性／人的主动性—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘人与自然是伙伴关系、共生关系’起笔，用汶川映秀震后新生的案例破题（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：绿水青山不仅是金山银山，也是安全靠山，须以制度、生态、人的三重韧性筑牢防灾减灾屏障（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘以制度的确定性对抗风险的不确定性’</b>——健全防灾减灾制度体系，以制度托举筑就抗御自然灾害的坚固屏障（前接分论点色块，含映秀新生方法论）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘以生态的持续性对冲灾害的突发性’</b>——因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害（前接分论点色块，含风车田／总书记论断／绿水青山安全靠山）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘以人的主动性对冲自然的无常性’</b>——激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗（前接分论点色块，含敬畏自然、收获馈赠）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘以高品质生态环境支撑高质量发展’，把生态安全写成‘发展与保护中天人合一’的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（制度／生态／人的主动性）—总’结构：以灾难叙事破题，用三组‘对冲’递进，是申论‘由事及理、小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p><span class="highlight-purple">人与自然不是征服与被征服的对抗关系，也不是改造与被改造的单向利用关系，而是一种更加和谐、更可持续的伙伴关系、共生关系</span>。</p>
+
+      <p>废墟上开出的花朵，比任何美景都更令人震撼。</p>
+
+      <p>不久前，笔者专程去了趟四川汶川映秀镇。岷江江畔，“5·12”汶川特大地震漩口中学遗址前，前来缅怀逝者、致敬英雄的人络绎不绝；岷江另一侧，新建的居住与商业区房屋鳞次栉比。映秀震中纪念馆旁的渔子溪村，<span class="highlight-blue">依托山水生态发展特色产业</span>，成功摆脱贫困，走向振兴发展。</p>
+
+      <div class="sub-thesis">【分论点一】以制度的确定性对抗风险的不确定性——健全防灾减灾制度体系、以制度托举筑就抗御自然灾害的坚固屏障。</div>
+
+      <p>任何挑战都无法阻挡人们前行的脚步。映秀不仅绘就生态重塑、绿色振兴的美丽答卷，也写下人类直面灾难、<span class="highlight-purple">向阳生长的不屈史诗</span>。</p>
+
+      <p>有制度托底，精神就更具韧性；有理念指引，发展便更加顺畅；有内生动力，援助也更有成效。映秀新生，向世人揭示了一种面对自然灾害的方法论：<span class="highlight-purple">以制度的确定性对抗风险的不确定性，以生态的持续性对冲灾害的突发性，以人的主动性对冲自然的无常性</span>。<span class="highlight-blue">制度托举、生态根基、奋斗韧性</span>，环环相扣、相辅相成，共同筑就抗御自然灾害的坚固屏障。</p>
+
+      <div class="thesis">【总论点】绿水青山不仅是金山银山，也是安全靠山。要<span class="highlight-blue">摆正人与自然的关系、筑牢与自然共生的根基</span>，以<span class="highlight-purple">制度的确定性对抗风险的不确定性、以生态的持续性对冲灾害的突发性、以人的主动性对冲自然的无常性</span>，<span class="highlight-blue">以高品质生态环境支撑高质量发展</span>。</div>
+
+      <div class="sub-thesis">【分论点二】以生态的持续性对冲灾害的突发性——因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害。</div>
+
+      <p>我们无法彻底阻止自然灾害的发生，却可以通过摆正与自然的关系、筑牢与自然共生的根基，最大限度降低灾害带来的损失。<span class="highlight-purple">防灾减灾，不是驯服自然的慷慨长歌，而是发展与保护中的天人合一</span>。</p>
+
+      <p>有网友在从甘肃敦煌起飞的飞机上，拍摄到西北大地一片令人震撼的“风车田”，相关视频引发网友热议。原本寸草不生的戈壁滩，如今整齐排列着<span class="highlight-green">成百上千台风力发电机</span>，变身源源不断输出清洁能源的绿电基地。荒凉大地因产业扎根而焕发生机，体现<span class="highlight-blue">“全面推进人与自然和谐共生的现代化”</span>的智慧引领。</p>
+
+      <p>习近平总书记强调：<span class="highlight-gold">“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”</span>从青海海北光伏项目助力扩绿增收，到<span class="highlight-green">长江经济带优良水质比例与地区生产总值同步提升</span>，无不揭示<span class="highlight-gold">“保护生态环境就是保护生产力、改善生态环境就是发展生产力”</span>的道理。在中国式现代化的道路上，人与自然不是征服与被征服的对抗关系，也不是改造与被改造的单向利用关系，而是一种更加和谐、更可持续的伙伴关系、共生关系。</p>
+
+      <p>绿水青山不仅是金山银山，也是安全靠山。要看到，不少地质和气象灾害的发生、加剧，与林草毁坏、污染排放有一定关联。<span class="highlight-blue">因地制宜修复生态，下定决心治理污染</span>，才能有效<span class="highlight-blue">涵养水土、调节气候、防御灾害</span>，让我们在面对各类风险挑战时多几分从容与底气。<span class="highlight-purple">“人与自然和谐共生”不是遥不可及的想象，而是可落地、可复制、可推广的发展路径</span>。<span class="highlight-blue">以保护促可持续发展、向生态要综合效益</span>，我们就能筑牢防灾减灾防线，<span class="highlight-gold">在绿水青山间收获稳稳幸福</span>。</p>
+
+      <div class="sub-thesis">【分论点三】以人的主动性对冲自然的无常性——激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗。</div>
+
+      <p>从祁连山的雪水潺潺到毛乌素的绿洲连片，每一片重新焕发生机的土地，都印证着同一个道理：<span class="highlight-purple">敬畏自然、呵护生态，终将收获自然的馈赠与生态的滋养</span>。深入推进新时代生态文明建设实践，<span class="highlight-blue">以高品质生态环境支撑高质量发展</span>，未来可期。</p>
+
+      <p class="byline">（人民日报2026年11月4日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·生态论断</span>
+      <p><b>“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”</b>——写‘生态文明／中国式现代化’是权威论断。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·生产力</span>
+      <p><b>“保护生态环境就是保护生产力、改善生态环境就是发展生产力。”</b>——写‘绿色发展／生态效益’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·幸福</span>
+      <p><b>“在绿水青山间收获稳稳幸福。”</b>——写‘生态惠民／安全韧性’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>“以制度的确定性对抗风险的不确定性，以生态的持续性对冲灾害的突发性，以人的主动性对冲自然的无常性。”</b>——写‘统筹发展和安全’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证法</span>
+      <p><b>“防灾减灾，不是驯服自然的慷慨长歌，而是发展与保护中的天人合一。”</b>——写‘生态与防灾’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·绿色</span>
+      <p><b>“以高品质生态环境支撑高质量发展。”</b>——写‘生态文明／绿色发展’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·风车</span>
+      <p><b>“原本寸草不生的戈壁滩，如今整齐排列着成百上千台风力发电机，变身源源不断输出清洁能源的绿电基地。”</b>——写‘生态产业化’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·长江</span>
+      <p><b>“长江经济带优良水质比例与地区生产总值同步提升。”</b>——写‘生态与经济发展共赢’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·升华</span>
+      <p><b>“敬畏自然、呵护生态，终将收获自然的馈赠与生态的滋养。”</b>——写‘生态保护／可持续发展’是升华句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以映秀震后新生破题，用‘制度确定性／生态持续性／人的主动性’三层递进，以‘以高品质生态环境支撑高质量发展’收束，适用于‘生态安全／防灾减灾’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写制度托底、筑牢防灾减灾屏障；分论点二写生态修复、涵养水土防御灾害；分论点三写人的主动性、绿色发展内生动力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘统筹生态保护和防灾减灾’拆举措：健全防灾减灾制度体系；推进生态修复治理、涵养水土防御灾害；激发绿色发展内生动力、把生态优势转化为发展优势。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘以制度的确定性对抗风险的不确定性’‘防灾减灾不是驯服自然，而是天人合一’的由事及理，把生态话题写成‘保护与发展’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘在绿水青山间收获稳稳幸福’可作‘生态惠民’类文章结尾；‘以高品质生态环境支撑高质量发展’可作大作文开头或升华；‘敬畏自然、呵护生态，终将收获自然的馈赠’可作分论点。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「绿水青山也是安全靠山」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以制度的确定性对抗风险的不确定性。健全防灾减灾制度体系、以制度托举筑就抗御自然灾害的坚固屏障。<br>二是以生态的持续性对冲灾害的突发性。因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害。<br>三是以人的主动性对冲自然的无常性。激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「绿水青山不仅是金山银山，也是安全靠山。要摆正人与自然的关系、筑牢与自然共生的根基，以制度的确定性对抗风险的不确定性、以生态的持续性对冲灾害的突发性、以人的主动性对冲自然的无常性，以高品质生态环境支撑高质量发展。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以制度的确定性对抗风险的不确定性——健全防灾减灾制度体系、以制度托举筑就抗御自然灾害的坚固屏障。<br>二是以生态的持续性对冲灾害的突发性——因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害。<br>三是以人的主动性对冲自然的无常性——激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「绿水青山也是安全靠山」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是健全防灾减灾制度体系，以制度托举筑牢抗御自然灾害坚固屏障。<br>二是推进生态修复治理，因地制宜涵养水土、调节气候、防御灾害。<br>三是激发绿色发展内生动力，以奋斗韧性把生态优势转化为发展优势。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于绿水青山也是安全靠山的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于绿水青山也是安全靠山的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进绿水青山也是安全靠山，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、以制度的确定性对抗风险的不确定性——健全防灾减灾制度体系、以制度托举筑就抗御自然灾害的坚固屏障。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以生态的持续性对冲灾害的突发性——因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以人的主动性对冲自然的无常性——激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「绿水青山也是安全靠山」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：绿水青山也是安全靠山<br><br>时代之问，呼唤破题之策。绿水青山也是安全靠山，是发展所需，也是民心所向。可从三个维度展开：以制度的确定性对抗风险的不确定性、以生态的持续性对冲灾害的突发性、以人的主动性对冲自然的无常性。<br><br>分论点一：以制度的确定性对抗风险的不确定性——健全防灾减灾制度体系、以制度托举筑就抗御自然灾害的坚固屏障。方向对了，路再远也能抵达。“尊重自然、顺应自然、保护自然，促进人与自然和谐共生，是中国式现代化的鲜明特点。”<br><br>分论点二：以生态的持续性对冲灾害的突发性——因地制宜修复生态、治理污染，涵养水土、调节气候、防御灾害。方法对了，事再难也能办成。“保护生态环境就是保护生产力、改善生态环境就是发展生产力。”<br><br>分论点三：以人的主动性对冲自然的无常性——激发绿色发展内生动力、以奋斗韧性书写向阳生长的不屈史诗。行百里者半九十。“在绿水青山间收获稳稳幸福。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。绿水青山也是安全靠山是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-04</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
