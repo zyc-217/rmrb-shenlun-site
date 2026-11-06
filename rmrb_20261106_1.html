@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 消费潜力，常在触手可及的身边</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>消费潜力，常在触手可及的身边</h1>
+    <div class="meta">人民日报·人民时评 | 消费潜力·影视+跨界融合·文旅融合·供给侧改革·超大规模市场·文化自信·供需适配 | 2026年11月6日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：消费潜力／影视+跨界融合／文旅融合／供给侧改革／超大规模市场／内容创新／文化自信</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">消费潜力</span>
+      <span class="tag-item">影视+跨界融合</span>
+      <span class="tag-item">文旅融合</span>
+      <span class="tag-item">供给侧改革</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">内容创新</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">供需适配</span>
+      <span class="tag-item">票根经济</span>
+      <span class="tag-item">体验经济</span>
+      <span class="tag-item">文化产业</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>消费潜力／影视+跨界融合／文旅融合／供给侧改革／超大规模市场／内容创新／文化自信</b>”等主题；本文以横店短剧体验、耀莱沉浸游戏空间破题，用‘跨界开拓赛道—文化主轴赋能—守住内容核心’三层展开，是写‘消费升级’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“消费的潜力常在触手可及的身边，以‘影视+’拓宽消费边界、推动文化价值与市场效益双向赋能”</b>——表层是谈影视跨界，深层是揭示须以优质内容为根、以创新服务为枝，在供需适配中激活超大规模市场动能。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地以‘影视+’激活消费新活力的做法与成效”，从跨界融合开拓新赛道、以文化主轴赋能、守住内容核心稳步探索三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步以‘影视+’拓宽消费边界、释放消费潜力的对策建议”等。对策要点：<b>推动业态翻新与服务升级，以跨界融合盘活内容资源、带动消费场景从一次性体验转向持续运营</b>／<b>紧扣文化主轴，以光影市集、票根经济等连接内容生产与消费场景</b>／<b>守住内容核心，以优质内容为根、创新服务为枝，稳步探索供需互促共进</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（意见／通知）可作“关于以‘影视+’激活消费新活力的通知”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：跨界开拓赛道／文化主轴赋能／守住内容核心—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘跨界融合在影视行业兴起’起笔，用横店短剧体验、耀莱巨幕沉浸游戏空间两处案例破题（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：消费的潜力常在触手可及的身边，以‘影视+’拓宽消费边界、推动文化价值与市场效益双向赋能（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘业态翻新、服务升级、跨界牵手，开拓消费新赛道’</b>——创新是把握‘影视+’机遇的关键引擎，带动场景从一次性体验转向持续运营（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘以文化为主轴，激活可持续消费新活力’</b>——北京百花奖光影市集、票根经济，从‘放一部电影’变成‘激活一片消费’（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘守住内容核心，在供需互促共进中稳步探索’</b>——以优质内容为根、创新服务为枝，国家电影局通知明确综合性文化体验空间定位（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘老买卖学会新吆喝、旧玩意玩出新花样’，把消费话题写成超大规模市场在供需适配中激荡动能的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（跨界开拓—文化主轴—守住内容）—总’结构：以案例破题，用三组维度递进，是申论‘由事及理’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>最近一段时间，跨界融合在影视行业兴起，银幕不再有边界，剧组不再限档期，一扇扇通往多元消费场景的大门因“<span class="highlight-blue">影视+</span>”而打开。</p>
+
+      <p>在浙江横店影视城，游客争相打卡“落地签”短剧体验，普通人也能沉浸式“进组”，年轻人演主角逆袭，阿姨们扮后宫娘娘，圆一把演员梦。</p>
+
+      <p>北京耀莱成龙影城（五棵松店）推出<span class="highlight-green">全国首家巨幕沉浸游戏空间</span>，白天承接团建沙龙、派对活动，夜幕降临再回归电影放映。</p>
+
+      <p>业态翻新、服务升级、跨界牵手，影视行业正跳出传统单一模式，开拓发展的新赛道。</p>
+
+      <div class="thesis">【总论点】消费的潜力，常在<span class="highlight-gold">触手可及的身边</span>；以“<span class="highlight-blue">影视+</span>”拓宽消费边界，推动文化价值与市场效益<span class="highlight-purple">双向赋能</span>，在<span class="highlight-blue">守住内容核心、让供给和需求互促共进</span>中激荡中国超大规模市场的澎湃动能。</div>
+
+      <div class="sub-thesis">【分论点一】业态翻新、服务升级、跨界牵手，开拓消费新赛道——创新是把握“影视+”机遇的关键引擎，带动更多消费场景从“一次性体验”向“持续性运营”转变。</div>
+
+      <p><span class="highlight-purple">需求在哪里，趋势在哪里，机遇就在哪里</span>。创新是把握“影视+”机遇的关键引擎。</p>
+
+      <p>当影视与餐饮零售碰撞，主题餐厅、联名周边让观众把观影的快乐延伸到日常生活；当影视与文旅产业融合，取景地变成热门打卡点，跟着镜头“种草”成为游客出行的新选择；当影视和研学体验结合，专业的影视知识讲解、有趣的拍摄体验，让观众在玩乐中收获新知……这些跨界融合的尝试，既盘活了影视行业沉淀的内容资源，也为关联消费注入了文化内涵，带动更多消费场景<span class="highlight-purple">从“一次性体验”向“持续性运营”转变</span>。</p>
+
+      <div class="sub-thesis">【分论点二】以文化为主轴，激活可持续的消费新活力——业态拓展、场景创新、消费转化都围绕文化主轴，从“放一部电影”变成“激活一片消费”。</div>
+
+      <p>文化，是“影视+”跨界融合的主轴。业态拓展、场景创新、消费转化，都要围绕这根主轴铺展。</p>
+
+      <p>北京依托第三十八届大众电影百花奖举办“仲夏电影嘉年华”，打造全市<span class="highlight-green">13个光影市集矩阵</span>，升级“票根经济”，观众持票根等凭证即可在全市<span class="highlight-green">40余个商圈、1100余家商户</span>享受餐饮折扣、购物满减等联动优惠。</p>
+
+      <p><span class="highlight-gold">从“放一部电影”变成“激活一片消费”</span>，以影视叙事、文化底蕴为基础，连接内容生产与消费场景，既是为群众美好生活添砖加瓦，也可以推动文化价值与市场效益双向赋能，激活可持续的消费新活力。</p>
+
+      <div class="sub-thesis">【分论点三】守住内容核心，在供需互促共进中稳步探索——以优质内容为根、创新服务为枝，让“影视+”结出更多消费新果。</div>
+
+      <p>长远来看，“影视+”的发展仍需在<span class="highlight-blue">守住内容核心</span>的基础上稳步探索。离开文化内核，再热闹的打卡项目、沉浸式体验，都有可能是短暂热度。<span class="highlight-gold">唯有以优质内容为根，以创新服务为枝，才能让“影视+”结出更多消费新果</span>。</p>
+
+      <p>推动影视行业高质量发展，归根结底要找到符合规律的演化进阶之路，<span class="highlight-purple">让供给和需求互促共进</span>。国家电影局、市场监管总局印发的《关于促进电影院多样化经营 繁荣发展电影院文化的通知》明确提出，“将电影院打造成为集观影、社交、娱乐、消费于一体的<span class="highlight-blue">综合性文化体验空间</span>”。</p>
+
+      <p>既端出丰盛的文化大餐，又带动上下游产业齐飞，持续以“影视+”拓宽消费的边界，有利于更好满足人民群众多样化、多层次、个性化的精神文化需求，充分发挥文化产业的<span class="highlight-blue">社会效益和经济效益</span>。</p>
+
+      <p><span class="highlight-gold">消费的潜力，常在触手可及的身边</span>。当越来越多的“老买卖”学会“新吆喝”，当越来越多的“旧玩意”玩出“新花样”，中国<span class="highlight-blue">超大规模市场</span>必将在<span class="highlight-blue">供需适配</span>中激荡澎湃不息的动能。</p>
+
+      <p class="byline">（人民日报2026年11月6日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·消费论断</span>
+      <p><b>“消费的潜力，常在触手可及的身边。”</b>——写‘释放消费潜力’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·融合金句</span>
+      <p><b>“从‘放一部电影’变成‘激活一片消费’。”</b>——写‘文旅融合’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·内容根本</span>
+      <p><b>“唯有以优质内容为根，以创新服务为枝，才能让‘影视+’结出更多消费新果。”</b>——写‘内容创新’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·市场动能</span>
+      <p><b>“中国超大规模市场必将在供需适配中激荡澎湃不息的动能。”</b>——写‘超大规模市场’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·需求</span>
+      <p><b>“需求在哪里，趋势在哪里，机遇就在哪里。”</b>——写‘把握机遇’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·运营</span>
+      <p><b>“带动更多消费场景从‘一次性体验’向‘持续性运营’转变。”</b>——写‘消费升级’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·空间</span>
+      <p><b>“将电影院打造成为集观影、社交、娱乐、消费于一体的综合性文化体验空间。”</b>——写‘文旅政策’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·市集</span>
+      <p><b>“打造全市13个光影市集矩阵，40余个商圈、1100余家商户联动优惠。”</b>——写‘票根经济’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·沉浸</span>
+      <p><b>“北京耀莱成龙影城推出全国首家巨幕沉浸游戏空间。”</b>——写‘业态翻新’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·双向</span>
+      <p><b>“推动文化价值与市场效益双向赋能，激活可持续的消费新活力。”</b>——写‘文旅融合’是判断句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以横店短剧、耀莱沉浸空间两处案例破题，用‘跨界开拓赛道—文化主轴赋能—守住内容核心’三层递进，以‘超大规模市场激荡动能’收束，适用于‘消费升级’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写业态翻新、跨界牵手、创新引擎；分论点二写文化主轴、票根经济、从放电影到激活消费；分论点三写守住内容核心、供需互促共进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘以影视+激活消费潜力’拆举措：推动跨界融合盘活内容资源、带动场景持续运营；紧扣文化主轴、以光影市集票根经济连接产销；守住内容核心、以优质内容为根创新服务为枝。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘从一次性体验向持续性运营转变’‘离开文化内核都有可能是短暂热度’的由事及理，把消费话题写成‘内容与流量’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘消费的潜力常在触手可及的身边’可作‘促消费’类开头；‘老买卖学会新吆喝’可作结尾；‘社会效益和经济效益’可作分论点。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「消费潜力，常在触手可及的身边」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是业态翻新、服务升级、跨界牵手，开拓消费新赛道。创新是把握“影视+”机遇的关键引擎，带动更多消费场景从“一次性体验”向“持续性运营”转变。<br>二是以文化为主轴，激活可持续的消费新活力。业态拓展、场景创新、消费转化都围绕文化主轴，从“放一部电影”变成“激活一片消费”。<br>三是守住内容核心，在供需互促共进中稳步探索。以优质内容为根、创新服务为枝，让“影视+”结出更多消费新果。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「消费的潜力，常在触手可及的身边；以“影视+”拓宽消费边界，推动文化价值与市场效益双向赋能，在守住内容核心、让供给和需求互促共进中激荡中国超大规模市场的澎湃动能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是业态翻新、服务升级、跨界牵手，开拓消费新赛道——创新是把握“影视+”机遇的关键引擎，带动更多消费场景从“一次性体验”向“持续性运营”转变。<br>二是以文化为主轴，激活可持续的消费新活力——业态拓展、场景创新、消费转化都围绕文化主轴，从“放一部电影”变成“激活一片消费”。<br>三是守住内容核心，在供需互促共进中稳步探索——以优质内容为根、创新服务为枝，让“影视+”结出更多消费新果。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“消费的潜力，常在触手可及的身边。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「消费潜力，常在触手可及的身边」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是推动业态翻新与服务升级，以跨界融合盘活内容资源、带动消费场景从一次性体验转向持续运营。<br>二是紧扣文化主轴，以光影市集、票根经济等连接内容生产与消费场景。<br>三是守住内容核心，以优质内容为根、创新服务为枝，稳步探索供需互促共进。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“消费的潜力，常在触手可及的身边。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于消费潜力，常在触手可及的身边的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于消费潜力，常在触手可及的身边的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进消费潜力，常在触手可及的身边，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、业态翻新、服务升级、跨界牵手，开拓消费新赛道——创新是把握“影视+”机遇的关键引擎，带动更多消费场景从“一次性体验”向“持续性运营”转变。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以文化为主轴，激活可持续的消费新活力——业态拓展、场景创新、消费转化都围绕文化主轴，从“放一部电影”变成“激活一片消费”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、守住内容核心，在供需互促共进中稳步探索——以优质内容为根、创新服务为枝，让“影视+”结出更多消费新果。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“消费的潜力，常在触手可及的身边。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「消费潜力，常在触手可及的身边」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：消费潜力，常在触手可及的身边<br><br>时代之问，呼唤破题之策。消费潜力，常在触手可及的身边，是发展所需，也是民心所向。可从三个维度展开：业态翻新、服务升级、跨界牵手，开拓消费新赛道、以文化为主轴，激活可持续的消费新活力、守住内容核心，在供需互促共进中稳步探索。<br><br>分论点一：业态翻新、服务升级、跨界牵手，开拓消费新赛道——创新是把握“影视+”机遇的关键引擎，带动更多消费场景从“一次性体验”向“持续性运营”转变。方向对了，路再远也能抵达。“消费的潜力，常在触手可及的身边。”<br><br>分论点二：以文化为主轴，激活可持续的消费新活力——业态拓展、场景创新、消费转化都围绕文化主轴，从“放一部电影”变成“激活一片消费”。方法对了，事再难也能办成。“从‘放一部电影’变成‘激活一片消费’。”<br><br>分论点三：守住内容核心，在供需互促共进中稳步探索——以优质内容为根、创新服务为枝，让“影视+”结出更多消费新果。行百里者半九十。“唯有以优质内容为根，以创新服务为枝，才能让‘影视+’结出更多消费新果。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。消费潜力，常在触手可及的身边是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-06</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

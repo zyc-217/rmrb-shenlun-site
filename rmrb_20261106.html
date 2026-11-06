@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 服务党的使命任务，打铁必须自身硬</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>服务党的使命任务，打铁必须自身硬</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·服务使命任务·政治建设·政治生态·干部担当·使命型政党·党建引领 | 2026年11月6日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／服务使命任务／政治建设／政治生态／干部担当／使命型政党／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">服务使命任务</span>
+      <span class="tag-item">党的政治建设</span>
+      <span class="tag-item">政治生态</span>
+      <span class="tag-item">干部担当</span>
+      <span class="tag-item">使命型政党</span>
+      <span class="tag-item">党建引领</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">管党治党</span>
+      <span class="tag-item">风清气正</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">高质量发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／服务使命任务／政治建设／政治生态／干部担当／使命型政党／党建引领／中国式现代化</b>”等主题；本文以‘口袋公园到国家公园’的生态之变破题，用‘服务使命任务—净化政治生态—激发干部担当’三层递进，是写‘党建与治理’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“坚持服务党的使命任务，把党的建设同党和国家事业紧密结合，以全面从严治党为根本保障引领中国式现代化行稳致远”</b>——表层是谈管党治党，深层是揭示须把政治生态之好、干部担当之为转化为治国理政的磅礴力量。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地以全面从严治党引领高质量发展的主要做法与成效”，从强化政治监督净化政治生态、为基层减负激发干部担当、坚持服务使命任务统领三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步以全面从严治党护航中国式现代化的对策建议”等。对策要点：<b>强化宗旨意识、加强政治监督，以政治生态之好促营商环境之优、增基层治理之效</b>／<b>以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍</b>／<b>坚持服务使命任务，把党的建设同党和国家事业紧密结合</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（评论／倡议书）可作“关于以全面从严治党护航高质量发展的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：服务使命任务／净化政治生态／激发干部担当—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘口袋公园抬脚即到、国家公园尽现盛景’的生态之变起笔，用‘五个更’‘说到做到’的承诺破题（第一至六段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：坚持服务党的使命任务，把党的建设同党和国家事业紧密结合，以全面从严治党为根本保障（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘坚持服务使命任务，把党的建设同党和国家事业紧密结合’</b>——紧扣《决定》‘七个坚持’首位原则，以生态之治观全局之治（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘以政治生态之好，促营商环境之优、增基层治理之效’</b>——强化宗旨意识、加强政治监督，浙江金华‘政策找企业’案例（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘以高素质干部队伍激发担当作为’</b>——履职清单为基层松绑减负，江西龙南把劲儿使对地方（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘管党治党越有效，保障越有力’，把全面从严治党写成‘以中国共产党之治开创中国之治新境界’的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（服务使命—政治生态—干部担当）—总’结构：以生态之变破题，用三组维度递进，是申论‘小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>“坚持服务使命任务，坚持以党的政治建设为统领，坚持全面从严，坚持问题导向，坚持守正创新，坚持以上率下，坚持依规治党”，党的二十届五中全会明确持之以恒推进全面从严治党遵循的原则。本版今起推出系列评论，与广大读者一道，学习贯彻全会精神，深入理解把握“七个坚持”，更好凝聚奋进力量。——编 者</p>
+
+      <p>周末休闲，口袋公园抬脚即到。长假出游，国家公园尽现山河盛景。</p>
+
+      <p>“见缝插绿”，全国已建设<span class="highlight-green">5万多个口袋公园</span>；<span class="highlight-green">首批国家公园设立5周年</span>，见证自然保护地体系的系统性重构……从口袋公园到国家公园，新时代生态之变可感可及。</p>
+
+      <p>2012年11月，十八届中央政治局常委首次集体亮相，习近平总书记列举了老百姓期盼的10个“更”，其中就包括“更优美的环境”，郑重承诺<span class="highlight-gold">“人民对美好生活的向往，就是我们的奋斗目标”</span>。</p>
+
+      <p>说到做到。今天，中华大地天更蓝、山更绿、水更清、环境更优美。</p>
+
+      <p>“我们党胸怀共产主义远大理想、立志于中华民族千秋伟业，坚定地把历史和人民赋予的重任扛在肩上”。勇担历史使命，把握历史主动，中国共产党为什么能？</p>
+
+      <p><span class="highlight-gold">打铁必须自身硬</span>。把<span class="highlight-purple">“服从服务于党和国家事业发展”作为党的建设的重要原则</span>，通过<span class="highlight-blue">全面从严治党</span>使党的建设同党和国家事业紧密结合，是重要秘诀。</p>
+
+      <div class="thesis">【总论点】坚持<span class="highlight-blue">服务党的使命任务</span>，把党的建设同党和国家事业紧密结合，以<span class="highlight-gold">全面从严治党</span>这个根本保障，把<span class="highlight-blue">政治生态之好、干部担当之为</span>转化为<span class="highlight-purple">中国式现代化行稳致远的磅礴力量</span>。</div>
+
+      <p>党的二十届五中全会审议通过《中共中央关于持之以恒推进全面从严治党若干重大问题的决定》（以下简称《决定》），提出持之以恒推进全面从严治党遵循的7条原则，排在首位的就是<span class="highlight-blue">“坚持服务使命任务”</span>。</p>
+
+      <div class="sub-thesis">【分论点一】坚持服务使命任务，把党的建设同党和国家事业紧密结合——紧扣《决定》“七个坚持”首位原则，以生态之治观全局之治，把管党治党成效体现到治国理政全过程。</div>
+
+      <p>回看生态之变。面对环境污染频发、粗放发展难以为继等“发展起来以后的问题”，以习近平同志为核心的党中央着眼中华民族永续发展，以前所未有的力度抓生态文明建设。</p>
+
+      <p>看一条河。中央生态环保督察一次次“亮剑”，黄河保护法出炉，新时代“黄河大合唱”旋律昂扬。</p>
+
+      <p>看一片天。京津冀大气污染联防联控，打响蓝天保卫战，让蓝天常驻。</p>
+
+      <p>看一片林。深入践行“绿水青山就是金山银山”理念，福建三明打通“两山”转化通道，好生态化为真金白银。</p>
+
+      <p>思想引领，组织保障，制度护航，“两山”理念在中华大地落地生根，生态文明建设发生历史性、转折性、全局性变化。</p>
+
+      <p><span class="highlight-purple">由一域可观全局</span>。新时代以来，从历史性消除绝对贫困，到经济总量不断迈上新台阶，我们成功书写两大奇迹新篇章，比历史上任何时期都更接近、更有信心和能力实现中华民族伟大复兴的目标，<span class="highlight-gold">“全面从严治党发挥了根本保障作用”</span>。</p>
+
+      <p>由此，更能领悟《决定》“谋划提出各项政策举措都紧扣党和国家事业发展需要”的深远考量和实践指向。</p>
+
+      <div class="sub-thesis">【分论点二】以政治生态之好，促营商环境之优、增基层治理之效——强化宗旨意识、加强政治监督，以风清气正的政治生态护航中国式现代化。</div>
+
+      <p>从净化党内政治生态来看。</p>
+
+      <p>强化宗旨意识、加强政治监督，以政治生态之好，促营商环境之优、增基层治理之效，是我们党引领经济社会发展的重要抓手。</p>
+
+      <p>浙江金华市，归集全市<span class="highlight-green">128万余家企业超1500万条信息</span>，向企业推送惠企政策，<span class="highlight-green">政策匹配精准度超95%</span>。从“企业找政策”到“政策找企业”再到“跟着企业一路办下来”，政商关系既清又亲，市场兼具活力与秩序。</p>
+
+      <p>“增强共产党人的党性”“驰而不息正风肃纪”……《决定》部署7项战略任务和重大举措，正是要巩固好发展好<span class="highlight-blue">风清气正的政治生态</span>，护航中国式现代化行稳致远。</p>
+
+      <div class="sub-thesis">【分论点三】以高素质干部队伍激发担当作为——以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。</div>
+
+      <p>从干部担当作为来看。</p>
+
+      <p>一张履职清单，为基层“松绑”减负。江西龙南市，<span class="highlight-green">166项基层接不住的额外任务交回上级部门</span>。“把劲儿使对地方”，干部干事的精气神提振了，老百姓的获得感提升了。</p>
+
+      <p>实践表明，<span class="highlight-purple">“严并不是要把大家管死”</span>，而是要打造<span class="highlight-blue">政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍</span>，推动广大党员干部在遵规守纪中放手干事创业。</p>
+
+      <p><span class="highlight-gold">“使命型政党”</span>，许多人从这一角度观察和理解中国共产党。有外国政要感慨：<span class="highlight-gold">“你们总是制定各种规划，而且各种规划总是能实现。”</span></p>
+
+      <p>新长征路上，<span class="highlight-purple">管党治党越有效，经济社会发展的保障就越有力</span>。深刻把握新时代全面从严治党经验，坚持服务使命任务，持之以恒推进全面从严治党，我们定能以<span class="highlight-gold">中国共产党之治不断开创中国之治新境界</span>。</p>
+
+      <p>——持之以恒推进全面从严治党①</p>
+
+      <p class="byline">（人民日报2026年11月6日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·使命召唤</span>
+      <p><b>“人民对美好生活的向往，就是我们的奋斗目标。”</b>——写‘以人民为中心／党的宗旨’是权威论断。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治党铁律</span>
+      <p><b>“打铁必须自身硬。”</b>——写‘全面从严治党’是收束与立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·根本保障</span>
+      <p><b>“全面从严治党发挥了根本保障作用。”</b>——写‘党建与治国理政’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治理境界</span>
+      <p><b>“以中国共产党之治不断开创中国之治新境界。”</b>——写‘治党与治国’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政党特质</span>
+      <p><b>“使命型政党”“你们总是制定各种规划，而且各种规划总是能实现。”</b>——写‘党的领导优势’是事实金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·放权</span>
+      <p><b>“严并不是要把大家管死。”</b>——写‘严管与厚爱’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·由一域观全局</span>
+      <p><b>“由一域可观全局。”</b>——写‘以小见大’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·原则</span>
+      <p><b>“坚持服务使命任务，把党的建设同党和国家事业紧密结合。”</b>——写‘党建定位’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·精准</span>
+      <p><b>“归集128万余家企业超1500万条信息，政策匹配精准度超95%。”</b>——写‘数字赋能营商’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·减负</span>
+      <p><b>“166项基层接不住的额外任务交回上级部门。”</b>——写‘基层减负’是事实论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以口袋公园、国家公园的生态之变破题，用‘服务使命任务—净化政治生态—激发干部担当’三层递进，以‘以中国共产党之治开中国之治新境界’收束，适用于‘党建与治理’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写紧扣‘七个坚持’首位、把党建同事业结合；分论点二写强化政治监督、以政治生态之好促营商优增治理效；分论点三写基层减负、打造高素质干部队伍。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘以全面从严治党护航高质量发展’拆举措：强化宗旨意识加强政治监督、净化政治生态；以履职清单为基层松绑、激发干部担当；坚持服务使命任务统领、党建与事业结合。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘严并不是要把大家管死’‘管党治党越有效保障越有力’的由事及理，把党建话题写成‘严管与厚爱’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘打铁必须自身硬’可作‘从严治党’类开头；‘以中国共产党之治开中国之治新境界’可作结尾；‘全面从严治党发挥了根本保障作用’可作分论点或升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「服务党的使命任务，打铁必须自身硬」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持服务使命任务，把党的建设同党和国家事业紧密结合。紧扣《决定》“七个坚持”首位原则，以生态之治观全局之治，把管党治党成效体现到治国理政全过程。<br>二是以政治生态之好，促营商环境之优、增基层治理之效。强化宗旨意识、加强政治监督，以风清气正的政治生态护航中国式现代化。<br>三是以高素质干部队伍激发担当作为。以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「坚持服务党的使命任务，把党的建设同党和国家事业紧密结合，以全面从严治党这个根本保障，把政治生态之好、干部担当之为转化为中国式现代化行稳致远的磅礴力量。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持服务使命任务，把党的建设同党和国家事业紧密结合——紧扣《决定》“七个坚持”首位原则，以生态之治观全局之治，把管党治党成效体现到治国理政全过程。<br>二是以政治生态之好，促营商环境之优、增基层治理之效——强化宗旨意识、加强政治监督，以风清气正的政治生态护航中国式现代化。<br>三是以高素质干部队伍激发担当作为——以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“人民对美好生活的向往，就是我们的奋斗目标。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「服务党的使命任务，打铁必须自身硬」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是强化宗旨意识、加强政治监督，以政治生态之好促营商环境之优、增基层治理之效。<br>二是以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。<br>三是坚持服务使命任务，把党的建设同党和国家事业紧密结合。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“人民对美好生活的向往，就是我们的奋斗目标。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于服务党的使命任务，打铁必须自身硬的决定》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于服务党的使命任务，打铁必须自身硬的决定</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进服务党的使命任务，打铁必须自身硬，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、坚持服务使命任务，把党的建设同党和国家事业紧密结合——紧扣《决定》“七个坚持”首位原则，以生态之治观全局之治，把管党治党成效体现到治国理政全过程。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以政治生态之好，促营商环境之优、增基层治理之效——强化宗旨意识、加强政治监督，以风清气正的政治生态护航中国式现代化。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以高素质干部队伍激发担当作为——以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“人民对美好生活的向往，就是我们的奋斗目标。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「服务党的使命任务，打铁必须自身硬」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：服务党的使命任务，打铁必须自身硬<br><br>时代之问，呼唤破题之策。服务党的使命任务，打铁必须自身硬，是发展所需，也是民心所向。可从三个维度展开：坚持服务使命任务，把党的建设同党和国家事业紧密结合、以政治生态之好，促营商环境之优、增基层治理之效、以高素质干部队伍激发担当作为。<br><br>分论点一：坚持服务使命任务，把党的建设同党和国家事业紧密结合——紧扣《决定》“七个坚持”首位原则，以生态之治观全局之治，把管党治党成效体现到治国理政全过程。方向对了，路再远也能抵达。“人民对美好生活的向往，就是我们的奋斗目标。”<br><br>分论点二：以政治生态之好，促营商环境之优、增基层治理之效——强化宗旨意识、加强政治监督，以风清气正的政治生态护航中国式现代化。方法对了，事再难也能办成。“打铁必须自身硬。”<br><br>分论点三：以高素质干部队伍激发担当作为——以履职清单为基层松绑减负，打造政治过硬、本领高强、作风优良、纪律严明的高素质干部队伍。行百里者半九十。“全面从严治党发挥了根本保障作用。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。服务党的使命任务，打铁必须自身硬是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-06</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
