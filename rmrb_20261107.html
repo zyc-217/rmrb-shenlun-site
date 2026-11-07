@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | "留余"匾之思</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>"留余"匾之思</h1>
+    <div class="meta">人民日报·金台随感 | 家风建设·修身律己·底线思维·可持续发展·系统观念 | 2026年11月7日 | 第08版</div>
+    <div class="meta" style="margin-top:4px;">主题：家风建设／文化自信／修身律己／底线思维／可持续发展／系统观念／传统文化创造性转化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">家风建设</span>
+      <span class="tag-item">文化自信</span>
+      <span class="tag-item">修身律己</span>
+      <span class="tag-item">底线思维</span>
+      <span class="tag-item">可持续发展</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">传统文化创造性转化</span>
+      <span class="tag-item">为政之道</span>
+      <span class="tag-item">道德修养</span>
+      <span class="tag-item">社会治理</span>
+      <span class="tag-item">长远大略</span>
+      <span class="tag-item">攻坚克难</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>家风建设／修身律己／底线思维／可持续发展／系统观念／传统文化创造性转化</b>”等主题；本文以康百万庄园‘留余’匾起兴，用‘家风传承—修身律己—为政谋远’三层递进，是写‘传统文化创造性转化’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“留余”精神是在取舍有度、知戒知止中涵养个人、家庭与为政的长久之道，于付出与坚守里抵达真正的富足与长远</b>——表层谈家风家训，深层揭示须把克制、底线与长远意识融入修身与治理。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地以‘留余’智慧涵养文明家风、提升治理效能的主要做法与成效”，从重义轻利传承家风、知足知止修身律己、谋长远留后劲为政三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步以‘留余’智慧提升基层治理与家风建设的对策建议”等。对策要点：<b>涵养重义轻利、知戒知止的家风，以精神传承替代物质馈赠</b>／<b>倡导知足知止、行止有界的修身律己，守住立身底线</b>／<b>坚持谋长远、留后劲的治理定力，为生态民生发展留足空间</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（评论／倡议书）可作“关于以‘留余’智慧涵养好家风、提升治理效能的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：家风传承／修身律己／为政谋远—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以参访康百万庄园、驻足‘留余’匾起笔，引出《四留铭》与康家四百年长盛之问（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：以‘留余’精神在取舍有度、知戒知止中涵养个人、家庭与为政的长久之道（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘于家风传承，留余是重义轻利、知戒知止的精神基因’</b>——以精神财富替代物质馈赠，让好家风成为家族长盛源头（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘于修身律己，留余是取舍有度、行止有界的为人智慧’</b>——以多予少取涵养仁爱，在知足知止中守住立身之本（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘于为政用权，留余是谋长远、留后劲的治理之道’</b>——以不竭泽而渔的定力，为生态、民生与发展留足空间（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘真正的富足不是占尽而是付出’，把留余写成跨越时代的醒世恒言与治理智慧。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘由物起兴—分三层递进—归于哲理’结构：以一方古匾破题，用家风、修身、为政三组维度展开，是申论‘小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>前不久，与友人一道参访了全国重点文物保护单位河南巩义康百万庄园。在庄园主宅一院落过厅驻足，目光聚焦门楣上一方古匾。匾长一米有余，金底黑字，右侧两个篆体大字：留余。左侧密密麻麻十数行行楷小字，录有南宋廉吏王伯大《四留铭》：<span class="highlight-gold">留有余，不尽之巧以还造化；留有余，不尽之禄以还朝廷；留有余，不尽之财以还百姓；留有余，不尽之福以还子孙</span>。</p>
+
+      <p>来之前曾做功课，康百万庄园于明中叶始建，明末清初成规模；“河洛康家”十数代人居此，跨明、清和民国3个时期，<span class="highlight-green">凡400余年</span>。心头曾升起疑云：俗话说“富不过三代”，康家何以数百年长盛不衰？</p>
+
+      <div class="thesis">【总论点】“留余”精神启示我们：在<span class="highlight-purple">取舍有度、知戒知止</span>中涵养个人、家庭与为政的<span class="highlight-blue">长久之道</span>，于<span class="highlight-gold">付出与坚守</span>里抵达真正的富足与长远。</div>
+
+      <div class="sub-thesis">【分论点一】于家风传承，留余是重义轻利、知戒知止的精神基因——以精神财富替代物质馈赠，让好家风成为家族长盛的源头活水。</div>
+
+      <p>“留余”匾前，疑虑烟消云散。世人留给子孙的，多为田宅财货，不过生活物用；巩义康家留给后代的，却是<span class="highlight-blue">重义轻利、知戒知止、留余忌尽的精神基因</span>。这家风箕裘相继，瓜瓞绵绵，成为康氏家族世代不衰的源头活水。</p>
+
+      <div class="sub-thesis">【分论点二】于修身律己，留余是取舍有度、行止有界的为人智慧——以多予少取涵养仁爱，在知足知止中守住立身之本。</div>
+
+      <p>细思，王伯大“四留”之训，不只是家族生存智慧，也是人格修养之道。多予少取，留余以报乡梓、报社会，本质是教人“爱”：爱他人、爱社会、爱国家。有爱他之精神，才会<span class="highlight-purple">知荣辱、存悲悯、行信义、守法度</span>，才会在生活中<span class="highlight-purple">取舍有度、行止有界</span>——这恰恰也是最大的爱自己。以此为训，践而行之，可不就是终生受用的“不尽之福”？</p>
+
+      <p>今人树家风亦应如是。再深厚的爱，也不能予取予求，宠溺无度。过分骄纵，反而害人。还要言传身教，如孟母三迁、岳母刺字，在幼芽期培育，从根深处润泽，如“河洛康家”广济博施、与人为善，代代濡染，家之树才会叶茂根深，世代长青。</p>
+
+      <p>除了王伯大的《四留铭》，“留余匾”左侧还录有明代大儒高攀龙语：<span class="highlight-gold">“临事让人一步，自有余地；临财放宽一分，自有余味。推之，凡事皆然。”</span>后一语，铿然中的。</p>
+
+      <div class="sub-thesis">【分论点三】于为政用权，留余是谋长远、留后劲的治理之道——以不竭泽而渔的定力，为生态、民生与发展留足空间。</div>
+
+      <p>推而广之，“留余”精神之于工作，就是要精心筹划，稳步推进。要为应对不测留预案，为后程攻坚留余力。如行军打仗中要留预备队，项目计划要有备选方案，<span class="highlight-purple">宁可备而不用，不能用而无备</span>。这样，出现不虞之情，才不会左支右绌，手忙脚乱，陷入被动。</p>
+
+      <p>还要善于谋长远。干事创业最忌<span class="highlight-purple">竭泽而渔</span>：为政绩透支资源，为速度牺牲质量，为一时之利断后人之路。遵循发展规律，<span class="highlight-blue">为生态留空间，为百姓留实惠，为发展留后劲</span>，才是为政者“造福一方”之道。</p>
+
+      <p>老子说：<span class="highlight-gold">“知足不辱，知止不殆，可以长久。”</span>懂得满足就不会受到羞辱，知道适可而止，就不会遇到危险，这样才能长久。“留余”精神，可谓一脉相承。可惜，总有一些人忘了先贤古训，肆意放纵欲望，不知戒、不知止，直至撞上南墙，回头已晚。</p>
+
+      <p>康百万庄园恢宏的建筑，讲究的内部陈设，精美的石雕、木雕、砖雕艺术，都让人赞叹，但最打动人心的，还是那块悬于门楣上的“留余”匾。时光把“留余”二字愈磨愈亮。这亮光似醒世恒言照进人心：<span class="highlight-purple">真正的富足，不是占尽，而是付出；真正的长久，不是一时之盛，而是长留人心</span>。</p>
+
+      <p class="byline">（人民日报2026年11月7日 第08版 · 金台随感）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·四留铭</span>
+      <p><b>“留有余，不尽之巧以还造化；不尽之禄以还朝廷；不尽之财以还百姓；不尽之福以还子孙。”</b>——写“克制／适度／可持续发展”是典据金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·高攀龙</span>
+      <p><b>“临事让人一步，自有余地；临财放宽一分，自有余味。”</b>——写“谦让／分寸／包容”是对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·老子</span>
+      <p><b>“知足不辱，知止不殆，可以长久。”</b>——写“底线思维／适可而止／长远”是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·富足</span>
+      <p><b>“真正的富足，不是占尽，而是付出；真正的长久，不是一时之盛，而是长留人心。”</b>——写“价值取舍／政绩观”是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·家风基因</span>
+      <p><b>“重义轻利、知戒知止、留余忌尽的精神基因。”</b>——写“家风建设／精神传承”是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·修养</span>
+      <p><b>“知荣辱、存悲悯、行信义、守法度，取舍有度、行止有界。”</b>——写“修身律己／道德自觉”是排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·为政</span>
+      <p><b>“为生态留空间，为百姓留实惠，为发展留后劲。”</b>——写“系统观念／谋长远”是排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·底线</span>
+      <p><b>“宁可备而不用，不能用而无备。”</b>——写“底线思维／风险防范”是警策金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“由一物及理、由家训及天下”的升华框架：以康百万庄园“留余”匾起兴，从家风、修身说到工作与为政，适用于“传统文化／修身／治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写家风重义轻利、精神传承；分论点二写修身知足知止、取舍有界；分论点三写为政谋长远、留后劲。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“以留余智慧推动治理”拆举措：涵养家风重义轻利、代代濡染；修身律己知足知止、行止有界；为政谋远为生态民生留空间留后劲。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“真正的富足不是占尽而是付出”的由事及理，把资源环境、政绩观话题写成“占有与付出”的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“知足不辱，知止不殆”可作“底线思维”类开头；“为生态留空间、为发展留后劲”可作分论点或升华；“临事让人一步，自有余地”可作包容谦让素材。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「留余匾之思」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是于家风传承，留余是重义轻利、知戒知止的精神基因。以精神财富替代物质馈赠，让好家风成为家族长盛的源头活水。<br>二是于修身律己，留余是取舍有度、行止有界的为人智慧。以多予少取涵养仁爱，在知足知止中守住立身之本。<br>三是于为政用权，留余是谋长远、留后劲的治理之道。以不竭泽而渔的定力，为生态、民生与发展留足空间。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「“留余”精神启示我们：在取舍有度、知戒知止中涵养个人、家庭与为政的长久之道，于付出与坚守里抵达真正的富足与长远。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是于家风传承，留余是重义轻利、知戒知止的精神基因——以精神财富替代物质馈赠，让好家风成为家族长盛的源头活水。<br>二是于修身律己，留余是取舍有度、行止有界的为人智慧——以多予少取涵养仁爱，在知足知止中守住立身之本。<br>三是于为政用权，留余是谋长远、留后劲的治理之道——以不竭泽而渔的定力，为生态、民生与发展留足空间。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“留有余，不尽之巧以还造化；不尽之禄以还朝廷；不尽之财以还百姓；不尽之福以还子孙。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「留余匾之思」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是涵养重义轻利、知戒知止的家风，以精神传承替代物质馈赠。<br>二是倡导知足知止、行止有界的修身律己，守住立身底线。<br>三是坚持谋长远、留后劲的治理定力，为生态民生发展留足空间。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“留有余，不尽之巧以还造化；不尽之禄以还朝廷；不尽之财以还百姓；不尽之福以还子孙。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于留余匾之思的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于留余匾之思的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进留余匾之思，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、于家风传承，留余是重义轻利、知戒知止的精神基因——以精神财富替代物质馈赠，让好家风成为家族长盛的源头活水。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、于修身律己，留余是取舍有度、行止有界的为人智慧——以多予少取涵养仁爱，在知足知止中守住立身之本。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、于为政用权，留余是谋长远、留后劲的治理之道——以不竭泽而渔的定力，为生态、民生与发展留足空间。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“留有余，不尽之巧以还造化；不尽之禄以还朝廷；不尽之财以还百姓；不尽之福以还子孙。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「留余匾之思」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：留余匾之思<br><br>时代之问，呼唤破题之策。留余匾之思，是发展所需，也是民心所向。可从三个维度展开：于家风传承，留余是重义轻利、知戒知止的精神基因、于修身律己，留余是取舍有度、行止有界的为人智慧、于为政用权，留余是谋长远、留后劲的治理之道。<br><br>分论点一：于家风传承，留余是重义轻利、知戒知止的精神基因——以精神财富替代物质馈赠，让好家风成为家族长盛的源头活水。方向对了，路再远也能抵达。“留有余，不尽之巧以还造化；不尽之禄以还朝廷；不尽之财以还百姓；不尽之福以还子孙。”<br><br>分论点二：于修身律己，留余是取舍有度、行止有界的为人智慧——以多予少取涵养仁爱，在知足知止中守住立身之本。方法对了，事再难也能办成。“临事让人一步，自有余地；临财放宽一分，自有余味。”<br><br>分论点三：于为政用权，留余是谋长远、留后劲的治理之道——以不竭泽而渔的定力，为生态、民生与发展留足空间。行百里者半九十。“知足不辱，知止不殆，可以长久。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。留余匾之思是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-07</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
