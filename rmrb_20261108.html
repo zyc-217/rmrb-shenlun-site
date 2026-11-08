@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 开放汇聚创新之力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>开放汇聚创新之力</h1>
+    <div class="meta">人民日报·第05版 | 高水平对外开放·新质生产力·以开放促创新·创新生态·科技惠民 | 2026年11月8日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：高水平对外开放／新质生产力／以开放促创新／双循环／创新生态／科技惠民</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">以开放促创新</span>
+      <span class="tag-item">双循环</span>
+      <span class="tag-item">创新生态</span>
+      <span class="tag-item">科技惠民</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">产业体系</span>
+      <span class="tag-item">国内国际双循环</span>
+      <span class="tag-item">成果转化</span>
+      <span class="tag-item">民生福祉</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>高水平对外开放／新质生产力／以开放促创新／双循环／创新生态／科技惠民</b>”等主题；本文以“逛展台—探产业—看民生”三层并列，是写“开放与发展”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>开放是创新的“孵化器”与“加速器”，以开放促创新、以合作促发展，能让更多开放机遇转化为高质量发展实效</b>——表层谈进博会展品，深层揭示须把开放优势转化为创新动能与民生福祉。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“进博会以开放汇聚创新之力的具体表现”，从平台聚新、产业提速、成果惠民三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步以高水平开放汇聚创新活力的对策建议”等。对策要点：<b>搭建高水平开放平台，聚全球创新资源</b>／<b>深化国际创新合作，推动“展品变商品、展商变投资商”</b>／<b>畅通成果转化通道，让新质生产力深度惠民</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（评论／倡议书）可作“关于以高水平开放汇聚创新活力、厚植民生之本的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：逛展台／探产业／看民生—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“四叶草”场馆里6G原型机、人工耳蜗、人工智能血管造影等首发新品起笔，引出以开放促创新、以合作促发展的总场景（第一段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：以开放汇聚创新之力，以创新厚植民生之本，让更多开放机遇转化为发展实效（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘于逛展台’——开放平台是新成果竞相亮相的“竞技场”与“孵化器”，把全球前沿科技“请进来”，在合作中补链强链、练就真本事</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘于探产业’——开放合作为“展品变商品”提速，溢出效应放大创新生态，以开放促创新、以合作促发展</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘于看民生’——科技创新成果惠及千家万户，新质生产力深度嵌入百姓衣食住行，发展“高质量”有了“烟火气”</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“大门越开越大，桥梁越架越稳”，把开放与创新、发展与惠民写成有机统一的辩证。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“由场景破题—分三层递进—归于辩证”结构：以进博会展品起兴，用逛展台、探产业、看民生三组维度展开，是申论“小切口大主题”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>6G终端原型机、能够360度探测声音的人工耳蜗、通过人工智能实现血管造影成像的医疗系统……行走在“四叶草”里，一件件首次亮相的新品令人目不暇接。进博会年年“上新”，是<span class="highlight-blue">新质生产力</span>加快成长的生动图景，我们能从中触摸到中国经济向新向优的脉搏。</p>
+
+      <div class="thesis">【总论点】以开放汇聚创新之力，以创新厚植民生之本——在<span class="highlight-blue">大门越开越大、桥梁越架越稳</span>的开放格局中，让更多开放机遇转化为<span class="highlight-gold">发展实效</span>，为<span class="highlight-purple">高质量发展</span>注入充沛动能。</div>
+
+      <div class="sub-thesis">【分论点一】于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”——把全球最前沿科技“请进来”，在合作中补链强链、练就真本事，让新质生产力生根壮大。</div>
+
+      <p>逛展台，新成果竞相亮相折射创新浪潮。从医疗器械到智能装备再到绿色技术，本届进博会上<span class="highlight-green">全球首发、亚洲首展、中国首秀展品已突破480款</span>，一座座场馆成了新技术、新产品、新服务的“竞技场”和“孵化器”。<span class="highlight-gold">创新不是独角戏，而是大合唱</span>，进博会把全球最前沿的科技“请进来”，让世界看到中国广阔的市场和蓬勃的创新活力。借展会补链强链，在合作中练就真本事，新质生产力会在这样的“碰一碰”“学一学”中生根壮大。</p>
+
+      <div class="sub-thesis">【分论点二】于探产业，开放合作为“展品变商品”持续提速——溢出效应放大创新生态，以开放促创新、以合作促发展，为中国制造注入新活力。</div>
+
+      <p>探产业，展品变商品的速度不断刷新。雅培的无导线心脏起搏器在第五届进博会首秀，如今已在中国获批上市；美敦力近40款展品走向临床一线，布局也从产品引进、本土生产，一路延伸到本土研发；<span class="highlight-green">罗氏投资20.4亿元，在上海新建生物制药生产基地</span>……外企看中的是中国市场，更是中国的<span class="highlight-blue">创新生态</span>。进博会的溢出效应持续放大，推动<span class="highlight-blue">技术、资本、人才等要素加速集聚</span>。不断扩大的“朋友圈”，<span class="highlight-purple">既“引进来”，也“融进去”</span>，<span class="highlight-gold">以开放促创新、以合作促发展</span>，为中国制造注入新活力，也给全球产业发展创造新机遇。</p>
+
+      <div class="sub-thesis">【分论点三】于看民生，科技创新成果惠及千家万户——新质生产力深度嵌入百姓衣食住行，经济发展的“高质量”便有了可感可知的“烟火气”。</div>
+
+      <p>看民生，科技创新成果惠及千家万户。技术的价值在于惠民。进博会上的<span class="highlight-purple">展品变商品、展商变投资商</span>，带来的不仅是消费市场的扩容，更有产业链条的延伸、服务能力的提升和民生福祉的改善。更精准的诊疗设备让大病早筛早治更可及，适老化智能产品助老年人跨越“数字鸿沟”，绿色低碳技术让蓝天碧水成色更足……当新质生产力深度嵌入百姓衣食住行，<span class="highlight-purple">经济发展的“高质量”便有了可感可知的“烟火气”</span>。</p>
+
+      <p><span class="highlight-gold">大门越开越大，桥梁越架越稳</span>，新质生产力不断奔涌向前。<span class="highlight-gold">以开放汇聚创新之力，以创新厚植民生之本</span>，让更多开放机遇转化为发展实效，中国经济高质量发展的动力也将更加充沛。</p>
+
+      <p class="byline">（人民日报2026年11月8日 第05版）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新合唱</span>
+      <p><b>“创新不是独角戏，而是大合唱。”</b>——写“开放合作／协同创新”是比喻金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放促创新</span>
+      <p><b>“以开放促创新、以合作促发展。”</b>——写“高水平对外开放／新质生产力”是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·大门桥梁</span>
+      <p><b>“大门越开越大，桥梁越架越稳。”</b>——写“扩大开放／互联互通”是凝练金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放汇聚</span>
+      <p><b>“以开放汇聚创新之力，以创新厚植民生之本。”</b>——写“开放与创新、发展惠民”是总分金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·竞技场孵化器</span>
+      <p><b>“一座座场馆成了新技术、新产品、新服务的‘竞技场’和‘孵化器’。”</b>——写“平台集聚／创新生态”是比喻金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·引进来融进去</span>
+      <p><b>“既‘引进来’，也‘融进去’。”</b>——写“双向开放／深度融合”是对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·展品变商品</span>
+      <p><b>“展品变商品、展商变投资商。”</b>——写“溢出效应／成果转化”是凝练金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·烟火气</span>
+      <p><b>“经济发展的‘高质量’便有了可感可知的‘烟火气’。”</b>——写“发展惠民／实效”是辩证金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“由场景破题、分三层递进”框架：以进博会展品起兴，从逛展台、探产业说到看民生，适用于“开放与发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写平台聚新、补链强链；分论点二写产业提速、溢出效应；分论点三写成果惠民、烟火气。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“以开放汇聚创新”拆举措：搭建开放平台聚资源、深化国际合推转化、畅通通道促惠民。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“大门越开越大，桥梁越架越稳”“引进来与融进去”，把开放与自主、引进与转化写成辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“以开放促创新、以合作促发展”可作分论点或升华；“创新不是独角戏，而是大合唱”可作协同创新开头；“烟火气”可作惠民结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「开放汇聚创新之力」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”。把全球最前沿科技“请进来”，在合作中补链强链、练就真本事，让新质生产力生根壮大。<br>二是于探产业，开放合作为“展品变商品”持续提速。溢出效应放大创新生态，以开放促创新、以合作促发展，为中国制造注入新活力。<br>三是于看民生，科技创新成果惠及千家万户。新质生产力深度嵌入百姓衣食住行，经济发展的“高质量”便有了可感可知的“烟火气”。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「以开放汇聚创新之力，以创新厚植民生之本——在大门越开越大、桥梁越架越稳的开放格局中，让更多开放机遇转化为发展实效，为高质量发展注入充沛动能。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”——把全球最前沿科技“请进来”，在合作中补链强链、练就真本事，让新质生产力生根壮大。<br>二是于探产业，开放合作为“展品变商品”持续提速——溢出效应放大创新生态，以开放促创新、以合作促发展，为中国制造注入新活力。<br>三是于看民生，科技创新成果惠及千家万户——新质生产力深度嵌入百姓衣食住行，经济发展的“高质量”便有了可感可知的“烟火气”。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“创新不是独角戏，而是大合唱。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「开放汇聚创新之力」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是搭建高水平开放平台，聚全球创新资源。<br>二是深化国际创新合作，推动“展品变商品、展商变投资商”。<br>三是畅通成果转化通道，让新质生产力深度惠民。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“创新不是独角戏，而是大合唱。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于开放汇聚创新之力的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于开放汇聚创新之力的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进开放汇聚创新之力，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”——把全球最前沿科技“请进来”，在合作中补链强链、练就真本事，让新质生产力生根壮大。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、于探产业，开放合作为“展品变商品”持续提速——溢出效应放大创新生态，以开放促创新、以合作促发展，为中国制造注入新活力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、于看民生，科技创新成果惠及千家万户——新质生产力深度嵌入百姓衣食住行，经济发展的“高质量”便有了可感可知的“烟火气”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“创新不是独角戏，而是大合唱。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「开放汇聚创新之力」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：开放汇聚创新之力<br><br>时代之问，呼唤破题之策。开放汇聚创新之力，是发展所需，也是民心所向。可从三个维度展开：于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”、于探产业，开放合作为“展品变商品”持续提速、于看民生，科技创新成果惠及千家万户。<br><br>分论点一：于逛展台，开放平台是新成果竞相亮相的“竞技场”与“孵化器”——把全球最前沿科技“请进来”，在合作中补链强链、练就真本事，让新质生产力生根壮大。方向对了，路再远也能抵达。“创新不是独角戏，而是大合唱。”<br><br>分论点二：于探产业，开放合作为“展品变商品”持续提速——溢出效应放大创新生态，以开放促创新、以合作促发展，为中国制造注入新活力。方法对了，事再难也能办成。“以开放促创新、以合作促发展。”<br><br>分论点三：于看民生，科技创新成果惠及千家万户——新质生产力深度嵌入百姓衣食住行，经济发展的“高质量”便有了可感可知的“烟火气”。行百里者半九十。“大门越开越大，桥梁越架越稳。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。开放汇聚创新之力是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-08</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
