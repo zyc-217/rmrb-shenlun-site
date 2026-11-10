@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 打好扫黑除恶的“新战役”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>打好扫黑除恶的“新战役”</h1>
+    <div class="meta">人民日报·人民时评 | 扫黑除恶常态化·平安中国·营商环境·行业治理·源头监管·协同共治·法治 | 2026年11月10日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：扫黑除恶常态化／平安中国／营商环境／行业治理／源头监管／行刑衔接／高质量发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">扫黑除恶常态化</span>
+      <span class="tag-item">平安中国</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">行业治理</span>
+      <span class="tag-item">源头监管</span>
+      <span class="tag-item">法治</span>
+      <span class="tag-item">协同共治</span>
+      <span class="tag-item">软暴力</span>
+      <span class="tag-item">平台责任</span>
+      <span class="tag-item">行刑衔接</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">群众安全感</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>扫黑除恶常态化／平安中国／营商环境／行业治理／源头监管／协同共治／法治</b>”等主题；本文以公安部8起典型案例破题，用‘破解识别难—强化源头监管—打防促治本’三层展开，是写‘社会治理’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态”</b>——表层是谈打击犯罪，深层是揭示须以精准识别、源头监管、系统治理护航服务业营商环境。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地打好扫黑除恶‘新战役’的主要做法”，从精准识别新型犯罪、压实平台源头监管、贯通线索案件与行业治理三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步打好扫黑除恶‘新战役’的对策建议”等。对策要点：<b>加强精准识别，建强类案指引与线索快速移送绿色通道，拆穿黑恶犯罪虚假外衣</b>／<b>压实平台主体责任，完善行业准入退出机制，动态监测异常堵住渗透路径</b>／<b>把线索排查、案件侦办与行业治理贯通，打掉一个团伙堵上一类漏洞</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（通告／通知）可作“关于常态化开展扫黑除恶、护航服务业营商环境的通告”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：识别难／强监管／治根本—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以公安部公布8起新型涉黑恶犯罪典型案例起笔，点出‘新战役’的由来（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：保护消费者权益、维护服务业营商环境，必须打好扫黑除恶的‘新战役’（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘破解识别难是关键’</b>——看清软暴力、网络平台、合法外观三重伪装，精准识别类案打击（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘源头监管是保障’</b>——压实平台主体责任、完善准入退出机制，推动服务业强身健体（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘打防促治本’</b>——把线索排查、案件侦办与行业治理贯通，从治标走向治本（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到常态化开展扫黑除恶，把平安话题写成‘让群众放心消费、企业踏实经营’的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（识别—监管—治本）—总’结构：以案例破题，用三组维度递进，是申论‘问题—对策’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>公平有序的营商环境，是服务业健康发展的重要保障。扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。</p>
+
+      <p>通过制造用工纠纷勒索工地财物，以舆论监督为名发帖炒作、逼迫企业“花钱消灾”，以进行网暴作威胁、向商户和店员收取“保护费”……近日，公安部公布的<span class="highlight-green">8起新型涉黑恶犯罪典型案例</span>，展现出扫黑除恶的新动向。</p>
+
+      <p>近年来，全国公安机关保持对黑恶犯罪严打高压态势，黑恶犯罪得到有效遏制，社会治安形势持续向好。但也要看到，黑恶犯罪具有极强的顽固性与变异性，在高压震慑之下转移到服务业的交易场景、劳务链条和网络平台中，出现了网络“套路贷”、软暴力催收、舆情敲诈等新形式。保护消费者权益、维护服务业营商环境，必须打好扫黑除恶的“新战役”。</p>
+
+      <div class="thesis">【总论点】保护消费者权益、维护<span class="highlight-blue">服务业营商环境</span>，必须打好扫黑除恶的“<span class="highlight-gold">新战役</span>”——以精准识别拆穿伪装，以源头监管堵住漏洞，以系统治理修复生态。</div>
+
+      <p>破解“识别难”是关键。</p>
+
+      <p>传统黑恶犯罪的识别，依赖相对清晰的暴力信号和组织形态；而新型涉黑恶犯罪常以<span class="highlight-purple">软暴力为手段、以网络平台为掩体、以合法外观为包装</span>，犯罪痕迹散落在投诉记录、平台数据和劳务纠纷之中，容易被当作“一般消费争议”或“普通合同纠纷”处理。</p>
+
+      <div class="sub-thesis">【分论点一】破解“识别难”是关键——看清软暴力、网络平台、合法外观的三重伪装，以类案指引与协作联动精准识别、拆穿虚假外衣。</div>
+
+      <p>湖北省公安厅编印工作指引和典型案例下发到基层，什么样的投诉模式像恶意索赔，什么样的逾期催收手法像“套路贷”，成为一线民警办案的“作战地图”，用于开展类案打击。</p>
+
+      <p>河南焦作市市场监管局整合执法稽查、日常监管、投诉举报及“三书一函”数据，组织专业团队展开研判，成功识别并移送公安机关侦办<span class="highlight-green">全国首例涉医美领域新型涉网黑恶犯罪案件</span>。</p>
+
+      <p>司法机关加强精准识别发现，同时与行政监管部门、平台企业等加强协作联动，建立<span class="highlight-blue">线索快速移送等绿色通道</span>，有助于更好拆穿黑恶犯罪的虚假外衣。</p>
+
+      <p>源头监管是保障。</p>
+
+      <div class="sub-thesis">【分论点二】源头监管是保障——压实平台主体责任、完善行业准入退出机制，推动服务业“强身健体”、增强“免疫力”。</div>
+
+      <p>服务业业态新、环节多、交易频，平台、商户、消费者之间往往存在信息差。如果平台核验不严、投诉处置不规范、纠纷调解不及时，就可能被黑恶势力钻空子。因此，推动服务业“强身健体”，必须用严密机制增强“免疫力”。</p>
+
+      <p>一方面，需压实平台主体责任，督促互联网平台、行业协会建立健全风险预警机制，动态监测异常高频投诉、集中式恶意差评、非正常劳务纠纷等数据，及时发现并阻断黑恶势力的渗透路径。另一方面，要完善行业准入与退出机制，加强对信贷中介、舆情服务等新兴业态的<span class="highlight-blue">合规审查</span>，让披着“服务”外衣的黑恶势力无处遁形。</p>
+
+      <p>公平有序的营商环境，是服务业健康发展的重要保障。扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。</p>
+
+      <div class="sub-thesis">【分论点三】打防促治本——把线索排查、案件侦办与行业治理贯通起来，打掉一个团伙、堵上一类漏洞、修复一片生态。</div>
+
+      <p>广西桂林市公安局侦办一起跨区域舆情敲诈勒索犯罪团伙案件，桂林市市场监管局加强协作配合，全面梳理近年来涉旅游市场职业索赔、虚假宣传、恶意投诉情况，着力解决旅游市场乱象。</p>
+
+      <p>把线索排查、案件侦办和行业治理贯通起来，打掉一个团伙，堵上一类漏洞，修复一片生态，让监管的根系扎进服务业日常运行的土壤之中，<span class="highlight-gold">扫黑除恶才能从治标走向治本</span>。</p>
+
+      <p>据统计，<span class="highlight-green">2025年全国公安机关共打掉黑社会性质组织84个、恶势力犯罪组织2127个</span>。常态化开展扫黑除恶，为各类经营主体创造稳定、透明、规范、可预期的法治环境，让群众能放心消费、企业能踏实经营，定能为经济社会高质量发展提供坚实保障。</p>
+
+      <p class="byline">（人民日报2026年11月10日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·扫黑论断</span>
+      <p><b>“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。”</b>——写‘系统治理’是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·营商金句</span>
+      <p><b>“公平有序的营商环境，是服务业健康发展的重要保障。”</b>——写‘营商环境’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·伪装揭示</span>
+      <p><b>“以软暴力为手段、以网络平台为掩体、以合法外观为包装。”</b>——写‘新型犯罪’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·标本</span>
+      <p><b>“打掉一个团伙，堵上一类漏洞，修复一片生态。”</b>——写‘标本兼治’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·治本</span>
+      <p><b>“扫黑除恶才能从治标走向治本。”</b>——写‘治理深化’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·绿色通道</span>
+      <p><b>“建立线索快速移送等绿色通道。”</b>——写‘行刑衔接’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·合规</span>
+      <p><b>“加强对新兴业态的合规审查，让披着‘服务’外衣的黑恶势力无处遁形。”</b>——写‘源头监管’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·战果</span>
+      <p><b>“2025年打掉黑社会性质组织84个、恶势力犯罪组织2127个。”</b>——写‘扫黑战果’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·首例</span>
+      <p><b>“成功识别并移送侦办全国首例涉医美领域新型涉网黑恶犯罪案件。”</b>——写‘精准识别’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·案例</span>
+      <p><b>“公安部公布8起新型涉黑恶犯罪典型案例。”</b>——写‘新动向’是数据论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以公安部典型案例破题，用‘破解识别难—强化源头监管—打防促治本’三层递进，以‘放心消费、踏实经营’收束，适用于‘社会治理’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写精准识别、类案指引、协作联动；分论点二写压实平台责任、完善准入退出、动态监测；分论点三写线索案件行业贯通、标本兼治。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘打好扫黑除恶新战役’拆举措：加强精准识别、建强类案指引与绿色通道；压实平台责任、完善准入退出堵漏洞；贯通线索案件行业治理、打防促治本。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘从治标走向治本’‘软暴力为手段、网络平台为掩体、合法外观为包装’的由事及理，把治理话题写成‘标与本’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘不止于破案抓人，更在于修复行业生态’可作‘系统治理’类开头；‘公平有序的营商环境是重要保障’可作分论点；‘放心消费、踏实经营’可作结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「打好扫黑除恶的“新战役”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是破解“识别难”是关键。看清软暴力、网络平台、合法外观的三重伪装，以类案指引与协作联动精准识别、拆穿虚假外衣。<br>二是源头监管是保障。压实平台主体责任、完善行业准入退出机制，推动服务业“强身健体”、增强“免疫力”。<br>三是打防促治本。把线索排查、案件侦办与行业治理贯通起来，打掉一个团伙、堵上一类漏洞、修复一片生态。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「保护消费者权益、维护服务业营商环境，必须打好扫黑除恶的“新战役”——以精准识别拆穿伪装，以源头监管堵住漏洞，以系统治理修复生态。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是破解“识别难”是关键——看清软暴力、网络平台、合法外观的三重伪装，以类案指引与协作联动精准识别、拆穿虚假外衣。<br>二是源头监管是保障——压实平台主体责任、完善行业准入退出机制，推动服务业“强身健体”、增强“免疫力”。<br>三是打防促治本——把线索排查、案件侦办与行业治理贯通起来，打掉一个团伙、堵上一类漏洞、修复一片生态。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「打好扫黑除恶的“新战役”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是加强精准识别，建强类案指引与线索快速移送绿色通道，拆穿黑恶犯罪虚假外衣。<br>二是压实平台主体责任，完善行业准入退出机制，动态监测异常堵住渗透路径。<br>三是把线索排查、案件侦办与行业治理贯通，打掉一个团伙堵上一类漏洞。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于打好扫黑除恶的“新战役”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于打好扫黑除恶的“新战役”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进打好扫黑除恶的“新战役”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、破解“识别难”是关键——看清软暴力、网络平台、合法外观的三重伪装，以类案指引与协作联动精准识别、拆穿虚假外衣。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、源头监管是保障——压实平台主体责任、完善行业准入退出机制，推动服务业“强身健体”、增强“免疫力”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、打防促治本——把线索排查、案件侦办与行业治理贯通起来，打掉一个团伙、堵上一类漏洞、修复一片生态。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「打好扫黑除恶的“新战役”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：打好扫黑除恶的“新战役”<br><br>时代之问，呼唤破题之策。打好扫黑除恶的“新战役”，是发展所需，也是民心所向。可从三个维度展开：破解“识别难”是关键、源头监管是保障、打防促治本——把线索排查、案件侦办与。<br><br>分论点一：破解“识别难”是关键——看清软暴力、网络平台、合法外观的三重伪装，以类案指引与协作联动精准识别、拆穿虚假外衣。方向对了，路再远也能抵达。“扫黑除恶的价值，不止于破案抓人，更在于修复被破坏的行业生态。”<br><br>分论点二：源头监管是保障——压实平台主体责任、完善行业准入退出机制，推动服务业“强身健体”、增强“免疫力”。方法对了，事再难也能办成。“公平有序的营商环境，是服务业健康发展的重要保障。”<br><br>分论点三：打防促治本——把线索排查、案件侦办与行业治理贯通起来，打掉一个团伙、堵上一类漏洞、修复一片生态。行百里者半九十。“以软暴力为手段、以网络平台为掩体、以合法外观为包装。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。打好扫黑除恶的“新战役”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-10</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

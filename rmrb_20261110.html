@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 坚持以党的政治建设为统领</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>坚持以党的政治建设为统领</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·党的政治建设·党建引领·两个确立·两个维护·政治三力·政治监督 | 2026年11月10日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／党的政治建设／党建引领／两个确立／两个维护／政治三力／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">党的政治建设</span>
+      <span class="tag-item">党建引领</span>
+      <span class="tag-item">两个确立</span>
+      <span class="tag-item">两个维护</span>
+      <span class="tag-item">政治三力</span>
+      <span class="tag-item">政治监督</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">风清气正</span>
+      <span class="tag-item">基层党建</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">长治久安</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／党的政治建设／党建引领／两个确立／两个维护／政治三力／中国式现代化</b>”等主题；本文以‘中国式安全感’‘两个饭碗’破题，用‘旗帜鲜明讲政治—贯穿政治要求—统领落地见效’三层递进，是写‘党建与治理’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“坚持以党的政治建设为统领，把政治标准和政治要求贯穿党的各项建设，以高质量党建促进高质量发展”</b>——表层是谈管党治党，深层是揭示须从政治上看问题、以政治统领推动决策部署落地。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地以党的政治建设为统领推动高质量发展的主要做法”，从旗帜鲜明讲政治、把政治要求贯穿各项建设、强化政治监督保障落实三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步坚持以党的政治建设为统领的对策建议”等。对策要点：<b>坚定拥护两个确立、坚决做到两个维护，不断增强政治判断力政治领悟力政治执行力</b>／<b>把政治标准和政治要求贯穿党的各项建设，营造旗帜鲜明讲政治的氛围</b>／<b>强化政治监督，保障党中央重大决策部署不折不扣落实</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（意见／通知）可作“关于坚持以党的政治建设为统领、以高质量党建促进高质量发展的意见”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：讲政治／贯要求／统落地—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘中国式安全感’海外热议起笔，用‘平安中国’‘两个饭碗’两例破题（第一至四段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：发挥全面从严治党政治优势，以高质量党建促进高质量发展，让‘中国之治’为动荡世界注入稳定性与确定性（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘旗帜鲜明讲政治，是我们党一以贯之的政治优势’</b>——坚守政治方向，把两个确立两个维护融入血脉（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘把政治标准和政治要求贯穿党的各项建设’</b>——不从政治上认识就无从根本解决，以政治纪律匡正方向（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘以政治建设统领推动重大决策部署落地’</b>——强化政治监督，把制度优势转化为治理效能（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到坚定拥护两个确立、坚决做到两个维护，把党的政治建设写成‘同心协力创造新的历史伟业’的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（讲政治—贯要求—统落地）—总’结构：以案例破题，用三组维度递进，是申论‘小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>发挥全面从严治党政治优势，以高质量党建促进高质量发展，“中国之治”为动荡世界注入稳定性与确定性。</p>
+
+      <p>近段时间，“中国式安全感”在海外社交平台持续引发热议。</p>
+
+      <p>看“平安中国”。中国无愧为世界上最安全、刑事犯罪率最低、命案发案率最低的国家之一，外国游客点赞“深夜敢出门”“无人值守也不丢东西”——托举这张“国家名片”的，是以基层党建促进共建共治共享。</p>
+
+      <p>看“两个饭碗”。夏粮产量首次突破<span class="highlight-green">3000亿斤</span>，全年粮食有望再获丰收；光伏发电装机容量首次超过煤电，前三季度规上工业原油、天然气产量均创历史同期新高。任凭风雨来袭、我自岿然不动的底气，照见高瞻远瞩的战略视野——“<span class="highlight-gold">粮食问题不能只从经济上看，必须从政治上看</span>”“能源安全是关系国家经济社会发展的全局性、战略性问题”。从讲政治的高度把握粮食安全、能源安全，“两个饭碗”端得更牢，高质量发展的安全基础更加稳固。</p>
+
+      <div class="thesis">【总论点】发挥<span class="highlight-blue">全面从严治党政治优势</span>，以高质量党建促进高质量发展，让“<span class="highlight-gold">中国之治</span>”为动荡世界注入<span class="highlight-purple">稳定性与确定性</span>。</div>
+
+      <p>治国必先治党，党兴才能国强。发挥全面从严治党政治优势，以高质量党建促进高质量发展，“中国之治”为动荡世界注入稳定性与确定性。</p>
+
+      <p>从中，更能领会党的二十届五中全会部署的战略任务和重大举措的深刻内涵和深远意义。</p>
+
+      <p>党的政治建设是党的根本性建设，决定党的建设方向和效果。全会审议通过《中共中央关于持之以恒推进全面从严治党若干重大问题的决定》，鲜明提出持之以恒推进全面从严治党遵循的原则，“坚持以党的政治建设为统领”位居其中。</p>
+
+      <p>旗帜鲜明讲政治，是我们党一以贯之的政治优势。</p>
+
+      <div class="sub-thesis">【分论点一】旗帜鲜明讲政治，是我们党一以贯之的政治优势——坚守政治方向，把“两个确立”“两个维护”融入血脉，以党的团结统一凝聚磅礴力量。</div>
+
+      <p>长征路上，伙夫同志一起床，不问今天有没有米煮饭，却先问向南走还是向北走。正因坚守政治方向，红军完成了“无与伦比的史诗般远征”。</p>
+
+      <p>今年“七一”前夕，习近平总书记给老党员张连生回信，褒扬他“永远跟党走”的信党爱党之情。战争年代，张连生所在的中央纵队“四大队”报务员们传递的“嘀嗒、嘀嗒”，就是党中央和毛主席的声音，全党全军都无条件执行。</p>
+
+      <p>“<span class="highlight-gold">全面从严治党首先要从政治上看</span>”。“坚持以党的政治建设为统领”，是习近平党建思想的内涵要义之一，凝结着新时代全面从严治党的实践探索。</p>
+
+      <div class="sub-thesis">【分论点二】把政治标准和政治要求贯穿党的各项建设——不从政治上认识问题就无从根本解决，以政治纪律和政治规矩匡正方向。</div>
+
+      <p>从整治秦岭违建来看。曾经，陕西秦岭北麓西安境内不断出现违建别墅，如块块疮疤蚕食山川绿意。习近平总书记明确要求“<span class="highlight-blue">首先从政治纪律查起</span>”，坚决推动查处这一问题，还秦岭以宁静美丽。</p>
+
+      <p>祁连山自然保护区环境污染，木里矿区非法采煤，洞庭湖违规违法建设矮围……<span class="highlight-purple">自然生态问题背后，是政治生态问题</span>。不从政治上认识问题、解决问题，就无法从根本上解决问题。</p>
+
+      <p>新时代以来，坚持以党的政治建设为统领，把政治标准和政治要求贯穿党的各项建设之中，全党上下旗帜鲜明讲政治的氛围更加浓厚。</p>
+
+      <div class="sub-thesis">【分论点三】以政治建设统领推动重大决策部署落地——强化政治监督，保障党中央权威和集中统一领导，把制度优势转化为治理效能。</div>
+
+      <p>从平陆运河来看。首月过货量破百万吨，国庆假期迎来文旅热……这条通江达海的西部陆海新通道骨干工程，从破土动工到建成通航，<span class="highlight-green">仅历时4年</span>。广西落实党中央重大决策部署，党建引领集结“平陆运河战队”，成就“世纪工程”；把平陆运河建设监督作为强化政治监督“头号工程”，开展全天候驻点监督，打造“廉洁工程”。</p>
+
+      <p>从纵深推进全国统一大市场建设来看。“坚决破除地方保护、市场分割、‘内卷式’竞争”，是维护党中央权威、实现全国一盘棋的政治要求。二十届中央纪委五次全会将建设全国统一大市场纳入政治监督重点任务，各级纪检监察机关紧盯政府采购招标乱象、地方招商引资“内卷”等痼疾……加强政治监督，为统一大市场建设通脉活血。</p>
+
+      <p>坚持以党的政治建设为统领，最终体现于党的建设各项工作实践，实现党的各项建设同向发力、形成合力。</p>
+
+      <p>瞩望未来，牢牢把握“坚持以党的政治建设为统领”这条原则，引导广大党员干部坚定拥护“两个确立”、坚决做到“两个维护”，不断增强政治判断力、政治领悟力、政治执行力，始终同人民想在一起、干在一起，必能同心协力创造新的历史伟业。</p>
+
+      <p>——持之以恒推进全面从严治党②</p>
+
+      <p class="byline">（人民日报2026年11月10日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治党论断</span>
+      <p><b>“发挥全面从严治党政治优势，以高质量党建促进高质量发展。”</b>——写‘党建与治理’是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政治视角</span>
+      <p><b>“粮食问题不能只从经济上看，必须从政治上看。”</b>——写‘从政治上看问题’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政治优势</span>
+      <p><b>“旗帜鲜明讲政治，是我们党一以贯之的政治优势。”</b>——写‘党的政治建设’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·首先从政治查</span>
+      <p><b>“首先从政治纪律查起。”</b>——写‘政治纪律’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·生态</span>
+      <p><b>“自然生态问题背后，是政治生态问题。”</b>——写‘政治生态’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政治统领</span>
+      <p><b>“坚持以党的政治建设为统领。”</b>——写‘党建原则’是规范句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·饭碗</span>
+      <p><b>“夏粮产量首次突破3000亿斤，光伏装机首次超过煤电。”</b>——写‘两个饭碗’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治党首要</span>
+      <p><b>“全面从严治党首先要从政治上看。”</b>——写‘政治统领’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政治三力</span>
+      <p><b>“不断增强政治判断力、政治领悟力、政治执行力。”</b>——写‘党性修养’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·两个确立</span>
+      <p><b>“坚定拥护两个确立、坚决做到两个维护。”</b>——写‘政治忠诚’是收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘平安中国’‘两个饭碗’破题，用‘讲政治—贯要求—统落地’三层递进，以‘同心协力创造新的历史伟业’收束，适用于‘党建与治理’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写坚守政治方向、两个确立两个维护；分论点二写政治标准贯穿各项建设、政治纪律匡正方向；分论点三写强化政治监督、保障决策部署落地。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘以党的政治建设为统领’拆举措：拥护两个确立做到两个维护、增强政治三力；把政治要求贯穿各项建设、营造讲政治氛围；强化政治监督、保障决策落实。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘自然生态问题背后是政治生态问题’‘粮食不能只从经济上看必须从政治上看’的由事及理，把党建话题写成‘局部与全局’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘旗帜鲜明讲政治’可作‘党建’类开头；‘首先从政治纪律查起’可作分论点；‘坚定拥护两个确立’可作结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「坚持以党的政治建设为统领」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是旗帜鲜明讲政治，是我们党一以贯之的政治优势。坚守政治方向，把“两个确立”“两个维护”融入血脉，以党的团结统一凝聚磅礴力量。<br>二是把政治标准和政治要求贯穿党的各项建设。不从政治上认识问题就无从根本解决，以政治纪律和政治规矩匡正方向。<br>三是以政治建设统领推动重大决策部署落地。强化政治监督，保障党中央权威和集中统一领导，把制度优势转化为治理效能。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「发挥全面从严治党政治优势，以高质量党建促进高质量发展，让“中国之治”为动荡世界注入稳定性与确定性。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是旗帜鲜明讲政治，是我们党一以贯之的政治优势——坚守政治方向，把“两个确立”“两个维护”融入血脉，以党的团结统一凝聚磅礴力量。<br>二是把政治标准和政治要求贯穿党的各项建设——不从政治上认识问题就无从根本解决，以政治纪律和政治规矩匡正方向。<br>三是以政治建设统领推动重大决策部署落地——强化政治监督，保障党中央权威和集中统一领导，把制度优势转化为治理效能。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“发挥全面从严治党政治优势，以高质量党建促进高质量发展。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「坚持以党的政治建设为统领」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚定拥护两个确立、坚决做到两个维护，不断增强政治判断力政治领悟力政治执行力。<br>二是把政治标准和政治要求贯穿党的各项建设，营造旗帜鲜明讲政治的氛围。<br>三是强化政治监督，保障党中央重大决策部署不折不扣落实。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“发挥全面从严治党政治优势，以高质量党建促进高质量发展。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于坚持以党的政治建设为统领的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于坚持以党的政治建设为统领的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进坚持以党的政治建设为统领，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、旗帜鲜明讲政治，是我们党一以贯之的政治优势——坚守政治方向，把“两个确立”“两个维护”融入血脉，以党的团结统一凝聚磅礴力量。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、把政治标准和政治要求贯穿党的各项建设——不从政治上认识问题就无从根本解决，以政治纪律和政治规矩匡正方向。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以政治建设统领推动重大决策部署落地——强化政治监督，保障党中央权威和集中统一领导，把制度优势转化为治理效能。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“发挥全面从严治党政治优势，以高质量党建促进高质量发展。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「坚持以党的政治建设为统领」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：坚持以党的政治建设为统领<br><br>时代之问，呼唤破题之策。坚持以党的政治建设为统领，是发展所需，也是民心所向。可从三个维度展开：旗帜鲜明讲政治，是我们党一以贯之的政治优势、把政治标准和政治要求贯穿党的各项建设、以政治建设统领推动重大决策部署落地。<br><br>分论点一：旗帜鲜明讲政治，是我们党一以贯之的政治优势——坚守政治方向，把“两个确立”“两个维护”融入血脉，以党的团结统一凝聚磅礴力量。方向对了，路再远也能抵达。“发挥全面从严治党政治优势，以高质量党建促进高质量发展。”<br><br>分论点二：把政治标准和政治要求贯穿党的各项建设——不从政治上认识问题就无从根本解决，以政治纪律和政治规矩匡正方向。方法对了，事再难也能办成。“粮食问题不能只从经济上看，必须从政治上看。”<br><br>分论点三：以政治建设统领推动重大决策部署落地——强化政治监督，保障党中央权威和集中统一领导，把制度优势转化为治理效能。行百里者半九十。“旗帜鲜明讲政治，是我们党一以贯之的政治优势。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。坚持以党的政治建设为统领是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-10</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

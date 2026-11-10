@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 创新药凭什么跑出加速度</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>创新药凭什么跑出加速度</h1>
+    <div class="meta">人民日报·人民时评 | 自主创新·改革赋能·开放共赢·医药创新·新质生产力·产业链供应链·科技自立自强 | 2026年11月9日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：自主创新／改革赋能／开放共赢／医药创新／新质生产力／产业链供应链／高水平对外开放</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">自主创新</span>
+      <span class="tag-item">改革赋能</span>
+      <span class="tag-item">开放共赢</span>
+      <span class="tag-item">医药创新</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">产业链供应链</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">科技自立自强</span>
+      <span class="tag-item">研发投入</span>
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">产业升级</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>自主创新／改革赋能／开放共赢／医药创新／新质生产力／产业链供应链／科技自立自强</b>”等主题；本文以“首报首发”新药破题，用‘自主创新—改革赋能—开放共赢’三个关键词递进，是写‘科技自立自强’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“把自主创新放在首位，以改革打通堵点、以开放汇聚合力，国产创新药才能牢牢掌握产业链供应链自主权”</b>——表层是谈医药创新，深层是揭示须把创新主动权、发展主动权牢牢掌握在自己手中。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地推动创新药跑出加速度的主要做法与成效”，从坚守自主创新、深化审评改革、扩大开放合作三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步以自主创新推动医药产业高质量发展的对策建议”等。对策要点：<b>引导企业坚守长期主义、持续加大研发投入，把自主创新放在首位</b>／<b>深化药品审评审批制度改革，以研审联动缩短上市周期、打通堵点难点</b>／<b>扩大高水平开放合作，把中国临床优势转化为原创成果优势</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／意见）可作“关于以自主创新推动医药产业高质量发展的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：自主创新／改革赋能／开放共赢—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“创新药获批上市好消息不断”起笔，用‘首报首发’新药剂、枣仁宁心滴丸两处案例破题（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：把自主创新放在首位，让研发投入持续提升靶点发现、临床转化和产业化能力，国产创新药才能牢牢掌握产业链供应链自主权（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘把自主创新放在首位’</b>——以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘以改革赋能打通堵点’</b>——刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘以开放共赢拥抱蓝海’</b>——在开放合作中增强本领，把中国临床优势转化为原创成果优势（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到《医药工业“十五五”规划》目标，把创新药话题写成“守护国民健康、赋能产业升级、闪耀全球舞台”的时代答卷。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（自主创新—改革赋能—开放共赢）—总’结构：以数据破题，用三个关键词递进，是申论‘由事及理’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>最近，我国创新药获批上市的好消息不断。</p>
+
+      <p>用于治疗1型发作性睡病的一款新药剂，实现在中国“首报首发”的历史性突破；源自中医临床经验方的枣仁宁心滴丸，成为今年国内首个获批的1.1类中药创新药……</p>
+
+      <div class="thesis">【总论点】把<span class="highlight-gold">自主创新</span>放在首位，让研发投入持续提升靶点发现、临床转化和产业化能力，国产创新药才能牢牢掌握<span class="highlight-blue">产业链供应链自主权</span>。</div>
+
+      <p>国家药监局9月公布的数据显示，今年以来已有<span class="highlight-green">59个创新药</span>获批上市，其中13个为新机制、新靶点的首创新药；同时，创新药出海步伐再提速，截至今年9月，我国创新药对外授权交易总额突破<span class="highlight-green">1200亿美元</span>，同比增长36%。</p>
+
+      <p>这份亮眼的成绩单改变了很多人对国产药的认知。国产药科技含量越来越高，不仅持续满足国内患者用药需求，还走向海外服务全球患者。<span class="highlight-purple">从缺药仿制到研发创新，从依赖进口到出口大增</span>，我国创新药凭什么跑出加速度？答案藏在3个关键词里：<span class="highlight-gold">自主创新</span>、<span class="highlight-blue">改革赋能</span>、<span class="highlight-purple">开放共赢</span>。</p>
+
+      <p>医药研发有“三个10”的说法：10个亿的研发投入，耗时10年，最后只有不到10%的成功率。<span class="highlight-purple">高投入、长周期、高风险，像一道窄门，筛掉投机者，留下了长期主义者</span>。面对重大疾病治疗药物的缺口，我国药企选择的是一条艰难却正确的路：自主创新。</p>
+
+      <div class="sub-thesis">【分论点一】把<span class="highlight-blue">自主创新</span>放在首位——以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力，牢牢掌握产业链供应链自主权。</div>
+
+      <p>财报显示，我国越来越多上市药企研发投入占营收比超过20%。正是这种下定决心搞研发的行动，不断结出丰硕果实：我国在研新药管线约占<span class="highlight-green">全球总量的30%</span>，稳居全球第二，成为全球新药研发的重要高地。把自主创新放在首位，让研发投入持续提升靶点发现、临床转化和产业化能力，国产创新药才能牢牢掌握产业链供应链自主权。</p>
+
+      <p>创新药跑出加速度，药品监管改革是重要助推器。<span class="highlight-gold">刀刃向内的改革，不断打通新药研发上市的堵点难点</span>。</p>
+
+      <div class="sub-thesis">【分论点二】以<span class="highlight-blue">改革赋能</span>打通堵点——刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发。</div>
+
+      <p>设立突破性治疗药物、附条件批准、优先审评审批、特别审批4个加快通道；实行“提前介入、一企一策、全程指导、研审联动”，让创新药研发少走弯路……以《关于改革药品医疗器械审评审批制度的意见》为指引，药监部门不断优化创新药临床试验审评审批机制，着力缩短审评时限、提升临床试验效率。<span class="highlight-green">近10年来，新药临床试验审批从14个月压缩至30日，新药上市平均审评审批时长大幅缩短</span>。流程提速，带来的是创新活力的持续迸发。</p>
+
+      <p><span class="highlight-gold">开放共赢是实现从跟跑、并跑到领跑的重要支撑</span>。在全球化浪潮中搏击风浪，在开放合作中增强本领，助力国产创新药突出重围、拥抱蓝海。</p>
+
+      <div class="sub-thesis">【分论点三】以<span class="highlight-purple">开放共赢</span>拥抱蓝海——在开放合作中增强本领，把中国临床优势转化为原创成果优势，实现从跟跑、并跑到领跑。</div>
+
+      <p>近年来，随着国内医药创新环境向好，本土药企与跨国药企同台竞技，参与全球医药创新分工，在竞争中合作，在合作中跃升，不断把中国临床优势转化为原创成果优势。既立足本土临床资源，夯实原始创新根基；又积极对接全球顶尖科研网络、临床平台与产业资本，吸纳先进经验、汇聚全球智慧，有助于让更多原研药走出国门。</p>
+
+      <p>《医药工业发展“十五五”规划》提出，到2030年，首创新药占全球比例不少于25%，创新药上市数量位居世界前列。目标催人，时间紧迫，<span class="highlight-gold">奋力深耕自主创新、释放改革红利、扩大开放合作</span>，我国创新药定能更好守护国民健康、赋能产业升级、闪耀全球舞台。</p>
+
+      <p class="byline">（人民日报2026年11月9日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新论断</span>
+      <p><b>“把自主创新放在首位，国产创新药才能牢牢掌握产业链供应链自主权。”</b>——写‘科技自立自强’是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·改革金句</span>
+      <p><b>“刀刃向内的改革，不断打通新药研发上市的堵点难点。”</b>——写‘深化改革’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放金句</span>
+      <p><b>“开放共赢是实现从跟跑、并跑到领跑的重要支撑。”</b>——写‘高水平开放’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·窄门</span>
+      <p><b>“高投入、长周期、高风险，像一道窄门，筛掉投机者，留下了长期主义者。”</b>——写‘长期主义’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·跨越</span>
+      <p><b>“从缺药仿制到研发创新，从依赖进口到出口大增。”</b>——写‘产业跃升’是对比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·主线</span>
+      <p><b>“奋力深耕自主创新、释放改革红利、扩大开放合作。”</b>——写‘发展路径’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·出海</span>
+      <p><b>“创新药对外授权交易总额突破1200亿美元，同比增长36%。”</b>——写‘医药出海’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·管线</span>
+      <p><b>“在研新药管线约占全球总量的30%，稳居全球第二。”</b>——写‘研发实力’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·提速</span>
+      <p><b>“新药临床试验审批从14个月压缩至30日。”</b>——写‘审评改革’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·政策·目标</span>
+      <p><b>“到2030年，首创新药占全球比例不少于25%。”</b>——写‘十五五目标’是政策句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘首报首发’新药与出海数据破题，用‘自主创新—改革赋能—开放共赢’三关键词递进，以‘守护国民健康、赋能产业升级’收束，适用于‘科技自立自强’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写坚守长期主义、加大研发投入；分论点二写深化审评改革、研审联动提速；分论点三写扩大开放合作、临床优势转化。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘以自主创新推动医药产业高质量发展’拆举措：引导企业长期主义加大研发、把自主创新放在首位；深化审评审批改革、研审联动打通堵点；扩大开放合作、临床优势转原创成果。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘高投入长周期高风险像窄门，筛掉投机者留下长期主义者’的由事及理，把创新话题写成‘快与慢’‘虚与实’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘把自主创新放在首位’可作‘科技自立自强’类开头；‘从缺药仿制到研发创新’可作对比段；‘守护国民健康、赋能产业升级’可作结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「创新药凭什么跑出加速度」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把自主创新放在首位。以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力，牢牢掌握产业链供应链自主权。<br>二是以改革赋能打通堵点。刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发。<br>三是以开放共赢拥抱蓝海。在开放合作中增强本领，把中国临床优势转化为原创成果优势，实现从跟跑、并跑到领跑。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「把自主创新放在首位，让研发投入持续提升靶点发现、临床转化和产业化能力，国产创新药才能牢牢掌握产业链供应链自主权。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把自主创新放在首位——以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力，牢牢掌握产业链供应链自主权。<br>二是以改革赋能打通堵点——刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发。<br>三是以开放共赢拥抱蓝海——在开放合作中增强本领，把中国临床优势转化为原创成果优势，实现从跟跑、并跑到领跑。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“把自主创新放在首位，国产创新药才能牢牢掌握产业链供应链自主权。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「创新药凭什么跑出加速度」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是引导企业坚守长期主义、持续加大研发投入，把自主创新放在首位。<br>二是深化药品审评审批制度改革，以研审联动缩短上市周期、打通堵点难点。<br>三是扩大高水平开放合作，把中国临床优势转化为原创成果优势。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“把自主创新放在首位，国产创新药才能牢牢掌握产业链供应链自主权。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于创新药凭什么跑出加速度的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于创新药凭什么跑出加速度的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进创新药凭什么跑出加速度，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、把自主创新放在首位——以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力，牢牢掌握产业链供应链自主权。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以改革赋能打通堵点——刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以开放共赢拥抱蓝海——在开放合作中增强本领，把中国临床优势转化为原创成果优势，实现从跟跑、并跑到领跑。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“把自主创新放在首位，国产创新药才能牢牢掌握产业链供应链自主权。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「创新药凭什么跑出加速度」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：创新药凭什么跑出加速度<br><br>时代之问，呼唤破题之策。创新药凭什么跑出加速度，是发展所需，也是民心所向。可从三个维度展开：把自主创新放在首位、以改革赋能打通堵点、以开放共赢拥抱蓝海。<br><br>分论点一：把自主创新放在首位——以长期主义坚守研发投入，持续增强靶点发现、临床转化和产业化能力，牢牢掌握产业链供应链自主权。方向对了，路再远也能抵达。“把自主创新放在首位，国产创新药才能牢牢掌握产业链供应链自主权。”<br><br>分论点二：以改革赋能打通堵点——刀刃向内优化审评审批机制，缩短时限、提升效率，让创新活力持续迸发。方法对了，事再难也能办成。“刀刃向内的改革，不断打通新药研发上市的堵点难点。”<br><br>分论点三：以开放共赢拥抱蓝海——在开放合作中增强本领，把中国临床优势转化为原创成果优势，实现从跟跑、并跑到领跑。行百里者半九十。“开放共赢是实现从跟跑、并跑到领跑的重要支撑。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。创新药凭什么跑出加速度是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-09</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
