@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 一纸凭证何以激活“一池春水”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>一纸凭证何以激活“一池春水”</h1>
+    <div class="meta">人民日报·人民时评 | 数据产权登记制度·数据要素·数字经济·数据确权·全国统一大市场·人工智能·法治化 | 2026年11月11日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：数据产权登记制度／数据要素／数字经济／数据确权／全国统一大市场／人工智能／法治化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">数据产权登记制度</span>
+      <span class="tag-item">数据要素</span>
+      <span class="tag-item">数字经济</span>
+      <span class="tag-item">数据确权</span>
+      <span class="tag-item">全国统一大市场</span>
+      <span class="tag-item">人工智能</span>
+      <span class="tag-item">法治化营商环境</span>
+      <span class="tag-item">产权保护</span>
+      <span class="tag-item">数据资产</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">制度创新</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>数据产权登记制度／数据要素／数字经济／数据确权／全国统一大市场／人工智能／法治化</b>”等主题；本文以‘一纸凭证’破题，用‘立柱架梁—厘清边界—深化运用’三层递进，是写‘制度创新护航新质生产力’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“以全国统一数据产权登记制度破解‘有数据难确权’困局，让数据要素在法治化轨道上充分涌流”</b>——表层是谈登记凭证，深层是揭示须以制度厘清权属、以规则护航创新。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“全国统一数据产权登记制度的主要作用”，从破解确权困局、降低交易成本、护航创新秩序三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步健全数据产权登记制度的对策建议”等。对策要点：<b>完善规则体系，细化自动化采集与衍生数据的审查标准</b>／<b>拓宽凭证应用场景，推动登记在司法金融产业政策获广泛采信</b>／<b>把‘能查’推向‘能用’，建设开放共享安全的全国一体化数据市场</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（意见／通知）可作“关于推进数据产权登记、释放数据要素价值的意见”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：立制度／清边界／促运用—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘一个确权凭证，胜过万千承诺’起笔，点出国家数据产权登记系统上线、首批56份凭证公示（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：以全国统一数据产权登记制度破解确权困局，激活数字经济‘一池春水’（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘立柱架梁——建立全国统一登记制度’</b>——以可信权属凭证破解‘有数据难确权’难题（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘厘清边界——以权属凭证划定权利边界’</b>——降低交易成本、为创新秩序保驾护航（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘深化运用——推动确权从上半场走向下半场’</b>——把凭证从‘能查’推向‘能用’，释放数据要素价值（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘为数字经济立规、为数据要素确权’，让创新活力充分涌流、行稳致远。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（立制度—清边界—促运用）—总’结构：以凭证破题，用三组维度递进，是申论‘制度型改革’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>一个确权凭证，胜过万千承诺。随着国家数据产权登记服务系统上线试运行，北京、上海、深圳三家数据交易所纳入全国数据产权登记机构目录，首批<span class="highlight-green">56份</span>数据产权登记凭证向社会公示，全国统一的数据产权登记制度正式落地。</p>
+
+      <p>数据是数字经济时代的新型生产要素，也是人工智能迭代升级的重要“养料”。2025年，我国数据产业规模达<span class="highlight-green">6.78万亿元</span>，同比增长<span class="highlight-green">15.7%</span>，数据企业达<span class="highlight-green">48.2万家</span>，数据资源的经济社会价值愈发凸显。然而与土地、资本等传统生产要素不同，数据具有<span class="highlight-purple">非排他性、可复制性、价值易变性</span>等特征，其权属界定长期面临难题，“有数据难确权、有资产难变现”制约了数据要素价值的释放。</p>
+
+      <div class="thesis">【总论点】以全国统一<span class="highlight-blue">数据产权登记制度</span>破解“有数据难确权”困局，让数据要素在<span class="highlight-gold">法治化轨道</span>上充分涌流，激活数字经济的“<span class="highlight-purple">一池春水</span>”。</div>
+
+      <div class="sub-thesis">【分论点一】立柱架梁——建立全国统一数据产权登记制度，以可信<span class="highlight-blue">权属凭证</span>破解“有数据难确权、有资产难变现”难题。</div>
+
+      <p>全国统一的数据产权登记制度，正是破解困局、激活“一池春水”的关键所在。数据产权登记通过系统审查数据来源合规性、权利归属、权利边界，为经营主体出具可信的权属凭证，制度性解决了“数据是谁的”“能用来干什么”“谁可以使用”等关键问题。全国统一登记体系的建立，实现了“一地登记、全国互认”，为建设开放共享安全的<span class="highlight-blue">全国一体化数据市场</span>、充分释放数据要素价值奠定了基础。</p>
+
+      <div class="sub-thesis">【分论点二】厘清边界——以权属凭证划定权利边界，降低<span class="highlight-green">交易成本</span>、为创新秩序保驾护航。</div>
+
+      <p>数据产权拥有全国通行的“身份证”，流通交易便能实现“有证可依”，减少重复核验，降低交易成本，提升数据流转效率。特别是对人工智能漫剧等新兴业态而言，探索将剧本推演、提示词打磨、分镜制作等全流程人机交互数据纳入登记范围，既有利于对创作者智力劳动形成制度认可，也有助于为数字内容产业健康发展保驾护航。</p>
+
+      <p><span class="highlight-purple">产权不彰，创新难免失序</span>。无论是“像素级洗稿”“批量式搬运”，还是漫剧“换皮不换骨”、人工智能“换脸克隆”，如果数据权属边界模糊，侵权问题便会层出不穷。最高人民法院发布数据权益指导性案例，面对因爬取搬运网络平台数据而引发的不正当竞争纠纷，明确网络平台经营者对其数据集合形成的经营性利益受法律保护。福州中院审理的人工智能洗稿教唆侵权案，认定保留原作品核心内容的人工智能改写仍构成侵权。数据登记凭证的价值，就在于作为权属争议的重要证据，能降低企业举证难度，提升维权效率。</p>
+
+      <div class="sub-thesis">【分论点三】深化运用——推动确权从“上半场”走向“下半场”，把凭证从“能查”推向“能用”，释放<span class="highlight-purple">数据要素价值</span>。</div>
+
+      <p><span class="highlight-purple">确权只是“上半场”，确权之后的运用才是更加精彩的“下半场”</span>。深圳航空将飞机维修数据登记确权后，运行数据转化为可开发、可复用的数字资产，日后可以通过向其他航司、机场输出故障维修方案，推动企业从“重资产运营”向“数据驱动服务”转型。正如人工智能发展需要高质量语料库作为“干净口粮”，数字经济的成长壮大同样需要安全可靠、清晰明确的产权制度护航。</p>
+
+      <p>也要看到，数据产权登记作为一项全新制度，仍面临不少挑战，比如自动化采集公开数据、衍生数据的审查标准有待细化。这就需要在实践中持续完善规则体系，拓宽凭证应用场景，把“能查”推向“能用”，推动登记凭证在司法、金融、产业政策等领域获得更广泛采信。</p>
+
+      <p><span class="highlight-gold">为数字经济立规，为数据要素确权</span>，最终是为了让创新活力充分涌流。人工智能时代，内容生产门槛持续降低，但产业的高质量发展绝不能以牺牲权利保护为代价。让每一份数据资源都有清晰的权利归属，数字经济定能在法治化轨道上行稳致远。</p>
+
+      <p>一纸凭证何以激活“一池春水”（人民时评）</p>
+
+      <p class="byline">（人民日报2026年11月11日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·确权论断</span>
+      <p><b>“一个确权凭证，胜过万千承诺。”</b>——写‘制度权威／产权保护’是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立规金句</span>
+      <p><b>“为数字经济立规，为数据要素确权。”</b>——写‘制度护航’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·涌流金句</span>
+      <p><b>“让创新活力充分涌流。”</b>——写‘制度创新成效’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·轨道金句</span>
+      <p><b>“数字经济定能在法治化轨道上行稳致远。”</b>——写‘法治化营商环境’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·失序</span>
+      <p><b>“产权不彰，创新难免失序。”</b>——写‘产权保护’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·半场</span>
+      <p><b>“确权只是‘上半场’，确权之后的运用才是更加精彩的‘下半场’。”</b>——写‘制度建设’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据金句</span>
+      <p><b>“数据是数字经济时代的新型生产要素。”</b>——写‘数据要素’是论断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·规模</span>
+      <p><b>“2025年，我国数据产业规模达6.78万亿元，数据企业达48.2万家。”</b>——写‘数据要素价值’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·凭证金句</span>
+      <p><b>“首批56份数据产权登记凭证向社会公示。”</b>——写‘制度落地’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转变化句</span>
+      <p><b>“推动企业从‘重资产运营’向‘数据驱动服务’转型。”</b>——写‘数据资产化’是事实论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘一纸凭证’破题，用‘立柱架梁—厘清边界—深化运用’三层递进，以‘创新活力充分涌流’收束，适用于‘制度创新护航新质生产力’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写建立全国统一登记制度、破解确权困局；分论点二写厘清权属边界、降低交易成本护航秩序；分论点三写深化凭证运用、从‘能查’推向‘能用’。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘健全数据产权登记制度’拆举措：完善规则体系、细化审查标准；拓宽应用场景、推动司法金融采信；把‘能查’推向‘能用’、建全国一体化数据市场。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘产权不彰，创新难免失序’‘确权只是上半场、运用才是下半场’的由事及理，把制度话题写成‘立与用’‘破与护’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘一个确权凭证，胜过万千承诺’可作‘制度’类开头；‘为数字经济立规，为数据要素确权’可作分论点；‘让创新活力充分涌流’可作结尾。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「一纸凭证何以激活“一池春水”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是立柱架梁。建立全国统一数据产权登记制度，以可信权属凭证破解“有数据难确权、有资产难变现”难题。<br>二是厘清边界。以权属凭证划定权利边界，降低交易成本、为创新秩序保驾护航。<br>三是深化运用。推动确权从“上半场”走向“下半场”，把凭证从“能查”推向“能用”，释放数据要素价值。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「以全国统一数据产权登记制度破解“有数据难确权”困局，让数据要素在法治化轨道上充分涌流，激活数字经济的“一池春水”。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是立柱架梁——建立全国统一数据产权登记制度，以可信权属凭证破解“有数据难确权、有资产难变现”难题。<br>二是厘清边界——以权属凭证划定权利边界，降低交易成本、为创新秩序保驾护航。<br>三是深化运用——推动确权从“上半场”走向“下半场”，把凭证从“能查”推向“能用”，释放数据要素价值。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“一个确权凭证，胜过万千承诺。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「一纸凭证何以激活“一池春水”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是完善规则体系，细化自动化采集与衍生数据的审查标准。<br>二是拓宽凭证应用场景，推动登记在司法金融产业政策获广泛采信。<br>三是把‘能查’推向‘能用’，建设开放共享安全的全国一体化数据市场。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“一个确权凭证，胜过万千承诺。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于一纸凭证何以激活“一池春水”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于一纸凭证何以激活“一池春水”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进一纸凭证何以激活“一池春水”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、立柱架梁——建立全国统一数据产权登记制度，以可信权属凭证破解“有数据难确权、有资产难变现”难题。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、厘清边界——以权属凭证划定权利边界，降低交易成本、为创新秩序保驾护航。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、深化运用——推动确权从“上半场”走向“下半场”，把凭证从“能查”推向“能用”，释放数据要素价值。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“一个确权凭证，胜过万千承诺。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「一纸凭证何以激活“一池春水”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：一纸凭证何以激活“一池春水”<br><br>时代之问，呼唤破题之策。一纸凭证何以激活“一池春水”，是发展所需，也是民心所向。可从三个维度展开：立柱架梁——建立全国统一数据产权登记、厘清边界——以权属凭证划定权利边界，、深化运用——推动确权从“上半场”走向。<br><br>分论点一：立柱架梁——建立全国统一数据产权登记制度，以可信权属凭证破解“有数据难确权、有资产难变现”难题。方向对了，路再远也能抵达。“一个确权凭证，胜过万千承诺。”<br><br>分论点二：厘清边界——以权属凭证划定权利边界，降低交易成本、为创新秩序保驾护航。方法对了，事再难也能办成。“为数字经济立规，为数据要素确权。”<br><br>分论点三：深化运用——推动确权从“上半场”走向“下半场”，把凭证从“能查”推向“能用”，释放数据要素价值。行百里者半九十。“让创新活力充分涌流。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。一纸凭证何以激活“一池春水”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-11</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 追光，驭光，成为光</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>追光，驭光，成为光</h1>
+    <div class="meta">人民日报·评论员观察 | 科技创新·产业创新深度融合·产学研融合·科技成果转化·新质生产力·技术经理人·机制松绑 | 2026年11月11日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：科技创新和产业创新深度融合／产学研融合／科技成果转化／新质生产力／人才改革／机制松绑</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">科技创新</span>
+      <span class="tag-item">产业创新深度融合</span>
+      <span class="tag-item">产学研融合</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">科技成果转化</span>
+      <span class="tag-item">新型研发机构</span>
+      <span class="tag-item">中试平台</span>
+      <span class="tag-item">技术经理人</span>
+      <span class="tag-item">人才改革</span>
+      <span class="tag-item">机制松绑</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">中国式现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>科技创新和产业创新深度融合／产学研融合／科技成果转化／新质生产力／人才改革／机制松绑</b>”等主题；本文以‘追光—驭光—成为光’三重意境破题，用‘固本策源—破壁攻关—赋能产业’三层递进，是写‘创新驱动发展’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“推动科技创新和产业创新互融共促，让创新链上的每一个人都成为光、释放热”</b>——表层是谈绵阳科技城一束光，深层是揭示须以平台、人才、机制三维发力，打通实验室到生产线的‘最后一公里’。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地推动科技创新和产业创新深度融合的主要做法”，从建强新型研发机构和中试平台、培育技术经理人和科技副总、完善创新激励与尽职免责三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步推动科技创新和产业创新深度融合的对策建议”等。对策要点：<b>建强新型研发机构和中试平台，以支点纽带打通创新链产业链</b>／<b>培育技术经理人与科技副总，弥合产学研罅隙、唤醒沉睡成果</b>／<b>完善创新激励评价与尽职免责，给探路者松绑、为敢闯者托底</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（意见／通知／倡议书）可作“关于推动科技创新和产业创新深度融合、促进成果转化的意见”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：固本策源／破壁攻关／赋能产业—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以‘走进绵阳科技城，撞见一束光’起笔，用光子技术研究院、产业园车间两景破题（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：推动科技创新和产业创新互融共促，让创新链上每个人都成为光、释放热（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘追光·固本——沉潜深耕夯实创新策源’</b>——科研人员朝暮不辍、技术破围，把关键突破掌握在自己手中（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘驭光·破壁——寸寸拓进创新边界’</b>——以硬核技术打破国外垄断、破解卡脖子难题（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘成为光·赋能——走出院墙联通产学研’</b>——以机制改革推动成果转化，让一束光点亮千束光（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘人才是第一资源’，以改革破藩篱、以机制畅循环，让高质量发展前路光芒万丈。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（固本—破壁—赋能）—总’结构：以意象破题，用三组维度递进，是申论‘小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <p>听得懂两头话、两头说得上话，孵化这样一批“勘探者”“翻译官”，就能更好弥合各创新主体间的罅隙，聚拢零散的需求、唤醒沉睡的成果。</p>
+
+      <p>走进四川绵阳科技城，撞见“一束光”。</p>
+
+      <div class="thesis">【总论点】推动<span class="highlight-blue">科技创新和产业创新互融共促</span>，让创新链上的每一个人都<span class="highlight-gold">成为光、释放热</span>，方能筑牢<span class="highlight-purple">高质量发展</span>的根基。</div>
+
+      <div class="sub-thesis">【分论点一】追光·固本——沉潜深耕夯实创新策源，把关键技术突破<span class="highlight-blue">掌握在自己手中</span>，为产业跃升积蓄源头活水。</div>
+
+      <p>追光，是朝暮不辍的上下求索。光子技术研究院内，科研人员专注于“辐射光致发光剂量计”等研发；产业园车间里，工人忙着对激光器产品进行精密调试、质量检测。沉潜深耕，只为闯出新路、技术破围。</p>
+
+      <div class="sub-thesis">【分论点二】驭光·破壁——寸寸拓进创新边界，以硬核技术<span class="highlight-gold">打破国外垄断</span>，把发展的命脉掌握在自己手中。</div>
+
+      <p>驭光，是对创新边界的寸寸拓进。一束高能激光扫过钢板，剥离锈迹而不伤及本体，真正意义上实现无损清洗；一枚比指甲盖还小的传感器，可在零下270摄氏度稳定测温，打破国外垄断，抗辐照性能更实现反超。</p>
+
+      <div class="sub-thesis">【分论点三】成为光·赋能——走出院墙联通产学研，以<span class="highlight-blue">机制改革</span>推动成果转化落地，让<span class="highlight-green">一束光点亮千束光</span>。</div>
+
+      <p>成为光，是走出院墙赋能千行百业。傅里叶变换光谱仪应用至现代农业、酿造工业，高分辨光学无损检测仪为解决航空航天、高端装备领域“卡脖子”难题提供新手段……一束光点亮千束光，发出万般热。</p>
+
+      <p>这条光的旅程，也是科技创新和产业创新互融共促的过程。绵阳曾面临“<span class="highlight-purple">科技强、产业弱</span>”的困境，近年来以新型研发机构作支点、中试平台建设为纽带，创新链产业链同频共振，截至去年，高新技术企业已达<span class="highlight-green">1042家</span>。光子技术研究院，便是由绵阳游仙区与中国工程物理研究院激光聚变研究中心共建，助力当地构建起全链条创新生态。</p>
+
+      <p>一名科研院所负责人说得形象：“希望以市场化方式把更多绝活摆上货架，打造‘科技义乌’。”这个比方，点出融合之要，也藏着转化之难。<span class="highlight-purple">从实验室到生产线，中间隔着多个环节</span>。关山怎越？技术不会自己走路，让它迈开步子的，终究是人，攻坚前沿的人、懂行识路的人、牵线搭桥的人、保驾护航的人……</p>
+
+      <p>参观科技城时，对专业技术了如指掌的讲解员并非院所专家，而是本地干部，令人印象深刻。领导干部只有掌握专业知识，才能更好与科研机构、科技型企业打交道，更高效发展产业生态；也只有懂市场、明技术、知产业，才可以更好实现<span class="highlight-blue">有效市场和有为政府的有机结合</span>。</p>
+
+      <p>打通产学研堵点，离不开穿针引线的“科技红娘”。绵阳培育技术经理人，一头对接产业之需、一头深挖实验室之有，成就“科技姻缘”，今年已为<span class="highlight-green">500余家企业</span>提供服务。浙江推进人才改革，高校教师任“科技副总”入企实践、企业人才任“产业教授”入校带教，双方“朋友圈”互相对接、彼此赋能。听得懂两头话、两头说得上话，孵化这样一批“勘探者”“翻译官”，就能更好弥合各创新主体间的罅隙，聚拢零散的需求、唤醒沉睡的成果。</p>
+
+      <p>破解创新转化痛点，有把脉问诊的“专业医生”很重要。绵阳聘请院士专家，为激光产业深度“体检”，划定时间节点、绘就发展路线图，让融合有方向、有抓手。安徽打造开放型汽车生态实验室，盯着企业共性难题找“病根”、开“药方”，再面向全国匹配所需技术，靶向“制药”，让产业更健康、更茁壮。有了看得清全局、摸得准脉搏的人，技术转化就能有的放矢、少走弯路。</p>
+
+      <p>激活人的创造力，要为探路者松绑、给敢闯者托底。前不久，<span class="highlight-blue">中办、国办印发《关于推动科技创新和产业创新深度融合的意见》</span>，强调“完善创新激励和评价政策”。绵阳探索校编企用、校企双聘，赋予职务科技成果所有权或长期使用权，让高校人才“名利双收”、愿转化。广东发布“尽职免责”指引，明确科技成果转化中<span class="highlight-green">4种免责情形</span>，助力科研人员卸下思想包袱、敢转化。给探索多些激励、为创新留足空间，就能让更多人踏上新路、勇闯无人区。</p>
+
+      <p><span class="highlight-gold">人才是第一资源</span>。实验室里的科学家、懂业务善服务的“陪跑者”、对接技术的“经纪人”、把脉行业的智囊团等，都是推进中国式现代化不可或缺的栋梁。以改革破藩篱、以机制畅循环，让创新链上的每一个人都站得稳、行得远、成为光、释放热，高质量发展的前路定然光芒万丈。</p>
+
+      <p>追光，驭光，成为光（评论员观察）</p>
+
+      <p class="byline">（人民日报2026年11月11日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·人才论断</span>
+      <p><b>“人才是第一资源。”</b>——写‘人才强国／创新驱动’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·融合论断</span>
+      <p><b>“推动科技创新和产业创新互融共促。”</b>——写‘创新驱动发展’是立论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·探路者</span>
+      <p><b>“为探路者松绑、给敢闯者托底。”</b>——写‘容错机制／鼓励创新’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转化金句</span>
+      <p><b>“技术不会自己走路，让它迈开步子的，终究是人。”</b>——写‘人在转化中的关键作用’是哲理句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·改革金句</span>
+      <p><b>“以改革破藩篱、以机制畅循环。”</b>——写‘体制机制改革’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·创新金句</span>
+      <p><b>“给探索多些激励、为创新留足空间，就能让更多人踏上新路、勇闯无人区。”</b>——写‘激励创新’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·赋能金句</span>
+      <p><b>“一束光点亮千束光，发出万般热。”</b>——写‘成果转化／辐射带动’是意象金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·高企</span>
+      <p><b>“截至去年，高新技术企业已达1042家。”</b>——写‘创新生态成效’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·服务</span>
+      <p><b>“今年已为500余家企业提供服务。”</b>——写‘技术经理人成效’是数据论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·困局</span>
+      <p><b>“科技强、产业弱。”</b>——写‘成果转化断层’是辩证金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘一束光’破题，用‘固本策源—破壁攻关—赋能产业’三层递进，以‘高质量发展前路光芒万丈’收束，适用于‘创新驱动发展’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写沉潜深耕、技术破围、掌握关键在自己手中；分论点二写硬核突破、打破垄断、破解卡脖子；分论点三写联通产学研、机制改革、成果转化落地。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘推动科创与产业深度融合’拆举措：建强新型研发机构和中试平台、打通创新链产业链；培育技术经理人与科技副总、弥合产学研罅隙；完善激励评价与尽职免责、为探路者松绑托底。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘科技强、产业弱’‘技术不会自己走路，终究是人’的由事及理，把创新话题写成‘实验室与生产线’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘人才是第一资源’可作‘人才’类开头或结尾；‘以改革破藩篱、以机制畅循环’可作分论点；‘一束光点亮千束光’可作收束升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「追光，驭光，成为光」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是固本。沉潜深耕夯实创新策源，把关键技术突破掌握在自己手中，为产业跃升积蓄源头活水。<br>二是破壁。寸寸拓进创新边界，以硬核技术打破国外垄断，把发展的命脉掌握在自己手中。<br>三是成为光·赋能。走出院墙联通产学研，以机制改革推动成果转化落地，让一束光点亮千束光。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「推动科技创新和产业创新互融共促，让创新链上的每一个人都成为光、释放热，方能筑牢高质量发展的根基。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是固本——沉潜深耕夯实创新策源，把关键技术突破掌握在自己手中，为产业跃升积蓄源头活水。<br>二是破壁——寸寸拓进创新边界，以硬核技术打破国外垄断，把发展的命脉掌握在自己手中。<br>三是成为光·赋能——走出院墙联通产学研，以机制改革推动成果转化落地，让一束光点亮千束光。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“人才是第一资源。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「追光，驭光，成为光」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是建强新型研发机构和中试平台，以支点纽带打通创新链产业链。<br>二是培育技术经理人与科技副总，弥合产学研罅隙、唤醒沉睡成果。<br>三是完善创新激励评价与尽职免责，给探路者松绑、为敢闯者托底。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“人才是第一资源。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于追光，驭光，成为光的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于追光，驭光，成为光的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进追光，驭光，成为光，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、固本——沉潜深耕夯实创新策源，把关键技术突破掌握在自己手中，为产业跃升积蓄源头活水。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、破壁——寸寸拓进创新边界，以硬核技术打破国外垄断，把发展的命脉掌握在自己手中。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、成为光·赋能——走出院墙联通产学研，以机制改革推动成果转化落地，让一束光点亮千束光。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“人才是第一资源。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「追光，驭光，成为光」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：追光，驭光，成为光<br><br>时代之问，呼唤破题之策。追光，驭光，成为光，是发展所需，也是民心所向。可从三个维度展开：固本——沉潜深耕夯实创新策源，把关键、破壁——寸寸拓进创新边界，以硬核技术、成为光·赋能。<br><br>分论点一：固本——沉潜深耕夯实创新策源，把关键技术突破掌握在自己手中，为产业跃升积蓄源头活水。方向对了，路再远也能抵达。“人才是第一资源。”<br><br>分论点二：破壁——寸寸拓进创新边界，以硬核技术打破国外垄断，把发展的命脉掌握在自己手中。方法对了，事再难也能办成。“推动科技创新和产业创新互融共促。”<br><br>分论点三：成为光·赋能——走出院墙联通产学研，以机制改革推动成果转化落地，让一束光点亮千束光。行百里者半九十。“为探路者松绑、给敢闯者托底。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。追光，驭光，成为光是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-11</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
