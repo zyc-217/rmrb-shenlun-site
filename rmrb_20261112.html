@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 坚持全面从严，激发干事创业精气神</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>坚持全面从严，激发干事创业精气神</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·严管厚爱·干事创业·政治生态·容错纠错·担当作为 | 2026年11月12日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／严管厚爱／干事创业／政治生态／容错纠错／担当作为／中国式现代化</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">严管厚爱</span>
+      <span class="tag-item">干事创业</span>
+      <span class="tag-item">政治生态</span>
+      <span class="tag-item">容错纠错</span>
+      <span class="tag-item">担当作为</span>
+      <span class="tag-item">中央八项规定</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">党的纪律</span>
+      <span class="tag-item">中国式现代化</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">激励约束并重</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／严管厚爱／干事创业／政治生态／容错纠错／担当作为</b>”等主题；本文以‘严管就是厚爱’破题，用‘严的基调—全方位管理—严管厚爱结合’三层递进，是写‘党的建设／作风建设’类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“把从严管理监督和鼓励担当作为高度统一起来，通过明方向、立规矩、正风气、强免疫，形成风清气正的党内政治生态”</b>——表层是谈纪律规矩，深层是揭示须以严管厚爱结合激发干事创业精气神。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地推进全面从严、激发干事创业的主要做法”，从坚持严的基调整治微腐败、贯通八小时内外全方位管理、完善容错纠错为实干者撑腰三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步坚持全面从严、激发干事创业精气神的对策建议”等。对策要点：<b>坚持严的基调不动摇，对群众身边微腐败严查严管、绝不姑息</b>／<b>把行为管理与思想管理、工作圈与社交圈衔接贯通，在常长严实深细上下功夫</b>／<b>坚持严管厚爱结合、完善容错纠错，为敢闯敢试者撑腰兜底</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（意见／通知／倡议书）可作“关于坚持全面从严、激发干事创业精气神的意见／倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：严的基调／全天候管理／严管厚爱—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以乡镇干部聊作风建设的几句话起笔——‘管住嘴、管住手、管住腿’‘管得更严了，也更有干劲了’，引出纪律与干劲的辩证（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：把从严管理监督和鼓励担当作为高度统一起来，形成风清气正的政治生态、营造干事创业的良好环境（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>‘真管真严、敢管敢严、长管长严’——坚持严的基调不动摇</b>——以严查严管整治群众身边‘微腐败’，涵养清风正气（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>‘严守纪律只有进行时’——把八小时之内与之外贯通起来</b>——全方位管理、常态化监督，管出习惯、抓出成效（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>‘严管厚爱结合、激励约束并重’——为实干者撑腰</b>——以容错纠错激发干事创业精气神（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到‘法规制度是紧箍咒更是护身符’，在纪律上管住身心、在事业上放开手脚，以实干实效推动中国式现代化。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文‘总—分三并列（严的基调—全天候管理—严管厚爱）—总’结构：以干部原话破题，用三层维度递进，是申论‘小切口大主题’的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】把<span class="highlight-blue">从严管理监督和鼓励担当作为</span>高度统一起来，通过明方向、立规矩、正风气、强免疫，形成<span class="highlight-purple">风清气正的党内政治生态</span>，营造有利于<span class="highlight-gold">干事创业</span>的良好环境。</div>
+
+      <p>听乡镇干部聊作风建设，几句话令人印象深刻：“管住嘴，不该吃的坚决不吃；管住手，不该动的坚决不动；管住腿，不该去的坚决不去”“管得更严了，也更有干劲了”……</p>
+
+      <p>铁规矩、硬杠杠，效果可见一斑。</p>
+
+      <p><span class="highlight-blue">全面从严治党</span>关键在严，持之以恒推进全面从严治党必须一以贯之、一严到底。党的二十届五中全会对持之以恒推进全面从严治党作出战略部署，把“坚持全面从严”作为必须遵循的原则之一，强调“坚持严的基调不动摇”，同时强调“充分激发全党积极性主动性创造性”。</p>
+
+      <p>新时代以来，以习近平同志为核心的党中央从<span class="highlight-blue">中央八项规定</span>开局破题，领导全党抓思想从严、监督从严、执纪从严、治吏从严、作风从严、反腐从严，广大党员干部忠诚干净担当意识明显增强，推动高质量发展本领、服务群众本领、防范化解风险本领、运用法治思维和法治方式开展工作本领进一步提升。</p>
+
+      <p><span class="highlight-purple">全面从严治党和鼓励担当作为是内在统一的</span>。深入学习领会全会精神，必须充分认识到<span class="highlight-gold">严管就是厚爱</span>，把严的氛围、正的风气、干的精神牢固树立起来、长期坚持下去，在新征程上展现新作为、创造新业绩。</p>
+
+      <div class="sub-thesis">【分论点一】真管真严、敢管敢严、长管长严——坚持严的基调不动摇，以严查严管整治群众身边的“微腐败”，涵养清风正气。</div>
+
+      <p>“真管真严、敢管敢严、长管长严”，坚持严的基调不动摇。</p>
+
+      <p>先看校园餐。过去在一些地方被当作“唐僧肉”、成为“糊涂账”，背后是个别人以权谋私的“微腐败”。</p>
+
+      <p>如何整治？既要严查，也要严管。<span class="highlight-green">山西汾西县从学校食材入库斤数与票据严重不符的线索入手，严肃查处截留食材费、套取资金等的相关责任人</span>；<span class="highlight-green">宁夏贺兰县实行专账核算，公开监督二维码和大宗食材溯源信息，成立膳食监督家长委员会</span>……</p>
+
+      <p>“凡是群众反映强烈的问题都要严肃认真对待，凡是损害群众利益的行为都要坚决纠正。”越是“蝇贪蚁腐”，越要严字当头，紧盯问题不放松，依法惩处不手软。</p>
+
+      <div class="sub-thesis">【分论点二】严守纪律只有“进行时”——把行为管理与思想管理、工作圈与社交圈衔接贯通，在常和长、严和实、深和细上下功夫。</div>
+
+      <p>再看“八小时之外”。党员干部的言行有没有边界？</p>
+
+      <p>严守纪律只有“进行时”。习近平总书记强调：“对干部要加强全方位管理，把行为管理和思想管理统一起来，把工作圈管理和社交圈管理衔接起来，把八小时之内的管理和八小时之外的管理贯通起来。”</p>
+
+      <p>传统佳节之时，多地发布廉洁过节提醒，开设监督举报曝光专区，加大典型案例通报曝光力度；干部提拔之际，一些地方纪委监委送上家风学习读物，叮嘱家属当好家庭“纪检委员”……</p>
+
+      <p>始终利剑高悬，<span class="highlight-purple">在常和长、严和实、深和细上下功夫</span>，才能管出习惯、抓出成效。</p>
+
+      <div class="sub-thesis">【分论点三】坚持严管厚爱结合、激励约束并重——以容错纠错为实干者撑腰，激发干事创业精气神。</div>
+
+      <p>“坚持严管厚爱结合、激励约束并重”，激发干事创业精气神。</p>
+
+      <p>习近平总书记强调，<span class="highlight-gold">“严并不是要把大家管死，使人瞻前顾后、畏首畏尾，搞成暮气沉沉、无所作为的一潭死水”</span>。</p>
+
+      <p>以海南自贸港建设为例。先行先试，往往要破题、破难、破局。有干部萌生怕出错、怕担责的顾虑。</p>
+
+      <p>印发实施<span class="highlight-blue">《海南自由贸易港公职人员容错纠错办法（试行）》</span>、《海南省以案促教、以案促改、以案促治工作规则（试行）》，定期同时通报担当作为正向激励和不担当不作为反面惩戒典型案例……</p>
+
+      <p>当地干部直言：“旗帜鲜明地为实干者撑腰。”全岛封关运作后，政策红利持续释放，市场活力加速迸发，产业发展成形起势，实现高质量开局。</p>
+
+      <p>新时代以来，广大党员干部心无旁骛干事业、不折不扣抓落实，在决战脱贫攻坚、抗击疫情、应对外部打压遏制等一线接受考验，在遵规守纪前提下敢担当、善作为。</p>
+
+      <p>法规制度是“紧箍咒”，更是“护身符”。我们要把从严管理监督和鼓励担当作为高度统一起来，通过明方向、立规矩、正风气、强免疫，形成风清气正的党内政治生态，营造有利于干事创业的良好环境。</p>
+
+      <p>新征程上，<span class="highlight-gold">在纪律上“管住身心”，在事业上“放开手脚”</span>，严于律己、严负其责、严管所辖，定能不负时代、不负人民，以实干实效推动中国式现代化不断取得新进展。</p>
+
+      <p>——持之以恒推进全面从严治党③</p>
+
+      <p>坚持全面从严，激发干事创业精气神（评论员观察）</p>
+
+      <p class="byline">（人民日报2026年11月12日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·严管金句</span>
+      <p><b>“严管就是厚爱。”</b>——写‘纪律与担当’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证·统一</span>
+      <p><b>“全面从严治党和鼓励担当作为是内在统一的。”</b>——写‘严管与厚爱’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·护身符</span>
+      <p><b>“法规制度是‘紧箍咒’，更是‘护身符’。”</b>——写‘制度作用’是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·管死</span>
+      <p><b>“严并不是要把大家管死，使人瞻前顾后、畏首畏尾。”</b>——写‘容错理念’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·身心</span>
+      <p><b>“在纪律上‘管住身心’，在事业上‘放开手脚’。”</b>——写‘严管厚爱结合’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·蝇贪</span>
+      <p><b>“越是‘蝇贪蚁腐’，越要严字当头。”</b>——写‘整治微腐败’是判断句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·汾西</span>
+      <p><b>“山西汾西县从学校食材入库斤数与票据严重不符的线索入手，严肃查处截留食材费、套取资金等的相关责任人。”</b>——写‘严查微腐败’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据·贺兰</span>
+      <p><b>“宁夏贺兰县实行专账核算，公开监督二维码和大宗食材溯源信息。”</b>——写‘严管机制’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·海南</span>
+      <p><b>“旗帜鲜明地为实干者撑腰。”</b>——写‘容错纠错’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·自贸港</span>
+      <p><b>“印发实施《海南自由贸易港公职人员容错纠错办法（试行）》。”</b>——写‘制度供给’是事实论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以干部原话‘管住嘴管住手管住腿’破题，用‘严的基调—全天候管理—严管厚爱’三层递进，以‘管住身心、放开手脚’收束，适用于‘全面从严治党／作风建设’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写严的基调、严查严管、整治微腐败；分论点二写八小时内外贯通、全方位管理、常态化监督；分论点三写严管厚爱结合、容错纠错、为实干者撑腰。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘坚持全面从严、激发干事创业’拆举措：坚持严的基调、严查群众身边微腐败；贯通八小时内外、在常长严实深细上下功夫；完善容错纠错、为敢闯者撑腰兜底。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘严管就是厚爱’‘法规制度是紧箍咒更是护身符’‘管住身心、放开手脚’的由事及理，把治党话题写成‘严与爱’‘管与放’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘严管就是厚爱’可作‘纪律’类开头或结尾；‘法规制度是紧箍咒更是护身符’可作分论点；‘在纪律上管住身心、在事业上放开手脚’可作收束升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「坚持全面从严，激发干事创业精气神」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是真管真严、敢管敢严、长管长严。坚持严的基调不动摇，以严查严管整治群众身边的“微腐败”，涵养清风正气。<br>二是严守纪律只有“进行时”。把行为管理与思想管理、工作圈与社交圈衔接贯通，在常和长、严和实、深和细上下功夫。<br>三是坚持严管厚爱结合、激励约束并重。以容错纠错为实干者撑腰，激发干事创业精气神。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「把从严管理监督和鼓励担当作为高度统一起来，通过明方向、立规矩、正风气、强免疫，形成风清气正的党内政治生态，营造有利于干事创业的良好环境。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是真管真严、敢管敢严、长管长严——坚持严的基调不动摇，以严查严管整治群众身边的“微腐败”，涵养清风正气。<br>二是严守纪律只有“进行时”——把行为管理与思想管理、工作圈与社交圈衔接贯通，在常和长、严和实、深和细上下功夫。<br>三是坚持严管厚爱结合、激励约束并重——以容错纠错为实干者撑腰，激发干事创业精气神。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“严管就是厚爱。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「坚持全面从严，激发干事创业精气神」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持严的基调不动摇，对群众身边微腐败严查严管、绝不姑息。<br>二是把行为管理与思想管理、工作圈与社交圈衔接贯通，在常长严实深细上下功夫。<br>三是坚持严管厚爱结合、完善容错纠错，为敢闯敢试者撑腰兜底。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“严管就是厚爱。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于坚持全面从严，激发干事创业精气神的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于坚持全面从严，激发干事创业精气神的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进坚持全面从严，激发干事创业精气神，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、真管真严、敢管敢严、长管长严——坚持严的基调不动摇，以严查严管整治群众身边的“微腐败”，涵养清风正气。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、严守纪律只有“进行时”——把行为管理与思想管理、工作圈与社交圈衔接贯通，在常和长、严和实、深和细上下功夫。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、坚持严管厚爱结合、激励约束并重——以容错纠错为实干者撑腰，激发干事创业精气神。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“严管就是厚爱。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「坚持全面从严，激发干事创业精气神」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：坚持全面从严，激发干事创业精气神<br><br>时代之问，呼唤破题之策。坚持全面从严，激发干事创业精气神，是发展所需，也是民心所向。可从三个维度展开：真管真严、敢管敢严、长管长严、严守纪律只有“进行时”、坚持严管厚爱结合、激励约束并重。<br><br>分论点一：真管真严、敢管敢严、长管长严——坚持严的基调不动摇，以严查严管整治群众身边的“微腐败”，涵养清风正气。方向对了，路再远也能抵达。“严管就是厚爱。”<br><br>分论点二：严守纪律只有“进行时”——把行为管理与思想管理、工作圈与社交圈衔接贯通，在常和长、严和实、深和细上下功夫。方法对了，事再难也能办成。“全面从严治党和鼓励担当作为是内在统一的。”<br><br>分论点三：坚持严管厚爱结合、激励约束并重——以容错纠错为实干者撑腰，激发干事创业精气神。行百里者半九十。“法规制度是‘紧箍咒’，更是‘护身符’。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。坚持全面从严，激发干事创业精气神是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-12</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
