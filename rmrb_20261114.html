@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 真正的领先，不惧开放共享</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>真正的领先，不惧开放共享</h1>
+    <div class="meta">人民日报·人民锐评 | 开放共享·科技自立·人工智能治理·人类命运共同体·新质生产力·大国担当 | 2026年11月13日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：开放共享／科技自立自强／人工智能治理／新质生产力／人类命运共同体／开源生态／大国担当／互利共赢</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">开放共享</span>
+      <span class="tag-item">科技自立自强</span>
+      <span class="tag-item">人工智能治理</span>
+      <span class="tag-item">新质生产力</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">开源生态</span>
+      <span class="tag-item">创新生态</span>
+      <span class="tag-item">大国担当</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">技术普惠</span>
+      <span class="tag-item">全球化</span>
+      <span class="tag-item">科技向善</span>
+      <span class="tag-item">共同繁荣</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>开放共享／科技自立自强／人类命运共同体／新质生产力／大国担当</b>”等主题；本文以“技术封锁”现象破题，用“自主新路—形态跃升—人类命运共同体”三层递进，是写“开放与合作”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“真正的领先，不惧开放共享——以开源开放回应技术割裂，在开放中自立、在共享中自强，践行人类命运共同体理念”</b>——表层谈开源，深层揭示“开放包容方能行稳致远”的发展哲学。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“我国推动人工智能开源开放的主要做法与成效”，从自主闯新路、形态跃升、践行人类命运共同体三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于进一步推动科技开源开放、参与全球治理的对策建议”等。对策要点：<b>坚持开源开放，构建创新生态、形成创新合力，让技术像水一样流动</b>／<b>推动开源向模型、算力、基础设施、数据协同开放的全新形态转变，降低应用门槛</b>／<b>坚定技术层面开源，践行人类命运共同体理念，让更多国家共享智能时代技术文明成果</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“关于携手推进人工智能开源开放、促进全球科技共治的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：自主新路／形态跃升／人类命运共同体—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以美国企业要求数据中心“至少51%的服务”给非中国企业、“以国家安全之名行技术封锁之实”的现象破题，抛出“当人工智能发展被人为割裂，路在何方”之问（第一至二段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：真正的领先，不惧开放共享，中国的回答是开源开放（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“这是一条自主闯出来的新路”——唯有开源，才能更好构建创新生态、形成创新合力，让后来者加入、上车，是面向未来的大国担当</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“今天的开源早已不止于共享代码”——加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“坚定技术层面的开源，践行人类命运共同体理念”——超越“筑小院高墙”“搞三六九等”的旧逻辑，让更多国家共享智能时代技术文明成果</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“真正的领先，是欢迎各方搭上快车、共建共享”，开源开放推动人类携手走向共同繁荣。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三并列（新路—跃升—共同体）—总”结构：以“技术封锁”现象破题，用三层维度递进，是申论“驳立结合、小切口大主题”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】真正的领先，不惧开放共享——中国以<span class="highlight-blue">开源开放</span>回应技术割裂，<span class="highlight-blue">唯有开源，才能更好构建创新生态、形成创新合力</span>；让技术像水一样流动，<span class="highlight-purple">让代码汇成“共同的河流”</span>，才能<span class="highlight-gold">迎来可持续的繁荣</span>，践行<span class="highlight-blue">人类命运共同体</span>理念。</div>
+
+      <p>近期，一家美国企业被曝要求部分数据中心合作伙伴必须将<span class="highlight-green">至少51%的服务</span>提供给非中国企业。类似现象不是孤例，都是以“国家安全”之名，行<span class="highlight-purple">技术封锁与市场垄断之实</span>。当人工智能发展被人为割裂，路在何方？</p>
+
+      <p>中国的回答很坚定：<span class="highlight-blue">开源开放</span>。本月初举办的2026年世界互联网大会乌镇峰会上，“开源开放、共建共享”成为最强音。<span class="highlight-green">20项领先科技奖获奖成果</span>中，不少得益于开源技术；“互联网之光”博览会则让开源技术变得“可看、可感、可玩、可购”……<span class="highlight-purple">从受益者到共建者</span>，中国正以开源共享回馈世界。</p>
+
+      <div class="sub-thesis">【分论点一】这是一条自主闯出来的新路——唯有开源，才能更好构建创新生态、形成创新合力；让后来者加入、上车，是面向未来的大国担当。</div>
+
+      <p>为什么选择<span class="highlight-blue">开源开放</span>？这是一条自主闯出来的新路。中国的发展成绩已经证明，<span class="highlight-blue">唯有开源，才能更好构建创新生态、形成创新合力</span>；<span class="highlight-gold">唯有让技术像水一样流动，让代码汇成“共同的河流”，才能迎来可持续的繁荣</span>。中国推动人工智能领域的开源开放，让后来者加入、上车，这是面向未来的大国担当。</p>
+
+      <div class="sub-thesis">【分论点二】今天的开源早已不止于“共享代码”——加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”。</div>
+
+      <p>要看到，今天的开源早已不止于“共享代码”，而是加速向<span class="highlight-blue">模型、算力、基础设施、数据协同开放</span>的全新形态转变。不久前，DeepSeek（深度求索）宣布全面开源内部推理框架DeepInfer，致力于推动人工智能更加公平、透明、可信赖。<span class="highlight-blue">开源大模型</span>以低成本、高效能显著降低应用门槛，让<span class="highlight-blue">技术普惠</span>从口号变为现实。这映照出中国开源正<span class="highlight-gold">从“授人以鱼”走向“建设渔场”，从分享成果走向共建生态</span>。</p>
+
+      <div class="sub-thesis">【分论点三】坚定技术层面的开源，践行人类命运共同体理念——超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑，让更多国家共享智能时代的技术文明成果。</div>
+
+      <p>此次乌镇峰会亮明态度：坚定技术层面的开源，践行<span class="highlight-blue">人类命运共同体</span>理念。<span class="highlight-purple">超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑</span>，开源开放让更多国家能够共享智能时代的技术文明成果。</p>
+
+      <p><span class="highlight-gold">真正的领先，是欢迎各方搭上快车、共建共享</span>。开源开放，是我们的主张与做法，也将推动人类携手走向<span class="highlight-blue">共同繁荣</span>。</p>
+
+      <p>（摘编自“人民锐评”微信公众号）</p>
+
+      <p>真正的领先，不惧开放共享（人民锐评）</p>
+
+      <p class="byline">（人民日报2026年11月13日 第05版 · 人民锐评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主张</span>
+      <p><b>“真正的领先，不惧开放共享。”</b>——写‘开放／自立’是总括金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·生态</span>
+      <p><b>“唯有开源，才能更好构建创新生态、形成创新合力。”</b>——写‘创新生态’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·意象</span>
+      <p><b>“唯有让技术像水一样流动，让代码汇成‘共同的河流’，才能迎来可持续的繁荣。”</b>——写‘开放流动’是意象金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转化</span>
+      <p><b>“中国开源正从‘授人以鱼’走向‘建设渔场’，从分享成果走向共建生态。”</b>——写‘开放跃升’是对比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·立场</span>
+      <p><b>“超越‘筑小院高墙’‘搞三六九等’‘分远近亲疏’的旧逻辑。”</b>——写‘反对封闭’是立场金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共同体</span>
+      <p><b>“坚定技术层面的开源，践行人类命运共同体理念。”</b>——写‘人类命运共同体’是理念金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共享</span>
+      <p><b>“真正的领先，是欢迎各方搭上快车、共建共享。”</b>——写‘共建共享’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·数据</span>
+      <p><b>“20项领先科技奖获奖成果中，不少得益于开源技术。”</b>——写‘开源成效’是事实论据句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·普惠</span>
+      <p><b>“开源大模型以低成本、高效能显著降低应用门槛，让技术普惠从口号变为现实。”</b>——写‘技术普惠’是事实论据句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘技术封锁’现象破题，用‘自主新路—形态跃升—人类命运共同体’三层递进，以‘欢迎各方搭上快车、共建共享’收束，适用于‘开放共享／科技合作’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写自主闯新路、构建创新生态；分论点二写形态跃升、从‘授人以鱼’走向‘建设渔场’；分论点三写践行人类命运共同体、超越封闭旧逻辑。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘开源开放’拆举措：坚持开源开放、构建创新生态；推动开源向模型算力基础设施数据协同开放、降低应用门槛；坚定技术层面开源、践行人类命运共同体理念。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·驳立结合</span>
+      <p>学‘以技术封锁现象破题、立开源开放主张’的由破到立，把开放话题写成‘封闭与开放’‘独占与共享’的辩证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘真正的领先，不惧开放共享’可作‘开放’类开头或总括；‘让代码汇成共同的河流’可作意象分论点；‘从授人以鱼走向建设渔场’可作开放跃升的展开。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「真正的领先，不惧开放共享」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是这是一条自主闯出来的新路。唯有开源，才能更好构建创新生态、形成创新合力；让后来者加入、上车，是面向未来的大国担当。<br>二是今天的开源早已不止于“共享代码”。加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”。<br>三是坚定技术层面的开源，践行人类命运共同体理念。超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑，让更多国家共享智能时代的技术文明成果。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「真正的领先，不惧开放共享——中国以开源开放回应技术割裂，唯有开源，才能更好构建创新生态、形成创新合力；让技术像水一样流动，让代码汇成“共同的河流”，才能迎来可持续的繁荣，践行人类命运共同体理念。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是这是一条自主闯出来的新路——唯有开源，才能更好构建创新生态、形成创新合力；让后来者加入、上车，是面向未来的大国担当。<br>二是今天的开源早已不止于“共享代码”——加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”。<br>三是坚定技术层面的开源，践行人类命运共同体理念——超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑，让更多国家共享智能时代的技术文明成果。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“真正的领先，不惧开放共享。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「真正的领先，不惧开放共享」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持开源开放，构建创新生态、形成创新合力，让技术像水一样流动。<br>二是推动开源向模型、算力、基础设施、数据协同开放的全新形态转变，降低应用门槛。<br>三是坚定技术层面开源，践行人类命运共同体理念，让更多国家共享智能时代技术文明成果。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“真正的领先，不惧开放共享。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于真正的领先，不惧开放共享的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于真正的领先，不惧开放共享的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进真正的领先，不惧开放共享，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、这是一条自主闯出来的新路——唯有开源，才能更好构建创新生态、形成创新合力；让后来者加入、上车，是面向未来的大国担当。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、今天的开源早已不止于“共享代码”——加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、坚定技术层面的开源，践行人类命运共同体理念——超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑，让更多国家共享智能时代的技术文明成果。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“真正的领先，不惧开放共享。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「真正的领先，不惧开放共享」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：真正的领先，不惧开放共享<br><br>时代之问，呼唤破题之策。真正的领先，不惧开放共享，是发展所需，也是民心所向。可从三个维度展开：这是一条自主闯出来的新路、今天的开源早已不止于“共享代码”、坚定技术层面的开源，践行人类命运共同体理念。<br><br>分论点一：这是一条自主闯出来的新路——唯有开源，才能更好构建创新生态、形成创新合力；让后来者加入、上车，是面向未来的大国担当。方向对了，路再远也能抵达。“真正的领先，不惧开放共享。”<br><br>分论点二：今天的开源早已不止于“共享代码”——加速向模型、算力、基础设施、数据协同开放的全新形态转变，从“授人以鱼”走向“建设渔场”。方法对了，事再难也能办成。“唯有开源，才能更好构建创新生态、形成创新合力。”<br><br>分论点三：坚定技术层面的开源，践行人类命运共同体理念——超越“筑小院高墙”“搞三六九等”“分远近亲疏”的旧逻辑，让更多国家共享智能时代的技术文明成果。行百里者半九十。“唯有让技术像水一样流动，让代码汇成‘共同的河流’，才能迎来可持续的繁荣。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。真正的领先，不惧开放共享是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-14</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
