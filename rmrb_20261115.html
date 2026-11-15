@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 生态家底因何越守越厚</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>生态家底因何越守越厚</h1>
+    <div class="meta">人民日报·现场评论 | 生态文明·绿色发展·两山理论·生态产品价值实现·以人民为中心·长效机制 | 2026年11月5日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：生态文明／绿色发展／两山理论／生态产品价值实现／以人民为中心／长效机制／人与自然和谐共生</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">两山理论</span>
+      <span class="tag-item">生态产品价值实现</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">长效机制</span>
+      <span class="tag-item">人与自然和谐共生</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">绿水青山就是金山银山</span>
+      <span class="tag-item">绿色发展方式</span>
+      <span class="tag-item">乡村振兴</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>生态文明／绿色发展／生态产品价值实现／以人民为中心／长效机制</b>”等主题；本文以“守—转—拓”三字立骨，是写“生态保护与经济发展双赢”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“生态家底越守越厚，靠的是‘守’的定力、‘转’的智慧、‘拓’的远见——在守护中转化、在转化中延伸、在延伸中沉淀为长效机制”</b>——表层谈物种回归，深层揭示“绿水青山就是金山银山”的实现路径。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“海南守护生态家底的主要做法”，从一守到底、生态变现、延伸链条三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于健全生态产品价值实现机制、厚植生态家底的对策建议”等。对策要点：<b>把生态保护作为前提，认准的路一守到底，健全自然保护地体系，让生态修复从共识变为行动</b>／<b>把生态优势落到产业和生计上，发展生态产品价值实现路径，让群众在保护中获得稳定收益</b>／<b>延伸绿色产业链，把点上探索沉淀为长效机制，理顺“值多少、怎样转、谁受益”的价值实现链条</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“关于守护生态家底、推进绿色发展的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：守／转／拓—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以灰鹤时隔60年重现海南的现象切入，引出海南珍稀物种“更多了”的监测刻度（第一至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：生态家底因何越守越厚？在一个“守”字、一个“转”字、一个“拓”字（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“守”的坚定，来自对历史来路的把握——从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“转”是让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“拓”是在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“从一声猿鸣到一颗莲子，道理相通”，转化的路越拓宽，守护的内生动力就越持久。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三并列（守—转—拓）—总”结构：以物种回归现象破题，用“守定力、转价值、拓长效”三层递进，是申论“小切口大主题、现象—机理—机制”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】生态家底因何越守越厚？在一个<span class="highlight-blue">“守”字</span>（认准的路要一守到底），在一个<span class="highlight-blue">“转”字</span>（把<span class="highlight-blue">生态优势转化为发展优势</span>），在一个<span class="highlight-blue">“拓”字</span>（让一地一物接上更长链条，让<span class="highlight-blue">绿色发展进入更多领域</span>，让点上探索长成面上能力）。</div>
+
+      <p>“值多少”“怎样转”“谁受益”一一理顺，点上的好做法才能沉淀为稳定机制，<span class="highlight-purple">发展收益才能持续反哺保护</span>。</p>
+
+      <p><span class="highlight-gold">转化的路越拓宽，群众分享的收益越充分，守护的内生动力就越持久</span>。</p>
+
+      <p>今年初，海南东方黑脸琵鹭省级自然保护区，管理站工作人员在照例巡护中，发现了一只大型涉禽正从容觅食：石板灰的羽毛，顶冠一点鲜红。经专家比对确认，这是灰鹤。它上一次在海南留下确切记录，还是1964年。</p>
+
+      <p>近年来，海南的珍稀物种更多了。海南千年健时隔<span class="highlight-green">90年</span>重现，琼州拟鲿获正式命名，全球极危物种蓝吻犁头鳐成功繁育<span class="highlight-green">12尾幼体</span>……接连传来的好消息，让海南“生态家底”有了更可感知的刻度。</p>
+
+      <p><span class="highlight-gold">2025年11月6日，习近平总书记在听取海南自由贸易港建设工作汇报时指出，“生态是海南一大优势，要守护好这份家底”</span>。</p>
+
+      <div class="sub-thesis">【分论点一】“守”的坚定，来自对历史来路的把握——从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”。</div>
+
+      <p>“守”的坚定，来自对历史来路的把握。上世纪50年代，为打破国际封锁，国家组织力量在海南垦荒植胶，改变了部分热带雨林生境。海南长臂猿在20世纪80年代一度仅剩<span class="highlight-green">2群不足10只</span>。回看这段路，既要理解当年的建设需要，也要看清生态修复的漫长。</p>
+
+      <p>今天，海南最强优势和最大本钱，正是这方青山绿水、碧海蓝天。从上世纪90年代全面禁伐天然林，到2019年开展国家公园体制试点、2021年正式设立海南热带雨林国家公园，几十年接续保护，海南长臂猿增至<span class="highlight-green">7群44只</span>，成为全球长臂猿中唯一种群持续增长的物种。东方黑脸琵鹭省级自然保护区也清退<span class="highlight-green">850亩养殖塘</span>、关停并拆除<span class="highlight-green">11座风力发电设备</span>，连年修复红树林，灰鹤重现。当守护更加笃定，<span class="highlight-purple">生态修复从共识变为行动</span>，更美更健康的自然生境，会让“稀客”稳定回归，变成“常客”。</p>
+
+      <div class="sub-thesis">【分论点二】“转”——让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。</div>
+
+      <p>“转”，是让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。</p>
+
+      <p>一颗南迁的莲子，最能说明转化的门道。今年，源自浙江的果莲品种，在海口种植采收，凭海南的光热跑出“时间差”，上市时间比江南产区<span class="highlight-green">提前近两个月</span>。错季上市，让寻常水土有了“新身价”，乡亲们在家门口喜增收。这样的转化，正在多点开花。五指山毛纳村把茶产业与雨林体验相连，三亚蜈支洲岛把珊瑚修复与潜水体验相连，白沙通过“两山贷”把生态资源与金融工具相连。生态优势由此有了更多<span class="highlight-blue">价值实现路径</span>。</p>
+
+      <div class="sub-thesis">【分论点三】“拓”——在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。</div>
+
+      <p>“拓”，是在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。</p>
+
+      <p>海口的鲜莲子在田间附近厂房完成剥壳、预冷、装盒等流程，<span class="highlight-green">48小时内</span>送达外地门店，产业链从种植延伸到加工、冷链和销售，不仅转出了收益，也把更多价值留在当地。博鳌东屿岛则从既有建筑改造入手，2025年示范区建筑和市政基础设施能源相关二氧化碳排放量较2019年基准值降低<span class="highlight-green">99.9%</span>。海南的“大生态”，正由自然生态保护延伸到生产生活方式绿色转型。</p>
+
+      <p>领域拓宽了，点上的探索还要“长”成面上的能力。针对生态产品难度量、难交易、难变现等堵点，今年海南印发的《<span class="highlight-blue">关于建设生态环境友好型自由贸易港的意见</span>》，以及海南热带雨林国家公园开展的<span class="highlight-blue">国家生态产品价值实现机制试点</span>，正从价值核算、市场交易、利益共享等方面探索破题。“值多少”“怎样转”“谁受益”一一理顺，<span class="highlight-purple">点上的好做法才能沉淀为稳定机制，发展收益才能持续反哺保护</span>。</p>
+
+      <p><span class="highlight-gold">从一声猿鸣到一颗莲子，守护生态、转化价值的实践各有入口，道理相通</span>。转化的路越拓宽，群众分享的收益越充分，守护的内生动力就越持久。如今，自然保护区的同志还盼灰鹤再来，而等待它的会是一份更厚的生态家底。</p>
+
+      <p>（作者为本报海南分社记者）</p>
+
+      <p>——开局起步看活力⑮</p>
+
+      <p class="byline">（人民日报2026年11月5日 第05版 · 现场评论）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·论断</span>
+      <p><b>“生态是海南一大优势，要守护好这份家底。”</b>——写‘生态保护优先’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总括</span>
+      <p><b>“生态家底因何越守越厚？在一个‘守’字，在一个‘转’字，在一个‘拓’字。”</b>——写‘守转拓’是总分总金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力</span>
+      <p><b>“认准的路要一守到底。”</b>——写‘战略定力／久久为功’是定语金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转化</span>
+      <p><b>“把生态优势转化为发展优势。”</b>——写‘两山转化’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·民生</span>
+      <p><b>“让生态优势落到产业和生计上，让群众在保护中获得稳定收益。”</b>——写‘生态惠民’是立场金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·机制</span>
+      <p><b>“把点上探索沉淀为长效机制。”</b>——写‘试点扩面／制度固化’是机制金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·哲理</span>
+      <p><b>“转化的路越拓宽，群众分享的收益越充分，守护的内生动力就越持久。”</b>——写‘转化—收益—动力’循环是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·闭环</span>
+      <p><b>“值多少、怎样转、谁受益一一理顺，点上的好做法才能沉淀为稳定机制，发展收益才能持续反哺保护。”</b>——写‘价值实现闭环’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·意象</span>
+      <p><b>“从一声猿鸣到一颗莲子，守护生态、转化价值的实践各有入口，道理相通。”</b>——写‘小切口大主题’是意象金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以灰鹤重现现象破题，用‘守定力—转价值—拓长效’三层递进，以‘转化的路越拓宽、动力越持久’收束，适用于‘生态保护／绿色发展’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写守住生态本底、健全保护地体系；分论点二写生态优势转化、让群众得实惠；分论点三写延伸绿色产业链、沉淀长效机制。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘守转拓’拆举措：把保护作为前提、一守到底；把生态优势落到产业生计、拓宽价值实现路径；延伸产业链、理顺‘值多少怎样转谁受益’闭环。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·小切口大主题</span>
+      <p>学‘从一声猿鸣到一颗莲子’的写法，用具体物种、具体物产承载宏观命题，把生态文明写成可感可知的故事。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘生态家底因何越守越厚’可作‘生态’类开头或总括；‘守转拓’可作三段分论点；‘值多少怎样转谁受益’可作机制论述的收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「生态家底因何越守越厚」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“守”的坚定，来自对历史来路的把握。从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”。<br>二是“转”。让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。<br>三是“拓”。在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「生态家底因何越守越厚？在一个“守”字（认准的路要一守到底），在一个“转”字（把生态优势转化为发展优势），在一个“拓”字（让一地一物接上更长链条，让绿色发展进入更多领域，让点上探索长成面上能力）。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是“守”的坚定，来自对历史来路的把握——从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”。<br>二是“转”——让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。<br>三是“拓”——在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“生态是海南一大优势，要守护好这份家底。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「生态家底因何越守越厚」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把生态保护作为前提，认准的路一守到底，健全自然保护地体系，让生态修复从共识变为行动。<br>二是把生态优势落到产业和生计上，发展生态产品价值实现路径，让群众在保护中获得稳定收益。<br>三是延伸绿色产业链，把点上探索沉淀为长效机制，理顺“值多少、怎样转、谁受益”的价值实现链条。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“生态是海南一大优势，要守护好这份家底。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于生态家底因何越守越厚的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于生态家底因何越守越厚的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进生态家底因何越守越厚，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、“守”的坚定，来自对历史来路的把握——从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、“转”——让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、“拓”——在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“生态是海南一大优势，要守护好这份家底。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「生态家底因何越守越厚」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：生态家底因何越守越厚<br><br>时代之问，呼唤破题之策。生态家底因何越守越厚，是发展所需，也是民心所向。可从三个维度展开：“守”的坚定，来自对历史来路的把握、“转”——让生态优势落到产业和生计上、“拓”——在“转”的基础上把产业链延。<br><br>分论点一：“守”的坚定，来自对历史来路的把握——从垦荒植胶到全面禁伐、设立国家公园，几十年接续保护，当守护更加笃定，生态修复从共识变为行动，让“稀客”稳定回归、变成“常客”。方向对了，路再远也能抵达。“生态是海南一大优势，要守护好这份家底。”<br><br>分论点二：“转”——让生态优势落到产业和生计上，让群众在保护中获得稳定收益，让守护拥有更广泛的社会基础。方法对了，事再难也能办成。“生态家底因何越守越厚？在一个‘守’字，在一个‘转’字，在一个‘拓’字。”<br><br>分论点三：“拓”——在“转”的基础上把产业链延伸得更长，把绿色发展的领域铺得更开，再把点上经验沉淀为长效机制。行百里者半九十。“认准的路要一守到底。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。生态家底因何越守越厚是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-15</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
