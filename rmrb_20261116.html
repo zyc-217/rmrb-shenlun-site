@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 抓住关键要害，解决突出问题</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>抓住关键要害，解决突出问题</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·问题导向·自我革命·靶向施策·系统施治·长效机制 | 2026年11月16日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／问题导向／自我革命／抓关键要害／解决突出问题／靶向施策／刀刃向内／实事求是</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">问题导向</span>
+      <span class="tag-item">自我革命</span>
+      <span class="tag-item">抓关键要害</span>
+      <span class="tag-item">解决突出问题</span>
+      <span class="tag-item">靶向施策</span>
+      <span class="tag-item">系统施治</span>
+      <span class="tag-item">长效机制</span>
+      <span class="tag-item">严的基调</span>
+      <span class="tag-item">刀刃向内</span>
+      <span class="tag-item">实事求是</span>
+      <span class="tag-item">政治建设</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">调查研究</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／问题导向／自我革命／靶向施策／系统施治／长效机制</b>”等主题；本文以“二手公文包”小切口破题，用“解决什么—用什么方法—如何掌握主动”三层递进，是写“党建／作风建设／方法论”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“在发现问题中掌握主动，在解决问题中成长进步——坚持问题导向，抓住关键要害、解决突出问题，彰显实事求是的治理自觉与刀刃向内的革新姿态”</b>——表层谈管党治党的方法，深层揭示中国共产党正视问题、自我革命的成功密码。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地坚持问题导向、推进全面从严治党的主要做法”，从瞄准突出问题精准施策、讲究方法系统施治、掌握主动构建长效机制三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策建议题</span><span class="text">可迁移为“关于坚持问题导向、提升管党治党效能的对策建议”等。对策要点：<b>聚焦突出问题靶向发力，有什么问题就解决什么问题、什么问题突出就重点解决什么问题</b>／<b>讲究方法系统施治，有什么方法就用什么方法、从解决个案到解决类案举一反三</b>／<b>掌握主动构建长效机制，既解决老问题也察觉新问题、把严的基调贯穿全过程各方面</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（发言稿／倡议书）可作“关于坚持问题导向、持之以恒推进作风建设的倡议书”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三并列：解决什么／用什么方法／如何掌握主动—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“一个公文包”小事切入：某单位培训把新包改为“统一采购、集中保管、会前配发、会后收回”的循环使用，小事之中见节约之法、风气之变（第二至三段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮总论点：持之以恒推进全面从严治党，始终贯穿着问题意识，抓住关键要害、解决突出问题，在发现问题中掌握主动、在解决问题中成长进步（总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“有什么问题就解决什么问题，什么问题突出就重点解决什么问题”——坚持具体问题具体分析的靶向治疗</b>，深化政绩观教育、整治突出问题、破除潜规则（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决”——加强从解决个案到解决类案的系统施治</b>，用大数据提升监督穿透力、整治群众身边不正之风（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次”——掌握管党治党主动权、构建长效机制</b>（前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label">升华</span><span class="text">落到“全面从严治党永远在路上”：坚持严的基调、发扬科学精神、掌握解题方法，问题导向彰显实事求是的治理自觉与刀刃向内的革新姿态。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三并列（解决什么—用什么方法—如何掌握主动）—总”结构：以公文包小切口破题，用三组“有多少／有什么／为什么”递进，是申论“小切口大主题、现象—方法—机制”的范本。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】<span class="highlight-gold">在发现问题中掌握主动，在解决问题中成长进步</span>——持之以恒推进全面从严治党，始终贯穿着<span class="highlight-purple">问题意识</span>，<span class="highlight-blue">坚持问题导向</span>，<span class="highlight-gold">抓住关键要害、聚焦突出问题</span>，把<span class="highlight-blue">严的基调、严的措施、严的氛围</span>体现到党的建设全过程各方面。</div>
+
+      <p><span class="highlight-gold">在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码，也为世界其他政党作出表率</span></p>
+
+      <p>一个公文包，照见问题意识与作风改进。</p>
+
+      <p>前不久，某单位组织专业骨干集训，参会人员领取公文包时，发现是“二手”的。从每次组织培训都发放新包，到公文包“统一采购、集中保管、会前配发、会后收回、清洁消杀、循环使用”，<span class="highlight-purple">小事之中也有节约之法、风气之变</span>。</p>
+
+      <p>倡树新风，持之以恒推进全面从严治党，始终贯穿着问题意识。党的二十届五中全会审议通过的《中共中央关于持之以恒推进全面从严治党若干重大问题的决定》，把<span class="highlight-blue">“坚持问题导向”</span>作为持之以恒推进全面从严治党遵循的原则之一。</p>
+
+      <p>如何精准把握党情新变化？怎样把党的建设面临的新情况新问题新环境分析透？按照习近平总书记关于<span class="highlight-blue">把更多精力花在研究分析问题、提出有效管用举措</span>的重要指示，全会文件起草组设立<span class="highlight-green">23个重点课题</span>，委托<span class="highlight-green">16家单位</span>进行研究，形成<span class="highlight-green">28份高质量研究报告</span>。</p>
+
+      <p>找准方向、聚焦问题，才能明确对策、务求实效。坚持<span class="highlight-blue">目标导向和问题导向相结合</span>，有利于<span class="highlight-blue">抓住根本、突出重点、精准施策</span>。习近平总书记一语中的：<span class="highlight-gold">“《决定》稿几个部分不是按照党的建设总体布局平铺开来、面面俱到，而是抓住关键要害、聚焦突出问题谋篇布局。”</span></p>
+
+      <p><span class="highlight-gold">有什么问题就解决什么问题，什么问题突出就重点解决什么问题。</span></p>
+
+      <div class="sub-thesis">【分论点一】有什么问题就解决什么问题，什么问题突出就重点解决什么问题——坚持具体问题具体分析的靶向治疗。</div>
+
+      <p>深化政绩观教育，深入整治政策规划“翻烧饼”、违规新增地方政府隐性债务等问题；突出抓好<span class="highlight-blue">新兴领域党的建设</span>，加强平台企业、科技创新型企业等党建工作；大力<span class="highlight-blue">破除潜规则</span>，坚决纠治“搭天线拜码头”“原则不如关系”“章子不如条子”等乱象……</p>
+
+      <p>新时代以来，正因敢于正视存在的问题，全面从严治党既坚持<span class="highlight-purple">具体问题具体分析的靶向治疗</span>，也加强<span class="highlight-purple">从解决个案到解决类案的系统施治</span>。</p>
+
+      <p>习近平总书记指出：<span class="highlight-gold">“我们共产党人的斗争，从来都是奔着矛盾问题、风险挑战去的。”</span>把解决党内突出问题作为着力点，不蜻蜓点水，不虎头蛇尾，就能在<span class="highlight-blue">纠偏治乱、激浊扬清</span>中不断提高工作水平。</p>
+
+      <p><span class="highlight-gold">有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决。</span></p>
+
+      <div class="sub-thesis">【分论点二】有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决——加强从解决个案到解决类案的系统施治。</div>
+
+      <p>聚焦“蝇贪蚁腐”新情况，上海嘉定区整合<span class="highlight-green">36个部门</span>的数据，开发小微工程建设数字化监督模块，盯住<span class="highlight-green">“30万元以下”</span>小型工程项目监督薄弱环节。</p>
+
+      <p>针对“问题合同”有损村集体利益、伤害群众感情的情况，河南漯河市坚决管旧账、清合同，挖病灶、堵漏洞，让“亏本账”变“多赢账”。</p>
+
+      <p>无论是运用大数据提高反腐败穿透力，还是整治“新官不理旧账”，都体现出<span class="highlight-purple">奔着问题去、盯着问题改</span>的鲜明导向。</p>
+
+      <p>何以掌握管党治党的主动权？答案更加清晰：<span class="highlight-purple">既解决老问题，也察觉新问题；既解决显性问题，也解决隐性问题；既解决表面问题，也解决深层次问题。</span></p>
+
+      <div class="sub-thesis">【分论点三】既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次——掌握管党治党主动权、构建长效机制。</div>
+
+      <p>全面从严治党永远在路上。</p>
+
+      <p>当前，弱化党的先进性、损害党的纯洁性、影响党长期执政的问题和隐患还不少，特别是思想不纯、组织不纯、作风不纯问题尚未根本解决，一些新问题又不断产生。坚持<span class="highlight-blue">严的基调</span>，发扬科学精神，掌握解题方法，构建<span class="highlight-blue">长效机制</span>，始终保持<span class="highlight-blue">战略定力和战斗韧性</span>，一刻不停歇、半步不退让，方能把党建设好、建设强。</p>
+
+      <p><span class="highlight-gold">“中国共产党的伟大在于正视自己、直面问题并勇于解决问题”。</span>有外国政要如此评价。在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码，也为世界其他政党作出表率。</p>
+
+      <p><span class="highlight-gold">问题导向，彰显实事求是的治理自觉，体现刀刃向内的革新姿态。</span><span class="highlight-purple">擦亮发现问题的眼睛，练就破解难题的本领，筑牢源头防控的堤坝</span>，把<span class="highlight-blue">严的基调、严的措施、严的氛围</span>体现到党的建设全过程各方面，定能始终赢得强党强国的历史主动。</p>
+
+      <p>——持之以恒推进全面从严治党④</p>
+
+      <p>抓住关键要害，解决突出问题（评论员观察）</p>
+
+      <p class="byline">（人民日报2026年11月16日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·密码</span>
+      <p><b>“在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码。”</b>——写‘问题意识／成功密码’是总括金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记</span>
+      <p><b>“《决定》稿几个部分不是按照党的建设总体布局平铺开来、面面俱到，而是抓住关键要害、聚焦突出问题谋篇布局。”</b>——写‘抓关键要害’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记</span>
+      <p><b>“我们共产党人的斗争，从来都是奔着矛盾问题、风险挑战去的。”</b>——写‘斗争精神／问题导向’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·靶向</span>
+      <p><b>“有什么问题就解决什么问题，什么问题突出就重点解决什么问题。”</b>——写‘聚焦突出问题／靶向施策’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法</span>
+      <p><b>“有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决。”</b>——写‘讲究方法／系统施治’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“既解决老问题，也察觉新问题；既解决显性问题，也解决隐性问题；既解决表面问题，也解决深层次问题。”</b>——写‘掌握主动／长效机制’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·自评</span>
+      <p><b>“中国共产党的伟大在于正视自己、直面问题并勇于解决问题。”</b>——写‘自我革命／实事求是’是论断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治理</span>
+      <p><b>“问题导向，彰显实事求是的治理自觉，体现刀刃向内的革新姿态。”</b>——写‘问题导向／刀刃向内’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·本领</span>
+      <p><b>“擦亮发现问题的眼睛，练就破解难题的本领，筑牢源头防控的堤坝。”</b>——写‘本领建设／源头防控’是排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力</span>
+      <p><b>“始终保持战略定力和战斗韧性，一刻不停歇、半步不退让。”</b>——写‘严的基调／久久为功’是定力金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学‘总—分三并列—总’框架：以‘二手公文包’小切口破题，用‘解决什么—用什么方法—如何掌握主动’三层递进，以‘赢得强党强国的历史主动’收束，适用于‘全面从严治党／作风建设／方法论’类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论点一写聚焦突出问题、靶向治疗；分论点二写讲究方法、系统施治；分论点三写掌握主动、构建长效机制。三组构成‘问题—方法—机制’递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把‘坚持问题导向’拆举措：聚焦突出问题精准发力、有什么问题解决什么问题；讲究方法系统施治、从个案到类案举一反三；掌握主动构建长效机制、把严的基调贯穿全过程。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学‘既解决老问题，也察觉新问题；既显性，也隐性；既表面，也深层次’的排比辩证，把党建／治理话题写成‘显与隐、表与里、老与新’的对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>‘抓住关键要害、聚焦突出问题’可作‘精准施策’类总括；‘有什么问题就解决什么问题’可作分论点判断句；‘擦亮发现问题的眼睛，练就破解难题的本领’可作收束升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「抓住关键要害，解决突出问题」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是有什么问题就解决什么问题，什么问题突出就重点解决什么问题。坚持具体问题具体分析的靶向治疗。<br>二是有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决。加强从解决个案到解决类案的系统施治。<br>三是既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次。掌握管党治党主动权、构建长效机制。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「在发现问题中掌握主动，在解决问题中成长进步——持之以恒推进全面从严治党，始终贯穿着问题意识，坚持问题导向，抓住关键要害、聚焦突出问题，把严的基调、严的措施、严的氛围体现到党的建设全过程各方面。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是有什么问题就解决什么问题，什么问题突出就重点解决什么问题——坚持具体问题具体分析的靶向治疗。<br>二是有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决——加强从解决个案到解决类案的系统施治。<br>三是既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次——掌握管党治党主动权、构建长效机制。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「抓住关键要害，解决突出问题」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是聚焦突出问题靶向发力，有什么问题就解决什么问题、什么问题突出就重点解决什么问题。<br>二是讲究方法系统施治，有什么方法就用什么方法、从解决个案到解决类案举一反三。<br>三是掌握主动构建长效机制，既解决老问题也察觉新问题、把严的基调贯穿全过程各方面。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于抓住关键要害，解决突出问题的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于抓住关键要害，解决突出问题的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进抓住关键要害，解决突出问题，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、有什么问题就解决什么问题，什么问题突出就重点解决什么问题——坚持具体问题具体分析的靶向治疗。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决——加强从解决个案到解决类案的系统施治。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次——掌握管党治党主动权、构建长效机制。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「抓住关键要害，解决突出问题」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：抓住关键要害，解决突出问题<br><br>时代之问，呼唤破题之策。抓住关键要害，解决突出问题，是发展所需，也是民心所向。可从三个维度展开：有什么问题就解决什么问题，什么问题突出就重点解决什么问题、有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决、既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次。<br><br>分论点一：有什么问题就解决什么问题，什么问题突出就重点解决什么问题——坚持具体问题具体分析的靶向治疗。方向对了，路再远也能抵达。“在发现问题中掌握主动，在解决问题中成长进步，这是中国共产党探索出来的成功密码。”<br><br>分论点二：有多少问题就解决多少问题，问题该用什么方法解决就用什么方法解决——加强从解决个案到解决类案的系统施治。方法对了，事再难也能办成。“《决定》稿几个部分不是按照党的建设总体布局平铺开来、面面俱到，而是抓住关键要害、聚焦突出问题谋篇布局。”<br><br>分论点三：既解决老问题，也察觉新问题；既解决显性，也解决隐性；既解决表面，也解决深层次——掌握管党治党主动权、构建长效机制。行百里者半九十。“我们共产党人的斗争，从来都是奔着矛盾问题、风险挑战去的。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。抓住关键要害，解决突出问题是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-16</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
