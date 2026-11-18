@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 坚持守正创新，永葆先进性纯洁性</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>坚持守正创新，永葆先进性纯洁性</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·守正创新·自我革命·先进性纯洁性·组织机制 | 2026年11月18日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／守正创新／自我革命／党的创新理论凝心铸魂／先进性纯洁性／组织体系／历史周期率／刀刃向内</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">守正创新</span>
+      <span class="tag-item">自我革命</span>
+      <span class="tag-item">党的创新理论凝心铸魂</span>
+      <span class="tag-item">党的先进性纯洁性</span>
+      <span class="tag-item">马克思主义执政党建设规律</span>
+      <span class="tag-item">不敢腐不能腐不想腐</span>
+      <span class="tag-item">基层监督</span>
+      <span class="tag-item">数智技术监督</span>
+      <span class="tag-item">组织体系</span>
+      <span class="tag-item">历史周期率</span>
+      <span class="tag-item">实事求是</span>
+      <span class="tag-item">继承创新结合</span>
+      <span class="tag-item">刀刃向内</span>
+      <span class="tag-item">新质生产力</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／守正创新／自我革命／党的创新理论／先进性纯洁性</b>”等主题；本文以武汉建筑公司大数据比对破题，用“思想革新—认识深化—组织机制更新”三层递进，是写“党建引领／自我革命／守正创新”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可直接提炼观点内涵：<b>“守正不是固步自封，创新不是标新立异；守正与创新辩证统一，以坚守原则、把握规律为前提推陈出新”</b>——表层谈管党治党的方法，深层揭示以党的创新理论凝心铸魂、在继承中开拓创新的党建规律。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“某地持之以恒推进全面从严治党的主要做法”，从以党的创新理论凝心铸魂、创新监督方法推动向基层延伸、深化认识完善制度、更新组织机制激发活力四方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>以党的创新理论凝心铸魂，坚持用原创性成果武装头脑、指导实践</b>／<b>创新监督方法，借助数智技术提高穿透力、推动全面从严治党向基层延伸</b>／<b>深化规律认识，在实践中完善制度、提升办案与治理能力</b>／<b>更新组织机制，推动组织形态、动员机制和领导方式与时俱进</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（发言稿／心得体会）可作“关于坚持守正创新、推进全面从严治党的发言提纲”等。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：思想革新／认识深化／组织机制更新—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以武汉某建筑公司被大数据多维度碰撞比对发现问题、查实围标串标案例破题，点出数智技术提高监督穿透力，监督更聚焦、精准（第1—3段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">引总书记“既要培元固本，也要开拓创新”与二十届五中全会“坚持守正创新”原则，亮总论点：守正创新是新时代治国理政的重要思想方法（第4—5段、总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“思想革新，引领实践焕新”“思想常新，事业常青”——以党的创新理论凝心铸魂，把继承传统和改革创新结合起来</b>，习近平党建思想原创性成果、村党组织巡察数据支撑（第6—11段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“创新，体现为认识的深化”——在‘实践—认识—再实践—再认识’的螺旋上升中推动事物发展</b>，以《调查新型腐败和隐性腐败问题证据指引》出台为例（第12—14段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“创新，有举措、办法的革新，更有组织机制的更新、创新活力的迸发”——推动组织形态、动员机制和领导方式与时俱进</b>，从“支部建在连上”到新业态组织覆盖（第15—17段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”结构：案例破题，引总书记论断定调，以“思想—认识—组织”三层递进，结尾以“跳出历史周期率”之问引“刀刃向内”作答，收束于守正创新锻造执政党。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】<span class="highlight-gold">守正创新是我们党在新时代治国理政的重要思想方法</span>——<span class="highlight-blue">坚持用党的创新理论凝心铸魂</span>，<span class="highlight-gold">既要培元固本，也要开拓创新</span>，<span class="highlight-purple">以坚守原则、把握规律为前提推陈出新</span>，持续增强管党治党的<span class="highlight-blue">系统性、预见性、创造性、实效性</span>，在守正创新中永葆党的先进性纯洁性。</div>
+
+      <p>守正创新不是脱离实际的标新立异，而是<span class="highlight-blue">“坚持用党的创新理论凝心铸魂”</span>，<span class="highlight-purple">以坚守原则、把握规律为前提推陈出新</span>。</p>
+
+      <p>不久前，中央纪委国家监委网站披露一则消息。湖北武汉某建筑公司被<span class="highlight-green">大数据多维度碰撞比对</span>后发现问题，当地纪委监委随即开展核查，查实企业围标串标和有关人员套取维修资金等问题。</p>
+
+      <p><span class="highlight-green">大数据比对、人工智能预警</span>……借助数智技术，<span class="highlight-blue">提高穿透力</span>，监督更加聚焦、精准，管党治党更加有力、有效。</p>
+
+      <p><span class="highlight-gold">凡益之道，与时偕行。</span><span class="highlight-gold">守正创新是我们党在新时代治国理政的重要思想方法。</span>习近平总书记指出：<span class="highlight-gold">“新时代党的建设新的伟大工程，既要培元固本，也要开拓创新”</span>。</p>
+
+      <p>党的二十届五中全会将<span class="highlight-blue">“坚持守正创新”</span>明确为持之以恒推进全面从严治党遵循的原则之一，强调“遵循<span class="highlight-blue">马克思主义执政党建设规律</span>，运用党的建设历史经验，根据形势任务发展变化不断提出新举措新办法”。</p>
+
+      <div class="sub-thesis">【分论点一】思想革新引领实践焕新——以党的创新理论凝心铸魂，把继承传统和改革创新结合起来，思想常新、事业常青。</div>
+
+      <p>思想革新，引领实践焕新。</p>
+
+      <p>明确提出坚持党中央集中统一领导是最高政治原则，深刻提出以党的政治建设为统领，创造性提出<span class="highlight-blue">一体推进不敢腐、不能腐、不想腐</span>……习近平党建思想以一系列原创性成果丰富和发展了<span class="highlight-blue">马克思主义建党学说</span>，提供了持续推进党的建设的<span class="highlight-gold">锐利思想武器</span>。</p>
+
+      <p>思想常新，事业常青。</p>
+
+      <p><span class="highlight-purple">守正创新不是脱离实际的标新立异</span>，而是<span class="highlight-blue">“坚持用党的创新理论凝心铸魂”</span>，以坚守原则、把握规律为前提推陈出新。</p>
+
+      <p>乡村“微腐败”潜滋暗长，怎么治？结合基层实际与巡视工作经验，创新监督方法。<span class="highlight-green">2024年</span>，村（社区）党组织首次被纳入县级党委巡察范围；<span class="highlight-green">2025年，全国各市县对11.1万个村党组织开展巡察，发现并督促解决各类问题138.6万个</span>，有力推动全面从严治党<span class="highlight-blue">向基层延伸、到底到边</span>。</p>
+
+      <p>实事求是，<span class="highlight-gold">“该坚持的坚持，该调整的调整，该创新的创新”</span>，注重<span class="highlight-purple">把继承传统和改革创新结合起来</span>，就能持续增强管党治党的<span class="highlight-blue">系统性、预见性、创造性、实效性</span>。</p>
+
+      <div class="sub-thesis">【分论点二】创新体现为认识的深化——在“实践—认识—再实践—再认识”的螺旋上升中推动事物发展，紧跟时代、敢为人先。</div>
+
+      <p>创新，体现为认识的深化，在<span class="highlight-purple">“实践—认识—再实践—再认识”的螺旋上升</span>中推动事物发展。</p>
+
+      <p>比如，如何准确识别、精准定性，是查处<span class="highlight-blue">新型腐败和隐性腐败</span>时面临的难题。<span class="highlight-green">2025年，在深入调研和系统梳理已有案例的基础上，《调查新型腐败和隐性腐败问题证据指引》出台</span>，有效提升各级纪检监察机关办案能力。</p>
+
+      <p>实践发展永无止境。无论何时，都要<span class="highlight-gold">“紧跟时代步伐，顺应实践发展，以满腔热忱对待一切新生事物，不断拓展认识的广度和深度，敢于说前人没有说过的新话，敢于干前人没有干过的事情”</span>。</p>
+
+      <div class="sub-thesis">【分论点三】创新更有组织机制的更新、创新活力的迸发——推动组织形态、动员机制和领导方式与时俱进，始终充满生机活力。</div>
+
+      <p>创新，有举措、办法的革新，更有<span class="highlight-blue">组织机制的更新、创新活力的迸发</span>。</p>
+
+      <p>习近平总书记指出<span class="highlight-gold">“严密的组织体系，是马克思主义政党的优势所在、力量所在”</span>，要求<span class="highlight-gold">“把广大党员、干部的积极性、主动性、创造性充分激发出来”</span>。</p>
+
+      <p>从革命战争年代<span class="highlight-green">“支部建在连上”</span>的创举，到改革开放时期适应社会主义市场经济要求的基层组织重构，再到新时代推动党的组织覆盖和工作覆盖向<span class="highlight-blue">新经济组织、新社会组织、新就业群体</span>延伸……我们党以敢为人先的政治勇气与责任担当，推动<span class="highlight-purple">组织形态、动员机制和领导方式与时俱进</span>，始终充满生机活力。</p>
+
+      <p>如何跳出<span class="highlight-blue">治乱兴衰历史周期率</span>？党的二十届五中全会上，习近平总书记话语铿锵：<span class="highlight-gold">“就是刀刃向内，全面从严治党，保持党的先进性和纯洁性，实现党的自我净化、自我完善、自我革新、自我提高。”</span></p>
+
+      <p>新长征路上，我们党作为拥有<span class="highlight-green">超过1亿名党员</span>的<span class="highlight-blue">世界第一大执政党</span>，必将<span class="highlight-gold">在守正创新中锻造得更加坚强有力</span>，团结带领亿万人民书写新的传奇。</p>
+
+      <p class="byline">（人民日报2026年11月18日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总论</span>
+      <p><b>“守正创新是我们党在新时代治国理政的重要思想方法。”</b>——写‘守正创新／思想方法’是定调金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记</span>
+      <p><b>“新时代党的建设新的伟大工程，既要培元固本，也要开拓创新。”</b>——写‘继承与创新／党建’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“守正创新不是脱离实际的标新立异，而是坚持用党的创新理论凝心铸魂。”</b>——写‘守正与创新／凝心铸魂’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思想</span>
+      <p><b>“思想革新，引领实践焕新；思想常新，事业常青。”</b>——写‘理论创新／思想引领’是对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·方法</span>
+      <p><b>“该坚持的坚持，该调整的调整，该创新的创新。”</b>——写‘实事求是／分类施策’是方法论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·认识</span>
+      <p><b>“在‘实践—认识—再实践—再认识’的螺旋上升中推动事物发展。”</b>——写‘认识深化／实践’是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·担当</span>
+      <p><b>“敢于说前人没有说过的新话，敢于干前人没有干过的事情。”</b>——写‘敢为人先／改革创新’是担当金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·组织</span>
+      <p><b>“严密的组织体系，是马克思主义政党的优势所在、力量所在。”</b>——写‘组织建设／政党优势’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·周期率</span>
+      <p><b>“就是刀刃向内，全面从严治党，保持党的先进性和纯洁性。”</b>——写‘自我革命／历史周期率’是收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·升华</span>
+      <p><b>“在守正创新中锻造得更加坚强有力，团结带领亿万人民书写新的传奇。”</b>——写‘党建引领／新征程’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以案例破题、总书记论断定调，用“思想革新—认识深化—组织机制更新”三层递进，以“书写新的传奇”收束，适用于“守正创新／自我革命／全面从严治党”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论一写思想革新（凝心铸魂、继承创新结合），分论二写认识深化（实践—认识螺旋上升、完善制度），分论三写组织更新（组织形态、动员机制与时俱进）。三组构成“思想—认识—组织”由虚到实递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·对策题</span>
+      <p>把“守正创新”拆举措：以党的创新理论凝心铸魂、用原创成果武装头脑；借数智技术创新监督、推动向基层延伸；在实践中深化认识、完善制度提升能力；更新组织机制、激发活力。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“守正不是标新立异、创新不是脱离实际”的对照写法，把“守正”与“创新”、“培元固本”与“开拓创新”、“继承传统”与“改革创新”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“既要培元固本，也要开拓创新”可作辩证过渡；“敢于说前人没有说过的新话，敢于干前人没有干过的事情”可作创新类排比；“刀刃向内，全面从严治党”可作自我革命类总括。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「坚持守正创新，永葆先进性纯洁性」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是思想革新引领实践焕新。以党的创新理论凝心铸魂，把继承传统和改革创新结合起来，思想常新、事业常青。<br>二是创新体现为认识的深化。在“实践—认识—再实践—再认识”的螺旋上升中推动事物发展，紧跟时代、敢为人先。<br>三是创新更有组织机制的更新、创新活力的迸发。推动组织形态、动员机制和领导方式与时俱进，始终充满生机活力。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「守正创新是我们党在新时代治国理政的重要思想方法——坚持用党的创新理论凝心铸魂，既要培元固本，也要开拓创新，以坚守原则、把握规律为前提推陈出新，持续增强管党治党的系统性、预见性、创造性、实效性，在守正创新中永葆党的先进性纯洁性。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是思想革新引领实践焕新——以党的创新理论凝心铸魂，把继承传统和改革创新结合起来，思想常新、事业常青。<br>二是创新体现为认识的深化——在“实践—认识—再实践—再认识”的螺旋上升中推动事物发展，紧跟时代、敢为人先。<br>三是创新更有组织机制的更新、创新活力的迸发——推动组织形态、动员机制和领导方式与时俱进，始终充满生机活力。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“守正创新是我们党在新时代治国理政的重要思想方法。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「坚持守正创新，永葆先进性纯洁性」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以党的创新理论凝心铸魂，坚持用原创性成果武装头脑、指导实践。<br>二是创新监督方法，借助数智技术提高穿透力、推动全面从严治党向基层延伸。<br>三是深化规律认识，在实践中完善制度、提升办案与治理能力。<br>四是更新组织机制，推动组织形态、动员机制和领导方式与时俱进。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“守正创新是我们党在新时代治国理政的重要思想方法。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于坚持守正创新，永葆先进性纯洁性的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于坚持守正创新，永葆先进性纯洁性的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进坚持守正创新，永葆先进性纯洁性，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、思想革新引领实践焕新——以党的创新理论凝心铸魂，把继承传统和改革创新结合起来，思想常新、事业常青。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、创新体现为认识的深化——在“实践—认识—再实践—再认识”的螺旋上升中推动事物发展，紧跟时代、敢为人先。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、创新更有组织机制的更新、创新活力的迸发——推动组织形态、动员机制和领导方式与时俱进，始终充满生机活力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“守正创新是我们党在新时代治国理政的重要思想方法。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「坚持守正创新，永葆先进性纯洁性」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：坚持守正创新，永葆先进性纯洁性<br><br>时代之问，呼唤破题之策。坚持守正创新，永葆先进性纯洁性，是发展所需，也是民心所向。可从三个维度展开：思想革新引领实践焕新、创新体现为认识的深化、创新更有组织机制的更新、创新活力的迸发。<br><br>分论点一：思想革新引领实践焕新——以党的创新理论凝心铸魂，把继承传统和改革创新结合起来，思想常新、事业常青。方向对了，路再远也能抵达。“守正创新是我们党在新时代治国理政的重要思想方法。”<br><br>分论点二：创新体现为认识的深化——在“实践—认识—再实践—再认识”的螺旋上升中推动事物发展，紧跟时代、敢为人先。方法对了，事再难也能办成。“新时代党的建设新的伟大工程，既要培元固本，也要开拓创新。”<br><br>分论点三：创新更有组织机制的更新、创新活力的迸发——推动组织形态、动员机制和领导方式与时俱进，始终充满生机活力。行百里者半九十。“守正创新不是脱离实际的标新立异，而是坚持用党的创新理论凝心铸魂。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。坚持守正创新，永葆先进性纯洁性是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-18</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
