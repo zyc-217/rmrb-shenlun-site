@@ -514,15 +514,16 @@
   </div>
 <script>
 const SUBTAG_TO_THEME={'产业兴旺':'乡村振兴','人才支撑':'乡村振兴','文化振兴':'乡村振兴','生态宜居':'乡村振兴','组织振兴':'乡村振兴','高质量发展':'经济发展','创新驱动':'经济发展','产业升级':'经济发展','新型消费':'经济发展','城乡经济':'经济发展','区域协调':'经济发展','党建引领':'党的建设','实干担当':'党的建设','清正廉洁':'党的建设','服务为民':'党的建设','干部建设':'党的建设','基层治理':'社会治理','数字治理':'社会治理','风险防控':'社会治理','多元共治':'社会治理','公共安全':'社会治理','网络治理':'社会治理','乡村治理':'社会治理','自主自强':'科技创新','数字赋能':'科技创新','人才驱动':'科技创新','成果转化':'科技创新','创新生态':'科技创新','科技向善':'科技创新','教育均衡':'民生保障','健康中国':'民生保障','一老一小':'民生保障','社会保障':'民生保障','就业优先':'民生保障','共同富裕':'民生保障','文化自信':'文化建设','传承创新':'文化建设','公共文化':'文化建设','文化产业':'文化建设','精神文明':'文化建设','历史街区':'文化建设','绿色发展':'生态环保','生态修复':'生态环保','制度保障':'生态环保','价值转化':'生态环保','污染防治':'生态环保','空气政府':'放管服','地方改革创新':'放管服','体制机制改革':'放管服','基层干部':'干部队伍','干部作风':'干部队伍','干部能力':'干部队伍','政绩观':'干部队伍','城市更新':'城市发展','城市群建设':'城市发展','智慧城市':'城市发展','全龄友好城市':'城市发展','15分钟便民生活圈':'城市发展','科技赋能执法':'行政执法','新兴领域执法':'行政执法','执法队伍建设':'行政执法','创新服务方式':'行政执法'};
-const cards=[...document.querySelectorAll('.card')];
-const count=document.getElementById('count');
 const STORE='rmrb_study_v1';
+let cards=[];
+const count=document.getElementById('count');
 function loadStudy(){try{return JSON.parse(localStorage.getItem(STORE))||{}}catch(e){return{}}}
-function saveStudy(o){localStorage.setItem(STORE,JSON.stringify(o))}
+function saveStudy(o){try{localStorage.setItem(STORE,JSON.stringify(o))}catch(e){}}
 let study=loadStudy();
 function renderMark(c){
   const s=study[c.dataset.key]||{};
   const star=c.querySelector('.star'), st=c.querySelector('.st');
+  if(!star||!st) return;
   star.textContent=s.fav?'★':'☆'; star.classList.toggle('on',!!s.fav);
   st.textContent= s.status==='done'?'✅': s.status==='todo'?'📝':'○';
   st.className='st'+(s.status?(' '+s.status):'');
@@ -545,26 +546,33 @@ function toggleFav(key){
   const c=cards.find(x=>x.dataset.key===key); if(c) renderMark(c);
   updateStats();
 }
-cards.forEach(c=>{
-  renderMark(c);
-  c.querySelector('.star').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleFav(c.dataset.key);});
-  c.querySelector('.st').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();cycleStatus(c.dataset.key);});
-  const toggleCard=function(e){
-    if(e.target.closest('.act')||e.target.closest('.mark')) return;
-    cards.forEach(x=>{ if(x!==c) x.classList.remove('open'); });
-    c.classList.toggle('open');
-  };
-  c.addEventListener('click',toggleCard);
-  c.addEventListener('keydown',function(e){
-    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleCard(e); }
-  });
-});
 function updateStats(){
   let done=0,todo=0,fav=0;
   cards.forEach(c=>{const s=study[c.dataset.key]||{}; if(s.status==='done')done++; else if(s.status==='todo')todo++; if(s.fav)fav++;});
   if(count){ count.dataset.done=done; count.dataset.todo=todo; count.dataset.fav=fav; }
 }
-updateStats();
+/* 卡片全部就位后调用：绑定收藏/背诵/展开。月页在文档末尾调用，首页由索引渲染完再调用。 */
+function initStudy(){
+  cards=[...document.querySelectorAll('.card')];
+  cards.forEach(c=>{
+    renderMark(c);
+    const star=c.querySelector('.star'), st=c.querySelector('.st');
+    if(star) star.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleFav(c.dataset.key);});
+    if(st) st.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();cycleStatus(c.dataset.key);});
+    const toggleCard=function(e){
+      if(e.target.closest('.act')||e.target.closest('.mark')) return;
+      cards.forEach(x=>{ if(x!==c) x.classList.remove('open'); });
+      c.classList.toggle('open');
+    };
+    c.addEventListener('click',toggleCard);
+    c.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleCard(e); }
+    });
+  });
+  updateStats();
+}
+
+initStudy();
 </script>
 </body>
 </html>
