@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 坚持以上率下，抓住“关键少数”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>坚持以上率下，抓住“关键少数”</h1>
+    <div class="meta">人民日报·评论员观察 | 全面从严治党·以上率下·关键少数·头雁效应·作风建设 | 2026年11月20日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／以上率下／关键少数／以身作则／头雁效应／作风建设／示范带动</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">以上率下</span>
+      <span class="tag-item">关键少数</span>
+      <span class="tag-item">以身作则</span>
+      <span class="tag-item">头雁效应</span>
+      <span class="tag-item">示范带动</span>
+      <span class="tag-item">中央八项规定</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">党风政风</span>
+      <span class="tag-item">政治生态</span>
+      <span class="tag-item">自我革命</span>
+      <span class="tag-item">责任传导</span>
+      <span class="tag-item">领导干部</span>
+      <span class="tag-item">一级带一级</span>
+      <span class="tag-item">管党治党</span>
+      <span class="tag-item">严管所辖</span>
+      <span class="tag-item">头雁效应激发群雁活力</span>
+      <span class="tag-item">风向标作用</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／以上率下／关键少数／示范带动</b>”等主题；本文以三张菜单票据收条破题，用“领导方法有效—重在关键少数—头雁激发群雁”三层递进，是写“作风建设／干部队伍建设”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“坚持以上率下，既是有效的领导方法和工作方法，更是以‘关键少数’示范带动‘绝大多数’的治理智慧”</b>——表层讲干部带头，深层揭示上行下效、一级带一级的责任传导逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“坚持以上率下、抓住关键少数的主要做法”，从以上率下率先垂范、领导干部风向标示范、层层压实责任激发头雁效应三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>坚持从党中央做起、从领导机关和领导干部严起，一级做给一级看、一级带着一级干</b>／<b>把监督的聚光灯打向‘一把手’，推进述责述廉、领办基层治理项目</b>／<b>领导干部严于律己、严负其责、严管所辖，在履行管党治党责任上作示范</b>／<b>层层压实责任，以‘头雁效应’激发‘群雁活力’</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（讲话稿／倡议书）可作“关于坚持以上率下、发挥‘关键少数’示范作用的倡议书”或作风建设座谈会发言提纲。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：领导方法／关键少数／头雁效应—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“一份菜单、一张票据、一纸收条”破题，铺陈习近平总书记考察阜平、兰考、梁家河时严格“四菜一汤”、如实交费的三个细节，落到“细微处见态度、见精神、见作风”（第1—6段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">引党的二十届五中全会战略部署，把“坚持以上率下”作为必须遵循的原则之一，强调以“关键少数”示范带动“绝大多数”，亮出总论点（第7段、总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“领导干部坚持以身作则、以上率下，是有效的领导方法和工作方法”——答案深藏在历史传承里、写就于新时代实践中</b>，以“子帅以正”、周恩来“十条家规”、焦裕禄《干部十不准》与八项规定改变中国为例（第8—15段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“坚持以上率下，重在抓住‘关键少数’”——领导干部对全党全社会具有风向标作用</b>，以广西述责述廉、安徽书记领办项目、广东梅州“书记领航项目”为例，落到抓住管党治党“牛鼻子”（第16—20段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“既发挥引领、统筹、协调作用，又层层压实责任”——以‘头雁效应’激发‘群雁活力’</b>，让示范力化作凝聚力、执行力，收束于风清气正的政治生态（第21—23段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”结构：以细节故事破题，引全会部署定调，按“方法有效—关键少数—头雁效应”层层推进，结尾用“上下同欲者胜，以上率下者强”对仗升华。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】<span class="highlight-blue">坚持以上率下、以身作则</span>，抓住领导干部这个<span class="highlight-blue">“关键少数”</span>，<span class="highlight-purple">从党中央做起，从领导机关和领导干部严起，一级做给一级看、一级带着一级干</span>，<span class="highlight-purple">以“关键少数”示范带动“绝大多数”</span>，<span class="highlight-blue">以“头雁效应”激发“群雁活力”</span>，<span class="highlight-gold">让“关键少数”的示范力化作“绝大多数”的凝聚力、执行力</span>，<span class="highlight-blue">持之以恒推进全面从严治党</span>。</div>
+
+      <p><span class="highlight-blue">坚持以上率下，既发挥引领、统筹、协调作用，又通过层层压实责任</span>，让更多党员、干部找准坐标、对表对标，<span class="highlight-purple">在一级带一级中主动跟上、积极作为</span></p>
+
+      <p><span class="highlight-green">一份菜单、一张票据、一纸收条</span>，成为新时代作风建设的生动教材。</p>
+
+      <p>红烧土鸡块、阜平烩菜、五花肉炒蒜薹、拍蒜茼蒿、冬瓜丸子汤……朴素的家常便饭，严格的<span class="highlight-green">“四菜一汤”</span>。这是习近平总书记<span class="highlight-green">2012年</span>考察河北阜平县时的晚餐菜单。</p>
+
+      <p>伙食费，<span class="highlight-green">80元/天，合计160元</span>，左上角写着“交款人：习近平”。这是<span class="highlight-green">2014年</span>总书记考察河南兰考县时的餐费收据。</p>
+
+      <p>“今收到习近平等三人伙食费合计玖拾元正（整）。”这是<span class="highlight-green">2015年</span>总书记在陕北梁家河乡亲梁玉明家的午餐费用收条。</p>
+
+      <p><span class="highlight-purple">细微处见态度、见精神、见作风</span>。从中，可以领略<span class="highlight-blue">以身作则、以上率下</span>的治理智慧，更能感悟<span class="highlight-gold">“其身正，不令而行”</span>的人格力量。</p>
+
+      <p>党的二十届五中全会对持之以恒推进<span class="highlight-blue">全面从严治党</span>作出战略部署，把<span class="highlight-blue">“坚持以上率下”</span>作为必须遵循的原则之一，强调<span class="highlight-purple">“从党中央做起，从领导机关和领导干部严起，一级做给一级看、一级带着一级干，以‘关键少数’示范带动‘绝大多数’”</span>。</p>
+
+      <p>领导干部在各个方面坚持<span class="highlight-blue">以身作则、以上率下</span>，这是一种有效的领导方法和工作方法。</p>
+
+      <div class="sub-thesis">【分论点一】领导方法、有效之道——领导干部坚持以身作则、以上率下是有效的领导方法和工作方法，答案深藏在历史传承里、写就于新时代实践中。</div>
+
+      <p>何以有效？答案，<span class="highlight-purple">深藏在历史传承里，写就于新时代实践中</span>。</p>
+
+      <p><span class="highlight-gold">“子帅以正，孰敢不正”“人不率则不从，身不先则不信”</span>……讲的都是身先士卒、以上率下的道理。回看党史，从周恩来定下<span class="highlight-green">“十条家规”</span>，到焦裕禄起草<span class="highlight-green">《干部十不准》</span>……这根“标杆”始终高高挺立。</p>
+
+      <p>继承中华优秀传统文化的<span class="highlight-blue">“身教”传统</span>，传承我们党抓干部队伍建设的历史经验，以上率下作为重要的工作方法，在新时代<span class="highlight-blue">全面从严治党</span>实践中发挥了关键作用。</p>
+
+      <p><span class="highlight-gold">八项规定，何以改变中国？</span></p>
+
+      <p>以上率下，<span class="highlight-blue">“从党中央抓起、从高级干部做起”</span>，正是其中要义。</p>
+
+      <p>以习近平同志为核心的党中央率先垂范、身体力行，全党各级领导干部自觉向习近平总书记和党中央看齐，<span class="highlight-gold">“先禁其身而后人”</span>，带动<span class="highlight-blue">党风政风焕然一新</span>，赢得了人民群众的信任和拥护。</p>
+
+      <p><span class="highlight-gold">“凡事都是这样的，上行下效，上率下行，上有所好、下必甚焉，上有所恶、下必不为，上面松一寸、下面松一尺。”</span></p>
+
+      <div class="sub-thesis">【分论点二】抓住关键、风向示范——坚持以上率下，重在抓住“关键少数”，领导干部对全党全社会具有风向标作用。</div>
+
+      <p>坚持以上率下，重在抓住<span class="highlight-blue">“关键少数”</span>。</p>
+
+      <p>领导干部是党和国家事业发展的<span class="highlight-blue">“关键少数”</span>，对全党全社会都具有<span class="highlight-blue">风向标作用</span>。持之以恒推进<span class="highlight-blue">全面从严治党</span>，必须把<span class="highlight-blue">“坚持以上率下”</span>的原则落实好、运用好。</p>
+
+      <p>在<span class="highlight-green">广西</span>，监督的聚光灯打向“关键少数”，<span class="highlight-green">“一把手”站到台前述责述廉</span>；在<span class="highlight-green">安徽</span>，各级党组织书记通过<span class="highlight-green">领办基层治理项目</span>，层层示范破解治理难题；在<span class="highlight-green">广东梅州</span>，以党建赋能发展，市县镇村四级全面推行<span class="highlight-green">“书记领航项目”</span>，各级党组织书记选题、领题、破题，并被纳入党建述职评议考核，抓党建从“软任务”变成“硬指标”……</p>
+
+      <p>实践表明，抓住领导干部这个<span class="highlight-blue">“关键少数”</span>，就抓住了<span class="highlight-blue">管党治党</span>的<span class="highlight-purple">“牛鼻子”</span>。</p>
+
+      <p>《中共中央关于持之以恒推进全面从严治党若干重大问题的决定》明确要求：<span class="highlight-gold">“领导干部特别是高级干部要严于律己、严负其责、严管所辖，在履行管党治党责任上作示范。”</span></p>
+
+      <div class="sub-thesis">【分论点三】头雁引领、群雁跟上——既发挥引领统筹协调作用，又层层压实责任，以“头雁效应”激发“群雁活力”。</div>
+
+      <p><span class="highlight-blue">坚持以上率下，既发挥引领、统筹、协调作用，又通过层层压实责任</span>，让更多党员、干部找准坐标、对表对标，<span class="highlight-purple">在一级带一级中主动跟上、积极作为</span>，就能更好以<span class="highlight-blue">“头雁效应”</span>激发<span class="highlight-blue">“群雁活力”</span>，形成上下一心、干事创业的生动局面。</p>
+
+      <p><span class="highlight-gold">上下同欲者胜，以上率下者强。</span></p>
+
+      <p>持之以恒推进<span class="highlight-blue">全面从严治党</span>，让<span class="highlight-purple">“关键少数”的示范力化作“绝大多数”的凝聚力、执行力</span>，风清气正的政治生态必将愈发巩固，<span class="highlight-green">14亿多人民</span>团结奋斗的精神必将愈发昂扬。</p>
+
+      <p class="byline">（人民日报2026年11月20日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·古训</span>
+      <p><b>“其身正，不令而行。”</b>——写‘以身作则／以上率下’是经典人格金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·标杆</span>
+      <p><b>“子帅以正，孰敢不正”“人不率则不从，身不先则不信。”</b>——写‘身先士卒／示范带动’是古训金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·设问</span>
+      <p><b>“八项规定，何以改变中国？”</b>——写‘作风建设／全面从严治党’是设问破题金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·垂范</span>
+      <p><b>“先禁其身而后人。”</b>——写‘以上率下／率先垂范’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·上行下效</span>
+      <p><b>“上行下效，上率下行，上有所好、下必甚焉，上有所恶、下必不为，上面松一寸、下面松一尺。”</b>——写‘关键少数示范’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·关键少数</span>
+      <p><b>“抓住领导干部这个‘关键少数’，就抓住了管党治党的‘牛鼻子’。”</b>——写‘关键少数／主体责任’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·责任</span>
+      <p><b>“领导干部特别是高级干部要严于律己、严负其责、严管所辖，在履行管党治党责任上作示范。”</b>——写‘严管所辖／示范’是政策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·头雁</span>
+      <p><b>以“头雁效应”激发“群雁活力”。</b>——写‘示范带动／群雁活力’是比喻金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·对仗</span>
+      <p><b>“上下同欲者胜，以上率下者强。”</b>——写‘团结奋斗／以上率下’是对仗收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>让“关键少数”的示范力化作“绝大多数”的凝聚力、执行力。</b>——写‘示范力转化／政治生态’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以菜单票据收条三细节破题，引全会部署定调，用“方法有效—关键少数—头雁效应”三层递进，以“上下同欲者胜，以上率下者强”对仗收束，适用于“作风建设／干部队伍”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论一写领导方法有效（历史传承＋八项规定），分论二写重在关键少数（风向标＋述责述廉案例），分论三写头雁效应（引领统筹＋层层压实）。三组构成“为何有效—抓谁—怎么带”的递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“坚持以上率下、抓住关键少数”拆要点：以上率下率先垂范、领导干部风向标示范、层层压实责任激发头雁效应，配述责述廉、领办项目、“书记领航”等案例。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“细微处见态度、见精神、见作风”“一级做给一级看、一级带着一级干”“示范力化作凝聚力、执行力”的转化式写法，把“关键少数—绝大多数”“头雁—群雁”写成对立统一的辩证段落。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“其身正，不令而行”可作身教过渡；“牛鼻子”可作抓重点表述；“上下同欲者胜，以上率下者强”可作结尾升华；“头雁效应激发群雁活力”可作示范带动论证。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「坚持以上率下，抓住“关键少数”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是领导方法、有效之道。领导干部坚持以身作则、以上率下是有效的领导方法和工作方法，答案深藏在历史传承里、写就于新时代实践中。<br>二是抓住关键、风向示范。坚持以上率下，重在抓住“关键少数”，领导干部对全党全社会具有风向标作用。<br>三是头雁引领、群雁跟上。既发挥引领统筹协调作用，又层层压实责任，以“头雁效应”激发“群雁活力”。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「坚持以上率下、以身作则，抓住领导干部这个“关键少数”，从党中央做起，从领导机关和领导干部严起，一级做给一级看、一级带着一级干，以“关键少数”示范带动“绝大多数”，以“头雁效应”激发“群雁活力”，让“关键少数”的示范力化作“绝大多数”的凝聚力、执行力，持之以恒推进全面从严治党。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是领导方法、有效之道——领导干部坚持以身作则、以上率下是有效的领导方法和工作方法，答案深藏在历史传承里、写就于新时代实践中。<br>二是抓住关键、风向示范——坚持以上率下，重在抓住“关键少数”，领导干部对全党全社会具有风向标作用。<br>三是头雁引领、群雁跟上——既发挥引领统筹协调作用，又层层压实责任，以“头雁效应”激发“群雁活力”。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“其身正，不令而行。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「坚持以上率下，抓住“关键少数”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是坚持从党中央做起、从领导机关和领导干部严起，一级做给一级看、一级带着一级干。<br>二是把监督的聚光灯打向‘一把手’，推进述责述廉、领办基层治理项目。<br>三是领导干部严于律己、严负其责、严管所辖，在履行管党治党责任上作示范。<br>四是层层压实责任，以‘头雁效应’激发‘群雁活力’。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“其身正，不令而行。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于坚持以上率下，抓住“关键少数”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于坚持以上率下，抓住“关键少数”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进坚持以上率下，抓住“关键少数”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、领导方法、有效之道——领导干部坚持以身作则、以上率下是有效的领导方法和工作方法，答案深藏在历史传承里、写就于新时代实践中。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、抓住关键、风向示范——坚持以上率下，重在抓住“关键少数”，领导干部对全党全社会具有风向标作用。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、头雁引领、群雁跟上——既发挥引领统筹协调作用，又层层压实责任，以“头雁效应”激发“群雁活力”。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“其身正，不令而行。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「坚持以上率下，抓住“关键少数”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：坚持以上率下，抓住“关键少数”<br><br>时代之问，呼唤破题之策。坚持以上率下，抓住“关键少数”，是发展所需，也是民心所向。可从三个维度展开：领导方法、有效之道、抓住关键、风向示范、头雁引领、群雁跟上。<br><br>分论点一：领导方法、有效之道——领导干部坚持以身作则、以上率下是有效的领导方法和工作方法，答案深藏在历史传承里、写就于新时代实践中。方向对了，路再远也能抵达。“其身正，不令而行。”<br><br>分论点二：抓住关键、风向示范——坚持以上率下，重在抓住“关键少数”，领导干部对全党全社会具有风向标作用。方法对了，事再难也能办成。“子帅以正，孰敢不正”“人不率则不从，身不先则不信。”<br><br>分论点三：头雁引领、群雁跟上——既发挥引领统筹协调作用，又层层压实责任，以“头雁效应”激发“群雁活力”。行百里者半九十。“八项规定，何以改变中国？”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。坚持以上率下，抓住“关键少数”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-20</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 呵护群众参与监督的心气</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>呵护群众参与监督的心气</h1>
+    <div class="meta">人民日报·人民时评 | 群众监督·闻过则喜·双向奔赴·基层治理·干群互信 | 2026年11月20日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：群众监督／闻过则喜／双向奔赴／基层治理／点题式监督／澄清正名／干群互信</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">群众监督</span>
+      <span class="tag-item">闻过则喜</span>
+      <span class="tag-item">双向奔赴</span>
+      <span class="tag-item">基层监督</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">点题式监督</span>
+      <span class="tag-item">澄清正名</span>
+      <span class="tag-item">干群互信</span>
+      <span class="tag-item">监督体系</span>
+      <span class="tag-item">主人翁意识</span>
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">整治形式主义</span>
+      <span class="tag-item">12345热线</span>
+      <span class="tag-item">急难愁盼</span>
+      <span class="tag-item">权力规范运行</span>
+      <span class="tag-item">高质量发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>群众监督／闻过则喜／干群互信／基层治理</b>”等主题；本文以“监督还有另一种面貌”反转破题，用“闻过则喜—机制有效—良性互动”三层递进，是写“监督／群众路线／全过程人民民主”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“监督不只是检查与暗访的‘火药味’，更是干群双向奔赴、和衷共济的信任纽带”</b>——表层讲监督方式，深层揭示主动接受监督反而有利于放开手脚干事、降低沟通成本的治理逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“呵护群众参与监督心气的主要做法”，从闻过则喜主动接受监督、创新方式让机制有力有效、及时整改与澄清正名三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>党员干部以闻过则喜的襟怀主动接受监督，杜绝挟嫌报复、泄露举报人信息</b>／<b>创新监督方式，开展‘点题式监督’把群众关注度靠前的问题纳入重点</b>／<b>反映问题属实就及时整改，中间有误会则做好澄清正名</b>／<b>畅通群众监督渠道，促进基层监督和基层治理有机贯通</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／公开信）可作“关于主动接受群众监督、共筑干群信任的倡议书”或村民监督座谈会发言提纲。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：闻过则喜／机制有效／良性互动—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“监督还有另一种面貌”反转破题，用湖南衡阳县80后新农人罗小成担任高标准农田建设监督员“挑刺”、相关单位逐项整改的案例，落到“干群双向奔赴的监督”（第1—4段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">梳理新时代党和国家监督体系不断完善、渠道持续丰富的背景，引二十届五中全会“畅通群众监督渠道、促进基层监督和基层治理有机贯通”的部署，亮出总论点（第5—6段、总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督”——呵护心气尤需破除不敢不愿</b>，以举报垃圾遭威胁、12345信息泄露等问题与“3天解释—3天赞同”的对比案例论证（第7—10段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“创新方式方法，让群众监督的机制更有力有效”——群众看到变化才愿意参与</b>，以云南某市纪委监委“点题式监督”、排查清退公租房违规住户为例（第11—13段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“增强主动接受监督的自觉自信、提高参与治理的主人翁意识”——以监督纽带汇聚高质量发展合力</b>，收束于干群更紧密联结（第14段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”结构：以“另一种面貌”反转破题，按“闻过则喜—机制有效—良性互动”层层推进，用对比案例（3天与3天）与点题式监督实例支撑，结尾升华于高质量发展合力。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】党员干部以<span class="highlight-gold">闻过则喜的襟怀</span>主动接受监督，<span class="highlight-purple">呵护群众参与监督的心气</span>，<span class="highlight-blue">畅通群众监督渠道，促进基层监督和基层治理有机贯通</span>，<span class="highlight-purple">形成干群双向奔赴的良性互动</span>，<span class="highlight-blue">以监督这条纽带汇聚推进高质量发展的合力</span>。</div>
+
+      <p><span class="highlight-gold">党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。</span></p>
+
+      <p>提起“监督”，你可能会想到检查与暗访、举报与辩解，甚至是“火药味”十足的画面，因为它常涉及原则是非，难免针锋相对。<span class="highlight-purple">其实，监督还有另一种面貌。</span></p>
+
+      <p>前不久，媒体报道的<span class="highlight-green">湖南衡阳县</span>一案例就很有代表性。担任<span class="highlight-green">“高标准农田建设监督员”</span>、<span class="highlight-green">80后新农人罗小成</span>抠出建设中的不少细节问题，并提出建议。相关单位针对“挑刺”逐项整改，负责人称赞，<span class="highlight-gold">“不只监督员盯着干，大家还一起商量着办。”</span></p>
+
+      <p><span class="highlight-purple">干群间的和衷共济，成就了一种双向奔赴的监督。</span>激发群众监督正能量，让<span class="highlight-blue">权力更规范运行</span>，党员干部得以更加正确地修身用权、干事创业，群众的<span class="highlight-blue">急难愁盼</span>便能得到更好解决。</p>
+
+      <p>新时代以来，<span class="highlight-blue">党和国家监督体系</span>不断完善，<span class="highlight-blue">群众参与监督的渠道</span>持续丰富，积极性也越来越高。以群众监督为桥，党群干群关系更加密切。</p>
+
+      <p>党的二十届五中全会对持之以恒推进全面从严治党作出战略部署，提出<span class="highlight-gold">“善于依靠群众力量做好工作、化解矛盾”</span>，强调<span class="highlight-blue">“畅通群众监督渠道，促进基层监督和基层治理有机贯通”</span>。</p>
+
+      <div class="sub-thesis">【分论点一】闻过则喜、破除心结——党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督，尤需呵护群众参与监督的心气。</div>
+
+      <p>着眼现实，尤需呵护群众参与监督的心气。当前，群众监督形式多样、渠道畅通，比如信箱、电话、网站、小程序等。不过再完备的工具载体，也需要人来运用。在一些地方，<span class="highlight-blue">群众不敢监督、不愿监督</span>的现象仍不同程度存在，制约了这些渠道发挥效能。</p>
+
+      <p>现实中，个别党员干部不愿接受监督，甚至<span class="highlight-blue">挟嫌报复</span>，挫伤群众监督积极性。比如，有人举报非法掩埋垃圾，却遭到村干部电话威胁；有人通过<span class="highlight-green">12345热线</span>反映问题，个人信息却被泄露。这些问题，都影响了监督质效的提升。</p>
+
+      <p><span class="highlight-purple">其实，主动接受监督，本质上也有利于党员干部放开手脚干事。</span>笔者在采访中遇到过这样一个案例：<span class="highlight-green">10多年前</span>，村里发展产业，村干部光是向一名老人解释土地流转的理由，就花了<span class="highlight-green">3天</span>；<span class="highlight-green">前两年</span>建新项目，获得全村人的赞同，却只用了<span class="highlight-green">3天</span>。背后的原因在于，这些年村里产业的支出、收益、分成都公开透明，主动接受村民监督，群众信任村两委，<span class="highlight-blue">沟通成本自然就低了</span>。</p>
+
+      <p><span class="highlight-gold">党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。</span>长此以往，形成良性互动，有利于为发展凝聚力量、<span class="highlight-blue">打牢信任地基</span>。</p>
+
+      <div class="sub-thesis">【分论点二】创新机制、见到实效——创新方式方法，让群众监督的机制更有力有效，群众看到变化、尝到实惠才愿意参与。</div>
+
+      <p>有的群众不愿参与监督，是觉得缺乏实效，在做无用功。比如，通过举报反映问题，受理单位却敷衍了事；或者问题查实了，却迟迟等不来整改。</p>
+
+      <p>创新方式方法，让群众监督的机制更有力有效，大家才愿意参与。<span class="highlight-green">云南某市纪委监委</span>近年来开展<span class="highlight-blue">“点题式监督”</span>，通过征集意见，把群众关注度排名靠前的问题纳入监督重点。针对群众关注的<span class="highlight-green">保障性住房分配</span>问题，排查出一批<span class="highlight-green">有房产却仍租住公租房</span>的人员，督促相关部门清退。此后，群众参与监督的积极性更高了。</p>
+
+      <p>反映的问题属实，就<span class="highlight-blue">及时整改</span>；中间有误会，也做好<span class="highlight-blue">澄清正名</span>。群众看到变化、尝到实惠，感到自己的监督受重视、有分量，自然更愿意参与其中。</p>
+
+      <div class="sub-thesis">【分论点三】自觉自信、双向联结——党员干部增强主动接受监督的自觉自信、群众提高参与治理的主人翁意识，以监督纽带汇聚发展合力。</div>
+
+      <p>党员干部增强主动接受监督的<span class="highlight-blue">自觉自信</span>，群众提高参与治理的<span class="highlight-blue">主人翁意识</span>，<span class="highlight-purple">监督这条纽带必能把大家更紧密联结在一起</span>，汇聚推进<span class="highlight-blue">高质量发展</span>的合力。</p>
+
+      <p class="byline">（人民日报2026年11月20日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总起</span>
+      <p><b>“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。”</b>——写‘群众监督／闻过则喜’是主旨金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·反转</span>
+      <p><b>“其实，监督还有另一种面貌。”</b>——写‘监督／干群关系’是反转破题金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·双向</span>
+      <p><b>“干群间的和衷共济，成就了一种双向奔赴的监督。”</b>——写‘双向奔赴／干群互信’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·案例</span>
+      <p><b>“不只监督员盯着干，大家还一起商量着办。”</b>——写‘群众参与／协同治理’是鲜活的群众语言金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·部署</span>
+      <p><b>“畅通群众监督渠道，促进基层监督和基层治理有机贯通。”</b>——写‘基层监督／基层治理’是政策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>“主动接受监督，本质上也有利于党员干部放开手脚干事。”</b>——写‘接受监督／干事创业’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·互信</span>
+      <p><b>“群众信任村两委，沟通成本自然就低了。”</b>——写‘信任地基／治理效能’是事理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·实效</span>
+      <p><b>“群众看到变化、尝到实惠，感到自己的监督受重视、有分量，自然更愿意参与其中。”</b>——写‘机制实效／群众获得感’是方法论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·澄清</span>
+      <p><b>“反映的问题属实，就及时整改；中间有误会，也做好澄清正名。”</b>——写‘监督闭环／严管厚爱’是规范表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“监督这条纽带必能把大家更紧密联结在一起，汇聚推进高质量发展的合力。”</b>——写‘监督合力／干群同心’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以“另一种面貌”反转破题，用衡阳挑刺案例引出，按“闻过则喜—机制有效—良性互动”三层递进，以监督纽带汇聚合力收束，适用于“群众监督／干群关系／基层治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论一写闻过则喜破除心结（不敢不愿＋3天与3天对比），分论二写创新机制见到实效（点题式监督＋清退公租房），分论三写自觉自信双向联结。三组构成“态度—机制—合力”的递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·综合分析</span>
+      <p>把“监督的两种面貌”写成辩证段：一种是检查暗访的“火药味”，一种是双向奔赴的“和衷共济”，揭示主动接受监督反而降低沟通成本、解放手脚的深层逻辑。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·对策题</span>
+      <p>把呵护群众监督心气拆举措：闻过则喜主动接受监督、杜绝挟嫌报复和泄露信息；开展点题式监督聚焦群众关切；属实则及时整改、有误会则澄清正名；畅通渠道促进基层监督与治理贯通。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“监督还有另一种面貌”可作反转破题；“双向奔赴的监督”可作关系表述；“群众看到变化、尝到实惠”可作实效论证；“监督这条纽带”可作结尾升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「呵护群众参与监督的心气」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是闻过则喜、破除心结。党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督，尤需呵护群众参与监督的心气。<br>二是创新机制、见到实效。创新方式方法，让群众监督的机制更有力有效，群众看到变化、尝到实惠才愿意参与。<br>三是自觉自信、双向联结。党员干部增强主动接受监督的自觉自信、群众提高参与治理的主人翁意识，以监督纽带汇聚发展合力。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「党员干部以闻过则喜的襟怀主动接受监督，呵护群众参与监督的心气，畅通群众监督渠道，促进基层监督和基层治理有机贯通，形成干群双向奔赴的良性互动，以监督这条纽带汇聚推进高质量发展的合力。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是闻过则喜、破除心结——党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督，尤需呵护群众参与监督的心气。<br>二是创新机制、见到实效——创新方式方法，让群众监督的机制更有力有效，群众看到变化、尝到实惠才愿意参与。<br>三是自觉自信、双向联结——党员干部增强主动接受监督的自觉自信、群众提高参与治理的主人翁意识，以监督纽带汇聚发展合力。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「呵护群众参与监督的心气」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是党员干部以闻过则喜的襟怀主动接受监督，杜绝挟嫌报复、泄露举报人信息。<br>二是创新监督方式，开展‘点题式监督’把群众关注度靠前的问题纳入重点。<br>三是反映问题属实就及时整改，中间有误会则做好澄清正名。<br>四是畅通群众监督渠道，促进基层监督和基层治理有机贯通。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。”</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于呵护群众参与监督的心气的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于呵护群众参与监督的心气的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进呵护群众参与监督的心气，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、闻过则喜、破除心结——党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督，尤需呵护群众参与监督的心气。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、创新机制、见到实效——创新方式方法，让群众监督的机制更有力有效，群众看到变化、尝到实惠才愿意参与。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、自觉自信、双向联结——党员干部增强主动接受监督的自觉自信、群众提高参与治理的主人翁意识，以监督纽带汇聚发展合力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。”</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「呵护群众参与监督的心气」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：呵护群众参与监督的心气<br><br>时代之问，呼唤破题之策。呵护群众参与监督的心气，是发展所需，也是民心所向。可从三个维度展开：闻过则喜、破除心结、创新机制、见到实效、自觉自信、双向联结。<br><br>分论点一：闻过则喜、破除心结——党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督，尤需呵护群众参与监督的心气。方向对了，路再远也能抵达。“党员干部以闻过则喜的襟怀主动接受监督，群众才愿意监督、敢于监督。”<br><br>分论点二：创新机制、见到实效——创新方式方法，让群众监督的机制更有力有效，群众看到变化、尝到实惠才愿意参与。方法对了，事再难也能办成。“其实，监督还有另一种面貌。”<br><br>分论点三：自觉自信、双向联结——党员干部增强主动接受监督的自觉自信、群众提高参与治理的主人翁意识，以监督纽带汇聚发展合力。行百里者半九十。“干群间的和衷共济，成就了一种双向奔赴的监督。”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。呵护群众参与监督的心气是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-20</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
