@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 同在一条船上，就要有“共同体意识”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>同在一条船上，就要有“共同体意识”</h1>
+    <div class="meta">人民日报·人民论坛 | 亚太共同体·共同体意识·合作共赢·互联互通·民心相通 | 2026年11月21日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：人类命运共同体／亚太共同体／共同体意识／互联互通／包容发展／民心相通／合作共赢／互利共赢</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">亚太共同体</span>
+      <span class="tag-item">共同体意识</span>
+      <span class="tag-item">合作共赢</span>
+      <span class="tag-item">互联互通</span>
+      <span class="tag-item">硬联通软联通心联通</span>
+      <span class="tag-item">包容发展</span>
+      <span class="tag-item">求同存异</span>
+      <span class="tag-item">民心相通</span>
+      <span class="tag-item">对外开放</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">和合共生</span>
+      <span class="tag-item">共享发展</span>
+      <span class="tag-item">区域合作</span>
+      <span class="tag-item">多边主义</span>
+      <span class="tag-item">勠力同心守望相助</span>
+      <span class="tag-item">共同利益纽带</span>
+      <span class="tag-item">共同精神纽带</span>
+      <span class="tag-item">亚太自贸区</span>
+      <span class="tag-item">精神纽带</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>合作共赢／人类命运共同体／亚太共同体／互联互通</b>”等主题；本文以巴新香蕉之路、文莱炼化基地两个普通人故事破题，用“升级互联互通—坚持包容发展—促进民心相亲”三层并列推进，是写“对外开放／区域合作”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“建设亚太共同体，不仅要拉紧共同利益纽带，更要筑牢共同精神纽带”</b>——表层讲利益合作，深层揭示共同利益与精神认同对立统一的治理智慧。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“培育亚太共同体意识的主要做法”，从升级互联互通、坚持包容发展、促进民心相亲三方面归纳要点。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>以基础设施“硬联通”拉近空间距离、以制度规则“软联通”促进要素流动</b>／<b>坚持求同存异、照顾各方舒适度，推进合作不强求整齐划一</b>／<b>削减非关税壁垒、支持亚太自贸区建设、深化“人工智能+”合作</b>／<b>促进民众相知相亲，扩大青年交流与人文互鉴</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言提纲）可作“关于深化亚太合作、培育共同体意识的倡议书”或亚太经合组织工商领导人峰会发言提纲。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：互联互通／包容发展／民心相亲—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以巴布亚新几内亚雨林中企沥青路（种植户托马斯称“生命线”）、文莱大摩拉岛炼化基地（萨布丽娜“珍视工作”）两个普通人故事破题，落到“以合作谋共享之福，惠及普通人生活最有说服力”（第1—4段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">引习近平主席在亚太经合组织第三十三次领导人非正式会议提出“持续培育共同体意识”，亮出总论点——建设亚太共同体，不仅要拉紧共同利益纽带，更要筑牢共同精神纽带（第5段、总论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“培育共同体意识，在升级互联互通”——以雅万高铁（3个多小时缩至最快46分钟）、中越（深圳—海防）经贸合作区为例，用设施“硬联通”＋规则“软联通”让共同体意识深入人心</b>（第6—9段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“培育共同体意识，在坚持包容发展”——以“志同道合，是伙伴。求同存异，也是伙伴”、电动公交车／车厘子／特斯拉、深圳倡议为例，在互利共赢中理解勠力同心、守望相助</b>（第10—13段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>“培育共同体意识，在促进民心相亲”——以跨越2000公里的5G跨国手术、10万美国青少年交流、文明大展与大熊猫为例，落到价值认同、文化认同是牢不可破的精神纽带</b>（第14—18段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”结构：以普通人故事破题，引主席讲话定调，按“互联互通—包容发展—民心相亲”三层并列推进（恰好对应硬联通／软联通／心联通），结尾以“同在一条船上”比喻升华。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】建设<span class="highlight-blue">亚太共同体</span>，<span class="highlight-blue">持续培育共同体意识</span>，<span class="highlight-purple">不仅要拉紧共同利益纽带，更要筑牢共同精神纽带</span>，<span class="highlight-blue">以合作谋共享之福</span>，<span class="highlight-gold">同在一条船上，涵养共同体意识，亚太大家庭成员才能经受住太平洋的风浪，共同驶向更为开阔的水域</span>。</div>
+
+      <p>时代的脚步，会在普通人的生活中留下印记。</p>
+
+      <p>在<span class="highlight-green">巴布亚新几内亚西部省的雨林</span>中，中国企业承建的沥青路把村镇与外界相连。当地种植户托马斯说，路通了，香蕉卖出好价钱，<span class="highlight-gold">“这条路就是我们的‘生命线’”</span>。</p>
+
+      <p>在<span class="highlight-green">文莱首都斯里巴加湾市</span>，中国企业把沼泽遍布的<span class="highlight-green">大摩拉岛</span>打造成炼化基地。当地姑娘萨布丽娜说，中国企业帮助我们培养人才，<span class="highlight-gold">“我很珍视这份工作”</span>。</p>
+
+      <p><span class="highlight-purple">打造亚太共同体，以合作谋共享之福</span>，再没有比惠及普通人的生活更有说服力，更能说明亚太共同体的光明前景。</p>
+
+      <p>在亚太经合组织<span class="highlight-green">第三十三次领导人非正式会议</span>上，习近平主席提出<span class="highlight-blue">“持续培育共同体意识”</span>。建设<span class="highlight-blue">亚太共同体</span>，<span class="highlight-purple">不仅要拉紧共同利益纽带，更要筑牢共同精神纽带</span>。</p>
+
+      <div class="sub-thesis">【分论点一】互联互通、硬软并举——培育共同体意识，在升级互联互通，以设施“硬联通”和规则“软联通”拉近空间距离、促进要素流动。</div>
+
+      <p><span class="highlight-blue">培育共同体意识，在升级互联互通。</span></p>
+
+      <p>看一条路，中国和印尼合作建设的<span class="highlight-green">雅万高铁</span>，将<span class="highlight-green">雅加达与万隆</span>之间的通行时间从<span class="highlight-green">3个多小时缩短至最快46分钟</span>，让印尼与亚太经济网络联系更紧密。</p>
+
+      <p>看一个合作区，位于<span class="highlight-green">越南海防市</span>的中国·越南（深圳—海防）经济贸易合作区把杂草丛生之地转化为创业热土，成为深圳经济特区经验<span class="highlight-blue">“走出去”</span>的先行样本。</p>
+
+      <p>以基础设施<span class="highlight-blue">“硬联通”</span>拉近空间距离，以制度规则<span class="highlight-blue">“软联通”</span>促进要素流动，<span class="highlight-purple">亚太大家庭成员交往更频繁、合作更顺畅，共同体意识自会深入人心</span>。</p>
+
+      <div class="sub-thesis">【分论点二】包容发展、求同存异——培育共同体意识，在坚持包容发展，照顾各方舒适度，在互利共赢中勠力同心、守望相助。</div>
+
+      <p><span class="highlight-blue">培育共同体意识，在坚持包容发展。</span></p>
+
+      <p>亚太经济体多样性突出，发展诉求各异，推进合作不必强求整齐划一。只要信奉<span class="highlight-gold">“志同道合，是伙伴。求同存异，也是伙伴”</span>，照顾各方舒适度，就能为实现亚太共同体目标积累有利条件。</p>
+
+      <p>如今，中国制造的电动公交车行驶在<span class="highlight-green">墨西哥城街头</span>，<span class="highlight-green">智利的车厘子</span>端上中国百姓的餐桌，<span class="highlight-green">特斯拉上海超级工厂生产其全球近半数车辆</span>……<span class="highlight-purple">你中有我、我中有你，亚太经济发展利益交融、和合共生</span>。</p>
+
+      <p>翻开亚太经合组织工商领导人峰会<span class="highlight-green">深圳倡议</span>，<span class="highlight-blue">削减非关税壁垒，积极支持亚太自贸区建设，深化“人工智能+”合作</span>……<span class="highlight-blue">让开放更高效，让融合更深入，让合作更紧密</span>，才能在互利共赢中真正理解何为<span class="highlight-gold">勠力同心、守望相助</span>。</p>
+
+      <div class="sub-thesis">【分论点三】民心相亲、心联相通——培育共同体意识，在促进民心相亲，以民众相知相亲筑牢最深厚的价值认同根基。</div>
+
+      <p><span class="highlight-blue">培育共同体意识，在促进民心相亲。</span></p>
+
+      <p><span class="highlight-purple">硬联通、软联通，通向的是更为密切的心联通</span>。促进民众相知相亲，是培育共同体意识<span class="highlight-blue">最深厚的根基</span>。</p>
+
+      <p>今年4月，一台跨越<span class="highlight-green">2000公里</span>的胆囊结石手术，在泰国曼谷和中国成都同时举行。手术全程通过<span class="highlight-green">5G通信技术</span>实现，画面高清流畅，操作指令毫秒级传输。<span class="highlight-purple">一根网线，两个团队</span>，让泰国百姓无需出国即可享受高水平医疗服务。</p>
+
+      <p><span class="highlight-purple">一台手术照见信任与托付，民心相通孕育着无数合作的可能</span>。在政策层面，中国计划在未来<span class="highlight-green">5年邀请10万名美国青少年</span>赴华交流学习，为中美友好汇聚青春力量；在民间交往层面，<span class="highlight-blue">“玛雅与安第斯古代文明大展”</span>吸引中国民众，马来西亚民众对中国大熊猫倾注深厚感情……</p>
+
+      <p>只有获得民众发自内心的<span class="highlight-blue">价值认同、文化认同</span>，共同体意识才能真正成为<span class="highlight-purple">深入彼此、牢不可破的精神纽带</span>，支撑亚太共同体行稳致远。</p>
+
+      <p>在会议周新闻中心，不同肤色、来自不同经济体的新闻记者，用不同的语言向民众讲述同一个故事——我们的故事、亚太的故事。这个场景，正是亚太共同体的具象呈现。<span class="highlight-gold">同在一条船上，涵养共同体意识，亚太大家庭成员才能经受住太平洋的风浪，共同驶向更为开阔的水域</span>。</p>
+
+      <p class="byline">（人民日报2026年11月21日 第04版 · 人民论坛）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>以合作谋共享之福，再没有比惠及普通人的生活更有说服力。</b>——写‘合作共赢／惠民共享’是破题金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主席语</span>
+      <p><b>持续培育共同体意识。</b>——写‘亚太共同体／人类命运共同体’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>建设亚太共同体，不仅要拉紧共同利益纽带，更要筑牢共同精神纽带。</b>——写‘利益与精神／物质与认同’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·伙伴</span>
+      <p><b>志同道合，是伙伴。求同存异，也是伙伴。</b>——写‘包容发展／求同存异’是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·交融</span>
+      <p><b>你中有我、我中有你，亚太经济发展利益交融、和合共生。</b>——写‘利益交融／和合共生’是规范金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·开放</span>
+      <p><b>让开放更高效，让融合更深入，让合作更紧密。</b>——写‘高水平开放／互利共赢’是排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·担当</span>
+      <p><b>勠力同心、守望相助。</b>——写‘团结合作／命运与共’是四字金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·根基</span>
+      <p><b>促进民众相知相亲，是培育共同体意识最深厚的根基。</b>——写‘民心相通／民心工程’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·托付</span>
+      <p><b>一台手术照见信任与托付，民心相通孕育着无数合作的可能。</b>——写‘民心相通／信任’是形象金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·认同</span>
+      <p><b>只有获得民众发自内心的价值认同、文化认同，共同体意识才能真正成为深入彼此、牢不可破的精神纽带。</b>——写‘价值认同／文化认同’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>同在一条船上，涵养共同体意识，亚太大家庭成员才能经受住太平洋的风浪，共同驶向更为开阔的水域。</b>——写‘同舟共济／命运共同体’是比喻收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以两个普通人故事破题，引APEC主席讲话定调，用“升级互联互通—坚持包容发展—促进民心相亲”三层并列推进（恰好对应硬联通／软联通／心联通），以“同在一条船上”比喻升华，适用于“合作共赢／对外开放／人类命运共同体”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组：分论一写互联互通（雅万高铁＋中越合作区，硬软联通），分论二写包容发展（求同存异＋经贸交融＋深圳倡议），分论三写民心相亲（5G手术＋青年交流＋人文互鉴）。三组构成“硬件—规则—人心”的递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“培育共同体意识”拆要点：升级互联互通（设施硬联通、规则软联通）、坚持包容发展（求同存异、照顾舒适度）、促进民心相亲（价值认同、文化认同），配雅万高铁、中越合作区、5G手术等案例。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“不仅拉紧共同利益纽带，更要筑牢共同精神纽带”“硬联通、软联通，通向的是更为密切的心联通”“利益交融、和合共生”的转化式写法，把“利益—精神”“硬—软—心”写成对立统一、层层递进的辩证段落。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“志同道合，是伙伴。求同存异，也是伙伴”可作包容论点；“你中有我、我中有你”可作交融论证；“同在一条船上……驶向更为开阔的水域”可作结尾升华；“勠力同心、守望相助”可作命运共同体论证。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「同在一条船上，就要有“共同体意识”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是互联互通、硬软并举。培育共同体意识，在升级互联互通，以设施“硬联通”和规则“软联通”拉近空间距离、促进要素流动。<br>二是包容发展、求同存异。培育共同体意识，在坚持包容发展，照顾各方舒适度，在互利共赢中勠力同心、守望相助。<br>三是民心相亲、心联相通。培育共同体意识，在促进民心相亲，以民众相知相亲筑牢最深厚的价值认同根基。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「建设亚太共同体，持续培育共同体意识，不仅要拉紧共同利益纽带，更要筑牢共同精神纽带，以合作谋共享之福，同在一条船上，涵养共同体意识，亚太大家庭成员才能经受住太平洋的风浪，共同驶向更为开阔的水域。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是互联互通、硬软并举——培育共同体意识，在升级互联互通，以设施“硬联通”和规则“软联通”拉近空间距离、促进要素流动。<br>二是包容发展、求同存异——培育共同体意识，在坚持包容发展，照顾各方舒适度，在互利共赢中勠力同心、守望相助。<br>三是民心相亲、心联相通——培育共同体意识，在促进民心相亲，以民众相知相亲筑牢最深厚的价值认同根基。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：以合作谋共享之福，再没有比惠及普通人的生活更有说服力</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「同在一条船上，就要有“共同体意识”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以基础设施“硬联通”拉近空间距离、以制度规则“软联通”促进要素流动。<br>二是坚持求同存异、照顾各方舒适度，推进合作不强求整齐划一。<br>三是削减非关税壁垒、支持亚太自贸区建设、深化“人工智能+”合作。<br>四是促进民众相知相亲，扩大青年交流与人文互鉴。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：以合作谋共享之福，再没有比惠及普通人的生活更有说服力</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于同在一条船上，就要有“共同体意识”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于同在一条船上，就要有“共同体意识”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进同在一条船上，就要有“共同体意识”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、互联互通、硬软并举——培育共同体意识，在升级互联互通，以设施“硬联通”和规则“软联通”拉近空间距离、促进要素流动。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、包容发展、求同存异——培育共同体意识，在坚持包容发展，照顾各方舒适度，在互利共赢中勠力同心、守望相助。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、民心相亲、心联相通——培育共同体意识，在促进民心相亲，以民众相知相亲筑牢最深厚的价值认同根基。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：以合作谋共享之福，再没有比惠及普通人的生活更有说服力</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「同在一条船上，就要有“共同体意识”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：同在一条船上，就要有“共同体意识”<br><br>时代之问，呼唤破题之策。同在一条船上，就要有“共同体意识”，是发展所需，也是民心所向。可从三个维度展开：互联互通、硬软并举、包容发展、求同存异、民心相亲、心联相通。<br><br>分论点一：互联互通、硬软并举——培育共同体意识，在升级互联互通，以设施“硬联通”和规则“软联通”拉近空间距离、促进要素流动。方向对了，路再远也能抵达。以合作谋共享之福，再没有比惠及普通人的生活更有说服力<br><br>分论点二：包容发展、求同存异——培育共同体意识，在坚持包容发展，照顾各方舒适度，在互利共赢中勠力同心、守望相助。方法对了，事再难也能办成。持续培育共同体意识<br><br>分论点三：民心相亲、心联相通——培育共同体意识，在促进民心相亲，以民众相知相亲筑牢最深厚的价值认同根基。行百里者半九十。建设亚太共同体，不仅要拉紧共同利益纽带，更要筑牢共同精神纽带保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。同在一条船上，就要有“共同体意识”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-21</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
