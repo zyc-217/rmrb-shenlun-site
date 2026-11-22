@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 从“一呼百应”读懂人心力量</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>从“一呼百应”读懂人心力量</h1>
+    <div class="meta">人民日报·人民论坛 | 全面从严治党·以人民为中心·党群信任·社会号召力·作风建设 | 2026年11月13日 | 第04版</div>
+    <div class="meta" style="margin-top:4px;">主题：全面从严治党／以人民为中心／党的自我革命／党群关系／群众信任／社会号召力／作风建设／一呼百应</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">全面从严治党</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">党的自我革命</span>
+      <span class="tag-item">党群关系</span>
+      <span class="tag-item">群众信任</span>
+      <span class="tag-item">社会号召力</span>
+      <span class="tag-item">作风建设</span>
+      <span class="tag-item">一呼百应</span>
+      <span class="tag-item">血肉联系</span>
+      <span class="tag-item">初心使命</span>
+      <span class="tag-item">人民至上</span>
+      <span class="tag-item">政治建设</span>
+      <span class="tag-item">共同富裕</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">志愿服务</span>
+      <span class="tag-item">万企兴万村</span>
+      <span class="tag-item">公信力</span>
+      <span class="tag-item">同心同德</span>
+      <span class="tag-item">实干担当</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>全面从严治党／以人民为中心／党群关系／凝聚力</b>”等主题；本文以二十届五中全会为窗口、以治沙“绿色围脖”为观察点破题，用“信得过—干劲足—成事力”三层递进推进，是写“党群干群关系／治国理政”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章”</b>——表层讲号召力，深层揭示“喊得动因信得过、信得过故干劲足”的信任逻辑与作风根基。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“我们党赢得群众信任、凝聚人心的主要做法”，从立好形象树好口碑、刀刃向内正风肃纪、保持血肉联系、常抓不懈久久为功等方面归纳。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>以全面从严治党立好形象、树好口碑，筑牢信任基石</b>／<b>以刀刃向内保持先进性纯洁性、锤炼作风，增强行动力引导力</b>／<b>始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲</b>／<b>在常抓不懈中守护、在久久为功中加固党群联系</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（发言稿／倡议书）可作“凝心聚力跟党走”主题发言稿，或“永葆同人民群众血肉联系”倡议书。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：信得过／干劲足／成事力—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以党的二十届五中全会引发国际社会热议破题，引外国专家评价与“观察一棵树”的治沙观察点，铺陈植绿护绿、“万企兴万村”、超2.4亿“志愿红”等一呼百应现象，设问“为什么我们党总能一呼百应”（第1—9段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出总论点——成事的底气在于始终保持党同人民群众的血肉联系，持之以恒推进全面从严治党，除积弊、正风气、聚人心（第17—19段凝练，总论点色块前置）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>“喊得动”是因为“信得过”——全面从严治党扎实推进，党的好形象立起来、好口碑树起来，优良作风成为信任最坚固的基石</b>（第10—11段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>“信得过”所以“干劲足”——以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，一句句民生承诺落地生根</b>（第12—13段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>信任与默契化作成事力量——始终保持党同人民群众的血肉联系，思想引领、制度长牙、群众出力，把根扎得更深、汇聚干劲跨越万难</b>（第14—17段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”结构：分论点按“信得过—干劲足—成事力”层层递进，以习近平总书记语与“全面从严治党永远在路上”收束升华。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】从“一呼百应”读懂人心力量，成事的底气就在于<span class="highlight-purple">始终保持党同人民群众的血肉联系</span>，<span class="highlight-blue">持之以恒推进全面从严治党</span>，<span class="highlight-gold">除的是积弊、正的是风气、聚的是人心</span>，把亿万人民的干劲汇聚到一起，就没有跨不过的坎、办不成的事。</div>
+
+      <p>党的二十届五中全会召开，引发国际社会热议。不少人透过全会的窗口，进一步读懂<span class="highlight-gold">“中国共产党为什么能”</span>。</p>
+
+      <p>有外国专家这样评价：<span class="highlight-gold">“持之以恒推进全面从严治党，对增进公众信任、提升公共机构效能、确保工作始终聚焦国家发展和人民福祉至关重要。”</span></p>
+
+      <p><span class="highlight-purple">观察“一棵树”，可以看得更加分明。</span></p>
+
+      <p>在<span class="highlight-green">塔克拉玛干织就“绿色围脖”</span>，在黄河<span class="highlight-green">“几字弯”绘就“金沙蓝海绿洲”</span>……从一代代治沙人的躬身坚守，到全民义务植树的同心奔赴，亿万人民用双手让荒原染绿、林海生金。如今，我国成为<span class="highlight-green">全球增绿最多最快的国家</span>，<span class="highlight-blue">中国式现代化</span>的绿色底色更加亮丽。</p>
+
+      <p><span class="highlight-purple">植绿护绿“蔚然成风”，恰是我们党一呼百应的生动缩影。</span></p>
+
+      <p><span class="highlight-blue">“促进农民农村共同富裕”</span>。“十四五”时期，<span class="highlight-green">23.51万家民营企业</span>行动起来，<span class="highlight-blue">“万企兴万村”</span>汇聚产业投资额<span class="highlight-green">1.23万亿元</span>，惠及<span class="highlight-green">16.19万个村</span>。</p>
+
+      <p><span class="highlight-blue">“传递真善美，传播正能量”</span>。火热景点、赛事场馆、街头巷尾，无论青年、银龄，<span class="highlight-green">超2.4亿的“志愿红”</span>擦亮社会底色，共助发展向上向善。</p>
+
+      <p><span class="highlight-gold">一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章。</span></p>
+
+      <p>为什么我们党总能一呼百应？</p>
+
+      <div class="sub-thesis">【分论点一】喊得动、信得过——“喊得动”是因为“信得过”，全面从严治党立好形象、树好口碑，优良作风成为信任最坚固的基石。</div>
+
+      <p><span class="highlight-gold">“喊得动”是因为“信得过”</span>。从脱贫攻坚战到蓝天保卫战，每一次“呼”都切中群众所盼；从抢险救灾“冲在前”到推动发展“干在先”，每一次“呼”都收获群众跟随。</p>
+
+      <p>新时代以来，<span class="highlight-blue">全面从严治党</span>扎实推进，党的好形象立起来、好口碑树起来，<span class="highlight-gold">优良作风成为信任最坚固的基石</span>。</p>
+
+      <div class="sub-thesis">【分论点二】信得过、干劲足——“信得过”所以“干劲足”，以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，民生承诺落地生根。</div>
+
+      <p><span class="highlight-gold">“信得过”所以“干劲足”</span>。反腐紧盯“餐桌”“车轮”，抓实经济数据“挤干水分”，基层减负“轻车壮马”……以<span class="highlight-blue">刀刃向内</span>保持<span class="highlight-blue">先进性、纯洁性</span>，以锤炼作风增强<span class="highlight-blue">行动力、引导力</span>，一句句民生承诺落地生根、一桩桩人民期许化为现实。</p>
+
+      <p>干部作风正、百姓心气顺，对党和政府的信任日积月累、愈发深厚，便有了“一呼百应”里<span class="highlight-purple">同心同德、同向同行</span>的默契。</p>
+
+      <div class="sub-thesis">【分论点三】聚人心、成伟力——这份信任与默契化作成事力量，始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。</div>
+
+      <p>这份信任与默契，落到干事创业的实践里，便化作成事的力量。</p>
+
+      <p>何以增绿最多最快？以<span class="highlight-blue">“绿水青山就是金山银山”</span>为共识，不少“砍树人”变“护树人”，中央生态环保督察持续开展……<span class="highlight-blue">思想引领、制度长牙、群众出力</span>，共同创造绿色奇迹、增添发展优势。</p>
+
+      <p>何以创新力上升最快？坚决破除科研生态中的顽瘴痼疾，以<span class="highlight-blue">“破四唯”“立新标”</span>激发人才积极性，充分释放各方潜能，促使创新创造不断涌现。</p>
+
+      <p>说到底，成事的底气，就在于<span class="highlight-purple">始终保持党同人民群众的血肉联系</span>。持之以恒推进全面从严治党，<span class="highlight-purple">把根扎得更深</span>，<span class="highlight-gold">把亿万人民的干劲汇聚到一起，就没有跨不过的坎、办不成的事</span>。</p>
+
+      <p>习近平总书记强调：<span class="highlight-gold">“办好中国的事情，关键在党，关键在全面从严治党。”</span></p>
+
+      <p>新时代全面从严治党，<span class="highlight-gold">除的是积弊、正的是风气、聚的是人心</span>。但<span class="highlight-purple">凝聚人心不是一劳永逸的</span>，党同人民群众的血肉联系，需要在<span class="highlight-purple">常抓不懈中守护、在久久为功中加固</span>。由此更能理解为何<span class="highlight-blue">“全面从严治党永远在路上”</span>。</p>
+
+      <p><span class="highlight-gold">始终同人民站在一起、想在一起、干在一起</span>，让党的旗帜在每一片阵地都高高飘扬，<span class="highlight-gold">旗帜所向、奋力以往</span>。</p>
+
+      <p class="byline">（人民日报2026年11月13日 第04版 · 人民论坛）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破题</span>
+      <p><b>一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章。</b>——写‘党群关系／社会号召力’是破题金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总书记语</span>
+      <p><b>办好中国的事情，关键在党，关键在全面从严治党。</b>——写‘党的领导／全面从严治党’是总书记金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·信任</span>
+      <p><b>“喊得动”是因为“信得过”。</b>——写‘公信力／作风建设’是因果判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·干劲</span>
+      <p><b>“信得过”所以“干劲足”。</b>——写‘凝心聚力／民心’是递进金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·作风</span>
+      <p><b>优良作风成为信任最坚固的基石。</b>——写‘作风建设／信任根基’是比喻金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·成事</span>
+      <p><b>这份信任与默契，落到干事创业的实践里，便化作成事的力量。</b>——写‘团结／凝聚力’是转化式金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·根本</span>
+      <p><b>成事的底气，就在于始终保持党同人民群众的血肉联系。</b>——写‘以人民为中心／党群关系’是根本判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·力量</span>
+      <p><b>把根扎得更深，把亿万人民的干劲汇聚到一起，就没有跨不过的坎、办不成的事。</b>——写‘人民力量／攻坚克难’是排比收束金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>除的是积弊、正的是风气、聚的是人心。</b>——写‘自我革命／全面从严治党’是三字排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·长效</span>
+      <p><b>凝聚人心不是一劳永逸的，需要在常抓不懈中守护、在久久为功中加固。</b>——写‘长效机制／常抓不懈’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>始终同人民站在一起、想在一起、干在一起，旗帜所向、奋力以往。</b>——写‘人民至上／同心同德’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以二十届五中全会与治沙观察点破题，用“喊得动因信得过—信得过故干劲足—信任默契化作成事力量”三层递进推进，引总书记语与“永远在路上”收束，适用于“全面从严治党／党群关系／凝聚力”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组递进式分论点：分论一写信任根基（形象口碑／作风基石），分论二写行动转化（刀刃向内／民生落地），分论三写成事合力（血肉联系／汇聚干劲）。三组构成“信—行—效”的因果递进。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“凝聚人心”拆要点：全面从严治党立形象树口碑、刀刃向内正风肃纪、保持党同人民群众血肉联系、常抓不懈久久为功，配“万企兴万村”、超2.4亿“志愿红”等案例。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“凝聚人心不是一劳永逸的，需要在常抓不懈中守护、在久久为功中加固”“除的是积弊、正的是风气、聚的是人心”的辩证写法，把“破与立、一时与长远”写成对立统一、层层加固的论证。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“喊得动是因为信得过／信得过所以干劲足”可作因果论点；“优良作风成为信任最坚固的基石”可作作风论证；“把根扎得更深……没有跨不过的坎”可作结尾升华；“办好中国的事情，关键在党”可作引题。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「从“一呼百应”读懂人心力量」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是喊得动、信得过。“喊得动”是因为“信得过”，全面从严治党立好形象、树好口碑，优良作风成为信任最坚固的基石。<br>二是信得过、干劲足。“信得过”所以“干劲足”，以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，民生承诺落地生根。<br>三是聚人心、成伟力。这份信任与默契化作成事力量，始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「从“一呼百应”读懂人心力量，成事的底气就在于始终保持党同人民群众的血肉联系，持之以恒推进全面从严治党，除的是积弊、正的是风气、聚的是人心，把亿万人民的干劲汇聚到一起，就没有跨不过的坎、办不成的事。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是喊得动、信得过——“喊得动”是因为“信得过”，全面从严治党立好形象、树好口碑，优良作风成为信任最坚固的基石。<br>二是信得过、干劲足——“信得过”所以“干劲足”，以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，民生承诺落地生根。<br>三是聚人心、成伟力——这份信任与默契化作成事力量，始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「从“一呼百应”读懂人心力量」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以全面从严治党立好形象、树好口碑，筑牢信任基石。<br>二是以刀刃向内保持先进性纯洁性、锤炼作风，增强行动力引导力。<br>三是始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。<br>四是在常抓不懈中守护、在久久为功中加固党群联系。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于从“一呼百应”读懂人心力量的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于从“一呼百应”读懂人心力量的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进从“一呼百应”读懂人心力量，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、喊得动、信得过——“喊得动”是因为“信得过”，全面从严治党立好形象、树好口碑，优良作风成为信任最坚固的基石。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、信得过、干劲足——“信得过”所以“干劲足”，以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，民生承诺落地生根。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、聚人心、成伟力——这份信任与默契化作成事力量，始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「从“一呼百应”读懂人心力量」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：从“一呼百应”读懂人心力量<br><br>时代之问，呼唤破题之策。从“一呼百应”读懂人心力量，是发展所需，也是民心所向。可从三个维度展开：喊得动、信得过、信得过、干劲足、聚人心、成伟力。<br><br>分论点一：喊得动、信得过——“喊得动”是因为“信得过”，全面从严治党立好形象、树好口碑，优良作风成为信任最坚固的基石。方向对了，路再远也能抵达。一呼百应，是党领导人民干事创业的独特叙事，亦是彰显强大社会号召力的动人篇章<br><br>分论点二：信得过、干劲足——“信得过”所以“干劲足”，以刀刃向内保持先进性纯洁性、锤炼作风增强行动力引导力，民生承诺落地生根。方法对了，事再难也能办成。办好中国的事情，关键在党，关键在全面从严治党<br><br>分论点三：聚人心、成伟力——这份信任与默契化作成事力量，始终保持党同人民群众的血肉联系，把根扎得更深、汇聚亿万人民干劲。行百里者半九十。“喊得动”是因为“信得过”保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。从“一呼百应”读懂人心力量是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-22</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
