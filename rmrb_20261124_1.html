@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 中国新能源汽车是给世界“做蛋糕”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>中国新能源汽车是给世界“做蛋糕”</h1>
+    <div class="meta">人民日报·人民时评 | 新能源汽车·开放合作·互利共赢·供给侧创新·绿色转型·人类命运共同体 | 2026年11月24日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：新能源汽车／开放合作／互利共赢／供给侧创新／绿色转型／良性竞争／产业链协同／人类命运共同体</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">新能源汽车</span>
+      <span class="tag-item">开放合作</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">供给侧创新</span>
+      <span class="tag-item">市场需求</span>
+      <span class="tag-item">绿色转型</span>
+      <span class="tag-item">低碳发展</span>
+      <span class="tag-item">良性竞争</span>
+      <span class="tag-item">零和博弈</span>
+      <span class="tag-item">产业链协同</span>
+      <span class="tag-item">全球治理</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">国际传播</span>
+      <span class="tag-item">中国制造</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">创新驱动</span>
+      <span class="tag-item">优势互补</span>
+      <span class="tag-item">共同发展</span>
+      <span class="tag-item">胸怀天下</span>
+      <span class="tag-item">大国担当</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>开放合作／互利共赢／中国制造／人类命运共同体</b>”等主题；本文以驳“抢蛋糕”论破题，用“做大蛋糕—良性竞争—协同共赢”三层推进，是写“开放发展／大国担当”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“给世界做蛋糕，而非抢蛋糕”</b>——表层讲新能源汽车出口，深层揭示以供给侧创新做大全球市场、以开放合作实现互利共赢的发展观。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“中国新能源汽车给世界带来什么”：高性价比产品降低购车门槛、供给侧创新拓展市场需求、优势互补助全球产业打破瓶颈、拉动上下游产业链协同演进、以车网互动催生新产业生态。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>以供给侧创新激活潜在需求，做大全球市场增量</b>／<b>以良性竞争激发产业活力，反对以封闭保护既有份额</b>／<b>以开放汇聚优势、以合作拓展增量，与各国车企优势互补</b>／<b>以产业链协同和车网互动催生新产业生态</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“开放合作、共赢未来”主题倡议书，或“中国新能源汽车与世界共成长”论坛发言稿。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：做大蛋糕／良性竞争／协同共赢—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以巴黎车展、武汉车展、进博会三场展会破题，摆出中国车企与全球伙伴携手发展的潜力；随即驳西方舆论“威胁论”“抢蛋糕”说，设问“真是如此吗”（第1—6段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出总论点——衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇；全球市场蛋糕在创新与合作中不断做大（第7—8段、末段色块前置）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>做大蛋糕——市场需求并非一成不变，以供给侧创新激活潜在需求，用高性价比产品降低门槛、拓展需求</b>（第9—11段、前接分论点色块，含“70%”数据）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>良性竞争——开放竞争不该等同于风险威胁，以良性竞争激发活力，用优势互补筑牢绿色低碳底座</b>（第12—14段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>协同共赢——新赛道不用零和博弈旧思维，以产业链协同、车网互动与外国车企一起做大蛋糕</b>（第15—18段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点对应“创新—竞争—共赢”递进链，行文先立后驳、破立结合；数据引国际能源署，末段以“开放汇聚优势、合作拓展增量”升华收束。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】衡量中国新能源汽车对世界的影响，<span class="highlight-blue">既要看出口了多少产品</span>，也要看<span class="highlight-gold">催生、带动了多少产业机遇</span>；<span class="highlight-purple">全球汽车市场的“蛋糕”在创新与合作中不断做大</span>，中国新能源汽车是给世界“<span class="highlight-gold">做蛋糕</span>”，而非“抢蛋糕”。</div>
+
+      <p>衡量中国新能源汽车对世界的影响，<span class="highlight-blue">既要看出口了多少产品</span>，也要看<span class="highlight-gold">催生、带动了多少产业机遇</span>。</p>
+
+      <p>近期的几场展会上，中国新能源汽车产业备受瞩目。</p>
+
+      <p>巴黎国际车展，<span class="highlight-green">16家</span>中国车企携<span class="highlight-green">25个品牌</span>参展，约占全部参展汽车品牌的<span class="highlight-green">四成</span>，并集中展示动力电池、超快充、智能驾驶等领域的创新成果。</p>
+
+      <p>第二十六届武汉国际车展，主流品牌“上新”车型、多项前沿技术同步亮相。</p>
+
+      <p>第九届进博会“汽车及智慧出行展区”，外国车企纷纷展出在中国的研发成果，越来越多外国车企选择同中国汽车市场与研发“<span class="highlight-blue">深度融合</span>”。</p>
+
+      <p>从整车产品到电池技术，再到产业链合作，透过这些展会，不仅能看到中国新能源汽车产品的竞争力，更能看到<span class="highlight-purple">中国车企与全球伙伴携手发展的潜力</span>。</p>
+
+      <p>然而，一些西方舆论却借此炒作，试图将中国新能源汽车的发展渲染为“威胁”，把产业竞争简单归结为“<span class="highlight-purple">抢蛋糕</span>”。真是如此吗？</p>
+
+      <p>这样的判断，忽视了一个基本事实：技术在进步，需求在变化，全球汽车市场的“蛋糕”也在<span class="highlight-purple">创新与合作中不断做大</span>。</p>
+
+      <div class="sub-thesis">【分论点一】做大蛋糕——以供给侧创新激活潜在需求，用高性价比产品拓展全球市场。</div>
+
+      <p>应该看到，<span class="highlight-purple">市场需求并非一成不变</span>。经济增长的一个重要动力，就来源于<span class="highlight-blue">供给侧创新</span>所激活的潜在需求。</p>
+
+      <p>过去，高昂的研发成本与电池组件价格，让新能源汽车成为高不可攀的“奢侈品”。而中国车企依托成熟供应链体系，提供大量高性价比产品，大幅降低了消费者购车与用车门槛。</p>
+
+      <p>国际能源署数据显示，<span class="highlight-green">2025年</span>，中国销售的纯电动车中，约<span class="highlight-green">70%</span>的车型售价已低于同级燃油车的平均水平。伴随着中国新能源汽车走向世界，全球更多消费者有机会用上智能化程度高、安全性能好、性价比高的新能源车。这也进一步拓展了市场需求。</p>
+
+      <div class="sub-thesis">【分论点二】良性竞争——开放竞争不该等同于风险威胁，以良性竞争激发产业活力。</div>
+
+      <p><span class="highlight-purple">开放竞争不该等同于风险威胁</span>。应对全球气候变化、推动交通领域<span class="highlight-blue">脱碳降碳</span>，是全人类的共同责任。有的国家和地区虽早早提出绿色转型目标，却因高成本与慢迭代而进展迟缓。面对转型阵痛，唯有良性竞争方能激发产业活力。</p>
+
+      <p>大众入股小鹏、斯泰兰蒂斯与零跑成立合资企业、雷诺与中国供应商深化合作……这些基于市场选择的<span class="highlight-purple">优势互补</span>，切切实实帮助全球汽车产业打破瓶颈，共同筑牢<span class="highlight-blue">绿色低碳底座</span>。</p>
+
+      <p>竞争压力客观存在，产业调整也需要付出努力，但用封闭来保护既有市场份额，很难培育出能抗风浪的竞争力。<span class="highlight-gold">中国新能源汽车带给世界的不是风险，而是绿色转型的动力</span>。</p>
+
+      <div class="sub-thesis">【分论点三】协同共赢——跳出零和博弈旧思维，以产业链协同与外国车企一起做大蛋糕。</div>
+
+      <p>新赛道的未来不应用你输我赢、<span class="highlight-purple">零和博弈</span>的旧思维来定义。衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇。</p>
+
+      <p>今天的新能源汽车早已超越“发动机+变速箱”的传统范畴，成为融合新能源、电子信息、人工智能与新材料的超级载体，是“<span class="highlight-blue">轮子上的智能终端</span>”与“<span class="highlight-blue">第三生活空间</span>”。中国新能源汽车的发展，不仅没有堵死别人的路，反而拉动上游功率半导体、高精尖材料、算力芯片以及下游充换电基础设施、电池循环回收等庞大<span class="highlight-blue">产业链协同</span>演进。</p>
+
+      <p>更重要的是，<span class="highlight-blue">车网互动</span>等创新，助力中国新能源汽车深度嵌入智慧城市与绿色能源网络，催生全新产业生态。<span class="highlight-gold">中国新能源汽车不是在跟世界“抢蛋糕”，而是跟外国车企一起“做大蛋糕”</span>。</p>
+
+      <p>把中国新能源汽车发展简单归结为“抢蛋糕”，既低估了中国企业的创新格局，也误判了全球汽车产业<span class="highlight-purple">融合发展的历史大势</span>。</p>
+
+      <p><span class="highlight-gold">以开放汇聚优势，以合作拓展增量</span>，全球汽车产业才能在绿色转型中开辟广阔发展空间，让更多企业和消费者从中受益。</p>
+
+      <p class="byline">（人民日报2026年11月24日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇。</b>——写‘开放发展／互利共赢’是总领金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·命题</span>
+      <p><b>技术在进步，需求在变化，全球汽车市场的“蛋糕”也在创新与合作中不断做大。</b>——写‘创新／做大增量’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·需求</span>
+      <p><b>市场需求并非一成不变，经济增长的一个重要动力，就来源于供给侧创新所激活的潜在需求。</b>——写‘供给侧创新／扩大内需’是原理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·竞争</span>
+      <p><b>开放竞争不该等同于风险威胁。</b>——写‘良性竞争／反对保护主义’是短促有力的判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·绿色</span>
+      <p><b>中国新能源汽车带给世界的不是风险，而是绿色转型的动力。</b>——写‘绿色转型／中国贡献’是驳论金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·封闭</span>
+      <p><b>用封闭来保护既有市场份额，很难培育出能抗风浪的竞争力。</b>——写‘开放与封闭／竞争力’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思维</span>
+      <p><b>新赛道的未来不应用你输我赢、零和博弈的旧思维来定义。</b>——写‘共赢／人类命运共同体’是破题金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定位</span>
+      <p><b>今天的新能源汽车早已超越“发动机+变速箱”的传统范畴，成为融合新能源、电子信息、人工智能与新材料的超级载体。</b>——写‘产业融合／新质生产力’是定义金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·共赢</span>
+      <p><b>中国新能源汽车不是在跟世界“抢蛋糕”，而是跟外国车企一起“做大蛋糕”。</b>——写‘互利共赢／开放合作’是核心金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·大势</span>
+      <p><b>把中国新能源汽车发展简单归结为“抢蛋糕”，既低估了中国企业的创新格局，也误判了全球汽车产业融合发展的历史大势。</b>——写‘大势研判／格局’是升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>以开放汇聚优势，以合作拓展增量，全球汽车产业才能在绿色转型中开辟广阔发展空间。</b>——写‘开放合作／共同发展’是收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以三场展会破题、先立后驳，用“做大蛋糕—良性竞争—协同共赢”三层推进，末段以开放合作升华，适用于“开放发展／大国担当”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组递进式分论点：创新（供给侧激活需求）、竞争（良性竞争激发活力）、共赢（产业链协同做大蛋糕），构成“创新—竞争—共赢”的开放发展逻辑链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“中国新能源汽车给世界带来什么”拆要点：高性价比产品降门槛、供给侧创新拓需求、优势互补帮全球产业破瓶颈、拉动上下游产业链协同、车网互动催生新生态，配“70%”等数据。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“市场需求并非一成不变”“开放竞争不该等同于风险威胁”“不是抢蛋糕而是做大蛋糕”的辩证写法，把“需求与供给”“竞争与威胁”“零和与共赢”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“既要看出口了多少产品，也要看催生带动了多少产业机遇”可作开头定调；“开放竞争不该等同于风险威胁”可作分论点支撑；“一起做大蛋糕”可作核心论点；“以开放汇聚优势，以合作拓展增量”可作结尾升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「中国新能源汽车是给世界“做蛋糕”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是做大蛋糕。以供给侧创新激活潜在需求，用高性价比产品拓展全球市场。<br>二是良性竞争。开放竞争不该等同于风险威胁，以良性竞争激发产业活力。<br>三是协同共赢。跳出零和博弈旧思维，以产业链协同与外国车企一起做大蛋糕。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇；全球汽车市场的“蛋糕”在创新与合作中不断做大，中国新能源汽车是给世界“做蛋糕”，而非“抢蛋糕”。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是做大蛋糕——以供给侧创新激活潜在需求，用高性价比产品拓展全球市场。<br>二是良性竞争——开放竞争不该等同于风险威胁，以良性竞争激发产业活力。<br>三是协同共赢——跳出零和博弈旧思维，以产业链协同与外国车企一起做大蛋糕。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「中国新能源汽车是给世界“做蛋糕”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以供给侧创新激活潜在需求，做大全球市场增量。<br>二是以良性竞争激发产业活力，反对以封闭保护既有份额。<br>三是以开放汇聚优势、以合作拓展增量，与各国车企优势互补。<br>四是以产业链协同和车网互动催生新产业生态。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于中国新能源汽车是给世界“做蛋糕”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于中国新能源汽车是给世界“做蛋糕”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进中国新能源汽车是给世界“做蛋糕”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、做大蛋糕——以供给侧创新激活潜在需求，用高性价比产品拓展全球市场。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、良性竞争——开放竞争不该等同于风险威胁，以良性竞争激发产业活力。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、协同共赢——跳出零和博弈旧思维，以产业链协同与外国车企一起做大蛋糕。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「中国新能源汽车是给世界“做蛋糕”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：中国新能源汽车是给世界“做蛋糕”<br><br>时代之问，呼唤破题之策。中国新能源汽车是给世界“做蛋糕”，是发展所需，也是民心所向。可从三个维度展开：做大蛋糕——以供给侧创新激活潜在需求、良性竞争——开放竞争不该等同于风险威、协同共赢——跳出零和博弈旧思维，以产。<br><br>分论点一：做大蛋糕——以供给侧创新激活潜在需求，用高性价比产品拓展全球市场。方向对了，路再远也能抵达。衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇<br><br>分论点二：良性竞争——开放竞争不该等同于风险威胁，以良性竞争激发产业活力。方法对了，事再难也能办成。技术在进步，需求在变化，全球汽车市场的“蛋糕”也在创新与合作中不断做大<br><br>分论点三：协同共赢——跳出零和博弈旧思维，以产业链协同与外国车企一起做大蛋糕。行百里者半九十。市场需求并非一成不变，经济增长的一个重要动力，就来源于供给侧创新所激活的潜在需求保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。中国新能源汽车是给世界“做蛋糕”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-24</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
