@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 治理精度从哪儿来</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>治理精度从哪儿来</h1>
+    <div class="meta">人民日报·人民时评 | 基层治理·精细治理·以人民为中心·公共服务·需求导向·长效机制 | 2026年11月25日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：基层治理／精细治理／以人民为中心／公共服务／治理精度／需求导向／服务型政府／动态适配／长效机制／多元共治</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">精细治理</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">公共服务</span>
+      <span class="tag-item">治理精度</span>
+      <span class="tag-item">需求导向</span>
+      <span class="tag-item">服务型政府</span>
+      <span class="tag-item">便民生活圈</span>
+      <span class="tag-item">动态适配</span>
+      <span class="tag-item">长效机制</span>
+      <span class="tag-item">多元共治</span>
+      <span class="tag-item">协同治理</span>
+      <span class="tag-item">盘活存量</span>
+      <span class="tag-item">分类施策</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">民生关切</span>
+      <span class="tag-item">供给侧改革</span>
+      <span class="tag-item">治理效能</span>
+      <span class="tag-item">共建共享</span>
+      <span class="tag-item">基层治理现代化</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>基层治理／精细治理／以人民为中心／服务型政府</b>”等主题；本文以“需求生长一寸，治理跟进一步”金句破题，用“从场景中来—从适配中来—从机制中来”三层并列推进，是写“基层治理现代化”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“治理精度从哪儿来”</b>——表层讲精细治理的具体做法，深层揭示以人民为中心、供需动态适配、多元主体协同的治理逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“提升基层治理精度的主要做法”：按需订制服务、聚焦一刻钟便民生活圈、盘活存量资源分类施策、潮汐共用空间、引入便民业态、建设骑手友好驿站、多元主体共建长效机制。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>把“镜头”对准真实需求，从具体场景找准治理切口、盘活存量资源</b>／<b>因地制宜、因时制宜，不搞“一刀切”，把握多元利益的平衡点</b>／<b>构建政府搭台、企业唱戏、社会参与的长效机制，让服务可持续、成本可负担、群众可参与</b>／<b>聚焦一刻钟便民生活圈等场景，一圈一策精准供给</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“精细治理、服务群众”主题倡议书，或“提升治理精度”经验交流会发言稿。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：从场景中来／从适配中来／从机制中来—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以“需求生长一寸，治理跟进一步；治理更精细，民生会更暖”金句破题，用江西新余“商家点菜、政府接单”、重庆一刻钟便民生活圈两则报道引出话题（第1—5段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">亮出趋势判断——基层治理从注重“有没有”转向“优不优”，从考虑“我能提供什么”转向“你需要什么、怎样送到你面前”，设问“治理的精细度究竟如何炼成”（第5段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>从满足多元场景中来——治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给从具体场景里长出来</b>（第6—8段、前接分论点色块，北京通州区校园早餐案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>从持续动态适配中来——治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜让治理之手跟着需求的节奏舞动</b>（第9—12段、前接分论点色块，重庆“变脸”路、天津修补小巷案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>从科学优化机制中来——构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制</b>（第13—16段、前接分论点色块，呼和浩特“青蜂舍”骑手驿站案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点均为“从……中来”同构并列，案例均含地名与细节；末段以“良性循环”呼应开头金句收束，形成首尾圆合。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】基层治理的精细度，<span class="highlight-blue">从满足多元场景中来</span>、<span class="highlight-blue">从持续动态适配中来</span>、<span class="highlight-blue">从科学优化机制中来</span>；<span class="highlight-gold">需求生长一寸，治理跟进一步；治理更精细，民生会更暖</span>，<span class="highlight-purple">让基层治理与民生之需在动态互促中形成良性循环</span>。</div>
+
+      <p><span class="highlight-gold">需求生长一寸，治理跟进一步；治理更精细，民生会更暖。</span></p>
+
+      <p>当精细治理成为共识，如何在实践中找准切口与路径，行之有效地把“<span class="highlight-blue">精细</span>”做实？近期两则媒体的报道，给出了生动答案。</p>
+
+      <p>一则是<span class="highlight-green">江西新余</span>的新鲜事：摊主缺啥设备，政府按需免费“定制”。夜市上，有的摊主缺烤炉，有的需冰柜，还有的想要展示柜……相关部门改变“统一发三轮车”的旧思路，让摊主根据自身实际提出具体需求，实现“<span class="highlight-gold">商家点菜、政府接单</span>”。</p>
+
+      <p>另一则是<span class="highlight-green">重庆</span>的日常事：聚焦<span class="highlight-blue">一刻钟便民生活圈</span>升级城市服务，满足居民生活需要。一圈一策、下楼就买，社区、社交、商业在步行可达的半径里融成一片烟火气，中小商超托起便民生活。</p>
+
+      <p>无论是创新举措为摊主着想，还是深入生活为居民服务，都折射一种趋势：<span class="highlight-purple">基层治理的思路，正从注重“有没有”转向“优不优”，从考虑“我能提供什么”转向“你需要什么、怎样送到你面前”</span>。从中，可以思索治理的精细度究竟如何炼成。</p>
+
+      <div class="sub-thesis">【分论点一】从满足多元场景中来——治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给便能从具体场景里长出来。</div>
+
+      <p>治理的出发点是具体的人，而人的需求往往藏于不起眼的日常。早上给孩子吃什么？在<span class="highlight-green">北京通州区</span>，孩子的早餐有了新的打开方式：有的学生走进学校附近的机关食堂用餐，有的则在教室里吃上学校食堂师傅做好的热饭菜。当地<span class="highlight-blue">盘活机关、街道、国企以及校内自有食堂资源，分类施策</span>，让校园早餐有了更多“解法”。</p>
+
+      <p>上前一步、靠近一些，把“镜头”对准真实需求，看见不同个体的难处，想方设法<span class="highlight-blue">盘活存量资源</span>，<span class="highlight-blue">优质的治理供给</span>便能从具体场景里长出来。</p>
+
+      <div class="sub-thesis">【分论点二】从持续动态适配中来——治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜，让治理之手更好跟着需求的节奏舞动。</div>
+
+      <p>治理的精细度在于“<span class="highlight-gold">恰到好处的满足</span>”。从需求侧看，现实诉求是<span class="highlight-purple">分化而非同质的，是动态而非静止的</span>。这就意味着，<span class="highlight-blue">有效治理不是一成不变的，而应是可协商、可完善、可适配的动态体系</span>。</p>
+
+      <p>在<span class="highlight-green">重庆</span>，有条路会“变脸”。白天，这里是<span class="highlight-green">双向八车道</span>的城市主干道；夜晚，又变成潮汐夜市，城市秩序与市井烟火互不妨碍。在<span class="highlight-green">天津</span>，有条小巷“善于”修补。以往，周边居民“小修小补”需求强烈，却苦于找不到地方，<span class="highlight-green">王串场街道</span>盘活闲置铺面，集中引入织补等便民业态，“老手艺”有了去处，群众诉求也有了落点。</p>
+
+      <p><span class="highlight-purple">不搞“一刀切”</span>，而是找准公共资源与群众需求的结合点，把握多元利益的平衡点，<span class="highlight-purple">因地制宜、因时制宜</span>调整治理的侧重点、发力点，才能让治理之手更好跟着需求的节奏舞动。</p>
+
+      <div class="sub-thesis">【分论点三】从科学优化机制中来——构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制。</div>
+
+      <p>基层治理中的问题，常需在多重约束下逐个求解，但又不能陷入“就事论事”的惯性。这就需要构建可持续的<span class="highlight-blue">长效治理机制</span>。</p>
+
+      <p>以“骑手地图”为例，类似信息指南在一些城市并不鲜见。<span class="highlight-green">内蒙古呼和浩特</span>建设“<span class="highlight-blue">青蜂舍</span>”服务驿站，联合商家打造<span class="highlight-green">上百家骑手友好餐厅</span>。</p>
+
+      <p>可见，精细治理并非<span class="highlight-purple">单一主体大包大揽</span>，而是<span class="highlight-blue">政府搭台、企业唱戏、社会参与</span>，形成服务可持续、成本可负担、群众可参与的<span class="highlight-blue">长效机制</span>。</p>
+
+      <p><span class="highlight-blue">基层治理与民生之需，应在动态互促中形成良性循环</span>。<span class="highlight-gold">需求生长一寸，治理跟进一步；治理更精细，民生会更暖</span>——这正是基层治理的动人模样。</p>
+
+      <p class="byline">（人民日报2026年11月25日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>需求生长一寸，治理跟进一步；治理更精细，民生会更暖。</b>——写‘基层治理／民生关切’是总领金句，可作开头钩子与结尾升华。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转向</span>
+      <p><b>基层治理的思路，正从注重“有没有”转向“优不优”，从考虑“我能提供什么”转向“你需要什么、怎样送到你面前”。</b>——写‘服务型政府／需求导向’是趋势判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·出发点</span>
+      <p><b>治理的出发点是具体的人，而人的需求往往藏于不起眼的日常。</b>——写‘以人民为中心／重视细节’是价值金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·供给</span>
+      <p><b>上前一步、靠近一些，把“镜头”对准真实需求，优质的治理供给便能从具体场景里长出来。</b>——写‘精准服务／主动作为’是方法金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·适配</span>
+      <p><b>治理的精细度在于“恰到好处的满足”。</b>——写‘精细治理／适度原则’是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·动态</span>
+      <p><b>有效治理不是一成不变的，而应是可协商、可完善、可适配的动态体系。</b>——写‘动态治理／机制建设’是规范表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>不搞“一刀切”，而是找准公共资源与群众需求的结合点，把握多元利益的平衡点。</b>——写‘因地制宜／精准施策’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·协同</span>
+      <p><b>精细治理并非单一主体大包大揽，而是政府搭台、企业唱戏、社会参与。</b>——写‘多元共治／协同治理’是结构金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·机制</span>
+      <p><b>形成服务可持续、成本可负担、群众可参与的长效机制。</b>——写‘长效机制／共建共享’是落点金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>基层治理与民生之需，应在动态互促中形成良性循环。</b>——写‘良性循环／治理效能’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以“需求生长一寸”金句破题，用“从场景中来—从适配中来—从机制中来”三层并列推进，末段以“良性循环”呼应开头收束，适用于“基层治理／精细治理”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组“从……中来”式分论点：多元场景（出发点是人）、动态适配（恰到好处）、科学机制（长效可持续），构成“发现需求—响应需求—固化需求”的治理链条。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“治理精度从哪儿来”拆要点：按需订制服务、聚焦便民生活圈、盘活存量资源分类施策、潮汐共用空间、引入便民业态、建设骑手友好驿站、多元主体共建长效机制。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“有没有转向优不优”“我能提供什么转向你需要什么”“分化而非同质、动态而非静止”“不搞一刀切”的辩证写法，把“供给与需求”“统一与多样”“静态与动态”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“需求生长一寸，治理跟进一步”可作开头钩子与结尾升华；“恰到好处的满足”可作分论点支撑；“政府搭台、企业唱戏、社会参与”可作对策段总括；“在动态互促中形成良性循环”可作收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「治理精度从哪儿来」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从满足多元场景中来。治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给便能从具体场景里长出来。<br>二是从持续动态适配中来。治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜，让治理之手更好跟着需求的节奏舞动。<br>三是从科学优化机制中来。构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「基层治理的精细度，从满足多元场景中来、从持续动态适配中来、从科学优化机制中来；需求生长一寸，治理跟进一步；治理更精细，民生会更暖，让基层治理与民生之需在动态互促中形成良性循环。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是从满足多元场景中来——治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给便能从具体场景里长出来。<br>二是从持续动态适配中来——治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜，让治理之手更好跟着需求的节奏舞动。<br>三是从科学优化机制中来——构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：需求生长一寸，治理跟进一步；治理更精细，民生会更暖</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「治理精度从哪儿来」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是把“镜头”对准真实需求，从具体场景找准治理切口、盘活存量资源。<br>二是因地制宜、因时制宜，不搞“一刀切”，把握多元利益的平衡点。<br>三是构建政府搭台、企业唱戏、社会参与的长效机制，让服务可持续、成本可负担、群众可参与。<br>四是聚焦一刻钟便民生活圈等场景，一圈一策精准供给。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：需求生长一寸，治理跟进一步；治理更精细，民生会更暖</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于治理精度从哪儿来的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于治理精度从哪儿来的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进治理精度从哪儿来，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、从满足多元场景中来——治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给便能从具体场景里长出来。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、从持续动态适配中来——治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜，让治理之手更好跟着需求的节奏舞动。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、从科学优化机制中来——构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：需求生长一寸，治理跟进一步；治理更精细，民生会更暖</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「治理精度从哪儿来」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：治理精度从哪儿来<br><br>时代之问，呼唤破题之策。治理精度从哪儿来，是发展所需，也是民心所向。可从三个维度展开：从满足多元场景中来、从持续动态适配中来、从科学优化机制中来。<br><br>分论点一：从满足多元场景中来——治理的出发点是具体的人，把“镜头”对准真实需求、盘活存量资源，优质的治理供给便能从具体场景里长出来。方向对了，路再远也能抵达。需求生长一寸，治理跟进一步；治理更精细，民生会更暖。<br><br>分论点二：从持续动态适配中来——治理的精细度在于“恰到好处的满足”，不搞“一刀切”，因地制宜、因时制宜，让治理之手更好跟着需求的节奏舞动。方法对了，事再难也能办成。基层治理的思路，正从注重“有没有”转向“优不优”，从考虑“我能提供什么”转向“你需要什么、怎样送到你面前”。<br><br>分论点三：从科学优化机制中来——构建可持续的长效治理机制，政府搭台、企业唱戏、社会参与，形成服务可持续、成本可负担、群众可参与的长效机制。行百里者半九十。治理的出发点是具体的人，而人的需求往往藏于不起眼的日常。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。治理精度从哪儿来是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-25</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
