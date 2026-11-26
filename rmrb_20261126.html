@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 方寸间何以惠全球</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>方寸间何以惠全球</h1>
+    <div class="meta">人民日报·评论员观察 | 高水平开放·制度型开放·互利共赢·营商环境·超大规模市场·开放红利 | 2026年11月26日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：高水平对外开放／制度型开放／互利共赢／超大规模市场／开放红利／软硬联通／支付便利化／离境退税／企业出海／人类命运共同体</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">高水平对外开放</span>
+      <span class="tag-item">制度型开放</span>
+      <span class="tag-item">互利共赢</span>
+      <span class="tag-item">人类命运共同体</span>
+      <span class="tag-item">营商环境</span>
+      <span class="tag-item">超大规模市场</span>
+      <span class="tag-item">开放红利</span>
+      <span class="tag-item">软联通</span>
+      <span class="tag-item">硬联通</span>
+      <span class="tag-item">支付便利化</span>
+      <span class="tag-item">离境退税</span>
+      <span class="tag-item">企业出海</span>
+      <span class="tag-item">双循环</span>
+      <span class="tag-item">高质量发展</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">稳外贸</span>
+      <span class="tag-item">制度创新</span>
+      <span class="tag-item">城市活力</span>
+      <span class="tag-item">大国气度</span>
+      <span class="tag-item">信任与认同</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>高水平对外开放／互利共赢／中国式现代化</b>”等主题；本文以“方寸间何以惠全球”设问破题，用“人心相通—制度托举—市场共享”三层并列推进，末段以“喜迎八方来客”收束，是写“开放发展”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“方寸间何以惠全球”</b>——表层讲一张收款码、一本小手账的市井故事，深层揭示开放发展红利层层传递、惠及各方的治理逻辑与大国气度。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“中国开放发展利好世界的具体表现”：小档口连接全球客商、支付便利化与离境退税优化、软件联通与硬件基建双向发力、外企在华盈利面扩大、企业出海模式升级、超大规模市场红利惠及各方。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>以软联通与硬基建双向发力，提升支付便利化、过境免签、离境退税等开放便利度</b>／<b>持续优化营商环境，释放超大规模市场的投资和消费潜力</b>／<b>把根基扎牢、把产业做强、把品牌做响、把创新做活，在不确定的变化波动中立得住、行得远</b>／<b>推动企业从产品出口向产业链出海升级，融入并服务当地</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“共享开放机遇、互利共赢”主题倡议书，或“优化营商环境、提升开放能级”经验交流会发言稿。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：人心相通／制度托举／市场共享—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以深圳两家店铺破题——美国人马特的“跨国收银台”面包店、华强北邓贵华的“国际手账”，一张收款码、一本小手账在方寸之间折射开放大势（第1—6段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">设问“中国发展何以利好世界”，点明答案蕴含在“具体而微的故事”里，烟火里的开放温润有力（第7段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>以人心相通汇聚开放引力——开放落于一张张面孔、一次次相遇，人员物流信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过</b>（第8—11段、前接分论点色块，普洱咖啡、义乌小商品案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>以制度精度托举开放深度——不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度</b>（第12—13段、前接分论点色块，240小时过境免签、离境退税即买即退）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>以超大市场共享开放红利——市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业小商户，红利层层传递惠及各方</b>（第14—17段、前接分论点色块，78%外企盈利数据、总书记语）。</span></div>
+        <div class="analysis-item"><span class="label blue">辩证</span><span class="text">在看到开放热度的同时更要正视前路挑战，把根基扎牢、产业做强、品牌做响、创新做活，于不确定中稳住开放基本盘（第18段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点由微观故事到制度支撑再到宏观市场层层递进；末段以“稳定性、协作性、规划性”“信任与认同”呼应设问收束，形成首尾圆合。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】中国发展何以利好世界？答案蕴含在<span class="highlight-gold">具体而微的故事</span>里——一张收款码、一本小手账，在方寸之间折射开放大势：<span class="highlight-blue">以人心相通汇聚开放引力</span>、<span class="highlight-blue">以制度精度托举开放深度</span>、<span class="highlight-blue">以超大规模市场共享开放红利</span>，<span class="highlight-purple">让开放发展的红利层层传递、惠及各方</span>。</div>
+
+      <p><span class="highlight-gold">市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大。</span></p>
+
+      <p><span class="highlight-gold">大市场连着大企业、小商户，开放发展的红利层层传递、惠及各方。</span></p>
+
+      <p><span class="highlight-green">广东深圳</span>，两家店铺值得说道。</p>
+
+      <p>美国人马特，在<span class="highlight-green">蛇口</span>开了一家面包店。一名越南游客掏出手机，扫了扫柜台边的二维码，几秒钟付完款。由于客人来自天南海北，有人把面包店比作“<span class="highlight-gold">跨国收银台</span>”。</p>
+
+      <p>老板邓贵华，在<span class="highlight-green">华强北</span>有间<span class="highlight-green">6平方米</span>的档口和一本“国际手账”。手账不记钱、只记人，珍藏着来自<span class="highlight-green">87个国家和地区、21个APEC经济体</span>的客商与她的合影。</p>
+
+      <p>一张收款码，一本小手账，看似只是市井物件，却在方寸之间折射开放大势。<span class="highlight-purple">支付链条短了，往来门槛低了，人心距离近了</span>，小档口藏着城市活力，也映照大国气度。</p>
+
+      <p>中国发展何以利好世界？这一问题的答案蕴含着<span class="highlight-gold">具体而微的故事</span>，烟火里的开放温润有力。</p>
+
+      <div class="sub-thesis">【分论点一】以人心相通汇聚开放引力——跳出宏大叙事，开放落于一张张面孔、一次次相遇，人员、物流、信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过。</div>
+
+      <p>跳出宏大叙事，“开放”二字往往落于一张张面孔、一次次相遇上。</p>
+
+      <p>马特在深圳生活了<span class="highlight-green">16年</span>，无论街坊熟客还是国际游客，买到的贝果面包，都是来自远方的风味。邓贵华的手账，一张张合影、一页页留言里，有成交的生意，也有万里相隔的缘分。</p>
+
+      <p>这样的故事并不孤立。在<span class="highlight-green">云南普洱市</span>，荷兰人马丁创立咖啡品牌，建立生豆公司，以可持续和公平贸易模式连接咖农与市场，让不同文化、共同收益在一杯咖啡里相融。在<span class="highlight-green">浙江义乌市</span>，乌干达人萨米从小商品生意做起，把中国好物卖到非洲，又把非洲的农产品带到中国，“看世界的‘镜头’就是义乌的镜头”。</p>
+
+      <p><span class="highlight-purple">当海内外的人员、物流、信息流交汇，异乡人渐渐变成自己人，生意往来也沉淀为人心相通。</span>啥是有磁吸力的开放？就是<span class="highlight-gold">人愿意来、留得住、信得过</span>。</p>
+
+      <div class="sub-thesis">【分论点二】以制度精度托举开放深度——不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度。</div>
+
+      <p>不管是生意经还是人情味，都离不开<span class="highlight-blue">政策托举、制度支撑</span>。一次扫码秒付的背后，是各国央行、卡组织和数十款电子钱包的协同。一本手账的背后，是<span class="highlight-blue">支付便利度的提升、离境退税政策的优化</span>，以及高速迭代的产品和完整高效的产业链。</p>
+
+      <p>跨境支付网络从单点接入走向标准互通、<span class="highlight-green">240小时过境免签</span>扩容、离境退税“<span class="highlight-blue">即买即退</span>”提速……正是<span class="highlight-blue">软联通与硬基建的双向发力</span>，把便利送到小店收银台前，让外国游客得以“空箱来、满箱走”。可以说，<span class="highlight-gold">开放的深度，成就于制度的精度、政策的力度</span>。</p>
+
+      <div class="sub-thesis">【分论点三】以超大规模市场共享开放红利——市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业、小商户，红利层层传递、惠及各方。</div>
+
+      <p><span class="highlight-gold">市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大。</span></p>
+
+      <p>先看外企动向。一份对美国在华企业的调查报告显示，<span class="highlight-green">78%的受访企业在2025年度实现盈利，58%的受访企业</span>对未来5年在华营商前景持乐观态度。</p>
+
+      <p>再看企业出海。或布局跨境电商，或建设海外仓，或培育海外品牌，或变产品出口为产业链出海……<span class="highlight-blue">外贸新业态、新模式</span>各有特色，中小微企业各显神通，发展“走出去”渐成融入并服务当地的“走进去”、产业蝶变升级的“走上去”。</p>
+
+      <p>习近平总书记强调：“<span class="highlight-gold">中国将为全球工商界提供超大规模的开放市场。中国是全球第二大消费市场，拥有全球规模最大的中等收入群体，投资和消费潜力巨大。</span>”<span class="highlight-gold">大市场连着大企业、小商户，开放发展的红利层层传递、惠及各方。</span></p>
+
+      <p>在看到开放热度的同时，更要正视前路上的挑战。变乱交织的国际形势下、竞争激烈的市场环境中，仍须持续<span class="highlight-blue">把根基扎牢、把产业做强、把品牌做响、把创新做活</span>，不断实现高质量发展。如此，不管是大厂还是小店，都能稳稳接住海外客流、国际商机，<span class="highlight-purple">在不确定的变化波动中立得住、行得远</span>。</p>
+
+      <p>“许多人开始珍视中国的稳定性、合作姿态和长远规划模式。”从国际人士的视角，再看扫码交易、手账记录，除了<span class="highlight-purple">稳定性、协作性、规划性</span>等可贵品质，值得珍视的还有<span class="highlight-gold">开放发展中积累的信任与认同</span>。</p>
+
+      <p><span class="highlight-gold">开放的中国，喜迎八方来客，连接广阔世界。</span></p>
+
+      <p class="byline">（人民日报2026年11月26日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大。</b>——写‘高水平开放／互利共赢’是总领金句，可作开头钩子与结尾升华。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·红利</span>
+      <p><b>大市场连着大企业、小商户，开放发展的红利层层传递、惠及各方。</b>——写‘超大规模市场／开放红利’是价值判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·折射</span>
+      <p><b>一张收款码，一本小手账，看似只是市井物件，却在方寸之间折射开放大势。</b>——写‘以小见大／开放发展’是叙事金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·磁吸</span>
+      <p><b>啥是有磁吸力的开放？就是人愿意来、留得住、信得过。</b>——写‘开放引力／营商环境’是口语化金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·制度</span>
+      <p><b>开放的深度，成就于制度的精度、政策的力度。</b>——写‘制度型开放／制度支撑’是规范表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·联通</span>
+      <p><b>正是软联通与硬基建的双向发力，把便利送到小店收银台前。</b>——写‘软硬联通／开放便利化’是方法金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·升级</span>
+      <p><b>发展“走出去”渐成融入并服务当地的“走进去”、产业蝶变升级的“走上去”。</b>——写‘企业出海／产业链升级’是递进金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·权威</span>
+      <p><b>中国将为全球工商界提供超大规模的开放市场。</b>——引习近平总书记语，写‘开放中国／大国担当’是权威金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·定力</span>
+      <p><b>把根基扎牢、把产业做强、把品牌做响、把创新做活，在不确定的变化波动中立得住、行得远。</b>——写‘高质量发展／抗风险’是对策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>开放的中国，喜迎八方来客，连接广阔世界。</b>——写‘开放包容／人类命运共同体’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以“方寸间何以惠全球”设问破题，用“人心相通—制度托举—市场共享”三层并列推进，末段以“喜迎八方来客”呼应收束，适用于“高水平开放／互利共赢”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组递进式分论点：人心相通（汇聚开放引力）、制度精度（托举开放深度）、超大市场（共享开放红利），构成“聚人心—强制度—共享红利”的开放逻辑链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“方寸间何以惠全球”拆要点：小档口连接全球客商、支付便利化与离境退税优化、软联通与硬基建双向发力、外企在华盈利面扩大、企业出海模式升级、超大规模市场红利惠及各方。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“方寸之间折射开放大势”“跳出宏大叙事落于一张张面孔”“开放的深度成就于制度的精度”“在不确定中立得住行得远”的辩证写法，把“小与大”“微观与宏观”“热度与挑战”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“市场有多大……腹地就有多大”可作开头钩子与结尾升华；“开放的深度，成就于制度的精度、政策的力度”可作制度段总括；“人愿意来、留得住、信得过”可作对策落点；“喜迎八方来客，连接广阔世界”可作收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「方寸间何以惠全球」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以人心相通汇聚开放引力。跳出宏大叙事，开放落于一张张面孔、一次次相遇，人员、物流、信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过。<br>二是以制度精度托举开放深度。不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度。<br>三是以超大规模市场共享开放红利。市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业、小商户，红利层层传递、惠及各方。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「中国发展何以利好世界？答案蕴含在具体而微的故事里——一张收款码、一本小手账，在方寸之间折射开放大势：以人心相通汇聚开放引力、以制度精度托举开放深度、以超大规模市场共享开放红利，让开放发展的红利层层传递、惠及各方。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以人心相通汇聚开放引力——跳出宏大叙事，开放落于一张张面孔、一次次相遇，人员、物流、信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过。<br>二是以制度精度托举开放深度——不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度。<br>三是以超大规模市场共享开放红利——市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业、小商户，红利层层传递、惠及各方。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「方寸间何以惠全球」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以软联通与硬基建双向发力，提升支付便利化、过境免签、离境退税等开放便利度。<br>二是持续优化营商环境，释放超大规模市场的投资和消费潜力。<br>三是把根基扎牢、把产业做强、把品牌做响、把创新做活，在不确定的变化波动中立得住、行得远。<br>四是推动企业从产品出口向产业链出海升级，融入并服务当地。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于方寸间何以惠全球的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于方寸间何以惠全球的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进方寸间何以惠全球，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、以人心相通汇聚开放引力——跳出宏大叙事，开放落于一张张面孔、一次次相遇，人员、物流、信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以制度精度托举开放深度——不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以超大规模市场共享开放红利——市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业、小商户，红利层层传递、惠及各方。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「方寸间何以惠全球」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：方寸间何以惠全球<br><br>时代之问，呼唤破题之策。方寸间何以惠全球，是发展所需，也是民心所向。可从三个维度展开：以人心相通汇聚开放引力、以制度精度托举开放深度、以超大规模市场共享开放红利。<br><br>分论点一：以人心相通汇聚开放引力——跳出宏大叙事，开放落于一张张面孔、一次次相遇，人员、物流、信息流交汇，异乡人渐渐变成自己人，人愿意来、留得住、信得过。方向对了，路再远也能抵达。市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，互利共赢的机遇就有多大。<br><br>分论点二：以制度精度托举开放深度——不管是生意经还是人情味，都离不开政策托举、制度支撑，软联通与硬基建双向发力，开放的深度成就于制度的精度、政策的力度。方法对了，事再难也能办成。大市场连着大企业、小商户，开放发展的红利层层传递、惠及各方。<br><br>分论点三：以超大规模市场共享开放红利——市场有多大、需求有多大、产业有多大，开放的深厚腹地就有多大，大市场连着大企业、小商户，红利层层传递、惠及各方。行百里者半九十。一张收款码，一本小手账，看似只是市井物件，却在方寸之间折射开放大势。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。方寸间何以惠全球是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-26</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 小地方也可成引才沃土</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>小地方也可成引才沃土</h1>
+    <div class="meta">人民日报·人民时评 | 人才强国·引才留才·因地制宜·事业留人·柔性引才·人才生态·县域发展 | 2026年11月26日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：人才强国／引才留才／人才是第一资源／因地制宜／特色禀赋／事业留人／柔性引才／不求所有但求所用／人才生态／区域协调发展</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">人才强国</span>
+      <span class="tag-item">引才留才</span>
+      <span class="tag-item">人才是第一资源</span>
+      <span class="tag-item">县域发展</span>
+      <span class="tag-item">因地制宜</span>
+      <span class="tag-item">特色禀赋</span>
+      <span class="tag-item">事业留人</span>
+      <span class="tag-item">环境留人</span>
+      <span class="tag-item">柔性引才</span>
+      <span class="tag-item">不求所有但求所用</span>
+      <span class="tag-item">人才评价机制</span>
+      <span class="tag-item">创新创业</span>
+      <span class="tag-item">青年人才</span>
+      <span class="tag-item">比较优势</span>
+      <span class="tag-item">产业链人才</span>
+      <span class="tag-item">人才生态</span>
+      <span class="tag-item">精准招揽</span>
+      <span class="tag-item">耐心育才</span>
+      <span class="tag-item">不拘一格用才</span>
+      <span class="tag-item">区域协调发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>人才强国／引才留才／县域发展</b>”等主题；本文以“事业留人不是口号”立论，用“以特色引才—以服务留才—以开放用才”三层并列推进，末段以“万马奔腾”收束，是写“人才工作”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“小地方也可成引才沃土”</b>——表层讲县域引才留才的具体做法，深层揭示人才与一方水土建立深层联结、地方发展与人才成长双赢的底层逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“县域引才留才的主要做法”：立足特色产业精准摸排需求、放大禀赋优势提供发展路径、把安居作为先手棋解决后顾之忧、以事业平台护航干事创业、完善评价机制、创新柔性引才不求所有但求所用。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>因地制宜、以独特优势引才用才，跳出拼补贴、比待遇的老套路</b>／<b>把安居作为引才先手棋，解决住房、托育等后顾之忧，用贴心服务留住人</b>／<b>实打实为人才干事创业护航，以事业平台和科学评价机制留才</b>／<b>涵养不求所有、但求所用的开放心态，创新柔性引才机制</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“筑巢引凤、广纳英才”主题倡议书，或“县域引才留才经验交流会”发言稿。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：特色引才／服务留才／开放用才—总）</h3>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以大城市与“小地方”的资源对比引出引才留才难题，用江苏仪征大学生创业园、三峡库区“引才图谱”两则新闻破题（第1—3段）。</span></div>
+        <div class="analysis-item"><span class="label">定调</span><span class="text">设问答疑“必然如此吗”，点明关键在“因地制宜，以独特优势引才用才”（第4—5段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>以特色禀赋引才——放大特色禀赋与比较优势，为人才提供清晰发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢</b>（第6—8段、前接分论点色块，重庆奉节脐橙、宁夏中宁枸杞案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>以贴心服务留才——引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结</b>（第9—12段、前接分论点色块，江苏太仓安居与托班、博士刘起鹏案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>以开放心态用才——人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队</b>（第13段、前接分论点色块，贵州柔性引才案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点按“引才—留才—用才”递进；每个分论点均配地名案例与数据，末段以“万马奔腾”呼应中心收束。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】人才是第一资源。<span class="highlight-gold">事业留人不是口号，必须实打实为人才干事创业护航</span>；想要人才安心扎根，就要让人才与一方水土建立深层联结——<span class="highlight-blue">以特色禀赋引才</span>、<span class="highlight-blue">以贴心服务留才</span>、<span class="highlight-blue">以开放心态用才</span>，<span class="highlight-purple">“小地方”也可育出引才留才沃土，成就万马奔腾的发展气象</span>。</div>
+
+      <p><span class="highlight-gold">事业留人不是口号，必须实打实为人才干事创业护航。想要人才安心扎根，就要让人才与一方水土建立深层联结。</span></p>
+
+      <p>大城市，被视为资源富集的高地，对人才有天然吸引力。与之相比，县城、乡镇等“小地方”，过去很长一段时间因为设施短板、薪资待遇偏低等，面临<span class="highlight-blue">引才留才</span>的难题。</p>
+
+      <p>必然如此吗？以大学生创业园为抓手，<span class="highlight-green">江苏仪征</span>打造县域人才强磁场；竞相发布“<span class="highlight-blue">引才图谱</span>”，<span class="highlight-green">三峡库区</span>吸引青年人才“扎堆”……近期，“小地方”的引才留才之道引发媒体关注。</p>
+
+      <p>如何吸引人才？有人说，用才就是留才，把合适的人放到合适的岗位，是有效的留才手段。</p>
+
+      <p>一些在大城与小城之间摇摆的年轻人，更在意的是能否找到施展才华的舞台。有的地方加码政策、提高待遇，却依旧引才难、留才难；有的企业诚心求才、多方招揽，好不容易引来人才，却接不住、用不好。问题的关键，是<span class="highlight-blue">因地制宜，以独特优势引才用才</span>。</p>
+
+      <div class="sub-thesis">【分论点一】以特色禀赋引才——放大特色禀赋与比较优势，为人才提供清晰的发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢。</div>
+
+      <p><span class="highlight-green">重庆奉节</span>，立足脐橙产业发展实际，精准摸排育种研发、文创设计、数字内容等<span class="highlight-green">24类需求</span>，寻找“能够蹲在产业链上”的人才，成功招引各类紧缺人才<span class="highlight-green">数千名</span>。</p>
+
+      <p><span class="highlight-green">宁夏中宁</span>，围绕枸杞产业，紧扣市场供给缺口扶持电商创业者，将县域发展的“空白”转化为青年施展才华的舞台，吸引新农人、设计人才、电商人才纷至沓来。</p>
+
+      <p>青年总是期待实现自我价值。对于县域、小城来说，在人才竞争日趋激烈的当下，尤须转变思维，创新引才方式，<span class="highlight-purple">跳出拼补贴、比待遇的老套路</span>。<span class="highlight-blue">放大特色禀赋与比较优势，致力于为人才提供清晰的发展路径</span>，才能实现地方发展与人才成长的双赢。</p>
+
+      <div class="sub-thesis">【分论点二】以贴心服务留才——引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结。</div>
+
+      <p>引进来，更要留得住。工程项目忌重建设、轻运维，引才亦如此，不能只把功夫下在“引进门”。</p>
+
+      <p>留人，重在留心。住房是不少外地青年扎根异乡的一道坎。<span class="highlight-green">江苏太仓</span>瞄准这一痛点，把安居作为引才“<span class="highlight-blue">先手棋</span>”，优质人才公寓虚位以待、购房优惠同步跟上。同时，考虑到已婚育青年的“带娃”难题，当地推动实现<span class="highlight-blue">暑托、寒托、周末托班全覆盖</span>。精准又贴心的服务，为年轻人解除后顾之忧，展现引才温度。</p>
+
+      <p><span class="highlight-gold">事业留人不是口号，必须实打实为人才干事创业护航。</span>博士毕业于重庆的刘起鹏，<span class="highlight-green">2025年</span>来到位于渝东北三峡库区的梁平区钻研集成电路。得益于良好政策环境和平台，他短短一年便参与建成一条功率模块封测中试产线，推动开发<span class="highlight-green">20款功率模块产品</span>，还获得了发明专利。</p>
+
+      <p><span class="highlight-gold">想要人才安心扎根，就要让人才与一方水土建立深层联结。</span>产业能聚才，<span class="highlight-blue">科学的评价机制</span>能留才。<span class="highlight-purple">生态环境、人文底蕴、民生保障等方方面面，只要突出特色、做精做优，都是良好人才环境的构成因子。</span></p>
+
+      <div class="sub-thesis">【分论点三】以开放心态用才——人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队。</div>
+
+      <p>其实，<span class="highlight-purple">人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，就能赢得更多人才青睐</span>。比如，<span class="highlight-green">贵州</span>创新<span class="highlight-blue">柔性引才机制</span>，<span class="highlight-gold">不求常在、但求有为</span>，围绕现代化产业体系重点领域，梳理关键技术难题，让高层次科技创新人才冲着技术攻关来。以贵州民族大学为例，表面上只引进<span class="highlight-green">4名非全职专家</span>，但其带来的资源、撬动的力量远超预期，留下的是“<span class="highlight-gold">带不走</span>”的团队。</p>
+
+      <p>人才是第一资源。厚植优势，精准招揽，<span class="highlight-blue">用心留才、耐心育才、不拘一格用才</span>，<span class="highlight-gold">“小地方”也可育出引才留才沃土，成就万马奔腾的发展气象</span>。</p>
+
+      <p class="byline">（人民日报2026年11月26日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>事业留人不是口号，必须实打实为人才干事创业护航。</b>——写‘人才强国／事业留人’是总领金句，可作开头与对策段总括。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·联结</span>
+      <p><b>想要人才安心扎根，就要让人才与一方水土建立深层联结。</b>——写‘环境留人／情感纽带’是价值金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·关键</span>
+      <p><b>问题的关键，是要因地制宜，以独特优势引才用才。</b>——写‘因地制宜／精准引才’是判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·破套</span>
+      <p><b>跳出拼补贴、比待遇的老套路，放大特色禀赋与比较优势。</b>——写‘转变思维／比较优势’是方法金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·留心</span>
+      <p><b>引进来，更要留得住；留人，重在留心。</b>——写‘留才环境／服务保障’是对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·先手</span>
+      <p><b>把安居作为引才“先手棋”，精准又贴心的服务展现引才温度。</b>——写‘住房保障／民生温度’是表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·护航</span>
+      <p><b>产业能聚才，科学的评价机制能留才。</b>——写‘人才评价／制度留人’是规范金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·辩证</span>
+      <p><b>人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态。</b>——写‘柔性引才／开放用才’是辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·柔性</span>
+      <p><b>不求常在、但求有为，留下的是“带不走”的团队。</b>——写‘柔性引才／资源共享’是哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·收束</span>
+      <p><b>“小地方”也可育出引才留才沃土，成就万马奔腾的发展气象。</b>——写‘人才生态／区域发展’是升华金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以“事业留人不是口号”破题，用“以特色引才—以服务留才—以开放用才”三层并列推进，末段以“万马奔腾”呼应收束，适用于“人才强国／县域发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组“以……才”式分论点：以特色禀赋引才、以贴心服务留才、以开放心态用才，构成“引得来—留得住—用得好”的人才工作链条。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“小地方也可成引才沃土”拆要点：立足特色产业精准摸排需求、放大禀赋优势提供发展路径、把安居作为先手棋解决后顾之忧、以事业平台护航干事创业、完善评价机制、创新柔性引才不求所有但求所用。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“大城市与小地方”“引进来与留得住”“不求所有、但求所用”“常驻哪里并不重要”的辩证写法，把“大与小”“引与留”“所有与所用”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“事业留人不是口号”可作开头钩子与对策总括；“留人重在留心”可作分论点支撑；“不求所有、但求所用”可作对策段总括；“万马奔腾的发展气象”可作收束。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「小地方也可成引才沃土」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以特色禀赋引才。放大特色禀赋与比较优势，为人才提供清晰的发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢。<br>二是以贴心服务留才。引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结。<br>三是以开放心态用才。人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「人才是第一资源。事业留人不是口号，必须实打实为人才干事创业护航；想要人才安心扎根，就要让人才与一方水土建立深层联结——以特色禀赋引才、以贴心服务留才、以开放心态用才，“小地方”也可育出引才留才沃土，成就万马奔腾的发展气象。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是以特色禀赋引才——放大特色禀赋与比较优势，为人才提供清晰的发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢。<br>二是以贴心服务留才——引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结。<br>三是以开放心态用才——人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：事业留人不是口号，必须实打实为人才干事创业护航</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「小地方也可成引才沃土」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是因地制宜、以独特优势引才用才，跳出拼补贴、比待遇的老套路。<br>二是把安居作为引才先手棋，解决住房、托育等后顾之忧，用贴心服务留住人。<br>三是实打实为人才干事创业护航，以事业平台和科学评价机制留才。<br>四是涵养不求所有、但求所用的开放心态，创新柔性引才机制。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：事业留人不是口号，必须实打实为人才干事创业护航</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于小地方也可成引才沃土的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于小地方也可成引才沃土的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进小地方也可成引才沃土，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、以特色禀赋引才——放大特色禀赋与比较优势，为人才提供清晰的发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、以贴心服务留才——引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、以开放心态用才——人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：事业留人不是口号，必须实打实为人才干事创业护航</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「小地方也可成引才沃土」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：小地方也可成引才沃土<br><br>时代之问，呼唤破题之策。小地方也可成引才沃土，是发展所需，也是民心所向。可从三个维度展开：以特色禀赋引才、以贴心服务留才、以开放心态用才。<br><br>分论点一：以特色禀赋引才——放大特色禀赋与比较优势，为人才提供清晰的发展路径，跳出拼补贴、比待遇的老套路，实现地方发展与人才成长双赢。方向对了，路再远也能抵达。事业留人不是口号，必须实打实为人才干事创业护航。<br><br>分论点二：以贴心服务留才——引进来更要留得住，留人重在留心，把安居作为引才先手棋、以事业平台护航干事创业，让人才与一方水土建立深层联结。方法对了，事再难也能办成。想要人才安心扎根，就要让人才与一方水土建立深层联结。<br><br>分论点三：以开放心态用才——人才常驻哪里并不重要，涵养不求所有、但求所用的开放心态，创新柔性引才机制，留下“带不走”的团队。行百里者半九十。问题的关键，是要因地制宜，以独特优势引才用才。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。小地方也可成引才沃土是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-26</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
