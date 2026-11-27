@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 让路与铺路</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>让路与铺路</h1>
+    <div class="meta">人民日报·评论员观察 | 辩证思维·舍与得·当前与长远·绿色发展·生态治理·转型发展·创新意识 | 2026年11月27日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：辩证思维／舍与得／当前与长远／优势与劣势／绿色发展／生态文明／生态治理／人居环境整治／乡村振兴／基层治理／转型发展／创新意识／系统观念</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">辩证思维</span>
+      <span class="tag-item">舍与得</span>
+      <span class="tag-item">当前与长远</span>
+      <span class="tag-item">优势与劣势</span>
+      <span class="tag-item">绿色发展</span>
+      <span class="tag-item">生态文明</span>
+      <span class="tag-item">生态治理</span>
+      <span class="tag-item">人居环境整治</span>
+      <span class="tag-item">乡村振兴</span>
+      <span class="tag-item">基层治理</span>
+      <span class="tag-item">转型发展</span>
+      <span class="tag-item">创新意识</span>
+      <span class="tag-item">系统观念</span>
+      <span class="tag-item">统筹兼顾</span>
+      <span class="tag-item">算大账总账长远账</span>
+      <span class="tag-item">两难变多赢</span>
+      <span class="tag-item">做减法做加法</span>
+      <span class="tag-item">培育新业态</span>
+      <span class="tag-item">路径依赖</span>
+      <span class="tag-item">思维定式</span>
+      <span class="tag-item">可持续发展</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">方法论</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>辩证思维／舍与得／绿色发展／转型发展</b>”等主题；本文以云南两个“让路”故事破题，用“舍得的智慧—铺路的文章—创新的思路”三层递进，末段以“坚实路基”呼应总论点收束，是写“辩证统筹／转型发展”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“一时的让，就能为未来发展铺下坚实路基”</b>——表层讲为生态、为村容“让路”的具体故事，深层揭示舍与得、当前与长远、优势与劣势的辩证统一，以及“让路就是铺路”的发展智慧。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“把让路变成铺路的具体做法”：为生态退塘还湿、转型绿色有机种植；拆违建、扩道路、整治人居环境；关闭矿山后保留风貌、生态修复、融入工业遗存发展乡村旅游；发展生态旅游、林下经济、光伏治沙与生态畜牧业融合等新业态。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>算大账、总账、长远账，把短期利益与长期利益统筹起来，变两难多难为两全多赢</b>／<b>让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道</b>／<b>勇于开拓新路，保留原始风貌、修复生态、盘活工业遗存发展新业态</b>／<b>跳出路径依赖和思维定式，立足自身把束缚变成机遇、短板化为特色</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（发言稿／倡议书）可作“算好长远账、铺就发展路”主题经验交流会发言稿，或“转变思路、绿色转型”主题倡议书。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：舍得智慧／铺路文章／创新思路—总）</h3>
+        <div class="analysis-item"><span class="label">总领</span><span class="text">开篇点明总论点：把握好舍与得、当前与长远、优势与劣势的辩证关系，勇于探索创新，一时的“让”能为未来发展铺下坚实路基（第1段）。</span></div>
+        <div class="analysis-item"><span class="label">引入</span><span class="text">以云南采访听到的两个“让路”故事破题——洱海古生村渔民转生态种植、丽江普济村拆违整治转型旅游村（第2—9段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>一时的“舍”，是为了更长远的“得”——让路与铺路里藏着舍与得的智慧，蕴含当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账，变两难多难为两全多赢</b>（第10—12段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>让路并非“一让了之”，而是要做好铺路的文章——让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道，促更多人从“要我让路”变为“我要让路”</b>（第13—15段、前接分论点色块，梁平猎神村案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>能不能把让路变成铺路，关键还是在创新思路——思路决定出路，立足自身、跳出路径依赖和思维定式，束缚变机遇、短板变特色</b>（第16—18段、前接分论点色块，黑龙江林下经济、青海光伏治沙案例，引总书记语）。</span></div>
+        <div class="analysis-item"><span class="label blue">收束</span><span class="text">末段回扣总论点：发展的瓶颈不在资源约束，而在路径依赖和思维定式；把握三组辩证关系，一时的“让”就能铺下坚实路基（第19段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点按“认识（舍得观）—行动（铺路文章）—根本（创新思路）”层层递进；以故事破题、以金句点断、以总书记语提升理论高度，首尾“坚实路基”圆合。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】把握好<span class="highlight-purple">舍与得、当前与长远、优势与劣势的辩证关系</span>，勇于探索、勇于创新，一时的“让”，就能为未来发展铺下坚实路基——<span class="highlight-gold">一时的“舍”，是为了更长远的“得”</span>；<span class="highlight-blue">让路做减法守住底线，铺路做加法培育新业</span>；<span class="highlight-purple">思路一变，束缚就能变成机遇、短板就能化为特色</span>。</div>
+
+      <p><span class="highlight-gold">把握好舍与得、当前与长远、优势与劣势的辩证关系，勇于探索、勇于创新，一时的“让”，就能为未来发展铺下坚实路基。</span></p>
+
+      <p>在云南采访，听到两个关于“让路”的故事。</p>
+
+      <p>一个是给生态让路。</p>
+
+      <p><span class="highlight-green">洱海湖畔，大理市湾桥镇古生村</span>村民何利成，<span class="highlight-green">15岁</span>起跟着父亲在洱海捕鱼，但由于蓝藻大暴发，大理全面实施<span class="highlight-blue">湖面禁渔政策</span>，他转去承包土地建鱼塘。可随着治理延伸到整个洱海流域，他只好配合清退<span class="highlight-green">10余亩</span>鱼塘。如今，他承包<span class="highlight-green">数百亩</span>土地，开展水稻、油菜<span class="highlight-blue">绿色有机种植</span>，成了生态“新农人”。</p>
+
+      <p>从渔民到塘主，再到生态种植合伙人，<span class="highlight-purple">身份在变，思想也在转</span>：过去“不理解”，现在“主动让”。这是因为他意识到：“洱海好，村里的生活才会好；洱海不好，村里的生活也不可能好。<span class="highlight-gold">为生态让路，让得值！</span>”</p>
+
+      <p>一个是给村容村貌让路。</p>
+
+      <p><span class="highlight-green">丽江市束河街道普济一组</span>，曾是一个<span class="highlight-green">上千头生猪存栏</span>、污水横流的养殖村，环境卫生堪忧，甚至曾有“嫁人不嫁普济村”的说法。</p>
+
+      <p><span class="highlight-green">2021年</span>，村里下定决心向<span class="highlight-blue">人居环境顽疾</span>开刀，<span class="highlight-blue">拆违建、扩道路、整治“脏乱臭”</span>。好环境带来了好前景。如今，村子转型为<span class="highlight-blue">特色旅游村</span>，年接待游客<span class="highlight-green">数万人次</span>。</p>
+
+      <p>“拆违建并不容易，但回过头来看，<span class="highlight-gold">为人居环境让路，就是为发展铺路</span>。”普济一组小组长和茂根这样总结。</p>
+
+      <div class="sub-thesis">【分论点一】一时的“舍”，是为了更长远的“得”——让路与铺路里藏着舍与得的智慧，蕴含着当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账。</div>
+
+      <p><span class="highlight-gold">一时的“舍”，是为了更长远的“得”。</span>让路与铺路里，藏着舍与得的智慧，蕴含着<span class="highlight-purple">当前与长远的辩证统一</span>。</p>
+
+      <p>为生态让路，短期来看，是得舍弃一些眼前利益，但长远而言，换来的是更可持续的发展；为村容村貌让路，表面看是村民暂时吃亏，但最后不仅没吃亏，反而获得更大的收益。</p>
+
+      <p>许多两难、多难问题，难在如何统筹兼顾、趋利避害、实现多赢。让路，不是不算账，而是<span class="highlight-purple">算大账、总账、长远账</span>。把视野放宽、把眼光拉长，才能看清短期利益与长期利益，算好综合账，<span class="highlight-purple">变两难、多难为两全、多赢</span>。</p>
+
+      <div class="sub-thesis">【分论点二】让路并非“一让了之”，而是要做好铺路的文章——让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。</div>
+
+      <p>让路，并非“一让了之”，而是要做好铺路的文章。让路的格局，不会自动转化为发展的红利。为发展积蓄后劲，也需要勇于开拓新路。</p>
+
+      <p><span class="highlight-green">重庆梁平区竹山镇猎神村</span>，曾大力开采石膏矿，一度灰尘漫天，水脏地陷。为保护生态，必须关闭矿山。但村里并非简单关停，而是保留矿山原始风貌，进行<span class="highlight-blue">生态修复</span>，并把矿车、铁轨等工业遗存融入新业态，发展<span class="highlight-blue">乡村休闲旅游</span>。<span class="highlight-gold">矿山变青山，矿区变景区</span>，既为生态让了路，也为村民增收找到了新路子。</p>
+
+      <p><span class="highlight-purple">让路，是做减法，是要规范秩序、守住底线；铺路，是做加法，是要同步培育新产业、拓宽新渠道。</span>善于铺路，让更多人在转型中得实惠、有奔头，才能促更多人从<span class="highlight-gold">“要我让路”变为“我要让路”</span>。</p>
+
+      <div class="sub-thesis">【分论点三】能不能把让路变成铺路，关键还是在创新思路——思路决定出路，跳出路径依赖和思维定式，束缚变成机遇、短板化为特色。</div>
+
+      <p><span class="highlight-gold">能不能把让路变成铺路，关键还是在创新思路。</span></p>
+
+      <p>同样是守护生态，<span class="highlight-green">数万名林业工人</span>“挂锯停斧”后，<span class="highlight-green">黑龙江</span>发展<span class="highlight-blue">生态旅游、林下经济</span>等多元化产业；<span class="highlight-green">青海海南藏族自治州</span>为扭转无序放牧，统筹推进<span class="highlight-blue">光伏治沙与生态畜牧业融合发展</span>，展现“<span class="highlight-green">板上发电、板间种草、板下养羊</span>”的奇妙图景。</p>
+
+      <p><span class="highlight-gold">思路决定出路。</span>习近平同志在《摆脱贫困》中写道，“<span class="highlight-gold">我们不担心说错什么，只是担心‘意识贫困’</span>”“也不担心做错什么，只是担心‘思路贫困’”。立足自身，<span class="highlight-purple">思路一变，束缚就能变成机遇，短板就能化为特色</span>，原本看似走不通的路子，也能蹚出宽广赛道。</p>
+
+      <p>发展的瓶颈，不在资源约束，而在<span class="highlight-blue">路径依赖和思维定式</span>。把握好舍与得、当前与长远、优势与劣势的辩证关系，勇于探索、勇于创新，一时的“让”，就能为未来发展铺下坚实路基。</p>
+
+      <p class="byline">（人民日报2026年11月27日 第05版 · 评论员观察）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>把握好舍与得、当前与长远、优势与劣势的辩证关系，一时的“让”，就能为未来发展铺下坚实路基。</b>——写‘辩证思维／转型发展’的总领金句，可作开头钩子与结尾升华。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·舍得</span>
+      <p><b>一时的“舍”，是为了更长远的“得”。</b>——写‘舍与得／当前与长远’的判断金句，适合作分论点支撑。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·算账</span>
+      <p><b>让路，不是不算账，而是算大账、总账、长远账。</b>——写‘系统观念／统筹兼顾’的方法金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·两全</span>
+      <p><b>把视野放宽、把眼光拉长，变两难、多难为两全、多赢。</b>——写‘问题导向／辩证施策’的对策金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·加减</span>
+      <p><b>让路，是做减法，规范秩序、守住底线；铺路，是做加法，培育新产业、拓宽新渠道。</b>——写‘破立并举／守正创新’的对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转变</span>
+      <p><b>善于铺路，促更多人从“要我让路”变为“我要让路”。</b>——写‘群众动员／内生动力’的表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·铺路</span>
+      <p><b>为人居环境让路，就是为发展铺路。</b>——写‘生态优先／绿色发展’的价值判断金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·思路</span>
+      <p><b>思路决定出路。</b>——写‘创新意识／解放思想’的短句金句，适合作段首总括。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·权威</span>
+      <p><b>我们不担心说错什么，只是担心‘意识贫困’；也不担心做错什么，只是担心‘思路贫困’。</b>——引习近平同志《摆脱贫困》，写‘观念转变／精神脱贫’的权威金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·瓶颈</span>
+      <p><b>发展的瓶颈，不在资源约束，而在路径依赖和思维定式。</b>——写‘改革创新／破除积弊’的哲理金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以两个“让路”故事破题，用“舍得的智慧—铺路的文章—创新的思路”三层递进，末段以“坚实路基”呼应收束，适用于“辩证统筹／转型发展”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组递进式分论点：舍与得的智慧（认识层）、做好铺路文章（行动层）、关键在创新思路（根本层），构成“明认知—抓落实—破瓶颈”的论证链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“让路变铺路”拆要点：退塘还湿转型绿色种植、拆违整治改善人居环境、矿修复风貌盘活工业遗存、发展生态旅游与林下经济、光伏治沙与生态畜牧业融合。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“一时舍与长远得”“让路做减法与铺路做加法”“要我让路变我要让路”“束缚变机遇、短板变特色”的辩证写法，把“得与失”“破与立”“被动与主动”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“算大账、总账、长远账”可作统筹段总括；“思路决定出路”可作创新段段首；“发展的瓶颈不在资源约束，而在路径依赖和思维定式”可作结尾升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「让路与铺路」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一时的“舍”，是为了更长远的“得”。让路与铺路里藏着舍与得的智慧，蕴含着当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账。<br>二是让路并非“一让了之”，而是要做好铺路的文章。让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。<br>三是能不能把让路变成铺路，关键还是在创新思路。思路决定出路，跳出路径依赖和思维定式，束缚变成机遇、短板化为特色。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「把握好舍与得、当前与长远、优势与劣势的辩证关系，勇于探索、勇于创新，一时的“让”，就能为未来发展铺下坚实路基——一时的“舍”，是为了更长远的“得”；让路做减法守住底线，铺路做加法培育新业；思路一变，束缚就能变成机遇、短板就能化为特色。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是一时的“舍”，是为了更长远的“得”——让路与铺路里藏着舍与得的智慧，蕴含着当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账。<br>二是让路并非“一让了之”，而是要做好铺路的文章——让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。<br>三是能不能把让路变成铺路，关键还是在创新思路——思路决定出路，跳出路径依赖和思维定式，束缚变成机遇、短板化为特色。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：把握好舍与得、当前与长远、优势与劣势的辩证关系，一时的“让”，就能为未来发展铺下坚实路基</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「让路与铺路」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是算大账、总账、长远账，把短期利益与长期利益统筹起来，变两难多难为两全多赢。<br>二是让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。<br>三是勇于开拓新路，保留原始风貌、修复生态、盘活工业遗存发展新业态。<br>四是跳出路径依赖和思维定式，立足自身把束缚变成机遇、短板化为特色。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：把握好舍与得、当前与长远、优势与劣势的辩证关系，一时的“让”，就能为未来发展铺下坚实路基</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于让路与铺路的决定》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于让路与铺路的决定</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进让路与铺路，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、一时的“舍”，是为了更长远的“得”——让路与铺路里藏着舍与得的智慧，蕴含着当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、让路并非“一让了之”，而是要做好铺路的文章——让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、能不能把让路变成铺路，关键还是在创新思路——思路决定出路，跳出路径依赖和思维定式，束缚变成机遇、短板化为特色。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：把握好舍与得、当前与长远、优势与劣势的辩证关系，一时的“让”，就能为未来发展铺下坚实路基</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「让路与铺路」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：让路与铺路<br><br>时代之问，呼唤破题之策。让路与铺路，是发展所需，也是民心所向。可从三个维度展开：一时的“舍”，是为了更长远的“得”、让路并非“一让了之”，而是要做好铺路的文章、能不能把让路变成铺路，关键还是在创新思路。<br><br>分论点一：一时的“舍”，是为了更长远的“得”——让路与铺路里藏着舍与得的智慧，蕴含着当前与长远的辩证统一；让路不是不算账，而是算大账、总账、长远账。方向对了，路再远也能抵达。把握好舍与得、当前与长远、优势与劣势的辩证关系，一时的“让”，就能为未来发展铺下坚实路基。<br><br>分论点二：让路并非“一让了之”，而是要做好铺路的文章——让路做减法、规范秩序守住底线，铺路做加法、同步培育新产业拓宽新渠道。方法对了，事再难也能办成。一时的“舍”，是为了更长远的“得”。<br><br>分论点三：能不能把让路变成铺路，关键还是在创新思路——思路决定出路，跳出路径依赖和思维定式，束缚变成机遇、短板化为特色。行百里者半九十。让路，不是不算账，而是算大账、总账、长远账。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。让路与铺路是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-27</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>

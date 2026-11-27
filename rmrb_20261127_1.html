@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>人民日报评论精读 | 把体育“一阵火”变消费“长久热”</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .header .meta {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
+  .content {
+    padding: 18px 22px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #c41e3a;
+    margin: 18px 0 9px 0;
+    padding-left: 12px;
+    border-left: 4px solid #c41e3a;
+  }
+  .article-body {
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+  }
+  .article-body p {
+    margin-bottom: 9px;
+    text-indent: 2em;
+  }
+  /* 总论点 */
+  .thesis {
+    background: #fff5f5;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #8b0000;
+    text-indent: 0 !important;
+  }
+  /* 分论点 */
+  .sub-thesis {
+    background: #f0f7ff;
+    border-left: 4px solid #1976d2;
+    padding: 11px 15px;
+    margin: 11px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-indent: 0 !important;
+  }
+  /* 亮点标注 */
+  .highlight-gold {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    font-weight: 600;
+  }
+  .highlight-blue {
+    background: linear-gradient(transparent 60%, #90caf9 60%);
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .highlight-green {
+    background: linear-gradient(transparent 60%, #a5d6a7 60%);
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  .highlight-purple {
+    background: linear-gradient(transparent 60%, #ce93d8 60%);
+    color: #6a1b9a;
+    font-weight: 600;
+  }
+  /* 分析模块 */
+  .analysis-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+  }
+  .analysis-box h3 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .analysis-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .analysis-item .label {
+    background: #c41e3a;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .analysis-item .label.blue { background: #1976d2; }
+  .analysis-item .text {
+    flex: 1;
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.72;
+  }
+  /* 考点标签 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .tag-item {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #a5d6a7;
+  }
+  /* 图例 */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+    padding: 11px;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .gold { background: #ffe082; }
+  .blue { background: #90caf9; }
+  .green { background: #a5d6a7; }
+  .purple { background: #ce93d8; }
+  .legend-box { background: #fff5f5; border: 1px solid #ffcdd2; }
+  .legend-sub { background: #f0f7ff; border-left: 3px solid #1976d2; }
+  /* 素材卡片 */
+  .material-card {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .material-card .tag-shenlun {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .material-card p {
+    font-size: 14.5px;
+    color: #5d4037;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  /* 写作迁移 */
+  .migration-card {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    padding: 11px 15px;
+    margin: 8px 0;
+  }
+  .migration-card .tag-mig {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .migration-card p {
+    font-size: 13.5px;
+    color: #0d47a1;
+    margin: 0;
+    text-indent: 0 !important;
+    line-height: 1.72;
+  }
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .speaker { color: #8b0000; font-weight: 600; }
+  .byline { text-align: right; font-size: 13px; color: #888; text-indent: 0 !important; margin-top: 4px; }
+
+  /* 真题自测：答案隐藏 + 展开按钮 */
+  .fx-toggle{display:inline-block;margin:10px 0 4px;padding:7px 15px;background:#c41e3a;color:#fff;border:none;border-radius:9px;font-size:13px;cursor:pointer;}
+  .fx-toggle:hover{background:#a01830;}
+  .fx-answer{display:none;}
+  .fx-answer.show{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="tag">📰 人民日报评论精读</div>
+    <h1>把体育“一阵火”变消费“长久热”</h1>
+    <div class="meta">人民日报·人民时评 | 体育消费·赛事经济·消费升级·健康中国·城市治理·长效机制 | 2026年11月27日 | 第05版</div>
+    <div class="meta" style="margin-top:4px;">主题：体育消费／赛事经济／消费升级／全民健身／健康中国／票根经济／文体旅融合／公共服务／城市治理／长效机制／常态化消费／以人民为中心</div>
+  </div>
+
+  <div class="content">
+    <!-- ①申论考点标签 -->
+    <div class="section-title">① 申论考点标签</div>
+    <div class="tag-list">
+      <span class="tag-item">体育消费</span>
+      <span class="tag-item">赛事经济</span>
+      <span class="tag-item">消费升级</span>
+      <span class="tag-item">健康中国</span>
+      <span class="tag-item">全民健身</span>
+      <span class="tag-item">城市活力</span>
+      <span class="tag-item">票根经济</span>
+      <span class="tag-item">文体旅融合</span>
+      <span class="tag-item">公共服务</span>
+      <span class="tag-item">城市治理</span>
+      <span class="tag-item">长效机制</span>
+      <span class="tag-item">常态化消费</span>
+      <span class="tag-item">消费场景</span>
+      <span class="tag-item">即时消费</span>
+      <span class="tag-item">服务消费</span>
+      <span class="tag-item">产业联动</span>
+      <span class="tag-item">城市名片</span>
+      <span class="tag-item">综合效益</span>
+      <span class="tag-item">供给优化</span>
+      <span class="tag-item">以人民为中心</span>
+      <span class="tag-item">高质量发展</span>
+    </div>
+    <div class="analysis-box" style="margin-top:10px;">
+      <h3>🎯 高频命题角度提示</h3>
+        <div class="analysis-item"><span class="label">议论文</span><span class="text">适配“<b>体育消费／消费升级／健康中国／城市治理</b>”等主题；本文以中超上座数据破题，用“优质赛事点火器—常态消费底座—嵌入生活主场”三层递进，末段以“长久热的养料”收束，是写“激活消费／城市活力”类文章的高分结构。</span></div>
+        <div class="analysis-item"><span class="label blue">综合分析题</span><span class="text">可提炼观点内涵：<b>“把体育一阵火变消费长久热”</b>——表层讲赛事流量与周边消费，深层揭示从偶发热点到常态习惯、从赛场角逐到嵌入生活的消费培育逻辑。</span></div>
+        <div class="analysis-item"><span class="label blue">归纳概括题</span><span class="text">可要求概括“激活体育消费的做法”：增加高质量赛事供给、票根经济联通吃住行游、赛事进夜市串起消费线、把看球沉淀为常态习惯、盘活地铁闲置空间改运动场、完善场地课程装备康复服务、用好金角银边补齐设施。</span></div>
+        <div class="analysis-item"><span class="label blue">对策题</span><span class="text">可直接提炼以下对策：<b>增加高质量体育赛事供给，把赛场热度转化为稳定消费增量</b>／<b>推动赛事策划、运营组织与城市资源高效联动，把赛事流量串成消费线</b>／<b>完善场地、课程、装备、康复等产品和服务，接住“顺便运动一下”的需求</b>／<b>盘活“金角银边”等闲置空间，让运动设施更接地气，打通供需链条</b>。</span></div>
+        <div class="analysis-item"><span class="label blue">公文写作</span><span class="text">（倡议书／发言稿）可作“让体育消费热起来、长久下去”主题倡议书，或“激活赛事经济、涵养城市活力”经验交流会发言稿。</span></div>
+    </div>
+
+    <!-- ②文章结构拆解 -->
+    <div class="section-title">② 文章结构拆解</div>
+    <div class="analysis-box">
+      <h3>🧩 文章骨架（总—分三：赛事点火／场景沉淀／生活融入—总）</h3>
+        <div class="analysis-item"><span class="label">总领</span><span class="text">以近年消费升级中体育与消费“双向奔赴”破题，点明激活体育消费潜力具有显著综合效益（第1—3段）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论一</span><span class="text"><b>优质赛事是体育消费的“点火器”——增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入日常生活</b>（第4—6段、前接分论点色块，中超上座700万人次、票根经济、苏超案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论二</span><span class="text"><b>体育是入口，健康生活才是铁打的主场——抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务</b>（第7段、前接分论点色块，广州地铁闲置空间改造案例）。</span></div>
+        <div class="analysis-item"><span class="label blue">分论三</span><span class="text"><b>体育融入生活牵动城市治理精度与市井烟火温度——盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性</b>（第8段、前接分论点色块）。</span></div>
+        <div class="analysis-item"><span class="label blue">收束</span><span class="text">末段点明“一阵火”靠赛事流量、“长久热”有赖全民运动习惯与公共服务保障，以“把体育嵌入生活、让习惯催生需求”收束（第9段）。</span></div>
+        <div class="analysis-item"><span class="label blue">写作技法</span><span class="text">全文“总—分三—总”：三个分论点按“赛事点火—场景沉淀—生活融入”层层递进，逐段配数据（700万人次、1.91亿元、5.12万亿元、2500元）与地名案例（大连、青岛、铜梁、苏超、广州），实证扎实。</span></div>
+    </div>
+
+    <!-- ③原文精读 -->
+    <div class="section-title">③ 原文精读</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-box"></span>总论点色块</div>
+      <div class="legend-item"><span class="legend-color legend-sub"></span>分论点色块</div>
+      <div class="legend-item"><span class="legend-color gold"></span>金色=金句/名言</div>
+      <div class="legend-item"><span class="legend-color blue"></span>蓝色=规范表述/政策术语</div>
+      <div class="legend-item"><span class="legend-color green"></span>绿色=数据/事实论据</div>
+      <div class="legend-item"><span class="legend-color purple"></span>紫色=辩证关系/哲理</div>
+    </div>
+
+    <div class="article-body">
+      <div class="thesis">【总论点】体育消费是城市经济的重要增长点，还能涵养全民健康生活方式、塑造城市活力气质——以<span class="highlight-blue">优质赛事</span>作“<span class="highlight-gold">点火器</span>”，以<span class="highlight-blue">常态消费</span>筑“底座”，以<span class="highlight-blue">嵌入生活</span>作“主场”，<span class="highlight-purple">把体育“一阵火”变成消费“长久热”</span>。</div>
+
+      <p>观察近年来的消费升级趋势，体育和消费的<span class="highlight-purple">双向奔赴</span>令人印象深刻。</p>
+
+      <p>不久前<span class="highlight-green">2026赛季中超联赛</span>落幕，全赛季累计上座<span class="highlight-green">超700万人次</span>，创联赛历史新高。广大球迷奔赴赛场，更带动起赛场周边全链条消费。东北财经大学有个课题组做过测算，单赛季辽宁大连足球职业赛事<span class="highlight-green">直接经济贡献达1.91亿元</span>，而球迷跨城出行、海鲜餐饮、景区游玩带来的间接消费规模远超直接收益。</p>
+
+      <p>体育消费是城市经济的<span class="highlight-blue">重要增长点</span>，还能涵养<span class="highlight-blue">全民健康生活方式</span>，塑造城市活力气质。有数据显示，<span class="highlight-green">2025年</span>，全国体育产业总规模达到<span class="highlight-green">5.12万亿元</span>，<span class="highlight-green">2030年</span>有望超<span class="highlight-green">7万亿元</span>。由此而言，<span class="highlight-gold">激活体育消费潜力，具有显著的综合效益</span>。</p>
+
+      <div class="sub-thesis">【分论点一】优质赛事是体育消费的“点火器”——增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入普通人的日常生活。</div>
+
+      <p><span class="highlight-gold">优质赛事是体育消费的“点火器”。</span>国务院常务会议明确提出，“<span class="highlight-blue">增加高质量体育赛事供给</span>”。本赛季中超联赛冠军悬念直到最后一轮才见分晓，尽展竞技体育魅力。更重要的是，越来越多城市和球队不再只满足于办好<span class="highlight-green">90分钟</span>比赛，而是主动挖掘<span class="highlight-blue">赛事流量价值</span>，努力将赛场热度转化为稳定消费增量。</p>
+
+      <p><span class="highlight-green">山东青岛西海岸和海牛</span>两支球队的赛事接入全市“<span class="highlight-blue">票根经济</span>”，一张门票联通酒店、景区、餐厅；<span class="highlight-green">重庆铜梁区</span>把足球比赛现场“搬”进夜市街区，赛前聚餐、赛后夜游被串成一条消费线。<span class="highlight-purple">比赛终场哨总会吹响，但消费活力却可以持续释放。</span>赛事热度能否延续，核心在于赛事策划、运营组织与城市各类资源能否高效联动，推动体育产品、运动场景深度融入普通人的日常生活。</p>
+
+      <p>这个赛季，“<span class="highlight-gold">苏超</span>”联赛的看台依然热闹。尽管全赛季平均预约中签率只有<span class="highlight-green">9.6%</span>，但<span class="highlight-green">27个比赛周</span>每周都参与预约者高达<span class="highlight-green">2415人</span>。赛事不再是孤立的“热点”。从偶发性的“<span class="highlight-purple">为一场球奔赴一座城</span>”，沉淀为常态化的“<span class="highlight-purple">看球过周末</span>”，<span class="highlight-gold">体育消费长热的底座才能越筑越牢</span>。</p>
+
+      <div class="sub-thesis">【分论点二】体育是入口，健康生活才是铁打的主场——抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务。</div>
+
+      <p><span class="highlight-gold">体育是入口，健康生活才是铁打的主场。</span>在<span class="highlight-green">广东广州</span>，天河公园站、琶洲站等地铁站点里的闲置空间被改造成运动空间，跑步机、力量器械等一应俱全。实现体育消费<span class="highlight-blue">扩容提质</span>，不妨抓住通勤路上、社区周边、周末安排这些关键点，紧扣<span class="highlight-blue">场地、课程、装备、康复</span>这些细节，完善相应的产品和服务，让“<span class="highlight-purple">顺便运动一下</span>”的需求能被接住，也让运动后续的消费需求能得到轻松满足。<span class="highlight-gold">消费的增量，就藏在这些被认真对待的细节里。</span></p>
+
+      <div class="sub-thesis">【分论点三】体育融入生活牵动城市治理的精度与市井烟火的温度——盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性。</div>
+
+      <p>体育融入生活，既是个体选择，也牵动<span class="highlight-blue">城市治理的精度</span>与<span class="highlight-purple">市井烟火的温度</span>。充分利用小区和写字楼周边的“<span class="highlight-blue">金角银边</span>”，让运动设施更接地气，想练有地方，常练有组织，培训有保障，消费有优惠，有助于<span class="highlight-blue">打通供需链条</span>。善用巧思盘活空间，展现公共服务的诚意，用好资源打通的智慧，就不难呵护好“<span class="highlight-blue">体育+消费</span>”的连续性。</p>
+
+      <p>“一阵火”靠赛事流量，“<span class="highlight-purple">长久热</span>”则有赖于<span class="highlight-blue">全民运动习惯</span>支撑、<span class="highlight-blue">公共服务保障</span>。<span class="highlight-green">2025年</span>，我国<span class="highlight-green">19—59岁居民人均体育消费近2500元</span>。当体育不再只是赛场上的角逐，而成为看台上的呐喊、周末球场的约定、一家人的出行计划，消费便有了<span class="highlight-purple">持续生长的养料</span>。<span class="highlight-gold">把体育嵌入生活，让习惯催生需求，正是体育消费做大做强的关键所在。</span></p>
+
+      <p class="byline">（人民日报2026年11月27日 第05版 · 人民时评）</p>
+    </div>
+
+    <!-- ④申论金句素材 -->
+    <div class="section-title">④ 申论金句素材</div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·总领</span>
+      <p><b>激活体育消费潜力，具有显著的综合效益。</b>——写‘体育消费／消费升级’的总领金句，可作开头点题。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·点火</span>
+      <p><b>优质赛事是体育消费的“点火器”。</b>——写‘赛事经济／高质量供给’的判断金句，适合作分论点总括。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·转化</span>
+      <p><b>比赛终场哨总会吹响，但消费活力却可以持续释放。</b>——写‘流量转化／长效机制’的辩证金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·沉淀</span>
+      <p><b>从“为一场球奔赴一座城”，沉淀为“看球过周末”，体育消费长热的底座才能越筑越牢。</b>——写‘常态化／习惯养成’的表述金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·主场</span>
+      <p><b>体育是入口，健康生活才是铁打的主场。</b>——写‘全民健身／健康中国’的比喻金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·细节</span>
+      <p><b>消费的增量，就藏在这些被认真对待的细节里。</b>——写‘精细服务／消费场景’的哲理金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·治理</span>
+      <p><b>体育融入生活，既牵动城市治理的精度，也牵动市井烟火的温度。</b>——写‘城市治理／民生温度’的对仗金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·对接</span>
+      <p><b>想练有地方，常练有组织，培训有保障，消费有优惠。</b>——写‘公共服务／供需对接’的排比金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·养料</span>
+      <p><b>当体育成为周末球场的约定、一家人的出行计划，消费便有了持续生长的养料。</b>——写‘嵌入生活／内生需求’的升华金句。</p>
+    </div>
+    <div class="material-card">
+      <span class="tag-shenlun">金句·关键</span>
+      <p><b>把体育嵌入生活，让习惯催生需求，正是体育消费做大做强的关键所在。</b>——写‘长效培育／消费归根’的收束金句。</p>
+    </div>
+
+    <!-- ⑤写作迁移应用 -->
+    <div class="section-title">⑤ 写作迁移应用</div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移一·议论文结构</span>
+      <p>学“总—分三—总”框架：以中超上座数据破题，用“赛事点火—场景沉淀—生活融入”三层递进，末段以“持续生长的养料”呼应收束，适用于“激活消费／城市活力”类作文。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移二·分论点设计</span>
+      <p>套用三组递进式分论点：优质赛事作点火器（供给端）、常态消费筑底座（习惯端）、嵌入生活作主场（需求端），构成“引流量—沉淀量—育增量”的消费培育链。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移三·归纳概括</span>
+      <p>把“激活体育消费”拆要点：增加高质量赛事供给、票根经济联通吃住行游、赛事进夜市串起消费线、看球沉淀为常态习惯、地铁闲置空间改运动场、完善场地课程装备康复服务、用好金角银边。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移四·辩证段落</span>
+      <p>学“一阵火与长久热”“赛场角逐与看台呐喊”“偶发奔赴与常态周末”“赛事流量与公共服务”的辩证写法，把“短期与长期”“流量与习惯”写成对立统一。</p>
+    </div>
+    <div class="migration-card">
+      <span class="tag-mig">迁移五·金句迁移</span>
+      <p>“优质赛事是体育消费的点火器”可作供给段总括；“消费的增量藏在被认真对待的细节里”可作服务段支撑；“把体育嵌入生活、让习惯催生需求”可作结尾升华。</p>
+    </div>
+
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 归纳概括题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料介绍了「把体育“一阵火”变消费“长久热”」的相关实践。请概括其在工作中的主要做法与成效。（要求：全面、准确、有条理，不超过250字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是优质赛事是体育消费的“点火器”。增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入普通人的日常生活。<br>二是体育是入口，健康生活才是铁打的主场。抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务。<br>三是体育融入生活牵动城市治理的精度与市井烟火的温度。盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性。</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 综合分析题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">给定资料中强调「体育消费是城市经济的重要增长点，还能涵养全民健康生活方式、塑造城市活力气质——以优质赛事作“点火器”，以常态消费筑“底座”，以嵌入生活作“主场”，把体育“一阵火”变成消费“长久热”。」。请谈谈你对这一观点的理解。（要求：观点明确，分析透彻，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是优质赛事是体育消费的“点火器”——增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入普通人的日常生活。<br>二是体育是入口，健康生活才是铁打的主场——抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务。<br>三是体育融入生活牵动城市治理的精度与市井烟火的温度——盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性。<br>综上，唯有统筹兼顾、系统施策，方能行稳致远。<br>可迁移金句：激活体育消费潜力，具有显著的综合效益</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 对策建议题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">针对「把体育“一阵火”变消费“长久热”」推进中的难点，请提出切实可行的解决措施。（要求：对策具体、条理清晰，不超过300字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">一是增加高质量体育赛事供给，把赛场热度转化为稳定消费增量。<br>二是推动赛事策划、运营组织与城市资源高效联动，把赛事流量串成消费线。<br>三是完善场地、课程、装备、康复等产品和服务，接住“顺便运动一下”的需求。<br>四是盘活“金角银边”等闲置空间，让运动设施更接地气，打通供需链条。<br>通过系统施策、久久为功，推动各项工作落地见效。<br>可迁移金句：激活体育消费潜力，具有显著的综合效益</span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 公文写作题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">假如你是相关单位工作人员，请根据给定资料，撰写一份《关于把体育“一阵火”变消费“长久热”的倡议书》（要求：格式规范、内容完整，不超过400字）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text"><span style="display:block;text-align:center;font-weight:bold;font-size:1.1em;margin-bottom:14px;">关于把体育“一阵火”变消费“长久热”的倡议书</span><span style="display:block;margin-bottom:8px;">各相关单位（或广大市民朋友）：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">为扎实推进把体育“一阵火”变消费“长久热”，现就有关事项告知如下：</span><span style="display:block;text-indent:2em;margin-bottom:6px;">一、优质赛事是体育消费的“点火器”——增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入普通人的日常生活。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">二、体育是入口，健康生活才是铁打的主场——抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">三、体育融入生活牵动城市治理的精度与市井烟火的温度——盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性。</span><span style="display:block;text-indent:2em;margin-bottom:6px;">请各单位高度重视、抓好落实，共同推动工作取得实效。</span><span style="display:block;text-align:right;margin-top:18px;">XX单位<br>2026年X月X日</span><span style="display:block;margin-top:14px;color:#5b6b7a;font-size:.92em;">可迁移金句：激活体育消费潜力，具有显著的综合效益</span></span></div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px;">
+        <h3>📝 大作文论证题 · 真题自测</h3>
+        <div class="analysis-item"><span class="label">题干</span><span class="text">请结合给定资料，以「把体育“一阵火”变消费“长久热”」为主题，写一篇议论文。（要求：观点鲜明，论据充实，1000字左右）</span></div>
+        <button class="fx-toggle" type="button">👀 显示参考答案（先自己写一遍）</button>
+        <div class="analysis-item fx-answer"><span class="label blue">参考答案</span><span class="text">标题：把体育“一阵火”变消费“长久热”<br><br>时代之问，呼唤破题之策。把体育“一阵火”变消费“长久热”，是发展所需，也是民心所向。可从三个维度展开：优质赛事是体育消费的“点火器”、体育是入口，健康生活才是铁打的主场、体育融入生活牵动城市治理的精度与市井烟火的温度。<br><br>分论点一：优质赛事是体育消费的“点火器”——增加高质量体育赛事供给，挖掘赛事流量价值，推动体育产品、运动场景深度融入普通人的日常生活。方向对了，路再远也能抵达。激活体育消费潜力，具有显著的综合效益。<br><br>分论点二：体育是入口，健康生活才是铁打的主场——抓住通勤路上、社区周边、周末安排等关键点，完善场地、课程、装备、康复的产品和服务。方法对了，事再难也能办成。优质赛事是体育消费的“点火器”。<br><br>分论点三：体育融入生活牵动城市治理的精度与市井烟火的温度——盘活“金角银边”，让运动设施接地气，打通供需链条，呵护“体育+消费”的连续性。行百里者半九十。比赛终场哨总会吹响，但消费活力却可以持续释放。保持定力、持续用力，方能把蓝图变为现实。<br><br>行而不辍，未来可期。把体育“一阵火”变消费“长久热”是一场接力跑，每一棒都要跑出好成绩。让我们干在实处、走在前列，交出无愧于时代的答卷。</span></div>
+      </div>
+
+    <div class="footer">📌 本文精读由人民日报评论原文整理，仅供申论备考积累使用 · 2026-11-27</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function bindFx(){
+    var btns = document.querySelectorAll('.fx-toggle');
+    for(var i=0;i<btns.length;i++){
+      var btn = btns[i];
+      if(btn.getAttribute('data-fxbound')) continue;
+      btn.setAttribute('data-fxbound','1');
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        if(ans && ans.className && ans.className.indexOf('fx-answer')>-1){
+          var on = ans.classList.toggle('show');
+          this.textContent = on ? '🙈 收起参考答案' : '👀 显示参考答案（先自己写一遍）';
+        }
+      });
+    }
+  }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bindFx); }
+  else { bindFx(); }
+})();
+</script>
+
+</body>
+</html>
